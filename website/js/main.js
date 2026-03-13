@@ -37,7 +37,8 @@ if (form) {
         body: new FormData(form),
         headers: { Accept: 'application/json' }
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         form.innerHTML = '<div style="text-align:center;padding:40px 0"><h3 style="color:#A52030;margin-bottom:12px">Message Sent!</h3><p>We\'ll reply within 24 hours. Or reach us directly on WhatsApp: +86 182 6866 1068</p></div>';
       } else {
         btn.textContent = 'Send Message';

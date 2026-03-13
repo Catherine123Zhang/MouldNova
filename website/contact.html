@@ -125,8 +125,10 @@
         <h2 style="margin-bottom:8px">Send a Message</h2>
         <p style="margin-bottom:28px;color:var(--gray-mid)">Fill in the form and we'll reply to your email within 24 hours.</p>
 
-        <!-- FORMSPREE FORM — replace YOUR_FORM_ID after signing up at formspree.io -->
-        <form class="form js-contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form class="form js-contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="a512c8d1-e17e-4263-8c9b-e3d68e15d8b9" />
+          <input type="hidden" name="subject" value="New inquiry — MouldNova website" />
+          <input type="hidden" name="redirect" value="false" />
           <div class="form__row">
             <div class="form__group">
               <label class="form__label" for="name">Your Name *</label>
@@ -170,9 +172,7 @@
             <textarea class="form__textarea" id="message" name="message" required placeholder="Describe your part, current cooling issues, annual volume, and any specific requirements. You can also attach a drawing — WhatsApp is easiest for file sharing."></textarea>
           </div>
           <!-- Honeypot spam protection -->
-          <input type="text" name="_gotcha" style="display:none" />
-          <input type="hidden" name="_subject" value="New inquiry from Saiguang website" />
-          <input type="hidden" name="_next" value="https://saiguang3d.com/contact.html" />
+          <input type="checkbox" name="botcheck" style="display:none" />
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:16px">
             Send Message →
           </button>
