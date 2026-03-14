@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cut Injection Mold Cycle Time by Up to 72% | Conformal Cooling Inserts | MouldNova</title>
+  <meta name="description" content="Still dealing with gate burn marks, warpage, or hot spots? 3D-printed conformal cooling inserts solve cooling problems conventional drilling can't reach. Free thermal analysis included." />
+  <link rel="canonical" href="https://mouldnova.com/lp/injection-mold-engineer.html" />
+  <meta property="og:title" content="Cut Mold Cycle Time by Up to 72% — Free Thermal Analysis" />
+  <meta property="og:description" content="Conformal cooling inserts made in China. Same SLM technology as European suppliers, 50–70% lower cost. Free Moldex3D analysis with every inquiry." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* LP-specific overrides */
+    .lp-hero { background: var(--black); color: #fff; padding: 80px 0 64px; }
+    .lp-hero__label { display: inline-block; background: var(--red); color: #fff; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 12px; border-radius: 20px; margin-bottom: 20px; }
+    .lp-hero__title { font-size: 2.75rem; font-weight: 900; line-height: 1.1; max-width: 780px; margin-bottom: 20px; }
+    .lp-hero__title span { color: var(--red); }
+    .lp-hero__sub { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 600px; line-height: 1.7; margin-bottom: 32px; }
+    .lp-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .lp-hero__proof { display: flex; gap: 28px; margin-top: 48px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .lp-hero__proof-item { font-size: 0.85rem; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 8px; }
+    .lp-hero__proof-item::before { content: '✓'; color: var(--red); font-weight: 700; }
+
+    /* Pain section */
+    .pain-section { background: #fff8f8; padding: 64px 0; }
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 32px; }
+    .pain-card { background: #fff; border: 2px solid #fecaca; border-radius: 12px; padding: 24px; }
+    .pain-card__icon { font-size: 1.5rem; margin-bottom: 12px; }
+    .pain-card__title { font-weight: 700; color: var(--black); margin-bottom: 8px; }
+    .pain-card__text { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
+
+    /* Solution section */
+    .solution-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .solution-visual { background: var(--gray-light); border-radius: 16px; padding: 32px; }
+    .temp-bar { margin-bottom: 20px; }
+    .temp-bar__label { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+    .temp-bar__track { height: 12px; background: #e5e7eb; border-radius: 6px; overflow: hidden; }
+    .temp-bar__fill { height: 100%; border-radius: 6px; }
+    .temp-bar__fill--bad { background: #ef4444; }
+    .temp-bar__fill--good { background: #22c55e; }
+
+    /* Data strip */
+    .data-strip { background: var(--red); color: #fff; padding: 40px 0; }
+    .data-strip__inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px; text-align: center; }
+    .data-strip__num { font-size: 2.5rem; font-weight: 900; }
+    .data-strip__label { font-size: 0.8rem; opacity: 0.8; margin-top: 4px; }
+
+    /* Evidence cards */
+    .evidence-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .evidence-card { background: #fff; border: 1px solid var(--gray-light); border-radius: 12px; overflow: hidden; }
+    .evidence-card__head { background: var(--black); color: #fff; padding: 16px 20px; }
+    .evidence-card__industry { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+    .evidence-card__title { font-weight: 700; font-size: 0.95rem; }
+    .evidence-card__body { padding: 20px; }
+    .evidence-card__before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .ba-col { text-align: center; padding: 10px; border-radius: 8px; }
+    .ba-col--before { background: #fef2f2; }
+    .ba-col--after { background: #f0fdf4; }
+    .ba-col__label { font-size: 0.7rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px; }
+    .ba-col--before .ba-col__label { color: #dc2626; }
+    .ba-col--after .ba-col__label { color: #16a34a; }
+    .ba-col__val { font-size: 0.95rem; font-weight: 800; }
+    .evidence-card__insight { font-size: 0.82rem; color: var(--gray-mid); line-height: 1.5; }
+
+    /* Process */
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; counter-reset: step; }
+    .process-step { padding: 24px; position: relative; }
+    .process-step::after { content: '→'; position: absolute; right: -8px; top: 50%; transform: translateY(-50%); color: var(--gray-mid); font-size: 1.2rem; }
+    .process-step:last-child::after { display: none; }
+    .process-step__num { font-size: 2rem; font-weight: 900; color: var(--red); line-height: 1; margin-bottom: 8px; }
+    .process-step__title { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+    .process-step__text { font-size: 0.82rem; color: var(--gray-mid); line-height: 1.5; }
+
+    /* Sticky CTA bar */
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--black); color: #fff; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; z-index: 200; transform: translateY(100%); transition: transform 0.3s; }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta__text { font-size: 0.9rem; font-weight: 600; }
+    .sticky-cta__sub { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+    .sticky-cta__actions { display: flex; gap: 10px; }
+
+    /* Final CTA */
+    .final-cta { background: var(--black); color: #fff; padding: 80px 0; text-align: center; }
+    .final-cta__title { font-size: 2rem; font-weight: 900; margin-bottom: 12px; }
+    .final-cta__sub { color: rgba(255,255,255,0.6); margin-bottom: 8px; font-size: 1.05rem; }
+    .final-cta__phone { font-size: 1.8rem; font-weight: 900; color: var(--red); margin: 16px 0 4px; }
+    .final-cta__note { font-size: 0.8rem; color: rgba(255,255,255,0.35); margin-bottom: 32px; }
+    .final-cta__form { max-width: 480px; margin: 0 auto 32px; }
+    .final-cta__input { width: 100%; padding: 14px 16px; border-radius: 8px; border: none; font-size: 1rem; margin-bottom: 10px; box-sizing: border-box; }
+    .final-cta__textarea { width: 100%; padding: 14px 16px; border-radius: 8px; border: none; font-size: 0.95rem; resize: vertical; min-height: 100px; margin-bottom: 10px; box-sizing: border-box; }
+    .final-cta__submit { width: 100%; padding: 16px; background: var(--red); color: #fff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; }
+    .final-cta__submit:hover { background: #c0392b; }
+
+    @media (max-width: 768px) {
+      .lp-hero__title { font-size: 1.9rem; }
+      .solution-split { grid-template-columns: 1fr; }
+      .sticky-cta { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- MINIMAL NAV (no distraction on LP) -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <a href="../case-studies.html" class="nav__link">13 Case Studies</a>
+      <a href="../about.html" class="nav__link">About</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     A — ATTENTION: Hit the exact pain point immediately
+     ============================================================ -->
+<section class="lp-hero">
+  <div class="container">
+    <div class="lp-hero__label">For Injection Mold Engineers</div>
+    <h1 class="lp-hero__title">
+      Your Mold Has a Hot Spot.<br>
+      <span>We Can Kill It.</span>
+    </h1>
+    <p class="lp-hero__sub">Gate burn marks on PETG. Warpage on thin walls. Cycle times that won't come down no matter what you try. These are cooling problems — and straight-drilled channels can't fix them. Conformal cooling can.</p>
+    <div class="lp-hero__ctas">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Send Drawing — Free Analysis
+      </a>
+      <a href="#how-it-works" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.3);">See How It Works ↓</a>
+    </div>
+    <div class="lp-hero__proof">
+      <div class="lp-hero__proof-item">Free Moldex3D thermal analysis with every inquiry</div>
+      <div class="lp-hero__proof-item">420 Steel &amp; 18Ni300 — up to 55 HRC</div>
+      <div class="lp-hero__proof-item">Respond within 24 hours</div>
+      <div class="lp-hero__proof-item">DHL Express worldwide</div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA STRIP -->
+<div class="data-strip">
+  <div class="container">
+    <div class="data-strip__inner">
+      <div><div class="data-strip__num">72%</div><div class="data-strip__label">Max cooling time reduction</div></div>
+      <div><div class="data-strip__num">+73%</div><div class="data-strip__label">Max daily output increase</div></div>
+      <div><div class="data-strip__num">±2°C</div><div class="data-strip__label">Temperature uniformity</div></div>
+      <div><div class="data-strip__num">13</div><div class="data-strip__label">Documented projects</div></div>
+      <div><div class="data-strip__num">0</div><div class="data-strip__label">Gate burn marks after</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     I — INTEREST: Make them feel understood
+     ============================================================ -->
+<section class="pain-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__eyebrow">Sound Familiar?</div>
+      <h2 class="section-header__title">These Are Cooling Problems. Not Material Problems.</h2>
+      <p class="section-header__text">Most engineers try changing materials, adjusting packing pressure, or tweaking gate design. But if the root cause is a hot spot your channels can't reach — none of that will fix it.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-card__icon">🔥</div>
+        <div class="pain-card__title">Gate Burn Marks</div>
+        <div class="pain-card__text">Especially on PETG, PS, and transparent parts. The gate area stays too hot because conventional channels can't get close enough.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">↩️</div>
+        <div class="pain-card__title">Warpage &amp; Sink Marks</div>
+        <div class="pain-card__text">One side of the part cools faster than the other. Differential shrinkage causes warping that tolerances and flatness specs can't absorb.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">⏱️</div>
+        <div class="pain-card__title">Cycle Time Won't Come Down</div>
+        <div class="pain-card__text">You've optimized everything else. But cooling time is still 20–40+ seconds because one hot zone is holding the whole cycle hostage.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">🏭</div>
+        <div class="pain-card__title">Low Cavity Utilization</div>
+        <div class="pain-card__text">Multi-cavity mold but cavity-to-cavity temperature variation means you have to run conservative settings across all cavities.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     D — DESIRE: Prove the solution with real data
+     ============================================================ -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__eyebrow">The Solution</div>
+      <h2 class="section-header__title">Cooling Channels That Follow Your Part — Not Just a Straight Line</h2>
+    </div>
+    <div class="solution-split">
+      <div>
+        <p>Conventional channels are limited to straight-drilled holes. Complex geometry means some surfaces are 15–30mm from the nearest channel — and those areas become hot spots.</p>
+        <p>Conformal cooling channels are 3D-printed. They follow the part contour at a <strong>constant 2–5mm distance</strong>. Every point on the mold surface is equidistant from a cooling channel.</p>
+        <ul>
+          <li>Temperature uniformity: <strong>±2°C</strong> vs ±6°C conventional</li>
+          <li>Deep cavities, thin walls, complex features — all cooled uniformly</li>
+          <li>Compatible with hot runner systems</li>
+          <li>Designed in NX / SolidWorks. Validated with Moldex3D before printing.</li>
+        </ul>
+      </div>
+      <div class="solution-visual">
+        <div class="data-highlight__title" style="font-size:.75rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:20px;">Temperature Uniformity Comparison</div>
+        <div class="temp-bar">
+          <div class="temp-bar__label"><span>Conventional Cooling</span><span style="color:#ef4444;">±5–7°C variation</span></div>
+          <div class="temp-bar__track"><div class="temp-bar__fill temp-bar__fill--bad" style="width:85%;"></div></div>
+        </div>
+        <div class="temp-bar">
+          <div class="temp-bar__label"><span>Conformal Cooling</span><span style="color:#22c55e;">±2°C variation</span></div>
+          <div class="temp-bar__track"><div class="temp-bar__fill temp-bar__fill--good" style="width:28%;"></div></div>
+        </div>
+        <div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--gray-light);">
+          <div class="data-highlight__title" style="font-size:.75rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:16px;">Cycle Time Impact</div>
+          <div class="temp-bar">
+            <div class="temp-bar__label"><span>Conventional</span><span style="color:#ef4444;">21s cooling</span></div>
+            <div class="temp-bar__track"><div class="temp-bar__fill temp-bar__fill--bad" style="width:100%;"></div></div>
+          </div>
+          <div class="temp-bar">
+            <div class="temp-bar__label"><span>Conformal</span><span style="color:#22c55e;">6s cooling (−72%)</span></div>
+            <div class="temp-bar__track"><div class="temp-bar__fill temp-bar__fill--good" style="width:29%;"></div></div>
+          </div>
+          <div style="font-size:.75rem;color:var(--gray-mid);margin-top:10px;">PETG Bottle Cap project. Actual factory data.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE EVIDENCE -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__eyebrow">Documented Results</div>
+      <h2 class="section-header__title">Not Simulations. Actual Factory Numbers.</h2>
+      <p class="section-header__text">Every number below is from a real production mold at our facility. Before = conventional cooling. After = our conformal cooling insert.</p>
+    </div>
+    <div class="evidence-grid">
+
+      <div class="evidence-card">
+        <div class="evidence-card__head">
+          <div class="evidence-card__industry">Cosmetics Packaging</div>
+          <div class="evidence-card__title">Transparent PETG Bottle Cap</div>
+        </div>
+        <div class="evidence-card__body">
+          <div class="evidence-card__before-after">
+            <div class="ba-col ba-col--before">
+              <div class="ba-col__label">Before</div>
+              <div class="ba-col__val">21s cooling</div>
+              <div style="font-size:.8rem;color:#dc2626;margin-top:4px;">93°C · burn marks</div>
+            </div>
+            <div class="ba-col ba-col--after">
+              <div class="ba-col__label">After</div>
+              <div class="ba-col__val">6s cooling</div>
+              <div style="font-size:.8rem;color:#16a34a;margin-top:4px;">60°C · zero marks</div>
+            </div>
+          </div>
+          <div class="evidence-card__insight">Gate burn marks fully eliminated. Rejection rate dropped from 15% to &lt;1%. Cooling time reduced 72%.</div>
+        </div>
+      </div>
+
+      <div class="evidence-card">
+        <div class="evidence-card__head">
+          <div class="evidence-card__industry">Home Appliances</div>
+          <div class="evidence-card__title">Xiaomi Humidifier Shell</div>
+        </div>
+        <div class="evidence-card__body">
+          <div class="evidence-card__before-after">
+            <div class="ba-col ba-col--before">
+              <div class="ba-col__label">Before</div>
+              <div class="ba-col__val">880 pcs/day</div>
+              <div style="font-size:.8rem;color:#dc2626;margin-top:4px;">¥13.6/unit · 62°C</div>
+            </div>
+            <div class="ba-col ba-col--after">
+              <div class="ba-col__label">After</div>
+              <div class="ba-col__val">1,320 pcs/day</div>
+              <div style="font-size:.8rem;color:#16a34a;margin-top:4px;">¥10/unit · 48°C</div>
+            </div>
+          </div>
+          <div class="evidence-card__insight">+50% output from the same machine. Unit cost dropped 26%. Same resin, same machine settings — only the insert changed.</div>
+        </div>
+      </div>
+
+      <div class="evidence-card">
+        <div class="evidence-card__head">
+          <div class="evidence-card__industry">Medical Devices</div>
+          <div class="evidence-card__title">Deep-Hole Plate (96-well)</div>
+        </div>
+        <div class="evidence-card__body">
+          <div class="evidence-card__before-after">
+            <div class="ba-col ba-col--before">
+              <div class="ba-col__label">Before</div>
+              <div class="ba-col__val">1,760 pcs/day</div>
+              <div style="font-size:.8rem;color:#dc2626;margin-top:4px;">45s cooling · ¥3.50/pc</div>
+            </div>
+            <div class="ba-col ba-col--after">
+              <div class="ba-col__label">After</div>
+              <div class="ba-col__val">3,046 pcs/day</div>
+              <div style="font-size:.8rem;color:#16a34a;margin-top:4px;">26s cooling · ¥2.60/pc</div>
+            </div>
+          </div>
+          <div class="evidence-card__insight">Deep narrow cavities impossible to cool conventionally. Conformal channels run along every cavity wall. +73% output.</div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="../case-studies.html" class="btn btn-outline-dark">View All 13 Case Studies →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__eyebrow">How It Works</div>
+      <h2 class="section-header__title">Send Drawing → Get Insert. 2–3 Weeks.</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step__num">01</div>
+        <div class="process-step__title">Send Drawing</div>
+        <div class="process-step__text">STEP, DXF, PDF, or sketch. WhatsApp or email. We review within 24h.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">02</div>
+        <div class="process-step__title">Free Analysis</div>
+        <div class="process-step__text">Moldex3D thermal simulation. We show you exactly where the hot spots are and how conformal channels solve them.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">03</div>
+        <div class="process-step__title">Quote &amp; Design</div>
+        <div class="process-step__text">We send you the channel design and price. Typical: $800–$2,500. You approve before we print anything.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">04</div>
+        <div class="process-step__title">Print &amp; Finish</div>
+        <div class="process-step__text">SLM printing in 420 Steel or 18Ni300. Heat treat to 55 HRC. CNC finish to ±0.02mm. Polish to SPI-A1 if needed.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">05</div>
+        <div class="process-step__title">Ship to You</div>
+        <div class="process-step__text">DHL Express. 3–5 days to Europe or US. Total turnaround: 2–3 weeks from order.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS TABLE -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__eyebrow">Technical Specs</div>
+      <h2 class="section-header__title">What You're Getting</h2>
+    </div>
+    <div style="max-width:700px;margin:0 auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:.95rem;">
+        <tbody>
+          <tr style="border-bottom:1px solid var(--gray-light);"><td style="padding:14px 0;font-weight:600;">Process</td><td style="padding:14px 0;color:var(--gray-mid);">SLM (Selective Laser Melting)</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-light);"><td style="padding:14px 0;font-weight:600;">Materials</td><td style="padding:14px 0;color:var(--gray-mid);">420 Mold Steel, 18Ni300, MS1</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-light);"><td style="padding:14px 0;font-weight:600;">Hardness</td><td style="padding:14px 0;color:var(--gray-mid);">50–55 HRC (post heat treatment)</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-light);"><td style="padding:14px 0;font-weight:600;">Dimensional tolerance</td><td style="padding:14px 0;color:var(--gray-mid);">±0.02mm after CNC finishing</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-light);"><td style="padding:14px 0;font-weight:600;">Surface finish</td><td style="padding:14px 0;color:var(--gray-mid);">Up to SPI-A1 (mirror polish)</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-light);"><td style="padding:14px 0;font-weight:600;">Design software</td><td style="padding:14px 0;color:var(--gray-mid);">NX, SolidWorks, CATIA data accepted</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-light);"><td style="padding:14px 0;font-weight:600;">Simulation</td><td style="padding:14px 0;color:var(--gray-mid);">Moldex3D thermal analysis (free)</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-light);"><td style="padding:14px 0;font-weight:600;">Pressure test</td><td style="padding:14px 0;color:var(--gray-mid);">All channels tested at 2× operating pressure</td></tr>
+          <tr><td style="padding:14px 0;font-weight:600;">Lead time</td><td style="padding:14px 0;color:var(--gray-mid);">7–14 working days + 3–5 days DHL Express</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     A — ACTION: Remove all friction from inquiry
+     ============================================================ -->
+<section class="final-cta" id="get-analysis">
+  <div class="container">
+    <div class="final-cta__title">Send Your Drawing.<br>Get a Free Thermal Analysis.</div>
+    <div class="final-cta__sub">No commitment. No sales pitch. Just Moldex3D data on your specific mold — and a quote if you want one.</div>
+    <div class="final-cta__phone">+86 182 6866 1068</div>
+    <div class="final-cta__note">WhatsApp · WeChat · Email · Respond within 24 hours</div>
+
+    <!-- FORM -->
+    <div class="final-cta__form">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+        <input type="hidden" name="subject" value="[LP: Mold Engineer] New Inquiry" />
+        <input type="hidden" name="redirect" value="https://mouldnova.com/contact.html" />
+        <input class="final-cta__input" type="text" name="name" placeholder="Your Name" required />
+        <input class="final-cta__input" type="email" name="email" placeholder="Work Email" required />
+        <input class="final-cta__input" type="text" name="company" placeholder="Company / Country" />
+        <textarea class="final-cta__textarea" name="message" placeholder="Briefly describe your cooling problem (material, part geometry, current cycle time, main issue)…"></textarea>
+        <button type="submit" class="final-cta__submit">Send Message + Request Free Analysis →</button>
+      </form>
+    </div>
+
+    <p style="color:rgba(255,255,255,.35);font-size:.8rem;">Or attach your STEP/DXF file directly on WhatsApp:</p>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="margin-top:8px;">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp — Attach File Directly
+    </a>
+
+    <!-- TRUST SIGNALS -->
+    <div style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);">
+      <div style="text-align:center;">
+        <div style="font-size:1.5rem;font-weight:900;color:var(--red);">35</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.4);">Employees</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:1.5rem;font-weight:900;color:var(--red);">3</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.4);">SLM Machines</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:1.5rem;font-weight:900;color:var(--red);">13+</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.4);">Documented Projects</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:1.5rem;font-weight:900;color:var(--red);">24h</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.4);">Response Time</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:1.5rem;font-weight:900;color:var(--red);">−70%</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.4);">vs European Suppliers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY CTA (appears on scroll) -->
+<div class="sticky-cta" id="stickyCta">
+  <div>
+    <div class="sticky-cta__text">Free Thermal Analysis — No Commitment</div>
+    <div class="sticky-cta__sub">Send your drawing, get Moldex3D data on your specific hot spot</div>
+  </div>
+  <div class="sticky-cta__actions">
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="font-size:.85rem;padding:10px 16px;">WhatsApp Now</a>
+    <a href="#get-analysis" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.3);font-size:.85rem;padding:10px 16px;">Send Email →</a>
+  </div>
+</div>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="../js/main.js"></script>
+<script>
+  // Sticky CTA appears after scrolling 40% of page
+  const stickyCta = document.getElementById('stickyCta');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    stickyCta.classList.toggle('visible', scrolled > 0.35);
+  });
+</script>
+</body>
+</html>
