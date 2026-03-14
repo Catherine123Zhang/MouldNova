@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conformal Cooling Blog — Engineering Guides & Industry Analysis | MouldNova</title>
+  <meta name="description" content="In-depth engineering guides on conformal cooling technology: channel design, materials, injection molding ROI, additive manufacturing, and more. Written by MouldNova's engineering team.">
+  <link rel="canonical" href="https://mouldnova.com/blog/">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LMZXHN7YGJ');
+  </script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="#" class="nav__link">Services ▾</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../metal-3d-printing-service.html" class="nav__mobile-link">Metal 3D Printing Service</a>
+    <a href="../rapid-tooling-service.html" class="nav__mobile-link">Rapid Tooling Service</a>
+    <a href="../metal-rapid-prototyping.html" class="nav__mobile-link">Metal Rapid Prototyping</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="index.html" class="nav__mobile-link">Blog</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span>Blog</div>
+    <div class="page-hero__eyebrow">Engineering Guides · Industry Analysis · How-To</div>
+    <h1 class="page-hero__title">Conformal Cooling Engineering Blog</h1>
+    <p class="page-hero__text">In-depth technical guides on conformal cooling technology — written by engineers, for engineers. Channel design, materials, ROI analysis, additive manufacturing, and real factory data.</p>
+  </div>
+</section>
+
+<!-- BLOG LISTING -->
+<section class="section">
+  <div class="container">
+
+    <!-- Featured -->
+    <div style="margin-bottom:3rem;">
+      <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.08em;margin-bottom:1rem;">Start Here</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;">
+
+        <a href="what-is-conformal-cooling.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">BEGINNER GUIDE · 10 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">What Is Conformal Cooling?</h2>
+          <p class="card__text">The complete introduction: how conformal cooling works, why it outperforms conventional cooling, and which applications benefit most. Start here if you're new to the technology.</p>
+        </a>
+
+        <a href="conformal-cooling-vs-conventional-cooling.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">COMPARISON · 12 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">Conformal Cooling vs. Conventional Cooling</h2>
+          <p class="card__text">Side-by-side comparison: cycle time, temperature uniformity, cost, and lead time. Decision framework for when to upgrade and when conventional cooling is sufficient.</p>
+        </a>
+
+        <a href="conformal-cooling-injection-molding.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">ROI ANALYSIS · 16 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">Conformal Cooling in Injection Molding</h2>
+          <p class="card__text">How conformal cooling integrates into the injection molding process. Real cycle time data across automotive, electronics, and medical applications. ROI payback calculations.</p>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Design & Engineering -->
+    <div style="margin-bottom:3rem;">
+      <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.08em;margin-bottom:1rem;">Design &amp; Engineering</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;">
+
+        <a href="conformal-cooling-channel-design.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">ENGINEERING GUIDE · 18 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">Conformal Cooling Channel Design</h2>
+          <p class="card__text">The practitioner's guide: D/W/P/R parameters, channel geometry types, hydraulic design, Reynolds number calculations, software tools, and common design mistakes with fixes.</p>
+        </a>
+
+        <a href="conformal-cooling-channels.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">OPERATIONS GUIDE · 18 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">Conformal Cooling Channels: Full Lifecycle</h2>
+          <p class="card__text">From heat transfer physics to coolant specification, commissioning protocol, maintenance schedule, and 10-symptom troubleshooting guide. The operational manual for conformal circuits.</p>
+        </a>
+
+        <a href="conformal-cooling-design.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">STRATEGY GUIDE · 18 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">Conformal Cooling Design: Strategic Decisions</h2>
+          <p class="card__text">12-factor go/no-go scoring matrix, zone-by-zone cooling strategy, 6 application-specific design cards, retrofit vs new mold comparison, and manufacturer brief checklist.</p>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Inserts & Molds -->
+    <div style="margin-bottom:3rem;">
+      <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.08em;margin-bottom:1rem;">Inserts &amp; Molds</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;">
+
+        <a href="conformal-cooling-inserts.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">ENGINEERING GUIDE · 18 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">Conformal Cooling Inserts: Design Rules &amp; ROI</h2>
+          <p class="card__text">Channel geometry design rules, 420SS vs 18Ni300 vs CuCrZr material comparison, Reynolds number calculations, cost tiers, ROI breakeven by production volume, and failure mode analysis.</p>
+        </a>
+
+        <a href="conformal-cooling-mold.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">BUYER'S GUIDE · 18 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">Conformal Cooling Mold: Buyer's Guide</h2>
+          <p class="card__text">Three mold types with pricing, China vs EU/US cost comparison, lead time by phase, supplier evaluation questions, red flag checklist, and ROI calculation with real payback data from 13 projects.</p>
+        </a>
+
+        <a href="conformal-cooling-solutions.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">DECISION GUIDE · 14 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">Conformal Cooling Solutions: Choosing the Right Approach</h2>
+          <p class="card__text">Retrofit insert vs. hybrid mold vs. full conformal — 5-question decision framework, ROI comparison for 4 production scenarios, and simulation requirements before specifying any solution.</p>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Manufacturing & Technology -->
+    <div style="margin-bottom:3rem;">
+      <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.08em;margin-bottom:1rem;">Manufacturing &amp; Technology</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;">
+
+        <a href="conformal-cooling-3d-printing.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">PROCESS GUIDE · 16 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">Conformal Cooling and 3D Printing</h2>
+          <p class="card__text">SLM vs DMLS vs EBM vs binder jetting process comparison, 8-step manufacturing timeline, material selection guide with data, design-for-AM rules, and 3 cost tiers with line-item pricing.</p>
+        </a>
+
+        <a href="conformal-cooling-additive-manufacturing.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">INDUSTRY ANALYSIS · 16 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">Conformal Cooling &amp; Additive Manufacturing</h2>
+          <p class="card__text">Why AM is the enabling condition for conformal cooling, technology evolution timeline, design freedom unlocked by AM, economics of build vs. buy vs. China, and the 2026 competitive landscape.</p>
+        </a>
+
+        <a href="conformal-cooling-die-casting.html" style="text-decoration:none;" class="card">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--red);letter-spacing:.05em;margin-bottom:.5rem;">APPLICATION GUIDE · 14 min read</div>
+          <h2 style="font-size:1.1rem;font-weight:700;color:var(--black);margin:0 0 .6rem;">Conformal Cooling for Die Casting</h2>
+          <p class="card__text">How die casting demands different design rules (680°C melt, 700+ bar pressure), H13 material selection, conservative channel geometry, heat load calculation, and realistic cycle time expectations.</p>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="background:var(--black);color:#fff;border-radius:12px;padding:3rem 2rem;text-align:center;margin-top:2rem;">
+      <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:.8rem;">Have a Cooling Problem to Solve?</h2>
+      <p style="color:rgba(255,255,255,.7);margin-bottom:1.5rem;max-width:560px;margin-left:auto;margin-right:auto;">Send your mold insert drawing. MouldNova's engineering team will run a free Moldflow simulation and show you exactly how much cycle time you can save — before you spend a dollar.</p>
+      <a href="../contact.html" class="btn btn-primary">Get Free Engineering Review →</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo"><span class="footer__logo-main">SAIGUANG</span><span class="footer__logo-sub">3D Technology</span></div>
+        <p class="footer__tagline">Conformal cooling inserts for injection molding — made in Ningbo, shipped worldwide.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <div class="footer__col-title">Services</div>
+          <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+          <a href="../rapid-tooling-service.html" class="footer__link">Rapid Tooling</a>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Resources</div>
+          <a href="index.html" class="footer__link">Blog</a>
+          <a href="../case-studies.html" class="footer__link">Case Studies</a>
+          <a href="../about.html" class="footer__link">About</a>
+          <a href="../contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Ningbo Saiguang 3D Technology. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
