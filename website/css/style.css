@@ -91,10 +91,14 @@ p  { color: var(--gray-dark); }
 
 .nav__dropdown { position: relative; }
 .nav__dropdown-menu {
-  display: none; position: absolute; top: calc(100% + 8px); left: 0;
+  display: none; position: absolute; top: 100%; left: 0;
   background: var(--white); border: 1px solid var(--border);
   border-radius: var(--radius); box-shadow: var(--shadow-md);
   min-width: 240px; padding: 8px 0; z-index: 200;
+  margin-top: 8px;
+}
+.nav__dropdown-menu::before {
+  content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px;
 }
 .nav__dropdown:hover .nav__dropdown-menu { display: block; }
 .nav__dropdown-item {
