@@ -109,4 +109,33 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://mouldnova.com/"/>
   </url>
 
+  <!-- Landing Pages -->
+  <url>
+    <loc>https://mouldnova.com/lp/injection-mold-engineer.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mouldnova.com/lp/mold-manufacturer.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mouldnova.com/lp/india.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mouldnova.com/lp/product-manufacturer.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
