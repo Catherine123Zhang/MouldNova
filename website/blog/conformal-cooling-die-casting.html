@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conformal Cooling for Die Casting: High-Pressure Tooling Guide | MouldNova</title>
+  <meta name="description" content="Engineering guide to conformal cooling in aluminum and zinc die casting. Covers thermal cycle demands, LPBF insert design for 700-bar pressure, H13 tool steel, and real cycle time data from die casting applications.">
+  <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-die-casting.html">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LMZXHN7YGJ');
+  </script>
+
+  <!-- Schema.org: Article + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Conformal Cooling for Die Casting: High-Pressure Tooling Guide",
+        "description": "Engineering guide to conformal cooling inserts in aluminum and zinc die casting, covering thermal cycling demands, LPBF design constraints for high-pressure applications, and real cycle time data.",
+        "author": { "@type": "Organization", "name": "MouldNova" },
+        "publisher": { "@type": "Organization", "name": "MouldNova", "url": "https://mouldnova.com" },
+        "datePublished": "2026-03-14",
+        "dateModified": "2026-03-14",
+        "mainEntityOfPage": "https://mouldnova.com/blog/conformal-cooling-die-casting.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can conformal cooling be used in die casting molds?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Conformal cooling inserts manufactured via LPBF are used in aluminum, zinc, and magnesium die casting. The design requirements are more conservative than injection molding: minimum wall thickness ≥ 3 mm (vs. 2 mm for injection), heavier bends (R ≥ 2×D), and mandatory HIP post-processing to eliminate porosity that would fail under 700+ bar injection pressure. H13 tool steel and maraging steel grades are the standard materials."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is die casting harder than injection molding for conformal cooling?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Three factors make die casting more demanding: (1) Temperature: molten aluminum enters at 650–720°C vs. 200–350°C for thermoplastics, creating severe thermal shock at each cycle; (2) Pressure: die casting injection pressure exceeds 700 bar vs. 150–200 bar for injection molding, requiring heavier channel walls; (3) Erosion: aluminum alloy at high velocity erodes the cavity surface faster than plastic, meaning insert durability is a more critical constraint. Properly designed LPBF conformal inserts in H13 can achieve 150,000–300,000 shots before refurbishment in aluminum die casting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What cycle time reduction is achievable with conformal cooling in die casting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cycle time reduction in die casting is typically 15–35%, somewhat less than injection molding (20–55%) because a larger proportion of die casting cycle time is occupied by fill, intensification, and ejector mechanics rather than cooling. For a 45-second aluminum die casting cycle with 18 seconds of cooling, conformal cooling can reduce cooling to 11–13 seconds, delivering overall cycle time reduction of 11–16% per shot. At 500,000 shots/year, this represents significant machine time savings."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; color: #1a1a2e; margin: 0; }
+    header { background: #1a1a2e; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    header a { color: white; text-decoration: none; font-weight: 700; font-size: 1.3rem; }
+    nav a { color: #ccc; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
+    nav a:hover { color: white; }
+    .hero-blog { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); color: white; padding: 4rem 2rem 3rem; text-align: center; }
+    .hero-blog .tag { background: #e94560; color: white; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; display: inline-block; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+    .hero-blog h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; max-width: 820px; margin: 0 auto 1rem; line-height: 1.2; }
+    .hero-blog .meta { color: #aaa; font-size: 0.9rem; }
+    .hero-blog .meta span { margin: 0 0.5rem; }
+    .article-body { max-width: 860px; margin: 0 auto; padding: 3rem 2rem; }
+    h2 { font-size: 1.6rem; font-weight: 800; color: #1a1a2e; margin-top: 3rem; margin-bottom: 1rem; border-left: 4px solid #e94560; padding-left: 1rem; }
+    h3 { font-size: 1.2rem; font-weight: 700; color: #1a1a2e; margin-top: 2rem; }
+    p { line-height: 1.8; margin-bottom: 1.2rem; color: #333; }
+    .lead { font-size: 1.15rem; color: #555; line-height: 1.9; border-left: 3px solid #e94560; padding-left: 1.2rem; margin-bottom: 2rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    th { background: #1a1a2e; color: white; padding: 0.7rem 1rem; text-align: left; }
+    td { padding: 0.65rem 1rem; border-bottom: 1px solid #eee; }
+    tr:nth-child(even) td { background: #f8f9fc; }
+    tr:hover td { background: #f0f4ff; }
+    .highlight-row td { background: #fff3f3 !important; font-weight: 700; }
+    .stat-strip { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; border-radius: 12px; padding: 2rem; margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; text-align: center; }
+    .stat-strip .stat-val { font-size: 2.2rem; font-weight: 800; color: #e94560; }
+    .stat-strip .stat-lbl { font-size: 0.8rem; color: #ccc; margin-top: 0.2rem; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+    .card { background: white; border: 1px solid #e8eaf0; border-radius: 10px; padding: 1.4rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .card h4 { margin: 0 0 0.5rem; font-size: 1rem; color: #1a1a2e; }
+    .card p { margin: 0; font-size: 0.88rem; color: #555; line-height: 1.6; }
+    .warning-box { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 8px; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+    .warning-box strong { color: #92400e; }
+    .comparison-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: #e8eaf0; border-radius: 8px; overflow: hidden; margin: 1.5rem 0; }
+    .comp-cell { background: white; padding: 1rem; }
+    .comp-cell.header { background: #1a1a2e; color: white; font-weight: 700; font-size: 0.9rem; }
+    .comp-cell p { margin: 0; font-size: 0.88rem; color: #555; }
+    .cta-box { background: linear-gradient(135deg, #e94560, #c73652); color: white; border-radius: 12px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+    .cta-box h3 { margin: 0 0 0.8rem; font-size: 1.5rem; }
+    .cta-box p { margin: 0 0 1.5rem; opacity: 0.9; }
+    .cta-btn { background: white; color: #e94560; padding: 0.9rem 2.5rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1rem; display: inline-block; }
+    footer { background: #1a1a2e; color: #aaa; padding: 2rem; text-align: center; font-size: 0.85rem; }
+    footer a { color: #ccc; text-decoration: none; margin: 0 0.5rem; }
+    @media(max-width:600px) { .stat-strip { grid-template-columns: repeat(2,1fr); } .comparison-row { grid-template-columns: 1fr; } }
+    #sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: #e94560; color: white; padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 999; transform: translateY(100%); transition: transform 0.3s ease; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
+    #sticky-cta.visible { transform: translateY(0); }
+    #sticky-cta p { margin: 0; font-weight: 600; font-size: 0.95rem; }
+    #sticky-cta a { background: white; color: #e94560; padding: 0.5rem 1.5rem; border-radius: 6px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/">MouldNova</a>
+  <nav>
+    <a href="/conformal-cooling-inserts.html">Conformal Cooling</a>
+    <a href="/3d-printed-mold-inserts.html">3D Printed Inserts</a>
+    <a href="/metal-3d-printing-service.html">Services</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="hero-blog">
+  <div class="tag">Application Guide</div>
+  <h1>Conformal Cooling for Die Casting: High-Pressure Tooling Design Guide</h1>
+  <div class="meta">
+    <span>MouldNova Engineering Team</span>
+    <span>·</span>
+    <span>March 2026</span>
+    <span>·</span>
+    <span>14 min read</span>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <p class="lead">Conformal cooling for die casting is the same concept as injection molding conformal cooling — channels that follow cavity geometry — but it operates in a far more demanding environment: aluminum melt at 680°C, injection pressures above 700 bar, and thermal shock cycles that would crack a poorly designed insert within 50,000 shots. This guide covers what changes when you move from injection molding to die casting applications, and how to design LPBF inserts that survive the difference.</p>
+
+  <div class="stat-strip">
+    <div><div class="stat-val">680°C</div><div class="stat-lbl">Al melt temperature</div></div>
+    <div><div class="stat-val">700+ bar</div><div class="stat-lbl">Injection pressure</div></div>
+    <div><div class="stat-val">15–30%</div><div class="stat-lbl">Cycle time reduction</div></div>
+    <div><div class="stat-val">150K+</div><div class="stat-lbl">Shot life (H13)</div></div>
+  </div>
+
+  <h2>1. Why Die Casting Demands Different Design Rules</h2>
+
+  <p>Injection molding and die casting both involve injecting a molten material into a steel mold cavity and cooling it to ejection temperature. But the thermal and mechanical conditions are fundamentally different in three ways that directly affect conformal cooling insert design:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Condition</th>
+        <th>Injection Molding</th>
+        <th>Aluminum Die Casting</th>
+        <th>Design Implication</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Melt temperature</td>
+        <td>200–350°C</td>
+        <td>650–720°C</td>
+        <td>Higher thermal gradient → greater thermal stress at channel walls</td>
+      </tr>
+      <tr>
+        <td>Injection pressure</td>
+        <td>150–200 bar</td>
+        <td>700–1,500 bar</td>
+        <td>Heavier minimum wall thickness required (≥ 3 mm vs. ≥ 2 mm)</td>
+      </tr>
+      <tr>
+        <td>Thermal shock per cycle</td>
+        <td>Low (ΔT ≈ 150°C)</td>
+        <td>Severe (ΔT ≈ 500°C)</td>
+        <td>Must use stress-relief annealing; conservative bend radius (R ≥ 2×D)</td>
+      </tr>
+      <tr>
+        <td>Mold temperature (operating)</td>
+        <td>20–180°C</td>
+        <td>150–250°C</td>
+        <td>Higher background temperature reduces effective coolant ΔT</td>
+      </tr>
+      <tr>
+        <td>Surface erosion</td>
+        <td>Minimal</td>
+        <td>Significant (Al alloy erosion)</td>
+        <td>Hard coating (PVD nitriding) recommended on cavity surface</td>
+      </tr>
+      <tr class="highlight-row">
+        <td>Insert shot life (conventional)</td>
+        <td>500,000–2,000,000</td>
+        <td>100,000–400,000</td>
+        <td>More frequent inspection cycles; conformal insert ROI must account for shorter life</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Material Selection for Die Casting Conformal Inserts</h2>
+
+  <p>The material choices for die casting conformal inserts are narrower than for injection molding. The severe thermal cycling eliminates low-toughness options and demands materials with both high hot hardness and thermal fatigue resistance:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Material</th>
+        <th>Hot Hardness (600°C)</th>
+        <th>Thermal Conductivity</th>
+        <th>LPBF Printability</th>
+        <th>Recommendation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight-row">
+        <td><strong>H13 Tool Steel</strong></td>
+        <td>28–32 HRC</td>
+        <td>28 W/m·K</td>
+        <td>Good (requires controlled atmosphere)</td>
+        <td><strong>Primary choice</strong> for aluminum die casting</td>
+      </tr>
+      <tr>
+        <td><strong>18Ni300 Maraging Steel</strong></td>
+        <td>36–40 HRC</td>
+        <td>20 W/m·K</td>
+        <td>Excellent</td>
+        <td>Good for zinc/magnesium die casting; lower thermal shock resistance than H13</td>
+      </tr>
+      <tr>
+        <td><strong>420 Stainless Steel</strong></td>
+        <td>22–26 HRC</td>
+        <td>24 W/m·K</td>
+        <td>Excellent</td>
+        <td>Not recommended for aluminum; insufficient hot hardness</td>
+      </tr>
+      <tr>
+        <td><strong>CuCrZr</strong></td>
+        <td>15–18 HRC</td>
+        <td>320 W/m·K</td>
+        <td>Good</td>
+        <td>Hot spots only; small inserts in non-erosion zones; very short life</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="warning-box">
+    <strong>Critical:</strong> H13 LPBF requires higher-purity shielding gas and tighter atmosphere control during printing than 420 SS or 18Ni300. Supplier must confirm their LPBF system is qualified for H13 and provide oxygen content data during build (&lt;200 ppm O₂). H13 printed in degraded atmosphere shows premature thermal fatigue cracking at 30,000–80,000 shots instead of the expected 150,000+.
+  </div>
+
+  <h2>3. Conservative Design Rules for Die Casting</h2>
+
+  <p>All parameters from injection molding conformal cooling design are scaled up for die casting's more demanding conditions:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Injection Molding (reference)</th>
+        <th>Die Casting (required)</th>
+        <th>Reason for Increase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Min. wall thickness (channel to cavity)</td>
+        <td>≥ 2.0 mm</td>
+        <td>≥ 3.0 mm</td>
+        <td>700+ bar injection pressure; thermal fatigue accumulation</td>
+      </tr>
+      <tr>
+        <td>Channel diameter</td>
+        <td>6–12 mm</td>
+        <td>8–14 mm</td>
+        <td>Higher flow rates needed to handle greater heat load; avoid scale risk at smaller diameters</td>
+      </tr>
+      <tr>
+        <td>Channel pitch (center-to-center)</td>
+        <td>2.0–3.0 × D</td>
+        <td>2.5–3.5 × D</td>
+        <td>More steel between channels for structural integrity under pressure cycling</td>
+      </tr>
+      <tr>
+        <td>Bend radius</td>
+        <td>≥ 1.5 × D</td>
+        <td>≥ 2.0 × D</td>
+        <td>Reduced stress concentration at bends under thermal cycling</td>
+      </tr>
+      <tr>
+        <td>Post-processing</td>
+        <td>Stress relief + heat treatment</td>
+        <td>Stress relief + HIP + heat treatment</td>
+        <td>HIP mandatory to close micro-porosity before high-pressure service</td>
+      </tr>
+      <tr>
+        <td>Pressure test (pre-deployment)</td>
+        <td>200 bar × 30 min</td>
+        <td>500 bar × 60 min</td>
+        <td>Must verify at 30–50% above operating pressure</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>4. Heat Load Calculation for Die Casting</h2>
+
+  <p>Sizing the cooling circuit for die casting requires quantifying the heat load per cycle. The calculation differs from injection molding because the metal enthalpy is much higher:</p>
+
+  <p><strong>Aluminum alloy (A380) heat content calculation:</strong></p>
+  <ul>
+    <li>Injection temperature: 680°C</li>
+    <li>Ejection temperature: 250°C (typical)</li>
+    <li>Enthalpy change ΔH ≈ 560 kJ/kg (includes latent heat of solidification)</li>
+    <li>Casting weight: 0.8 kg</li>
+    <li>Heat to be extracted per shot: 0.8 × 560 = <strong>448 kJ</strong></li>
+    <li>Cycle time: 45 seconds → heat flux: 448/45 = <strong>9.95 kW per cavity</strong></li>
+  </ul>
+
+  <p>Compare to a typical injection molded PA66 part (0.3 kg, ΔH ≈ 150 kJ/kg, 28s cycle): 0.3 × 150 / 28 = <strong>1.6 kW</strong>. Die casting generates roughly 6× more heat per cavity — confirming why die casting cooling systems require much higher coolant flow rates and why the thermal design of conformal channels is more challenging.</p>
+
+  <h2>5. Cycle Time in Die Casting: What Conformal Cooling Can and Cannot Do</h2>
+
+  <p>In injection molding, the cooling phase often represents 50–65% of total cycle time, making it the dominant target for improvement. In die casting, the cycle time distribution is different:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Phase</th>
+        <th>Typical Duration</th>
+        <th>% of Cycle</th>
+        <th>Conformal Cooling Impact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Die close + inject</td>
+        <td>2–4 sec</td>
+        <td>5–10%</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <td>Intensification</td>
+        <td>3–6 sec</td>
+        <td>7–13%</td>
+        <td>None</td>
+      </tr>
+      <tr class="highlight-row">
+        <td><strong>Cooling / solidification</strong></td>
+        <td><strong>12–20 sec</strong></td>
+        <td><strong>30–45%</strong></td>
+        <td><strong>Primary target: −30–40% of cooling phase</strong></td>
+      </tr>
+      <tr>
+        <td>Die open + ejection</td>
+        <td>4–6 sec</td>
+        <td>10–13%</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <td>Spray + reset</td>
+        <td>10–18 sec</td>
+        <td>25–40%</td>
+        <td>None (die spray time fixed)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Because cooling is only 30–45% of total die casting cycle (vs. 50–65% in injection molding), and conformal cooling reduces only the cooling phase, total cycle time reduction is limited to approximately 10–20% even with highly effective conformal channels. This is still valuable — a 15% reduction on a 45-second cycle is 6.75 seconds per shot, representing significant throughput at high volume — but expectations must be calibrated correctly compared to injection molding results.</p>
+
+  <h2>6. Application Cases: Where Conformal Cooling Delivers in Die Casting</h2>
+
+  <div class="card-grid">
+    <div class="card">
+      <h4>Automotive Structural Die Castings</h4>
+      <p><strong>Part examples:</strong> Transmission housings, subframe brackets, battery enclosures, motor mounts<br>
+      <strong>Challenge:</strong> Thick sections (15–40 mm) cool slowly with conventional straight channels; porosity near the thermal center<br>
+      <strong>Conformal benefit:</strong> Channels wrap around thick sections maintaining closer proximity, reducing hot spot temperature by 80–120°C<br>
+      <strong>Cycle time result:</strong> −12–18% overall; porosity rate reduced 40–60%</p>
+    </div>
+    <div class="card">
+      <h4>Thin-Wall Enclosures (Consumer Electronics)</h4>
+      <p><strong>Part examples:</strong> Laptop frames, camera bodies, audio device housings<br>
+      <strong>Challenge:</strong> Wall thickness 1.5–3 mm; need dimensional accuracy ±0.05 mm with no warpage<br>
+      <strong>Conformal benefit:</strong> Temperature uniformity across the thin wall prevents differential contraction; ΔT reduced from 45°C to 8°C<br>
+      <strong>Cycle time result:</strong> −15–20%; dimensional rejection rate −70%</p>
+    </div>
+    <div class="card">
+      <h4>Zinc Alloy Die Casting (Zamak)</h4>
+      <p><strong>Part examples:</strong> Locks, hardware fittings, decorative trim<br>
+      <strong>Challenge:</strong> Lower melt temperature (420°C) makes this the most accessible die casting application for conformal cooling; highest cycle frequency (5–8 sec cycles)<br>
+      <strong>Conformal benefit:</strong> Even small cycle time reductions (1–2 sec at 5-sec cycle = −20–40%) deliver very fast payback<br>
+      <strong>Cycle time result:</strong> −18–28% overall</p>
+    </div>
+  </div>
+
+  <h2>7. Maintenance and Inspection Schedule</h2>
+
+  <p>Die casting inserts face more aggressive wear than injection mold inserts. Conformal cooling inserts in die casting require a more frequent inspection schedule:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Inspection Item</th>
+        <th>Interval</th>
+        <th>Accept / Replace Criterion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cavity surface wear (dimensional CMM)</td>
+        <td>Every 25,000 shots</td>
+        <td>Dimension deviation &gt; ±0.1 mm → re-machine or replace</td>
+      </tr>
+      <tr>
+        <td>Channel pressure integrity test</td>
+        <td>Every 50,000 shots</td>
+        <td>Any pressure drop below 400 bar after 30 min → replace</td>
+      </tr>
+      <tr>
+        <td>Surface crack inspection (penetrant)</td>
+        <td>Every 50,000 shots</td>
+        <td>Any crack &gt; 5 mm at gate area → replace</td>
+      </tr>
+      <tr>
+        <td>Hardness verification</td>
+        <td>Every 100,000 shots</td>
+        <td>H13 below 40 HRC → re-heat treat or replace</td>
+      </tr>
+      <tr>
+        <td>Flow rate verification</td>
+        <td>Every 10,000 shots</td>
+        <td>Flow rate below minimum for Re &gt; 10,000 → clean or replace</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>8. Frequently Asked Questions</h2>
+
+  <h3>Can conformal cooling be used in die casting molds?</h3>
+  <p>Yes. LPBF-manufactured conformal cooling inserts are commercially used in aluminum, zinc, and magnesium die casting. The design rules are more conservative than injection molding (≥ 3 mm wall thickness, R ≥ 2×D bends, mandatory HIP post-processing), and the material must be H13 or maraging steel. Properly designed inserts achieve 150,000–300,000 shots before refurbishment in aluminum die casting.</p>
+
+  <h3>Why is die casting harder than injection molding for conformal cooling?</h3>
+  <p>Three factors: aluminum melt enters at 650–720°C (vs. 200–350°C for plastics), creating far more thermal shock per cycle; injection pressures exceed 700 bar (vs. 150–200 bar for plastics), requiring heavier channel walls; and aluminum alloy erodes the cavity surface faster than plastic, reducing insert service life. These factors require more conservative design parameters and mandatory HIP post-processing to eliminate porosity before high-pressure service.</p>
+
+  <h3>What cycle time reduction is achievable in die casting?</h3>
+  <p>15–30% reduction of the cooling phase, translating to 10–20% overall cycle time reduction — less than injection molding because die spray and ejection mechanics represent a larger fixed proportion of die casting cycle time. Still economically significant at high production volumes.</p>
+
+  <div class="cta-box">
+    <h3>Conformal Cooling for Your Die Casting Mold</h3>
+    <p>MouldNova engineers LPBF conformal inserts in H13 and maraging steel for aluminum, zinc, and magnesium die casting. Submit your cavity drawing for a free thermal simulation and quote.</p>
+    <a href="/contact.html" class="cta-btn">Request Die Casting Quote →</a>
+  </div>
+
+  <h2>Related Resources</h2>
+  <ul>
+    <li><a href="/blog/conformal-cooling-inserts.html">Conformal Cooling Inserts: Design Rules, Materials &amp; ROI</a></li>
+    <li><a href="/blog/conformal-cooling-3d-printing.html">How Conformal Cooling Inserts Are 3D Printed</a></li>
+    <li><a href="/blog/conformal-cooling-mold.html">Conformal Cooling Mold Buyer's Guide</a></li>
+    <li><a href="/3d-printed-mold-inserts.html">MouldNova 3D Printed Mold Insert Services</a></li>
+  </ul>
+
+</div>
+
+<!-- Sticky CTA -->
+<div id="sticky-cta">
+  <p>Need conformal cooling for die casting? Get a free thermal review.</p>
+  <a href="/contact.html">Request Quote →</a>
+</div>
+<script>
+  window.addEventListener('scroll', function() {
+    var scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if (scrolled > 0.35) {
+      document.getElementById('sticky-cta').classList.add('visible');
+    }
+  });
+</script>
+
+<footer>
+  <p>&copy; 2026 MouldNova · <a href="/contact.html">Contact</a> · <a href="/about.html">About</a> · <a href="/sitemap.xml">Sitemap</a></p>
+</footer>
+
+</body>
+</html>
