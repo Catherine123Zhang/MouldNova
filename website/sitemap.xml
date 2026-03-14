@@ -165,6 +165,13 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://mouldnova.com/blog/conformal-cooling-solutions.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Landing Pages -->
   <url>
     <loc>https://mouldnova.com/lp/injection-mold-engineer.html</loc>
