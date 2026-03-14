@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conformal Cooling Channels: How They Work, How to Commission & Maintain Them | MouldNova</title>
+  <meta name="description" content="The complete guide to conformal cooling channels — heat transfer physics, channel types, chiller hookup, commissioning protocol, flow testing, maintenance, descaling, and troubleshooting table. Everything after the insert arrives." />
+  <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-channels.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/conformal-cooling-channels.html" />
+  <link rel="icon" href="../favicon.ico" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LMZXHN7YGJ');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Conformal Cooling Channels: How They Work, How to Commission & Maintain Them",
+        "description": "Complete guide to conformal cooling channels covering heat transfer physics, channel types, chiller setup, commissioning, flow testing, maintenance, descaling, and troubleshooting.",
+        "author": {"@type": "Organization", "name": "MouldNova"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "MouldNova",
+          "logo": {"@type": "ImageObject", "url": "https://mouldnova.com/images/logo.png"}
+        },
+        "datePublished": "2026-03-14",
+        "dateModified": "2026-03-14",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mouldnova.com/blog/conformal-cooling-channels.html"},
+        "keywords": "conformal cooling channels, mold cooling channels, cooling channel maintenance, conformal cooling commissioning, injection mold cooling troubleshooting"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do conformal cooling channels transfer heat from the mold?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Heat transfer in conformal cooling channels involves two mechanisms in series: (1) Conduction through the mold steel from the cavity surface to the channel wall — governed by the steel's thermal conductivity (~24 W/m·K for 420 SS) and the wall thickness between cavity surface and channel. (2) Forced convection from the channel wall to the flowing coolant — governed by the Nusselt number, which depends on Reynolds number. Turbulent flow (Re >10,000) gives a Nusselt number 10–50× higher than laminar flow, which is why maintaining turbulent regime is critical."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What coolant temperature should I use for conformal cooling channels?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Coolant temperature depends on the plastic material being processed: For most amorphous plastics (ABS, PC, PS): 20–40°C coolant. For semi-crystalline plastics (PP, PE, Nylon): 15–30°C for fast cycle, or 60–80°C for controlled crystallization in high-spec parts. For hot runner systems: 80–120°C oil-based coolant. The key parameter is mold surface temperature, not coolant temperature — set the coolant to achieve your target mold surface temperature at steady state, then verify with thermal imaging."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How often should conformal cooling channels be cleaned?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With clean tap water + rust inhibitor: inspect flow rate every 3–6 months, full chemical cleaning annually. With deionized water (recommended): flow rate check every 6 months, cleaning every 18–24 months. With hard water (above 200 ppm): calcium scaling will occur — chemical descaling every 3–4 months required. Flow rate drop of >15% from baseline is the trigger for immediate cleaning regardless of schedule."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What causes a conformal cooling channel to underperform after installation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The four most common causes: (1) Laminar flow — flow rate is below the turbulent threshold (Re <10,000), reducing heat transfer by 3–5×. Verify flow rate meets minimum spec. (2) Scale/deposit buildup — calcium carbonate or corrosion deposits insulate the channel wall. Chemical cleaning required. (3) Partial blockage from residual powder — not caught during pressure testing before delivery. Requires mechanical clearing. (4) Chiller capacity insufficient — mold heat load exceeds chiller capacity, coolant temperature rises during production. Verify chiller kW rating against part heat load."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can conformal cooling channels be repaired if damaged?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Minor surface damage to the insert exterior can be repaired by laser welding and re-machining. Internal channel damage (crack propagation to channel wall) is generally not repairable — the insert must be reprinted. To minimize this risk: verify wall thickness ≥1.0×D between channel and cavity surface; avoid thermal shock during startup (ramp coolant temperature gradually); use FEA to validate thin walls before printing. Channel lifespan in properly designed inserts is typically 500,000–1,000,000+ shots with correct coolant management."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --blue: #0057D9;
+      --blue-dark: #003fa3;
+      --accent: #00C48C;
+      --bg: #f6f8fc;
+      --text: #1a1a2e;
+      --muted: #5a6070;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text); background: #fff; line-height: 1.7; }
+    a { color: var(--blue); }
+
+    nav { background: #fff; border-bottom: 1px solid #e8ecf4; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-weight: 700; font-size: 1.15rem; color: var(--blue); text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; font-size: .88rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta { background: var(--blue); color: #fff !important; padding: 7px 18px; border-radius: 6px; font-weight: 600; }
+
+    .page-wrap { max-width: 820px; margin: 0 auto; padding: 40px 24px 80px; }
+    .blog-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 32px; font-size: .83rem; color: var(--muted); }
+    .blog-tag { background: #eef4ff; color: var(--blue); border-radius: 20px; padding: 3px 12px; font-weight: 600; font-size: .78rem; }
+    .blog-tag.green { background: #e6faf3; color: #00875a; }
+    .blog-tag.orange { background: #fff3e6; color: #c05c00; }
+
+    h1 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+    h2 { font-size: 1.4rem; font-weight: 800; margin: 52px 0 16px; padding-top: 8px; border-top: 3px solid var(--bg); }
+    h3 { font-size: 1.05rem; font-weight: 700; margin: 28px 0 10px; }
+    p { margin-bottom: 16px; font-size: 1rem; }
+    ul, ol { margin: 0 0 16px 22px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    strong { font-weight: 700; }
+
+    .intro-box { background: var(--bg); border-left: 4px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 24px 0 36px; font-size: .95rem; }
+    .intro-box ul { margin: 10px 0 0 18px; }
+    .intro-box li { margin-bottom: 4px; }
+
+    .toc-box { background: var(--bg); border-radius: var(--radius); padding: 20px 22px; margin-bottom: 36px; }
+    .toc-box h4 { font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 12px; }
+    .toc-box ol { margin: 0 0 0 18px; }
+    .toc-box li { font-size: .88rem; margin-bottom: 5px; }
+    .toc-box a { color: var(--blue); text-decoration: none; }
+
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: .87rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    th { background: var(--blue); color: #fff; padding: 11px 14px; text-align: left; font-weight: 600; }
+    td { padding: 10px 14px; border-bottom: 1px solid #e8ecf4; vertical-align: top; }
+    tr:nth-child(even) td { background: var(--bg); }
+    tr:last-child td { border-bottom: none; }
+    .check { color: var(--accent); font-weight: 700; }
+    .highlight-row td { background: #eef9f4 !important; font-weight: 600; }
+    .warn-row td { background: #fff8e6 !important; }
+    .bad-row td { background: #fff0f0 !important; }
+
+    .callout { background: #fffbeb; border: 1px solid #f6d860; border-radius: var(--radius); padding: 18px 20px; margin: 24px 0; font-size: .92rem; }
+    .callout strong { color: #92610a; }
+    .callout.blue { background: #eef4ff; border-color: #c0d4f8; }
+    .callout.blue strong { color: var(--blue-dark); }
+    .callout.green { background: #e6faf3; border-color: #9be8cc; }
+    .callout.green strong { color: #00734a; }
+    .callout.red { background: #fff0f0; border-color: #fca5a5; }
+    .callout.red strong { color: #b91c1c; }
+
+    /* Physics diagram */
+    .heat-path { background: var(--bg); border-radius: var(--radius); padding: 24px; margin: 24px 0; }
+    .heat-path h4 { font-weight: 700; margin-bottom: 16px; font-size: .95rem; }
+    .heat-arrows { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; margin-bottom: 16px; }
+    .heat-box { background: #fff; border: 2px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; text-align: center; min-width: 120px; }
+    .heat-box.hot { border-color: #f97316; background: #fff7ed; }
+    .heat-box.channel { border-color: var(--blue); background: #eef4ff; }
+    .heat-box.cool { border-color: var(--accent); background: #e6faf3; }
+    .heat-box .hb-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 4px; }
+    .heat-box .hb-val { font-size: .9rem; font-weight: 700; }
+    .heat-arrow { font-size: 1.4rem; color: #94a3b8; padding: 0 8px; align-self: center; }
+    .heat-mechanism { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 12px; }
+    .hm { text-align: center; font-size: .82rem; color: var(--muted); }
+    .hm strong { display: block; color: var(--text); font-size: .88rem; }
+
+    /* Channel type cards */
+    .channel-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 28px 0; }
+    .ct-card { border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 20px 18px; }
+    .ct-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: 8px; }
+    .ct-card .ct-icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+    .ct-card p { font-size: .85rem; color: var(--muted); margin: 0 0 8px; }
+    .ct-card .ct-spec { font-size: .78rem; font-weight: 600; color: var(--blue); }
+
+    /* Commissioning steps */
+    .comm-steps { counter-reset: cs; margin: 28px 0; }
+    .cs-item { display: flex; gap: 16px; margin-bottom: 20px; }
+    .cs-num { counter-increment: cs; background: var(--accent); color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .85rem; flex-shrink: 0; margin-top: 3px; }
+    .cs-body h4 { font-size: .95rem; font-weight: 700; margin-bottom: 5px; }
+    .cs-body p { font-size: .87rem; color: var(--muted); margin: 0; }
+    .cs-body .cs-pass { font-size: .82rem; background: #e6faf3; color: #00734a; border-radius: 6px; padding: 4px 10px; display: inline-block; margin-top: 6px; font-weight: 600; }
+    .cs-body .cs-fail { font-size: .82rem; background: #fff0f0; color: #b91c1c; border-radius: 6px; padding: 4px 10px; display: inline-block; margin-top: 4px; font-weight: 600; }
+
+    /* Troubleshoot table */
+    .ts-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: .86rem; }
+    .ts-table th { background: #1a1a2e; color: #fff; padding: 11px 14px; text-align: left; font-weight: 600; }
+    .ts-table td { padding: 10px 14px; border-bottom: 1px solid #e8ecf4; vertical-align: top; }
+    .ts-table tr:nth-child(even) td { background: var(--bg); }
+    .ts-table .symptom { font-weight: 600; color: #b91c1c; }
+    .ts-table .cause { color: var(--muted); }
+    .ts-table .fix { color: #00734a; font-weight: 600; }
+
+    /* Maintenance schedule */
+    .maint-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+    .maint-card { border-radius: var(--radius); padding: 20px 18px; border: 1px solid #e2e8f0; }
+    .maint-card .freq { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+    .maint-card h4 { font-size: .92rem; font-weight: 700; margin-bottom: 10px; }
+    .maint-card ul { margin: 0 0 0 16px; font-size: .83rem; color: var(--muted); }
+    .maint-card li { margin-bottom: 4px; }
+    .freq-weekly { color: var(--accent); }
+    .freq-monthly { color: var(--blue); }
+    .freq-annual { color: #f97316; }
+
+    /* Coolant spec table */
+    .spec-pass { color: var(--accent); font-weight: 700; }
+    .spec-warn { color: #f97316; font-weight: 700; }
+    .spec-fail { color: #e53e3e; font-weight: 700; }
+
+    details { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 12px; background: #fff; overflow: hidden; }
+    summary { padding: 16px 20px; font-weight: 600; font-size: .95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
+    summary::after { content: '+'; font-size: 1.3rem; color: var(--blue); font-weight: 300; flex-shrink: 0; }
+    details[open] summary::after { transform: rotate(45deg); display: inline-block; }
+    details div { padding: 0 20px 16px; font-size: .9rem; color: var(--muted); line-height: 1.65; }
+
+    .mid-cta { background: linear-gradient(135deg, #0a1628, #0d2456); color: #fff; border-radius: var(--radius); padding: 32px 28px; margin: 48px 0; text-align: center; }
+    .mid-cta h3 { color: #fff; margin: 0 0 10px; font-size: 1.2rem; }
+    .mid-cta p { color: #99b0d0; font-size: .9rem; margin-bottom: 20px; }
+    .mid-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-accent { background: var(--accent); color: #fff; padding: 11px 26px; border-radius: 7px; font-weight: 700; font-size: .9rem; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); padding: 11px 26px; border-radius: 7px; font-weight: 600; font-size: .9rem; text-decoration: none; }
+
+    footer { background: #0a1628; color: #99b0d0; text-align: center; padding: 28px 24px; font-size: .85rem; }
+    footer a { color: #99b0d0; }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .heat-arrows { flex-direction: column; gap: 4px; }
+      .heat-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../">MouldNova</a>
+  <div class="nav-links">
+    <a href="../conformal-cooling-inserts.html">Conformal Cooling</a>
+    <a href="../3d-printed-mold-inserts.html">3D Mold Inserts</a>
+    <a href="./">Blog</a>
+    <a href="../contact.html" class="nav-cta">Get Quote</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="blog-meta">
+    <span class="blog-tag">Operations Guide</span>
+    <span class="blog-tag green">Commissioning</span>
+    <span class="blog-tag orange">Maintenance</span>
+    <span>March 14, 2026</span>
+    <span>·</span>
+    <span>14 min read</span>
+    <span>·</span>
+    <span>By MouldNova Engineering Team</span>
+  </div>
+
+  <h1>Conformal Cooling Channels: How They Work, How to Commission &amp; How to Keep Them Performing</h1>
+
+  <div class="intro-box">
+    <strong>What this article covers — the part nobody else writes about:</strong>
+    <ul>
+      <li>The heat transfer physics behind why channel placement and flow regime matter so much</li>
+      <li>Channel cross-section types and their thermal performance differences</li>
+      <li>How to connect conformal channels to your temperature controller or chiller</li>
+      <li>Step-by-step commissioning protocol: pressure test → flow verification → thermal baseline</li>
+      <li>Coolant specification: what to use, what to avoid, and why water quality kills performance</li>
+      <li>Maintenance schedule and chemical descaling procedure</li>
+      <li>Troubleshooting table: 10 symptoms, their causes, and how to fix them</li>
+      <li>Channel lifespan: what limits it and how to extend it</li>
+    </ul>
+  </div>
+
+  <div class="toc-box">
+    <h4>Table of Contents</h4>
+    <ol>
+      <li><a href="#heat-transfer">The Physics: How Channels Actually Transfer Heat</a></li>
+      <li><a href="#channel-types">Channel Cross-Section Types &amp; Thermal Performance</a></li>
+      <li><a href="#coolant-temp">Coolant Temperature Settings by Material</a></li>
+      <li><a href="#hookup">Connecting to Your Chiller or Temperature Controller</a></li>
+      <li><a href="#commissioning">Commissioning Protocol: 5 Steps Before First Shot</a></li>
+      <li><a href="#coolant-spec">Coolant Specification: What to Use and What to Avoid</a></li>
+      <li><a href="#maintenance">Maintenance Schedule &amp; Descaling Procedure</a></li>
+      <li><a href="#troubleshooting">Troubleshooting: 10 Symptoms and Their Fixes</a></li>
+      <li><a href="#lifespan">Channel Lifespan and How to Extend It</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2 id="heat-transfer">The Physics: How Channels Actually Transfer Heat</h2>
+
+  <p>Understanding how heat moves from the plastic part through the mold steel to the coolant explains every design and operating decision. The heat transfer pathway involves two mechanisms in sequence:</p>
+
+  <div class="heat-path">
+    <h4>Heat transfer chain in a conformal cooling mold</h4>
+    <div class="heat-arrows">
+      <div class="heat-box hot">
+        <div class="hb-label">Molten Plastic</div>
+        <div class="hb-val">200–320°C</div>
+      </div>
+      <div class="heat-arrow">→</div>
+      <div class="heat-box">
+        <div class="hb-label">Mold Cavity Surface</div>
+        <div class="hb-val">50–100°C</div>
+      </div>
+      <div class="heat-arrow">→</div>
+      <div class="heat-box">
+        <div class="hb-label">Steel Wall</div>
+        <div class="hb-val">Conduction</div>
+      </div>
+      <div class="heat-arrow">→</div>
+      <div class="heat-box channel">
+        <div class="hb-label">Channel Wall</div>
+        <div class="hb-val">~mold temp</div>
+      </div>
+      <div class="heat-arrow">→</div>
+      <div class="heat-box cool">
+        <div class="hb-label">Coolant</div>
+        <div class="hb-val">15–40°C</div>
+      </div>
+    </div>
+    <div class="heat-mechanism">
+      <div class="hm"><strong>Step 1: Conduction</strong>Plastic → mold surface → channel wall<br>Governed by: steel thermal conductivity<br>&amp; wall thickness (W parameter)</div>
+      <div class="hm"><strong>Step 2: Forced Convection</strong>Channel wall → flowing coolant<br>Governed by: Reynolds number<br>(turbulent vs. laminar regime)</div>
+    </div>
+  </div>
+
+  <h3>Why turbulent flow is not optional</h3>
+  <p>Step 2 — convection from channel wall to coolant — is where most conformal cooling systems underperform. The heat transfer coefficient (h) in forced convection is proportional to the Nusselt number (Nu), which depends dramatically on the flow regime:</p>
+
+  <table>
+    <thead>
+      <tr><th>Flow Regime</th><th>Reynolds Number</th><th>Typical Nusselt Number</th><th>Relative Heat Transfer</th><th>Result</th></tr>
+    </thead>
+    <tbody>
+      <tr class="bad-row"><td>Laminar</td><td>&lt;2,300</td><td>3.66 (constant wall temp)</td><td>1× (baseline)</td><td>Channels barely cool</td></tr>
+      <tr class="warn-row"><td>Transitional</td><td>2,300–10,000</td><td>10–50</td><td>3–14×</td><td>Unpredictable, unstable</td></tr>
+      <tr class="highlight-row"><td><strong>Turbulent</strong></td><td><strong>&gt;10,000</strong></td><td><strong>50–200+</strong></td><td><strong>14–55×</strong></td><td><strong>Designed performance achieved</strong></td></tr>
+    </tbody>
+  </table>
+
+  <p>This is not a small difference. A conformal cooling system designed to deliver 40% cycle time reduction, operating in laminar flow, may deliver 5–10% at best. Every commissioning and maintenance decision flows from this single physical reality: <strong>keep the flow turbulent.</strong></p>
+
+  <h3>Why conformal channels outperform drilled channels on conduction</h3>
+  <p>The conduction step (Step 1) is where conformal geometry wins over drilling. Heat conduction follows Fourier's Law: Q = k × A × ΔT / L. The critical variable is L — the thickness of steel between the channel and the cavity surface. A drilled channel sits 25–30mm from the mold surface. A conformal channel sits 8–12mm. With 420 stainless steel (k = 24 W/m·K), the conduction rate at 10mm wall distance is 2.5× higher than at 25mm. Combined with the surface area advantage of conformal routing, total heat extraction can be 3–4× higher than drilled channels at equivalent flow rate.</p>
+
+  <!-- SECTION 2 -->
+  <h2 id="channel-types">Channel Cross-Section Types &amp; Thermal Performance</h2>
+
+  <p>While circular channels are standard in SLM-printed conformal inserts, three cross-section types exist in the broader industry:</p>
+
+  <div class="channel-types">
+    <div class="ct-card">
+      <span class="ct-icon">⭕</span>
+      <h4>Circular (Standard)</h4>
+      <p>The universal choice for SLM-printed conformal channels. Equal hydraulic diameter in all directions, straightforward to model and validate, no stress concentration points. Powder evacuation is reliable with proper exit routing.</p>
+      <div class="ct-spec">Standard: 6–12mm diameter · As-built Ra 4–8μm</div>
+    </div>
+    <div class="ct-card">
+      <span class="ct-icon">🔵</span>
+      <h4>Streamlined / Teardrop</h4>
+      <p>Elliptical or teardrop cross-section oriented with the narrow axis toward the mold surface. Reduces wall distance at the critical surface-facing side while maintaining structural thickness on the load-bearing sides. Higher surface area-to-volume ratio than circular.</p>
+      <div class="ct-spec">Used in: high-performance inserts, tight-space designs · Requires careful build orientation</div>
+    </div>
+    <div class="ct-card">
+      <span class="ct-icon">🕸️</span>
+      <h4>TPMS Lattice (Advanced)</h4>
+      <p>Triply periodic minimal surface (gyroid, diamond, Schwartz-P). Extremely high surface area — 3–5× more than circular channels. Provides the most uniform temperature distribution achievable. Requires nTopology or equivalent for design; significantly more expensive.</p>
+      <div class="ct-spec">Used in: optical, medical, ultra-precision molds · Premium cost, ~2–3× standard</div>
+    </div>
+  </div>
+
+  <p>For 90%+ of production applications, <strong>circular channels are the correct choice</strong>. The gains from streamlined or TPMS geometry are real but rarely justify the cost premium unless the application specifically demands maximum uniformity or the geometry forces a non-circular approach.</p>
+
+  <!-- SECTION 3 -->
+  <h2 id="coolant-temp">Coolant Temperature Settings by Plastic Material</h2>
+
+  <p>Coolant temperature is set to achieve the target mold surface temperature at steady-state. The relationship is not one-to-one: a 20°C coolant does not produce a 20°C mold surface. The actual mold temperature depends on heat load, flow rate, wall distance, and chiller capacity. Use this table as a starting point, then verify with a thermocouple or thermal imaging camera during the first runs:</p>
+
+  <table>
+    <thead>
+      <tr><th>Plastic Material</th><th>Recommended Mold Temp</th><th>Target Coolant Temp</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PP (Polypropylene)</td><td>20–60°C</td><td>15–40°C</td><td>Lower mold temp = faster cycle, higher crystallinity. Higher = better surface gloss.</td></tr>
+      <tr><td>ABS</td><td>40–80°C</td><td>25–60°C</td><td>Higher temp improves surface quality, reduces weld line visibility.</td></tr>
+      <tr><td>PC (Polycarbonate)</td><td>80–120°C</td><td>60–100°C</td><td>Requires elevated mold temp to prevent internal stress. Use oil-based TCU above 90°C.</td></tr>
+      <tr><td>Nylon PA6 / PA66</td><td>60–90°C</td><td>40–70°C</td><td>Controlled crystallization. Too cold = brittle parts; too hot = slow cycle.</td></tr>
+      <tr><td>POM (Acetal)</td><td>60–90°C</td><td>40–70°C</td><td>Minimize temperature variation — POM is sensitive to non-uniform cooling shrinkage.</td></tr>
+      <tr><td>PA66-GF30</td><td>70–100°C</td><td>50–80°C</td><td>Higher temp reduces glass fiber orientation stress. Critical for structural parts.</td></tr>
+      <tr><td>PEEK</td><td>160–200°C</td><td>140–180°C</td><td>Requires high-temperature oil TCU. Conformal channels with CuCrZr inserts recommended.</td></tr>
+      <tr><td>TPU / TPE</td><td>20–40°C</td><td>10–25°C</td><td>Cold mold promotes rapid demold of flexible parts. Chilled water or glycol circuit.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Practical tip:</strong> During first production runs, attach a contact thermocouple to the mold surface near the hotspot identified in simulation. Run 20 shots, let it reach thermal equilibrium, then record the actual mold temperature. Adjust coolant temperature setpoint until actual mold surface temperature matches your target — do not assume coolant temp = mold temp.
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2 id="hookup">Connecting to Your Chiller or Temperature Controller</h2>
+
+  <p>Conformal cooling inserts connect to either a <strong>water temperature controller (WTC/chiller)</strong> for standard water-cooled applications, or a <strong>temperature control unit (TCU) with oil</strong> for mold temperatures above 90°C. The connection hardware and layout directly affects whether you achieve the designed flow rate.</p>
+
+  <h3>Connection hardware specifications</h3>
+  <table>
+    <thead>
+      <tr><th>Component</th><th>Specification</th><th>Common Mistake</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Hose diameter</td><td>≥ channel diameter (8mm channel → 8mm minimum hose ID)</td><td>Using 6mm hose on 8mm channel — creates restriction, reduces flow by 44%</td></tr>
+      <tr><td>Fittings</td><td>Full-bore ball valves + quick-disconnect; no restriction fittings</td><td>Using needle valves for "flow control" — creates turbulence dead zones</td></tr>
+      <tr><td>Thread standard</td><td>Match insert spec: BSP (G-thread, metric) or NPT (US standard)</td><td>Mixing thread standards with adapter fittings — leak risk under pressure</td></tr>
+      <tr><td>Manifold (parallel circuits)</td><td>Manifold bore ≥ sum of circuit diameters for equal flow distribution</td><td>Undersized manifold starves downstream circuits</td></tr>
+      <tr><td>Flow meter</td><td>Rotameter or turbine meter on each circuit; minimum resolution 0.5 L/min</td><td>No flow meter — cannot verify turbulent regime, no maintenance baseline</td></tr>
+      <tr><td>Pressure gauge</td><td>0–10 bar gauge on supply side per circuit</td><td>No pressure gauge — cannot detect scaling or blockage early</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout blue">
+    <strong>Critical installation rule:</strong> Install a dedicated flow meter and pressure gauge on every conformal cooling circuit. Without a flow rate baseline established at commissioning, you cannot detect the gradual performance degradation from scaling or partial blockage that will occur over months of operation. A 15% flow rate drop is your trigger for cleaning — but you can only detect it if you measured the baseline.
+  </div>
+
+  <!-- SECTION 5 -->
+  <h2 id="commissioning">Commissioning Protocol: 5 Steps Before First Shot</h2>
+
+  <p>These five steps must be completed before the mold goes into production. Skipping them is the leading cause of "conformal cooling didn't work" complaints — which, on investigation, almost always turn out to be commissioning failures, not design or manufacturing failures.</p>
+
+  <div class="comm-steps">
+    <div class="cs-item">
+      <div class="cs-num">1</div>
+      <div class="cs-body">
+        <h4>Pressure test all circuits</h4>
+        <p>Cap one end of each circuit. Apply compressed air at 1.5× operating pressure (typically 6–9 bar) for 10 minutes. Zero pressure drop = pass. Any pressure drop indicates a leak — at a fitting connection, thread joint, or (rarely) a crack in the insert wall. Do not run water until this test passes.</p>
+        <span class="cs-pass">✓ Pass: Zero pressure drop over 10 minutes</span>
+        <span class="cs-fail">✗ Fail: Locate leak with soapy water spray; re-seal or replace</span>
+      </div>
+    </div>
+    <div class="cs-item">
+      <div class="cs-num">2</div>
+      <div class="cs-body">
+        <h4>Flush with clean water</h4>
+        <p>Run clean water at maximum available flow rate through each circuit for 5 minutes before connecting to chiller. This flushes any residual metal particles, machining coolant, or assembly lubricant from the channels. Inspect discharge water — it should run clear within 2 minutes. Discolored water after 5 minutes indicates contamination requiring extended flushing.</p>
+        <span class="cs-pass">✓ Pass: Clear discharge water within 5 minutes</span>
+        <span class="cs-fail">✗ Fail: Continue flushing; if still discolored after 20 min, investigate channel condition</span>
+      </div>
+    </div>
+    <div class="cs-item">
+      <div class="cs-num">3</div>
+      <div class="cs-body">
+        <h4>Measure and record baseline flow rate per circuit</h4>
+        <p>Connect to chiller at operating pressure. Read flow rate on each circuit meter. Confirm each circuit meets the minimum flow rate for turbulent regime (Re &gt;10,000 — for 8mm channels, minimum 4.8 L/min; recommended 6–10 L/min). Record these baseline values. This is your reference — any future reading 15% below baseline triggers cleaning.</p>
+        <span class="cs-pass">✓ Pass: All circuits ≥ minimum turbulent flow rate; values recorded</span>
+        <span class="cs-fail">✗ Fail: Check for restrictions, verify hose diameters, check chiller pump pressure output</span>
+      </div>
+    </div>
+    <div class="cs-item">
+      <div class="cs-num">4</div>
+      <div class="cs-body">
+        <h4>Run thermal equilibration and verify mold surface temperature</h4>
+        <p>Set chiller to target coolant temperature. Run cooling system for 30 minutes with no injection (mold closed, press idle). Then measure mold cavity surface temperature with a contact thermocouple at the previously identified hotspot location. Record actual mold surface temperature vs. target. Adjust chiller setpoint until actual = target ±5°C.</p>
+        <span class="cs-pass">✓ Pass: Mold surface temperature within ±5°C of target after 30 min equilibration</span>
+        <span class="cs-fail">✗ Fail: Check flow rates, chiller capacity, and verify correct coolant temperature setpoint</span>
+      </div>
+    </div>
+    <div class="cs-item">
+      <div class="cs-num">5</div>
+      <div class="cs-body">
+        <h4>First shot thermal imaging baseline</h4>
+        <p>After 20 production shots at steady state, open the mold between cycles and immediately capture a thermal image (infrared camera) of the cavity surface. This image becomes your permanent benchmark. Any future production quality issue can be compared to this baseline image — if the thermal pattern has changed, you've identified where the cooling degradation is occurring.</p>
+        <span class="cs-pass">✓ Pass: Thermal image captured and filed; temperature uniformity ≤±5°C across cavity</span>
+        <span class="cs-fail">✗ Fail if uniformity >±8°C: Investigate channel design or flow rate issues before full production</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MID CTA -->
+  <div class="mid-cta">
+    <h3>Receiving a conformal cooling insert for the first time?</h3>
+    <p>We provide a commissioning data sheet with every insert we ship: baseline flow rate spec, pressure test certificate, recommended coolant temperature by material, and maintenance intervals. Ask for it when ordering.</p>
+    <div class="mid-cta-btns">
+      <a href="../contact.html" class="btn-accent">Request a Quote + Commissioning Sheet</a>
+      <a href="https://wa.me/8613600000000" class="btn-ghost">WhatsApp Us</a>
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <h2 id="coolant-spec">Coolant Specification: What to Use and What to Avoid</h2>
+
+  <p>The single most underspecified aspect of conformal cooling operation is coolant quality. Poor water quality causes scaling that degrades performance faster than any design factor — and it's entirely preventable.</p>
+
+  <table>
+    <thead>
+      <tr><th>Parameter</th><th>Acceptable Range</th><th class="spec-warn">Warning Range</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Water hardness (CaCO₃)</td><td class="spec-pass">0–100 ppm</td><td class="spec-warn">100–200 ppm</td><td>Softened or DI water recommended above 150 ppm</td></tr>
+      <tr><td>pH</td><td class="spec-pass">6.5–8.5</td><td class="spec-warn">&lt;6.0 or &gt;9.5</td><td>Acidic water corrodes channels; alkaline causes scale</td></tr>
+      <tr><td>Chloride content</td><td class="spec-pass">&lt;50 ppm</td><td class="spec-warn">50–200 ppm</td><td>Chlorides attack stainless steel; use DI water for 420 SS inserts</td></tr>
+      <tr><td>Rust inhibitor</td><td class="spec-pass">2–5% by volume</td><td class="spec-warn">None</td><td>Without inhibitor, iron particles circulate and deposit; always use</td></tr>
+      <tr><td>Coolant temperature (water)</td><td class="spec-pass">10–90°C</td><td class="spec-warn">&gt;90°C</td><td>Above 90°C: switch to oil-based TCU fluid</td></tr>
+      <tr><td>Freeze protection</td><td class="spec-pass">Glycol mix if ambient &lt;5°C</td><td class="spec-warn">Pure water in cold shop</td><td>Freezing in channels causes insert cracking</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout red">
+    <strong>Hard water is the #1 enemy of conformal cooling performance.</strong> At 300 ppm hardness (common tap water), calcium carbonate begins scaling channel walls within weeks. A 1mm scale layer on a 10mm steel wall increases effective thermal resistance by ~30% — equivalent to moving the channel 3mm further from the mold surface. Use deionized or softened water, always with rust inhibitor.
+  </div>
+
+  <!-- SECTION 7 -->
+  <h2 id="maintenance">Maintenance Schedule &amp; Chemical Descaling Procedure</h2>
+
+  <div class="maint-grid">
+    <div class="maint-card" style="border-color:#e2f5ea;">
+      <div class="freq freq-weekly">Weekly</div>
+      <h4>Operational checks</h4>
+      <ul>
+        <li>Visual check for leaks at all fittings</li>
+        <li>Verify chiller temperature setpoint is holding</li>
+        <li>Check coolant level in chiller reservoir</li>
+        <li>Note any change in part quality or cycle time</li>
+      </ul>
+    </div>
+    <div class="maint-card" style="border-color:#dbeafe;">
+      <div class="freq freq-monthly">Every 3–6 Months</div>
+      <h4>Flow rate verification</h4>
+      <ul>
+        <li>Measure flow rate on each circuit</li>
+        <li>Compare to commissioning baseline</li>
+        <li>If any circuit &lt;85% of baseline → immediate chemical clean</li>
+        <li>Test coolant pH and inhibitor concentration</li>
+        <li>Top up or replace inhibitor as needed</li>
+      </ul>
+    </div>
+    <div class="maint-card" style="border-color:#fff0e0;">
+      <div class="freq freq-annual">Annually (or per trigger)</div>
+      <h4>Full cleaning &amp; inspection</h4>
+      <ul>
+        <li>Chemical descaling (see procedure below)</li>
+        <li>Pressure test all circuits after cleaning</li>
+        <li>Thermal imaging during production run</li>
+        <li>Compare thermal image to commissioning baseline</li>
+        <li>Inspect all fittings; replace O-rings if needed</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Chemical descaling procedure</h3>
+  <p>Use this procedure when flow rate drops &gt;15% from baseline, or as part of annual maintenance:</p>
+  <ol>
+    <li><strong>Isolate the mold</strong> from the production circuit. Cap outlet connections.</li>
+    <li><strong>Prepare descaling solution:</strong> 5–10% citric acid in water (pH 2–3). Citric acid is effective against calcium carbonate and safe for 420 SS and 18Ni300 steel. <em>Do not use hydrochloric acid</em> — it attacks stainless steel and causes pitting.</li>
+    <li><strong>Circulate the solution</strong> through all channels at 2–4 L/min for 2–4 hours. The solution will react with calcium deposits (fizzing indicates active descaling).</li>
+    <li><strong>Flush with clean water</strong> at maximum flow rate for 10 minutes until pH of discharge water returns to neutral (pH 6.5–7.5).</li>
+    <li><strong>Pressure test</strong> all circuits to confirm no descaling has exposed any pre-existing micro-cracks or weakened areas.</li>
+    <li><strong>Reconnect and re-establish flow rate baseline.</strong> If flow rate is still below 90% of original baseline after descaling, suspect mechanical blockage (sintered powder or corrosion debris) — requires mechanical cleaning or borescope inspection.</li>
+    <li><strong>Switch to DI water + fresh inhibitor</strong> after cleaning to prevent rapid re-scaling.</li>
+  </ol>
+
+  <!-- SECTION 8 -->
+  <h2 id="troubleshooting">Troubleshooting: 10 Symptoms and Their Fixes</h2>
+
+  <table class="ts-table">
+    <thead>
+      <tr><th>Symptom</th><th>Most Likely Cause</th><th>Diagnosis</th><th>Fix</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="symptom">Cycle time not reduced vs. conventional</td>
+        <td class="cause">Laminar flow — flow rate below turbulent threshold</td>
+        <td>Measure flow rate; calculate Re</td>
+        <td class="fix">Increase chiller pump pressure; check hose diameter restrictions; verify circuit length</td>
+      </tr>
+      <tr>
+        <td class="symptom">Persistent hotspot in same location every run</td>
+        <td class="cause">Channel blockage (powder or scale) at that zone</td>
+        <td>Thermal imaging; borescope inspection; pressure test</td>
+        <td class="fix">Chemical descaling; if still blocked, mechanical clearing (pressure flush or wire)</td>
+      </tr>
+      <tr>
+        <td class="symptom">Gradual cycle time increase over months</td>
+        <td class="cause">Scaling reducing heat transfer — common in hard water areas</td>
+        <td>Flow rate drop &gt;15% from baseline</td>
+        <td class="fix">Chemical descaling; switch to DI water + inhibitor</td>
+      </tr>
+      <tr>
+        <td class="symptom">Cavity-to-cavity temperature imbalance</td>
+        <td class="cause">Unequal flow between parallel circuits; one circuit partially blocked</td>
+        <td>Measure flow rate on each circuit independently</td>
+        <td class="fix">Balance flow by adjusting circuit-level ball valves; clean low-flow circuit</td>
+      </tr>
+      <tr>
+        <td class="symptom">Water dripping from parting line during production</td>
+        <td class="cause">Channel wall failure (crack) or fitting leak</td>
+        <td>Pressure test off-press; identify which circuit drops pressure</td>
+        <td class="fix">Fitting: re-seal with PTFE and re-test. Channel crack: insert must be replaced or repaired by laser welding</td>
+      </tr>
+      <tr>
+        <td class="symptom">Warpage worse than simulation predicted</td>
+        <td class="cause">Coolant temperature too high; insufficient flow rate; incorrect chiller setpoint</td>
+        <td>Contact thermocouple on mold surface; compare actual vs. target temp</td>
+        <td class="fix">Lower coolant setpoint; verify flow rate; check chiller cooling capacity vs. actual heat load</td>
+      </tr>
+      <tr>
+        <td class="symptom">Burn marks reappearing after conformal upgrade</td>
+        <td class="cause">Mold surface temp still too high in specific zone; incomplete cooling upgrade</td>
+        <td>Thermal imaging to locate specific hotspot</td>
+        <td class="fix">Verify that conformal channel covers that specific zone; check for dead zone at nearby tight bend</td>
+      </tr>
+      <tr>
+        <td class="symptom">Chiller running at full capacity but mold still too hot</td>
+        <td class="cause">Chiller undersized for actual heat load; or heat load higher than estimated</td>
+        <td>Calculate part heat load: Q = mass × Cp × ΔT × shots per hour</td>
+        <td class="fix">Increase chiller capacity; split into two chiller circuits; reduce shot rate until chiller catches up</td>
+      </tr>
+      <tr>
+        <td class="symptom">Rust-colored water in coolant lines</td>
+        <td class="cause">Corrosion inside channels or in chiller system; no inhibitor or inhibitor depleted</td>
+        <td>pH and inhibitor test; flush and examine discharge color</td>
+        <td class="fix">Full flush; add/replace rust inhibitor at 3–5%; switch to DI water if using tap water</td>
+      </tr>
+      <tr>
+        <td class="symptom">Flow rate reads zero on one circuit after maintenance</td>
+        <td class="cause">Ball valve left closed; fitting cross-threaded blocking flow; hose kinked</td>
+        <td>Trace circuit manually from inlet to outlet</td>
+        <td class="fix">Open valves; inspect fittings; straighten hose routing</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 9 -->
+  <h2 id="lifespan">Channel Lifespan and How to Extend It</h2>
+
+  <p>A well-designed, well-maintained conformal cooling insert should outlast the mold itself — typically <strong>500,000 to 1,000,000+ shots</strong> with no loss of cooling performance. In practice, premature failures occur due to four mechanisms:</p>
+
+  <table>
+    <thead>
+      <tr><th>Failure Mechanism</th><th>Typical Onset</th><th>Prevention</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Scaling / fouling</strong></td><td>3–12 months with hard water</td><td>DI water + inhibitor; chemical clean every 12–18 months</td></tr>
+      <tr><td><strong>Corrosion / pitting</strong></td><td>6–24 months with chlorinated or acidic coolant</td><td>Keep pH 6.5–8.5; chlorides &lt;50 ppm; rust inhibitor at correct concentration</td></tr>
+      <tr><td><strong>Fatigue cracking</strong> (channel wall to cavity surface)</td><td>Millions of cycles for correct design; sooner if wall &lt;1×D</td><td>Verify wall ≥1.0×D at design stage; FEA on thin walls; avoid thermal shock at startup</td></tr>
+      <tr><td><strong>Erosion</strong> (abrasive coolant particles)</td><td>Variable — accelerated by corroding upstream components</td><td>Filter coolant circuit (50 micron filter); inspect upstream pipe condition</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout green">
+    <strong>Lifespan extension summary:</strong> DI water + rust inhibitor, annual chemical descaling, and a 50-micron filter in the coolant circuit will extend conformal insert lifespan from a typical 300K–500K shots (tap water, no maintenance) to 1M+ shots. The cost of water treatment is measured in dollars per year; the cost of an insert replacement is measured in thousands.
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="mid-cta">
+    <h3>Every MouldNova Insert Ships with a Commissioning Data Sheet</h3>
+    <p>Baseline flow rate spec, pressure test certificate, coolant temperature recommendations by material, and maintenance schedule — included with every order. We don't just manufacture the insert; we help you operate it correctly.</p>
+    <div class="mid-cta-btns">
+      <a href="../contact.html" class="btn-accent">Request Quote + Full Documentation</a>
+      <a href="https://wa.me/8613600000000" class="btn-ghost">WhatsApp Us</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <details>
+    <summary>How do conformal cooling channels transfer heat from the mold?</summary>
+    <div>Two mechanisms in sequence: <strong>Conduction</strong> — heat moves from the mold cavity surface through the steel wall to the channel wall; governed by steel thermal conductivity (~24 W/m·K for 420 SS) and wall thickness. <strong>Forced convection</strong> — heat moves from the channel wall to the flowing coolant; governed by Reynolds number. Turbulent flow (Re &gt;10,000) gives 14–55× better heat transfer than laminar flow. Both steps must be optimized: conformal routing minimizes conduction wall thickness; correct flow rate ensures turbulent convection.</div>
+  </details>
+
+  <details>
+    <summary>What coolant temperature should I set for conformal cooling channels?</summary>
+    <div>Coolant temperature is set to achieve your target mold surface temperature, not as an absolute value. Starting points: ABS 25–60°C coolant, PP 15–40°C, PC 60–100°C (oil TCU above 90°C), Nylon PA66 40–70°C, PEEK 140–180°C (oil). Verify actual mold surface temperature with a thermocouple during commissioning — adjust chiller setpoint until actual mold temp = target ±5°C.</div>
+  </details>
+
+  <details>
+    <summary>How often should conformal cooling channels be cleaned?</summary>
+    <div>With DI water + inhibitor: flow rate check every 6 months, chemical descaling every 18–24 months. With tap water (100–200 ppm): flow rate check every 3 months, descaling every 6–12 months. With hard water (&gt;200 ppm): descaling every 3–4 months. Trigger point regardless of schedule: any circuit flow rate drops &gt;15% from commissioning baseline → immediate descaling.</div>
+  </details>
+
+  <details>
+    <summary>What causes conformal cooling channels to underperform after installation?</summary>
+    <div>Four common causes: (1) Laminar flow — flow rate below turbulent threshold, reducing heat transfer by 3–5×; verify Re &gt;10,000. (2) Scaling — calcium deposits from hard water insulating channel walls; chemical descaling required. (3) Partial blockage from residual powder — should be caught in pressure testing before delivery; requires mechanical clearing. (4) Chiller undersized — actual mold heat load exceeds chiller capacity; coolant heats up during production.</div>
+  </details>
+
+  <details>
+    <summary>How long do conformal cooling channels last?</summary>
+    <div>500,000–1,000,000+ shots with correct design and maintenance. Key factors limiting lifespan: scaling/fouling (prevented by DI water + inhibitor), corrosion/pitting (prevented by correct pH and chloride levels), fatigue cracking (prevented by correct wall thickness ≥1×D at design stage), and erosion from abrasive coolant (prevented by a 50-micron filter in the coolant circuit). Cost of proper water treatment: $50–200/year. Cost of insert replacement: $800–9,000+.</div>
+  </details>
+
+  <!-- INTERNAL LINKS -->
+  <hr style="border:none; border-top:1px solid #e8ecf4; margin:48px 0 32px;" />
+  <h3 style="margin-bottom:16px; font-size:1rem;">Related Articles &amp; Pages</h3>
+  <ul>
+    <li><a href="conformal-cooling-channel-design.html">Conformal Cooling Channel Design: Parameters, Geometry Types &amp; Workflow</a></li>
+    <li><a href="conformal-cooling-injection-molding.html">Conformal Cooling in Injection Molding: Cycle Time &amp; ROI Data</a></li>
+    <li><a href="conformal-cooling-3d-printing.html">Conformal Cooling 3D Printing: SLM Process, Materials &amp; Cost</a></li>
+    <li><a href="what-is-conformal-cooling.html">What Is Conformal Cooling? Complete Technical Guide</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Our Conformal Cooling Insert Service</a></li>
+  </ul>
+
+</div>
+
+<footer>
+  <p>© 2026 MouldNova — Ningbo Saiguang 3D Technology Co., Ltd.</p>
+  <p style="margin-top:8px;"><a href="../">Home</a> &nbsp;·&nbsp; <a href="../contact.html">Contact</a> &nbsp;·&nbsp; <a href="../conformal-cooling-inserts.html">Conformal Cooling</a> &nbsp;·&nbsp; <a href="./">Blog</a></p>
+</footer>
+
+</body>
+</html>
