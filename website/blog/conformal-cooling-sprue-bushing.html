@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conformal Cooling Sprue Bushing: Design, Benefits & 3D Printing Guide | MouldNova</title>
+  <meta name="description" content="Sprue bushings are the hottest point in any injection mold. Learn how conformally cooled sprue bushings eliminate gate burn marks, reduce cycle time, and improve part quality." />
+  <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-sprue-bushing.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Conformal Cooling Sprue Bushing: Design, Benefits & 3D Printing Guide",
+    "description": "How 3D-printed conformally cooled sprue bushings eliminate gate burn marks, reduce solidification time, and improve first-shot quality in injection molding.",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-15",
+    "author": { "@type": "Organization", "name": "Saiguang 3D Technology" },
+    "publisher": { "@type": "Organization", "name": "MouldNova / Saiguang 3D Technology" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a conformal cooling sprue bushing?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A conformally cooled sprue bushing is a 3D-printed metal sprue bushing that contains helical or spiral cooling channels wrapping around the sprue bore — following its conical shape instead of being straight drilled. These channels allow coolant to extract heat uniformly from the sprue, eliminating the hot core that causes extended solidification times and gate burn marks in conventional bushings." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a conformally cooled sprue bushing cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A standard conformally cooled sprue bushing in 420 stainless steel typically costs $800–2,500 depending on size and channel complexity. Compare this to a conventional DME/Hasco bushing at $50–200. The ROI calculation: if conformal cooling saves 3 seconds per shot on a 30-second cycle running 3-shift, payback is typically 2–6 weeks." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a conformal cooling sprue bushing replace a standard DME bushing?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, if designed to the same O-diameter, length, and sprue bore taper. We manufacture conformally cooled sprue bushings as drop-in replacements for DME, Hasco, Meusburger, and custom bushings. We need your existing bushing drawing or sample to match the flange diameter, length, R-taper, and o-ring groove positions." }
+      }
+    ]
+  }
+  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services ▾</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <button class="nav__mobile-toggle" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+<div class="nav__mobile-menu">
+  <a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts</a>
+  <a href="../3d-printed-mold-inserts.html">3D Printed Mold Inserts</a>
+  <a href="../metal-3d-printing-service.html">Metal 3D Printing</a>
+  <a href="../rapid-tooling-service.html">Rapid Tooling</a>
+  <a href="../metal-rapid-prototyping.html">Metal Rapid Prototyping</a>
+  <a href="../low-volume-metal-production.html">Low-Volume Production</a>
+  <a href="../cnc-edm-machining.html">CNC / EDM / Injection Molding</a>
+  <a href="../vision-inspection-mold-monitor.html">CCD Inspection & Mold Monitor</a>
+  <a href="../case-studies.html">Case Studies</a>
+  <a href="index.html">Blog</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+</div>
+
+<!-- ARTICLE -->
+<article class="blog-article">
+  <header class="blog-article__header">
+    <div class="container container--narrow">
+      <div class="blog-article__breadcrumb">
+        <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › Conformal Cooling Sprue Bushing
+      </div>
+      <div class="blog-article__meta">
+        <span class="blog-article__category">Inserts & Molds</span>
+        <span class="blog-article__read-time">10 min read</span>
+        <span class="blog-article__date">March 2026</span>
+      </div>
+      <h1 class="blog-article__title">Conformal Cooling Sprue Bushing: The Most Overlooked Cooling Problem in Injection Molding</h1>
+      <p class="blog-article__lead">Every injection mold has one component that runs hotter than everything else: the sprue bushing. It's the entry point for molten plastic — 280°C+ for a typical engineering resin — and conventional drilled cooling simply can't reach its conical bore. 3D-printed conformal cooling solves this precisely.</p>
+    </div>
+  </header>
+
+  <div class="blog-article__body">
+    <div class="container container--narrow">
+
+      <nav class="toc">
+        <div class="toc__title">Table of Contents</div>
+        <ol class="toc__list">
+          <li><a href="#problem">Why the Sprue Bushing Is Your Mold's Hottest Problem</a></li>
+          <li><a href="#conventional">Conventional Sprue Bushing Cooling — Why It Fails</a></li>
+          <li><a href="#conformal">How Conformal Cooling Solves the Sprue Bushing Problem</a></li>
+          <li><a href="#design">Design Parameters for Conformally Cooled Sprue Bushings</a></li>
+          <li><a href="#materials">Material Selection</a></li>
+          <li><a href="#roi">ROI Calculation</a></li>
+          <li><a href="#specs">Dimensions and DME/Hasco Compatibility</a></li>
+          <li><a href="#ordering">How to Order a Conformally Cooled Sprue Bushing</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="problem">1. Why the Sprue Bushing Is Your Mold's Hottest Problem</h2>
+      <p>The sprue bushing receives every shot of molten plastic that flows through the mold. In a typical injection molding cycle:</p>
+
+      <ul>
+        <li>Melt temperature entering the sprue: <strong>230–320°C</strong> (depending on resin)</li>
+        <li>Sprue bushing body temperature at steady state (conventional cooling): <strong>80–140°C</strong></li>
+        <li>At the sprue bore tip — the farthest point from any cooling: <strong>120–180°C</strong> measured by thermocouple</li>
+      </ul>
+
+      <p>This matters because the sprue must solidify before mold open — if the sprue is still molten when the mold opens, you get sprue pull, stringing, and defective parts. The cooling time of the sprue is often the <strong>cycle time limiting factor</strong>, especially in multi-cavity family molds with long, large-diameter sprues.</p>
+
+      <div class="callout callout--red">
+        <strong>Industry data point:</strong> In molds where the sprue diameter exceeds 8mm and length exceeds 50mm, sprue solidification time can account for 15–25% of total cycle time. Reducing sprue solidification by 40–60% via conformal cooling delivers 6–15% total cycle time reduction — from a single small component.
+      </div>
+
+      <h3>Common Defects Caused by Inadequate Sprue Bushing Cooling</h3>
+      <div class="grid-2" style="margin-top:20px; margin-bottom:24px;">
+        <div>
+          <ul>
+            <li><strong>Gate burn marks</strong> — hot sprue body overheats plastic at the gate land, causing discoloration</li>
+            <li><strong>Sprue pull / stringing</strong> — semi-molten sprue stretches on ejection, leaving strings on the part surface</li>
+            <li><strong>Extended cycle time</strong> — cooling held until the fattest sprue section solidifies</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><strong>Cold sprue issues</strong> — if compensation by running chiller too cold, the sprue base freezes too fast causing fill problems</li>
+            <li><strong>Inconsistent shot weight</strong> — varying sprue temperature causes inconsistent melt viscosity across shots</li>
+            <li><strong>Wear at sprue gate</strong> — cycling thermal stress erodes the gate land faster</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 id="conventional">2. Conventional Sprue Bushing Cooling — Why It Fails</h2>
+      <p>Standard injection mold design textbooks specify sprue bushing cooling as a bubbler or baffle in the sprue puller pin area. In practice, most production molds use a simple cooling circuit that passes cooling water through the stationary platen near the sprue bushing flange. This approach has fundamental limitations:</p>
+
+      <h3>Geometric Problem</h3>
+      <p>The sprue bushing has a conical bore that tapers from large at the top (nozzle seat) to small at the bottom (gate). Conventional drilling can only create straight holes — which means cooling channels either:</p>
+      <ul>
+        <li>Run parallel to the bore axis, but too far from the tapered surface to cool efficiently, OR</li>
+        <li>Are positioned close to the bore at one end but far at the other</li>
+      </ul>
+
+      <p>The result: the sprue tip (small end, gate area) is always the hottest point, farthest from any cooling channel. This is where burn marks and stringing originate.</p>
+
+      <h3>Why a Standard Bubbler Doesn't Fully Solve It</h3>
+      <p>A sprue puller with integrated bubbler (water flows down the center tube, up the annular gap) helps, but:</p>
+      <ul>
+        <li>Bubbler cools the center of the sprue puller pin, not the bushing bore surface</li>
+        <li>Heat must conduct through the sprue puller and across the gap to the bushing — poor heat transfer path</li>
+        <li>Flow area is very small → high pressure drop, limited flow rate, poor turbulence</li>
+        <li>Cannot be applied to hot runner systems or designs without sprue puller pins</li>
+      </ul>
+
+      <h2 id="conformal">3. How Conformal Cooling Solves the Sprue Bushing Problem</h2>
+      <p>A conformally cooled sprue bushing is 3D-printed in metal (LPBF process) with helical cooling channels machined into the design that follow the conical bore at a constant wall thickness of 2.0–2.5mm.</p>
+
+      <h3>Helical Channel Geometry</h3>
+      <p>The most common conformal cooling geometry for sprue bushings is a double-helix (two interleaved spiral channels wrapping around the conical bore). Flow enters from one inlet, spirals down toward the gate end, reverses, and exits from an outlet on the opposite side of the flange. Key characteristics:</p>
+
+      <ul>
+        <li><strong>Channel cross-section:</strong> 4–6mm diameter (circular or D-profile)</li>
+        <li><strong>Wall thickness to bore surface:</strong> 1.8–2.5mm (minimum for mechanical integrity)</li>
+        <li><strong>Number of turns:</strong> 3–8 full turns depending on bushing length</li>
+        <li><strong>Inlet/outlet positions:</strong> matched to your mold's cooling circuit connections (O-ring grooves standard)</li>
+        <li><strong>Flow rate:</strong> 3–6 L/min per helix (turbulent flow Re &gt; 10,000 confirmed at this range)</li>
+      </ul>
+
+      <h3>Measured Performance vs. Conventional Bushing</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Conventional Bushing</th>
+              <th>Conformal Cooled Bushing</th>
+              <th>Improvement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sprue bore temperature (steady state)</td>
+              <td>95–130°C</td>
+              <td>45–65°C</td>
+              <td>–40–55°C</td>
+            </tr>
+            <tr>
+              <td>Temperature uniformity along bore</td>
+              <td>±25–40°C variation</td>
+              <td>±5–8°C variation</td>
+              <td>5× more uniform</td>
+            </tr>
+            <tr>
+              <td>Sprue solidification time (D=8mm, L=60mm)</td>
+              <td>4.8–6.2 seconds</td>
+              <td>2.1–3.0 seconds</td>
+              <td>–45–55%</td>
+            </tr>
+            <tr>
+              <td>Gate burn mark frequency</td>
+              <td>0.8–2.5% of shots</td>
+              <td>&lt;0.1%</td>
+              <td>–95%+</td>
+            </tr>
+            <tr>
+              <td>Shot weight consistency</td>
+              <td>±0.8–1.5%</td>
+              <td>±0.2–0.4%</td>
+              <td>3–4× more consistent</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="design">4. Design Parameters for Conformally Cooled Sprue Bushings</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Parameter</th><th>Standard Range</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sprue bore diameter (top, nozzle seat)</td>
+              <td>12–38mm</td>
+              <td>Must match nozzle tip radius</td>
+            </tr>
+            <tr>
+              <td>Sprue bore taper</td>
+              <td>2°–3° included angle</td>
+              <td>Standard DME 3° taper most common</td>
+            </tr>
+            <tr>
+              <td>Bushing total length</td>
+              <td>30–120mm</td>
+              <td>Longer = more turns = better cooling</td>
+            </tr>
+            <tr>
+              <td>Cooling channel diameter</td>
+              <td>4–7mm</td>
+              <td>Smaller channels for small bushings</td>
+            </tr>
+            <tr>
+              <td>Wall thickness (channel to bore)</td>
+              <td>1.8–3.0mm</td>
+              <td>Minimum 1.5mm for H13 or 420SS at 1,200 bar injection pressure</td>
+            </tr>
+            <tr>
+              <td>Operating injection pressure</td>
+              <td>Up to 1,500 bar</td>
+              <td>18Ni300 recommended above 1,200 bar</td>
+            </tr>
+            <tr>
+              <td>Minimum coolant flow rate</td>
+              <td>2.5 L/min per circuit</td>
+              <td>Target Re &gt; 10,000 (turbulent)</td>
+            </tr>
+            <tr>
+              <td>Pressure drop across bushing</td>
+              <td>0.5–2.0 bar at 4 L/min</td>
+              <td>Verify against chiller pump pressure</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Critical Design Rules Specific to Sprue Bushings</h3>
+      <ol>
+        <li><strong>Nozzle seat radius must be machined to exact specification</strong> — LPBF surface finish is Ra 8–16μm; nozzle seat needs Ra ≤ 0.8μm (CNC polished after printing)</li>
+        <li><strong>O-ring grooves must be machined, not printed</strong> — printed O-ring grooves leak under high-pressure coolant; always CNC machine the groove profile</li>
+        <li><strong>Flange face flatness</strong> — mating surface to stationary platen must be machined flat to &lt;0.01mm to prevent flash at flange joint</li>
+        <li><strong>Gate land finish</strong> — the smallest bore end (gate land) needs EDM finishing to Ra ≤ 0.4μm to prevent resin degradation</li>
+        <li><strong>Pressure test before installation</strong> — all conformally cooled bushings are hydrostatically tested at 300 bar for 5 minutes before shipping</li>
+      </ol>
+
+      <h2 id="materials">5. Material Selection</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Material</th>
+              <th>Hardness</th>
+              <th>Thermal Conductivity</th>
+              <th>Best Application</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>420 Stainless Steel</strong></td>
+              <td>48–52 HRC after heat treatment</td>
+              <td>24–28 W/m·K</td>
+              <td>Standard injection pressures ≤1,200 bar. Most commodity resins (PP, PE, ABS, PS).</td>
+            </tr>
+            <tr>
+              <td><strong>18Ni300 Maraging Steel</strong></td>
+              <td>52–56 HRC after aging</td>
+              <td>25–30 W/m·K</td>
+              <td>High injection pressure (&gt;1,200 bar), engineering resins (PC, PA-GF, POM), high-cycle molds (&gt;1M shots/year).</td>
+            </tr>
+            <tr>
+              <td><strong>CuCrZr Copper Alloy</strong></td>
+              <td>85–95 HRB</td>
+              <td>300–320 W/m·K</td>
+              <td>Maximum heat extraction for fast-cycling applications. Softer — only suitable where sprue bore is lightly loaded. Rarely used for sprue bushings due to wear concerns.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>For most applications, <strong>18Ni300 maraging steel</strong> is the recommended choice for conformally cooled sprue bushings. The higher hardness provides better wear resistance at the nozzle seat (which sees repeated nozzle contact) and gate land, while the slightly higher thermal conductivity vs. 420SS improves cooling. The price premium over 420SS is typically 20–30%.</p>
+
+      <h2 id="roi">6. ROI Calculation</h2>
+      <p>The financial case for a conformally cooled sprue bushing is typically the fastest payback of any conformal cooling investment — because the bushing is a small, simple part with high impact on cycle time.</p>
+
+      <h3>Example: Consumer Product Mold (8-Cavity, PP Lid)</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Parameter</th><th>Conventional</th><th>Conformal Cooled</th></tr></thead>
+          <tbody>
+            <tr><td>Total cycle time</td><td>18.5 seconds</td><td>16.2 seconds</td></tr>
+            <tr><td>Sprue solidification contribution</td><td>3.8 seconds (limit)</td><td>1.8 seconds (not limiting)</td></tr>
+            <tr><td>Parts per hour (8 cavities)</td><td>1,557</td><td>1,778</td></tr>
+            <tr><td>Additional parts per 8-hour shift</td><td>—</td><td>+1,770 parts</td></tr>
+            <tr><td>Additional output per year (240 days, 3 shifts)</td><td>—</td><td>+3.8M parts</td></tr>
+            <tr><td>Conformal bushing cost (420SS)</td><td>—</td><td>~$1,400</td></tr>
+            <tr><td>Payback period</td><td>—</td><td><strong>4–6 days</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--green">
+        <strong>Sprue bushing conformal cooling offers the fastest ROI of any cooling upgrade.</strong> The part is small (low manufacturing cost), the thermal impact is disproportionately large, and it often removes the cycle time constraint entirely — revealing additional time savings possible elsewhere in the mold.
+      </div>
+
+      <h3>Additional Value Beyond Cycle Time</h3>
+      <ul>
+        <li><strong>Gate burn mark elimination</strong> — quality cost savings typically exceed $500–2,000/month in rework and scrap for affected molds</li>
+        <li><strong>Reduced nozzle wear</strong> — lower bushing temperature reduces thermal degradation at the nozzle/bushing interface</li>
+        <li><strong>Improved shot-to-shot consistency</strong> — stable sprue temperature = more consistent melt viscosity = fewer process interruptions</li>
+      </ul>
+
+      <h2 id="specs">7. DME and Hasco Compatibility</h2>
+      <p>We manufacture conformally cooled sprue bushings as drop-in replacements for standard catalog sizes:</p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Standard</th><th>Sizes Available</th><th>Taper</th><th>Flange</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>DME Series A (US)</td><td>A-10 through A-50</td><td>3° included</td><td>Standard DME flange OD</td></tr>
+            <tr><td>DME Series B (US)</td><td>B-10 through B-30</td><td>3° included</td><td>Standard DME B-series</td></tr>
+            <tr><td>Hasco Z510</td><td>Z510/12 through Z510/50</td><td>1°30' each side</td><td>Hasco Z510 flange</td></tr>
+            <tr><td>Meusburger E 1030</td><td>E 1030/10 through E 1030/50</td><td>Per Meusburger standard</td><td>Meusburger E1030</td></tr>
+            <tr><td>Custom</td><td>Any size and taper</td><td>Customer specified</td><td>Customer specified</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>To order a replacement bushing, send us one of the following:</p>
+      <ul>
+        <li>The catalog number from your existing bushing (DME/Hasco/Meusburger)</li>
+        <li>A 2D drawing with key dimensions: flange OD, flange thickness, bore diameters (top and bottom), length, taper angle, nozzle seat radius</li>
+        <li>Your existing bushing as a physical sample (we scan and model it)</li>
+      </ul>
+
+      <h2 id="ordering">8. How to Order a Conformally Cooled Sprue Bushing</h2>
+      <ol>
+        <li><strong>Send us your existing bushing drawing or catalog number</strong></li>
+        <li><strong>Specify resin type</strong> (we select appropriate channel geometry for melt temperature and viscosity)</li>
+        <li><strong>Specify injection pressure</strong> (determines wall thickness and material choice)</li>
+        <li><strong>We return a design drawing + quote within 24 hours</strong></li>
+        <li><strong>Manufacturing time:</strong> 7–10 business days (LPBF print + heat treatment + CNC finishing + pressure test)</li>
+        <li><strong>Shipping:</strong> DHL Express to most countries — 3–14 days depending on destination</li>
+      </ol>
+
+      <div class="cta-inline">
+        <h3>Need a Conformally Cooled Sprue Bushing?</h3>
+        <p>Send us your existing bushing drawing or catalog number and resin type. We'll design a drop-in conformal cooled replacement and quote within 24 hours.</p>
+        <a href="../conformal-cooling-inserts.html" class="btn btn-primary">View Conformal Cooling Service →</a>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="margin-left:12px;">WhatsApp Now</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RELATED RESOURCES -->
+  <div class="blog-article__related">
+    <div class="container">
+      <h2 class="blog-article__related-title">Related Resources</h2>
+      <div class="grid-3">
+        <a href="/blog/conformal-cooling-inserts.html" class="card card--link">
+          <div class="card__body">
+            <div class="card__eyebrow">Inserts Guide</div>
+            <h3 class="card__title">Conformal Cooling Inserts — Complete Guide</h3>
+            <p class="card__text">Channel design rules, material selection, cost benchmarks, and ROI for all insert types.</p>
+            <span class="card__cta">Read Guide →</span>
+          </div>
+        </a>
+        <a href="/blog/conformal-cooling-channel-design.html" class="card card--link">
+          <div class="card__body">
+            <div class="card__eyebrow">Channel Design</div>
+            <h3 class="card__title">Conformal Cooling Channel Design</h3>
+            <p class="card__text">Diameter, pitch, wall thickness, and Reynolds number parameters for effective conformal cooling.</p>
+            <span class="card__cta">Read Guide →</span>
+          </div>
+        </a>
+        <a href="/blog/conformal-cooling-mold.html" class="card card--link">
+          <div class="card__body">
+            <div class="card__eyebrow">Mold Design</div>
+            <h3 class="card__title">Conformal Cooling Mold Design</h3>
+            <p class="card__text">How to integrate conformal cooling into your mold design — cores, cavities, slides, and sprue system.</p>
+            <span class="card__cta">Read Guide →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- STICKY CTA BAR -->
+<div class="sticky-cta">
+  <div class="sticky-cta__text">Conformally cooled sprue bushings — drop-in replacement, 7–10 day lead time.</div>
+  <a href="../contact.html" class="btn btn-primary btn--sm">Get a Quote</a>
+  <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp btn--sm">WhatsApp</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">LPBF-printed conformal cooling inserts and sprue bushings. Ningbo, China. Global shipping.</p>
+        <div class="footer__contact-item">📱 +86 182 6866 1068</div>
+        <div class="footer__contact-item">📧 zhangyuanbo123@gmail.com</div>
+        <div class="footer__contact-item">📍 Yuyao, Ningbo, China</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../rapid-tooling-service.html" class="footer__link">Rapid Tooling</a>
+      </div>
+      <div>
+        <div class="footer__heading">Engineering Blog</div>
+        <a href="/blog/conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts Guide</a>
+        <a href="/blog/conformal-cooling-channel-design.html" class="footer__link">Channel Design Rules</a>
+        <a href="/blog/what-is-conformal-cooling.html" class="footer__link">What Is Conformal Cooling?</a>
+        <a href="index.html" class="footer__link">All Articles →</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp →</a>
+        <a href="../contact.html" class="footer__link">Send a Message</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email Us</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Saiguang 3D Technology. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.querySelector('.nav__mobile-toggle');
+const mobileMenu = document.querySelector('.nav__mobile-menu');
+if (toggle && mobileMenu) {
+  toggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+}
+</script>
+
+</body>
+</html>
