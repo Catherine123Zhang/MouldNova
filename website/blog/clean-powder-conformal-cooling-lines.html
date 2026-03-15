@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Clean Powder Out of Conformal Cooling Lines | MouldNova</title>
+  <meta name="description" content="Step-by-step protocol for removing residual metal powder from 3D-printed conformal cooling channels. Ultrasonic cleaning, pressure flushing, and verification methods." />
+  <link rel="canonical" href="https://mouldnova.com/blog/clean-powder-conformal-cooling-lines.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Clean Powder Out of Conformal Cooling Lines",
+    "description": "Complete protocol for removing residual LPBF metal powder from conformal cooling channels: ultrasonic cleaning, pressure flushing, chemical passivation, and flow verification methods.",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-15",
+    "author": { "@type": "Organization", "name": "Saiguang 3D Technology" },
+    "publisher": { "@type": "Organization", "name": "MouldNova / Saiguang 3D Technology" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is there metal powder stuck in conformal cooling channels?",
+        "acceptedAnswer": { "@type": "Answer", "text": "During LPBF (Laser Powder Bed Fusion) manufacturing, metal powder (15–45μm particles) fills all internal voids including cooling channels. After printing, the bulk powder is removed by inverting the part and using compressed air, but fine powder adheres to the channel walls due to electrostatic attraction and micro-roughness (Ra 8–16μm printed surface). If not fully cleaned, this powder can be flushed into your mold cooling circuit, clogging flow restrictors, chiller filters, and manifold valves." }
+        },
+      {
+        "@type": "Question",
+        "name": "How do you verify conformal cooling channels are completely clean?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Flow rate verification is the primary method: measure actual flow rate through the insert at a specified pressure drop and compare to the engineered design target (±10% is acceptable). Secondary verification: collect effluent flush water on white filter paper — no visible particles after final rinse. For critical applications: borescope inspection of accessible channel sections, and X-ray CT scan to confirm no powder blockages in complex geometry." }
+        },
+      {
+        "@type": "Question",
+        "name": "Can residual powder damage the injection molding machine?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Metal powder (420 stainless steel, 15–45μm) that enters the cooling water circuit can accumulate in chiller filters, flow restrictors, and pump seals. Particles larger than the filter mesh will be caught; finer particles can pass through and accumulate. Over time, partial blockages reduce flow rate and cooling effectiveness. A properly cleaned insert from a reputable manufacturer should have no detectable powder contamination — this is why post-print cleaning is a mandatory manufacturing step." }
+      }
+    ]
+  }
+  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services ▾</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <button class="nav__mobile-toggle" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+<div class="nav__mobile-menu">
+  <a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts</a>
+  <a href="../3d-printed-mold-inserts.html">3D Printed Mold Inserts</a>
+  <a href="../metal-3d-printing-service.html">Metal 3D Printing</a>
+  <a href="../rapid-tooling-service.html">Rapid Tooling</a>
+  <a href="../metal-rapid-prototyping.html">Metal Rapid Prototyping</a>
+  <a href="../low-volume-metal-production.html">Low-Volume Production</a>
+  <a href="../cnc-edm-machining.html">CNC / EDM / Injection Molding</a>
+  <a href="../vision-inspection-mold-monitor.html">CCD Inspection & Mold Monitor</a>
+  <a href="../case-studies.html">Case Studies</a>
+  <a href="index.html">Blog</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+</div>
+
+<!-- ARTICLE -->
+<article class="blog-article">
+  <header class="blog-article__header">
+    <div class="container container--narrow">
+      <div class="blog-article__breadcrumb">
+        <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › Clean Powder from Conformal Cooling Lines
+      </div>
+      <div class="blog-article__meta">
+        <span class="blog-article__category">Operations Guide</span>
+        <span class="blog-article__read-time">8 min read</span>
+        <span class="blog-article__date">March 2026</span>
+      </div>
+      <h1 class="blog-article__title">How to Clean Powder Out of Conformal Cooling Lines: Complete Protocol</h1>
+      <p class="blog-article__lead">Every 3D-printed conformal cooling insert comes out of the LPBF machine full of metal powder. This is unavoidable — the powder fills all internal voids during printing. Incomplete powder removal leads to clogged chiller filters, reduced flow rates, and eventually failed cooling. Here is the full cleaning protocol used by professional manufacturers — and what to check when you receive an insert from any supplier.</p>
+    </div>
+  </header>
+
+  <div class="blog-article__body">
+    <div class="container container--narrow">
+
+      <nav class="toc">
+        <div class="toc__title">Table of Contents</div>
+        <ol class="toc__list">
+          <li><a href="#why-powder">Why Powder Gets Trapped</a></li>
+          <li><a href="#risks">What Happens If You Don't Clean Properly</a></li>
+          <li><a href="#manufacturer-steps">What Your Manufacturer Should Do (Before Shipping)</a></li>
+          <li><a href="#incoming-check">Incoming Inspection: What to Check When Received</a></li>
+          <li><a href="#field-cleaning">Field Cleaning Protocol (If You Received a Poorly Cleaned Insert)</a></li>
+          <li><a href="#ongoing">Ongoing Maintenance: Keeping Lines Clean in Service</a></li>
+          <li><a href="#our-process">What We Do at MouldNova</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="why-powder">1. Why Powder Gets Trapped</h2>
+      <p>LPBF printing uses metal powder (typically 15–45μm particle diameter for 420 stainless steel and 18Ni300 maraging steel) spread in thin layers (30–60μm) across the entire build platform. The laser selectively melts the powder into solid metal, but the surrounding unmelted powder remains in place — filling all voids, cavities, and channels within the part.</p>
+
+      <p>After printing:</p>
+      <ul>
+        <li>The bulk of loose powder (the "powder cake") is removed by depowdering — inverting the part and using compressed air and vibration to shake out powder from accessible openings</li>
+        <li>However, fine powder adheres to channel walls due to:
+          <ul>
+            <li><strong>Electrostatic attraction</strong> — fine metal particles are charged during laser processing and electrostatically attracted to surfaces</li>
+            <li><strong>Micro-roughness</strong> — the printed channel surface has Ra 8–16μm (significantly rougher than machined surfaces), providing mechanical interlocking for powder particles</li>
+            <li><strong>Sintering necks</strong> — at channel edges, partial laser exposure creates partially sintered powder bridges that physically anchor powder to the wall</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="callout callout--red">
+        <strong>Key fact:</strong> After standard depowdering (compressed air blow-out), an LPBF-printed cooling channel may still contain 5–25 grams of adhered metal powder per 100mm of channel length. This powder will be flushed into your cooling circuit the first time coolant flows through the insert.
+      </div>
+
+      <h2 id="risks">2. What Happens If You Don't Clean Properly</h2>
+      <p>Metal powder (15–45μm steel particles) entering your cooling water circuit causes:</p>
+
+      <ul>
+        <li><strong>Chiller filter clogging</strong> — most chiller units use 100–300μm mesh filters. Larger powder agglomerates will immediately clog these filters, reducing flow rate and triggering chiller alarms. Filter replacement cost: $50–200 per occurrence.</li>
+        <li><strong>Flow restrictor blockage</strong> — flow restrictors in the cooling circuit manifold (typically 0.8–2.0mm orifices) trap powder agglomerates. Requires manifold disassembly to clear.</li>
+        <li><strong>Pump seal wear</strong> — hard steel particles (420SS HRC 48–52) are abrasive. Particles passing through pump seals cause accelerated wear and premature pump failure.</li>
+        <li><strong>O-ring damage</strong> — powder particles trapped at O-ring seating surfaces cause leakage.</li>
+        <li><strong>Reduced cooling efficiency</strong> — partial blockages reduce flow rate below the design target Re &gt; 10,000. Even 20% flow reduction can drop Reynolds number below turbulent threshold, dramatically reducing heat transfer coefficient.</li>
+        <li><strong>Contamination of cooling water circuit</strong> — steel particles circulate throughout the circuit (all molds on the same cooling loop) and accumulate at low-flow areas.</li>
+      </ul>
+
+      <h2 id="manufacturer-steps">3. What Your Manufacturer Should Do Before Shipping</h2>
+      <p>Any reputable conformal cooling insert manufacturer should perform the following cleaning steps as part of standard post-processing before the insert leaves the factory:</p>
+
+      <h3>Step 1: Initial Depowdering (Immediately After Print)</h3>
+      <p>The insert is removed from the powder bed and placed in a depowdering station. Compressed air at 4–6 bar is blown through the channel inlets while the insert is rotated in multiple orientations. Target: remove all free-flowing powder from the channel interior.</p>
+      <p><em>Time required: 15–45 minutes depending on channel complexity.</em></p>
+
+      <h3>Step 2: Ultrasonic Cleaning Bath</h3>
+      <p>The insert is submerged in an ultrasonic cleaning tank (40–80 kHz, water + mild alkaline cleaning agent, 50–60°C). Cavitation bubbles created by the ultrasonic transducers dislodge electrostatically-adhered powder from channel walls without mechanical contact.</p>
+      <ul>
+        <li>Minimum soak time: 30–60 minutes</li>
+        <li>Coolant ports must be open during ultrasonic cleaning — both ends of each channel circuit</li>
+        <li>Invert and rotate mid-cycle to dislodge settled powder</li>
+      </ul>
+      <p><em>This step removes 80–90% of residual adhered powder that compressed air alone cannot dislodge.</em></p>
+
+      <h3>Step 3: High-Velocity Water Flushing</h3>
+      <p>High-pressure water (3–8 bar) is forced through each cooling circuit independently to flush dislodged powder out of the channels. Flush until the effluent runs clear — collect on white filter paper to verify no visible particles.</p>
+      <ul>
+        <li>Flush each circuit independently (do not flush multiple circuits in parallel — you want maximum velocity in each channel)</li>
+        <li>Reverse flow direction mid-flush to dislodge powder trapped at corners and bends</li>
+        <li>Minimum volume: 10× the internal channel volume per flush direction</li>
+      </ul>
+
+      <h3>Step 4: Repeat Ultrasonic + Flush (At Least 2–3 Cycles)</h3>
+      <p>A single ultrasonic cleaning + flush cycle is not sufficient for complex channel geometries. Repeat the sequence at least twice more. Each cycle should show progressively cleaner effluent.</p>
+
+      <h3>Step 5: Chemical Passivation (for Stainless Steel)</h3>
+      <p>420 stainless steel and 18Ni300 maraging steel inserts should be passivated after cleaning to improve corrosion resistance of the freshly machined and printed surfaces. Standard passivation: citric acid bath (10–20% solution, 60°C, 30 minutes) or nitric acid passivation (ASTM A967). This also removes surface iron contamination from the printing process that could otherwise rust in service.</p>
+
+      <h3>Step 6: Flow Rate Verification</h3>
+      <p>The final quality check: measure actual flow rate through each circuit at a specified pressure differential (typically 1.0 bar or 2.0 bar). Compare to the engineered design flow rate. Acceptable tolerance: ±10% of design target.</p>
+      <p><em>If actual flow is &gt;10% below design target, there is a blockage — do not ship until resolved.</em></p>
+
+      <h3>Step 7: Hydrostatic Pressure Test</h3>
+      <p>Pressurize all cooling circuits to 200 bar with water and hold for 5 minutes. No pressure drop (&gt;5%) or visible leakage is acceptable. This confirms structural integrity and detects any micro-cracks or porosity in the channel walls.</p>
+
+      <div class="callout callout--green">
+        <strong>What to require from your supplier:</strong> Flow rate verification data and hydrostatic pressure test certificate with the shipment. If your supplier cannot provide these documents, the insert has not been properly quality-checked.
+      </div>
+
+      <h2 id="incoming-check">4. Incoming Inspection: What to Check When You Receive an Insert</h2>
+      <p>Even with a good supplier, perform incoming inspection before installing any conformal cooling insert:</p>
+
+      <h3>Visual Inspection</h3>
+      <ul>
+        <li>Inspect channel inlet and outlet openings with a flashlight — no visible powder accumulation at the opening</li>
+        <li>Blow low-pressure compressed air through each circuit — air should flow freely with no resistance</li>
+        <li>Collect exhaust air on white filter paper — no visible metallic particles</li>
+      </ul>
+
+      <h3>Flow Rate Test</h3>
+      <p>Connect each circuit to a water supply at a known pressure (your shop's cooling water supply pressure, typically 3–6 bar). Measure flow rate with an inline flow meter. Compare to the design flow rate on your insert drawing. If actual flow is &gt;15% below design target, the insert may have a partial blockage that requires additional cleaning before installation.</p>
+
+      <h3>White Filter Paper Test</h3>
+      <p>Place white filter paper (or a white cloth) at the outlet of each circuit. Flow water through for 60 seconds at normal operating pressure. The filter paper should show no metallic gray staining after this flush. If gray staining is present, the insert needs additional cleaning per the protocol in Section 5.</p>
+
+      <h2 id="field-cleaning">5. Field Cleaning Protocol (If You Received a Poorly Cleaned Insert)</h2>
+      <p>If incoming inspection reveals powder contamination, clean the insert before installation using this protocol:</p>
+
+      <h3>Equipment Needed</h3>
+      <ul>
+        <li>Ultrasonic cleaner (≥10 liter tank, 40–80 kHz) — available from $200–800 for industrial units</li>
+        <li>Alkaline cleaning solution (proprietary or sodium carbonate/surfactant mixture, 2–5% in water)</li>
+        <li>Pressure washer or high-pressure flush pump (≥5 bar)</li>
+        <li>White filter paper or fine-mesh screen for effluent testing</li>
+        <li>Compressed air supply (5–8 bar)</li>
+      </ul>
+
+      <h3>Field Cleaning Procedure</h3>
+      <ol>
+        <li><strong>Initial compressed air blow-out</strong> — 5 bar compressed air through each circuit, both directions, 5 minutes each</li>
+        <li><strong>Ultrasonic bath, Cycle 1</strong> — submerge in 60°C cleaning solution, 45 minutes, both circuit ports open</li>
+        <li><strong>High-pressure flush, Cycle 1</strong> — 5+ bar water through each circuit, collect effluent on filter paper</li>
+        <li><strong>Ultrasonic bath, Cycle 2</strong> — 30 minutes</li>
+        <li><strong>High-pressure flush, Cycle 2</strong> — flush until effluent runs clear on filter paper</li>
+        <li><strong>Rinse with clean water</strong> — flush with clean tap water or deionized water to remove cleaning agent residue</li>
+        <li><strong>Dry</strong> — compressed air blow-dry all channels, then oven dry at 80°C for 30 minutes to prevent rust</li>
+        <li><strong>Flow rate retest</strong> — verify flow rate matches design before installation</li>
+      </ol>
+
+      <div class="callout callout--yellow">
+        <strong>Important:</strong> Do not use harsh acids (HCl, concentrated HNO₃) for cleaning. These will attack the grain boundaries of LPBF-printed stainless steel and could compromise structural integrity. Citric acid (10% solution) is safe and effective for passivation after cleaning.
+      </div>
+
+      <h2 id="ongoing">6. Ongoing Maintenance: Keeping Lines Clean in Service</h2>
+      <p>After installation, conformal cooling channels require periodic maintenance to prevent scale buildup and corrosion:</p>
+
+      <h3>Coolant Water Specification</h3>
+      <ul>
+        <li>Use treated cooling water (corrosion inhibitor + biocide + anti-scale agent) — not plain tap water</li>
+        <li>Recommended: BASF Glysantin, Clariant Antifrogen, or equivalent corrosion inhibitor at 5–15% concentration</li>
+        <li>pH target: 7.0–8.5 (check monthly)</li>
+        <li>Total hardness: &lt;150 ppm (harder water deposits scale faster in narrow channels)</li>
+        <li>Iron content: &lt;2 ppm (excess iron indicates corrosion somewhere in circuit)</li>
+      </ul>
+
+      <h3>Periodic Cleaning Schedule</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Interval</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Monthly</td><td>Check coolant chemistry (pH, inhibitor concentration, iron content)</td></tr>
+            <tr><td>Quarterly</td><td>Flow rate check — compare to initial baseline. &gt;10% reduction = partial blockage forming</td></tr>
+            <tr><td>Annually</td><td>Drain, flush with 10% citric acid solution, re-flush with clean water, check for scale deposits</td></tr>
+            <tr><td>Every mold rework</td><td>Full cleaning protocol (Section 5) before re-commissioning</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Signs of Scale or Blockage in Service</h3>
+      <ul>
+        <li>Cycle time creeping up over weeks/months — often the first sign of reduced cooling effectiveness</li>
+        <li>Mold temperature controller showing increasing outlet-inlet ΔT at the same flow rate — reduced flow through channels</li>
+        <li>Hot spots reappearing (warpage or sink marks in previously corrected areas) — indicates partial blockage in the channel serving that zone</li>
+        <li>Chiller working harder (longer ON cycle) to maintain target mold temperature — reduced heat transfer efficiency</li>
+      </ul>
+
+      <h2 id="our-process">7. What We Do at MouldNova</h2>
+      <p>Every conformal cooling insert we ship undergoes the full 7-step post-processing protocol described in Section 3. The cleaning and verification records are part of our QC documentation:</p>
+
+      <ul>
+        <li><strong>3× ultrasonic cleaning cycles</strong> — 420 Stainless Steel: 45 + 30 + 20 minutes; 18Ni300: 60 + 30 + 20 minutes</li>
+        <li><strong>High-pressure flush after each cycle</strong> — effluent collected on white filter paper, photographed, retained in QC record</li>
+        <li><strong>Citric acid passivation</strong> — standard for all stainless steel inserts</li>
+        <li><strong>Flow rate measurement</strong> — recorded on flow certificate with design target and actual measurement</li>
+        <li><strong>Hydrostatic test at 200 bar, 5 minutes</strong> — test certificate provided with shipment</li>
+      </ul>
+
+      <p>These documents are included with every shipment. If you ever receive an insert from any supplier without these documents, treat the insert as unverified and perform incoming inspection before installation.</p>
+
+      <div class="cta-inline">
+        <h3>Order Pre-Cleaned, Pre-Tested Conformal Cooling Inserts</h3>
+        <p>Every MouldNova insert ships with flow rate certificate and hydrostatic pressure test documentation — verified clean and ready to install. Send your drawing for a 24-hour quote.</p>
+        <a href="../conformal-cooling-inserts.html" class="btn btn-primary">View Conformal Cooling Service →</a>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="margin-left:12px;">WhatsApp Now</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RELATED RESOURCES -->
+  <div class="blog-article__related">
+    <div class="container">
+      <h2 class="blog-article__related-title">Related Resources</h2>
+      <div class="grid-3">
+        <a href="/blog/conformal-cooling-channels.html" class="card card--link">
+          <div class="card__body">
+            <div class="card__eyebrow">Operations Guide</div>
+            <h3 class="card__title">Conformal Cooling Channels: Full Lifecycle</h3>
+            <p class="card__text">Commissioning, coolant specification, maintenance schedule, and troubleshooting guide for conformal cooling circuits.</p>
+            <span class="card__cta">Read Guide →</span>
+          </div>
+        </a>
+        <a href="/blog/conformal-cooling-inserts.html" class="card card--link">
+          <div class="card__body">
+            <div class="card__eyebrow">Inserts Guide</div>
+            <h3 class="card__title">Conformal Cooling Inserts — Complete Guide</h3>
+            <p class="card__text">Design rules, material selection, cost benchmarks, and installation best practices for conformal cooling inserts.</p>
+            <span class="card__cta">Read Guide →</span>
+          </div>
+        </a>
+        <a href="/blog/conformal-cooling-technology.html" class="card card--link">
+          <div class="card__body">
+            <div class="card__eyebrow">Technology Overview</div>
+            <h3 class="card__title">Conformal Cooling Technology Guide</h3>
+            <p class="card__text">The complete 2026 state of the industry — LPBF manufacturing, geometry evolution, market adoption, and cost trajectory.</p>
+            <span class="card__cta">Read Guide →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta">
+  <div class="sticky-cta__text">Pre-cleaned, flow-tested conformal cooling inserts. Ships in 10–14 days.</div>
+  <a href="../contact.html" class="btn btn-primary btn--sm">Get a Quote</a>
+  <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp btn--sm">WhatsApp</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">LPBF conformal cooling inserts — pre-cleaned, pressure-tested, ready to install. Ningbo, China.</p>
+        <div class="footer__contact-item">📱 +86 182 6866 1068</div>
+        <div class="footer__contact-item">📧 zhangyuanbo123@gmail.com</div>
+        <div class="footer__contact-item">📍 Yuyao, Ningbo, China</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../rapid-tooling-service.html" class="footer__link">Rapid Tooling</a>
+      </div>
+      <div>
+        <div class="footer__heading">Engineering Blog</div>
+        <a href="/blog/conformal-cooling-channels.html" class="footer__link">Cooling Channels Operations</a>
+        <a href="/blog/conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts Guide</a>
+        <a href="/blog/conformal-cooling-technology.html" class="footer__link">Technology Overview 2026</a>
+        <a href="index.html" class="footer__link">All Articles →</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp →</a>
+        <a href="../contact.html" class="footer__link">Send a Message</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email Us</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Saiguang 3D Technology. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.querySelector('.nav__mobile-toggle');
+const mobileMenu = document.querySelector('.nav__mobile-menu');
+if (toggle && mobileMenu) {
+  toggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+}
+</script>
+
+</body>
+</html>

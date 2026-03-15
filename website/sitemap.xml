@@ -257,4 +257,18 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://mouldnova.com/blog/conformal-cooling-technology.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mouldnova.com/blog/clean-powder-conformal-cooling-lines.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
