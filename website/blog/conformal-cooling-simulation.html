@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conformal Cooling Simulation: Setup, Results Interpretation & When to Trust It | MouldNova</title>
+  <meta name="description" content="How to run a conformal cooling simulation in Moldflow: mesh setup, cooling channel geometry, 4 key outputs (cooling time, ΔT, pressure drop, warpage), 5 common mistakes, and how to interpret results." />
+  <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-simulation.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Conformal Cooling Simulation: How to Run It, What the Results Mean, and When to Trust Them",
+    "description": "A practitioner's workflow guide to conformal cooling Moldflow simulation — setup, mesh strategy, 4 key outputs, 5 common mistakes, and how to interpret cooling time, temperature distribution, pressure drop, and warpage results.",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-15",
+    "author": { "@type": "Organization", "name": "Saiguang 3D Technology" },
+    "publisher": { "@type": "Organization", "name": "MouldNova / Saiguang 3D Technology" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a conformal cooling simulation actually calculate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A conformal cooling simulation in Moldflow or Moldex3D calculates four primary outputs: (1) cooling time map — the time required for each region of the cavity surface to reach ejection temperature; (2) temperature distribution — the ΔT between the hottest and coolest points on the cavity at the end of the cooling phase; (3) coolant pressure drop and required flow rate across the channel circuit; and (4) warpage prediction — the deflection magnitude and direction caused by differential shrinkage from non-uniform cooling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an acceptable temperature difference (ΔT) in conformal cooling simulation results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ΔT below 5°C across the cavity surface is considered excellent and indicates very uniform cooling. A ΔT of 5–10°C is acceptable for most commercial parts. A ΔT of 10–20°C indicates warpage risk and should prompt design review. A ΔT above 20°C indicates the cooling design needs to be redesigned before manufacturing — at this level, differential shrinkage will almost certainly cause part warpage beyond acceptable tolerances."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Reynolds number should conformal cooling channels target?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Conformal cooling channels should target a Reynolds number (Re) of 4,000–8,000, which places flow firmly in the turbulent regime. Turbulent flow is critical because the Nusselt number (which governs heat transfer) drops 5–10× in laminar flow. A channel that looks correctly sized in a drawing but carries laminar flow (Re < 2,300) will perform dramatically worse than expected. Target flow rates should be verified in simulation to confirm turbulent flow through every branch of the circuit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the most common mistakes in conformal cooling simulation setup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The five most common mistakes are: (1) using generic resin data instead of the actual supplier grade datasheet — thermal conductivity and specific heat can vary ±15% between grades; (2) setting coolant inlet temperature to ambient (20°C) instead of the actual chiller setpoint (often 10–15°C or even lower); (3) ignoring heat conduction through the parent mold steel surrounding the insert; (4) skipping a cooling-only analysis and running a full cycle simulation immediately, making it harder to isolate cooling problems; and (5) not accounting for channel surface roughness — as-printed LPBF channels have Ra 8–20 µm, which affects friction factor and heat transfer compared to smooth-channel assumptions in default simulation settings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get a free conformal cooling simulation report?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. MouldNova (operated by Saiguang 3D Technology) provides a free Moldflow cooling analysis as part of the quotation process for conformal cooling inserts. The report includes a temperature map, ΔT table, pressure drop calculation, and cycle time prediction. Turnaround is typically 48 hours. Send your mold insert STEP file and resin/process requirements via WhatsApp (+86 182 6866 1068) or the contact page."
+        }
+      }
+    ]
+  }
+  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services ▾</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <button class="nav__mobile-toggle" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+<div class="nav__mobile-menu">
+  <a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts</a>
+  <a href="../3d-printed-mold-inserts.html">3D Printed Mold Inserts</a>
+  <a href="../metal-3d-printing-service.html">Metal 3D Printing</a>
+  <a href="../rapid-tooling-service.html">Rapid Tooling</a>
+  <a href="../metal-rapid-prototyping.html">Metal Rapid Prototyping</a>
+  <a href="../low-volume-metal-production.html">Low-Volume Production</a>
+  <a href="../cnc-edm-machining.html">CNC / EDM / Injection Molding</a>
+  <a href="../vision-inspection-mold-monitor.html">CCD Inspection & Mold Monitor</a>
+  <a href="../case-studies.html">Case Studies</a>
+  <a href="index.html">Blog</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+</div>
+
+<!-- ARTICLE HEADER -->
+<article class="blog-article">
+  <header class="blog-article__header">
+    <div class="container container--narrow">
+      <div class="blog-article__breadcrumb">
+        <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › Conformal Cooling Simulation
+      </div>
+      <div class="blog-article__meta">
+        <span class="blog-article__category">Simulation & Analysis</span>
+        <span class="blog-article__read-time">16 min read</span>
+        <span class="blog-article__date">March 2026</span>
+      </div>
+      <h1 class="blog-article__title">Conformal Cooling Simulation: How to Run It, What the Results Mean, and When to Trust Them</h1>
+      <p class="blog-article__lead">This guide is for engineers who have access to Moldflow or Moldex3D — or who are about to get access — and need to understand exactly what to simulate, how to set it up correctly, and how to read the four outputs that actually matter. No software selection debates here; that's covered in a <a href="conformal-cooling-design-software.html">separate article</a>. This one is about running the simulation and making decisions from the results.</p>
+    </div>
+  </header>
+
+  <div class="blog-article__body">
+    <div class="container container--narrow">
+
+      <nav class="toc">
+        <div class="toc__title">Table of Contents</div>
+        <ol class="toc__list">
+          <li><a href="#why-simulate">Why Simulate Before Printing: The Real Cost Equation</a></li>
+          <li><a href="#what-sim-calculates">What Conformal Cooling Simulation Actually Calculates</a></li>
+          <li><a href="#setup">Setting Up the Simulation: Step by Step</a></li>
+          <li><a href="#cooling-time">Understanding Cooling Time Results</a></li>
+          <li><a href="#temperature-distribution">Understanding Temperature Distribution Results</a></li>
+          <li><a href="#pressure-drop">Pressure Drop and Flow Rate: The Hydraulics Check</a></li>
+          <li><a href="#warpage">Warpage Prediction: Reading the Deflection Plots</a></li>
+          <li><a href="#common-mistakes">5 Common Simulation Mistakes (and How to Avoid Them)</a></li>
+          <li><a href="#trust">When to Trust Simulation vs. When to Test</a></li>
+          <li><a href="#mouldnova-service">MouldNova Free Simulation Offer</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
+
+      <!-- SECTION 1 -->
+      <h2 id="why-simulate">1. Why Simulate Before Printing: The Real Cost Equation</h2>
+      <p>A conformal cooling insert is not a standard machined part you can tweak on a manual mill if it turns out wrong. The channel geometry is locked into the printed metal at build time. If the thermal design is wrong — if you have hot spots, insufficient flow, or poor temperature uniformity — the entire insert may need to be reprinted.</p>
+
+      <p>Here is what that costs in practice:</p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Insert Size / Complexity</th><th>Print + Finish Cost</th><th>Redesign &amp; Reprint if Wrong</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Small insert (&lt;150×150mm)</td>
+              <td>$800–2,500</td>
+              <td>$800–2,500 wasted, plus 2–4 week delay</td>
+            </tr>
+            <tr>
+              <td>Medium insert (150–300mm)</td>
+              <td>$2,500–6,000</td>
+              <td>$2,500–6,000 wasted, plus 3–5 week delay</td>
+            </tr>
+            <tr>
+              <td>Large or complex insert (&gt;300mm)</td>
+              <td>$6,000–10,000+</td>
+              <td>$6,000–10,000+ wasted, plus 4–6 week delay</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Now compare that against the cost of simulation:</p>
+      <ul>
+        <li><strong>$0</strong> — if you use MouldNova's free cooling analysis service (Moldflow report included with quote)</li>
+        <li><strong>$200–500</strong> — if you run it yourself with an existing Moldflow/Moldex3D license (2–4 hours of engineer time)</li>
+        <li><strong>$500–800</strong> — typical bureau simulation cost for a conformal cooling analysis with report</li>
+      </ul>
+
+      <div class="callout callout--blue">
+        <strong>The decision is simple:</strong> Simulation costs 5–10% of what a failed insert reprint costs, and eliminates the 3–6 week production delay. For any insert over $1,500 in value, skipping simulation is an engineering risk that doesn't make financial sense.
+      </div>
+
+      <p>There is also a less obvious benefit: simulation forces you to define your process conditions precisely before manufacturing. Melt temperature, coolant inlet temperature, target flow rate — these need to be specified anyway. Simulation just makes you specify them <em>before</em> the insert is built, not after the first trial shot reveals a problem.</p>
+
+      <!-- SECTION 2 -->
+      <h2 id="what-sim-calculates">2. What Conformal Cooling Simulation Actually Calculates</h2>
+      <p>Moldflow and Moldex3D run a coupled thermal analysis that models three simultaneous processes: heat transfer from the solidifying plastic into the mold steel, conduction through the mold body, and convective heat removal by the flowing coolant. The four outputs that matter for conformal cooling decisions are:</p>
+
+      <div class="grid-2" style="margin-top:24px; margin-bottom:32px;">
+        <div class="card">
+          <div class="card__body">
+            <div class="card__eyebrow">Output (a)</div>
+            <h3 class="card__title">Cooling Time Map</h3>
+            <p class="card__text">A color contour plot showing the time required (in seconds) for each region of the cavity surface to reach the specified ejection temperature. Reveals hot spots — regions that limit the cycle because they cool slowest.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <div class="card__eyebrow">Output (b)</div>
+            <h3 class="card__title">Temperature Distribution (ΔT)</h3>
+            <p class="card__text">The temperature across the cavity surface at the end of the cooling phase. The key metric is ΔT — the difference between the hottest and coolest point. High ΔT drives differential shrinkage and warpage.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <div class="card__eyebrow">Output (c)</div>
+            <h3 class="card__title">Pressure Drop &amp; Flow Rate</h3>
+            <p class="card__text">The hydraulic analysis of the cooling circuit: total pressure drop across the channel (bar), required volumetric flow rate (L/min), and Reynolds number at each channel segment. Drives pump and chiller sizing decisions.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <div class="card__eyebrow">Output (d)</div>
+            <h3 class="card__title">Warpage Prediction</h3>
+            <p class="card__text">The predicted deflection of the ejected part — magnitude (mm) and direction vector — caused by differential shrinkage from non-uniform cooling. Compare conventional vs. conformal design side by side to quantify the improvement.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>Understanding which output is most important for your decision depends on the part. For tight-tolerance parts, temperature distribution and warpage are the priority outputs. For high-volume parts where cycle time is the primary target, cooling time and pressure drop govern the design choices.</p>
+
+      <!-- SECTION 3 -->
+      <h2 id="setup">3. Setting Up the Simulation: Step by Step</h2>
+      <p>The following workflow applies to both Moldflow Insight and Moldex3D R&D. The specific menu names differ, but the logical sequence is identical.</p>
+
+      <h3>Step 1: Mold Geometry Import</h3>
+      <p>Import your insert geometry as a STEP file. IGES is also accepted but STEP is preferred — it carries more solid geometry information and reduces healing work. Before importing, confirm that:</p>
+      <ul>
+        <li>The STEP file contains both the cavity/core insert body <em>and</em> the cooling channel solid geometry (as a separate body or as a subtracted void in the insert)</li>
+        <li>Channel centerlines are available as sketch curves — these are needed for the 1D beam element meshing used in cooling circuit analysis</li>
+        <li>The parent mold plate geometry is included if you want to model conduction losses through the surrounding steel (recommended for accuracy)</li>
+      </ul>
+
+      <h3>Step 2: Mesh Strategy</h3>
+      <p>Two meshing approaches are used in conformal cooling simulation:</p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Mesh Type</th><th>Best For</th><th>Typical Element Size</th><th>Run Time</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Shell (midplane or dual-domain)</strong></td>
+              <td>Initial screening, simple parts, fast iteration</td>
+              <td>1.5–2.5mm</td>
+              <td>15–45 min</td>
+            </tr>
+            <tr>
+              <td><strong>Solid (3D tetrahedral)</strong></td>
+              <td>Complex geometry, thick/variable walls, final validation</td>
+              <td>1–2mm</td>
+              <td>2–8 hours</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>For conformal cooling work, <strong>always use solid (3D) mesh for the final simulation</strong>. Shell mesh is adequate for fill analysis but misses the through-thickness thermal gradients that conformal cooling is specifically designed to address. A 1–2mm element size is appropriate for most mold inserts; reduce to 0.5–1mm at channel walls and in thin-wall regions where the thermal gradient is steepest.</p>
+
+      <h3>Step 3: Material Database — Resin Selection</h3>
+      <p>Select the exact resin from the material library — not a generic family material. The thermal properties that drive cooling simulation accuracy are:</p>
+      <ul>
+        <li><strong>Specific heat capacity (Cp)</strong> — affects the amount of heat that must be removed per unit mass</li>
+        <li><strong>Thermal conductivity (k)</strong> — governs how quickly heat moves through the solidified plastic toward the mold surface</li>
+        <li><strong>Viscosity curve (η vs. shear rate and temperature)</strong> — needed for fill/pack phases but less critical for cooling-only analysis</li>
+        <li><strong>Ejection temperature</strong> — defines when the cooling phase is complete; check the resin datasheet, not a default value</li>
+      </ul>
+
+      <div class="callout callout--yellow">
+        <strong>Critical note:</strong> If your exact resin grade is not in the material database, request the PVT (pressure-volume-temperature) and thermal property data from the resin supplier. Do not substitute a similar grade — Cp and k can vary ±10–15% between grades of the same polymer family, which translates directly to ±10–15% error in predicted cooling time.
+      </div>
+
+      <h3>Step 4: Cooling Channel Geometry Definition</h3>
+      <p>Define the conformal channel circuit within the simulation. In Moldflow, this is done via the <em>Cooling Circuit Wizard</em>. In Moldex3D, use the <em>Cooling Channel</em> definition tool. Specify:</p>
+      <ul>
+        <li>Channel centerline path (import from CAD sketch or define in simulation environment)</li>
+        <li>Channel cross-section: diameter for circular channels (most common), or width/height for rectangular channels</li>
+        <li>Circuit inlet and outlet locations</li>
+        <li>Coolant flow direction (in series or parallel branches)</li>
+        <li>Inlet coolant temperature (use your actual chiller setpoint — not ambient room temperature)</li>
+        <li>Coolant type: water (most common), water-glycol mixture (for sub-zero chilling), or oil (for elevated-temperature molds)</li>
+      </ul>
+
+      <h3>Step 5: Process Conditions</h3>
+      <p>Set the injection molding process conditions that boundary the thermal analysis:</p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Parameter</th><th>Where to Find It</th><th>Typical Range (commodity resins)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Melt temperature</td>
+              <td>Resin datasheet (mold filling temp range)</td>
+              <td>200–300°C</td>
+            </tr>
+            <tr>
+              <td>Mold temperature (cavity side)</td>
+              <td>Resin datasheet or process sheet</td>
+              <td>20–80°C</td>
+            </tr>
+            <tr>
+              <td>Coolant inlet temperature</td>
+              <td>Chiller setpoint (measure, don't assume)</td>
+              <td>8–25°C</td>
+            </tr>
+            <tr>
+              <td>Coolant flow rate (per circuit)</td>
+              <td>Initial estimate: target Re 5,000–8,000</td>
+              <td>3–12 L/min</td>
+            </tr>
+            <tr>
+              <td>Cooling time (initial estimate)</td>
+              <td>Rule of thumb: t ≈ (wall thickness)² × constant</td>
+              <td>5–40 sec depending on wall and resin</td>
+            </tr>
+            <tr>
+              <td>Ejection temperature</td>
+              <td>Resin datasheet (HDT or Vicat softening point)</td>
+              <td>60–140°C</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>For the first simulation run, use a conservative (longer) initial cooling time estimate. The simulation will tell you the actual required cooling time in the results — you then iterate to find the minimum cooling time that satisfies your temperature uniformity and ejection temperature requirements.</p>
+
+      <!-- SECTION 4 -->
+      <h2 id="cooling-time">4. Understanding Cooling Time Results</h2>
+      <p>The cooling time map is a color contour displayed on the cavity surface. Each color represents the local time (in seconds) for that surface region to cool from melt temperature to the specified ejection temperature. The color scale typically runs from blue (fastest cooling) to red (slowest cooling).</p>
+
+      <h3>What You Are Looking For</h3>
+      <p>The governing cycle time is set by the <em>slowest-cooling region</em> — the red zone on the map. Your target is to make the entire map as uniform as possible, with the range between fastest and slowest cooling as small as the part geometry allows.</p>
+
+      <ul>
+        <li><strong>Hot spots (red zones)</strong> are areas where the conformal channel is too far from the cavity surface, where flow is laminar (insufficient Re), or where the channel pitch is too large. These are the regions to target in redesign.</li>
+        <li><strong>Overcooled zones (deep blue)</strong> mean the channel is too close to the surface or flow rate is excessive in that branch. Overcooling wastes energy and can cause the cavity surface to drop below the optimal mold temperature, causing surface defects (cold flow lines, poor gloss).</li>
+        <li><strong>Uniform map (narrow color range)</strong> is the target. A good conformal cooling design will show a cooling time range of ±15–20% around the mean.</li>
+      </ul>
+
+      <h3>Cooling Time and Warpage Risk</h3>
+      <p>There is a direct relationship between the spatial pattern of the cooling time map and the direction of part warpage after ejection. Regions that cool faster solidify first and reach a lower stress state. Adjacent regions still cooling undergo constrained shrinkage against the already-solidified material. The cooling time gradient predicts where differential shrinkage will occur — and the warpage output (Section 7) quantifies how much deflection that gradient produces.</p>
+
+      <div class="callout callout--blue">
+        <strong>Design target:</strong> ΔT (cooling time variation) less than ±20% across the cavity surface is a practical design target. For tight-tolerance parts (&lt;±0.1mm), aim for ±10%.
+      </div>
+
+      <!-- SECTION 5 -->
+      <h2 id="temperature-distribution">5. Understanding Temperature Distribution Results</h2>
+      <p>The temperature distribution output shows the mold cavity surface temperature at a specific moment in the cooling phase — usually at the end of cooling, just before ejection. The key metric is <strong>ΔT: the difference between the maximum and minimum surface temperature across the cavity</strong>.</p>
+
+      <h3>ΔT Interpretation Table</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>ΔT at End of Cooling Phase</th><th>Assessment</th><th>Action Required</th></tr>
+          </thead>
+          <tbody>
+            <tr style="background:#e8f5e9;">
+              <td><strong>&lt; 5°C</strong></td>
+              <td>Excellent — uniform cooling</td>
+              <td>Proceed to manufacture. Warpage risk is minimal.</td>
+            </tr>
+            <tr style="background:#f1f8e9;">
+              <td><strong>5–10°C</strong></td>
+              <td>Acceptable for most commercial parts</td>
+              <td>Review hot spots. Acceptable unless tight tolerances are required.</td>
+            </tr>
+            <tr style="background:#fff8e1;">
+              <td><strong>10–20°C</strong></td>
+              <td>Warpage risk — design review needed</td>
+              <td>Identify hot spot location, adjust channel pitch or depth. Re-simulate.</td>
+            </tr>
+            <tr style="background:#fff3e0;">
+              <td><strong>20–35°C</strong></td>
+              <td>High warpage risk</td>
+              <td>Significant redesign required. Do not manufacture at this ΔT for precision parts.</td>
+            </tr>
+            <tr style="background:#fce4ec;">
+              <td><strong>&gt; 35°C</strong></td>
+              <td>Redesign required</td>
+              <td>Channel layout is fundamentally inadequate. Full redesign before proceeding.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>How Temperature Gradients Cause Differential Shrinkage</h3>
+      <p>Plastic shrinks as it cools from melt to solid. The volumetric shrinkage for a typical semi-crystalline resin (PP, PA66) is 1.0–2.5%; for amorphous resins (ABS, PC) it is 0.4–0.8%. If different regions of the part cool at different rates, they pass through the solidification transition at different times and end up with different levels of frozen-in stress.</p>
+
+      <p>The mechanism is straightforward: a hot region shrinks later than its already-solidified neighbor. That late shrinkage is constrained by the rigid neighbor, so the hot region ends up with tensile residual stress. After ejection, this stress relaxes and the part warps — bending away from the hot side. The warpage direction directly follows the temperature gradient: the part curves toward the side that cooled fastest (the colder side).</p>
+
+      <p>This is why temperature distribution uniformity is the primary thermal design target in conformal cooling — not just achieving a fast absolute cooling time, but achieving uniform cooling across the entire cavity surface simultaneously.</p>
+
+      <!-- SECTION 6 -->
+      <h2 id="pressure-drop">6. Pressure Drop and Flow Rate: The Hydraulics Check</h2>
+      <p>Heat transfer efficiency in a cooling channel depends entirely on whether the flow is turbulent or laminar. This is not a minor detail — it is the most critical hydraulic design criterion.</p>
+
+      <h3>Reynolds Number: The Governing Parameter</h3>
+      <p>The Reynolds number for pipe flow is:</p>
+      <p style="font-family:monospace; background:#f5f5f5; padding:12px 16px; border-radius:6px; display:block; margin:16px 0;"><strong>Re = (ρ × v × D) / μ</strong><br>where ρ = coolant density (kg/m³), v = flow velocity (m/s), D = channel diameter (m), μ = dynamic viscosity (Pa·s)</p>
+      <p>For water at 15°C: ρ ≈ 999 kg/m³, μ ≈ 0.00114 Pa·s. For a 10mm diameter channel carrying 6 L/min:</p>
+      <ul>
+        <li>Flow velocity v = Q / A = (6/60,000) / (π × 0.005²) ≈ 1.27 m/s</li>
+        <li>Re = (999 × 1.27 × 0.010) / 0.00114 ≈ 11,100 — fully turbulent</li>
+      </ul>
+
+      <h3>Target Reynolds Number Range</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Reynolds Number</th><th>Flow Regime</th><th>Heat Transfer Consequence</th></tr>
+          </thead>
+          <tbody>
+            <tr style="background:#fce4ec;">
+              <td><strong>&lt; 2,300</strong></td>
+              <td>Laminar</td>
+              <td>Nusselt number (Nu) is ~3.7 for uniform heat flux — very low heat transfer. Cooling effectiveness drops 5–10× vs. turbulent.</td>
+            </tr>
+            <tr style="background:#fff8e1;">
+              <td><strong>2,300–4,000</strong></td>
+              <td>Transitional</td>
+              <td>Unstable, unpredictable heat transfer. Avoid this range in design.</td>
+            </tr>
+            <tr style="background:#f1f8e9;">
+              <td><strong>4,000–8,000</strong></td>
+              <td>Turbulent (target range)</td>
+              <td>Nu scales as Re^0.8 — good heat transfer. Practical for most mold cooling circuits.</td>
+            </tr>
+            <tr style="background:#e8f5e9;">
+              <td><strong>&gt; 8,000</strong></td>
+              <td>Fully turbulent</td>
+              <td>Excellent heat transfer. Higher pressure drop. Justified for critical applications.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Moldflow reports Reynolds number for each channel segment. Check that <strong>every segment</strong> in the circuit meets the target Re — not just the main trunk. Branch channels that are wider in diameter or carry less flow are most at risk of laminar flow.</p>
+
+      <h3>Pressure Drop Budget</h3>
+      <p>The total pressure drop across a conformal cooling circuit is the sum of friction losses through each channel segment plus minor losses at bends and diameter changes. Typical values for a well-designed conformal circuit:</p>
+      <ul>
+        <li><strong>Simple conformal spiral or zigzag, single insert:</strong> 1.5–3.5 bar</li>
+        <li><strong>Complex multi-pass conformal circuit, full mold half:</strong> 3–6 bar</li>
+        <li><strong>Chiller/pump capability (typical industrial chiller):</strong> 3–8 bar available</li>
+      </ul>
+
+      <p>If the simulation predicts a pressure drop above 6 bar, you have several options: increase channel diameter (but check that Re remains adequate), split the circuit into parallel branches, or reduce circuit length by adding an additional inlet/outlet. Do not simply increase pump capacity — this increases flow velocity and may cause erosion of the as-printed channel walls.</p>
+
+      <div class="callout callout--gray">
+        <strong>Laminar flow is the most common conformal cooling failure mode.</strong> Designers who correctly size channel diameter for structural integrity (wall thickness, minimum bend radius) sometimes end up with oversized channels at the specified flow rate. A 12mm diameter channel looks geometrically reasonable, but at 5 L/min it runs at Re ≈ 5,800 — marginal. At 3 L/min it runs at Re ≈ 3,500 — transitional. Always verify Re in simulation, especially for channels wider than 10mm.
+      </div>
+
+      <!-- SECTION 7 -->
+      <h2 id="warpage">7. Warpage Prediction: Reading the Deflection Plots</h2>
+      <p>Warpage simulation output is a vector plot showing the predicted deflection of the ejected part at every mesh node. The plot has both a magnitude (mm of displacement from the nominal geometry) and a direction (which way the part distorts). Both are needed to assess whether the warpage is acceptable.</p>
+
+      <h3>How to Read a Deflection Plot</h3>
+      <ul>
+        <li><strong>Maximum deflection value</strong> — the single number most engineers look for. Compare against your part's critical tolerance requirement. A part with a ±0.3mm flatness tolerance can tolerate 0.15–0.2mm warpage; a part with ±0.05mm cannot tolerate more than 0.02–0.03mm.</li>
+        <li><strong>Deflection direction</strong> — the plot shows which surfaces bow inward or outward. This tells you which dimensions are most affected. A thin-wall box that cups inward at the base has a very different rejection consequence than one that twists along its diagonal.</li>
+        <li><strong>Deflection pattern</strong> — uniform deflection (whole part moves same direction) is easier to compensate by adjusting ejection or fixture; differential deflection (opposing regions move in opposite directions) indicates residual stress that cannot be corrected by fixturing.</li>
+      </ul>
+
+      <h3>Conventional vs. Conformal Cooling: Expected Warpage Reduction</h3>
+      <p>The primary value of conformal cooling simulation is the before/after comparison. Run the same simulation twice — once with the conventional drilled cooling circuit and once with the conformal design — and compare the warpage output.</p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Part Type</th><th>Typical Warpage: Conventional</th><th>Typical Warpage: Conformal</th><th>Reduction</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Flat plate (2mm wall, ABS)</td>
+              <td>0.8–1.5mm</td>
+              <td>0.15–0.35mm</td>
+              <td>70–80%</td>
+            </tr>
+            <tr>
+              <td>Deep core box (PP, 3mm wall)</td>
+              <td>1.5–3.0mm</td>
+              <td>0.3–0.7mm</td>
+              <td>75–85%</td>
+            </tr>
+            <tr>
+              <td>Thin-wall medical housing (PC, 1mm wall)</td>
+              <td>0.4–0.9mm</td>
+              <td>0.05–0.15mm</td>
+              <td>80–85%</td>
+            </tr>
+            <tr>
+              <td>Automotive trim panel (PP+GF30, 2.5mm)</td>
+              <td>2.0–4.5mm</td>
+              <td>0.5–1.2mm</td>
+              <td>65–75%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Critical Dimensions to Monitor</h3>
+      <p>When reviewing warpage output, identify and record the deflection at specific critical dimensions listed in the part drawing — not just the maximum deflection across the whole part. The maximum deflection often occurs at a corner or edge that is not a functional surface. The critical dimensions are the datum surfaces, mating interfaces, and any geometry with a tolerance tighter than ±0.2mm.</p>
+
+      <!-- SECTION 8 -->
+      <h2 id="common-mistakes">8. Five Common Simulation Mistakes (and How to Avoid Them)</h2>
+
+      <h3>Mistake 1: Using Generic Resin Data Instead of Supplier Grade Data</h3>
+      <p>Every resin database entry in Moldflow or Moldex3D is tied to a specific supplier grade measured at a specific time. Using a generic "PP Homopolymer" entry instead of the actual grade (e.g., SABIC PP 579S) can introduce ±15% error in Cp and k. For a 20-second cooling phase, that is a ±3-second error in predicted cycle time — meaningful when you are trying to justify conformal cooling ROI over a 500,000-part production run.</p>
+      <p><strong>Fix:</strong> Contact your resin supplier's technical team and request the Moldflow/Moldex3D material data card for your specific grade. Most major suppliers provide this free on request.</p>
+
+      <h3>Mistake 2: Setting Coolant Temperature to Ambient Instead of Chiller Setpoint</h3>
+      <p>The default coolant inlet temperature in many simulation setups is 20–25°C — close to ambient room temperature. If your actual chiller runs at 12°C, this error means the simulation underestimates the temperature driving force for heat removal by 8–13°C, predicting longer cooling times than you will achieve in production, and underestimating how uniform the cooling will be.</p>
+      <p><strong>Fix:</strong> Use the actual chiller setpoint from your facility's chiller specification. If the mold will be used in multiple plants, simulate at the worst-case (warmest) coolant temperature.</p>
+
+      <h3>Mistake 3: Ignoring Conduction Through the Parent Mold Steel</h3>
+      <p>The conformal cooling insert does not exist in isolation — it sits inside a parent mold plate made of P20, H13, or 1.2343 steel. Heat flows not only from the plastic through the insert into the channels, but also laterally through the insert walls into the surrounding mold plate, and from there into adjacent cooling circuits. If you simulate the insert in isolation with adiabatic boundary conditions on its outer surfaces, you overestimate the temperature rise in the insert and underestimate the cooling capability of the circuit.</p>
+      <p><strong>Fix:</strong> Include the parent mold plate geometry in the simulation with appropriate thermal boundary conditions. If the parent plate has conventional drilled cooling, include those circuits too — even approximately.</p>
+
+      <h3>Mistake 4: Running a Full Cycle Analysis Without Running Cooling-Only First</h3>
+      <p>A full cycle simulation (fill + pack + cool + warp) in Moldflow takes 2–8 hours. If there is a fundamental problem in the cooling channel design — wrong Re, poor temperature uniformity — you will not know until the simulation finishes. Running a cooling-only analysis first (30–60 minutes) checks the thermal performance of the circuit in isolation. If the cooling-only result is good, proceed to full cycle. If it fails, fix the channel design and iterate — at 30-minute turnaround instead of 8 hours per iteration.</p>
+      <p><strong>Fix:</strong> Always run cooling analysis as a standalone first check before triggering the full molding cycle simulation.</p>
+
+      <h3>Mistake 5: Ignoring Channel Surface Roughness Effects</h3>
+      <p>LPBF-printed conformal channels have an as-built internal surface roughness of Ra 8–20 µm (depending on build orientation and material). The simulation's default heat transfer coefficient assumes a smooth channel (Ra &lt; 1 µm, typical of machined/reamed steel). The Moody friction chart shows that Ra 15 µm in a 10mm channel at Re 6,000 increases the friction factor by approximately 20–35% compared to smooth pipe — which means higher pressure drop than simulated, and slightly higher actual heat transfer coefficient (surface roughness enhances convective mixing).</p>
+      <p>The net effect is usually conservative (simulation underpredicts pressure drop), but the discrepancy should be understood. If your circuit is already at the limit of available pump pressure drop in simulation, the actual printed circuit may exceed it.</p>
+      <p><strong>Fix:</strong> After getting a good simulation result, add a 15–20% safety margin to the predicted pressure drop when sizing the coolant pump and specifying the chiller. For detailed hydraulic analysis, use ANSYS Fluent with an explicit roughness model.</p>
+
+      <!-- SECTION 9 -->
+      <h2 id="trust">9. When to Trust Simulation vs. When to Test</h2>
+      <p>Simulation is a model — it is as accurate as its inputs and assumptions. The three scenarios below describe how much confidence to place in the results before committing to manufacture:</p>
+
+      <h3>Scenario A: Simple Geometry, Known Resin — Trust the Simulation</h3>
+      <p><strong>Characteristics:</strong> Uniform wall thickness (&lt;±30% variation), well-established commodity resin (PP, ABS, PA66) with grade-specific material data, flat or gently curved cavity, conventional process conditions.</p>
+      <p><strong>Recommendation:</strong> Simulation results are reliable to ±10–15% on cooling time and ±2–3°C on temperature uniformity. Proceed to manufacture based on simulation output alone. Verify first shot against simulation predictions as a calibration check.</p>
+
+      <h3>Scenario B: Complex Multi-Material or Multi-Insert System — Validate on First Shot</h3>
+      <p><strong>Characteristics:</strong> Multiple inserts with different materials or different conformal channel designs sharing a common cooling circuit; overmolded parts where two materials with different thermal properties are present; family molds with cavity size variation.</p>
+      <p><strong>Recommendation:</strong> Simulation captures the dominant thermal behavior but multi-insert hydraulic interaction and cross-conduction effects introduce 15–30% uncertainty. Build the mold, run first-shot trials, measure actual part temperature with thermal imaging, and compare against simulation. Adjust flow rates or add circuit balancing valves based on first-shot data before production release.</p>
+
+      <h3>Scenario C: First-Time Use of a New Resin — Always Test</h3>
+      <p><strong>Characteristics:</strong> New high-performance resin (PEEK, PEI, LCP, bioresorbable polymers) where material database entries are limited; experimental blends or internally compounded materials; any resin where the grade-specific PVT and thermal data are not available from the supplier.</p>
+      <p><strong>Recommendation:</strong> Use simulation for directional guidance only — to compare design options relative to each other, not for absolute predictions. Run physical tests with thermocouples embedded in the mold at the predicted hot spots. Use test data to calibrate the material database entry before relying on simulation for subsequent projects with the same resin.</p>
+
+      <div class="callout callout--green">
+        <strong>The practical rule:</strong> Trust simulation for comparative decisions (design A vs. design B) even when absolute predictions are uncertain. Simulation is a reliable ranking tool even when material data is imperfect — if design A shows 40% better temperature uniformity than design B in simulation, it will perform better in the real mold, even if the absolute ΔT values are off by a few degrees.
+      </div>
+
+      <!-- SECTION 10 -->
+      <h2 id="mouldnova-service">10. MouldNova Free Simulation Offer</h2>
+      <p>When you request a conformal cooling insert quote from MouldNova, a Moldflow cooling analysis is included — at no additional cost — for qualifying projects. This is not a simplified parametric estimate; it is a full 3D cooling simulation run by our engineering team on your actual insert geometry.</p>
+
+      <h3>What the Free Simulation Report Includes</h3>
+      <ul>
+        <li><strong>Temperature map</strong> — color contour of cavity surface temperature at end of cooling phase, with ΔT clearly labeled</li>
+        <li><strong>ΔT table</strong> — maximum, minimum, and average surface temperature at end of cooling, with ΔT assessment against the design criteria table (Section 5 above)</li>
+        <li><strong>Pressure drop calculation</strong> — total circuit pressure drop (bar) and required flow rate (L/min) at the simulated process conditions</li>
+        <li><strong>Cycle time prediction</strong> — estimated cooling time and total cycle time vs. conventional cooling baseline for your insert geometry</li>
+        <li><strong>Design observations</strong> — written notes from our engineering team identifying any hot spots or hydraulic concerns, with recommended modifications if needed</li>
+      </ul>
+
+      <h3>How to Request the Free Simulation</h3>
+      <ol>
+        <li>Send your mold insert STEP file and a brief process specification (resin type and grade, target mold temperature, estimated cycle time, annual production volume)</li>
+        <li>Our engineering team reviews geometry and assigns a simulation engineer</li>
+        <li>Simulation report delivered within 48 hours (standard); 24 hours for urgent requests via WhatsApp</li>
+        <li>You review the report and either approve the channel design or request modifications — at no additional charge</li>
+        <li>Once you approve the design, we issue a firm manufacturing quote and lead time</li>
+      </ol>
+
+      <div class="cta-inline">
+        <h3>Get Your Free Conformal Cooling Simulation</h3>
+        <p>Send your insert STEP file and process requirements. We'll return a full Moldflow cooling analysis — temperature map, ΔT table, pressure drop, cycle time prediction — within 48 hours. No software required on your end.</p>
+        <a href="../contact.html" class="btn btn-primary">Send STEP File for Free Analysis</a>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="margin-left:12px;">WhatsApp — Fast Quote</a>
+      </div>
+
+      <!-- SECTION 11: FAQ -->
+      <h2 id="faq">11. Frequently Asked Questions</h2>
+
+      <div class="faq">
+
+        <div class="faq__item">
+          <h3 class="faq__question">What does a conformal cooling simulation actually calculate?</h3>
+          <div class="faq__answer">
+            <p>A conformal cooling simulation in Moldflow or Moldex3D calculates four primary outputs: (1) cooling time map — the time required for each region of the cavity surface to reach ejection temperature; (2) temperature distribution — the ΔT between the hottest and coolest points on the cavity at the end of the cooling phase; (3) coolant pressure drop and required flow rate across the channel circuit; and (4) warpage prediction — the deflection magnitude and direction caused by differential shrinkage from non-uniform cooling.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__question">What is an acceptable temperature difference (ΔT) in conformal cooling simulation results?</h3>
+          <div class="faq__answer">
+            <p>ΔT below 5°C across the cavity surface is considered excellent and indicates very uniform cooling. A ΔT of 5–10°C is acceptable for most commercial parts. A ΔT of 10–20°C indicates warpage risk and should prompt design review. A ΔT above 20°C indicates the cooling design needs to be redesigned before manufacturing — at this level, differential shrinkage will almost certainly cause part warpage beyond acceptable tolerances.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__question">What Reynolds number should conformal cooling channels target?</h3>
+          <div class="faq__answer">
+            <p>Conformal cooling channels should target a Reynolds number (Re) of 4,000–8,000, which places flow firmly in the turbulent regime. Turbulent flow is critical because the Nusselt number (which governs heat transfer) drops 5–10× in laminar flow. A channel that looks correctly sized in a drawing but carries laminar flow (Re &lt; 2,300) will perform dramatically worse than expected. Target flow rates should be verified in simulation to confirm turbulent flow through every branch of the circuit.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__question">What are the most common mistakes in conformal cooling simulation setup?</h3>
+          <div class="faq__answer">
+            <p>The five most common mistakes are: (1) using generic resin data instead of the actual supplier grade datasheet — thermal conductivity and specific heat can vary ±15% between grades; (2) setting coolant inlet temperature to ambient (20°C) instead of the actual chiller setpoint (often 10–15°C or lower); (3) ignoring heat conduction through the parent mold steel surrounding the insert; (4) skipping a cooling-only analysis and running a full cycle simulation immediately, making it harder to isolate cooling problems; and (5) not accounting for channel surface roughness — as-printed LPBF channels have Ra 8–20 µm, which increases friction factor and pressure drop compared to smooth-channel assumptions in default simulation settings.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__question">Can I get a free conformal cooling simulation report?</h3>
+          <div class="faq__answer">
+            <p>Yes. MouldNova (operated by Saiguang 3D Technology) provides a free Moldflow cooling analysis as part of the quotation process for conformal cooling inserts. The report includes a temperature map, ΔT table, pressure drop calculation, and cycle time prediction. Turnaround is typically 48 hours. Send your mold insert STEP file and resin/process requirements via <a href="https://wa.me/8618268661068" target="_blank" rel="noopener">WhatsApp (+86 182 6866 1068)</a> or the <a href="../contact.html">contact page</a>.</p>
+          </div>
+        </div>
+
+      </div><!-- /.faq -->
+
+    </div>
+  </div>
+
+  <!-- RELATED RESOURCES -->
+  <div class="blog-article__related">
+    <div class="container">
+      <h2 class="blog-article__related-title">Related Resources</h2>
+      <div class="grid-3">
+        <a href="conformal-cooling-design-software.html" class="card card--link">
+          <div class="card__body">
+            <div class="card__eyebrow">Software Comparison</div>
+            <h3 class="card__title">Conformal Cooling Design Software: Moldflow, Moldex3D &amp; ANSYS Compared</h3>
+            <p class="card__text">Which simulation platform should you choose — and what does it cost? Full comparison of every major tool with honest pricing data.</p>
+            <span class="card__cta">Read Guide →</span>
+          </div>
+        </a>
+        <a href="/blog/conformal-cooling-channel-design.html" class="card card--link">
+          <div class="card__body">
+            <div class="card__eyebrow">Channel Design</div>
+            <h3 class="card__title">Conformal Cooling Channel Design Rules</h3>
+            <p class="card__text">Diameter, pitch, wall thickness, and bend radius parameters for reliable conformal cooling without simulation.</p>
+            <span class="card__cta">Read Guide →</span>
+          </div>
+        </a>
+        <a href="/blog/what-is-conformal-cooling.html" class="card card--link">
+          <div class="card__body">
+            <div class="card__eyebrow">Fundamentals</div>
+            <h3 class="card__title">What Is Conformal Cooling?</h3>
+            <p class="card__text">The physics, the benefits, and the 20–55% cycle time reduction explained from first principles.</p>
+            <span class="card__cta">Read Guide →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- STICKY CTA BAR -->
+<div class="sticky-cta">
+  <div class="sticky-cta__text">Free conformal cooling simulation report — 48hr turnaround.</div>
+  <a href="../contact.html" class="btn btn-primary btn--sm">Get Free Simulation</a>
+  <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp btn--sm">WhatsApp</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">LPBF-printed conformal cooling inserts for injection mold makers. Ningbo, China. Global shipping.</p>
+        <div class="footer__contact-item">📱 +86 182 6866 1068</div>
+        <div class="footer__contact-item">📧 zhangyuanbo123@gmail.com</div>
+        <div class="footer__contact-item">📍 Yuyao, Ningbo, China</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../rapid-tooling-service.html" class="footer__link">Rapid Tooling</a>
+      </div>
+      <div>
+        <div class="footer__heading">Engineering Blog</div>
+        <a href="/blog/what-is-conformal-cooling.html" class="footer__link">What Is Conformal Cooling?</a>
+        <a href="/blog/conformal-cooling-channel-design.html" class="footer__link">Channel Design Rules</a>
+        <a href="/blog/conformal-cooling-vs-conventional-cooling.html" class="footer__link">Conformal vs. Conventional</a>
+        <a href="index.html" class="footer__link">All Articles →</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp →</a>
+        <a href="../contact.html" class="footer__link">Send a Message</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email Us</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Saiguang 3D Technology. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.querySelector('.nav__mobile-toggle');
+const mobileMenu = document.querySelector('.nav__mobile-menu');
+if (toggle && mobileMenu) {
+  toggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+}
+</script>
+
+</body>
+</html>
