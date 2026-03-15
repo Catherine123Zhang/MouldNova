@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EOS, 3D Systems &amp; Leading LPBF Machines for Conformal Cooling Inserts | MouldNova</title>
+  <meta name="description" content="Compare EOS M290, EOS M400-4, 3D Systems DMP Flex 350, SLM 280 2.0, Trumpf TruPrint, and Renishaw AM machines for conformal cooling insert production. Build volumes, laser specs, materials, costs, and density optimization." />
+  <meta name="keywords" content="eos conformal cooling, 3d systems conformal cooling, EOS M290 mold inserts, DMP Flex 350 conformal cooling, SLM 280 conformal cooling, LPBF machines mold inserts, metal 3d printing conformal cooling" />
+  <link rel="canonical" href="https://mouldnova.com/blog/eos-conformal-cooling.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/eos-conformal-cooling.html" />
+  <meta property="og:title" content="EOS, 3D Systems & Leading LPBF Machines for Conformal Cooling Inserts" />
+  <meta property="og:description" content="Technical comparison of EOS, 3D Systems, SLM Solutions, Trumpf, and Renishaw LPBF platforms for producing conformal cooling mold inserts. Machine specs, materials, build times, and cost analysis." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/eos-conformal-cooling.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .formula-box { background:var(--black); color:#fff; border-radius:12px; padding:28px 32px; margin:28px 0; font-family:monospace; }
+    .formula-box__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-family:sans-serif; font-weight:700; }
+    .formula-box__line { font-size:1.05rem; line-height:2; color:#e5e5e5; }
+    .formula-box__line strong { color:#fff; }
+    .formula-box__line .var { color:#fbbf24; }
+    .worked-example { background:#f0f7ff; border:1px solid #bfdbfe; border-radius:12px; padding:24px; margin:20px 0; }
+    .worked-example__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#1d4ed8; font-weight:700; margin-bottom:10px; }
+    .worked-example__title { font-size:1.05rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .worked-example p { font-size:0.95rem; color:#333; line-height:1.75; margin-bottom:8px; }
+    .worked-example .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .case-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .case-card__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .case-card__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .case-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .case-card .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+      .formula-box__line { font-size:0.88rem; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "EOS, 3D Systems & Leading LPBF Machines for Conformal Cooling Inserts",
+    "description": "Compare EOS M290, EOS M400-4, 3D Systems DMP Flex 350, SLM 280 2.0, Trumpf TruPrint, and Renishaw AM machines for conformal cooling insert production. Build volumes, laser specs, materials, costs, and density optimization.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-16",
+    "dateModified": "2026-03-16",
+    "mainEntityOfPage": "https://mouldnova.com/blog/eos-conformal-cooling.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is the EOS M290 the most widely used machine for conformal cooling inserts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The EOS M290 dominates conformal cooling insert production because it offers a 250 x 250 x 325 mm build volume that fits most mold inserts, a proven 400W Yb-fiber laser with 100-micron spot size, and the most mature parameter sets for maraging steel MS1 and stainless 17-4PH. Its installed base exceeds 3,000 units worldwide, meaning more service bureaus offer M290 capacity than any other platform — giving buyers competitive pricing and fast turnaround."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What density can LPBF machines achieve for mold insert production?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All leading LPBF platforms — EOS, 3D Systems, SLM Solutions, Trumpf, and Renishaw — can achieve part densities above 99.5% when using optimized print parameters. For conformal cooling inserts, density above 99.5% is critical because residual porosity below this threshold can create leak paths in cooling channels operating at 4–8 bar water pressure. Most qualified service bureaus target 99.7% or higher density for mold insert applications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the 3D Systems DMP Flex 350 compare to the EOS M290 for conformal cooling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The DMP Flex 350 offers a comparable 275 x 275 x 380 mm build volume and a 500W fiber laser. Its key differentiator is the sealed build chamber with continuous low-oxygen atmosphere (below 25 ppm O2), which produces superior surface finish and mechanical properties on reactive alloys and stainless steels. For conformal cooling, the DMP Flex 350 is particularly strong for 17-4PH and Maraging Steel builds. The EOS M290 has a larger installed base and more third-party parameter sets, while the DMP Flex 350 offers tighter atmosphere control."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What materials are available across LPBF platforms for mold inserts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Maraging steel (MS1/1.2709) is available on all major platforms and is the most common material for conformal cooling inserts due to its 54 HRC hardness after aging and excellent machinability in the as-printed state. 420 stainless steel and 17-4PH are available on EOS, 3D Systems, and SLM Solutions. H13 tool steel is available on EOS, SLM Solutions, and Trumpf but requires careful parameter development due to cracking susceptibility. CuCrZr copper alloy for high-conductivity inserts is available on EOS (M290 with green laser upgrade), SLM Solutions, and Trumpf systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I buy an LPBF machine or outsource conformal cooling insert production?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For most mold shops, outsourcing to a qualified service bureau is more cost-effective unless you need more than 200 inserts per year. An EOS M290 costs approximately $500,000–$700,000 installed, plus $80,000–$120,000 per year in maintenance, gas, and operator costs. At typical insert volumes of 20–80 per year, the per-insert cost from a service bureau ($800–$3,500 depending on size) is significantly lower than the amortized cost of owning a machine. Buy a machine only if you have consistent high volume, need rapid turnaround control, or handle proprietary geometries you cannot share with external suppliers."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">LPBF Machine Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">EOS, 3D Systems &amp; Leading LPBF Machines for Conformal Cooling Inserts</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 18 min read &middot; Written for mold designers, tooling engineers, and manufacturing managers evaluating metal AM platforms</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">LPBF Machines for Conformal Cooling — Key Facts</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">5+</div>
+      <div class="data-cell__label">Leading OEM Platforms</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">&gt;99.5%</div>
+      <div class="data-cell__label">Target Part Density</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">8–48 hrs</div>
+      <div class="data-cell__label">Typical Build Time per Insert</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">$800–$3,500</div>
+      <div class="data-cell__label">Cost Range per Insert</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#overview">1. Overview: Why Machine Choice Matters for Conformal Cooling</a>
+    <a href="#eos-m290">2. EOS M290 — The Industry Workhorse</a>
+    <a href="#eos-m400">3. EOS M400-4 — Large-Format Inserts</a>
+    <a href="#3d-systems">4. 3D Systems DMP Flex 350 — Sealed Atmosphere Advantage</a>
+    <a href="#slm-solutions">5. SLM Solutions 280 2.0 — Dual-Laser Productivity</a>
+    <a href="#trumpf-renishaw">6. Trumpf TruPrint &amp; Renishaw AM — Additional Options</a>
+    <a href="#comparison">7. Head-to-Head Machine Comparison Table</a>
+    <a href="#parameters">8. Key Machine Parameters That Affect Insert Quality</a>
+    <a href="#materials">9. Material Availability per Platform</a>
+    <a href="#optimization">10. Print Parameter Optimization for Density &gt;99.5%</a>
+    <a href="#build-time-cost">11. Build Times and Costs per Platform</a>
+    <a href="#choosing">12. How to Choose the Right Machine or Service Bureau</a>
+    <a href="#faq">13. FAQ</a>
+  </div>
+
+  <p>Conformal cooling inserts are produced almost exclusively by Laser Powder Bed Fusion (LPBF), also called Selective Laser Melting (SLM) or Direct Metal Laser Sintering (DMLS). The machine you use — or the machine your service bureau uses — directly affects insert density, surface finish, dimensional accuracy, and ultimately cooling performance in the mold. Choosing the wrong platform can mean the difference between a leak-free insert running at 6 bar coolant pressure and one that fails validation.</p>
+
+  <p>This guide provides a technical comparison of the five leading LPBF machine manufacturers for <a href="conformal-cooling-inserts.html">conformal cooling insert</a> production: EOS, 3D Systems, SLM Solutions, Trumpf, and Renishaw. We cover machine specifications, material availability, parameter optimization strategies, build time estimates, and cost analysis to help you select the right platform — or evaluate whether your service bureau is running the right equipment.</p>
+
+  <!-- SECTION 1: OVERVIEW -->
+  <h2 id="overview">1. Overview: Why Machine Choice Matters for Conformal Cooling</h2>
+
+  <p>Not all LPBF machines produce equivalent results for mold insert applications. Conformal cooling inserts have specific requirements that differentiate them from typical metal AM parts:</p>
+
+  <ul>
+    <li><strong>Leak-tight density:</strong> Cooling channels operate at 4–8 bar water pressure. Any interconnected porosity creates leak paths. Part density must exceed 99.5%, and ideally 99.7% or higher.</li>
+    <li><strong>Surface finish on internal channels:</strong> Rough internal surfaces increase pressure drop and promote biofilm formation. The as-built surface roughness (Ra) of internal channels is directly influenced by laser parameters, layer thickness, and recoater type.</li>
+    <li><strong>Dimensional accuracy:</strong> Inserts must mate with conventionally machined mold bases to +/-0.05 mm on critical interfaces. Machine calibration, thermal stability, and build plate flatness all contribute.</li>
+    <li><strong>Material hardness after heat treatment:</strong> Maraging steel inserts need to reach 50–54 HRC after age hardening. Residual porosity and oxygen pickup during the build reduce achievable hardness.</li>
+    <li><strong>Geometric capability:</strong> Complex conformal channel geometries with overhangs, spiral paths, and thin walls (down to 0.8 mm) require consistent melt pool control across the entire build volume.</li>
+  </ul>
+
+  <p>These requirements narrow the field of suitable machines. While dozens of LPBF systems exist on the market, the five manufacturers covered in this guide account for over 85% of conformal cooling insert production worldwide. The sections below examine each platform in detail.</p>
+
+  <!-- SECTION 2: EOS M290 -->
+  <h2 id="eos-m290">2. EOS M290 — The Industry Workhorse</h2>
+
+  <p>The EOS M290 is the single most widely used LPBF machine for conformal cooling insert production. With an installed base exceeding 3,000 units globally, more service bureaus offer M290 capacity than any other platform. This installed base creates a competitive market that keeps per-insert pricing lower than alternatives.</p>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Key Specifications</div>
+    <div class="benefit-block__headline">EOS M290 for Conformal Cooling</div>
+    <p class="benefit-block__body">
+      <strong>Build volume:</strong> 250 x 250 x 325 mm — sufficient for approximately 90% of conformal cooling inserts.<br />
+      <strong>Laser:</strong> Single 400W Yb-fiber laser, 100 &mu;m spot size.<br />
+      <strong>Layer thickness:</strong> 20–80 &mu;m (typically 40 &mu;m for mold inserts).<br />
+      <strong>Atmosphere:</strong> Nitrogen or argon, oxygen level &lt;0.1%.<br />
+      <strong>Recoater:</strong> Rigid or flexible blade (HSS steel or rubber/silicone).<br />
+      <strong>Build rate:</strong> Approximately 5–20 cm&sup3;/hr depending on parameters.<br />
+      <strong>Qualified materials for mold inserts:</strong> MS1 (maraging steel 1.2709), 17-4PH (EOS StainlessSteel GP1), 316L, CX (corrax-type stainless).
+    </p>
+  </div>
+
+  <p>The M290's strength for conformal cooling lies in its mature parameter sets. EOS has spent over a decade optimizing print parameters for MS1 maraging steel, and the resulting "EOS ParameterSets" deliver consistent &gt;99.7% density with predictable mechanical properties. Third-party parameter development is also extensive — more independent research has been published on M290 process parameters than any other LPBF platform.</p>
+
+  <p>The 250 x 250 mm build plate accommodates most mold inserts. For context, a typical conformal cooling insert for an automotive connector mold measures 80 x 60 x 120 mm, while a large insert for an appliance housing core might be 200 x 150 x 250 mm. The M290 handles both with room for nesting multiple smaller inserts on a single build plate to maximize throughput.</p>
+
+  <p>Limitations of the M290 include its single laser (which limits build speed on large inserts), lack of in-situ monitoring as standard equipment, and a build volume that cannot accommodate the largest mold inserts (above 250 mm in X or Y). For those cases, the EOS M400-4 is the logical step up.</p>
+
+  <!-- SECTION 3: EOS M400-4 -->
+  <h2 id="eos-m400">3. EOS M400-4 — Large-Format Inserts</h2>
+
+  <p>The EOS M400-4 is the large-format counterpart to the M290, designed for inserts that exceed the M290's 250 x 250 mm build area. Its 400 x 400 x 400 mm build volume opens up applications in large automotive, appliance, and packaging molds where insert dimensions routinely exceed 300 mm.</p>
+
+  <ul>
+    <li><strong>Build volume:</strong> 400 x 400 x 400 mm</li>
+    <li><strong>Lasers:</strong> 4 x 400W Yb-fiber lasers with overlapping scan fields</li>
+    <li><strong>Build rate:</strong> Up to 100 cm&sup3;/hr (theoretical maximum with 4 lasers active)</li>
+    <li><strong>Layer thickness:</strong> 40–80 &mu;m</li>
+    <li><strong>Materials:</strong> MS1, 316L, AlSi10Mg, IN718</li>
+  </ul>
+
+  <p>The four-laser configuration reduces build time by 2.5–3.5x compared to a single-laser system on the same geometry. For a large conformal cooling insert measuring 300 x 200 x 280 mm in MS1, a single-laser M290-class machine would require approximately 90–110 hours. The M400-4 completes the same part in approximately 28–35 hours — a critical advantage when tool deadlines are tight.</p>
+
+  <p>The trade-off is cost. The M400-4 carries a system price approximately 2.5x that of the M290, and hourly machine rates at service bureaus running M400-4 systems are proportionally higher. For inserts that fit within the M290 build volume, the M290 almost always delivers lower per-insert cost.</p>
+
+  <blockquote>
+    <p>Rule of thumb: Use the EOS M400-4 only when the insert exceeds 250 mm in any planar dimension, or when you need to batch 8+ smaller inserts on a single build plate for volume production.</p>
+  </blockquote>
+
+  <!-- SECTION 4: 3D SYSTEMS DMP -->
+  <h2 id="3d-systems">4. 3D Systems DMP Flex 350 — Sealed Atmosphere Advantage</h2>
+
+  <p>The 3D Systems DMP Flex 350 is the primary competitor to the EOS M290 in the conformal cooling insert market. Its key technical differentiator is the sealed build module with continuous vacuum-level atmosphere control, maintaining oxygen levels below 25 ppm throughout the build — significantly lower than the &lt;0.1% (1,000 ppm) atmosphere in conventional LPBF systems.</p>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Key Specifications</div>
+    <div class="benefit-block__headline">3D Systems DMP Flex 350</div>
+    <p class="benefit-block__body">
+      <strong>Build volume:</strong> 275 x 275 x 380 mm — slightly larger than the M290 in all three axes.<br />
+      <strong>Laser:</strong> Single 500W fiber laser.<br />
+      <strong>Layer thickness:</strong> 10–100 &mu;m (typically 30–60 &mu;m for mold inserts).<br />
+      <strong>Atmosphere:</strong> Sealed module, &lt;25 ppm O&sub>2</sub> (argon).<br />
+      <strong>Recoater:</strong> Roller-based system with counter-rotating action.<br />
+      <strong>Build rate:</strong> Approximately 6–22 cm&sup3;/hr.<br />
+      <strong>Qualified materials:</strong> Maraging Steel (MS1-equivalent), 17-4PH (LaserForm), CoCr, Ti6Al4V, Ni718.
+    </p>
+  </div>
+
+  <p>The ultra-low oxygen environment produces measurable benefits for mold insert production. Lower oxygen pickup during melting results in fewer oxide inclusions, which translates to improved fatigue life, more consistent hardness after age hardening (typically +1–2 HRC vs. higher-oxygen builds), and slightly better as-built surface finish on downskin surfaces. For <a href="conformal-cooling-channels.html">conformal cooling channels</a> with complex internal geometries, the surface finish advantage reduces post-build pressure drop through the cooling circuits.</p>
+
+  <p>The DMP Flex 350's roller-based recoating system also handles fine powders (down to 10 &mu;m median particle size) more consistently than blade-based recoaters, enabling thinner layers and finer feature resolution when needed for small-diameter cooling channels.</p>
+
+  <p>The primary limitation of the DMP Flex 350 for conformal cooling applications is a smaller installed base compared to EOS. Fewer service bureaus operate DMP systems, which can limit competitive pricing options and geographic availability.</p>
+
+  <!-- SECTION 5: SLM SOLUTIONS -->
+  <h2 id="slm-solutions">5. SLM Solutions 280 2.0 — Dual-Laser Productivity</h2>
+
+  <p>The SLM 280 2.0 (now part of Nikon SLM Solutions) occupies a strong middle ground between the single-laser M290 and the four-laser M400-4. Its standard dual-laser configuration (2 x 700W) provides a significant build speed advantage over single-laser systems without the cost premium of a four-laser platform.</p>
+
+  <ul>
+    <li><strong>Build volume:</strong> 280 x 280 x 365 mm</li>
+    <li><strong>Lasers:</strong> 2 x 700W (twin configuration) or 1 x 700W (single)</li>
+    <li><strong>Layer thickness:</strong> 20–90 &mu;m</li>
+    <li><strong>Atmosphere:</strong> Argon or nitrogen, closed-loop inert gas management</li>
+    <li><strong>Recoater:</strong> Bidirectional blade recoater</li>
+    <li><strong>Build rate:</strong> Up to 35 cm&sup3;/hr (dual laser)</li>
+    <li><strong>Materials:</strong> 1.2709 (maraging steel), H13, 316L, CuCrZr, IN718, AlSi10Mg</li>
+  </ul>
+
+  <p>The 700W laser power (vs. 400W on the M290 and 500W on the DMP Flex 350) enables higher scan speeds at equivalent density levels. For maraging steel, this translates to approximately 20–30% faster per-layer processing compared to 400W systems. The dual-laser configuration further doubles throughput on builds with sufficient cross-sectional area for both lasers to operate simultaneously.</p>
+
+  <p>SLM Solutions has also been a leader in qualifying <strong>H13 tool steel</strong> for LPBF — a material that is notoriously difficult to print due to its high carbon content and cracking susceptibility. Their published parameter sets for H13 with platform preheating (up to 200&deg;C) produce crack-free builds at &gt;99.5% density. For mold shops that specifically require H13 (rather than maraging steel) for thermal conductivity or wear resistance reasons, the SLM 280 2.0 is a strong choice.</p>
+
+  <!-- SECTION 6: TRUMPF & RENISHAW -->
+  <h2 id="trumpf-renishaw">6. Trumpf TruPrint &amp; Renishaw AM — Additional Options</h2>
+
+  <h3>Trumpf TruPrint 2000</h3>
+
+  <p>The Trumpf TruPrint 2000 features a 200 mm diameter x 200 mm cylindrical build volume with 2 x 300W fiber lasers. Its distinguishing features for conformal cooling include preheating up to 500&deg;C (enabling crack-free printing of H13 and other high-carbon steels), a green laser option (515 nm wavelength) for processing highly reflective copper alloys like CuCrZr, and Trumpf's proprietary multilaser scan strategy that minimizes stitching artifacts at laser overlap zones.</p>
+
+  <p>The cylindrical build volume is smaller than the rectangular build volumes of competing platforms, which limits the maximum insert size. However, for inserts within the 200 mm diameter envelope, the TruPrint 2000 delivers excellent results — particularly for CuCrZr copper inserts used in <a href="conformal-cooling-materials.html">high-conductivity conformal cooling applications</a>.</p>
+
+  <h3>Renishaw RenAM 500Q</h3>
+
+  <p>The Renishaw RenAM 500Q offers a 250 x 250 x 350 mm build volume with 4 x 500W lasers, each covering the full build area (no fixed partitioning). Its optical system features dynamic focus and a patented OPS (Optical Process Stabilization) system that adjusts laser parameters in real-time based on melt pool feedback.</p>
+
+  <ul>
+    <li><strong>Strength:</strong> Four lasers covering the full field provide maximum flexibility for nesting multiple inserts.</li>
+    <li><strong>Strength:</strong> In-process monitoring with INFINIAMTM sensors for layer-by-layer quality assurance.</li>
+    <li><strong>Limitation:</strong> Smaller material library for mold-specific applications compared to EOS or SLM Solutions.</li>
+    <li><strong>Limitation:</strong> Fewer service bureaus operate Renishaw systems in the mold-and-die market segment.</li>
+  </ul>
+
+  <!-- SECTION 7: COMPARISON TABLE -->
+  <h2 id="comparison">7. Head-to-Head Machine Comparison Table</h2>
+
+  <p>The following table compares the five leading LPBF platforms across the specifications most relevant to conformal cooling insert production.</p>
+
+  <div style="overflow-x:auto;">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Specification</th>
+        <th>EOS M290</th>
+        <th>EOS M400-4</th>
+        <th>3D Systems DMP Flex 350</th>
+        <th>SLM 280 2.0</th>
+        <th>Trumpf TruPrint 2000</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Build volume (mm)</strong></td>
+        <td>250 x 250 x 325</td>
+        <td>400 x 400 x 400</td>
+        <td>275 x 275 x 380</td>
+        <td>280 x 280 x 365</td>
+        <td>&empty;200 x 200</td>
+      </tr>
+      <tr>
+        <td><strong>Laser count / power</strong></td>
+        <td>1 x 400W</td>
+        <td>4 x 400W</td>
+        <td>1 x 500W</td>
+        <td>2 x 700W</td>
+        <td>2 x 300W</td>
+      </tr>
+      <tr>
+        <td><strong>Spot size (&mu;m)</strong></td>
+        <td class="val-good">100</td>
+        <td>90</td>
+        <td>70–100</td>
+        <td>80–115</td>
+        <td>55–80</td>
+      </tr>
+      <tr>
+        <td><strong>Layer thickness (&mu;m)</strong></td>
+        <td>20–80</td>
+        <td>40–80</td>
+        <td>10–100</td>
+        <td>20–90</td>
+        <td>20–100</td>
+      </tr>
+      <tr>
+        <td><strong>Atmosphere O&sub>2</sub> level</strong></td>
+        <td>&lt;0.1%</td>
+        <td>&lt;0.1%</td>
+        <td class="val-good">&lt;25 ppm</td>
+        <td>&lt;0.1%</td>
+        <td>&lt;100 ppm</td>
+      </tr>
+      <tr>
+        <td><strong>Max preheat (&deg;C)</strong></td>
+        <td>200</td>
+        <td>200</td>
+        <td>None standard</td>
+        <td>200</td>
+        <td class="val-good">500</td>
+      </tr>
+      <tr>
+        <td><strong>Build rate (cm&sup3;/hr)</strong></td>
+        <td>5–20</td>
+        <td>Up to 100</td>
+        <td>6–22</td>
+        <td class="val-good">Up to 35</td>
+        <td>5–18</td>
+      </tr>
+      <tr>
+        <td><strong>Approx. system price (USD)</strong></td>
+        <td class="val-good">$500K–$700K</td>
+        <td>$1.5M–$1.8M</td>
+        <td>$550K–$750K</td>
+        <td>$600K–$850K</td>
+        <td>$500K–$700K</td>
+      </tr>
+      <tr>
+        <td><strong>Installed base (mold &amp; die)</strong></td>
+        <td class="val-good">Largest</td>
+        <td>Moderate</td>
+        <td>Moderate</td>
+        <td>Growing</td>
+        <td>Smaller</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- SECTION 8: KEY PARAMETERS -->
+  <h2 id="parameters">8. Key Machine Parameters That Affect Insert Quality</h2>
+
+  <p>Beyond the headline specifications, several machine-level parameters have outsized impact on conformal cooling insert quality. Understanding these helps you evaluate service bureau capability and ask the right questions during supplier qualification.</p>
+
+  <h3>Laser Spot Size</h3>
+
+  <p>Spot size determines the minimum feature resolution and the melt pool width. For conformal cooling channels, a smaller spot size (70–100 &mu;m) enables thinner channel walls and finer detail on channel cross-sections. However, smaller spots reduce build speed because more scan tracks are needed to fill each layer. The optimal compromise for most mold inserts is 80–100 &mu;m spot size with 40 &mu;m layer thickness.</p>
+
+  <h3>Atmosphere Control</h3>
+
+  <p>Oxygen content in the build chamber directly affects oxide inclusion density in the printed part. For maraging steel, oxygen levels above 500 ppm increase oxide inclusion count by 3–5x compared to sub-100 ppm environments. These inclusions act as stress concentrators and can create micro-leak paths in thin channel walls. The 3D Systems DMP platform's &lt;25 ppm environment produces the cleanest builds, followed by Trumpf's &lt;100 ppm systems. EOS and SLM Solutions platforms operating at &lt;0.1% (1,000 ppm) produce acceptable results for most insert applications but may show marginally higher rejection rates on leak testing for channel walls below 1.2 mm.</p>
+
+  <h3>Recoater Type</h3>
+
+  <p>Three recoater types are used across platforms: rigid blade (HSS steel), flexible blade (rubber/silicone/carbon fiber), and roller. Rigid blades produce the most uniform powder layers but are more susceptible to collisions with curled part edges, which can abort a build. Roller-based systems (3D Systems) handle edge curl more gracefully but can push powder rather than shear it, occasionally creating low-density regions. For conformal cooling inserts, which are typically dense, low-aspect-ratio parts, all three recoater types work well.</p>
+
+  <h3>Build Plate Preheating</h3>
+
+  <p>Preheating the build plate reduces thermal gradients and residual stress in the part. For maraging steel MS1, 200&deg;C preheating is standard and sufficient. For H13 tool steel, which is highly susceptible to thermal cracking, preheating to 200–500&deg;C is required — making the Trumpf TruPrint (500&deg;C capable) or SLM 280 2.0 (200&deg;C) the preferred platforms for H13 inserts.</p>
+
+  <!-- SECTION 9: MATERIALS -->
+  <h2 id="materials">9. Material Availability per Platform</h2>
+
+  <p>Material selection for conformal cooling inserts depends on mold temperature, expected tool life, coolant chemistry, and required hardness. The table below shows material availability across the five major LPBF platforms.</p>
+
+  <div style="overflow-x:auto;">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Material</th>
+        <th>Hardness (HRC)</th>
+        <th>EOS M290</th>
+        <th>3D Systems DMP</th>
+        <th>SLM 280</th>
+        <th>Trumpf</th>
+        <th>Renishaw</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Maraging Steel MS1 (1.2709)</strong></td>
+        <td>50–54</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes</td>
+      </tr>
+      <tr>
+        <td><strong>420 Stainless Steel</strong></td>
+        <td>48–52</td>
+        <td class="val-good">Yes</td>
+        <td class="val-neutral">Limited</td>
+        <td class="val-good">Yes</td>
+        <td class="val-neutral">Limited</td>
+        <td class="val-bad">No</td>
+      </tr>
+      <tr>
+        <td><strong>17-4PH (GP1)</strong></td>
+        <td>36–42</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes</td>
+        <td class="val-neutral">Limited</td>
+        <td class="val-good">Yes</td>
+      </tr>
+      <tr>
+        <td><strong>H13 Tool Steel</strong></td>
+        <td>50–56</td>
+        <td class="val-neutral">Beta</td>
+        <td class="val-bad">No</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes</td>
+        <td class="val-neutral">Limited</td>
+      </tr>
+      <tr>
+        <td><strong>CuCrZr (Copper alloy)</strong></td>
+        <td>N/A</td>
+        <td class="val-neutral">Green laser req.</td>
+        <td class="val-bad">No</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes (green laser)</td>
+        <td class="val-bad">No</td>
+      </tr>
+      <tr>
+        <td><strong>316L Stainless</strong></td>
+        <td>N/A</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes</td>
+        <td class="val-good">Yes</td>
+      </tr>
+      <tr>
+        <td><strong>Corrax / CX (EOS)</strong></td>
+        <td>48–52</td>
+        <td class="val-good">Yes</td>
+        <td class="val-bad">No</td>
+        <td class="val-neutral">Limited</td>
+        <td class="val-bad">No</td>
+        <td class="val-bad">No</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><strong>Maraging steel MS1</strong> remains the default choice for approximately 80% of conformal cooling inserts. It offers the best combination of printability (low cracking risk), machinability in the as-printed state (allowing CNC finishing of mating surfaces before age hardening), and final hardness (50–54 HRC) after a straightforward aging cycle at 490&deg;C for 6 hours. Learn more in our <a href="conformal-cooling-materials.html">conformal cooling materials guide</a>.</p>
+
+  <p><strong>CuCrZr copper alloy</strong> is a growing niche for conformal cooling inserts in <a href="conformal-cooling-die-casting.html">die casting</a> and high-heat-flux injection molding applications. Copper's thermal conductivity (320 W/mK vs. 20 W/mK for maraging steel) dramatically improves heat extraction. However, copper's high reflectivity at 1,064 nm (the standard Yb-fiber laser wavelength) requires either a green laser (515 nm) or very high laser power (&gt;700W) with carefully optimized parameters to achieve reliable melting.</p>
+
+  <!-- SECTION 10: OPTIMIZATION -->
+  <h2 id="optimization">10. Print Parameter Optimization for Density &gt;99.5%</h2>
+
+  <p>Achieving &gt;99.5% density is a non-negotiable requirement for conformal cooling inserts. Below this threshold, interconnected porosity can create leak paths through channel walls under coolant pressure. The primary print parameters that control density are laser power, scan speed, hatch spacing, and layer thickness — collectively expressed through the volumetric energy density (VED) equation:</p>
+
+  <div class="formula-box">
+    <div class="formula-box__label">Volumetric Energy Density</div>
+    <div class="formula-box__line"><strong>VED</strong> = <span class="var">P</span> / (<span class="var">v</span> &times; <span class="var">h</span> &times; <span class="var">t</span>)&ensp;[J/mm&sup3;]</div>
+    <div class="formula-box__line"><span class="var">P</span> = laser power (W)&ensp;|&ensp;<span class="var">v</span> = scan speed (mm/s)</div>
+    <div class="formula-box__line"><span class="var">h</span> = hatch spacing (mm)&ensp;|&ensp;<span class="var">t</span> = layer thickness (mm)</div>
+  </div>
+
+  <p>For maraging steel MS1 at 40 &mu;m layer thickness, the optimal VED window is approximately 60–80 J/mm&sup3;. Below 55 J/mm&sup3;, lack-of-fusion porosity increases rapidly. Above 90 J/mm&sup3;, keyhole porosity appears due to excessive energy input. Each machine platform has its own optimal parameter set within this VED window, accounting for differences in laser beam profile, gas flow patterns, and recoater dynamics.</p>
+
+  <h3>Platform-Specific Density Optimization Guidelines</h3>
+
+  <div style="overflow-x:auto;">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Platform</th>
+        <th>Material</th>
+        <th>Power (W)</th>
+        <th>Speed (mm/s)</th>
+        <th>Hatch (&mu;m)</th>
+        <th>Layer (&mu;m)</th>
+        <th>VED (J/mm&sup3;)</th>
+        <th>Typical Density</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>EOS M290</td>
+        <td>MS1</td>
+        <td>285</td>
+        <td>960</td>
+        <td>110</td>
+        <td>40</td>
+        <td>67</td>
+        <td class="val-good">&gt;99.8%</td>
+      </tr>
+      <tr>
+        <td>DMP Flex 350</td>
+        <td>Maraging</td>
+        <td>325</td>
+        <td>1,050</td>
+        <td>100</td>
+        <td>40</td>
+        <td>77</td>
+        <td class="val-good">&gt;99.7%</td>
+      </tr>
+      <tr>
+        <td>SLM 280 2.0</td>
+        <td>1.2709</td>
+        <td>350</td>
+        <td>1,100</td>
+        <td>120</td>
+        <td>40</td>
+        <td>66</td>
+        <td class="val-good">&gt;99.7%</td>
+      </tr>
+      <tr>
+        <td>Trumpf TruPrint</td>
+        <td>1.2709</td>
+        <td>250</td>
+        <td>800</td>
+        <td>100</td>
+        <td>40</td>
+        <td>78</td>
+        <td class="val-good">&gt;99.6%</td>
+      </tr>
+      <tr>
+        <td>EOS M290</td>
+        <td>H13</td>
+        <td>280</td>
+        <td>800</td>
+        <td>100</td>
+        <td>30</td>
+        <td>117</td>
+        <td class="val-neutral">99.3–99.6%</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Note that the H13 parameters require significantly higher VED due to the material's higher thermal conductivity and cracking tendency. Even with optimized parameters, H13 density rarely exceeds 99.6% without hot isostatic pressing (HIP) post-processing, which adds $200–$500 per insert depending on size.</p>
+
+  <blockquote>
+    <p>When evaluating a service bureau, ask for their density validation method and data. Archimedes method is standard. CT scanning is better but more expensive. Reject any supplier who cannot provide density data above 99.5% for maraging steel builds.</p>
+  </blockquote>
+
+  <!-- SECTION 11: BUILD TIMES AND COSTS -->
+  <h2 id="build-time-cost">11. Build Times and Costs per Platform</h2>
+
+  <p>Build time and cost are critical factors for mold shops evaluating whether to <a href="3d-printed-conformal-cooling.html">3D print conformal cooling inserts</a> in-house versus outsourcing. The table below provides estimated build times and costs for a representative medium-sized conformal cooling insert (100 x 80 x 150 mm, approximately 180 cm&sup3; solid volume in MS1).</p>
+
+  <div style="overflow-x:auto;">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Platform</th>
+        <th>Est. Build Time</th>
+        <th>Machine Rate ($/hr)</th>
+        <th>Material Cost</th>
+        <th>Post-Processing</th>
+        <th>Total per Insert</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>EOS M290</td>
+        <td>14–18 hrs</td>
+        <td>$45–$65</td>
+        <td>$85–$110</td>
+        <td>$200–$350</td>
+        <td class="val-good">$920–$1,520</td>
+      </tr>
+      <tr>
+        <td>EOS M400-4</td>
+        <td>5–7 hrs</td>
+        <td>$110–$150</td>
+        <td>$85–$110</td>
+        <td>$200–$350</td>
+        <td>$835–$1,510</td>
+      </tr>
+      <tr>
+        <td>DMP Flex 350</td>
+        <td>12–16 hrs</td>
+        <td>$50–$70</td>
+        <td>$95–$120</td>
+        <td>$200–$350</td>
+        <td>$895–$1,590</td>
+      </tr>
+      <tr>
+        <td>SLM 280 2.0 (dual)</td>
+        <td>8–12 hrs</td>
+        <td>$55–$75</td>
+        <td>$80–$105</td>
+        <td>$200–$350</td>
+        <td class="val-good">$720–$1,355</td>
+      </tr>
+      <tr>
+        <td>Trumpf TruPrint 2000</td>
+        <td>15–20 hrs</td>
+        <td>$50–$70</td>
+        <td>$90–$115</td>
+        <td>$200–$350</td>
+        <td>$1,040–$1,865</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Post-processing costs include wire EDM removal from the build plate, stress relief heat treatment, age hardening, CNC machining of mating surfaces, and leak testing. These costs are roughly constant across platforms because they are performed on conventional equipment after the build.</p>
+
+  <p>For service bureau outsourcing, expect to pay a 30–60% markup over the raw costs above, bringing typical delivered pricing for a medium-sized MS1 conformal cooling insert to $1,200–$3,500 depending on geometry complexity, tolerance requirements, and lead time urgency. Rush surcharges of 25–50% are common for turnaround under 5 business days. For a detailed cost analysis, see our <a href="conformal-cooling-cost.html">conformal cooling cost guide</a>.</p>
+
+  <!-- SECTION 12: CHOOSING -->
+  <h2 id="choosing">12. How to Choose the Right Machine or Service Bureau</h2>
+
+  <p>The decision framework for selecting an LPBF platform (or a service bureau running a specific platform) for conformal cooling inserts comes down to five factors:</p>
+
+  <div class="step-block">
+    <div class="step-block__number">Factor 1</div>
+    <div class="step-block__title">Insert Size</div>
+    <p>If your largest insert dimension exceeds 250 mm in X or Y, your options narrow to the EOS M400-4, SLM 280 2.0, or DMP Flex 350 (275 mm max). For inserts below 250 mm — which accounts for approximately 90% of conformal cooling applications — all platforms are viable.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Factor 2</div>
+    <div class="step-block__title">Material Requirements</div>
+    <p>If you need maraging steel MS1, every platform works. If you need H13, choose SLM Solutions or Trumpf. If you need CuCrZr copper, choose Trumpf (green laser) or SLM Solutions. The material requirement often makes the platform decision for you.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Factor 3</div>
+    <div class="step-block__title">Volume and Lead Time</div>
+    <p>For one-off or low-volume insert production (1–20 inserts per year), outsource to a service bureau with M290 or SLM 280 capacity for the best pricing. For 20+ inserts per year with consistent demand, evaluate in-house production economics. For rush jobs (&lt;5 business days), choose a service bureau with multiple machines of the same type to avoid queue delays.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Factor 4</div>
+    <div class="step-block__title">Quality Requirements</div>
+    <p>For inserts with channel walls below 1.2 mm or complex internal geometries with high leak-test rejection risk, prioritize the DMP Flex 350's low-oxygen atmosphere or request CT scanning validation from your supplier regardless of platform. For standard inserts with 1.5 mm+ channel walls, any leading platform produces acceptable results.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Factor 5</div>
+    <div class="step-block__title">Geographic Availability and Pricing</div>
+    <p>EOS M290 capacity is available from service bureaus on every continent. 3D Systems and SLM Solutions have strong networks in North America and Europe. Trumpf and Renishaw presence is concentrated in Europe. In Asia, EOS dominates the service bureau landscape. Choose the platform with the most competitive service bureau network in your region. MouldNova operates EOS and SLM platforms and ships globally with typical lead times of 7–12 business days.</p>
+  </div>
+
+  <h3>Buy vs. Outsource Decision Summary</h3>
+
+  <div style="overflow-x:auto;">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Factor</th>
+        <th>Outsource to Service Bureau</th>
+        <th>Buy Your Own Machine</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Annual insert volume</strong></td>
+        <td class="val-good">&lt;200 inserts/year</td>
+        <td class="val-good">&gt;200 inserts/year</td>
+      </tr>
+      <tr>
+        <td><strong>Capital investment</strong></td>
+        <td class="val-good">$0 upfront</td>
+        <td class="val-bad">$500K–$1.8M</td>
+      </tr>
+      <tr>
+        <td><strong>Annual operating cost</strong></td>
+        <td>Pay per insert</td>
+        <td class="val-bad">$80K–$120K/yr</td>
+      </tr>
+      <tr>
+        <td><strong>Lead time control</strong></td>
+        <td class="val-bad">5–15 business days</td>
+        <td class="val-good">1–3 business days</td>
+      </tr>
+      <tr>
+        <td><strong>IP / geometry confidentiality</strong></td>
+        <td class="val-bad">Shared with supplier</td>
+        <td class="val-good">Fully internal</td>
+      </tr>
+      <tr>
+        <td><strong>Operator expertise required</strong></td>
+        <td class="val-good">None</td>
+        <td class="val-bad">1–2 trained operators</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- SECTION 13: FAQ -->
+  <h2 id="faq">13. FAQ</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Why is the EOS M290 the most widely used machine for conformal cooling inserts?</div>
+    <p class="faq-block__a">The EOS M290 dominates conformal cooling insert production because it offers a 250 x 250 x 325 mm build volume that fits most mold inserts, a proven 400W Yb-fiber laser with 100-micron spot size, and the most mature parameter sets for maraging steel MS1 and stainless 17-4PH. Its installed base exceeds 3,000 units worldwide, meaning more service bureaus offer M290 capacity than any other platform — giving buyers competitive pricing and fast turnaround.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What density can LPBF machines achieve for mold insert production?</div>
+    <p class="faq-block__a">All leading LPBF platforms can achieve part densities above 99.5% when using optimized print parameters. For conformal cooling inserts, density above 99.5% is critical because residual porosity below this threshold can create leak paths in cooling channels operating at 4 to 8 bar water pressure. Most qualified service bureaus target 99.7% or higher density for mold insert applications.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How does the 3D Systems DMP Flex 350 compare to the EOS M290 for conformal cooling?</div>
+    <p class="faq-block__a">The DMP Flex 350 offers a comparable 275 x 275 x 380 mm build volume and a 500W fiber laser. Its key differentiator is the sealed build chamber with continuous low-oxygen atmosphere (below 25 ppm O2), which produces superior surface finish and mechanical properties on reactive alloys and stainless steels. The EOS M290 has a larger installed base and more third-party parameter sets, while the DMP Flex 350 offers tighter atmosphere control.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What materials are available across LPBF platforms for mold inserts?</div>
+    <p class="faq-block__a">Maraging steel (MS1/1.2709) is available on all major platforms and is the most common material for conformal cooling inserts. 420 stainless steel and 17-4PH are available on EOS, 3D Systems, and SLM Solutions. H13 tool steel is available on SLM Solutions and Trumpf with high-temperature preheating. CuCrZr copper alloy for high-conductivity inserts is available on SLM Solutions and Trumpf systems with green laser capability.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Should I buy an LPBF machine or outsource conformal cooling insert production?</div>
+    <p class="faq-block__a">For most mold shops, outsourcing to a qualified service bureau is more cost-effective unless you need more than 200 inserts per year. An EOS M290 costs approximately $500,000 to $700,000 installed, plus $80,000 to $120,000 per year in maintenance, gas, and operator costs. At typical insert volumes of 20 to 80 per year, the per-insert cost from a service bureau is significantly lower than the amortized cost of owning a machine.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Get a Conformal Cooling Insert Quote — Any Volume, Any Material</div>
+    <div class="blog-cta__text">MouldNova operates EOS and SLM platforms with qualified parameter sets for MS1, 17-4PH, H13, and CuCrZr. Send your STEP file and we return a quote with build time, material options, and delivered pricing within 24 hours. Density certification (&gt;99.5%) and leak testing included with every insert.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp — Send STEP File Now
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Request Quote via Email &rarr;</a>
+    </div>
+  </div>
+
+  <!-- INTERNAL LINKS -->
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href="conformal-cooling-materials.html">Conformal Cooling Materials — MS1, H13, 420SS, CuCrZr Compared</a></li>
+    <li><a href="slm-vs-dmls-conformal-cooling.html">SLM vs DMLS for Conformal Cooling — Process Comparison</a></li>
+    <li><a href="3d-printed-conformal-cooling.html">3D Printed Conformal Cooling — Complete Guide</a></li>
+    <li><a href="conformal-cooling-cost.html">Conformal Cooling Cost — Pricing Breakdown and ROI Analysis</a></li>
+    <li><a href="conformal-cooling-additive-manufacturing.html">Conformal Cooling &amp; Additive Manufacturing</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts — Service Details &amp; Specifications</a></li>
+    <li><a href="../case-studies.html">Case Studies — Full Production Data from Real Programs</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>
