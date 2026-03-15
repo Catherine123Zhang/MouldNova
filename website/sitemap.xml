@@ -460,4 +460,32 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://mouldnova.com/blog/conformal-cooling-semiconductor.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mouldnova.com/blog/conformal-cooling-cycle-time-reduction.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mouldnova.com/blog/conformal-cooling-vacuum-brazing.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mouldnova.com/blog/linear-conformal-cooling.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

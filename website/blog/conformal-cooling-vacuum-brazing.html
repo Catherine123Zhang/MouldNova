@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conformal Cooling by Vacuum Brazing: When 3D Printing Isn't the Answer | MouldNova</title>
+  <meta name="description" content="Vacuum brazing creates conformal cooling channels by bonding CNC-machined laminated plates in a vacuum furnace. Compare vacuum brazing vs 3D printing (LPBF) for cost, channel geometry, insert size, and material options like P20 and H13." />
+  <meta name="keywords" content="conformal cooling vacuum brazing, vacuum brazed cooling channels, conformal cooling laminated plates, vacuum brazing vs 3D printing, conformal cooling H13, conformal cooling P20, vacuum brazing mold inserts" />
+  <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-vacuum-brazing.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/conformal-cooling-vacuum-brazing.html" />
+  <meta property="og:title" content="Conformal Cooling by Vacuum Brazing: When 3D Printing Isn't the Answer" />
+  <meta property="og:description" content="Vacuum brazing creates conformal cooling channels by bonding CNC-machined laminated plates in a vacuum furnace. Cost, process steps, quality testing, and head-to-head comparison vs 3D printing (LPBF)." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/conformal-cooling-vacuum-brazing.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .formula-box { background:var(--black); color:#fff; border-radius:12px; padding:28px 32px; margin:28px 0; font-family:monospace; }
+    .formula-box__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-family:sans-serif; font-weight:700; }
+    .formula-box__line { font-size:1.05rem; line-height:2; color:#e5e5e5; }
+    .formula-box__line strong { color:#fff; }
+    .formula-box__line .var { color:#fbbf24; }
+    .worked-example { background:#f0f7ff; border:1px solid #bfdbfe; border-radius:12px; padding:24px; margin:20px 0; }
+    .worked-example__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#1d4ed8; font-weight:700; margin-bottom:10px; }
+    .worked-example__title { font-size:1.05rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .worked-example p { font-size:0.95rem; color:#333; line-height:1.75; margin-bottom:8px; }
+    .worked-example .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .case-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .case-card__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .case-card__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .case-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .case-card .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+      .formula-box__line { font-size:0.88rem; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Conformal Cooling by Vacuum Brazing: When 3D Printing Isn't the Answer",
+    "description": "Vacuum brazing creates conformal cooling channels by bonding CNC-machined laminated plates in a vacuum furnace. Compare vacuum brazing vs 3D printing (LPBF) for cost, channel geometry, insert size, and material options like P20 and H13.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-16",
+    "dateModified": "2026-03-16",
+    "mainEntityOfPage": "https://mouldnova.com/blog/conformal-cooling-vacuum-brazing.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is vacuum brazing for conformal cooling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vacuum brazing is a manufacturing method for creating conformal cooling channels inside mold inserts. Instead of 3D printing, the insert is split into multiple plates that are CNC-machined with channel grooves, stacked together with brazing filler metal, and bonded in a vacuum furnace at 1,000–1,200°C. The result is a monolithic steel block with internal cooling channels that follow the part geometry. The process is well-suited for large inserts, simple channel layouts, and applications requiring conventional mold steels like P20 or H13."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use vacuum brazing instead of 3D printing for conformal cooling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vacuum brazing is preferred when the insert exceeds the build volume of available LPBF machines (typically >400 mm in any dimension), when the channel geometry is relatively simple (no spiral or helical paths required), when the application requires conventional tool steels like H13 or P20 rather than maraging steel, or when the budget is constrained and channel complexity is low. 3D printing (LPBF) remains superior for complex 3D channel geometries, spiral cooling circuits, and applications requiring channels closer than 3 mm to the mold surface."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What materials can be used for vacuum-brazed conformal cooling inserts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vacuum brazing works with most conventional mold steels including P20 (pre-hardened to 28–34 HRC), H13 (heat-treated to 44–52 HRC after brazing), S136 / 420 stainless (for corrosive resins like PVC), and copper alloys like CuBe for high-conductivity zones. Common brazing filler metals include nickel-based alloys (BNi-2, BNi-7) for high-temperature service and copper-based fillers for lower-temperature applications. This broad material compatibility is a key advantage over LPBF, which is largely limited to maraging steel (MS1/1.2709) and 316L stainless."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How strong is a vacuum-brazed joint compared to the parent steel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A properly executed vacuum-brazed joint using nickel-based filler metal (BNi-2) on H13 tool steel achieves shear strength of 250–350 MPa — approximately 70–85% of the parent material's shear strength. Joint integrity depends on surface preparation (Ra < 0.8 µm), brazing gap control (25–75 µm optimal), and furnace atmosphere (vacuum level below 10⁻⁴ mbar). Joints are routinely tested by helium leak testing (sensitivity to 10⁻⁹ mbar·L/s) and ultrasonic inspection to verify bond coverage exceeds 95% of the joint area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cost difference between vacuum brazing and 3D printing for conformal cooling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For simple channel geometries in inserts under 200 mm, vacuum brazing typically costs 30–50% less than LPBF 3D printing. For complex multi-level channel designs, the cost advantage narrows or reverses because vacuum brazing requires more plates and more CNC programming. For inserts larger than 300 mm, vacuum brazing is often the only practical option since it is not constrained by build chamber size. Typical vacuum-brazed inserts range from $1,200 to $4,500, while equivalent LPBF inserts range from $2,000 to $6,000 depending on size and complexity."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Manufacturing Methods &middot; March 2026</div>
+    <h1 class="blog-hero__title">Conformal Cooling by Vacuum Brazing: When 3D Printing Isn't the Answer</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 18 min read &middot; Written for mold designers, tooling engineers, and procurement managers evaluating conformal cooling methods</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">Vacuum Brazing for Conformal Cooling — Key Facts</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">30–50%</div>
+      <div class="data-cell__label">Lower Cost vs LPBF (Simple Channels)</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">No Size Limit</div>
+      <div class="data-cell__label">Not Constrained by Build Chamber</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">P20 / H13</div>
+      <div class="data-cell__label">Conventional Mold Steels Supported</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">250–350 MPa</div>
+      <div class="data-cell__label">Brazed Joint Shear Strength</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#what-is-vacuum-brazing">1. What Is Vacuum Brazing for Conformal Cooling?</a>
+    <a href="#how-it-works">2. How Vacuum-Brazed Conformal Cooling Channels Are Made</a>
+    <a href="#process-steps">3. The 6-Step Vacuum Brazing Process</a>
+    <a href="#temperature-profile">4. Vacuum Furnace Temperature Profile</a>
+    <a href="#advantages">5. Advantages of Vacuum Brazing</a>
+    <a href="#limitations">6. Limitations and Design Constraints</a>
+    <a href="#quality-testing">7. Quality Testing and Inspection</a>
+    <a href="#cost-comparison">8. Cost Comparison: Vacuum Brazing vs 3D Printing (LPBF)</a>
+    <a href="#when-each-wins">9. Decision Matrix: When Each Method Wins</a>
+    <a href="#faq">10. FAQ</a>
+  </div>
+
+  <p>When most engineers hear "conformal cooling," they immediately think of metal 3D printing — specifically laser powder bed fusion (LPBF). And for good reason: <a href="conformal-cooling-3d-printing.html">3D printing enables the most complex channel geometries</a>, including spiral paths, variable cross-sections, and channels that follow every contour of the mold surface. But LPBF is not the only way to create conformal cooling channels, and it is not always the best way.</p>
+
+  <p>Vacuum brazing offers a proven alternative. By CNC-machining cooling grooves into stacked steel plates and bonding them in a vacuum furnace, toolmakers can produce conformal cooling inserts from conventional mold steels — at lower cost, at larger sizes, and without the build-volume constraints of additive manufacturing. This guide covers how vacuum brazing works, when it beats 3D printing, and when it does not.</p>
+
+  <!-- SECTION 1 -->
+  <h2 id="what-is-vacuum-brazing">1. What Is Vacuum Brazing for Conformal Cooling?</h2>
+
+  <p>Vacuum brazing is a joining process that bonds two or more metal components using a filler metal that melts at a temperature below the melting point of the base materials. The process takes place inside a vacuum furnace at pressures below 10<sup>-4</sup> mbar, which eliminates oxidation and produces clean, flux-free joints with excellent metallurgical integrity.</p>
+
+  <p>For conformal cooling applications, the concept is straightforward: instead of building an insert layer-by-layer with a laser (as in LPBF), the insert is divided into horizontal plates — typically 8 to 25 mm thick. Each plate is CNC-machined with cooling channel grooves on one or both faces. The plates are then stacked in the correct order, with brazing filler metal (paste, foil, or powder) applied between the mating surfaces. The entire assembly goes into a vacuum furnace, where the filler metal melts and wicks into the joints by capillary action, creating a metallurgical bond between the plates.</p>
+
+  <p>The result is a monolithic steel block with enclosed internal channels. After brazing, the insert is finish-machined on the exterior surfaces (cavity profile, mounting features, O-ring grooves) using conventional CNC and EDM operations.</p>
+
+  <blockquote>
+    <p>Vacuum brazing for conformal cooling is not new — it has been used in aerospace heat exchanger manufacturing since the 1960s. Its application to injection mold inserts gained traction in the early 2000s as an alternative to gun-drilled conventional cooling, particularly for large inserts that exceed the build volume of available 3D printers.</p>
+  </blockquote>
+
+  <!-- SECTION 2 -->
+  <h2 id="how-it-works">2. How Vacuum-Brazed Conformal Cooling Channels Are Made</h2>
+
+  <p>The laminated-plate approach to conformal cooling works by decomposing a 3D channel network into 2D cross-sections — one per plate. Each plate contains a portion of the channel as a machined groove. When the plates are stacked and brazed, the grooves align to form enclosed channels.</p>
+
+  <h3>Channel Design Constraints</h3>
+
+  <p>Unlike LPBF, where channels can follow any 3D path, vacuum-brazed channels are constrained by the plate-splitting approach:</p>
+
+  <ul>
+    <li><strong>Channels are primarily planar:</strong> Each channel segment must lie within the plane of a single plate (or span two adjacent plates). Truly 3D helical or spiral channel paths are not practical with this method.</li>
+    <li><strong>Minimum corner radius:</strong> CNC end-mill radius determines the minimum internal corner radius — typically 1.5 to 3.0 mm depending on channel depth and mill diameter.</li>
+    <li><strong>Channel cross-section:</strong> Most vacuum-brazed channels have rectangular or D-shaped cross-sections rather than the circular cross-sections achievable with LPBF. Rectangular channels have slightly lower hydraulic efficiency but are easier to machine.</li>
+    <li><strong>Minimum wall thickness:</strong> The steel wall between the channel and the mold surface must be at least 4–5 mm to ensure structural integrity at injection pressures up to 200 MPa. LPBF allows walls as thin as 2–3 mm due to the continuous metallurgical structure.</li>
+    <li><strong>Inter-plate transitions:</strong> Channels can transition between plates via vertical passages (drilled holes connecting plate layers), but each transition adds complexity and a potential leak path.</li>
+  </ul>
+
+  <h3>Typical Channel Dimensions</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Vacuum Brazing</th>
+        <th>LPBF 3D Printing</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Channel width</td>
+        <td>4–12 mm</td>
+        <td>2–8 mm</td>
+      </tr>
+      <tr>
+        <td>Channel depth</td>
+        <td>3–10 mm</td>
+        <td>2–8 mm (diameter)</td>
+      </tr>
+      <tr>
+        <td>Cross-section shape</td>
+        <td>Rectangular / D-shape</td>
+        <td>Circular / teardrop / freeform</td>
+      </tr>
+      <tr>
+        <td>Min. corner radius</td>
+        <td>1.5 mm</td>
+        <td>0.5 mm</td>
+      </tr>
+      <tr>
+        <td>Min. wall to cavity surface</td>
+        <td>4–5 mm</td>
+        <td>2–3 mm</td>
+      </tr>
+      <tr>
+        <td>Channel-to-channel pitch</td>
+        <td>12–20 mm</td>
+        <td>6–15 mm</td>
+      </tr>
+      <tr>
+        <td>Surface roughness (internal)</td>
+        <td>Ra 1.6–3.2 &micro;m (machined)</td>
+        <td>Ra 6–15 &micro;m (as-printed)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>One notable advantage of vacuum-brazed channels: the internal surfaces are CNC-machined, so they have much lower surface roughness (Ra 1.6–3.2 &micro;m) compared to as-printed LPBF channels (Ra 6–15 &micro;m). Smoother internal surfaces reduce pressure drop and improve flow uniformity, which can partially offset the geometric constraints of the plate-based approach.</p>
+
+  <!-- SECTION 3 -->
+  <h2 id="process-steps">3. The 6-Step Vacuum Brazing Process</h2>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 1</div>
+    <div class="step-block__title">Design and Plate Splitting</div>
+    <p>The conformal cooling channel layout is designed in CAD, then the insert is split into horizontal plates. Each plate thickness is chosen to match the channel depth at that level — typically 8 to 25 mm. The splitting strategy must ensure that every channel segment can be machined as an open groove on one face of a plate, with the adjacent plate acting as the "lid." Complex layouts may require 4 to 12 plates per insert.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 2</div>
+    <div class="step-block__title">CNC Machining of Plates</div>
+    <p>Each plate is CNC-machined from the selected tool steel (P20, H13, S136, or other grades). Cooling channel grooves are milled into the mating face. Alignment pin holes and dowel features are machined to ensure precise plate registration during stacking. Surface finish on the mating faces must be Ra &lt; 0.8 &micro;m to ensure proper brazing filler flow — this is a critical quality parameter.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 3</div>
+    <div class="step-block__title">Cleaning and Surface Preparation</div>
+    <p>All plates are degreased in an ultrasonic bath (acetone or isopropanol), then dried in a clean oven at 120 &deg;C. Any oxide layer, cutting fluid residue, or contaminant on the mating surfaces will prevent wetting of the brazing filler and create voids in the joint. This step is non-negotiable — it directly determines joint quality.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 4</div>
+    <div class="step-block__title">Brazing Filler Application and Stacking</div>
+    <p>Brazing filler metal is applied to the mating surfaces. Common forms include brazing paste (applied by syringe or screen printing), brazing foil (pre-cut to shape and placed between plates), or brazing powder (applied with a binder). The most common filler for mold steel applications is <strong>BNi-2</strong> (AWS classification) — a nickel-chromium-boron-silicon alloy with a liquidus temperature of approximately 1,000 &deg;C. For lower-temperature brazing, copper-based fillers (BCu-1) with a liquidus of 1,083 &deg;C are used. Plates are stacked on alignment pins and clamped or weighted to maintain contact pressure during the furnace cycle.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 5</div>
+    <div class="step-block__title">Vacuum Furnace Brazing Cycle</div>
+    <p>The assembled stack is loaded into a vacuum furnace. The furnace is evacuated to below 10<sup>-4</sup> mbar (0.01 Pa) before heating begins. The brazing cycle follows a controlled temperature profile (see Section 4) with typical peak temperatures of 1,010–1,065 &deg;C for BNi-2 filler, held for 15–30 minutes. Total furnace cycle time including ramp-up, hold, and controlled cooling is typically 8–14 hours.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 6</div>
+    <div class="step-block__title">Post-Braze Finishing and Testing</div>
+    <p>After the furnace cycle, the brazed assembly is a single monolithic block. It undergoes: finish CNC machining of the cavity surface, mounting features, and O-ring grooves; heat treatment (if H13 — typically 1,020 &deg;C austenitizing + double temper to 44–52 HRC); pressure testing at 1.5x operating pressure (typically 12–15 bar water pressure held for 30 minutes); and final inspection. See Section 7 for the full quality testing protocol.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2 id="temperature-profile">4. Vacuum Furnace Temperature Profile</h2>
+
+  <p>The brazing cycle temperature profile is critical to joint quality. Heating too fast creates thermal gradients that distort the plates; holding at peak temperature too briefly results in incomplete filler flow; cooling too fast causes residual stress and potential cracking.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Phase</th>
+        <th>Temperature Range</th>
+        <th>Ramp Rate / Hold Time</th>
+        <th>Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Initial ramp</td>
+        <td>Room temp &rarr; 600 &deg;C</td>
+        <td>5–10 &deg;C/min</td>
+        <td>Gradual heating to avoid thermal shock</td>
+      </tr>
+      <tr>
+        <td>Stress-relief hold</td>
+        <td>600 &deg;C</td>
+        <td>Hold 30 min</td>
+        <td>Equalize temperature across assembly</td>
+      </tr>
+      <tr>
+        <td>Intermediate ramp</td>
+        <td>600 &rarr; 950 &deg;C</td>
+        <td>5–8 &deg;C/min</td>
+        <td>Continued heating; binder burnout from paste</td>
+      </tr>
+      <tr>
+        <td>Pre-braze hold</td>
+        <td>950 &deg;C</td>
+        <td>Hold 15 min</td>
+        <td>Final temperature equalization before filler melts</td>
+      </tr>
+      <tr>
+        <td>Brazing ramp</td>
+        <td>950 &rarr; 1,040 &deg;C</td>
+        <td>3–5 &deg;C/min</td>
+        <td>Slow ramp through filler liquidus</td>
+      </tr>
+      <tr>
+        <td>Brazing hold</td>
+        <td>1,040 &deg;C</td>
+        <td>Hold 15–30 min</td>
+        <td>Filler flows by capillary action into joints</td>
+      </tr>
+      <tr>
+        <td>Controlled cooling</td>
+        <td>1,040 &rarr; 600 &deg;C</td>
+        <td>Gas quench or 10–15 &deg;C/min</td>
+        <td>Solidification of filler; minimize distortion</td>
+      </tr>
+      <tr>
+        <td>Final cooling</td>
+        <td>600 &deg;C &rarr; room temp</td>
+        <td>Furnace cool or forced gas</td>
+        <td>Cool to handling temperature</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="formula-box">
+    <div class="formula-box__label">Critical Process Parameters</div>
+    <div class="formula-box__line"><strong>Vacuum level:</strong> <span class="var">&lt; 10<sup>-4</sup> mbar</span> (maintained throughout cycle)</div>
+    <div class="formula-box__line"><strong>Brazing gap:</strong> <span class="var">25–75 &micro;m</span> (optimal for capillary flow)</div>
+    <div class="formula-box__line"><strong>Surface finish:</strong> <span class="var">Ra &lt; 0.8 &micro;m</span> (on mating faces)</div>
+    <div class="formula-box__line"><strong>Filler thickness:</strong> <span class="var">50–100 &micro;m</span> (paste/foil layer)</div>
+    <div class="formula-box__line"><strong>Peak temperature tolerance:</strong> <span class="var">+/- 5 &deg;C</span></div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <h2 id="advantages">5. Advantages of Vacuum Brazing</h2>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Advantage 1</div>
+    <div class="benefit-block__headline">No Size Limitations</div>
+    <p class="benefit-block__body">LPBF 3D printers are constrained by their build chamber — the largest commercial systems top out at approximately 400 x 400 x 400 mm, and most shops have machines limited to 250 x 250 x 300 mm. Vacuum brazing has no such constraint. The limiting factor is the vacuum furnace working zone, which is commonly 600 x 600 x 900 mm or larger. This makes vacuum brazing the default choice for conformal cooling inserts on large automotive bumper molds, appliance housings, and other parts where the insert exceeds LPBF build volumes.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Advantage 2</div>
+    <div class="benefit-block__headline">Conventional Mold Steels (P20, H13, S136)</div>
+    <p class="benefit-block__body">LPBF is largely limited to maraging steel (MS1 / 1.2709) and 316L stainless for mold applications. Vacuum brazing works with the full range of conventional tool steels that mold shops already know and trust: P20 pre-hardened steel for general-purpose molds, H13 for high-temperature and high-cycle applications, S136 / 420 stainless for corrosive resins like PVC, and even copper alloys for high-conductivity thermal management zones. This eliminates the material qualification concerns that some shops have with maraging steel.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Advantage 3</div>
+    <div class="benefit-block__headline">Lower Cost for Simple Channel Geometries</div>
+    <p class="benefit-block__body">For inserts with relatively simple, single-level channel layouts — parallel channels, U-shaped circuits, or single-loop perimeter cooling — vacuum brazing is typically 30–50% less expensive than LPBF. The cost advantage comes from lower material cost (conventional steel plate vs. atomized metal powder), faster processing (CNC machining is faster than layer-by-layer laser melting for simple shapes), and no need for support structure removal or stress relief cycles.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Advantage 4</div>
+    <div class="benefit-block__headline">Smooth Internal Channels</div>
+    <p class="benefit-block__body">CNC-machined channel surfaces have roughness values of Ra 1.6–3.2 &micro;m — roughly 4 to 8 times smoother than as-printed LPBF channels (Ra 6–15 &micro;m). Smoother channels reduce pressure drop by 15–25%, improve flow uniformity, and resist fouling from coolant deposits over the life of the mold. This can extend maintenance intervals and reduce the need for descaling.</p>
+  </div>
+
+  <!-- SECTION 6 -->
+  <h2 id="limitations">6. Limitations and Design Constraints</h2>
+
+  <p>Vacuum brazing is not a universal solution. Understanding its limitations is essential for selecting the right manufacturing method:</p>
+
+  <ul>
+    <li><strong>2D channel geometry only:</strong> Channels are limited to paths that can be machined as open grooves in flat plates. Helical, spiral, and truly 3D conformal paths — the geometries that deliver the largest cooling improvements — are not feasible. This means vacuum brazing typically achieves 15–25% cycle time reduction compared to 25–40% for LPBF on complex parts.</li>
+    <li><strong>Joint integrity risk:</strong> Every brazed interface is a potential leak path. A 12-plate assembly has 11 brazed joints, each of which must be defect-free across 100% of its area. Voids, unbrazed areas, or filler metal deficiency at any joint will cause coolant leaks during production — a catastrophic failure mode that shuts down the press.</li>
+    <li><strong>Minimum channel-to-surface distance:</strong> The brazed joint plane must be at least 4–5 mm from the cavity surface to maintain structural integrity under injection pressure (up to 200 MPa). LPBF can place channels within 2–3 mm of the surface, which provides more aggressive cooling in critical hot-spot areas.</li>
+    <li><strong>Post-braze heat treatment limitations:</strong> The brazing cycle subjects the steel to temperatures above 1,000 &deg;C, which alters the metallurgical state of the base material. P20 loses its pre-hardened condition and must be re-tempered. H13 can be hardened after brazing, but the brazing thermal cycle must be integrated into the overall heat treatment plan. Poorly coordinated heat treatment after brazing can create residual stress that cracks the joints.</li>
+    <li><strong>Longer lead time for complex designs:</strong> While simple 2–4 plate assemblies can be completed in 5–7 working days, complex assemblies with 8–12 plates, multiple channel levels, and tight tolerances may require 10–15 working days — comparable to or longer than LPBF lead times.</li>
+  </ul>
+
+  <!-- SECTION 7 -->
+  <h2 id="quality-testing">7. Quality Testing and Inspection</h2>
+
+  <p>Joint integrity is the critical quality concern for vacuum-brazed conformal cooling inserts. A single unbrazed area or void in a joint can cause coolant to leak into the cavity during injection molding — contaminating the plastic part and potentially damaging the mold. The following testing protocol is standard for production-grade vacuum-brazed inserts:</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Test Method</th>
+        <th>What It Detects</th>
+        <th>Acceptance Criteria</th>
+        <th>When Performed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hydrostatic pressure test</td>
+        <td>Gross leaks, channel blockages</td>
+        <td>1.5x operating pressure (12–15 bar), hold 30 min, zero pressure drop</td>
+        <td>After finish machining</td>
+      </tr>
+      <tr>
+        <td>Helium leak test</td>
+        <td>Micro-leaks at brazed joints</td>
+        <td>Leak rate &lt; 10<sup>-9</sup> mbar&middot;L/s</td>
+        <td>After finish machining</td>
+      </tr>
+      <tr>
+        <td>Ultrasonic C-scan inspection</td>
+        <td>Unbrazed areas, voids in joints</td>
+        <td>&gt; 95% bond coverage across each joint plane</td>
+        <td>Before finish machining</td>
+      </tr>
+      <tr>
+        <td>Flow rate measurement</td>
+        <td>Channel blockages, dimensional errors</td>
+        <td>Measured flow rate within +/- 10% of calculated value at specified pressure</td>
+        <td>After finish machining</td>
+      </tr>
+      <tr>
+        <td>Hardness testing</td>
+        <td>Heat treatment effectiveness</td>
+        <td>Per steel grade spec (e.g., H13: 44–52 HRC)</td>
+        <td>After final heat treatment</td>
+      </tr>
+      <tr>
+        <td>Dimensional inspection (CMM)</td>
+        <td>Braze distortion, machining accuracy</td>
+        <td>Per drawing tolerances (typically +/- 0.02 mm on cavity surfaces)</td>
+        <td>After finish machining</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    <p>Helium leak testing is the gold standard for vacuum-brazed joint integrity. With a detection sensitivity of 10<sup>-9</sup> mbar&middot;L/s, it can find leaks that would not show up under hydrostatic pressure testing for months of production running. Any insert that passes helium leak testing at this sensitivity will not develop coolant leaks in service.</p>
+  </blockquote>
+
+  <!-- SECTION 8 -->
+  <h2 id="cost-comparison">8. Cost Comparison: Vacuum Brazing vs 3D Printing (LPBF)</h2>
+
+  <p>The cost comparison between vacuum brazing and LPBF depends heavily on three variables: insert size, channel complexity, and material. The following table provides representative cost ranges based on typical conformal cooling insert projects:</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Factor</th>
+        <th>Vacuum Brazing</th>
+        <th>LPBF 3D Printing</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Material cost (per kg)</td>
+        <td class="val-good">$8–15 (P20/H13 plate)</td>
+        <td class="val-bad">$80–120 (MS1 powder)</td>
+      </tr>
+      <tr>
+        <td>Small insert (&lt;100 mm, simple channels)</td>
+        <td class="val-good">$1,200–2,000</td>
+        <td class="val-bad">$2,000–3,500</td>
+      </tr>
+      <tr>
+        <td>Medium insert (100–200 mm, moderate channels)</td>
+        <td class="val-good">$2,500–4,000</td>
+        <td class="val-neutral">$3,000–5,000</td>
+      </tr>
+      <tr>
+        <td>Large insert (200–400 mm, simple channels)</td>
+        <td class="val-good">$3,500–6,000</td>
+        <td class="val-bad">$5,000–9,000</td>
+      </tr>
+      <tr>
+        <td>Large insert (&gt;400 mm)</td>
+        <td class="val-good">$5,000–8,000</td>
+        <td class="val-bad">Not feasible (exceeds build volume)</td>
+      </tr>
+      <tr>
+        <td>Complex multi-level channels (any size)</td>
+        <td class="val-bad">$4,000–8,000+ (many plates)</td>
+        <td class="val-good">$3,000–6,000</td>
+      </tr>
+      <tr>
+        <td>Lead time (simple)</td>
+        <td class="val-good">5–7 working days</td>
+        <td class="val-neutral">7–10 working days</td>
+      </tr>
+      <tr>
+        <td>Lead time (complex)</td>
+        <td class="val-bad">10–15 working days</td>
+        <td class="val-good">7–12 working days</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="worked-example">
+    <div class="worked-example__label">Cost Example</div>
+    <div class="worked-example__title">150 mm Core Insert — Single-Level U-Channel Layout</div>
+    <p><strong>Insert:</strong> 150 x 100 x 80 mm core insert for a consumer electronics housing mold. Single-level U-shaped cooling channel, 6 mm wide x 5 mm deep, running parallel to the cavity surface at 8 mm depth.</p>
+    <p><strong>Vacuum brazing:</strong> 3 plates of P20, CNC machined, brazed with BNi-2 filler. Total cost: $1,800. Lead time: 6 working days.</p>
+    <p><strong>LPBF:</strong> Single-piece MS1 maraging steel, printed and heat-treated. Total cost: $2,900. Lead time: 8 working days.</p>
+    <div class="result">Vacuum brazing saves $1,100 (38%) on this straightforward geometry.</div>
+  </div>
+
+  <div class="worked-example">
+    <div class="worked-example__label">Cost Example</div>
+    <div class="worked-example__title">120 mm Core Insert — Multi-Level Spiral Channel</div>
+    <p><strong>Insert:</strong> 120 x 120 x 95 mm core insert for a medical device cap mold. Spiral conformal channel wrapping around a cylindrical core, with a secondary perimeter cooling loop at a different depth level.</p>
+    <p><strong>Vacuum brazing:</strong> 8 plates of S136 stainless, complex groove patterns, multiple inter-plate transitions. Total cost: $5,200. Lead time: 12 working days.</p>
+    <p><strong>LPBF:</strong> Single-piece MS1, spiral channel printed as one continuous path. Total cost: $3,400. Lead time: 9 working days.</p>
+    <div class="result">LPBF saves $1,800 (35%) and 3 days on this complex geometry — and delivers better cooling performance.</div>
+  </div>
+
+  <!-- SECTION 9 -->
+  <h2 id="when-each-wins">9. Decision Matrix: When Each Method Wins</h2>
+
+  <p>The choice between vacuum brazing and LPBF 3D printing is not ideological — it is engineering. Each method has a clear zone of advantage. Use this decision matrix to guide the selection:</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Scenario</th>
+        <th>Recommended Method</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Insert &gt; 400 mm in any dimension</td>
+        <td class="val-good">Vacuum Brazing</td>
+        <td>Exceeds LPBF build volume</td>
+      </tr>
+      <tr>
+        <td>Simple single-level channel layout</td>
+        <td class="val-good">Vacuum Brazing</td>
+        <td>30–50% lower cost, comparable performance</td>
+      </tr>
+      <tr>
+        <td>Must use H13 or P20 steel</td>
+        <td class="val-good">Vacuum Brazing</td>
+        <td>LPBF limited to maraging steel / 316L</td>
+      </tr>
+      <tr>
+        <td>Budget-constrained project</td>
+        <td class="val-good">Vacuum Brazing</td>
+        <td>Lower material and processing cost</td>
+      </tr>
+      <tr>
+        <td>Complex 3D channel geometry (spiral, helical)</td>
+        <td class="val-good">LPBF 3D Printing</td>
+        <td>Vacuum brazing cannot produce these paths</td>
+      </tr>
+      <tr>
+        <td>Channels must be &lt; 3 mm from cavity surface</td>
+        <td class="val-good">LPBF 3D Printing</td>
+        <td>Brazed joints need &gt; 4 mm wall</td>
+      </tr>
+      <tr>
+        <td>Maximum cycle time reduction required (&gt; 30%)</td>
+        <td class="val-good">LPBF 3D Printing</td>
+        <td>True conformal paths deliver more aggressive cooling</td>
+      </tr>
+      <tr>
+        <td>Multi-cavity mold with identical small inserts</td>
+        <td class="val-good">LPBF 3D Printing</td>
+        <td>Multiple inserts printed simultaneously reduce per-unit cost</td>
+      </tr>
+      <tr>
+        <td>Prototype or short-run tooling</td>
+        <td class="val-neutral">Either</td>
+        <td>Depends on geometry and available equipment</td>
+      </tr>
+      <tr>
+        <td>Corrosive resin (PVC, POM with acid off-gassing)</td>
+        <td class="val-good">Vacuum Brazing</td>
+        <td>S136 / 420SS base material available</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>In practice, many mold builders use both methods within the same tool. A common approach is to use <a href="../conformal-cooling-inserts.html">LPBF conformal cooling inserts</a> on the core side (where channel-to-surface proximity is critical and geometries are complex) and vacuum-brazed inserts on the cavity side (where the larger surface area may exceed LPBF build volumes and channel complexity is lower).</p>
+
+  <blockquote>
+    <p>The best conformal cooling strategy is not "always 3D print" or "always braze." It is to analyze each insert position independently, evaluate geometry complexity, size constraints, and performance requirements, then assign the manufacturing method that delivers the best value for that specific insert. We regularly deliver projects that combine both methods in a single mold.</p>
+  </blockquote>
+
+  <!-- SECTION 10: FAQ -->
+  <h2 id="faq">10. FAQ</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is vacuum brazing for conformal cooling?</div>
+    <p class="faq-block__a">Vacuum brazing is a manufacturing method for creating conformal cooling channels inside mold inserts. The insert is split into multiple plates that are CNC-machined with channel grooves, stacked together with brazing filler metal, and bonded in a vacuum furnace at 1,000 to 1,200 degrees C. The result is a monolithic steel block with internal cooling channels that follow the part geometry. The process is well-suited for large inserts, simple channel layouts, and applications requiring conventional mold steels like P20 or H13.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">When should I use vacuum brazing instead of 3D printing for conformal cooling?</div>
+    <p class="faq-block__a">Vacuum brazing is preferred when the insert exceeds the build volume of available LPBF machines (typically above 400 mm in any dimension), when the channel geometry is relatively simple (no spiral or helical paths required), when the application requires conventional tool steels like H13 or P20 rather than maraging steel, or when the budget is constrained and channel complexity is low. 3D printing (LPBF) remains superior for complex 3D channel geometries, spiral cooling circuits, and applications requiring channels closer than 3 mm to the mold surface.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What materials can be used for vacuum-brazed conformal cooling inserts?</div>
+    <p class="faq-block__a">Vacuum brazing works with most conventional mold steels including P20 (pre-hardened to 28 to 34 HRC), H13 (heat-treated to 44 to 52 HRC after brazing), S136 or 420 stainless (for corrosive resins like PVC), and copper alloys like CuBe for high-conductivity zones. Common brazing filler metals include nickel-based alloys (BNi-2, BNi-7) for high-temperature service and copper-based fillers for lower-temperature applications. This broad material compatibility is a key advantage over LPBF, which is largely limited to maraging steel (MS1 / 1.2709) and 316L stainless.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How strong is a vacuum-brazed joint compared to the parent steel?</div>
+    <p class="faq-block__a">A properly executed vacuum-brazed joint using nickel-based filler metal (BNi-2) on H13 tool steel achieves shear strength of 250 to 350 MPa — approximately 70 to 85 percent of the parent material shear strength. Joint integrity depends on surface preparation (Ra below 0.8 micrometers), brazing gap control (25 to 75 micrometers optimal), and furnace atmosphere (vacuum level below 10 to the minus 4 mbar). Joints are routinely tested by helium leak testing and ultrasonic inspection to verify bond coverage exceeds 95 percent of the joint area.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the cost difference between vacuum brazing and 3D printing for conformal cooling?</div>
+    <p class="faq-block__a">For simple channel geometries in inserts under 200 mm, vacuum brazing typically costs 30 to 50 percent less than LPBF 3D printing. For complex multi-level channel designs, the cost advantage narrows or reverses because vacuum brazing requires more plates and more CNC programming. For inserts larger than 300 mm, vacuum brazing is often the only practical option since it is not constrained by build chamber size. Typical vacuum-brazed inserts range from $1,200 to $4,500, while equivalent LPBF inserts range from $2,000 to $6,000 depending on size and complexity.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Not Sure Whether to Braze or Print? We Can Help.</div>
+    <div class="blog-cta__text">Send us your STEP file and current cooling layout. We evaluate both vacuum brazing and LPBF 3D printing for each insert position and recommend the method that delivers the best performance per dollar — with a full cost comparison and thermal simulation. Free assessment, 24-hour turnaround.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp — Send STEP File
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Upload Drawing via Email &rarr;</a>
+    </div>
+  </div>
+
+  <!-- INTERNAL LINKS -->
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href="conformal-cooling-benefits.html">Conformal Cooling Benefits — Five Benefit Categories with a 3-Year Factory Model</a></li>
+    <li><a href="conformal-cooling-vs-conventional-cooling.html">Conformal Cooling vs Conventional Cooling — Side-by-Side with 13 Real Projects</a></li>
+    <li><a href="conformal-cooling-roi.html">Conformal Cooling ROI: Payback Period, Annual Savings &amp; 5-Year NPV Calculator</a></li>
+    <li><a href="conformal-cooling-3d-printing.html">Conformal Cooling and 3D Printing — Materials, Machines &amp; Process Guide</a></li>
+    <li><a href="conformal-cooling-simulation.html">Conformal Cooling Simulation Workflow — From Moldflow Setup to Validation</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts — Service Details &amp; Specifications</a></li>
+    <li><a href="../case-studies.html">Case Studies — Full Production Data from Real Programs</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linear Conformal Cooling: Simplified Channel Design for Flat &amp; Prismatic Parts | MouldNova</title>
+  <meta name="description" content="Linear conformal cooling uses parallel straight channels at uniform depth to cool flat and prismatic injection-molded parts. Learn design rules (D/P/W parameters), when linear channels beat helical or TPMS designs, manufacturing methods, and cost comparison." />
+  <meta name="keywords" content="linear conformal cooling, linear mold conformal cooling, linear cooling channels, conformal cooling channel design, straight conformal cooling, parallel cooling channels, conformal cooling flat parts" />
+  <link rel="canonical" href="https://mouldnova.com/blog/linear-conformal-cooling.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/linear-conformal-cooling.html" />
+  <meta property="og:title" content="Linear Conformal Cooling: Simplified Channel Design for Flat & Prismatic Parts" />
+  <meta property="og:description" content="Linear conformal cooling uses parallel straight channels at uniform depth for flat and prismatic mold geometries. Design rules, comparison with helical/spiral/TPMS, manufacturing methods, and cost analysis." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/linear-conformal-cooling.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .formula-box { background:var(--black); color:#fff; border-radius:12px; padding:28px 32px; margin:28px 0; font-family:monospace; }
+    .formula-box__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-family:sans-serif; font-weight:700; }
+    .formula-box__line { font-size:1.05rem; line-height:2; color:#e5e5e5; }
+    .formula-box__line strong { color:#fff; }
+    .formula-box__line .var { color:#fbbf24; }
+    .worked-example { background:#f0f7ff; border:1px solid #bfdbfe; border-radius:12px; padding:24px; margin:20px 0; }
+    .worked-example__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#1d4ed8; font-weight:700; margin-bottom:10px; }
+    .worked-example__title { font-size:1.05rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .worked-example p { font-size:0.95rem; color:#333; line-height:1.75; margin-bottom:8px; }
+    .worked-example .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .case-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .case-card__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .case-card__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .case-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .case-card .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+      .formula-box__line { font-size:0.88rem; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Linear Conformal Cooling: Simplified Channel Design for Flat & Prismatic Parts",
+    "description": "Linear conformal cooling uses parallel straight channels at uniform depth to cool flat and prismatic injection-molded parts. Design rules, comparison with helical/spiral/TPMS, manufacturing methods, and cost analysis.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-16",
+    "dateModified": "2026-03-16",
+    "mainEntityOfPage": "https://mouldnova.com/blog/linear-conformal-cooling.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is linear conformal cooling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Linear conformal cooling is the simplest form of conformal cooling channel design. It uses parallel straight channels routed at a uniform depth beneath the mold cavity surface. Unlike helical or spiral conformal channels that wrap around cores or follow complex 3D contours, linear channels run in straight parallel paths — similar to conventional drilled cooling lines but positioned conformally (at constant distance from the part surface) to achieve more uniform heat extraction across flat and prismatic part geometries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use linear conformal cooling instead of helical or TPMS channels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Linear conformal cooling is the best choice for parts with predominantly flat or gently curved surfaces, uniform wall thickness, and no deep cores or tall standing features. Typical applications include flat panels, rectangular containers, planar housings, lids, and covers. If the part has cylindrical cores, deep ribs, or complex 3D curvature, helical or spiral channel designs will provide better cooling uniformity. TPMS (triply periodic minimal surface) channels are reserved for the most complex geometries where maximum surface area and thermal performance are required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can linear conformal cooling channels be manufactured without 3D printing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Linear conformal cooling channels can be manufactured using gun drilling combined with vacuum brazing — a conventional manufacturing approach that does not require metal 3D printing. The mold insert is split along the channel plane, channels are machined by gun drilling or CNC milling into one half, and the two halves are vacuum-brazed together. This method costs 40-60% less than 3D-printed inserts and is well-suited to linear channel layouts because the straight paths are compatible with conventional drilling operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the D/P/W design rules for linear conformal cooling channels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The three primary design parameters for linear conformal cooling channels are D (channel diameter), P (pitch — center-to-center spacing between adjacent channels), and W (wall distance — distance from the channel centerline to the mold cavity surface). Standard design rules are: D = 4-12 mm (matched to part wall thickness), P = 2D to 3D (pitch equals 2 to 3 times channel diameter), W = 1.5D to 2.5D (wall distance equals 1.5 to 2.5 times channel diameter). Minimum steel between channel and cavity surface should be at least 5 mm for structural integrity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does linear conformal cooling cost compared to 3D-printed conformal cooling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Linear conformal cooling inserts manufactured by gun drilling and vacuum brazing typically cost $800-$2,500 per insert, compared to $2,000-$6,000 for equivalent 3D-printed (SLM) inserts. Lead time for gun-drilled linear inserts is 5-10 business days versus 10-18 business days for 3D-printed inserts. However, 3D-printed inserts offer higher design freedom and can incorporate features like internal baffles, variable cross-sections, and optimized flow paths that are impossible with gun drilling."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Channel Design Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">Linear Conformal Cooling: Simplified Channel Design for Flat &amp; Prismatic Parts</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 18 min read &middot; Written for mold designers, tooling engineers, and injection molding process engineers</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">Linear Conformal Cooling — Key Facts</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">15–25%</div>
+      <div class="data-cell__label">Cycle Time Reduction</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">40–60%</div>
+      <div class="data-cell__label">Lower Cost vs. 3D-Printed</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">5–10 days</div>
+      <div class="data-cell__label">Lead Time (Gun-Drilled)</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">D / 2D / 1.5D</div>
+      <div class="data-cell__label">Core Design Ratios</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- BREADCRUMB -->
+  <p style="font-size:0.85rem;color:var(--gray-mid);margin-bottom:32px;">
+    <a href="../index.html" style="color:var(--gray-mid);text-decoration:none;">Home</a> &rarr;
+    <a href="index.html" style="color:var(--gray-mid);text-decoration:none;">Blog</a> &rarr;
+    Linear Conformal Cooling
+  </p>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#what-is-linear">1. What Is Linear Conformal Cooling?</a>
+    <a href="#linear-vs-complex">2. When Linear Channels Are Sufficient vs. When You Need Complex Geometries</a>
+    <a href="#design-rules">3. Design Rules for Linear Conformal Channels (D/P/W Parameters)</a>
+    <a href="#advantages">4. Advantages of Linear Conformal Cooling</a>
+    <a href="#limitations">5. Limitations and Constraints</a>
+    <a href="#applications">6. Best Applications for Linear Conformal Cooling</a>
+    <a href="#comparison">7. Channel Topology Comparison: Linear vs. Helical vs. Spiral vs. TPMS</a>
+    <a href="#manufacturing">8. Manufacturing Methods: Gun Drilling + Brazing vs. 3D Printing</a>
+    <a href="#cost-leadtime">9. Cost and Lead Time Comparison</a>
+    <a href="#faq">10. FAQ</a>
+  </div>
+
+  <p>Not every injection-molded part needs helical channels wrapping around complex cores or TPMS lattice structures optimized by topology algorithms. For a large category of parts — flat panels, rectangular housings, planar lids, and prismatic containers — the simplest form of <a href="conformal-cooling-channels.html">conformal cooling</a> delivers most of the thermal performance benefit at a fraction of the cost and lead time. That simplest form is <strong>linear conformal cooling</strong>.</p>
+
+  <p>This guide explains what linear conformal cooling is, establishes clear design rules, identifies the part geometries where it works best, and provides an honest comparison against more complex channel topologies. If you are evaluating conformal cooling for a flat or gently curved part and want the fastest, most cost-effective path to uniform mold temperature, this article will give you the engineering framework to make that decision.</p>
+
+  <!-- SECTION 1: WHAT IS LINEAR -->
+  <h2 id="what-is-linear">1. What Is Linear Conformal Cooling?</h2>
+
+  <p>Linear conformal cooling refers to a channel layout where parallel, straight cooling lines are routed beneath the mold cavity surface at a uniform depth. The channels follow the general plane of the part surface but do not curve, spiral, or wrap around features. Think of it as an array of evenly spaced, straight pipes sitting at a constant distance below the cavity — conforming to the surface in terms of depth, but maintaining straight paths in the flow direction.</p>
+
+  <p>This is the simplest form of <a href="what-is-conformal-cooling.html">conformal cooling</a>. While conventional (non-conformal) cooling also uses straight drilled channels, those channels are positioned based on what the drill can access — not based on where the part surface needs cooling. The critical difference is:</p>
+
+  <ul>
+    <li><strong>Conventional straight cooling:</strong> Channels are drilled from the mold exterior at whatever angle and depth the drill path allows. Distance from the cavity surface varies from 10 mm to 40+ mm across the mold, creating large thermal gradients.</li>
+    <li><strong>Linear conformal cooling:</strong> Channels are positioned at a <em>uniform</em> distance (typically 8–15 mm) from the cavity surface across the entire part footprint. The channels are still straight, but their placement is governed by the part geometry, not by drill access constraints.</li>
+  </ul>
+
+  <blockquote>
+    <p>Linear conformal cooling closes 60–80% of the thermal uniformity gap between conventional drilling and fully optimized 3D-printed conformal channels — for parts with flat or gently curved surfaces. It is the highest-ROI entry point into conformal cooling technology.</p>
+  </blockquote>
+
+  <p>The key geometric requirement is straightforward: the part surface must be sufficiently flat or planar that straight channels running parallel to the surface can maintain a reasonably constant wall distance (W) across the entire cooling zone. Parts with curvature radii greater than 200 mm, or parts that are essentially planar with minor features, are ideal candidates for linear conformal cooling.</p>
+
+  <!-- SECTION 2: LINEAR VS COMPLEX -->
+  <h2 id="linear-vs-complex">2. When Linear Channels Are Sufficient vs. When You Need Complex Geometries</h2>
+
+  <p>The decision between linear and more complex channel topologies depends on three geometric factors of the part being cooled. Understanding these factors prevents both over-engineering (using expensive 3D-printed helical channels on a flat lid) and under-engineering (using linear channels on a deep cylindrical core where they cannot provide adequate coverage).</p>
+
+  <h3>Use Linear Conformal Cooling When:</h3>
+
+  <ul>
+    <li><strong>The part surface is predominantly flat or gently curved</strong> (radius of curvature &gt; 200 mm). Examples: flat panels, TV bezels, laptop housings, rectangular container walls, flat lids.</li>
+    <li><strong>Wall thickness is relatively uniform</strong> (variation &lt; 30% across the part). Uniform wall thickness means uniform heat load, which straight parallel channels handle efficiently.</li>
+    <li><strong>No deep cores or tall standing features</strong> require wraparound cooling. If the tallest feature is less than 2x the channel pitch, linear channels at the base can provide adequate cooling.</li>
+    <li><strong>The mold insert geometry allows a split-plane</strong> for conventional manufacturing (gun drilling + vacuum brazing). This enables the lowest-cost manufacturing route.</li>
+  </ul>
+
+  <h3>Upgrade to Helical/Spiral Channels When:</h3>
+
+  <ul>
+    <li><strong>Cylindrical or conical cores</strong> need cooling (bottle caps, threaded closures, round containers). Helical channels wrapping the core provide uniform coverage that linear channels cannot achieve on curved surfaces.</li>
+    <li><strong>Deep ribs or tall standing features</strong> (&gt; 25 mm depth) create localized hot spots that linear channels at the base cannot reach. <a href="conformal-cooling-cores.html">Conformal cooling for cores</a> typically requires helical or spiral layouts.</li>
+    <li><strong>The part has complex 3D curvature</strong> in multiple directions (e.g., automotive interior trim panels with compound curves). See our guide on <a href="conformal-cooling-channel-design.html">conformal cooling channel design</a> for complex geometries.</li>
+  </ul>
+
+  <h3>Upgrade to TPMS/Lattice Channels When:</h3>
+
+  <ul>
+    <li><strong>Maximum thermal performance is required</strong> and cost is secondary (medical devices, optical parts with zero-tolerance surface requirements).</li>
+    <li><strong>Extreme hot spots</strong> at rib intersections, gate areas, or thick-to-thin transitions require the highest possible heat transfer coefficient.</li>
+    <li><strong>Turbulent flow optimization</strong> is critical — TPMS structures inherently promote turbulence at lower Reynolds numbers than round channels.</li>
+  </ul>
+
+  <div class="data-highlight">
+    <div class="data-highlight__title">Decision Rule of Thumb</div>
+    <div class="data-grid">
+      <div class="data-cell">
+        <div class="data-cell__num">Flat</div>
+        <div class="data-cell__label">Linear Channels</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">Cylindrical</div>
+        <div class="data-cell__label">Helical Channels</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">Complex 3D</div>
+        <div class="data-cell__label">Spiral / Contour</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">Extreme</div>
+        <div class="data-cell__label">TPMS / Lattice</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: DESIGN RULES -->
+  <h2 id="design-rules">3. Design Rules for Linear Conformal Channels (D/P/W Parameters)</h2>
+
+  <p>Linear conformal cooling channel design is governed by three primary parameters, commonly referred to as the <strong>D/P/W framework</strong>. These parameters determine the thermal performance, structural integrity, and manufacturability of the cooling circuit. Getting these ratios right is the single most important step in linear conformal cooling <a href="conformal-cooling-design.html">design</a>.</p>
+
+  <div class="formula-box">
+    <div class="formula-box__label">Linear Conformal Cooling — D/P/W Design Parameters</div>
+    <div class="formula-box__line"><strong>D</strong> = Channel diameter (mm) &mdash; <span class="var">4 mm to 12 mm typical</span></div>
+    <div class="formula-box__line"><strong>P</strong> = Pitch (center-to-center spacing) &mdash; <span class="var">P = 2D to 3D</span></div>
+    <div class="formula-box__line"><strong>W</strong> = Wall distance (centerline to cavity surface) &mdash; <span class="var">W = 1.5D to 2.5D</span></div>
+    <div class="formula-box__line"><strong>Min steel</strong> = Minimum steel between channel &amp; surface &mdash; <span class="var">&ge; 5 mm</span></div>
+    <div class="formula-box__line"><strong>Max length</strong> = Single channel run &mdash; <span class="var">&le; 350 mm (to limit &Delta;T)</span></div>
+  </div>
+
+  <h3>Parameter Guidelines by Part Wall Thickness</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Part Wall Thickness</th>
+        <th>Channel Diameter (D)</th>
+        <th>Pitch (P)</th>
+        <th>Wall Distance (W)</th>
+        <th>Min Steel Thickness</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0–1.5 mm</td>
+        <td>4–5 mm</td>
+        <td>8–15 mm</td>
+        <td>6–12 mm</td>
+        <td>5 mm</td>
+      </tr>
+      <tr>
+        <td>1.5–2.5 mm</td>
+        <td>5–8 mm</td>
+        <td>10–24 mm</td>
+        <td>8–20 mm</td>
+        <td>5 mm</td>
+      </tr>
+      <tr>
+        <td>2.5–4.0 mm</td>
+        <td>8–10 mm</td>
+        <td>16–30 mm</td>
+        <td>12–25 mm</td>
+        <td>6 mm</td>
+      </tr>
+      <tr>
+        <td>4.0–6.0 mm</td>
+        <td>10–12 mm</td>
+        <td>20–36 mm</td>
+        <td>15–30 mm</td>
+        <td>8 mm</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Additional Design Considerations</h3>
+
+  <ul>
+    <li><strong>Flow velocity:</strong> Target 1.5–3.0 m/s coolant velocity through each channel to maintain turbulent flow (Reynolds number &gt; 10,000). This is critical for heat transfer efficiency. Undersized channels or excessive length create laminar flow zones that reduce cooling effectiveness by 30–50%.</li>
+    <li><strong>Temperature rise limit:</strong> The coolant temperature rise from inlet to outlet of a single channel run should not exceed 3&deg;C. If simulation shows a larger &Delta;T, split the circuit into shorter parallel runs or increase the flow rate.</li>
+    <li><strong>Channel cross-section:</strong> Round cross-sections are standard for gun-drilled channels. For 3D-printed linear channels, consider teardrop or self-supporting cross-sections oriented for the build direction to eliminate internal support structures.</li>
+    <li><strong>Manifold design:</strong> Connect parallel linear channels to common inlet/outlet manifolds to ensure balanced flow distribution. Size the manifold cross-section at 1.5x to 2x the individual channel cross-section to prevent flow starvation in downstream channels.</li>
+  </ul>
+
+  <div class="worked-example">
+    <div class="worked-example__label">Worked Example</div>
+    <div class="worked-example__title">Linear Conformal Cooling for a 300 x 200 mm Flat Panel (2.0 mm wall)</div>
+    <p><strong>Part:</strong> ABS flat panel, 300 x 200 mm, 2.0 mm uniform wall thickness.</p>
+    <p><strong>D:</strong> 6 mm (within 5–8 mm range for 1.5–2.5 mm wall).</p>
+    <p><strong>P:</strong> 2.5D = 15 mm center-to-center spacing.</p>
+    <p><strong>W:</strong> 2.0D = 12 mm from channel centerline to cavity surface.</p>
+    <p><strong>Number of channels:</strong> 200 mm / 15 mm = 13 parallel channels across the width.</p>
+    <p><strong>Channel length:</strong> 300 mm each (within 350 mm max run length).</p>
+    <p><strong>Flow rate:</strong> At 2.0 m/s through 6 mm diameter: 0.057 L/s per channel, 0.74 L/s total (44 L/min for all 13 channels).</p>
+    <div class="result">Result: &Delta;T across mold surface reduced from 18&deg;C (conventional) to 4&deg;C (linear conformal). Cycle time reduction: 20%.</div>
+  </div>
+
+  <!-- SECTION 4: ADVANTAGES -->
+  <h2 id="advantages">4. Advantages of Linear Conformal Cooling</h2>
+
+  <p>Linear conformal cooling occupies a unique position in the <a href="conformal-cooling-solutions.html">conformal cooling solutions</a> spectrum: it delivers the core thermal benefits of conformal cooling while avoiding the cost and complexity premium of advanced channel topologies. The advantages fall into four categories.</p>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Advantage 1</div>
+    <div class="benefit-block__headline">Simpler Design — Faster Engineering</div>
+    <p class="benefit-block__body">Linear channel layouts can be designed in standard CAD software without specialized conformal cooling design tools. The D/P/W parameter framework provides clear, deterministic design rules. A competent mold designer can complete a linear conformal cooling layout in 2–4 hours, compared to 8–16 hours for helical or spiral designs that require iterative <a href="conformal-cooling-simulation.html">Moldflow simulation</a>. This reduces engineering cost by $500–$1,500 per insert.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Advantage 2</div>
+    <div class="benefit-block__headline">Easier to Clean and Maintain</div>
+    <p class="benefit-block__body">Straight channels can be mechanically cleaned with rod-type brushes, pipe cleaners, or pressurized flushing — the same maintenance procedures used for conventional drilled cooling lines. Helical and TPMS channels cannot be mechanically rodded and rely entirely on chemical cleaning, which is less effective at removing hard scale deposits. For molds running with hard water or water-glycol mixtures, the ability to mechanically clean <a href="clean-powder-conformal-cooling-lines.html">conformal cooling lines</a> extends the effective service life of the insert significantly.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Advantage 3</div>
+    <div class="benefit-block__headline">Lower Manufacturing Cost</div>
+    <p class="benefit-block__body">Linear channels can be manufactured by gun drilling and vacuum brazing — a process that costs 40–60% less than metal <a href="conformal-cooling-3d-printing.html">3D printing (SLM/DMLS)</a>. For budget-sensitive programs or lower-volume applications where the ROI of a $4,000+ 3D-printed insert is marginal, gun-drilled linear conformal cooling provides a cost-effective entry point. Typical insert cost: $800–$2,500 versus $2,000–$6,000 for 3D-printed equivalents.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Advantage 4</div>
+    <div class="benefit-block__headline">Faster Lead Time</div>
+    <p class="benefit-block__body">Gun-drilled and vacuum-brazed linear inserts ship in 5–10 business days. 3D-printed inserts require 10–18 business days including print time, stress relief, wire EDM from the build plate, and post-machining. When a mold needs conformal cooling urgently — for example, to solve a hot-spot problem on an existing production tool — linear conformal inserts can be delivered in half the time.</p>
+  </div>
+
+  <!-- SECTION 5: LIMITATIONS -->
+  <h2 id="limitations">5. Limitations and Constraints</h2>
+
+  <p>Linear conformal cooling is not a universal solution. Understanding its limitations is essential for making correct design decisions and avoiding performance shortfalls that could have been prevented by selecting a more appropriate channel topology.</p>
+
+  <ul>
+    <li><strong>Not suitable for complex 3D geometry:</strong> Parts with compound curvature, deep draws, or surfaces that curve in multiple directions cannot be adequately cooled by straight channels at uniform depth. The wall distance (W) will vary across the part, creating the same thermal non-uniformity that conformal cooling is designed to eliminate.</li>
+    <li><strong>Cannot cool cylindrical cores or deep ribs:</strong> Standing core pins, tall ribs (&gt; 25 mm), and cylindrical features require channels that wrap around the feature. Linear channels at the base of a tall core leave the upper portion uncooled, creating a severe hot spot at the tip. See <a href="conformal-cooling-cores.html">conformal cooling for cores</a> for helical alternatives.</li>
+    <li><strong>Limited thermal performance ceiling:</strong> On complex parts, linear channels typically achieve 15–25% cycle time reduction compared to 25–40% for optimized helical/spiral layouts and 30–50% for TPMS designs. For high-volume programs where every percentage point of cycle reduction has significant financial impact, the performance gap may justify the higher cost of advanced topologies.</li>
+    <li><strong>Structural limitations with gun drilling:</strong> Gun-drilled channels must maintain minimum steel thickness of 5–8 mm between adjacent channels and between channels and the cavity surface. This constrains the minimum pitch and wall distance, limiting how close channels can be packed — which reduces maximum cooling density compared to 3D-printed channels that can achieve 3–4 mm steel walls.</li>
+    <li><strong>Vacuum braze joint integrity:</strong> Gun-drilled inserts assembled by vacuum brazing have a brazed joint along the split plane. While properly executed vacuum brazing provides joint strength exceeding 95% of parent material, the joint is a potential failure point under high clamping forces or thermal cycling. <a href="conformal-cooling-materials.html">Material selection</a> and brazing process quality are critical.</li>
+  </ul>
+
+  <blockquote>
+    <p>Rule of thumb: If Moldflow simulation shows more than 8&deg;C surface temperature variation with a linear conformal layout, re-evaluate whether helical, spiral, or contour-following channels would close the gap. Linear cooling that does not achieve adequate uniformity wastes money without solving the problem.</p>
+  </blockquote>
+
+  <!-- SECTION 6: APPLICATIONS -->
+  <h2 id="applications">6. Best Applications for Linear Conformal Cooling</h2>
+
+  <p>Linear conformal cooling is ideally suited to specific part categories that share common geometric characteristics: predominantly flat surfaces, uniform or near-uniform wall thickness, and no deep standing features that require wraparound cooling.</p>
+
+  <h3>Primary Applications</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Application</th>
+        <th>Typical Part</th>
+        <th>Why Linear Works</th>
+        <th>Expected Cycle Reduction</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Flat panels &amp; covers</td>
+        <td>TV bezels, laptop lids, appliance panels</td>
+        <td>Planar surface, uniform wall, large footprint</td>
+        <td class="val-good">18–25%</td>
+      </tr>
+      <tr>
+        <td>Rectangular containers</td>
+        <td>Storage bins, battery housings, enclosures</td>
+        <td>Flat bottom + low-height walls, uniform cross-section</td>
+        <td class="val-good">15–22%</td>
+      </tr>
+      <tr>
+        <td>Planar housings</td>
+        <td>Electrical junction boxes, control panels</td>
+        <td>Shallow box geometry, flat major surfaces</td>
+        <td class="val-good">16–20%</td>
+      </tr>
+      <tr>
+        <td>Lids &amp; covers</td>
+        <td>Container lids, access panels, switch plates</td>
+        <td>Single flat surface, minimal features</td>
+        <td class="val-good">20–28%</td>
+      </tr>
+      <tr>
+        <td>Light guides &amp; diffusers</td>
+        <td>LED light panels, optical diffuser plates</td>
+        <td>Flat + requires exceptional surface uniformity</td>
+        <td class="val-good">15–20%</td>
+      </tr>
+      <tr>
+        <td>Automotive flat trim</td>
+        <td>Door sill plates, trunk floor panels</td>
+        <td>Large flat surface, moderate tolerance</td>
+        <td class="val-good">18–24%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Secondary Applications (Linear with Localized Enhancement)</h3>
+
+  <p>Some parts are predominantly flat but have localized features — bosses, snap fits, or shallow ribs — that create minor hot spots. For these parts, a hybrid approach works well: linear conformal channels cover the main flat surface, with localized spot-cooling inserts or bubblers addressing the specific features. This hybrid approach captures 80–90% of the benefit of fully conformal cooling at 50–60% of the cost.</p>
+
+  <!-- SECTION 7: COMPARISON TABLE -->
+  <h2 id="comparison">7. Channel Topology Comparison: Linear vs. Helical vs. Spiral vs. TPMS</h2>
+
+  <p>The following table provides a direct comparison of the four primary <a href="conformal-cooling-channel-design.html">conformal cooling channel topologies</a> across the parameters that matter most to mold designers and tooling engineers.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Linear</th>
+        <th>Helical</th>
+        <th>Spiral / Contour</th>
+        <th>TPMS / Lattice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Channel path</strong></td>
+        <td>Straight parallel lines</td>
+        <td>Helix wrapping around core</td>
+        <td>Curved path following surface</td>
+        <td>Interconnected lattice network</td>
+      </tr>
+      <tr>
+        <td><strong>Best for geometry</strong></td>
+        <td class="val-good">Flat / planar surfaces</td>
+        <td class="val-good">Cylindrical cores</td>
+        <td class="val-good">Complex 3D surfaces</td>
+        <td class="val-good">Extreme hot spots</td>
+      </tr>
+      <tr>
+        <td><strong>Cycle time reduction</strong></td>
+        <td>15–25%</td>
+        <td>25–35%</td>
+        <td>25–40%</td>
+        <td>30–50%</td>
+      </tr>
+      <tr>
+        <td><strong>Surface temp uniformity</strong></td>
+        <td>&plusmn;4–6&deg;C</td>
+        <td>&plusmn;2–4&deg;C</td>
+        <td>&plusmn;2–3&deg;C</td>
+        <td>&plusmn;1–2&deg;C</td>
+      </tr>
+      <tr>
+        <td><strong>Design complexity</strong></td>
+        <td class="val-good">Low (2–4 hrs)</td>
+        <td class="val-neutral">Medium (6–10 hrs)</td>
+        <td class="val-bad">High (8–16 hrs)</td>
+        <td class="val-bad">Very high (16–40 hrs)</td>
+      </tr>
+      <tr>
+        <td><strong>Can be gun-drilled?</strong></td>
+        <td class="val-good">Yes</td>
+        <td class="val-bad">No</td>
+        <td class="val-bad">No</td>
+        <td class="val-bad">No</td>
+      </tr>
+      <tr>
+        <td><strong>Requires 3D printing?</strong></td>
+        <td class="val-good">Optional</td>
+        <td class="val-bad">Yes</td>
+        <td class="val-bad">Yes</td>
+        <td class="val-bad">Yes</td>
+      </tr>
+      <tr>
+        <td><strong>Insert cost range</strong></td>
+        <td class="val-good">$800–$2,500</td>
+        <td>$2,000–$5,000</td>
+        <td>$2,500–$6,000</td>
+        <td class="val-bad">$4,000–$10,000</td>
+      </tr>
+      <tr>
+        <td><strong>Lead time</strong></td>
+        <td class="val-good">5–10 days</td>
+        <td>10–15 days</td>
+        <td>12–18 days</td>
+        <td class="val-bad">15–25 days</td>
+      </tr>
+      <tr>
+        <td><strong>Mechanical cleaning</strong></td>
+        <td class="val-good">Yes — rod/brush</td>
+        <td class="val-bad">No — chemical only</td>
+        <td class="val-bad">No — chemical only</td>
+        <td class="val-bad">No — chemical only</td>
+      </tr>
+      <tr>
+        <td><strong>Pressure drop</strong></td>
+        <td class="val-good">Low</td>
+        <td class="val-neutral">Medium</td>
+        <td class="val-neutral">Medium</td>
+        <td class="val-bad">High</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The comparison makes the case clear: for flat and prismatic parts, linear conformal cooling delivers the best value proposition. The performance gap versus helical or spiral channels narrows significantly on planar geometries because there is no complex curvature for advanced topologies to exploit. Meanwhile, the cost, lead time, and maintainability advantages of linear channels remain substantial.</p>
+
+  <!-- SECTION 8: MANUFACTURING -->
+  <h2 id="manufacturing">8. Manufacturing Methods: Gun Drilling + Brazing vs. 3D Printing</h2>
+
+  <p>One of the most significant advantages of linear conformal cooling is manufacturing flexibility. Unlike helical, spiral, or TPMS channel designs that can only be produced by metal <a href="conformal-cooling-additive-manufacturing.html">additive manufacturing</a>, linear channels can be manufactured using two distinct methods — each with different cost structures and capabilities.</p>
+
+  <h3>Method 1: Gun Drilling + Vacuum Brazing (Conventional)</h3>
+
+  <div class="step-block">
+    <div class="step-block__number">Process Overview</div>
+    <div class="step-block__title">Gun Drilling + Vacuum Brazing for Linear Conformal Inserts</div>
+    <p><strong>Step 1 — Split design:</strong> The mold insert is designed with a split plane along the channel depth. The insert is divided into two halves: a cavity-side half and a back half.</p>
+    <p><strong>Step 2 — Channel machining:</strong> Linear channels are gun-drilled or CNC-milled into one or both halves of the split insert. Gun drilling produces round cross-section channels with excellent surface finish (Ra &lt; 1.6 &mu;m). CNC milling can produce rectangular or custom cross-sections.</p>
+    <p><strong>Step 3 — Surface preparation:</strong> Mating surfaces are ground flat to &lt; 0.01 mm flatness. Channels are deburred and cleaned. Nickel-based brazing paste or foil is applied to the joint surfaces.</p>
+    <p><strong>Step 4 — Vacuum brazing:</strong> The assembled insert halves are brazed in a vacuum furnace at 1,000–1,100&deg;C. The vacuum environment (10&minus;4 mbar) prevents oxidation and produces a clean, high-strength metallurgical bond with joint strength exceeding 95% of the parent material.</p>
+    <p><strong>Step 5 — Post-machining:</strong> The brazed insert is finish-machined (CNC milling, grinding, EDM) to final cavity dimensions and tolerances. Cooling channels are pressure-tested to 1.5x operating pressure.</p>
+  </div>
+
+  <h3>Method 2: Metal 3D Printing (SLM/DMLS)</h3>
+
+  <p>Linear conformal channels can also be produced by <a href="slm-vs-dmls-conformal-cooling.html">SLM or DMLS</a> 3D printing in maraging steel (MS1/1.2709) or H13-equivalent powders. While 3D printing is not required for straight channels, it offers advantages in specific scenarios:</p>
+
+  <ul>
+    <li><strong>Variable cross-section channels:</strong> 3D printing allows the channel diameter to vary along its length — smaller near thin-wall areas, larger near thick sections — to match local cooling demand. Gun drilling produces uniform diameter only.</li>
+    <li><strong>Internal baffles and turbulators:</strong> 3D-printed channels can include internal features (dimples, fins, helical ribs) that promote turbulence and increase heat transfer coefficient by 20–40% without increasing pressure drop proportionally.</li>
+    <li><strong>Integrated manifolds:</strong> The inlet/outlet manifolds, channel runs, and O-ring grooves can be printed as a single monolithic piece, eliminating brazed joints entirely.</li>
+    <li><strong>Material upgrade:</strong> 3D-printed inserts in maraging steel achieve 50–54 HRC after age hardening, with superior thermal fatigue resistance compared to brazed P20 or H13 assemblies.</li>
+  </ul>
+
+  <h3>Manufacturing Method Selection Guide</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Factor</th>
+        <th>Gun Drill + Braze</th>
+        <th>3D Print (SLM)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Channel geometry</td>
+        <td>Straight only, uniform diameter</td>
+        <td class="val-good">Any geometry, variable diameter</td>
+      </tr>
+      <tr>
+        <td>Cross-section</td>
+        <td>Round (gun drill) or rectangular (CNC)</td>
+        <td class="val-good">Any shape (teardrop, diamond, custom)</td>
+      </tr>
+      <tr>
+        <td>Insert cost</td>
+        <td class="val-good">$800–$2,500</td>
+        <td>$2,000–$6,000</td>
+      </tr>
+      <tr>
+        <td>Lead time</td>
+        <td class="val-good">5–10 business days</td>
+        <td>10–18 business days</td>
+      </tr>
+      <tr>
+        <td>Max insert size</td>
+        <td class="val-good">Limited by machine capacity only</td>
+        <td>Typically &le; 250 x 250 x 300 mm (build volume)</td>
+      </tr>
+      <tr>
+        <td>Surface finish (channel)</td>
+        <td class="val-good">Ra &lt; 1.6 &mu;m</td>
+        <td>Ra 6–12 &mu;m (as-printed)</td>
+      </tr>
+      <tr>
+        <td>Joint reliability</td>
+        <td>Brazed joint (95%+ parent strength)</td>
+        <td class="val-good">Monolithic — no joints</td>
+      </tr>
+      <tr>
+        <td>Best for</td>
+        <td class="val-good">Budget projects, large inserts, fast turnaround</td>
+        <td class="val-good">High-performance, small-medium inserts, advanced features</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 9: COST AND LEAD TIME -->
+  <h2 id="cost-leadtime">9. Cost and Lead Time Comparison</h2>
+
+  <p>The <a href="conformal-cooling-cost.html">cost advantage</a> of linear conformal cooling over more complex topologies is substantial and consistent across insert sizes. This section provides detailed cost and lead time benchmarks based on actual project data.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Insert Size</th>
+        <th>Linear (Gun Drill)</th>
+        <th>Linear (3D Print)</th>
+        <th>Helical (3D Print)</th>
+        <th>TPMS (3D Print)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Small</strong> (&le; 80 x 80 mm)</td>
+        <td class="val-good">$800–$1,200</td>
+        <td>$2,000–$2,800</td>
+        <td>$2,200–$3,500</td>
+        <td>$3,500–$5,500</td>
+      </tr>
+      <tr>
+        <td><strong>Medium</strong> (80–150 mm)</td>
+        <td class="val-good">$1,200–$1,800</td>
+        <td>$2,500–$4,000</td>
+        <td>$3,000–$5,000</td>
+        <td>$5,000–$8,000</td>
+      </tr>
+      <tr>
+        <td><strong>Large</strong> (150–250 mm)</td>
+        <td class="val-good">$1,800–$2,500</td>
+        <td>$3,500–$6,000</td>
+        <td>$4,500–$6,500</td>
+        <td>$7,000–$10,000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Lead Time Breakdown</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Phase</th>
+        <th>Linear (Gun Drill + Braze)</th>
+        <th>3D Printed (Any Topology)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Design &amp; engineering</td>
+        <td>1–2 days</td>
+        <td>2–5 days</td>
+      </tr>
+      <tr>
+        <td>Manufacturing</td>
+        <td>2–4 days</td>
+        <td>3–6 days (print + stress relief)</td>
+      </tr>
+      <tr>
+        <td>Post-processing</td>
+        <td>1–2 days (braze + machine)</td>
+        <td>3–5 days (wire EDM + CNC + EDM)</td>
+      </tr>
+      <tr>
+        <td>QC &amp; shipping</td>
+        <td>1–2 days</td>
+        <td>2–3 days</td>
+      </tr>
+      <tr>
+        <td><strong>Total</strong></td>
+        <td class="val-good"><strong>5–10 business days</strong></td>
+        <td><strong>10–18 business days</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    <p>For a medium-sized flat panel mold insert, linear conformal cooling via gun drilling saves $1,500–$3,000 in insert cost and 5–8 business days in lead time compared to 3D printing — while achieving 85–90% of the thermal performance on planar geometries.</p>
+  </blockquote>
+
+  <p>The <a href="conformal-cooling-roi.html">ROI calculation</a> for linear conformal cooling is particularly compelling for programs with moderate annual volumes (50,000–500,000 shots/year) where the lower insert cost of gun-drilled linear channels reduces the payback threshold. At 100,000 shots/year with a 20% cycle time reduction, a $1,500 gun-drilled linear insert pays back in approximately 15–25 days — fast enough to justify conformal cooling on programs where a $4,000 3D-printed insert would take 2–3 months to reach payback.</p>
+
+  <!-- SECTION 10: FAQ -->
+  <h2 id="faq">10. FAQ</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is linear conformal cooling?</div>
+    <p class="faq-block__a">Linear conformal cooling is the simplest form of conformal cooling channel design. It uses parallel straight channels routed at a uniform depth beneath the mold cavity surface. Unlike helical or spiral conformal channels that wrap around cores or follow complex 3D contours, linear channels run in straight parallel paths — similar to conventional drilled cooling lines but positioned conformally (at constant distance from the part surface) to achieve more uniform heat extraction across flat and prismatic part geometries.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">When should I use linear conformal cooling instead of helical or TPMS channels?</div>
+    <p class="faq-block__a">Linear conformal cooling is the best choice for parts with predominantly flat or gently curved surfaces, uniform wall thickness, and no deep cores or tall standing features. Typical applications include flat panels, rectangular containers, planar housings, lids, and covers. If the part has cylindrical cores, deep ribs, or complex 3D curvature, helical or spiral channel designs will provide better cooling uniformity. TPMS channels are reserved for the most complex geometries where maximum surface area and thermal performance are required.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Can linear conformal cooling channels be manufactured without 3D printing?</div>
+    <p class="faq-block__a">Yes. Linear conformal cooling channels can be manufactured using gun drilling combined with vacuum brazing — a conventional manufacturing approach that does not require metal 3D printing. The mold insert is split along the channel plane, channels are machined by gun drilling or CNC milling into one half, and the two halves are vacuum-brazed together. This method costs 40 to 60 percent less than 3D-printed inserts and is well-suited to linear channel layouts because the straight paths are compatible with conventional drilling operations.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What are the D/P/W design rules for linear conformal cooling channels?</div>
+    <p class="faq-block__a">The three primary design parameters are D (channel diameter, typically 4 to 12 mm), P (pitch or center-to-center spacing, typically 2D to 3D), and W (wall distance from channel centerline to cavity surface, typically 1.5D to 2.5D). Minimum steel thickness between channel and cavity surface should be at least 5 mm for structural integrity. Maximum single channel run length should not exceed 350 mm to limit coolant temperature rise.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How much does linear conformal cooling cost compared to 3D-printed conformal cooling?</div>
+    <p class="faq-block__a">Linear conformal cooling inserts manufactured by gun drilling and vacuum brazing typically cost $800 to $2,500 per insert, compared to $2,000 to $6,000 for equivalent 3D-printed (SLM) inserts. Lead time for gun-drilled linear inserts is 5 to 10 business days versus 10 to 18 business days for 3D-printed inserts. However, 3D-printed inserts offer higher design freedom and can incorporate features like internal baffles, variable cross-sections, and optimized flow paths that are impossible with gun drilling.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Get a Free Linear Conformal Cooling Design Review</div>
+    <div class="blog-cta__text">Send your STEP file and we will evaluate whether linear conformal cooling is sufficient for your part — or whether helical, spiral, or TPMS channels are needed. Free Moldflow thermal simulation with predicted cycle time and surface temperature uniformity. Includes cost comparison for gun-drilled vs. 3D-printed options.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp — Send STEP File
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Request Quote via Email &rarr;</a>
+    </div>
+  </div>
+
+  <!-- INTERNAL LINKS -->
+  <h3>Related Articles</h3>
+  <ul>
+    <li><a href="conformal-cooling-channel-design.html">Conformal Cooling Channel Design — Complete Design Guide for All Topologies</a></li>
+    <li><a href="conformal-cooling-design.html">Conformal Cooling Design — Engineering Principles and Best Practices</a></li>
+    <li><a href="conformal-cooling-cores.html">Conformal Cooling for Cores — Helical and Spiral Channel Solutions</a></li>
+    <li><a href="conformal-cooling-3d-printing.html">Conformal Cooling 3D Printing — SLM/DMLS Manufacturing Process</a></li>
+    <li><a href="conformal-cooling-cost.html">Conformal Cooling Cost — Pricing Factors, Benchmarks, and ROI Analysis</a></li>
+    <li><a href="conformal-cooling-vs-conventional-cooling.html">Conformal Cooling vs Conventional Cooling — Side-by-Side Comparison</a></li>
+    <li><a href="conformal-cooling-simulation.html">Conformal Cooling Simulation — Moldflow Analysis and Thermal Optimization</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts — Service Details &amp; Specifications</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>
