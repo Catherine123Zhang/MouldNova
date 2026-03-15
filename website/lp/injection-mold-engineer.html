@@ -406,11 +406,8 @@
 
     <!-- FORM -->
     <div class="final-cta__form">
-      <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="a512c8d1-e17e-4263-8c9b-e3d68e15d8b9" />
-        <input type="hidden" name="subject" value="[LP: Mold Engineer] New Inquiry" />
-        <input type="hidden" name="redirect" value="https://mouldnova.com/contact.html" />
-        <input class="final-cta__input" type="text" name="name" placeholder="Your Name" required />
+      <form id="lp-ime-form" method="post">
+        <input type="hidden" name="subject" value="[LP: Mold Engineer] New Inquiry" />        <input class="final-cta__input" type="text" name="name" placeholder="Your Name" required />
         <input class="final-cta__input" type="email" name="email" placeholder="Work Email" required />
         <input class="final-cta__input" type="text" name="company" placeholder="Company / Country" />
         <textarea class="final-cta__textarea" name="message" placeholder="Briefly describe your cooling problem (material, part geometry, current cycle time, main issue)…"></textarea>
@@ -467,6 +464,14 @@
 </a>
 
 <script src="../js/main.js"></script>
+<script src="../js/rfq.js"></script>
+<script>
+document.getElementById('lp-ime-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  submitRFQ(e.target, document.getElementById('lp-ime-success'));
+});
+</script>
+
 <script>
   // Sticky CTA appears after scrolling 40% of page
   const stickyCta = document.getElementById('stickyCta');

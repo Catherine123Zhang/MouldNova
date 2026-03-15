@@ -23,32 +23,16 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Contact form → Formspree
+// Contact form → Supabase Edge Function (via rfq.js)
 const form = document.querySelector('.js-contact-form');
 if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const btn = form.querySelector('[type="submit"]');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
-      });
-      const data = await res.json();
-      if (data.success) {
-        form.innerHTML = '<div style="text-align:center;padding:40px 0"><h3 style="color:#A52030;margin-bottom:12px">Message Sent!</h3><p>We\'ll reply within 24 hours. Or reach us directly on WhatsApp: +86 182 6866 1068</p></div>';
-      } else {
-        btn.textContent = 'Send Message';
-        btn.disabled = false;
-        alert('Something went wrong. Please contact us on WhatsApp: +86 182 6866 1068');
-      }
-    } catch {
-      btn.textContent = 'Send Message';
-      btn.disabled = false;
-      alert('Something went wrong. Please contact us on WhatsApp: +86 182 6866 1068');
-    }
+    const successHtml = '<div style="text-align:center;padding:40px 0"><h3 style="color:#A52030;margin-bottom:12px">Message Sent!</h3><p>We\'ll reply within 24 hours. Or reach us directly on WhatsApp: +86 182 6866 1068</p></div>';
+    const successDiv = document.createElement('div');
+    successDiv.innerHTML = successHtml;
+    successDiv.style.display = 'none';
+    form.parentNode.insertBefore(successDiv, form.nextSibling);
+    await window.submitRFQ(form, successDiv);
   });
 }

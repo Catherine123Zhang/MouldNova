@@ -226,11 +226,7 @@
           <div class="form-group">
             <label for="message">Project Description *</label>
             <textarea id="message" name="message" rows="4" required placeholder="Insert dimensions (LxWxH), material type, current cycle time, annual volume, and what problem you're solving..."></textarea>
-          </div>
-          <input type="hidden" name="access_key" value="a512c8d1-e17e-4263-8c9b-e3d68e15d8b9" />
-          <input type="hidden" name="subject" value="[LP: Canada] Conformal Cooling Inquiry" />
-          <input type="hidden" name="from_name" value="MouldNova Canada LP" />
-          <button type="submit" class="btn btn-primary btn--full">Request Free Quote →</button>
+          </div>          <input type="hidden" name="subject" value="[LP: Canada] Conformal Cooling Inquiry" />          <button type="submit" class="btn btn-primary btn--full">Request Free Quote →</button>
           <p class="form-note">Response within 24 hours. 0% MFN duty applies from China to Canada.</p>
         </form>
         <div id="lp-ca-success" style="display:none; padding:24px; background:#f0fdf4; border-radius:8px; text-align:center;">
@@ -297,16 +293,11 @@
   </div>
 </footer>
 
+<script src="../js/rfq.js"></script>
 <script>
-document.getElementById('lp-ca-form').addEventListener('submit', async function(e) {
+document.getElementById('lp-ca-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  const form = e.target;
-  const data = new FormData(form);
-  const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
-  if (res.ok) {
-    form.style.display = 'none';
-    document.getElementById('lp-ca-success').style.display = 'block';
-  }
+  submitRFQ(e.target, document.getElementById('lp-ca-success'));
 });
 const toggle = document.querySelector('.nav__mobile-toggle');
 const mobileMenu = document.querySelector('.nav__mobile-menu');

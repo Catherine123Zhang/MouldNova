@@ -541,11 +541,8 @@
   <h2>Send Your File. Get a Quote in 24 Hours.</h2>
   <p>No mold expertise needed. Our engineers review your product file and tell you exactly what's possible — and what it will cost.</p>
   <div class="form-card">
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="a512c8d1-e17e-4263-8c9b-e3d68e15d8b9" />
+    <form id="lp-pm-form" method="post">
       <input type="hidden" name="subject" value="MouldNova — Product Manufacturer LP Inquiry" />
-      <input type="hidden" name="redirect" value="https://mouldnova.com/thank-you.html" />
-
       <div class="form-row">
         <div class="form-group">
           <label for="pm-name">Your Name *</label>
@@ -596,6 +593,10 @@
       </div>
       <button type="submit" class="form-submit">Send Inquiry — Free DFM Review Included</button>
     </form>
+    <div id="lp-pm-success" style="display:none;padding:20px;background:#f0fdf4;border-radius:8px;text-align:center;margin-top:12px;">
+      <p style="font-weight:600;color:#15803d;">Inquiry sent!</p>
+      <p style='font-size:.9rem;'>We'll respond within 24 hours with a free DFM review. Check your email.</p>
+    </div>
     <div class="whatsapp-alt">
       Or reach us instantly on <a href="https://wa.me/8613600000000">WhatsApp →</a> — typical response within 2 hours
     </div>
@@ -628,5 +629,13 @@
   });
 </script>
 
+
+<script src="../js/rfq.js"></script>
+<script>
+document.getElementById('lp-pm-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  submitRFQ(e.target, document.getElementById('lp-pm-success'));
+});
+</script>
 </body>
 </html>

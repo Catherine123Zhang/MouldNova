@@ -529,11 +529,7 @@
           <div class="form-group">
             <label for="message">Project Description *</label>
             <textarea id="message" name="message" rows="4" required placeholder="Describe your insert: dimensions (mm), material, current cycle time, annual volume, and the problem you are trying to solve. STEP file can be attached after initial contact."></textarea>
-          </div>
-          <input type="hidden" name="access_key" value="a512c8d1-e17e-4263-8c9b-e3d68e15d8b9" />
-          <input type="hidden" name="subject" value="[LP: Turkey] Conformal Cooling Inquiry" />
-          <input type="hidden" name="from_name" value="MouldNova Turkey LP" />
-          <button type="submit" class="btn btn-primary btn--full">Request Free Quote in USD / EUR →</button>
+          </div>          <input type="hidden" name="subject" value="[LP: Turkey] Conformal Cooling Inquiry" />          <button type="submit" class="btn btn-primary btn--full">Request Free Quote in USD / EUR →</button>
           <p class="form-note">Response within 24 hours. 4–6 day DHL Express to Turkey. USD/EUR quoting available. TRY available on request.</p>
         </form>
         <div id="lp-tr-success" style="display:none; padding:24px; background:#f0fdf4; border-radius:8px; text-align:center;">
@@ -637,16 +633,11 @@
   </div>
 </footer>
 
+<script src="../js/rfq.js"></script>
 <script>
-document.getElementById('lp-tr-form').addEventListener('submit', async function(e) {
+document.getElementById('lp-tr-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  const form = e.target;
-  const data = new FormData(form);
-  const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
-  if (res.ok) {
-    form.style.display = 'none';
-    document.getElementById('lp-tr-success').style.display = 'block';
-  }
+  submitRFQ(e.target, document.getElementById('lp-tr-success'));
 });
 const toggle = document.querySelector('.nav__mobile-toggle');
 const mobileMenu = document.querySelector('.nav__mobile-menu');
