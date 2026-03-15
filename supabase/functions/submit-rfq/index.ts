@@ -112,6 +112,7 @@ Deno.serve(async (req) => {
   <p style="margin-top:24px;font-size:0.8rem;color:#999">View all leads at <a href="https://mouldnova.com/admin/">mouldnova.com/admin/</a></p>
 </div>`;
 
+    // 1. Notify owner
     await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -124,6 +125,57 @@ Deno.serve(async (req) => {
         reply_to: email,
         subject: `[RFQ] ${form_source} — ${name || email}`,
         html: htmlBody,
+      }),
+    });
+
+    // 2. Auto-reply to customer
+    const customerName = name ? name.split(' ')[0] : 'there';
+    const autoReplyHtml = `
+<div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#1e293b">
+  <div style="background:#A52030;padding:28px 32px;border-radius:8px 8px 0 0">
+    <div style="color:#fff;font-size:1.3rem;font-weight:700;letter-spacing:0.02em">MouldNova</div>
+    <div style="color:rgba(255,255,255,0.75);font-size:0.85rem;margin-top:4px">Conformal Cooling Inserts — Ningbo, China</div>
+  </div>
+  <div style="background:#fff;padding:32px;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 8px 8px">
+    <h2 style="margin:0 0 16px;font-size:1.2rem">Hi ${customerName}, we've received your inquiry!</h2>
+    <p style="color:#475569;line-height:1.6;margin:0 0 20px">
+      Thank you for reaching out to MouldNova. Your request has been received and our engineering team will review your requirements and respond within <strong>24 hours</strong>.
+    </p>
+    <div style="background:#f8fafc;border-left:4px solid #A52030;padding:16px 20px;border-radius:0 8px 8px 0;margin:0 0 24px">
+      <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#94a3b8;margin-bottom:8px">What happens next</div>
+      <ol style="margin:0;padding-left:20px;color:#475569;font-size:0.9rem;line-height:1.8">
+        <li>Our engineer reviews your project details</li>
+        <li>We design a conformal channel layout for your insert</li>
+        <li>You receive a DFM report + firm price within 24 hours</li>
+      </ol>
+    </div>
+    <p style="color:#475569;line-height:1.6;margin:0 0 24px">
+      For <strong>faster response</strong>, send your STEP/drawing directly on WhatsApp — we typically reply within 2–4 hours:
+    </p>
+    <a href="https://wa.me/8618268661068" style="display:inline-block;background:#25D366;color:#fff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:0.95rem">
+      WhatsApp: +86 182 6866 1068
+    </a>
+    <hr style="border:none;border-top:1px solid #e2e8f0;margin:28px 0" />
+    <div style="font-size:0.8rem;color:#94a3b8;line-height:1.6">
+      <strong style="color:#64748b">Saiguang 3D Technology Co., Ltd.</strong><br>
+      Mazhu Small Business Park, Yuyao, Ningbo, China<br>
+      <a href="https://mouldnova.com" style="color:#A52030">mouldnova.com</a> · zhangyuanbo123@gmail.com
+    </div>
+  </div>
+</div>`;
+
+    await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${resendKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'MouldNova <noreply@mouldnova.com>',
+        to: [email],
+        reply_to: notifyEmail,
+        subject: `We've received your inquiry — MouldNova Conformal Cooling`,
+        html: autoReplyHtml,
       }),
     });
 

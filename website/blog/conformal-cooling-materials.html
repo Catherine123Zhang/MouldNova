@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conformal Cooling Insert Materials: 420SS vs 18Ni300 Maraging Steel vs CuCrZr Copper Alloy | MouldNova</title>
+  <meta name="description" content="Complete material comparison for conformal cooling inserts: 420 Stainless Steel, 18Ni300 Maraging Steel, and CuCrZr Copper Alloy. Properties, hardness, thermal conductivity, cost, and selection guide by application." />
+  <meta name="keywords" content="conformal cooling materials, 420 stainless steel mold insert, 18Ni300 maraging steel, CuCrZr copper alloy, conformal cooling insert material, SLM mold material, DMLS mold steel, conformal cooling thermal conductivity" />
+  <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-materials.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/conformal-cooling-materials.html" />
+  <meta property="og:title" content="Conformal Cooling Insert Materials: 420SS vs 18Ni300 vs CuCrZr — Which One for Your Application?" />
+  <meta property="og:description" content="Head-to-head material comparison with property data, cost ranges, and a decision guide for choosing the right conformal cooling insert material by application type." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/conformal-cooling-materials.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    /* Material cards */
+    .mat-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .mat-card__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .mat-card__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .mat-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    /* Decision matrix */
+    .decision-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.93rem; }
+    .decision-table th { background:var(--black); color:#fff; padding:10px 14px; text-align:left; font-weight:700; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.03em; }
+    .decision-table td { padding:10px 14px; border-bottom:1px solid var(--gray-light); }
+    .decision-table tr:nth-child(even) td { background:var(--gray-light); }
+    .pick-best { background:var(--red); color:#fff; font-weight:700; border-radius:4px; padding:2px 8px; font-size:0.82rem; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Conformal Cooling Insert Materials: 420 Stainless Steel vs 18Ni300 Maraging Steel vs CuCrZr Copper Alloy",
+    "description": "Head-to-head material comparison for conformal cooling inserts — 420SS, 18Ni300 maraging steel, and CuCrZr copper alloy. Properties, hardness, thermal conductivity, corrosion resistance, cost, and application-specific selection guide.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-16",
+    "dateModified": "2026-03-16",
+    "mainEntityOfPage": "https://mouldnova.com/blog/conformal-cooling-materials.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the best material for conformal cooling inserts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no single best material — the choice depends on your application. 420 Stainless Steel (420SS) is the best general-purpose material: 50–52 HRC hardness, good corrosion resistance, and the lowest cost at $800–$2,500 per insert. 18Ni300 Maraging Steel is best for high-volume automotive molds requiring maximum hardness (52–54 HRC) and fatigue strength. CuCrZr Copper Alloy is best for hot-spot elimination where thermal conductivity (310 W/mK — 12× higher than steel) is the primary requirement. Most projects start with 420SS; upgrade to 18Ni300 or CuCrZr only when the application demands it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the thermal conductivity of CuCrZr compared to mold steel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CuCrZr has a thermal conductivity of approximately 310 W/mK, compared to 20–25 W/mK for 420 Stainless Steel and 18–22 W/mK for 18Ni300 Maraging Steel. This means CuCrZr conducts heat 12–15 times faster than tool steels. In conformal cooling applications, CuCrZr inserts placed at persistent hot spots can reduce local cooling time by 40–60%, even when the rest of the mold uses steel inserts. The trade-off is lower hardness (28–35 HRC) and higher material cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can 420 Stainless Steel be used for high-volume injection molding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. 420SS at 50–52 HRC after heat treatment is suitable for production runs up to 500,000–1,000,000 shots for most commodity resins (PP, PE, ABS). For glass-filled or mineral-filled resins that cause accelerated wear, 18Ni300 at 52–54 HRC is the better choice for runs above 500,000 shots. For unfilled resins at moderate injection pressures, 420SS inserts routinely exceed 1 million shots with no measurable wear on conformal cooling channels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a conformal cooling insert cost by material?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typical insert pricing from a China-based SLM manufacturer: 420SS inserts cost $800–$2,500 depending on size and complexity. 18Ni300 Maraging Steel inserts cost $1,200–$4,000 — roughly 40–60% more than 420SS due to higher powder cost and longer heat treatment. CuCrZr Copper Alloy inserts cost $1,800–$5,500 — the premium reflects expensive copper powder ($90–$140/kg vs. $40–$60/kg for steel) and specialized SLM parameters. All prices include post-machining to ±0.02 mm tolerance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use a hybrid approach with multiple materials in one mold?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A hybrid approach — using CuCrZr inserts at hot spots and 420SS or 18Ni300 inserts everywhere else — is the most cost-effective strategy when thermal simulation shows localized hot spots that steel alone cannot resolve. Common hybrid scenarios include: gate areas where shear heating creates thermal spikes, deep core pins where steel channels cannot extract heat fast enough, and thin-wall sections where differential cooling causes warpage. The CuCrZr insert handles the thermal bottleneck while steel inserts provide the hardness and wear resistance needed for the rest of the mold. Hybrid molds typically cost 20–35% more than all-steel designs but deliver 30–50% better cooling uniformity."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Materials Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">Conformal Cooling Insert Materials: 420 Stainless Steel vs 18Ni300 Maraging Steel vs CuCrZr Copper Alloy</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 16 min read &middot; Written for mold designers and tooling engineers selecting insert materials for SLM/DMLS conformal cooling</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">Three Materials &mdash; Key Differentiators at a Glance</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">50&ndash;54 HRC</div>
+      <div class="data-cell__label">Hardness Range (Steels)</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">310 W/mK</div>
+      <div class="data-cell__label">CuCrZr Thermal Conductivity</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">12&times;</div>
+      <div class="data-cell__label">CuCrZr vs Steel Heat Transfer</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">$800&ndash;$5,500</div>
+      <div class="data-cell__label">Insert Cost Range</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#overview">1. Why Material Choice Matters for Conformal Cooling</a>
+    <a href="#420ss">2. 420 Stainless Steel (420SS) &mdash; The General-Purpose Workhorse</a>
+    <a href="#18ni300">3. 18Ni300 Maraging Steel &mdash; Maximum Hardness and Fatigue Life</a>
+    <a href="#cucrxr">4. CuCrZr Copper Alloy &mdash; Thermal Conductivity Champion</a>
+    <a href="#comparison">5. Head-to-Head Comparison Table</a>
+    <a href="#selection">6. Material Selection Decision Guide</a>
+    <a href="#faq">7. FAQ</a>
+  </div>
+
+  <!-- SECTION 1: OVERVIEW -->
+  <h2 id="overview">1. Why Material Choice Matters for Conformal Cooling</h2>
+
+  <p>The material you choose for a conformal cooling insert determines three things that directly affect mold performance: <strong>how fast heat moves out of the part</strong> (thermal conductivity), <strong>how long the insert lasts</strong> (hardness and fatigue strength), and <strong>how much you pay</strong> (powder cost and post-processing complexity).</p>
+
+  <p>In conventional mold making, material selection is relatively straightforward — P20 or H13 for most jobs, upgraded to S136 for corrosive resins. But conformal cooling inserts are manufactured by Selective Laser Melting (SLM) or Direct Metal Laser Sintering (DMLS), which limits the available material palette to powders that have been qualified for additive manufacturing. The three dominant materials in the industry today are:</p>
+
+  <ul>
+    <li><strong>420 Stainless Steel (420SS)</strong> &mdash; martensitic stainless steel, the most widely used conformal cooling material globally</li>
+    <li><strong>18Ni300 Maraging Steel (1.2709)</strong> &mdash; a precipitation-hardening nickel steel with superior mechanical properties</li>
+    <li><strong>CuCrZr Copper Alloy (CW106C)</strong> &mdash; a high-conductivity copper alloy for thermal-critical applications</li>
+  </ul>
+
+  <p>Each material occupies a distinct position in the performance-cost trade-off. Choosing the wrong material means either paying too much for properties you do not need, or under-specifying and facing premature insert failure. This guide gives you the data and the decision framework to choose correctly for your specific application.</p>
+
+  <blockquote>
+    <p>Rule of thumb: 70% of conformal cooling inserts worldwide are made from 420SS. 18Ni300 and CuCrZr serve the remaining 30% — but in those applications, they are not optional; they are necessary.</p>
+  </blockquote>
+
+  <!-- SECTION 2: 420SS -->
+  <h2 id="420ss">2. 420 Stainless Steel (420SS) &mdash; The General-Purpose Workhorse</h2>
+
+  <div class="mat-card">
+    <div class="mat-card__number">Material Profile</div>
+    <div class="mat-card__title">420 Stainless Steel (AISI 420 / DIN 1.4021)</div>
+    <p><strong>Type:</strong> Martensitic stainless steel<br>
+    <strong>Hardness (heat-treated):</strong> 50&ndash;52 HRC<br>
+    <strong>Thermal conductivity:</strong> 20&ndash;25 W/mK<br>
+    <strong>Density:</strong> 7.74 g/cm&sup3;<br>
+    <strong>Corrosion resistance:</strong> Good &mdash; inherent chromium content (12&ndash;14%)<br>
+    <strong>Typical insert cost:</strong> $800&ndash;$2,500</p>
+  </div>
+
+  <h3>Why 420SS Dominates the Market</h3>
+
+  <p>420 Stainless Steel is the default material for conformal cooling inserts for three reasons. First, it offers a good balance between hardness and machinability: at 50&ndash;52 HRC after heat treatment, it resists wear from most unfilled and lightly filled thermoplastics while remaining machinable for post-print finishing to ±0.02 mm tolerances. Second, its chromium content (12&ndash;14%) provides inherent corrosion resistance — critical because conformal cooling channels carry water or water-glycol mixtures that would corrode unprotected carbon steel within months. Third, the powder is widely available and relatively inexpensive ($40&ndash;$60/kg), keeping insert costs low.</p>
+
+  <h3>Mechanical Properties After Heat Treatment</h3>
+
+  <p>As-printed 420SS parts from SLM typically measure 30&ndash;35 HRC. Heat treatment (austenitize at 1,030&deg;C, oil quench, temper at 200&ndash;300&deg;C) brings hardness to the working range of 50&ndash;52 HRC. Tensile strength reaches 1,500&ndash;1,700 MPa. The as-printed microstructure contains some residual porosity (typically 0.3&ndash;0.8% by volume after optimized SLM parameters), but this does not meaningfully affect cooling channel performance or fatigue life for most injection molding applications.</p>
+
+  <h3>Best Applications for 420SS</h3>
+
+  <ul>
+    <li>General-purpose injection molding with unfilled PP, PE, ABS, PS, POM</li>
+    <li>Production runs up to 500,000&ndash;1,000,000 shots</li>
+    <li>Consumer electronics housings, packaging, medical device enclosures</li>
+    <li>Molds running water-based coolants where corrosion resistance is important</li>
+    <li>Projects where budget is a primary constraint and thermal performance of steel is sufficient</li>
+  </ul>
+
+  <h3>Limitations</h3>
+
+  <p>420SS is not the best choice when: (1) the mold runs abrasive glass-filled or mineral-filled resins at high volumes (above 500k shots) where accelerated wear is expected; (2) injection pressures exceed 150 MPa and fatigue life is critical; or (3) the part geometry has persistent hot spots that steel-grade thermal conductivity (20&ndash;25 W/mK) cannot resolve even with conformal channels directly following the part surface. For these cases, 18Ni300 or CuCrZr are the better choices.</p>
+
+  <!-- SECTION 3: 18Ni300 -->
+  <h2 id="18ni300">3. 18Ni300 Maraging Steel &mdash; Maximum Hardness and Fatigue Life</h2>
+
+  <div class="mat-card">
+    <div class="mat-card__number">Material Profile</div>
+    <div class="mat-card__title">18Ni300 Maraging Steel (1.2709 / MS1)</div>
+    <p><strong>Type:</strong> Precipitation-hardening nickel-cobalt-molybdenum steel<br>
+    <strong>Hardness (aged):</strong> 52&ndash;54 HRC<br>
+    <strong>Thermal conductivity:</strong> 18&ndash;22 W/mK<br>
+    <strong>Density:</strong> 8.05 g/cm&sup3;<br>
+    <strong>Corrosion resistance:</strong> Poor &mdash; no chromium; requires surface treatment or coating<br>
+    <strong>Typical insert cost:</strong> $1,200&ndash;$4,000</p>
+  </div>
+
+  <h3>Why 18Ni300 Exists in the Conformal Cooling Material Palette</h3>
+
+  <p>18Ni300 Maraging Steel was developed for high-stress tooling applications where 420SS is not hard enough or does not have sufficient fatigue strength. Its 52&ndash;54 HRC hardness after aging (490&deg;C for 6 hours) exceeds 420SS by 2&ndash;4 HRC points — a meaningful difference when running glass-filled PA66 or PPS at injection pressures above 120 MPa for millions of cycles. Its tensile strength reaches 1,900&ndash;2,100 MPa (vs. 1,500&ndash;1,700 MPa for 420SS), and its fatigue endurance limit is approximately 30% higher.</p>
+
+  <h3>The Aging Heat Treatment Advantage</h3>
+
+  <p>Unlike 420SS which requires quenching (with associated distortion risk), 18Ni300 hardens through a simple aging process: hold at 490&deg;C for 6 hours, then air cool. There is virtually no dimensional change during aging — volumetric change is less than 0.08%. This makes 18Ni300 attractive for large or geometrically complex inserts where quench distortion would require additional corrective machining. Some shops machine 18Ni300 inserts to final tolerance in the as-printed state (33&ndash;37 HRC, very machinable), then age-harden as the final step — achieving 52&ndash;54 HRC without dimensional correction.</p>
+
+  <h3>Best Applications for 18Ni300</h3>
+
+  <ul>
+    <li>High-volume automotive molds: bumpers, dashboard components, under-hood parts</li>
+    <li>Glass-filled or mineral-filled engineering resins (PA66-GF30, PPS-GF40, PBT-GF30)</li>
+    <li>Production runs exceeding 1,000,000 shots where wear life is critical</li>
+    <li>High injection pressure applications (&gt;120 MPa) requiring fatigue endurance</li>
+    <li>Large inserts where quench distortion of 420SS would be problematic</li>
+  </ul>
+
+  <h3>Limitations</h3>
+
+  <p>The major limitation of 18Ni300 is <strong>corrosion</strong>. It contains no chromium and will rust in contact with untreated water. Every 18Ni300 conformal cooling insert requires either: (1) a corrosion-resistant coating on channel surfaces (electroless nickel plating, DLC, or TiN), (2) use of inhibited coolant (water-glycol with corrosion inhibitors at pH 8.5&ndash;9.5), or (3) both. This adds $200&ndash;600 per insert to the total cost and introduces a maintenance requirement — coolant chemistry must be monitored. Additionally, 18Ni300 powder costs $55&ndash;$85/kg, approximately 40&ndash;60% more than 420SS powder.</p>
+
+  <blockquote>
+    <p>If your mold runs unfilled PP at 300,000 shots/year, 18Ni300 is over-specified and more expensive than necessary. Save it for the jobs that actually need it: abrasive resins, high pressures, and multi-million shot programs.</p>
+  </blockquote>
+
+  <!-- SECTION 4: CuCrZr -->
+  <h2 id="cucrxr">4. CuCrZr Copper Alloy &mdash; Thermal Conductivity Champion</h2>
+
+  <div class="mat-card">
+    <div class="mat-card__number">Material Profile</div>
+    <div class="mat-card__title">CuCrZr Copper Alloy (CW106C / C18150)</div>
+    <p><strong>Type:</strong> Precipitation-hardened copper-chromium-zirconium alloy<br>
+    <strong>Hardness (aged):</strong> 28&ndash;35 HRC<br>
+    <strong>Thermal conductivity:</strong> 310 W/mK<br>
+    <strong>Density:</strong> 8.89 g/cm&sup3;<br>
+    <strong>Corrosion resistance:</strong> Moderate &mdash; good in clean water, susceptible to aggressive coolants<br>
+    <strong>Typical insert cost:</strong> $1,800&ndash;$5,500</p>
+  </div>
+
+  <h3>The Physics Case for Copper</h3>
+
+  <p>Thermal conductivity is the single property that separates CuCrZr from every steel option. At 310 W/mK, CuCrZr conducts heat approximately <strong>12&ndash;15 times faster</strong> than 420SS (20&ndash;25 W/mK) or 18Ni300 (18&ndash;22 W/mK). In practical terms, this means a CuCrZr insert placed at a hot spot extracts heat so rapidly that the local cooling time can be cut by 40&ndash;60% — even beyond what a steel conformal insert achieves at the same location.</p>
+
+  <p>This matters most where part geometry creates thermal bottlenecks that channel geometry alone cannot solve. Deep core pins, thick boss sections, gate areas with high shear heating, and thin-wall features surrounded by thicker sections — these are zones where even a perfectly designed conformal channel in steel may leave a 10&ndash;15&deg;C temperature differential. A CuCrZr insert at the same location can reduce that differential to 2&ndash;5&deg;C.</p>
+
+  <h3>SLM Processing Challenges</h3>
+
+  <p>Copper alloys are more difficult to process by SLM than steels. Copper's high reflectivity at the 1,064 nm wavelength used by most fiber lasers means that a significant portion of laser energy is reflected rather than absorbed. Modern SLM systems with green lasers (515 nm) or high-power fiber lasers (500W+) have largely solved this problem, but not all service bureaus have the equipment. Build parameters must be carefully optimized to achieve &gt;99.5% density — otherwise residual porosity in cooling channels can create nucleation sites for corrosion or blockage.</p>
+
+  <p>Post-print machining of CuCrZr is straightforward — copper alloys machine easily — but the as-printed surface finish inside channels (Ra 8&ndash;15 &mu;m) is rougher than steel (Ra 5&ndash;10 &mu;m) and may benefit from abrasive flow machining or chemical polishing for optimal coolant flow.</p>
+
+  <h3>Best Applications for CuCrZr</h3>
+
+  <ul>
+    <li>Hot-spot elimination in deep cores, boss areas, and gate regions</li>
+    <li>Thin-wall parts (0.5&ndash;1.2 mm) where cooling uniformity directly controls warpage</li>
+    <li>Multi-material or overmolding applications with differential cooling requirements</li>
+    <li>Blow mold tooling where rapid, uniform heat extraction determines surface finish quality</li>
+    <li>Hybrid mold designs: CuCrZr at thermal bottlenecks, steel everywhere else</li>
+  </ul>
+
+  <h3>Limitations</h3>
+
+  <p>CuCrZr's hardness of 28&ndash;35 HRC is significantly lower than either steel option. It is not suitable as the primary cavity or core surface in contact with abrasive resins or at high injection pressures. In most applications, CuCrZr inserts are placed behind or beneath a steel wear surface, or used in low-wear zones where the mold surface does not contact the resin flow front. The powder cost is high ($90&ndash;$140/kg), and not all SLM service providers offer copper alloy printing. Lead times can be 2&ndash;5 days longer than steel due to specialized processing.</p>
+
+  <!-- SECTION 5: COMPARISON TABLE -->
+  <h2 id="comparison">5. Head-to-Head Comparison Table</h2>
+
+  <p>The table below compares all critical properties side by side. Use this as your reference when evaluating materials for a specific project.</p>
+
+  <div style="overflow-x:auto;">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>420SS</th>
+        <th>18Ni300</th>
+        <th>CuCrZr</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Hardness (working)</strong></td>
+        <td class="val-good">50&ndash;52 HRC</td>
+        <td class="val-good">52&ndash;54 HRC</td>
+        <td class="val-bad">28&ndash;35 HRC</td>
+      </tr>
+      <tr>
+        <td><strong>Tensile strength</strong></td>
+        <td>1,500&ndash;1,700 MPa</td>
+        <td class="val-good">1,900&ndash;2,100 MPa</td>
+        <td>380&ndash;450 MPa</td>
+      </tr>
+      <tr>
+        <td><strong>Thermal conductivity</strong></td>
+        <td>20&ndash;25 W/mK</td>
+        <td>18&ndash;22 W/mK</td>
+        <td class="val-good">310 W/mK</td>
+      </tr>
+      <tr>
+        <td><strong>Density</strong></td>
+        <td>7.74 g/cm&sup3;</td>
+        <td>8.05 g/cm&sup3;</td>
+        <td>8.89 g/cm&sup3;</td>
+      </tr>
+      <tr>
+        <td><strong>Corrosion resistance</strong></td>
+        <td class="val-good">Good (12&ndash;14% Cr)</td>
+        <td class="val-bad">Poor (no Cr)</td>
+        <td class="val-neutral">Moderate</td>
+      </tr>
+      <tr>
+        <td><strong>Heat treatment</strong></td>
+        <td>Quench + temper</td>
+        <td class="val-good">Age harden (low distortion)</td>
+        <td>Age harden</td>
+      </tr>
+      <tr>
+        <td><strong>Dimensional change on hardening</strong></td>
+        <td>0.1&ndash;0.3% (quench risk)</td>
+        <td class="val-good">&lt;0.08%</td>
+        <td class="val-good">&lt;0.05%</td>
+      </tr>
+      <tr>
+        <td><strong>SLM powder cost</strong></td>
+        <td class="val-good">$40&ndash;$60/kg</td>
+        <td>$55&ndash;$85/kg</td>
+        <td class="val-bad">$90&ndash;$140/kg</td>
+      </tr>
+      <tr>
+        <td><strong>Typical insert cost</strong></td>
+        <td class="val-good">$800&ndash;$2,500</td>
+        <td>$1,200&ndash;$4,000</td>
+        <td class="val-bad">$1,800&ndash;$5,500</td>
+      </tr>
+      <tr>
+        <td><strong>Lead time (SLM + post-machining)</strong></td>
+        <td class="val-good">7&ndash;10 days</td>
+        <td>8&ndash;12 days</td>
+        <td>10&ndash;14 days</td>
+      </tr>
+      <tr>
+        <td><strong>Mold life (unfilled resin)</strong></td>
+        <td class="val-good">500k&ndash;1M+ shots</td>
+        <td class="val-good">1M&ndash;3M+ shots</td>
+        <td>200k&ndash;500k shots</td>
+      </tr>
+      <tr>
+        <td><strong>Mold life (glass-filled resin)</strong></td>
+        <td>200k&ndash;500k shots</td>
+        <td class="val-good">500k&ndash;1.5M shots</td>
+        <td class="val-bad">Not recommended</td>
+      </tr>
+      <tr>
+        <td><strong>Best for</strong></td>
+        <td>General purpose</td>
+        <td>High-volume, abrasive resins</td>
+        <td>Hot-spot elimination</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Key Takeaway</div>
+    <div class="benefit-block__headline">Material Selection Is a Function of Application, Not Budget</div>
+    <p class="benefit-block__body">The most common mistake is selecting CuCrZr because "copper cools faster" without verifying that the application has a thermal bottleneck that steel cannot solve. A well-designed conformal channel in 420SS at a cost of $1,200 often outperforms a poorly placed CuCrZr insert at $3,500. Always run thermal simulation first, then select material based on the simulation results.</p>
+  </div>
+
+  <!-- SECTION 6: SELECTION GUIDE -->
+  <h2 id="selection">6. Material Selection Decision Guide</h2>
+
+  <p>Use the decision matrix below to match your application requirements to the correct material. Start with the leftmost column (your application type), read across to the recommended material, and check the rationale.</p>
+
+  <div style="overflow-x:auto;">
+  <table class="decision-table">
+    <thead>
+      <tr>
+        <th>Application Type</th>
+        <th>Resin</th>
+        <th>Volume (shots/yr)</th>
+        <th>Recommended Material</th>
+        <th>Rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Consumer electronics housing</td>
+        <td>ABS, PC/ABS</td>
+        <td>&lt;500k</td>
+        <td><span class="pick-best">420SS</span></td>
+        <td>Sufficient hardness, good corrosion resistance, lowest cost</td>
+      </tr>
+      <tr>
+        <td>Packaging closure/cap</td>
+        <td>PP, HDPE</td>
+        <td>&gt;1M</td>
+        <td><span class="pick-best">420SS</span></td>
+        <td>Unfilled soft resin; corrosion resistance needed for water coolant</td>
+      </tr>
+      <tr>
+        <td>Automotive bumper/fascia</td>
+        <td>PP-TD20</td>
+        <td>&gt;500k</td>
+        <td><span class="pick-best">18Ni300</span></td>
+        <td>Talc filler is mildly abrasive; high-volume demands fatigue life</td>
+      </tr>
+      <tr>
+        <td>Automotive connector</td>
+        <td>PA66-GF30</td>
+        <td>&gt;500k</td>
+        <td><span class="pick-best">18Ni300</span></td>
+        <td>Glass fibers are highly abrasive; 52&ndash;54 HRC minimum needed</td>
+      </tr>
+      <tr>
+        <td>Under-hood bracket</td>
+        <td>PPS-GF40</td>
+        <td>&gt;300k</td>
+        <td><span class="pick-best">18Ni300</span></td>
+        <td>Most abrasive common resin; maximum hardness required</td>
+      </tr>
+      <tr>
+        <td>Thin-wall container (0.4&ndash;0.8 mm)</td>
+        <td>PP</td>
+        <td>&gt;500k</td>
+        <td><span class="pick-best">CuCrZr</span></td>
+        <td>Cooling uniformity controls warpage; copper resolves thin-wall hot spots</td>
+      </tr>
+      <tr>
+        <td>Deep core pin (&gt;5:1 L/D)</td>
+        <td>Any</td>
+        <td>Any</td>
+        <td><span class="pick-best">CuCrZr</span></td>
+        <td>Steel channels cannot extract heat fast enough from deep cores</td>
+      </tr>
+      <tr>
+        <td>Gate area with shear heating</td>
+        <td>Any</td>
+        <td>Any</td>
+        <td><span class="pick-best">CuCrZr</span></td>
+        <td>Localized thermal spike requires maximum thermal conductivity</td>
+      </tr>
+      <tr>
+        <td>Medical device (FDA-contact)</td>
+        <td>PC, PEEK</td>
+        <td>&lt;200k</td>
+        <td><span class="pick-best">420SS</span></td>
+        <td>Corrosion resistance critical; stainless steel validated for medical tooling</td>
+      </tr>
+      <tr>
+        <td>Hybrid mold (mixed zones)</td>
+        <td>Any</td>
+        <td>Any</td>
+        <td><span class="pick-best">420SS + CuCrZr</span></td>
+        <td>Steel for general zones, copper at thermal bottlenecks; best cost-performance balance</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>The 3-Question Decision Framework</h3>
+
+  <p>If the table above does not directly match your application, use these three questions to arrive at the correct material:</p>
+
+  <ol>
+    <li><strong>Is the resin glass-filled or mineral-filled at &gt;15% loading, AND production volume exceeds 500,000 shots?</strong> If yes, use 18Ni300. If no, proceed to question 2.</li>
+    <li><strong>Does thermal simulation show a hot spot with &gt;10&deg;C temperature differential that a steel conformal channel cannot resolve?</strong> If yes, use CuCrZr at that location. If no, proceed to question 3.</li>
+    <li><strong>Default answer:</strong> Use 420SS. It covers the broadest range of applications at the lowest cost, with the best corrosion resistance of the three options.</li>
+  </ol>
+
+  <blockquote>
+    <p>When in doubt, start with 420SS. You can always upgrade a single insert position to CuCrZr later if thermal data from production trials shows a persistent hot spot. Over-specifying material across the entire mold is the most expensive mistake in conformal cooling projects.</p>
+  </blockquote>
+
+  <h3>Hybrid Mold Strategy: The Best of Both Worlds</h3>
+
+  <p>The most cost-effective approach for complex molds is a <strong>hybrid material strategy</strong>: use 420SS (or 18Ni300 for abrasive resins) for the majority of the mold, and place CuCrZr inserts only at identified thermal bottlenecks. This approach typically adds 20&ndash;35% to total insert cost compared to an all-steel design, but delivers 30&ndash;50% better cooling uniformity where it matters most.</p>
+
+  <p>MouldNova designs hybrid molds routinely. Our Moldflow thermal simulation identifies the exact locations where CuCrZr provides a meaningful improvement over steel — and equally important, identifies the locations where steel is sufficient and copper would be a wasted investment.</p>
+
+  <div class="blog-cta">
+    <div class="blog-cta__title">Not Sure Which Material You Need?</div>
+    <div class="blog-cta__text">Send your STEP file and current mold data. MouldNova runs a free Moldflow thermal simulation and recommends the optimal material for each insert position — including hybrid designs where steel and copper are combined for best results.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp &mdash; Send STEP File
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Request Material Recommendation &rarr;</a>
+    </div>
+  </div>
+
+  <!-- SECTION 7: FAQ -->
+  <h2 id="faq">7. FAQ</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the best material for conformal cooling inserts?</div>
+    <p class="faq-block__a">There is no single best material. 420SS is the best general-purpose choice: 50&ndash;52 HRC, good corrosion resistance, lowest cost ($800&ndash;$2,500). 18Ni300 is best for high-volume automotive and abrasive glass-filled resins requiring 52&ndash;54 HRC. CuCrZr is best for hot-spot elimination where its 310 W/mK thermal conductivity (12x higher than steel) resolves thermal bottlenecks. Start with 420SS and upgrade only when the application demands it.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the thermal conductivity of CuCrZr compared to mold steel?</div>
+    <p class="faq-block__a">CuCrZr has a thermal conductivity of approximately 310 W/mK, compared to 20&ndash;25 W/mK for 420SS and 18&ndash;22 W/mK for 18Ni300. This 12&ndash;15x advantage means CuCrZr inserts at hot spots can reduce local cooling time by 40&ndash;60%, even when the rest of the mold uses steel. The trade-off is lower hardness (28&ndash;35 HRC) and higher cost ($1,800&ndash;$5,500 per insert).</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Can 420 Stainless Steel handle high-volume injection molding?</div>
+    <p class="faq-block__a">Yes. 420SS at 50&ndash;52 HRC is suitable for 500,000&ndash;1,000,000+ shots with unfilled or lightly filled resins (PP, PE, ABS, PS). For glass-filled resins above 500k shots, 18Ni300 at 52&ndash;54 HRC is the better choice. For unfilled resins at moderate injection pressures, 420SS inserts routinely exceed 1 million shots with no measurable channel wear.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How much does a conformal cooling insert cost by material?</div>
+    <p class="faq-block__a">From a China-based SLM manufacturer: 420SS costs $800&ndash;$2,500 per insert. 18Ni300 costs $1,200&ndash;$4,000 (40&ndash;60% more due to higher powder cost and longer heat treatment). CuCrZr costs $1,800&ndash;$5,500 (premium reflects $90&ndash;$140/kg copper powder vs. $40&ndash;$60/kg for steel, plus specialized SLM parameters). All prices include post-machining to &plusmn;0.02 mm.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">When should I use a hybrid approach with multiple materials in one mold?</div>
+    <p class="faq-block__a">Use a hybrid approach when thermal simulation shows localized hot spots that steel alone cannot resolve. Common scenarios: gate areas with shear heating, deep core pins, and thin-wall sections surrounded by thicker geometry. CuCrZr handles the thermal bottleneck; steel provides hardness and wear resistance everywhere else. Hybrid molds typically cost 20&ndash;35% more than all-steel designs but deliver 30&ndash;50% better cooling uniformity.</p>
+  </div>
+
+  <!-- INTERNAL LINKS -->
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href="conformal-cooling-inserts.html">Conformal Cooling Inserts &mdash; Design Rules, Material Comparison &amp; ROI</a></li>
+    <li><a href="conformal-cooling-tooling.html">Conformal Cooling Tooling &mdash; Specifications, Cost &amp; Lead Times</a></li>
+    <li><a href="conformal-cooling-cost.html">Conformal Cooling Cost &mdash; Pricing Guide with 3-Year TCO Model</a></li>
+    <li><a href="conformal-cooling-cores.html">Conformal Cooling Cores &mdash; Deep Pins &amp; Core Inserts</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts &mdash; Service Details &amp; Specifications</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>
