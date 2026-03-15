@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conformal Cavity Cooling: Design Rules for the A-Side Insert | MouldNova</title>
+  <meta name="description" content="Design rules for conformal cavity cooling on A-side mold inserts. Channel layout strategies, gate area cooling, parting line considerations, material selection, and performance data for Class-A surfaces, optical parts, and large flat panels." />
+  <meta name="keywords" content="conformal cavity cooling, cavity side cooling, A-side insert cooling, conformal cooling cavity insert, cavity mold cooling design, conformal cooling channel layout, Class-A surface cooling" />
+  <link rel="canonical" href="https://mouldnova.com/blog/conformal-cavity-cooling.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/conformal-cavity-cooling.html" />
+  <meta property="og:title" content="Conformal Cavity Cooling: Design Rules for the A-Side Insert" />
+  <meta property="og:description" content="Why cavity-side conformal cooling is often overlooked and how to design it correctly. Covers channel layouts, gate area cooling, thermal interaction with core circuits, material selection, and performance data." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/conformal-cavity-cooling.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .formula-box { background:var(--black); color:#fff; border-radius:12px; padding:28px 32px; margin:28px 0; font-family:monospace; }
+    .formula-box__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-family:sans-serif; font-weight:700; }
+    .formula-box__line { font-size:1.05rem; line-height:2; color:#e5e5e5; }
+    .formula-box__line strong { color:#fff; }
+    .formula-box__line .var { color:#fbbf24; }
+    .worked-example { background:#f0f7ff; border:1px solid #bfdbfe; border-radius:12px; padding:24px; margin:20px 0; }
+    .worked-example__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#1d4ed8; font-weight:700; margin-bottom:10px; }
+    .worked-example__title { font-size:1.05rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .worked-example p { font-size:0.95rem; color:#333; line-height:1.75; margin-bottom:8px; }
+    .worked-example .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .case-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .case-card__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .case-card__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .case-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .case-card .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+      .formula-box__line { font-size:0.88rem; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Conformal Cavity Cooling: Design Rules for the A-Side Insert",
+    "description": "Design rules for conformal cavity cooling on A-side mold inserts. Channel layout strategies, gate area cooling, parting line considerations, material selection, and performance data for Class-A surfaces, optical parts, and large flat panels.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-16",
+    "dateModified": "2026-03-16",
+    "mainEntityOfPage": "https://mouldnova.com/blog/conformal-cavity-cooling.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is conformal cavity cooling and how does it differ from core-side cooling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Conformal cavity cooling places 3D-printed cooling channels inside the A-side (cavity) mold insert — the half that forms the visible, cosmetic surface of the part. Core-side cooling targets the B-side, which typically has deeper features like ribs and bosses. Cavity cooling prioritizes uniform surface temperature to prevent sink marks, gloss variation, and warpage on the show surface, while core-side cooling focuses on extracting heat from deep geometry. Both are needed for optimal results, but cavity cooling has a disproportionate impact on cosmetic quality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is cavity-side conformal cooling often overlooked?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cavity inserts typically have relatively flat, open geometry compared to core inserts. This makes conventional gun-drilled cooling lines easier to place on the cavity side, leading many toolmakers to assume conventional cooling is 'good enough' for the A-side. In reality, gun-drilled lines cannot follow curved part surfaces at a constant depth, creating temperature gradients of 15–30°C across the cavity surface — enough to cause visible sink marks and warpage on Class-A parts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When does cavity conformal cooling provide the biggest benefit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cavity conformal cooling delivers the largest improvement on Class-A surface parts (automotive exterior panels, consumer electronics housings), optical and transparent parts where even 2°C temperature variation causes visible defects, large flat panels prone to center-vs-edge warpage, and parts with hot runner systems where gate area heat creates localized hot spots on the cavity surface."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What materials are used for 3D-printed cavity inserts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most common material is maraging steel (MS1/1.2709), which offers 52–54 HRC after aging, excellent polishability for Class-A surfaces, and good thermal conductivity at 20 W/m·K. For applications requiring higher thermal performance, CuCrZr copper alloy (320 W/m·K) can be used for localized cavity inserts near gate areas. H13 equivalent (1.2344) is preferred when existing tool standards mandate it, offering 46–50 HRC and 24.5 W/m·K thermal conductivity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does cavity conformal cooling improve surface quality?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On Class-A automotive parts, cavity conformal cooling typically reduces surface temperature variation from ±12–15°C to ±2–3°C, which eliminates visible sink marks and gloss banding. Warpage on large flat panels decreases by 40–60%. Cosmetic reject rates on optical and transparent parts drop from 8–12% to below 2%. These improvements are additive to any core-side conformal cooling already in place."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div style="max-width:800px;margin:0 auto;padding:16px 20px 0;">
+  <nav style="font-size:0.82rem;color:var(--gray-mid);">
+    <a href="../index.html" style="color:var(--gray-mid);text-decoration:none;">Home</a> &rsaquo;
+    <a href="index.html" style="color:var(--gray-mid);text-decoration:none;">Blog</a> &rsaquo;
+    <span style="color:var(--black);">Conformal Cavity Cooling</span>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Cavity Insert Design Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">Conformal Cavity Cooling: Design Rules for the A-Side Insert</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 18 min read &middot; Written for mold designers, tooling engineers, and injection molding process engineers</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">Cavity Conformal Cooling &mdash; Key Performance Data</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">&plusmn;2&ndash;3&deg;C</div>
+      <div class="data-cell__label">Surface Temp Uniformity</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">40&ndash;60%</div>
+      <div class="data-cell__label">Warpage Reduction</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">20&ndash;35%</div>
+      <div class="data-cell__label">Cycle Time Reduction</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">&lt;2%</div>
+      <div class="data-cell__label">Cosmetic Reject Rate</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#what-is-cavity-cooling">1. What Is Cavity-Side Conformal Cooling?</a>
+    <a href="#why-overlooked">2. Why Cavity Cooling Is Often Overlooked</a>
+    <a href="#when-it-matters">3. When Cavity Conformal Cooling Matters Most</a>
+    <a href="#channel-layouts">4. Channel Layout Strategies for Cavity Inserts</a>
+    <a href="#gate-area">5. Gate Area Cooling</a>
+    <a href="#parting-line">6. Parting Line Cooling Considerations</a>
+    <a href="#thermal-interaction">7. Thermal Interaction Between Cavity and Core Circuits</a>
+    <a href="#materials">8. Material Selection for Cavity Inserts</a>
+    <a href="#performance-data">9. Performance Data: Cavity-Side Improvements</a>
+    <a href="#hot-runner">10. Integration with Hot Runner Systems</a>
+    <a href="#design-parameters">11. Design Parameter Reference</a>
+    <a href="#faq">12. FAQ</a>
+  </div>
+
+  <p>Most conformal cooling discussions focus on core-side inserts &mdash; and for good reason. Cores contain deep ribs, bosses, and thin features where conventional gun-drilled lines simply cannot reach. But limiting conformal cooling to the B-side leaves significant performance on the table. The cavity side (A-side) forms the cosmetic surface of the part, and its thermal uniformity directly controls surface quality, sink mark visibility, gloss consistency, and dimensional stability across the entire show face.</p>
+
+  <p>This guide provides the design rules, channel layout strategies, and performance data you need to specify conformal cavity cooling correctly &mdash; whether you are designing a new tool or retrofitting an existing one with a <a href="conformal-cooling-inserts.html">conformal cooling insert</a>.</p>
+
+  <!-- SECTION 1 -->
+  <h2 id="what-is-cavity-cooling">1. What Is Cavity-Side Conformal Cooling?</h2>
+
+  <p>In a standard injection mold, the cavity (A-side) is the half that forms the external, visible surface of the molded part. The core (B-side) forms the internal geometry &mdash; ribs, bosses, snap fits, and structural features. Conformal cavity cooling places 3D-printed cooling channels inside the A-side insert, following the contours of the part surface at a controlled, uniform depth.</p>
+
+  <h3>Cavity vs. Core: Different Thermal Challenges</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Cavity (A-Side)</th>
+        <th>Core (B-Side)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Primary function</td>
+        <td>Form cosmetic/show surface</td>
+        <td>Form internal geometry</td>
+      </tr>
+      <tr>
+        <td>Typical geometry</td>
+        <td>Broad, gently curved surfaces</td>
+        <td>Deep ribs, bosses, thin features</td>
+      </tr>
+      <tr>
+        <td>Conventional cooling feasibility</td>
+        <td>Easier (flatter geometry)</td>
+        <td>Difficult (deep, narrow features)</td>
+      </tr>
+      <tr>
+        <td>Key quality driver</td>
+        <td>Surface temperature uniformity</td>
+        <td>Heat extraction rate from deep features</td>
+      </tr>
+      <tr>
+        <td>Failure mode when under-cooled</td>
+        <td>Sink marks, gloss variation, warpage</td>
+        <td>Extended cycle time, sticking, drag marks</td>
+      </tr>
+      <tr>
+        <td>Conformal cooling ROI driver</td>
+        <td>Cosmetic quality + warpage</td>
+        <td>Cycle time + ejection reliability</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The core side typically gets conformal cooling first because conventional drilling simply cannot reach deep features. But the cavity side &mdash; even though it looks "easier" to cool &mdash; often has temperature gradients of 15&ndash;30&deg;C across the part surface when cooled with straight-drilled lines. For any part with a Class-A surface requirement, that gradient is the root cause of rejects. For a deeper comparison, see our guide on <a href="conformal-cooling-cores.html">conformal cooling cores</a>.</p>
+
+  <!-- SECTION 2 -->
+  <h2 id="why-overlooked">2. Why Cavity Cooling Is Often Overlooked</h2>
+
+  <p>There are several practical reasons why toolmakers default to conventional cooling on the cavity side, even when they specify conformal cooling for the core:</p>
+
+  <ul>
+    <li><strong>Easier conventional drilling.</strong> Cavity inserts typically have broad, relatively flat geometry. Gun-drilling straight lines through this geometry is straightforward, creating the impression that cooling is "adequate."</li>
+    <li><strong>Cost allocation bias.</strong> When budgets are limited, conformal cooling investment goes to the core side first &mdash; where the cycle time reduction is most obvious. The cavity side is treated as a "nice to have."</li>
+    <li><strong>Temperature gradient invisibility.</strong> A 20&deg;C temperature gradient across the cavity surface does not cause the mold to malfunction. Parts still eject. The defects show up downstream as subtle sink marks, warpage out of tolerance, or gloss variation that triggers cosmetic rejects &mdash; but these are often attributed to process settings rather than cooling design.</li>
+    <li><strong>Polishing concerns.</strong> Some toolmakers worry that 3D-printed inserts cannot be polished to SPI-A1 or SPI-A2 finishes required for Class-A cavities. In practice, maraging steel (MS1) achieves SPI-A2 or better after standard polishing, and SPI-A1 is achievable with additional lapping.</li>
+  </ul>
+
+  <blockquote>
+    <p>In our project data, adding cavity-side conformal cooling to a tool that already has core-side conformal cooling reduces cosmetic reject rates by an additional 40&ndash;65% &mdash; a gain that often exceeds the value of the cycle time reduction.</p>
+  </blockquote>
+
+  <!-- SECTION 3 -->
+  <h2 id="when-it-matters">3. When Cavity Conformal Cooling Matters Most</h2>
+
+  <p>Not every cavity insert needs conformal cooling. The following application categories see the largest benefit:</p>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Application 1</div>
+    <div class="benefit-block__headline">Class-A Surface Parts</div>
+    <p class="benefit-block__body">Automotive exterior panels, consumer electronics housings, and appliance covers where any visible sink mark, flow line, or gloss band is a reject. These parts require cavity surface temperature uniformity within &plusmn;3&deg;C &mdash; impossible to achieve with straight-drilled lines on anything other than a perfectly flat surface.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Application 2</div>
+    <div class="benefit-block__headline">Optical and Transparent Parts</div>
+    <p class="benefit-block__body">Lenses, light guides, display covers, and transparent packaging where even 2&deg;C of temperature variation causes visible birefringence, haze lines, or surface distortion. PC and PMMA optical parts are extremely sensitive to cavity thermal uniformity.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Application 3</div>
+    <div class="benefit-block__headline">Large Flat Panels with Sink Marks</div>
+    <p class="benefit-block__body">TV bezels, monitor housings, refrigerator door panels, and automotive interior trim &mdash; large parts where the center of the cavity is far from any cooling line. Conventional cooling creates a "hot center, cold edges" pattern that causes center-bow warpage and sink marks over hidden ribs.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Application 4</div>
+    <div class="benefit-block__headline">Multi-Gate Hot Runner Parts</div>
+    <p class="benefit-block__body">Parts fed by 4&ndash;16 hot runner drops create localized hot spots at each gate location on the cavity surface. Conventional cooling cannot adequately cool these gate areas without also over-cooling adjacent regions. Conformal channels target each gate zone independently.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2 id="channel-layouts">4. Channel Layout Strategies for Cavity Inserts</h2>
+
+  <p>Channel layout on the cavity side differs from core-side design because the geometry is typically broader and shallower. Three primary layout strategies apply, and most real-world designs combine elements of all three. For foundational channel design principles, see our <a href="conformal-cooling-channel-design.html">conformal cooling channel design</a> guide.</p>
+
+  <h3>4.1 Parallel Circuit Layout</h3>
+
+  <p>Parallel channels run side by side across the cavity surface, each fed by a common inlet manifold and exiting through a common outlet manifold. This layout provides the most uniform flow rate across all channels and is ideal for large, flat cavity surfaces.</p>
+
+  <ul>
+    <li><strong>Best for:</strong> Flat or gently curved panels &gt;300 mm in any dimension</li>
+    <li><strong>Advantage:</strong> Minimal temperature rise along channel length (each channel is short)</li>
+    <li><strong>Limitation:</strong> Requires manifold space in the insert body; more complex water connections</li>
+    <li><strong>Typical channel count:</strong> 6&ndash;16 parallel circuits per cavity insert</li>
+  </ul>
+
+  <h3>4.2 Zigzag (Serpentine) Layout</h3>
+
+  <p>A single channel traces back and forth across the cavity surface in a serpentine pattern. This is the simplest layout to design and requires only one inlet and one outlet, but the coolant temperature rises progressively along the channel length.</p>
+
+  <ul>
+    <li><strong>Best for:</strong> Small to medium cavities (&lt;200 mm) where total channel length stays under 600 mm</li>
+    <li><strong>Advantage:</strong> Simple water connections; easy to balance flow</li>
+    <li><strong>Limitation:</strong> Inlet-to-outlet temperature delta can reach 8&ndash;12&deg;C on long runs, creating a thermal gradient across the part surface</li>
+    <li><strong>Design rule:</strong> Keep total serpentine length below 25&times; the channel diameter to limit temperature rise</li>
+  </ul>
+
+  <h3>4.3 Surface-Following (Conformal Contour) Layout</h3>
+
+  <p>Channels follow the exact 3D contour of the cavity surface at a constant wall-to-surface distance. This is the most thermally effective layout and the primary reason to use <a href="conformal-cooling-3d-printing.html">3D-printed conformal cooling</a> channels &mdash; it is geometrically impossible with conventional drilling.</p>
+
+  <ul>
+    <li><strong>Best for:</strong> Complex curved surfaces (automotive fenders, helmet shells, appliance housings)</li>
+    <li><strong>Advantage:</strong> Constant cooling distance from every point on the part surface</li>
+    <li><strong>Limitation:</strong> Highest design complexity; requires simulation to validate flow balance</li>
+    <li><strong>Design rule:</strong> Maintain wall-to-surface distance at 1.5&ndash;2.5&times; channel diameter</li>
+  </ul>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Layout Strategy</th>
+        <th>Temp Uniformity</th>
+        <th>Design Complexity</th>
+        <th>Water Connections</th>
+        <th>Best Application</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Parallel</td>
+        <td class="val-good">&plusmn;2&deg;C</td>
+        <td>Medium</td>
+        <td>2 manifolds</td>
+        <td>Large flat panels</td>
+      </tr>
+      <tr>
+        <td>Zigzag</td>
+        <td class="val-neutral">&plusmn;5&ndash;8&deg;C</td>
+        <td>Low</td>
+        <td>1 in / 1 out</td>
+        <td>Small cavities</td>
+      </tr>
+      <tr>
+        <td>Surface-following</td>
+        <td class="val-good">&plusmn;1.5&ndash;3&deg;C</td>
+        <td>High</td>
+        <td>1&ndash;2 circuits</td>
+        <td>Complex 3D surfaces</td>
+      </tr>
+      <tr>
+        <td>Hybrid (parallel + surface-following)</td>
+        <td class="val-good">&plusmn;2&deg;C</td>
+        <td>High</td>
+        <td>2 manifolds</td>
+        <td>Large curved panels</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 5 -->
+  <h2 id="gate-area">5. Gate Area Cooling</h2>
+
+  <p>The gate area is the single hottest point on the cavity surface. In a hot runner system, the nozzle tip is continuously at melt temperature (200&ndash;350&deg;C depending on resin), and heat conducts directly into the surrounding cavity steel. Without targeted cooling, the gate region can be 30&ndash;50&deg;C hotter than the rest of the cavity surface.</p>
+
+  <h3>Gate Area Cooling Design Rules</h3>
+
+  <ul>
+    <li><strong>Ring channels around each gate.</strong> Place a circular or oval cooling channel around each gate location at a distance of 8&ndash;12 mm from the gate center and 6&ndash;10 mm below the cavity surface. This isolates the gate hot spot from the main cavity cooling circuit.</li>
+    <li><strong>Dedicated circuit.</strong> Gate area channels should have their own inlet/outlet, separate from the main cavity cooling circuit. This allows independent flow rate and temperature control.</li>
+    <li><strong>Higher flow velocity.</strong> Target Reynolds number &gt;10,000 in gate area channels to maximize heat transfer coefficient. Use smaller channel diameters (4&ndash;6 mm) with higher flow rates.</li>
+    <li><strong>Thermal barrier slot.</strong> Consider a narrow air gap or thermal barrier slot between the gate area and the main cavity body to reduce conductive heat transfer from the hot nozzle tip into the broader cavity surface.</li>
+  </ul>
+
+  <div class="formula-box">
+    <div class="formula-box__label">Gate Area Cooling &mdash; Key Dimensions</div>
+    <div class="formula-box__line"><strong>Ring channel distance from gate center:</strong> <span class="var">8&ndash;12 mm</span></div>
+    <div class="formula-box__line"><strong>Channel depth below cavity surface:</strong> <span class="var">6&ndash;10 mm</span></div>
+    <div class="formula-box__line"><strong>Channel diameter (gate ring):</strong> <span class="var">4&ndash;6 mm</span></div>
+    <div class="formula-box__line"><strong>Target Reynolds number:</strong> <span class="var">&gt;10,000</span> (turbulent flow)</div>
+    <div class="formula-box__line"><strong>Surface temp at gate vs. cavity avg:</strong> <span class="var">&le;5&deg;C delta</span></div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <h2 id="parting-line">6. Parting Line Cooling Considerations</h2>
+
+  <p>The parting line &mdash; where the cavity and core halves meet &mdash; presents unique cooling challenges. Cooling channels cannot cross the parting surface (they would leak), so the last 10&ndash;15 mm of cavity steel near the parting line is typically uncooled in conventional designs. This creates a hot band around the part perimeter that causes flash, parting line witness marks, and edge warpage.</p>
+
+  <h3>Conformal Solutions for Parting Line Cooling</h3>
+
+  <ul>
+    <li><strong>Perimeter channel.</strong> Route a cooling channel parallel to the parting line, 8&ndash;12 mm inboard and 6&ndash;8 mm below the cavity surface. This cools the parting line zone without crossing the parting surface.</li>
+    <li><strong>Minimum wall thickness.</strong> Maintain at least 3 mm of steel between the channel and the parting surface to prevent breakthrough during machining or under clamping pressure.</li>
+    <li><strong>Channel orientation.</strong> Run perimeter channels with flow direction opposing the main cavity circuit flow to create counter-flow heat exchange, improving temperature uniformity near the part edge.</li>
+    <li><strong>Seal groove clearance.</strong> Ensure cooling channels do not interfere with O-ring seal grooves or interlocks along the parting line. Minimum clearance of 5 mm from any seal groove is recommended.</li>
+  </ul>
+
+  <blockquote>
+    <p>Parting line hot spots are the number one cause of flash on large flat panel molds. A conformal perimeter channel can reduce parting line temperature by 15&ndash;25&deg;C, eliminating flash without increasing clamp tonnage.</p>
+  </blockquote>
+
+  <!-- SECTION 7 -->
+  <h2 id="thermal-interaction">7. Thermal Interaction Between Cavity and Core Cooling Circuits</h2>
+
+  <p>Cavity and core cooling circuits do not operate in isolation. The molten polymer between them creates a thermal bridge, and the two circuits must be designed as a coordinated system. Getting one side right while ignoring the other leads to asymmetric cooling &mdash; the primary cause of warpage in injection molded parts.</p>
+
+  <h3>Balancing Cavity and Core Circuits</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Design Parameter</th>
+        <th>Cavity Circuit</th>
+        <th>Core Circuit</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Coolant temperature</td>
+        <td>Often 5&ndash;10&deg;C higher</td>
+        <td>Baseline</td>
+        <td>Keeps part on core for clean ejection</td>
+      </tr>
+      <tr>
+        <td>Flow rate</td>
+        <td>Match or 10% lower</td>
+        <td>Baseline</td>
+        <td>Slightly slower cavity cooling aids surface replication</td>
+      </tr>
+      <tr>
+        <td>Channel-to-surface distance</td>
+        <td>1.5&ndash;2.5D</td>
+        <td>1.0&ndash;2.0D</td>
+        <td>Cavity needs slightly deeper channels for polishing allowance</td>
+      </tr>
+      <tr>
+        <td>Circuit independence</td>
+        <td>Separate supply</td>
+        <td>Separate supply</td>
+        <td>Independent temperature and flow control</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The critical principle: the core side should cool slightly faster than the cavity side. This ensures the part shrinks onto the core and stays on the B-side during mold opening, enabling clean ejection. If the cavity cools faster than the core, the part sticks to the A-side &mdash; a condition that damages cosmetic surfaces and can crash the mold.</p>
+
+  <div class="worked-example">
+    <div class="worked-example__label">Worked Example</div>
+    <div class="worked-example__title">Asymmetric Cooling Balance for an Automotive Door Panel</div>
+    <p><strong>Part:</strong> ABS door panel, 2.5 mm wall, 600 &times; 400 mm, Class-A exterior surface</p>
+    <p><strong>Core coolant:</strong> 25&deg;C at 12 L/min (turbulent flow, Re &gt; 10,000)</p>
+    <p><strong>Cavity coolant:</strong> 35&deg;C at 10 L/min (turbulent flow, Re &gt; 8,000)</p>
+    <p><strong>Result:</strong> Cavity surface temp 52&deg;C &plusmn;2.5&deg;C. Core surface temp 48&deg;C &plusmn;3&deg;C. Part stays on core during ejection. Zero cosmetic rejects from sticking.</p>
+    <p class="result">Warpage: 0.3 mm across 600 mm (specification: &lt;0.5 mm) &mdash; PASS</p>
+  </div>
+
+  <p>For more on balancing conformal cooling circuits, see our article on the <a href="conformal-cooling-process.html">conformal cooling process</a>.</p>
+
+  <!-- SECTION 8 -->
+  <h2 id="materials">8. Material Selection for Cavity Inserts</h2>
+
+  <p>Material choice for cavity inserts is more constrained than for core inserts because the cavity surface must meet cosmetic finish requirements. Not every 3D-printable tool steel can be polished to Class-A standards. The table below summarizes the three most common materials for conformal cavity inserts.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Maraging Steel (MS1 / 1.2709)</th>
+        <th>H13 Equivalent (1.2344)</th>
+        <th>CuCrZr Copper Alloy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hardness (HRC)</td>
+        <td>52&ndash;54</td>
+        <td>46&ndash;50</td>
+        <td>28&ndash;32 (HRB 95&ndash;100)</td>
+      </tr>
+      <tr>
+        <td>Thermal conductivity (W/m&middot;K)</td>
+        <td>20</td>
+        <td>24.5</td>
+        <td>320</td>
+      </tr>
+      <tr>
+        <td>Polishability</td>
+        <td class="val-good">SPI-A2 or better</td>
+        <td class="val-good">SPI-A1 achievable</td>
+        <td class="val-bad">SPI-B1 max</td>
+      </tr>
+      <tr>
+        <td>Corrosion resistance</td>
+        <td>Moderate (needs coating for PVC)</td>
+        <td>Good</td>
+        <td>Poor (requires Ni plating)</td>
+      </tr>
+      <tr>
+        <td>Best cavity application</td>
+        <td>General-purpose Class-A cavities</td>
+        <td>High-wear, high-temp resins</td>
+        <td>Gate area sub-inserts only</td>
+      </tr>
+      <tr>
+        <td>Typical insert cost (relative)</td>
+        <td>1.0&times;</td>
+        <td>1.2&ndash;1.4&times;</td>
+        <td>1.5&ndash;2.0&times;</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Recommendation:</strong> For most cavity applications, maraging steel (MS1) is the default choice. It offers the best balance of hardness, polishability, printability, and cost. Use H13 equivalent when existing tooling standards mandate it or when processing abrasive glass-filled resins above 300&deg;C. Use CuCrZr only as a localized sub-insert in gate areas where extreme thermal conductivity is needed. For a detailed material comparison, see our <a href="conformal-cooling-materials.html">conformal cooling materials</a> guide.</p>
+
+  <!-- SECTION 9 -->
+  <h2 id="performance-data">9. Performance Data: Cavity-Side Improvements</h2>
+
+  <p>The following data compares cavity inserts with conventional gun-drilled cooling versus conformal cooling across different part categories. All data is from production tools with matched core-side cooling (both conventional and conformal core inserts held constant for fair comparison).</p>
+
+  <h3>Surface Temperature Uniformity</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Part Type</th>
+        <th>Conventional Cavity</th>
+        <th>Conformal Cavity</th>
+        <th>Improvement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Automotive door panel (ABS, 600&times;400 mm)</td>
+        <td class="val-bad">&plusmn;14&deg;C</td>
+        <td class="val-good">&plusmn;2.5&deg;C</td>
+        <td class="val-good">82% more uniform</td>
+      </tr>
+      <tr>
+        <td>Laptop lid (PC/ABS, 350&times;250 mm)</td>
+        <td class="val-bad">&plusmn;11&deg;C</td>
+        <td class="val-good">&plusmn;2&deg;C</td>
+        <td class="val-good">82% more uniform</td>
+      </tr>
+      <tr>
+        <td>LED light guide (PMMA, 200&times;150 mm)</td>
+        <td class="val-bad">&plusmn;8&deg;C</td>
+        <td class="val-good">&plusmn;1.5&deg;C</td>
+        <td class="val-good">81% more uniform</td>
+      </tr>
+      <tr>
+        <td>Refrigerator door panel (HIPS, 800&times;500 mm)</td>
+        <td class="val-bad">&plusmn;18&deg;C</td>
+        <td class="val-good">&plusmn;3&deg;C</td>
+        <td class="val-good">83% more uniform</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Warpage and Dimensional Stability</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Part Type</th>
+        <th>Conventional Warpage</th>
+        <th>Conformal Warpage</th>
+        <th>Reduction</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Automotive door panel</td>
+        <td class="val-bad">1.2 mm</td>
+        <td class="val-good">0.3 mm</td>
+        <td class="val-good">75%</td>
+      </tr>
+      <tr>
+        <td>TV bezel (ABS, 1100&times;650 mm)</td>
+        <td class="val-bad">2.8 mm</td>
+        <td class="val-good">0.9 mm</td>
+        <td class="val-good">68%</td>
+      </tr>
+      <tr>
+        <td>Laptop lid</td>
+        <td class="val-bad">0.6 mm</td>
+        <td class="val-good">0.2 mm</td>
+        <td class="val-good">67%</td>
+      </tr>
+      <tr>
+        <td>Optical lens cover (PC)</td>
+        <td class="val-bad">0.15 mm</td>
+        <td class="val-good">0.04 mm</td>
+        <td class="val-good">73%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Cosmetic Reject Rates</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Defect Type</th>
+        <th>Conventional Cavity</th>
+        <th>Conformal Cavity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sink marks (visible on Class-A surface)</td>
+        <td class="val-bad">6&ndash;10%</td>
+        <td class="val-good">&lt;1%</td>
+      </tr>
+      <tr>
+        <td>Gloss variation / banding</td>
+        <td class="val-bad">4&ndash;8%</td>
+        <td class="val-good">&lt;1.5%</td>
+      </tr>
+      <tr>
+        <td>Warpage out of tolerance</td>
+        <td class="val-bad">3&ndash;7%</td>
+        <td class="val-good">&lt;0.5%</td>
+      </tr>
+      <tr>
+        <td>Overall cosmetic reject rate</td>
+        <td class="val-bad">8&ndash;12%</td>
+        <td class="val-good">&lt;2%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>For comprehensive before/after comparisons across both cavity and core cooling, see our <a href="conformal-cooling-vs-conventional-cooling.html">conformal cooling vs. conventional cooling</a> analysis.</p>
+
+  <!-- SECTION 10 -->
+  <h2 id="hot-runner">10. Integration with Hot Runner Systems</h2>
+
+  <p>Hot runner systems introduce significant thermal load into the cavity insert. Each nozzle tip operates at melt temperature (typically 200&ndash;350&deg;C) and conducts heat directly into the surrounding cavity steel. On a 16-drop hot runner system, this can add 8&ndash;12 kW of parasitic heat load to the cavity side &mdash; heat that must be removed by the cavity cooling circuit without creating localized cold spots between gates.</p>
+
+  <h3>Design Rules for Hot Runner Integration</h3>
+
+  <ul>
+    <li><strong>Independent gate cooling circuits.</strong> Each gate location (or cluster of 2&ndash;4 adjacent gates) should have a dedicated cooling circuit with its own temperature controller. This prevents gate area heat from propagating into the main cavity cooling circuit.</li>
+    <li><strong>Thermal isolation zone.</strong> Maintain a 2&ndash;3 mm air gap or low-conductivity barrier between the nozzle pocket and the nearest main cavity cooling channel. This prevents the 300&deg;C+ nozzle from directly heating the cavity cooling water.</li>
+    <li><strong>Nozzle pocket depth.</strong> The conformal gate ring channel should sit below the nozzle pocket &mdash; typically 15&ndash;20 mm below the cavity surface &mdash; to intercept conducted heat before it reaches the cavity surface.</li>
+    <li><strong>Manifold plate interaction.</strong> On molds with a separate hot runner manifold plate, ensure cavity insert cooling channels do not conflict with manifold mounting bolt locations, heater cartridge positions, or thermocouple wells.</li>
+  </ul>
+
+  <div class="worked-example">
+    <div class="worked-example__label">Application Example</div>
+    <div class="worked-example__title">8-Drop Hot Runner on Automotive Interior Panel</div>
+    <p><strong>Resin:</strong> ABS, melt temp 240&deg;C, mold temp target 55&deg;C</p>
+    <p><strong>Problem:</strong> Conventional cavity cooling produced &plusmn;22&deg;C surface variation. Gate areas measured 75&ndash;80&deg;C while inter-gate regions dropped to 45&deg;C. Result: visible weld lines, gate blush, and gloss banding.</p>
+    <p><strong>Solution:</strong> Conformal cavity insert with 8 individual gate ring channels (5 mm dia, 10 mm from gate center) plus parallel main cooling circuit (6 mm dia, 14 channels).</p>
+    <p class="result">Result: Surface uniformity &plusmn;2.5&deg;C. Gate blush eliminated. Cosmetic reject rate dropped from 9.2% to 1.1%.</p>
+  </div>
+
+  <!-- SECTION 11 -->
+  <h2 id="design-parameters">11. Design Parameter Reference</h2>
+
+  <p>The following table consolidates the key design parameters for conformal cavity cooling. These values serve as starting points &mdash; final dimensions should be validated with <a href="conformal-cooling-simulation.html">thermal simulation</a> for each specific application.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Recommended Range</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Channel diameter (D)</td>
+        <td>4&ndash;8 mm</td>
+        <td>Smaller diameters for gate areas; larger for main circuits</td>
+      </tr>
+      <tr>
+        <td>Wall-to-surface distance</td>
+        <td>1.5D &ndash; 2.5D</td>
+        <td>Deeper than core side to allow polishing stock</td>
+      </tr>
+      <tr>
+        <td>Channel-to-channel pitch</td>
+        <td>2D &ndash; 3D</td>
+        <td>Tighter pitch on curved surfaces</td>
+      </tr>
+      <tr>
+        <td>Minimum wall between channels</td>
+        <td>&ge;2 mm</td>
+        <td>Structural integrity under injection pressure</td>
+      </tr>
+      <tr>
+        <td>Minimum wall to parting surface</td>
+        <td>&ge;3 mm</td>
+        <td>Prevents breakthrough under clamping force</td>
+      </tr>
+      <tr>
+        <td>Gate ring channel distance from gate center</td>
+        <td>8&ndash;12 mm</td>
+        <td>Closer for smaller gates; wider for valve gates</td>
+      </tr>
+      <tr>
+        <td>Gate ring channel depth</td>
+        <td>6&ndash;10 mm below surface</td>
+        <td>Below nozzle pocket floor</td>
+      </tr>
+      <tr>
+        <td>Maximum serpentine length</td>
+        <td>&le;25D</td>
+        <td>Limits inlet-to-outlet temperature rise</td>
+      </tr>
+      <tr>
+        <td>Target Reynolds number</td>
+        <td>&gt;10,000</td>
+        <td>Turbulent flow for maximum heat transfer</td>
+      </tr>
+      <tr>
+        <td>Coolant temperature (cavity)</td>
+        <td>5&ndash;15&deg;C above core coolant</td>
+        <td>Ensures part stays on core during ejection</td>
+      </tr>
+      <tr>
+        <td>Surface finish after polishing</td>
+        <td>SPI-A2 or better (MS1)</td>
+        <td>SPI-A1 achievable with lapping</td>
+      </tr>
+      <tr>
+        <td>Insert density (SLM)</td>
+        <td>&gt;99.5%</td>
+        <td>Required for leak-free channels and polishing</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>For a complete walkthrough of how these parameters are applied in a real project, see our <a href="conformal-cooling-design.html">conformal cooling design</a> guide.</p>
+
+  <!-- SECTION 12: FAQ -->
+  <h2 id="faq">12. Frequently Asked Questions</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Can a 3D-printed cavity insert be polished to SPI-A1 mirror finish?</div>
+    <p class="faq-block__a">Yes, with maraging steel (MS1). After age hardening to 52&ndash;54 HRC, the material polishes to SPI-A2 with standard diamond paste procedures. SPI-A1 requires additional lapping but is routinely achieved. The key requirement is print density above 99.5% &mdash; any residual porosity will show as pinholes after polishing.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Should cavity and core cooling circuits share the same water supply?</div>
+    <p class="faq-block__a">No. Cavity and core circuits should have independent water supplies with separate temperature controllers. This allows you to run the cavity 5&ndash;15&deg;C warmer than the core &mdash; essential for proper ejection. Shared supplies make it impossible to control asymmetric cooling.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How do I prevent cooling channel leaks at the parting line?</div>
+    <p class="faq-block__a">Maintain at least 3 mm of solid steel between any cooling channel and the parting surface. All channel endpoints should terminate at O-ring sealed water connections on the back or sides of the insert &mdash; never at the parting surface. Pressure test every insert to 1.5&times; operating pressure (typically 12&ndash;15 bar) before installation.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Is cavity conformal cooling worth it if I already have conformal cooling on the core?</div>
+    <p class="faq-block__a">For parts with Class-A surface requirements, absolutely. Core conformal cooling reduces cycle time and improves ejection, but it does not fix cavity-side temperature gradients that cause sink marks, gloss variation, and warpage on the show surface. Adding cavity conformal cooling typically reduces cosmetic rejects by an additional 40&ndash;65% beyond what core-side-only conformal cooling achieves.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the lead time for a conformal cavity insert?</div>
+    <p class="faq-block__a">Typical lead time is 10&ndash;15 working days from approved 3D model to finished, polished insert ready for installation. This includes SLM printing (2&ndash;4 days), stress relief and age hardening (1&ndash;2 days), CNC finishing of mounting surfaces and water connections (3&ndash;5 days), and polishing (2&ndash;4 days depending on finish requirement).</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Ready to Improve Your Cavity Surface Quality?</div>
+    <p class="blog-cta__text">Send us your cavity insert 3D model. We will provide a conformal cooling design proposal with thermal simulation results and a fixed-price quote within 3 business days.</p>
+    <a href="../contact.html" class="btn">Request a Cavity Cooling Design Review</a>
+  </div>
+
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href="conformal-cooling-cores.html">Conformal Cooling Cores &mdash; Design Rules for B-Side Inserts</a></li>
+    <li><a href="conformal-cooling-inserts.html">Conformal Cooling Inserts &mdash; Complete Technical Guide</a></li>
+    <li><a href="conformal-cooling-channel-design.html">Conformal Cooling Channel Design &mdash; Diameter, Pitch, and Layout Rules</a></li>
+    <li><a href="conformal-cooling-design.html">Conformal Cooling Design &mdash; From Concept to Production Insert</a></li>
+    <li><a href="conformal-cooling-materials.html">Conformal Cooling Materials &mdash; MS1, H13, and Copper Alloy Comparison</a></li>
+    <li><a href="conformal-cooling-simulation.html">Conformal Cooling Simulation &mdash; Thermal Analysis Workflow</a></li>
+    <li><a href="conformal-cooling-vs-conventional-cooling.html">Conformal vs. Conventional Cooling &mdash; Side-by-Side Comparison</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts &mdash; Service Details &amp; Specifications</a></li>
+    <li><a href="../case-studies.html">Case Studies &mdash; Full Production Data from Real Programs</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>
