@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Making Molds with 3D Printing: Methods, Materials &amp; When It Makes Sense | MouldNova</title>
+  <meta name="description" content="Complete guide to making molds with 3D printing: 4 proven approaches, comparison tables, materials guide, cost ranges, volume thresholds, and when conformal cooling inserts beat conventional tooling." />
+  <meta name="keywords" content="making molds with 3d printing, 3d printed molds, 3d printed injection mold inserts, conformal cooling inserts, rapid tooling, 3d printed prototype molds, metal 3d printing molds, binder jetting sand molds" />
+  <link rel="canonical" href="https://mouldnova.com/blog/making-molds-with-3d-printing.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/making-molds-with-3d-printing.html" />
+  <meta property="og:title" content="Making Molds with 3D Printing: Methods, Materials &amp; When It Makes Sense" />
+  <meta property="og:description" content="4 approaches to making molds with 3D printing: conformal cooling inserts, direct metal prototype molds, silicone casting patterns, and sand casting molds. Comparison tables, cost ranges, and application matrix." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/making-molds-with-3d-printing.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .formula-box { background:var(--black); color:#fff; border-radius:12px; padding:28px 32px; margin:28px 0; font-family:monospace; }
+    .formula-box__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-family:sans-serif; font-weight:700; }
+    .formula-box__line { font-size:1.05rem; line-height:2; color:#e5e5e5; }
+    .formula-box__line strong { color:#fff; }
+    .formula-box__line .var { color:#fbbf24; }
+    .worked-example { background:#f0f7ff; border:1px solid #bfdbfe; border-radius:12px; padding:24px; margin:20px 0; }
+    .worked-example__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#1d4ed8; font-weight:700; margin-bottom:10px; }
+    .worked-example__title { font-size:1.05rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .worked-example p { font-size:0.95rem; color:#333; line-height:1.75; margin-bottom:8px; }
+    .worked-example .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .case-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .case-card__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .case-card__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .case-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .case-card .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    .method-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .method-card__number { display:inline-block; background:var(--black); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 14px; border-radius:4px; margin-bottom:10px; }
+    .method-card__title { font-size:1.25rem; font-weight:800; color:var(--black); margin-bottom:6px; }
+    .method-card__subtitle { font-size:0.88rem; color:var(--gray-mid); margin-bottom:14px; }
+    .method-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .method-card ul { margin:0 0 12px 20px; }
+    .method-card li { font-size:0.95rem; color:#444; line-height:1.75; margin-bottom:6px; }
+    .best-for { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:12px 16px; margin-top:12px; font-size:0.9rem; color:#15803d; font-weight:700; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+      .formula-box__line { font-size:0.88rem; }
+      .compare-table { font-size:0.82rem; }
+      .compare-table th, .compare-table td { padding:8px 10px; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Making Molds with 3D Printing: Methods, Materials & When It Makes Sense",
+    "description": "Complete guide to making molds with 3D printing: 4 proven approaches, comparison tables, materials guide, cost ranges, volume thresholds, and when conformal cooling inserts beat conventional tooling.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-16",
+    "dateModified": "2026-03-16",
+    "mainEntityOfPage": "https://mouldnova.com/blog/making-molds-with-3d-printing.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can you actually make molds with 3D printing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — and there are four distinct approaches depending on your volume, material, and geometry requirements. Metal LPBF (laser powder bed fusion) can produce full injection mold cavities or inserts from maraging steel, H13, or MS1 tool steel. These are production-grade tooling components capable of running hundreds of thousands to millions of shots. For lower volumes, direct metal printing of short-run prototype molds (1,000–10,000 shots) is practical. For non-injection-mold applications, 3D printed patterns enable silicone or urethane casting molds, and binder jetting of sand enables rapid sand casting molds. Each approach has different volume ranges, lead times, costs, and accuracy levels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a 3D printed mold insert and a 3D printed mold?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 3D printed mold insert is a single cavity or core component that is built by metal 3D printing and then installed into a conventional mold base (A and B plates, ejector systems, hot runners). The mold base is machined conventionally; only the cavity-forming inserts are 3D printed. This is the most common approach for production injection tooling because it maximizes the benefit of 3D printing (complex internal cooling geometry and cavity features) while keeping the simpler structural components in conventionally machined steel. A 3D printed mold, by contrast, refers to printing the complete tool — cavity, core, and sometimes even the mold base — as a single or small number of printed components. This approach is used for prototype molds and very short runs where speed matters more than tool life."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What materials are used for 3D printing injection mold tooling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Production injection mold inserts are printed from maraging steel (MS1 / 18Ni300) or H13 hot-work tool steel using laser powder bed fusion (LPBF / SLM). Maraging steel is the preferred choice for conformal cooling inserts because it achieves 50–54 HRC after age hardening, has excellent weldability for repair, and prints with low residual stress. H13 is preferred when high thermal fatigue resistance is critical, such as in high-temperature engineering resins above 200°C. For short-run prototype molds (under 5,000 shots), aluminum alloy (AlSi10Mg) or stainless steel can be used to reduce cost. Polymer 3D printing (photopolymer or nylon) is suitable only for silicone casting patterns or very low-shot prototype molds with non-abrasive materials."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does conformal cooling integrate into 3D printed mold inserts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Conformal cooling channels are designed directly into the insert geometry before printing — they exist as hollow channels running through the interior of the printed steel insert, following the contour of the cavity surface at a uniform distance (typically 3–6 mm from the cavity wall). Because LPBF builds the insert layer by layer, these internal channels can take any shape: helical, spiraling, branching, or saddle-shaped — geometries that are physically impossible to drill with conventional tooling. After printing and heat treatment, the channels are connected to the mold's cooling circuit via standard fittings. The result is a conventional-looking insert with extraordinary internal geometry that removes heat 2–3x more efficiently than drilled cooling in the same steel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "At what production volume does making molds with 3D printing make financial sense?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For conformal cooling inserts (the highest-value 3D printing mold application), the economics are compelling at any volume above approximately 50,000 annual shots, because the cycle time savings quickly exceed the insert cost premium over conventional drilling. For a part with a 30-second cycle at $80/hr machine rate, a 25% cycle time reduction saves approximately $8,000 per 100,000 shots — against an insert cost premium of $1,500–$3,000. Payback is typically achieved within 20,000–50,000 shots. For direct-printed prototype molds (the short-run approach), the economics work best below 10,000 shots, where the lower tooling cost of 3D printing outweighs the higher per-part cost compared to conventional production tooling."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Tooling Technology Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">Making Molds with 3D Printing: Methods, Materials &amp; When It Makes Sense</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 22 min read &middot; Written for tooling engineers, product developers, and manufacturing managers evaluating 3D printed mold technology</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">3D Printed Molds — At a Glance</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">4</div>
+      <div class="data-cell__label">Proven Approaches Covered</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">25–40%</div>
+      <div class="data-cell__label">Cycle Time Reduction (Conformal Inserts)</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">5–15 days</div>
+      <div class="data-cell__label">Lead Time vs. 6–12 Weeks Conventional</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">1M+ shots</div>
+      <div class="data-cell__label">Tool Life for Metal LPBF Inserts</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#overview">1. Overview: How 3D Printing Is Used to Make Molds</a>
+    <a href="#method-1">2. Method 1: 3D Printed Injection Mold Inserts with Conformal Cooling (Metal LPBF)</a>
+    <a href="#method-2">3. Method 2: 3D Printed Prototype Injection Molds for Short Runs</a>
+    <a href="#method-3">4. Method 3: 3D Printed Patterns for Silicone and Urethane Casting Molds</a>
+    <a href="#method-4">5. Method 4: 3D Printed Sand Casting Molds (Binder Jetting)</a>
+    <a href="#comparison">6. Comparison Table: All Four Methods Side-by-Side</a>
+    <a href="#materials">7. Materials for 3D Printed Molds</a>
+    <a href="#design">8. Design Considerations for 3D Printed Mold Tooling</a>
+    <a href="#postprocessing">9. Post-Processing Requirements</a>
+    <a href="#volume">10. Volume Thresholds: When 3D Printing Makes Sense vs. Conventional</a>
+    <a href="#cost">11. Cost Analysis</a>
+    <a href="#conformal-integration">12. How Conformal Cooling Integrates into 3D Printed Mold Inserts</a>
+    <a href="#applications">13. Real Application Examples</a>
+    <a href="#faq">14. FAQ</a>
+  </div>
+
+  <p>Making molds with 3D printing is now a mainstream manufacturing option — not an experimental technology. Metal additive manufacturing has matured to the point where 3D printed tooling components are running millions of production shots in automotive, medical, consumer electronics, and packaging applications worldwide. But "3D printed molds" is not a single concept: there are four fundamentally different approaches, each suited to different volume ranges, material requirements, accuracy demands, and budgets.</p>
+
+  <p>This guide gives you the technical detail to evaluate which approach — or combination of approaches — fits your specific program. We cover each method's process, advantages, limitations, cost structure, and volume thresholds. The comparison tables in Section 6 let you identify the right fit at a glance. Section 12 goes deep on the highest-value application: conformal cooling channels integrated into metal LPBF mold inserts, which is where MouldNova's core capabilities lie.</p>
+
+  <!-- SECTION 1: OVERVIEW -->
+  <h2 id="overview">1. Overview: How 3D Printing Is Used to Make Molds</h2>
+
+  <p>The phrase "making molds with 3D printing" covers a wide spectrum. At one end you have photopolymer patterns printed on a desktop SLA machine to make a silicone mold for 50 urethane castings. At the other end you have a maraging steel injection mold insert built on an industrial LPBF machine, age-hardened to 52 HRC, EDM-finished to Ra 0.4 µm, with internal conformal cooling channels that no drill could ever reach — and designed to run 1,000,000+ injection shots over its service life.</p>
+
+  <p>Understanding these four approaches is the foundation of any intelligent decision about additive tooling:</p>
+
+  <ol>
+    <li><strong>3D printed injection mold inserts with conformal cooling</strong> — Metal LPBF (laser powder bed fusion / SLM) of maraging steel or H13, installed into a conventional mold base. Used for production injection molding with dramatically superior thermal performance. This is the highest-value application and MouldNova's primary service.</li>
+    <li><strong>3D printed prototype injection molds</strong> — Direct metal or polymer printing of complete short-run cavity and core sets. Used for prototype validation and bridge tooling runs of 50 to 10,000 shots before committing to production tooling.</li>
+    <li><strong>3D printed patterns for silicone / urethane casting molds</strong> — SLA, FDM, or SLS-printed masters from which room-temperature-vulcanizing (RTV) silicone molds are cast. Used for rapid production of 20–200 units in polyurethane, silicone, or epoxy casting resins.</li>
+    <li><strong>3D printed sand casting molds</strong> — Binder jetting of sand creates mold cavities directly without a pattern. Used for rapid aluminum, iron, or steel castings in quantities of 1–500 parts.</li>
+  </ol>
+
+  <blockquote>
+    <p>The right method is determined by three variables: annual volume (shots or castings), required part material (thermoplastic, urethane, aluminum, etc.), and dimensional accuracy requirements. Read Section 6's comparison table before committing to any approach.</p>
+  </blockquote>
+
+  <!-- SECTION 2: METHOD 1 -->
+  <h2 id="method-1">2. Method 1: 3D Printed Injection Mold Inserts with Conformal Cooling (Metal LPBF)</h2>
+
+  <div class="method-card">
+    <div class="method-card__number">Method 1</div>
+    <div class="method-card__title">Metal LPBF Conformal Cooling Inserts</div>
+    <div class="method-card__subtitle">Production tooling &middot; 50,000–5,000,000+ shots &middot; Maraging steel / H13 / MS1</div>
+    <p>This is the most technically sophisticated and financially impactful application of additive manufacturing in mold making. A cavity or core insert is designed with internal cooling channels that follow ("conform to") the cavity surface geometry — typically running 3–6 mm from the mold surface at a uniform distance. The insert is then built layer by layer on an LPBF machine from metal powder, resulting in a solid steel component with fully enclosed internal channels that would be impossible to create by any drilling or milling process.</p>
+    <p>The insert is installed into a standard mold base (A and B plates machined conventionally) and connected to the cooling circuit. From the outside, it looks like a conventional mold insert. Inside, it has a cooling network that removes heat from the part 2 to 3 times more efficiently per unit of channel length than straight-drilled alternatives.</p>
+    <ul>
+      <li><strong>Volume capacity:</strong> 500,000–5,000,000+ shots (same as conventional hardened steel tooling)</li>
+      <li><strong>Lead time:</strong> 7–15 business days from confirmed design to finished insert</li>
+      <li><strong>Cycle time reduction:</strong> 20–40% depending on part geometry and resin</li>
+      <li><strong>Cost:</strong> $1,500–$8,000 per insert depending on size, complexity, and material</li>
+      <li><strong>Accuracy:</strong> ±0.05 mm post-machining, cavity surface Ra 0.2–0.8 µm after EDM/polishing</li>
+    </ul>
+    <div class="best-for">Best for: High-volume production injection molding where cycle time reduction, warpage elimination, and quality improvement justify insert cost premium over conventional drilling.</div>
+  </div>
+
+  <h3>Why Conformal Cooling Works</h3>
+
+  <p>Conventional injection mold cooling uses straight-drilled channels — holes bored through the mold steel in straight lines, connected by cross-drilled passages and plugged at non-connecting ends. The geometry of straight-drilled channels means they cannot follow curved, complex cavity surfaces. The result is variable distance between the cooling channel and the cavity surface: close in some areas, far away in others. Where channels are distant from the cavity wall, the mold surface runs hotter. Hot spots cause longer cooling times (because the molder must wait for the hottest area to solidify), warpage (differential shrinkage between hot and cold zones), and surface defects (sink marks, gloss variation).</p>
+
+  <p>Conformal channels solve this by maintaining a constant distance from the cavity surface regardless of geometry. The channel follows every curve, rib, and boss of the part — something only additive manufacturing can produce. The thermal result is a mold surface that stays within ±3°C across its entire area, compared to ±15–25°C for straight-drilled cooling on complex geometries.</p>
+
+  <h3>The LPBF Process for Mold Inserts</h3>
+
+  <p>Laser powder bed fusion (LPBF) — also called SLM (selective laser melting) or DMLS (direct metal laser sintering) — is the dominant process for printing metal mold inserts. A high-power fiber laser (typically 200–1,000 W) selectively melts metal powder in a thin layer (20–60 µm), then a new powder layer is spread and the process repeats. A standard build platform of 250 × 250 mm can accommodate multiple inserts simultaneously, reducing per-insert cost at volume.</p>
+
+  <p>For mold inserts specifically, the LPBF process parameters are critical: energy density, scan strategy, and layer thickness determine the final material density (target: >99.5% relative density), residual stress state, and dimensional accuracy. Saiguang 3D Technology uses validated parameter sets for maraging steel MS1 and H13 that are developed specifically for mold tooling — not generic parameters adapted from other applications.</p>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Key Advantage</div>
+    <div class="benefit-block__headline">Channel Geometry Unconstrained by Machining</div>
+    <p class="benefit-block__body">Conformal channels can spiral around a circular core, branch into multiple circuits around a complex boss, run as a saddle shape over a curved surface, or reduce in diameter as they approach the gate area. None of these geometries are achievable by drilling. This geometric freedom is the fundamental value proposition of LPBF for mold tooling — and why the technology has become standard practice in leading injection molding operations globally.</p>
+  </div>
+
+  <!-- SECTION 3: METHOD 2 -->
+  <h2 id="method-2">3. Method 2: 3D Printed Prototype Injection Molds for Short Runs</h2>
+
+  <div class="method-card">
+    <div class="method-card__number">Method 2</div>
+    <div class="method-card__title">Direct Metal 3D Printed Prototype Molds</div>
+    <div class="method-card__subtitle">Prototype &amp; bridge tooling &middot; 50–10,000 shots &middot; Aluminum / stainless / H13</div>
+    <p>For short-run production or pre-production prototype validation in actual injection molding material, 3D printing complete cavity and core sets is a cost-effective alternative to conventional P20 or H13 prototype tooling. The entire mold cavity — including ejector pin holes, gate geometry, and parting line — is printed as a single component or two mating components. Because no CNC programming is required for the cavity form, lead times drop from 4–6 weeks (conventional prototype tooling) to 5–10 days.</p>
+    <ul>
+      <li><strong>Volume capacity:</strong> 50–10,000 shots (material-dependent; higher with H13 vs. aluminum)</li>
+      <li><strong>Lead time:</strong> 5–10 business days to first shot</li>
+      <li><strong>Material options:</strong> AlSi10Mg (aluminum), 316L stainless, H13 tool steel</li>
+      <li><strong>Cost:</strong> $800–$5,000 for small to medium prototype molds (vs. $8,000–$25,000 conventional)</li>
+      <li><strong>Accuracy:</strong> ±0.1–0.2 mm; surface finish Ra 1.6–3.2 µm (better with post-machining)</li>
+    </ul>
+    <div class="best-for">Best for: Prototype validation of injection-molded parts in production material before committing to production tooling. Also useful for bridge tooling when production tool lead time is on the critical path.</div>
+  </div>
+
+  <h3>Limitations of Direct-Printed Prototype Molds</h3>
+
+  <p>Direct-printed prototype molds have important limitations that make them unsuitable for production use beyond approximately 10,000 shots. Aluminum inserts soften at injection temperatures for engineering resins (above 200°C), leading to cavity wear after 2,000–5,000 shots. Printed surface finish is rougher than machined and polished steel, which affects part surface quality unless post-machining is applied. Ejector systems, hot runners, and side actions must be integrated as separate machined components — the printed cavity replaces only the cavity-forming geometry, not the entire mold assembly.</p>
+
+  <p>For production programs, direct-printed prototype molds serve their purpose best as a bridge: fast to produce, good enough to validate part design and processing parameters in real material, and cheap enough to accept as a sunk cost when the production tool is ordered.</p>
+
+  <!-- SECTION 4: METHOD 3 -->
+  <h2 id="method-3">4. Method 3: 3D Printed Patterns for Silicone and Urethane Casting Molds</h2>
+
+  <div class="method-card">
+    <div class="method-card__number">Method 3</div>
+    <div class="method-card__title">3D Printed Patterns for Casting Molds</div>
+    <div class="method-card__subtitle">Low-volume casting &middot; 20–500 parts &middot; Photopolymer / SLA / SLS masters</div>
+    <p>When injection molding tooling cost cannot be justified for quantities below 200–500 parts, 3D printed patterns are used to create silicone or polyurethane tooling molds. The process is simple: a master pattern of the desired part geometry is 3D printed (typically SLA or PolyJet for smooth surface finish), then RTV (room-temperature vulcanizing) silicone is poured around it and cured. When the master is removed, the silicone mold can be used to cast 20–50 urethane or epoxy parts before wear degrades dimensional accuracy.</p>
+    <ul>
+      <li><strong>Volume capacity:</strong> 20–50 castings per silicone mold; 200–500 total with multiple molds from one pattern</li>
+      <li><strong>Lead time:</strong> 1–3 days for pattern printing; 24–48 hours for silicone curing</li>
+      <li><strong>Material options (cast parts):</strong> Shore A–D polyurethanes, rigid epoxy, silicone, low-melt alloys</li>
+      <li><strong>Cost:</strong> $50–$500 for pattern printing; $100–$400 per silicone mold</li>
+      <li><strong>Accuracy:</strong> ±0.2–0.5 mm; surface finish depends on master finish (SLA: Ra 0.8–1.6 µm)</li>
+    </ul>
+    <div class="best-for">Best for: Pre-production samples, marketing models, functional prototypes in urethane, and medical device validation units where FDA material certification is not yet required.</div>
+  </div>
+
+  <p>The key design consideration for this method is shrinkage compensation. Silicone molds shrink 0.5–2% during curing depending on formulation, and urethane casting resins shrink an additional 0.5–1.5% as they cure and cool. Patterns must be scaled accordingly. For parts requiring close tolerances, the silicone casting route is generally limited to non-critical dimensions unless shrinkage compensation is precisely calibrated through trial casting.</p>
+
+  <!-- SECTION 5: METHOD 4 -->
+  <h2 id="method-4">5. Method 4: 3D Printed Sand Casting Molds (Binder Jetting)</h2>
+
+  <div class="method-card">
+    <div class="method-card__number">Method 4</div>
+    <div class="method-card__title">Binder Jetting Sand Molds for Metal Casting</div>
+    <div class="method-card__subtitle">Sand casting &middot; 1–500 castings &middot; Silica / ceramic sand &middot; Aluminum, iron, steel</div>
+    <p>Binder jetting deposits a liquid binder onto a bed of sand (silica, zircon, or chromite), selectively bonding the sand particles into a solid mold shape. The finished sand mold — cavity, core, and runner system — is then used exactly like a conventional green sand or no-bake sand mold to produce metal castings. No pattern is required: the mold geometry is built directly from the CAD file. This eliminates the pattern-making step that normally adds weeks to sand casting lead times.</p>
+    <ul>
+      <li><strong>Volume capacity:</strong> Each binder jetted mold is single-use (like conventional sand molds); economics work for 1–500 castings</li>
+      <li><strong>Lead time:</strong> 1–3 days per mold set vs. 4–8 weeks for pattern-based sand casting</li>
+      <li><strong>Metal options:</strong> Aluminum alloys, gray iron, ductile iron, steel, bronze</li>
+      <li><strong>Cost:</strong> $200–$2,000 per mold set depending on size and complexity</li>
+      <li><strong>Accuracy:</strong> ±0.5–1.0 mm; surface finish Ra 6–12 µm (inherently rougher than injection molding)</li>
+    </ul>
+    <div class="best-for">Best for: Rapid prototyping of cast metal parts, low-volume foundry production without pattern investment, and complex internal geometries (with printed cores) impossible in conventional sand casting.</div>
+  </div>
+
+  <!-- SECTION 6: COMPARISON TABLE -->
+  <h2 id="comparison">6. Comparison Table: All Four Methods Side-by-Side</h2>
+
+  <p>The following table compares all four 3D printing mold approaches across the dimensions most relevant to tooling decision-making. Use this as a rapid-selection tool before diving into method-specific detail.</p>
+
+  <div style="overflow-x:auto;">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Criterion</th>
+          <th>Method 1: LPBF Conformal Inserts</th>
+          <th>Method 2: Direct Metal Prototype Mold</th>
+          <th>Method 3: Silicone Casting Pattern</th>
+          <th>Method 4: Binder Jet Sand Mold</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Volume Range</strong></td>
+          <td class="val-good">50,000–5M+ shots</td>
+          <td class="val-neutral">50–10,000 shots</td>
+          <td class="val-bad">20–500 castings</td>
+          <td class="val-neutral">1–500 castings</td>
+        </tr>
+        <tr>
+          <td><strong>Part Material</strong></td>
+          <td>Any thermoplastic or thermoset</td>
+          <td>Most thermoplastics (limited high-temp)</td>
+          <td>Polyurethane, silicone, epoxy resin</td>
+          <td>Aluminum, iron, steel, bronze</td>
+        </tr>
+        <tr>
+          <td><strong>Tool Lead Time</strong></td>
+          <td class="val-good">7–15 days</td>
+          <td class="val-good">5–10 days</td>
+          <td class="val-good">2–5 days</td>
+          <td class="val-good">1–3 days per mold</td>
+        </tr>
+        <tr>
+          <td><strong>Tooling Cost</strong></td>
+          <td>$1,500–$8,000/insert</td>
+          <td>$800–$5,000/mold set</td>
+          <td>$150–$900/mold set</td>
+          <td>$200–$2,000/mold set</td>
+        </tr>
+        <tr>
+          <td><strong>Dimensional Accuracy</strong></td>
+          <td class="val-good">±0.05 mm (post-machined)</td>
+          <td class="val-neutral">±0.1–0.2 mm</td>
+          <td class="val-bad">±0.2–0.5 mm</td>
+          <td class="val-bad">±0.5–1.0 mm</td>
+        </tr>
+        <tr>
+          <td><strong>Surface Finish</strong></td>
+          <td class="val-good">Ra 0.2–0.8 µm (polished)</td>
+          <td class="val-neutral">Ra 1.6–3.2 µm</td>
+          <td class="val-neutral">Ra 0.8–2.0 µm</td>
+          <td class="val-bad">Ra 6–12 µm</td>
+        </tr>
+        <tr>
+          <td><strong>Cycle Time vs. Conventional</strong></td>
+          <td class="val-good">20–40% faster</td>
+          <td class="val-neutral">Similar or slower</td>
+          <td>N/A (different process)</td>
+          <td>N/A (different process)</td>
+        </tr>
+        <tr>
+          <td><strong>Key Advantage</strong></td>
+          <td>Conformal cooling + production tool life</td>
+          <td>Fast to first shot, low tooling cost</td>
+          <td>Very low cost, fast for &lt;500 parts</td>
+          <td>No pattern needed, complex internal cores</td>
+        </tr>
+        <tr>
+          <td><strong>Key Limitation</strong></td>
+          <td>Insert cost premium over drilling</td>
+          <td>Limited tool life, rougher surface</td>
+          <td>Low volume, dimensional variation</td>
+          <td>Single-use mold, rough surface</td>
+        </tr>
+        <tr>
+          <td><strong>MouldNova Service?</strong></td>
+          <td class="val-good">Yes — primary service</td>
+          <td class="val-good">Yes</td>
+          <td class="val-neutral">Pattern printing only</td>
+          <td class="val-neutral">Referral to foundry partners</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- APPLICATION MATRIX -->
+  <h3>Application Selection Matrix</h3>
+
+  <div style="overflow-x:auto;">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Your Situation</th>
+          <th>Recommended Approach</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Production injection molding, &gt;100k shots/year, cycle time is costing money</td>
+          <td class="val-good">Method 1 — LPBF Conformal Cooling Inserts</td>
+        </tr>
+        <tr>
+          <td>Need to validate part design in real PP, ABS, or PA66 before production tool commitment</td>
+          <td>Method 2 — Direct Metal Prototype Mold</td>
+        </tr>
+        <tr>
+          <td>Need 50–200 functional urethane or silicone parts within 2 weeks, no injection tool budget</td>
+          <td>Method 3 — Silicone Casting from 3D Printed Pattern</td>
+        </tr>
+        <tr>
+          <td>Need 5–50 aluminum or iron castings without pattern investment, complex internal geometry</td>
+          <td>Method 4 — Binder Jet Sand Mold</td>
+        </tr>
+        <tr>
+          <td>Production injection molding, &lt;50k shots/year, tight budget</td>
+          <td>Conventional machined tooling (3D printing premium not justified at this volume)</td>
+        </tr>
+        <tr>
+          <td>High-volume production with warpage problems on complex geometry parts</td>
+          <td class="val-good">Method 1 — LPBF Conformal Cooling Inserts (even if current tooling is conventional)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 7: MATERIALS -->
+  <h2 id="materials">7. Materials for 3D Printed Molds</h2>
+
+  <p>Material selection for 3D printed mold tooling is more consequential than in most other additive manufacturing applications, because mold materials are subjected to cyclic thermal stress, high injection pressures (700–2,000 bar), chemical exposure to hot molten plastic, and abrasion from filled resins. The following materials are qualified and in regular use for each application:</p>
+
+  <h3>Maraging Steel (MS1 / 18Ni300) — Production Injection Mold Inserts</h3>
+
+  <p>Maraging steel is the dominant material for LPBF mold inserts. In the as-printed condition, MS1 has a hardness of approximately 33–38 HRC. After age hardening (480–490°C for 6 hours), hardness increases to 50–54 HRC without the distortion risk associated with quench hardening of conventional tool steels. This makes maraging steel uniquely suited to post-print heat treatment: the insert can be printed near-net-shape, machined and polished, then age-hardened — with minimal distortion because the aging treatment operates at relatively low temperature.</p>
+
+  <p>Key properties for mold applications: yield strength 1,800–2,050 MPa (age-hardened), thermal conductivity 20 W/m·K, good weldability for insert repair, and excellent printability with >99.5% density achievable on qualified LPBF machines. Limitation: not suitable for injection temperatures above approximately 350°C (limits use with PEEK and high-temperature LCP).</p>
+
+  <h3>H13 Hot-Work Tool Steel — High-Temperature Injection Mold Inserts</h3>
+
+  <p>H13 (DIN 1.2344) is the standard material for conventional injection mold tooling worldwide, and it can also be processed by LPBF. Printed H13 achieves 50–56 HRC after vacuum heat treatment, with superior thermal fatigue resistance compared to maraging steel. This makes it the preferred choice for molds running high-temperature engineering resins (PEEK, PPS, LCP, high-melt PEI) or for molds with thin gate land areas subject to cyclic thermal shock. The challenge with LPBF H13 is that the optimal heat treatment requires vacuum quenching, adding cost and time compared to maraging steel's simple aging cycle.</p>
+
+  <h3>Aluminum (AlSi10Mg) — Short-Run Prototype Molds</h3>
+
+  <p>AlSi10Mg is a casting alloy that prints well by LPBF and achieves 130–170 HV after T6-equivalent heat treatment. It is widely used for short-run prototype mold inserts because of its low cost (less than half the material cost of tool steel), high thermal conductivity (100–150 W/m·K vs. 20 W/m·K for tool steel), and fast machining. Limitations: low hardness limits tool life to approximately 5,000–10,000 shots with most amorphous thermoplastics; unsuitable for glass or mineral filled resins; not suitable for temperatures above 200°C.</p>
+
+  <h3>Photopolymer Resins — SLA Casting Patterns</h3>
+
+  <p>For Method 3 (silicone casting patterns), high-accuracy SLA resins — particularly rigid engineering resins with HDT (heat deflection temperature) above 80°C — are standard. The key requirement is that the pattern survive the RTV silicone curing process (typically 24 hours at room temperature to 60°C) without distortion. Standard SLA rigid resin is adequate for room-temperature curing silicone. For elevated-temperature silicone curing cycles, engineering resins with HDT >200°C are required.</p>
+
+  <h3>Silica / Zircon Sand — Binder Jetting Molds</h3>
+
+  <p>For Method 4 (sand casting molds), binder jet sand systems use silica sand (for iron and steel casting) or zircon sand (for aluminum, where finer grain size improves surface finish). The binder is typically an inorganic or furan-based system. Finished sand molds have a green strength of 0.5–2.0 MPa before curing, and final strength of 3–8 MPa after thermal or chemical curing — adequate for the pressures of gravity-poured or low-pressure aluminum casting.</p>
+
+  <!-- SECTION 8: DESIGN CONSIDERATIONS -->
+  <h2 id="design">8. Design Considerations for 3D Printed Mold Tooling</h2>
+
+  <p>3D printed mold tooling requires the same fundamental design practices as conventional injection mold tooling — plus specific considerations driven by the additive manufacturing process. Failing to account for these in the design phase leads to printed parts that require extensive rework or fail in service.</p>
+
+  <h3>Draft Angles</h3>
+
+  <p>Draft angles for 3D printed injection mold inserts follow the same rules as conventional tooling: minimum 0.5° per side for cosmetic surfaces, 1–2° for textured surfaces, and 3–5° for deep ribbed structures. The additive process does not change part ejection physics. A common error when first transitioning to 3D printed inserts is assuming that printed surface texture eliminates the need for draft — it does not. Insufficient draft on a printed cavity (which may have slightly higher Ra than a polished conventional cavity) increases ejection force and accelerates insert wear at ejection contact points.</p>
+
+  <h3>Parting Lines</h3>
+
+  <p>Parting lines for 3D printed inserts must be designed with the same care as conventional tooling. The LPBF process can print complex parting surfaces, including stepped, angled, or contoured parting lines, but these surfaces require post-machining to achieve the metal-to-metal fit quality needed to prevent flash. Budget EDM finish machining time for all parting surface features when quoting 3D printed insert programs.</p>
+
+  <h3>Conformal Cooling Channel Design Rules</h3>
+
+  <p>For Method 1 inserts with conformal cooling, channel design follows established guidelines derived from both thermal simulation and printability constraints:</p>
+
+  <ul>
+    <li><strong>Channel-to-surface distance:</strong> 3–6 mm from cavity wall (closer increases thermal efficiency but reduces structural strength of the insert wall between channel and cavity)</li>
+    <li><strong>Channel diameter:</strong> 6–12 mm internal diameter is optimal for heat transfer and printability; channels narrower than 4 mm are prone to powder sintering in unsupported horizontal sections and difficult to clean</li>
+    <li><strong>Channel-to-channel pitch:</strong> 2–3× channel diameter (e.g., 15–20 mm center-to-center for an 8 mm channel)</li>
+    <li><strong>Minimum wall thickness between channels:</strong> 4 mm for maraging steel, 5 mm for H13, to maintain structural integrity under injection pressure</li>
+    <li><strong>Build orientation:</strong> Channels should be oriented at 45° or greater from horizontal to avoid unsupported overhanging channel walls — channels printed vertically or at steep angles have better internal surface quality and require less support removal</li>
+    <li><strong>Inlet / outlet connectivity:</strong> Channel networks must connect to the mold's standard cooling circuit; interface fittings (typically BSP 1/8" or NPT 1/8") are post-machined into the insert after printing</li>
+  </ul>
+
+  <h3>Surface Finish Planning</h3>
+
+  <p>As-printed LPBF steel surfaces have Ra of 6–15 µm — too rough for injection molding cavity surfaces. All cavity-forming surfaces require post-processing. Plan the following finish allowances in the CAD model:</p>
+
+  <ul>
+    <li>CNC milling finish: +0.3–0.5 mm stock on flat and contoured surfaces</li>
+    <li>EDM finish: +0.1–0.2 mm stock for fine features and ribs</li>
+    <li>Polishing: no additional stock, but budget 4–20 hours of manual polishing per insert for mirror or high-gloss applications</li>
+  </ul>
+
+  <!-- SECTION 9: POST-PROCESSING -->
+  <h2 id="postprocessing">9. Post-Processing Requirements</h2>
+
+  <p>Post-processing is a mandatory and significant cost component for any 3D printed mold insert. Unlike general industrial LPBF parts where as-built surface finish may be acceptable, injection mold inserts require a defined sequence of post-processing operations before they can run production shots.</p>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 1</div>
+    <div class="step-block__title">Stress Relief and Wire EDM Removal from Build Plate</div>
+    <p>As-printed LPBF steel parts contain residual stress from the rapid heating and cooling of the laser melting process. Before removing the insert from the build plate, a stress relief cycle (typically 450°C for 4 hours under protective atmosphere) reduces distortion risk during removal. Wire EDM is then used to cut the insert free from the build plate with minimal induced stress.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 2</div>
+    <div class="step-block__title">Support Structure Removal and Cooling Channel Cleaning</div>
+    <p>External support structures are removed by milling, grinding, or hand tools. Internal cooling channels are flushed with compressed air and abrasive flow media to remove any sintered powder that adhered to channel walls during printing. Channel cleanliness is critical: even small amounts of trapped powder will restrict flow and cause localized hot spots that defeat the purpose of conformal cooling.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 3</div>
+    <div class="step-block__title">CNC Machining of Reference Surfaces and Precision Features</div>
+    <p>All reference surfaces (insert seating surfaces, parting line, ejector pin holes) are finish-machined by CNC to achieve the dimensional accuracy and surface quality required for mold assembly. This step brings overall dimensional accuracy from ±0.1–0.2 mm (as-built LPBF) to ±0.02–0.05 mm (post-machined). EDM is used for fine features including sharp corners, narrow ribs below 1 mm, and gate inserts.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 4</div>
+    <div class="step-block__title">Heat Treatment (Age Hardening for Maraging Steel / Vacuum Quench for H13)</div>
+    <p>Maraging steel inserts are age-hardened at 480–490°C for 5–6 hours, increasing hardness from 33–38 HRC (as-built) to 50–54 HRC. Because the aging treatment involves no quenching, distortion is minimal — typically less than 0.02 mm on a 100 mm insert. H13 inserts require vacuum austenitizing (1,020–1,050°C), quench, and double temper — a more involved cycle that is performed by a certified heat treatment house.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 5</div>
+    <div class="step-block__title">Final Polishing, Texturing, and Pressure Testing</div>
+    <p>Cavity surfaces are polished to the required finish (from Ra 0.8 µm for standard applications to Ra &lt;0.05 µm for optical or medical parts). Cooling channels are pressure-tested at 1.5× operating pressure (typically 15–25 bar test pressure) to verify channel integrity before the insert is installed in the mold. Any leak at a channel wall indicates a print defect that requires repair or insert replacement before production use.</p>
+  </div>
+
+  <!-- SECTION 10: VOLUME THRESHOLDS -->
+  <h2 id="volume">10. Volume Thresholds: When 3D Printing Makes Sense vs. Conventional</h2>
+
+  <p>The most common question about making molds with 3D printing is the break-even volume question: at what production quantity does the additive approach pay for itself versus conventional machining? The answer depends heavily on which method and which metric you are optimizing.</p>
+
+  <h3>For Conformal Cooling Inserts (Method 1)</h3>
+
+  <p>The economic comparison for conformal cooling inserts is not simply "insert cost vs. conventional drill cost" — it is "insert cost premium vs. savings from cycle time reduction and quality improvement over the tool's life." A typical conformal cooling insert in maraging steel costs $2,000–$4,000 more than a conventionally drilled insert of the same size. But the cycle time savings of 25–35% on a tool running 500,000 shots/year at $80/hr machine rate generates $30,000–$60,000 in annual throughput savings — making the payback period measured in days, not years.</p>
+
+  <div class="data-highlight">
+    <div class="data-highlight__title">Volume Threshold Analysis — Conformal Cooling Insert</div>
+    <div class="data-grid">
+      <div class="data-cell">
+        <div class="data-cell__num">20,000</div>
+        <div class="data-cell__label">Minimum shots for payback (simple 30-sec cycle)</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">50,000</div>
+        <div class="data-cell__label">Shots at which ROI becomes compelling</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">500K+</div>
+        <div class="data-cell__label">Optimal range — highest NPV applications</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">&lt;$10K</div>
+        <div class="data-cell__label">Annual volume where conventional tooling often wins</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>For Direct Metal Prototype Molds (Method 2)</h3>
+
+  <p>The comparison here is against conventional prototype tooling: machined P20 or hardened H13 prototype inserts, which typically cost $8,000–$25,000 and take 4–6 weeks. A 3D printed aluminum prototype mold for the same part costs $800–$3,000 and arrives in 5–10 days. The trade-off is tool life (5,000 shots vs. 50,000+ shots for machined H13) and surface quality (rougher unless post-machined). For programs where the prototype mold will run 500–5,000 validation shots before a production tool is ordered, 3D printing is almost always the better economic choice.</p>
+
+  <h3>For Silicone Casting Patterns (Method 3)</h3>
+
+  <p>The economics are simple: below approximately 200 units, the total cost of a 3D printed pattern plus silicone molds plus urethane casting is almost always lower than the minimum injection mold cost (typically $5,000–$15,000 for a simple prototype injection tool). Above 500 units, injection molding becomes competitive on a per-part basis even accounting for tooling cost amortization.</p>
+
+  <!-- SECTION 11: COST ANALYSIS -->
+  <h2 id="cost">11. Cost Analysis</h2>
+
+  <p>The following cost ranges reflect real 2025–2026 market pricing for each 3D printed mold approach, including post-processing and finishing to injection-ready condition. Significant variation exists based on insert size, complexity, and required surface finish:</p>
+
+  <div style="overflow-x:auto;">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Cost Component</th>
+          <th>LPBF Conformal Insert (100×100×80 mm)</th>
+          <th>Al Prototype Mold (2-cavity, simple part)</th>
+          <th>Silicone Pattern + Mold (SLA + 2 molds)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>3D Printing / Fabrication</td>
+          <td>$1,200–$2,400</td>
+          <td>$400–$900</td>
+          <td>$80–$300</td>
+        </tr>
+        <tr>
+          <td>Material (Powder / Resin)</td>
+          <td>Included above</td>
+          <td>Included above</td>
+          <td>$50–$200</td>
+        </tr>
+        <tr>
+          <td>Post-Machining (CNC + EDM)</td>
+          <td>$600–$1,800</td>
+          <td>$200–$800</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Heat Treatment</td>
+          <td>$200–$400</td>
+          <td>$80–$200 (T6)</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Polishing / Texturing</td>
+          <td>$300–$1,200</td>
+          <td>$100–$400</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Pressure Testing + QC</td>
+          <td>$100–$200</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td><strong>Total Range</strong></td>
+          <td><strong>$2,400–$6,000</strong></td>
+          <td><strong>$780–$2,300</strong></td>
+          <td><strong>$130–$700</strong></td>
+        </tr>
+        <tr>
+          <td>Equivalent Conventional Cost</td>
+          <td>$900–$2,500 (drilled insert)</td>
+          <td>$8,000–$25,000 (machined P20 prototype)</td>
+          <td>$5,000–$15,000 (injection prototype tool)</td>
+        </tr>
+        <tr>
+          <td><strong>3D Printing Premium / Saving</strong></td>
+          <td class="val-bad">+$1,500–$3,500 premium</td>
+          <td class="val-good">70–90% cost saving</td>
+          <td class="val-good">95%+ cost saving</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <blockquote>
+    <p>The conformal cooling insert premium of $1,500–$3,500 is not a cost — it is an investment with a typical payback period of 3–15 production days at typical automotive or consumer goods injection molding volumes. The premium disappears in throughput savings within the first month of production in virtually all programs above 200,000 annual shots.</p>
+  </blockquote>
+
+  <!-- SECTION 12: CONFORMAL INTEGRATION -->
+  <h2 id="conformal-integration">12. How Conformal Cooling Integrates into 3D Printed Mold Inserts</h2>
+
+  <p>Conformal cooling is the feature that transforms an ordinary metal LPBF mold insert into a high-performance production tooling component. Understanding how the integration works — from design through testing — helps tooling engineers specify and evaluate conformal cooling insert programs more accurately.</p>
+
+  <h3>Step 1: Thermal Simulation Before Design Finalization</h3>
+
+  <p>Before any cooling channel geometry is committed to CAD, MouldNova runs a Moldflow Cooling (MCC) simulation of the conventional cooling scenario for comparison. This simulation identifies: (a) peak surface temperature locations (hot spots), (b) temperature gradient across the cavity surface at end of cooling phase, (c) minimum cycle time achievable with conventional cooling, and (d) warpage map showing which features will deform due to differential cooling. This baseline defines exactly where conformal channels need to be routed and how close they need to run to the cavity surface to achieve the target temperature uniformity.</p>
+
+  <h3>Step 2: Channel Network Design in CAD</h3>
+
+  <p>The conformal channel network is designed as a series of sweeping channel paths following the cavity surface geometry. The design observes all printability rules: channel angle relative to build direction, minimum wall thickness between adjacent channels and between channels and the cavity surface, inlet/outlet placement for connectivity to mold cooling circuit manifolds, and turbulence promoter features (slight spiraling or baffling) to maximize heat transfer at a given flow rate.</p>
+
+  <p>After initial channel layout, a second Moldflow simulation validates the design against the temperature uniformity and cycle time targets. Channels are adjusted iteratively until simulation confirms the target is met — typically within 2 simulation cycles for experienced conformal cooling designers.</p>
+
+  <h3>Step 3: Build Orientation and Support Strategy</h3>
+
+  <p>The insert is oriented on the build plate to minimize support structures inside cooling channels (which are difficult to remove) and to maximize the mechanical properties in the loading direction (typically oriented so the build layers are perpendicular to the primary injection force direction). Support structures on external non-functional surfaces are acceptable and easily removed; support inside channels must be avoided by channel angle management.</p>
+
+  <h3>Step 4: Post-Processing and Integration</h3>
+
+  <p>After printing and heat treatment, the insert's cooling circuit connection points (inlet and outlet ports) are finish-machined with threads or O-ring grooves to accept standard fittings. The channels are flushed, pressure-tested, and then the insert is dimensionally inspected before installation in the mold base. Installation of a conformal cooling insert into an existing mold base requires only that the insert's external dimensions match the pocket in the mold plate — the internal cooling circuit is entirely self-contained within the insert.</p>
+
+  <p>See MouldNova's <a href="../3d-printed-mold-inserts.html">3D Printed Mold Inserts service page</a> and <a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts service page</a> for complete technical specifications, material options, and lead time details. Our <a href="../rapid-tooling-service.html">Rapid Tooling Service</a> covers programs requiring fast-turn complete tooling solutions.</p>
+
+  <!-- SECTION 13: APPLICATIONS -->
+  <h2 id="applications">13. Real Application Examples</h2>
+
+  <div class="case-card">
+    <div class="case-card__tag">Application Example 1</div>
+    <div class="case-card__title">Medical Device Housing — Conformal Insert Replaces Baffle Cooling</div>
+    <p><strong>Part:</strong> ABS medical device housing, 95 × 60 × 35 mm, wall thickness 2.0–3.5 mm, two deep boss features 28 mm tall.</p>
+    <p><strong>Problem:</strong> Conventional baffle cooling in the boss cores could not maintain adequate cooling at the base of the 28 mm bosses. Cooling time extended to 22 seconds to achieve acceptable part temperature, and warpage at the boss base was 0.35 mm — exceeding the 0.20 mm assembly tolerance.</p>
+    <p><strong>Solution:</strong> LPBF maraging steel inserts with helical conformal cooling channels running at 4 mm from the boss core surface, including a spiraling channel inside the boss core itself. Cycle time reduced to 14 seconds. Warpage at boss base: 0.08 mm.</p>
+    <p class="result">Result: 36% cycle time reduction, warpage within tolerance, $87,000/year throughput saving at 400,000 shots/year program volume. Insert payback: 11 days.</p>
+  </div>
+
+  <div class="case-card">
+    <div class="case-card__tag">Application Example 2</div>
+    <div class="case-card__title">Consumer Electronics — 3D Printed Aluminum Prototype Mold</div>
+    <p><strong>Part:</strong> PC/ABS smartphone protective case, thin-wall geometry (1.2 mm nominal), snap-feature detail requiring accurate core geometry.</p>
+    <p><strong>Problem:</strong> Product design team needed 500 pre-production samples in actual PC/ABS to test drop resistance and fit before committing to a $35,000 production tool. Conventional prototype tooling would cost $12,000 and take 5 weeks — too slow for the product launch schedule.</p>
+    <p><strong>Solution:</strong> 3D printed aluminum (AlSi10Mg) 2-cavity prototype mold, post-machined at parting line and cavity walls, delivered in 8 business days. Total cost: $2,200.</p>
+    <p class="result">Result: 500 parts produced in actual PC/ABS material for drop testing and fit validation. Product design confirmed before production tool order. Cost saving vs. conventional prototype tool: $9,800.</p>
+  </div>
+
+  <div class="case-card">
+    <div class="case-card__tag">Application Example 3</div>
+    <div class="case-card__title">Industrial Packaging — Silicone Casting Molds for Low-Volume Custom Parts</div>
+    <p><strong>Part:</strong> Custom polyurethane gasket / seal for industrial enclosure, Shore 60A, 200 × 80 × 12 mm, 150 units required per year.</p>
+    <p><strong>Problem:</strong> Injection molded silicone tooling cost ($8,000–$12,000) was not justifiable at 150 units/year. Lead time for conventional tooling (8 weeks) also exceeded program schedule.</p>
+    <p><strong>Solution:</strong> SLA-printed rigid urethane master pattern, two RTV silicone molds cast from the master, producing 30–40 castings per mold. Total tooling cost: $480. Lead time: 4 days to first part.</p>
+    <p class="result">Result: 150 units/year produced at $18/part casting cost (vs. estimated $6/part injection molding cost but with $11,000 tooling sunk cost). Net annual cost lower than injection molding until approximately 1,800 units/year volume.</p>
+  </div>
+
+  <div class="case-card">
+    <div class="case-card__tag">Application Example 4</div>
+    <div class="case-card__title">Automotive Bracket Prototype — Binder Jet Sand Casting</div>
+    <p><strong>Part:</strong> Aluminum die-cast structural bracket, 180 × 90 × 55 mm, complex internal ribbing, 5 units needed for engineering validation testing.</p>
+    <p><strong>Problem:</strong> Die casting tool cost ($40,000+) and 12-week lead time were unacceptable for engineering validation of a part not yet confirmed for production. Sand casting with conventional pattern would cost $8,000 and take 6 weeks due to pattern machining.</p>
+    <p><strong>Solution:</strong> Binder jetted sand molds (cavity + cores) produced from CAD in 2 days. Aluminum A380 gravity-poured in foundry partner's facility. 5 castings delivered for machining and testing in 8 total working days.</p>
+    <p class="result">Result: Engineering validation testing completed 10 weeks ahead of conventional pattern-based sand casting schedule. Tooling cost: $1,200 for sand molds. Parts required minor machining to achieve final dimensions.</p>
+  </div>
+
+  <!-- SECTION 14: FAQ -->
+  <h2 id="faq">14. FAQ — Making Molds with 3D Printing</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Can you actually make molds with 3D printing for production injection molding?</div>
+    <p class="faq-block__a">Yes — metal LPBF (laser powder bed fusion) produces injection mold inserts from maraging steel or H13 tool steel that are production-grade tooling components capable of running 500,000 to 5,000,000+ injection shots over their service life. These inserts are not experimental: they are standard practice in automotive, medical, consumer electronics, and packaging injection molding operations worldwide. The printed insert is finished by CNC machining, EDM, heat treatment, and polishing before installation, making it functionally equivalent to a conventionally machined insert — with the addition of internal conformal cooling channels that no drill can produce.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the difference between a 3D printed mold insert and a 3D printed mold?</div>
+    <p class="faq-block__a">A 3D printed mold insert is a single cavity or core component built by metal 3D printing and then installed into a conventionally machined mold base. Only the cavity-forming inserts are 3D printed; the A and B plates, ejector system, hot runner, and side actions are machined conventionally. This hybrid approach maximizes the benefit of 3D printing (complex internal cooling geometry and cavity features) while keeping simpler structural components in conventionally machined steel. A "3D printed mold" in the broadest sense refers to printing the complete tool, which is primarily used for prototype molds and very short runs where speed matters more than tool life.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What materials are best for 3D printing injection mold tooling?</div>
+    <p class="faq-block__a">Maraging steel (MS1 / 18Ni300) is the preferred material for production conformal cooling inserts: it achieves 50–54 HRC after age hardening, prints with low residual stress, and is easily weldable for repair. H13 hot-work tool steel is used when high thermal fatigue resistance is required (high-temperature engineering resins above 300°C injection temperature). AlSi10Mg aluminum alloy is used for short-run prototype molds (under 10,000 shots) due to lower cost and high thermal conductivity. SLA photopolymer resins are limited to casting patterns — not suitable for direct injection molding except for extremely low-pressure, low-shot prototype trials with non-filled amorphous resins.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How does conformal cooling integrate into 3D printed mold inserts, and what performance improvement does it give?</div>
+    <p class="faq-block__a">Conformal cooling channels are designed as hollow passages running through the interior of the printed steel insert, following the contour of the cavity surface at a uniform distance (typically 3–6 mm). Because LPBF builds the insert layer by layer, these channels can spiral, branch, and follow any geometry — something physically impossible to drill. After printing and heat treatment, the channels connect to the mold's standard cooling circuit via machined fittings. The thermal result is cavity surface temperature uniformity within ±3°C across the entire mold face (vs. ±15–25°C for straight-drilled cooling on complex geometry), which translates to 20–40% cycle time reduction and dramatic warpage improvement.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">At what production volume does making molds with 3D printing make financial sense?</div>
+    <p class="faq-block__a">For conformal cooling inserts, the economics are compelling at any volume above approximately 50,000 annual shots. The insert cost premium over conventional drilling ($1,500–$3,500 for a typical insert) is recovered within 20,000–50,000 shots through cycle time savings — measured in days, not months, at automotive or consumer goods volumes. For direct-printed prototype molds (Method 2), the economics work best below 10,000 shots, where 3D printing tooling cost is 70–90% lower than conventional prototype tooling. For volumes between 50,000 and 200,000 shots/year where warpage is not a problem and cycle time is adequate with conventional cooling, conventional machined tooling often remains the right choice — 3D printing is not universally superior at every volume point.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Ready to Evaluate 3D Printed Mold Inserts for Your Program?</div>
+    <div class="blog-cta__text">Send us your part STEP file, current cycle time, annual shot volume, and resin. We run a free Moldflow thermal simulation and return a project-specific report — conformal channel design concept, predicted cycle time reduction, warpage improvement, and full cost/ROI analysis — within 24 hours, at no charge.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp — Send Your Files Now
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Request Free Simulation Report &rarr;</a>
+    </div>
+  </div>
+
+  <!-- INTERNAL LINKS -->
+  <h3>Related Pages and Articles</h3>
+  <ul>
+    <li><a href="../3d-printed-mold-inserts.html">3D Printed Mold Inserts — Service Details, Materials &amp; Specifications</a></li>
+    <li><a href="../metal-3d-printing-service.html">Metal 3D Printing Service — LPBF Capabilities in Maraging Steel, H13, and Aluminum</a></li>
+    <li><a href="../rapid-tooling-service.html">Rapid Tooling Service — Fast-Turn Complete Tooling Solutions</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts — Full Technical Specifications</a></li>
+    <li><a href="conformal-cooling-benefits.html">Conformal Cooling Benefits — Five Benefit Categories with a 3-Year Factory Model</a></li>
+    <li><a href="conformal-cooling-roi.html">Conformal Cooling ROI: Payback Period, Annual Savings &amp; 5-Year NPV Calculator</a></li>
+    <li><a href="conformal-cooling-automotive.html">Conformal Cooling for Automotive Injection Molding: Interior Trim, Connectors &amp; Under-Hood Parts</a></li>
+    <li><a href="../case-studies.html">Case Studies — Full Production Data from Real Programs</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>

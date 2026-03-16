@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metal 3D Printing Cost: Price per Part, Cost Drivers &amp; How to Reduce It | MouldNova</title>
+  <meta name="description" content="Complete metal 3D printing cost guide. Price per gram by material (MS1, 316L, Ti64, Inconel), machine hourly rates, cost comparison tables, China vs US/EU savings, and 8 strategies to reduce your part cost." />
+  <meta name="keywords" content="metal 3d printing cost, metal 3d printing service cost, metal 3d printing price per part, SLM cost, DMLS cost, metal additive manufacturing cost, metal 3d printing cost per gram" />
+  <link rel="canonical" href="https://mouldnova.com/blog/metal-3d-printing-cost.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/metal-3d-printing-cost.html" />
+  <meta property="og:title" content="Metal 3D Printing Cost: Price per Part, Cost Drivers &amp; How to Reduce It" />
+  <meta property="og:description" content="Detailed pricing breakdown for metal 3D printing: cost per gram by alloy, machine hourly rates by platform, China vs US/EU savings, and 8 proven strategies to cut your part cost by 30–60%." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/metal-3d-printing-cost.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .formula-box { background:var(--black); color:#fff; border-radius:12px; padding:28px 32px; margin:28px 0; font-family:monospace; }
+    .formula-box__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-family:sans-serif; font-weight:700; }
+    .formula-box__line { font-size:1.05rem; line-height:2; color:#e5e5e5; }
+    .formula-box__line strong { color:#fff; }
+    .formula-box__line .var { color:#fbbf24; }
+    .worked-example { background:#f0f7ff; border:1px solid #bfdbfe; border-radius:12px; padding:24px; margin:20px 0; }
+    .worked-example__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#1d4ed8; font-weight:700; margin-bottom:10px; }
+    .worked-example__title { font-size:1.05rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .worked-example p { font-size:0.95rem; color:#333; line-height:1.75; margin-bottom:8px; }
+    .worked-example .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .case-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .case-card__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .case-card__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .case-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .case-card .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+      .formula-box__line { font-size:0.88rem; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Metal 3D Printing Cost: Price per Part, Cost Drivers & How to Reduce It",
+    "description": "Complete metal 3D printing cost guide covering price per gram by material, machine hourly rates by platform, China vs US/EU savings of 40–60%, and 8 strategies to reduce part cost.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-16",
+    "dateModified": "2026-03-16",
+    "mainEntityOfPage": "https://mouldnova.com/blog/metal-3d-printing-cost.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the typical cost of metal 3D printing per part?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Metal 3D printing cost per part ranges from $50–$200 for small parts (under 50 cm³), $200–$800 for medium parts (50–300 cm³), and $800–$3,000+ for large parts (300–1,000 cm³). The wide range is driven by material choice, machine platform, post-processing requirements, and geographic location of the service bureau. Parts quoted through Chinese service bureaus typically cost 40–60% less than equivalent quotes from US or EU providers, due to lower machine hourly rates, labor costs, and overhead. Actual cost depends heavily on build height, support structure volume, and finishing requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does material choice affect metal 3D printing cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Material powder cost is typically 20–30% of total part cost and varies significantly by alloy. Maraging steel MS1 runs $0.10–0.15/g, stainless steel 316L costs $0.08–0.12/g, titanium Ti-6Al-4V (Ti64) is $0.25–0.40/g, copper alloy CuCrZr is $0.20–0.30/g, and Inconel 625/718 is $0.30–0.50/g. Switching from Ti64 to 316L where mechanically acceptable can reduce material cost by 60–70%. Switching from Inconel to MS1 where corrosion resistance is not required can save 50–65% on powder cost alone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does build height affect metal 3D printing cost more than XY footprint?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Metal powder bed fusion machines (SLM/DMLS) build layer by layer in the Z direction. Every layer requires a full recoating cycle regardless of how much of the XY build plate is occupied. A part that is tall in Z occupies the machine for proportionally more time than a short part of identical volume. Two parts with the same mass but different orientations — one standing upright (tall Z, small XY) and one lying flat (short Z, large XY) — can differ in machine time by 40–80%. This is why experienced engineers always orient parts to minimize build height in Z, even at the cost of more support structure, to reduce machine time cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can I save by using a Chinese metal 3D printing service bureau?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chinese service bureaus typically quote 40–60% below US and EU providers for equivalent parts. The primary drivers are lower machine hourly rates ($40–70/hr in China vs. $80–150/hr in the US/EU), lower labor costs for post-processing, and lower facility overhead. For a medium-complexity 316L stainless part quoted at $450 from a US bureau, the same part from a reputable Chinese bureau like MouldNova would typically come in at $180–$270 including international shipping. Quality and certification standards are comparable when working with ISO-certified Chinese providers using equivalent EOS or Renishaw machines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is metal 3D printing more cost-effective than CNC machining or casting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Metal 3D printing is most cost-competitive versus CNC machining for parts with internal features (channels, lattices, undercuts) that machining cannot produce, for quantities of 1–50 parts where tooling setup cost dominates CNC economics, and for titanium or Inconel parts where machining requires expensive tooling and long cycle times. Versus casting, metal 3D printing wins on lead time (days vs. 4–12 weeks for casting tooling) and geometric complexity. Casting becomes more economical above roughly 200–500 parts depending on part size and complexity. For conformal cooling inserts specifically, 3D printing is almost always more cost-effective than any alternative because the cooling geometry is impossible to produce any other way."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Metal 3D Printing Cost Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">Metal 3D Printing Cost: Price per Part, Cost Drivers &amp; How to Reduce It</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 18 min read &middot; Written for engineers, procurement teams, and project managers evaluating metal additive manufacturing</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">Metal 3D Printing Cost — Key Reference Figures</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">$0.08–0.50/g</div>
+      <div class="data-cell__label">Price per Gram by Alloy</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">40–60%</div>
+      <div class="data-cell__label">China vs US/EU Savings</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">30–40%</div>
+      <div class="data-cell__label">Machine Time Share of Cost</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">8 Strategies</div>
+      <div class="data-cell__label">To Cut Your Part Cost</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#cost-drivers">1. What Determines Metal 3D Printing Cost</a>
+    <a href="#cost-breakdown">2. Cost Breakdown by Component</a>
+    <a href="#price-by-material">3. Price per Gram/cm³ by Material</a>
+    <a href="#machine-rates">4. Machine Hourly Rates by Platform</a>
+    <a href="#build-height">5. Why Build Height Affects Cost More Than XY Footprint</a>
+    <a href="#size-comparison">6. Cost Comparison Table by Part Size</a>
+    <a href="#china-vs-west">7. China vs US/EU Cost Comparison</a>
+    <a href="#reduce-cost">8. Eight Strategies to Reduce Metal 3D Printing Cost</a>
+    <a href="#vs-alternatives">9. When Metal 3D Printing Is Cost-Competitive vs CNC &amp; Casting</a>
+    <a href="#faq">10. FAQ — Metal 3D Printing Cost</a>
+  </div>
+
+  <p>Metal 3D printing cost is the number one barrier engineers and procurement teams encounter when evaluating additive manufacturing for the first time. A quote that comes back at $800 for what looks like a small bracket is genuinely confusing if you don't understand the underlying cost structure. This guide breaks down every cost component, provides realistic price-per-gram benchmarks for the five most common alloys, explains why build orientation matters more than part volume for machine time, and gives you eight actionable strategies to reduce your part cost by 30–60%.</p>
+
+  <p>The numbers in this guide reflect 2025–2026 market pricing across multiple service bureaus in the US, EU, and China. They are representative ranges, not fixed prices — your actual quote will vary based on geometry, tolerances, post-processing requirements, and batch size. Use these figures for budgeting and supplier comparison, not for final purchasing decisions.</p>
+
+  <!-- SECTION 1: COST DRIVERS -->
+  <h2 id="cost-drivers">1. What Determines Metal 3D Printing Cost</h2>
+
+  <p>Metal powder bed fusion processes (SLM, DMLS, LPBF) share the same fundamental cost structure regardless of machine brand or service bureau location. Every quote you receive is built from the same four inputs, weighted differently depending on part characteristics:</p>
+
+  <h3>Material Powder Cost</h3>
+  <p>Metal powders used in SLM/DMLS processes are atomized to tight particle size distributions (15–53 microns for most alloys) and are significantly more expensive than bulk metal stock. You pay for the powder that actually fuses into your part, but the service bureau also factors in powder that is sintered in support structures and the recycling degradation rate of reused powder. In practice, material cost represents 20–30% of total part cost for most alloys, rising to 35–40% for exotic materials like Inconel and titanium.</p>
+
+  <h3>Machine Time</h3>
+  <p>The laser scanning time required to build your part layer by layer is the largest single cost driver for most geometries, representing 30–40% of total cost. Machine time is governed by three factors: total build volume (mass of fused material plus supports), build height in Z (which determines total number of layers), and laser scan strategy (infill pattern, contour passes, exposure parameters). Machine rates vary from $40–70/hr in China to $80–200/hr for industrial platforms in the US and EU.</p>
+
+  <h3>Post-Processing</h3>
+  <p>No metal 3D printed part is finished when it leaves the build chamber. At minimum, every part requires: stress relief heat treatment (typically 2–4 hours at 400–700°C depending on alloy), wire EDM or band saw separation from the build plate, manual or abrasive support structure removal, and basic surface finishing (shot blasting or hand polishing). For functional parts, additional steps may include: HIP (hot isostatic pressing) for density-critical applications, CNC machining of critical surfaces to tolerance, hardness testing, and dimensional inspection. Post-processing accounts for 15–25% of total part cost on typical industrial parts, and can rise to 30–40% for complex internal geometries where support removal is difficult.</p>
+
+  <h3>Labor and Overhead</h3>
+  <p>Labor includes machine setup (file preparation, nesting, parameter selection), machine monitoring during the build, and all post-processing operations. Overhead includes facility amortization, software licenses (Magics, Amphyon, NetFabb), quality system costs, and sales/administrative expenses. Labor and overhead together account for 10–20% of part cost. This component is where Chinese service bureaus hold the largest structural cost advantage: Chinese labor rates for skilled AM technicians run 60–75% below US and EU equivalents.</p>
+
+  <!-- SECTION 2: COST BREAKDOWN -->
+  <h2 id="cost-breakdown">2. Cost Breakdown by Component</h2>
+
+  <p>The table below shows representative cost breakdown percentages for a typical medium-complexity industrial part in 316L stainless steel, 50 cm³ volume, printed on an EOS M290 or equivalent platform:</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Cost Component</th>
+        <th>% of Total (Typical)</th>
+        <th>Key Variables</th>
+        <th>Optimization Lever</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Material powder (fused + support)</td>
+        <td>20–30%</td>
+        <td>Alloy selection, support volume</td>
+        <td>Choose cheaper alloy; minimize supports</td>
+      </tr>
+      <tr>
+        <td>Machine time (laser scan)</td>
+        <td>30–40%</td>
+        <td>Build height, volume, scan speed</td>
+        <td>Minimize Z-height; nest parts; batch</td>
+      </tr>
+      <tr>
+        <td>Post-processing (heat treat, support removal, finishing)</td>
+        <td>15–25%</td>
+        <td>Support geometry, surface finish spec</td>
+        <td>Design for support-free; accept as-built finish</td>
+      </tr>
+      <tr>
+        <td>Labor and overhead</td>
+        <td>10–20%</td>
+        <td>Complexity, inspection requirements</td>
+        <td>Use Chinese bureau; batch to amortize</td>
+      </tr>
+      <tr>
+        <td>Quality / inspection</td>
+        <td>5–10%</td>
+        <td>Certification level, report requirements</td>
+        <td>Specify only needed inspections</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="formula-box">
+    <div class="formula-box__label">Part Cost Formula (Simplified)</div>
+    <div class="formula-box__line"><strong>Total Cost</strong> = <span class="var">Material Cost</span> + <span class="var">Machine Time Cost</span> + <span class="var">Post-Processing</span> + <span class="var">Labor &amp; Overhead</span></div>
+    <div class="formula-box__line"><span class="var">Material Cost</span> = Part Volume (cm³) &times; Density (g/cm³) &times; Powder Price ($/g) &times; Support Factor (1.15–1.40)</div>
+    <div class="formula-box__line"><span class="var">Machine Time Cost</span> = Build Height (mm) / Layer Thickness (mm) &times; Scan Time/Layer &times; Hourly Rate</div>
+    <div class="formula-box__line"><span class="var">Post-Processing</span> = Fixed Heat Treat + (Support Complexity &times; Labor Rate) + Finishing Operations</div>
+  </div>
+
+  <!-- SECTION 3: PRICE BY MATERIAL -->
+  <h2 id="price-by-material">3. Price per Gram and per cm³ by Material</h2>
+
+  <p>Material selection is the single most impactful cost decision you can make at the design stage. The following table shows market pricing for the five most commonly used SLM/DMLS alloys, along with their density, volumetric pricing, and primary applications:</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Material</th>
+        <th>Price per Gram</th>
+        <th>Density (g/cm³)</th>
+        <th>Price per cm³</th>
+        <th>Best For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Maraging Steel MS1</strong></td>
+        <td>$0.10–0.15/g</td>
+        <td>8.0</td>
+        <td>$0.80–1.20/cm³</td>
+        <td>Conformal cooling inserts, tooling, high-strength brackets</td>
+      </tr>
+      <tr>
+        <td><strong>Stainless Steel 316L</strong></td>
+        <td>$0.08–0.12/g</td>
+        <td>7.9</td>
+        <td>$0.63–0.95/cm³</td>
+        <td>Corrosion-resistant parts, medical, food-grade components</td>
+      </tr>
+      <tr>
+        <td><strong>Titanium Ti-6Al-4V (Ti64)</strong></td>
+        <td>$0.25–0.40/g</td>
+        <td>4.43</td>
+        <td>$1.11–1.77/cm³</td>
+        <td>Aerospace, medical implants, lightweight structural parts</td>
+      </tr>
+      <tr>
+        <td><strong>Copper Alloy CuCrZr</strong></td>
+        <td>$0.20–0.30/g</td>
+        <td>8.9</td>
+        <td>$1.78–2.67/cm³</td>
+        <td>High-conductivity heat exchangers, conformal cooling (high-performance)</td>
+      </tr>
+      <tr>
+        <td><strong>Inconel 625 / 718</strong></td>
+        <td>$0.30–0.50/g</td>
+        <td>8.44</td>
+        <td>$2.53–4.22/cm³</td>
+        <td>High-temperature turbine components, chemical processing</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    <p>Material choice alone can change the cost of a 100 g part by a factor of 5x — from $8–12 in 316L to $30–50 in Inconel. Always ask your design team whether the mechanical or chemical requirements truly demand the more expensive alloy before finalizing material selection.</p>
+  </blockquote>
+
+  <h3>Cost Impact: Switching Materials on a 150 g Part</h3>
+
+  <div class="worked-example">
+    <div class="worked-example__label">Worked Example — Material Substitution</div>
+    <div class="worked-example__title">150 g bracket: Inconel 625 vs Stainless 316L</div>
+    <p><strong>Inconel 625:</strong> 150 g &times; $0.40/g = $60 powder cost &rarr; total part ~$280–340</p>
+    <p><strong>316L Stainless:</strong> 150 g &times; $0.10/g = $15 powder cost &rarr; total part ~$120–160</p>
+    <p>For a bracket operating below 400°C in a non-corrosive environment, 316L delivers equivalent performance at roughly half the price.</p>
+    <div class="result">Switching from Inconel to 316L saves 45–55% on this part.</div>
+  </div>
+
+  <!-- SECTION 4: MACHINE RATES -->
+  <h2 id="machine-rates">4. Machine Hourly Rates by Platform</h2>
+
+  <p>The machine you print on matters significantly. Industrial SLM/DMLS platforms range from single-laser systems processing one part at a time to multi-laser quad-beam systems that can build multiple large parts simultaneously. The hourly rate you are charged reflects machine capital cost, maintenance, consumables, and depreciation — larger, newer machines cost more per hour but often produce more parts per hour, bringing effective cost per part down for large batches or large geometries.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Platform</th>
+        <th>Build Volume</th>
+        <th>Lasers</th>
+        <th>Rate (China)</th>
+        <th>Rate (US/EU)</th>
+        <th>Best Application</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>EOS M290</strong></td>
+        <td>250&times;250&times;325 mm</td>
+        <td>1&times; 400 W</td>
+        <td>$40–55/hr</td>
+        <td>$80–120/hr</td>
+        <td>Small to medium parts, R&amp;D, mixed batches</td>
+      </tr>
+      <tr>
+        <td><strong>EOS M400-4</strong></td>
+        <td>400&times;400&times;400 mm</td>
+        <td>4&times; 400 W</td>
+        <td>$90–130/hr</td>
+        <td>$150–200/hr</td>
+        <td>Large parts, high-volume production</td>
+      </tr>
+      <tr>
+        <td><strong>Renishaw RenAM 500Q</strong></td>
+        <td>250&times;250&times;350 mm</td>
+        <td>4&times; 500 W</td>
+        <td>$55–75/hr</td>
+        <td>$110–150/hr</td>
+        <td>Production runs, complex alloys, high-density builds</td>
+      </tr>
+      <tr>
+        <td><strong>SLM Solutions SLM 500</strong></td>
+        <td>500&times;280&times;365 mm</td>
+        <td>4&times; 700 W</td>
+        <td>$100–140/hr</td>
+        <td>$160–220/hr</td>
+        <td>Large-format aerospace and industrial parts</td>
+      </tr>
+      <tr>
+        <td><strong>BLT S-series (Chinese OEM)</strong></td>
+        <td>Up to 600&times;600&times;600 mm</td>
+        <td>Multi-laser</td>
+        <td>$35–60/hr</td>
+        <td>Not typically available</td>
+        <td>Cost-optimized production in China</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The effective cost per part on a multi-laser platform can be lower than on a single-laser machine even though the hourly rate is higher, because multi-laser systems scan multiple regions of the build plate simultaneously. For large parts that require significant laser time, upgrading to a quad-laser system reduces build time by 60–75%, more than offsetting the higher hourly rate.</p>
+
+  <!-- SECTION 5: BUILD HEIGHT -->
+  <h2 id="build-height">5. Why Build Height Affects Cost More Than XY Footprint</h2>
+
+  <p>This is the single most misunderstood aspect of metal 3D printing cost, and getting it right can save 30–50% on machine time for some parts.</p>
+
+  <p>In powder bed fusion, the build plate moves down one layer at a time (typically 30–60 microns per layer). Each layer requires: recoating (spreading a fresh layer of powder), laser scanning (fusing the cross-section of your part), and inert gas purging. The recoating time is fixed per layer regardless of how much of the XY build plate is occupied. The laser scan time scales with the cross-sectional area of your part at that layer, not with the total XY footprint of the build chamber.</p>
+
+  <h3>The Z-Height Rule</h3>
+
+  <p>This means that two parts with identical mass but different orientations can have dramatically different machine times:</p>
+
+  <div class="worked-example">
+    <div class="worked-example__label">Worked Example — Orientation Effect on Cost</div>
+    <div class="worked-example__title">Cylindrical part: 50 mm diameter &times; 100 mm long</div>
+    <p><strong>Orientation A — Upright (standing on end):</strong> Z-height = 100 mm, build time ~8.5 hours on EOS M290</p>
+    <p><strong>Orientation B — Horizontal (lying flat):</strong> Z-height = 50 mm, build time ~5.2 hours on EOS M290</p>
+    <p>Machine cost at $50/hr (China): Orientation A = $425, Orientation B = $260</p>
+    <p>Note: Orientation B requires more support structure (~15% more material cost), but the machine time saving is dominant.</p>
+    <div class="result">Laying this part flat saves $165 in machine time (39% reduction) at a Chinese service bureau.</div>
+  </div>
+
+  <h3>Practical Build Height Guidelines</h3>
+
+  <ul>
+    <li><strong>Minimize Z-height first</strong> — orient the part so the longest dimension lies in XY, not Z, whenever structural and surface finish requirements permit.</li>
+    <li><strong>Accept more support</strong> — in most cases, the cost of additional support material and removal labor is lower than the machine time cost of a taller build.</li>
+    <li><strong>Tilting pays off</strong> — rotating a part 45 degrees in one axis often reduces Z-height by 30%, reducing machine time by a similar proportion.</li>
+    <li><strong>Use nesting software</strong> — fill the build plate with multiple parts oriented for minimum Z-height. Empty build plate volume is wasted machine time cost.</li>
+    <li><strong>Watch support density under tilted features</strong> — overhang angles below 45 degrees require support regardless of orientation; factor in support removal cost when tilting.</li>
+  </ul>
+
+  <!-- SECTION 6: SIZE COMPARISON -->
+  <h2 id="size-comparison">6. Cost Comparison Table by Part Size</h2>
+
+  <p>The following table shows representative total part cost ranges for three size categories, in two common materials (316L and MS1), from both Chinese and US/EU service bureaus. These estimates assume medium complexity (some internal features, moderate support requirements), standard post-processing (heat treat, support removal, shot blast), and no CNC finishing. CMM inspection and material certificates are not included.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Part Size</th>
+        <th>Volume</th>
+        <th>Mass (316L)</th>
+        <th>China (316L)</th>
+        <th>US/EU (316L)</th>
+        <th>China (MS1)</th>
+        <th>US/EU (MS1)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Small</strong><br/>(e.g., bracket, fitting)</td>
+        <td>5–50 cm³</td>
+        <td>40–395 g</td>
+        <td class="val-good">$80–250</td>
+        <td class="val-bad">$180–550</td>
+        <td class="val-good">$90–280</td>
+        <td class="val-bad">$200–600</td>
+      </tr>
+      <tr>
+        <td><strong>Medium</strong><br/>(e.g., housing, insert)</td>
+        <td>50–300 cm³</td>
+        <td>0.4–2.4 kg</td>
+        <td class="val-good">$200–650</td>
+        <td class="val-bad">$450–1,400</td>
+        <td class="val-good">$220–720</td>
+        <td class="val-bad">$490–1,550</td>
+      </tr>
+      <tr>
+        <td><strong>Large</strong><br/>(e.g., mold core, manifold)</td>
+        <td>300–1,000 cm³</td>
+        <td>2.4–7.9 kg</td>
+        <td class="val-good">$600–2,000</td>
+        <td class="val-bad">$1,300–4,500</td>
+        <td class="val-good">$650–2,200</td>
+        <td class="val-bad">$1,450–5,000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Note that these are all-in part costs including powder, machine time, standard post-processing, and overhead — but not CNC finish machining, HIP treatment, NDT, or CMM inspection with reports, which add cost if specified.</p>
+
+  <!-- SECTION 7: CHINA VS WEST -->
+  <h2 id="china-vs-west">7. China vs US/EU Cost Comparison</h2>
+
+  <p>The 40–60% cost advantage of Chinese metal 3D printing service bureaus over US and EU equivalents is real, persistent, and well-documented. It is not a quality compromise — it is a structural cost difference driven by three independent factors that cannot be arbitraged away:</p>
+
+  <h3>Labor Cost Differential</h3>
+  <p>Skilled AM technicians in China earn $8,000–$18,000/year versus $55,000–$85,000/year in the US. For post-processing operations that are heavily labor-intensive (support removal on complex geometries, manual polishing, inspection), this 4–5x labor cost difference flows directly into part pricing. For a part requiring 4 hours of post-processing labor, the labor component alone is $12–24 in China vs. $80–160 in the US.</p>
+
+  <h3>Machine Acquisition and Operating Cost</h3>
+  <p>Chinese service bureaus increasingly use domestically manufactured SLM platforms (BLT, Farsoon, Bambu Lab industrial) that cost 40–60% less than EOS or Renishaw equivalents. Lower capital cost means lower depreciation per part. Operating costs including electricity, gas, and facility rent are also significantly lower in Chinese industrial zones.</p>
+
+  <h3>Competitive Market Pressure</h3>
+  <p>China has a dense ecosystem of metal AM service bureaus concentrated in Guangdong, Jiangsu, and Zhejiang provinces. High competition among hundreds of competing bureaus keeps margins thin and prices low, with service bureaus continuously investing in capacity to maintain competitive positioning.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Cost Factor</th>
+        <th>China</th>
+        <th>USA</th>
+        <th>Germany</th>
+        <th>China Advantage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>EOS M290 hourly rate</td>
+        <td>$40–55</td>
+        <td>$80–120</td>
+        <td>$90–130</td>
+        <td class="val-good">50–55% cheaper</td>
+      </tr>
+      <tr>
+        <td>Post-processing labor ($/hr)</td>
+        <td>$8–15</td>
+        <td>$45–65</td>
+        <td>$50–75</td>
+        <td class="val-good">75–80% cheaper</td>
+      </tr>
+      <tr>
+        <td>Metal powder (316L, $/kg)</td>
+        <td>$55–90</td>
+        <td>$70–110</td>
+        <td>$75–120</td>
+        <td class="val-good">20–30% cheaper</td>
+      </tr>
+      <tr>
+        <td>International shipping (DHL, 5 kg)</td>
+        <td>$80–150 surcharge</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td class="val-neutral">Net still 35–55% cheaper</td>
+      </tr>
+      <tr>
+        <td>Typical all-in savings vs US bureau</td>
+        <td colspan="3" style="text-align:center;">—</td>
+        <td class="val-good"><strong>40–60%</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    <p>MouldNova operates EOS M290 and compatible SLM platforms from our Ningbo facility. Our all-in pricing for a medium 316L part typically runs $200–$650, versus $450–$1,400 for equivalent US bureau quotes. Lead time is 5–10 business days including international DHL express shipping, tracked door-to-door.</p>
+  </blockquote>
+
+  <!-- SECTION 8: REDUCE COST -->
+  <h2 id="reduce-cost">8. Eight Strategies to Reduce Metal 3D Printing Cost</h2>
+
+  <p>These eight strategies are ranked roughly by impact — the first three have the largest effect and can each independently reduce cost by 20–40%. Apply multiple strategies together for compounding savings.</p>
+
+  <div class="step-block">
+    <div class="step-block__number">Strategy 1</div>
+    <div class="step-block__title">Optimize Build Orientation to Minimize Z-Height</div>
+    <p>As explained in Section 5, build height is the dominant driver of machine time. Before submitting any quote request, review your CAD model and identify the orientation that minimizes Z-height while maintaining required surface finish and allowing support access. Even a 20% reduction in Z-height translates directly to a 20% reduction in machine time cost — typically saving $30–$100 per part depending on size and platform.</p>
+    <p><strong>Action:</strong> Request your supplier run nesting and orientation optimization in Magics or Amphyon. Specify that you want to minimize build time, not minimize supports, and let them trade off accordingly.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Strategy 2</div>
+    <div class="step-block__title">Nest Multiple Parts in One Build</div>
+    <p>The fixed cost of machine setup, build plate preparation, and heat treatment is amortized across all parts in a build. A single-part build might pay $80 in fixed setup costs; a 20-part nested build pays the same $80 fixed cost spread across 20 units, reducing per-part overhead by 95%. If you have multiple part numbers or variants, discuss multi-part builds with your supplier. MouldNova routinely nests 10–30 parts per build for customers with regular recurring orders, reducing effective per-part cost by 15–25%.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Strategy 3</div>
+    <div class="step-block__title">Reduce or Eliminate Support Structures Through DfAM</div>
+    <p>Support structures are double-bad: they consume expensive metal powder at 1:1 powder cost, and they require time-consuming manual removal labor. Parts with large horizontal overhangs, closed cavities, and cantilever features accumulate support costs rapidly. Self-supporting geometries (overhangs &gt;45 degrees, teardrop holes instead of round holes in horizontal faces, chamfered undersides of ledges) eliminate or drastically reduce support requirements. Design for Additive Manufacturing (DfAM) review at the concept stage can cut support volume by 50–80% and reduce total part cost by 10–20%.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Strategy 4</div>
+    <div class="step-block__title">Choose the Least Expensive Alloy That Meets Requirements</div>
+    <p>Review your material specification with your materials engineer and ask specifically: what temperature, corrosion, fatigue, and hardness requirements must this part meet? In many cases, engineers specify Inconel for parts that would perform identically in 316L at 40–70°C operating temperatures. Similarly, MS1 maraging steel is often specified for tooling applications where conventional tool steel (H13, P20) with a surface treatment would perform equally. Each step down the alloy cost ladder saves 30–60% on powder cost and typically reduces post-processing cost as well.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Strategy 5</div>
+    <div class="step-block__title">Batch Production Orders</div>
+    <p>Pricing on metal 3D printing is not perfectly linear — there are fixed costs per build and per order that make unit prices drop significantly at higher quantities. A single-off prototype may cost $600; an order of 10 identical parts may cost $350 each; an order of 50 may cost $220 each. This is because setup costs, nesting efficiency, build plate utilization, and heat treatment batching all improve at scale. If you anticipate needing multiple units over the next 6–12 months, consider ordering a batch rather than one at a time — the savings are typically 25–40% per unit.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Strategy 6</div>
+    <div class="step-block__title">Accept As-Built Surface Finish Where Possible</div>
+    <p>SLM/DMLS parts have surface roughness of Ra 5–15 microns as-built (depending on orientation relative to build direction). This is adequate for most structural, internal, and non-mating surfaces. Specifying CNC finish machining of a surface that doesn't need it adds $50–200 in cost per surface. Map your part's surface function requirements: non-functional surfaces, internal features, and concealed faces should stay as-built. Reserve machining specifications for sealing surfaces, bearing journals, and precision-fit interfaces only.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Strategy 7</div>
+    <div class="step-block__title">Use a Chinese Service Bureau</div>
+    <p>For parts where geographic source is not restricted by your quality system or customer contract, sourcing from a reputable Chinese metal AM service bureau is the single largest cost reduction available. As detailed in Section 7, the structural cost advantage is 40–60%. MouldNova provides ISO-compliant processes, material certificates, dimensional inspection reports, and DHL express door-to-door shipping with 5–10 business day lead times. For non-regulated commercial applications, quality is equivalent to US and EU bureau output from equivalent machine platforms.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Strategy 8</div>
+    <div class="step-block__title">Use Hybrid Manufacturing for Large Parts</div>
+    <p>For large parts where only certain features require additive manufacturing (internal channels, complex undercuts, topology-optimized lattices), hybrid manufacturing combines CNC machining of the bulk geometry with metal 3D printing of only the features that benefit from AM. A mold core insert, for example, might be CNC-machined from P20 tool steel for the bulk body, with only the conformal cooling core 3D-printed in MS1 and bonded or threaded into position. This approach reduces AM volume (and cost) by 60–80% on suitable parts while delivering the functional benefit of AM features.</p>
+  </div>
+
+  <!-- SECTION 9: VS ALTERNATIVES -->
+  <h2 id="vs-alternatives">9. When Metal 3D Printing Is Cost-Competitive vs CNC Machining and Casting</h2>
+
+  <p>Metal 3D printing is not the lowest-cost manufacturing process in all situations. Understanding where it wins and where it loses against CNC machining and casting allows you to make the right sourcing decision for each part.</p>
+
+  <h3>Metal 3D Printing vs CNC Machining</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Factor</th>
+        <th>Metal 3D Printing Wins</th>
+        <th>CNC Machining Wins</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Internal features</td>
+        <td class="val-good">Channels, lattices, undercuts — impossible to machine</td>
+        <td class="val-neutral">External features and through-features only</td>
+      </tr>
+      <tr>
+        <td>Quantity</td>
+        <td class="val-good">1–50 units (no tooling setup cost)</td>
+        <td class="val-good">50+ units (setup amortized)</td>
+      </tr>
+      <tr>
+        <td>Titanium / Inconel</td>
+        <td class="val-good">Prints at same cost regardless of machinability</td>
+        <td class="val-bad">Expensive tooling, slow speeds, frequent tool changes</td>
+      </tr>
+      <tr>
+        <td>Surface finish / tolerance</td>
+        <td class="val-bad">Ra 5–15 µm as-built; needs machining for &lt;Ra 1.6</td>
+        <td class="val-good">Ra 0.4–1.6 µm achievable; tolerances to ±0.01 mm</td>
+      </tr>
+      <tr>
+        <td>Solid prismatic parts</td>
+        <td class="val-bad">Expensive relative to CNC; no geometric advantage</td>
+        <td class="val-good">Most cost-effective for simple solid geometries</td>
+      </tr>
+      <tr>
+        <td>Lead time (1 unit)</td>
+        <td class="val-good">3–7 days</td>
+        <td class="val-neutral">5–15 days (programming + setup + machining)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Metal 3D Printing vs Investment Casting</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Factor</th>
+        <th>Metal 3D Printing Wins</th>
+        <th>Investment Casting Wins</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tooling cost</td>
+        <td class="val-good">Zero tooling cost for any geometry</td>
+        <td class="val-bad">$5,000–$50,000 die/mold tooling required</td>
+      </tr>
+      <tr>
+        <td>Lead time</td>
+        <td class="val-good">5–10 days including post-processing</td>
+        <td class="val-bad">4–12 weeks for casting tooling + first article</td>
+      </tr>
+      <tr>
+        <td>Quantity (high volume)</td>
+        <td class="val-bad">Expensive per part above 200–500 units</td>
+        <td class="val-good">Low per-part cost at 500+ units once tooling amortized</td>
+      </tr>
+      <tr>
+        <td>Geometric complexity</td>
+        <td class="val-good">Unlimited internal complexity, lattices, fine features</td>
+        <td class="val-neutral">Complex external geometry possible; internal features limited</td>
+      </tr>
+      <tr>
+        <td>Design iteration</td>
+        <td class="val-good">Change CAD file; no tooling modification</td>
+        <td class="val-bad">Tooling modification adds cost and 2–4 weeks</td>
+      </tr>
+      <tr>
+        <td>Material range</td>
+        <td class="val-good">All weldable alloys including Inconel, Ti, CuCrZr</td>
+        <td class="val-neutral">Most alloys castable; some difficult (titanium, CuCrZr)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>The Conformal Cooling Exception</h3>
+
+  <p>For <a href="../conformal-cooling-inserts.html">conformal cooling mold inserts</a>, the cost comparison is straightforward: metal 3D printing wins unconditionally because conformal channels are geometrically impossible to produce by any other manufacturing method. There is no CNC or casting alternative that produces curved, contour-following internal cooling channels. The relevant comparison is not 3D printing vs CNC — it is conformal cooling vs conventional straight-drilled cooling, which is a question answered by cycle time savings and ROI, not manufacturing process cost.</p>
+
+  <p>See our <a href="conformal-cooling-roi.html">conformal cooling ROI calculator guide</a> for detailed payback analysis on this comparison.</p>
+
+  <!-- MID-ARTICLE CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Get a Metal 3D Printing Quote in 24 Hours</div>
+    <div class="blog-cta__text">Send your STEP file and material/finish requirements to MouldNova. We quote all-in pricing including post-processing, inspection, and DHL express shipping from China. Most quotes returned within 24 hours. 40–60% below US/EU bureau pricing with equivalent quality documentation.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp — Send STEP File Now
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Request Quote by Email &rarr;</a>
+    </div>
+  </div>
+
+  <!-- SECTION 10: FAQ -->
+  <h2 id="faq">10. FAQ — Metal 3D Printing Cost</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the typical cost of metal 3D printing per part?</div>
+    <p class="faq-block__a">Metal 3D printing cost per part ranges from $80–250 for small parts (under 50 cm³) from a Chinese service bureau, and $50–200 for comparable pricing from US/EU bureaus for very small parts. Medium parts (50–300 cm³) typically cost $200–650 from China or $450–1,400 from US/EU bureaus. Large parts (300–1,000 cm³) run $600–2,000 from China or $1,300–4,500 from US/EU sources. The wide range within each category reflects material choice, post-processing requirements, and batch size. Adding CNC finish machining, HIP, or CMM inspection with reports adds further cost.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How does material choice affect metal 3D printing cost?</div>
+    <p class="faq-block__a">Material powder cost is 20–30% of total part cost and varies significantly by alloy. Maraging steel MS1 runs $0.10–0.15/g, stainless steel 316L costs $0.08–0.12/g, titanium Ti64 is $0.25–0.40/g, copper alloy CuCrZr is $0.20–0.30/g, and Inconel 625/718 is $0.30–0.50/g. Switching from Ti64 to 316L where mechanically acceptable reduces material cost by 60–70%. Switching from Inconel to MS1 where corrosion resistance is not required saves 50–65% on powder cost alone. Material choice is the highest-impact single decision you make before printing.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Why does build height affect metal 3D printing cost more than XY footprint?</div>
+    <p class="faq-block__a">Metal powder bed fusion machines build layer by layer in the Z direction. Each layer requires a full recoating cycle regardless of how much of the XY plate is occupied. A part that is tall in Z occupies the machine for proportionally more time than a short part of identical volume. Two parts with the same mass but oriented differently — one upright (tall Z) and one horizontal (short Z) — can differ in machine time by 40–80%. This is why experienced engineers always orient parts to minimize build height in Z, even at the cost of more support structure, to reduce machine time cost.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How much can I save by using a Chinese metal 3D printing service bureau?</div>
+    <p class="faq-block__a">Chinese service bureaus typically quote 40–60% below US and EU providers for equivalent parts. The primary drivers are lower machine hourly rates ($40–70/hr in China vs. $80–200/hr in the US/EU), lower labor costs for post-processing, and lower facility overhead. For a medium-complexity 316L stainless part quoted at $450 from a US bureau, the same part from a reputable Chinese bureau like MouldNova would typically come in at $180–270 including international DHL shipping. Quality and certification standards are comparable when working with ISO-certified Chinese providers using equivalent EOS or Renishaw machines.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">When is metal 3D printing more cost-effective than CNC machining or casting?</div>
+    <p class="faq-block__a">Metal 3D printing is most cost-competitive versus CNC machining for parts with internal features (channels, lattices, undercuts) that machining cannot produce, for quantities of 1–50 parts where tooling setup cost dominates CNC economics, and for titanium or Inconel parts where machining requires expensive tooling and long cycle times. Versus casting, metal 3D printing wins on lead time (days vs. 4–12 weeks for casting tooling), design flexibility, and geometric complexity. Casting becomes more economical above roughly 200–500 units depending on part size. For conformal cooling inserts, 3D printing is almost always cost-effective because the cooling geometry cannot be produced by any other method.</p>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Reduce Your Metal 3D Printing Cost by 40–60%</div>
+    <div class="blog-cta__text">MouldNova is a China-based metal AM service bureau specializing in SLM/DMLS for conformal cooling inserts, rapid prototypes, and low-volume production. All-in pricing includes powder, machine time, standard post-processing, and DHL express shipping. We quote 40–60% below US and EU bureaus with equivalent documentation. Send your STEP file for a free quote — returned within 24 hours.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp — Get Free Quote
+      </a>
+      <a href="../metal-3d-printing-service.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">View Metal 3D Printing Service &rarr;</a>
+    </div>
+  </div>
+
+  <!-- INTERNAL LINKS -->
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href="../metal-3d-printing-service.html">Metal 3D Printing Service — Platform Specs, Materials &amp; Lead Times</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts — SLM-Printed MS1 Tool Inserts</a></li>
+    <li><a href="../metal-rapid-prototyping.html">Metal Rapid Prototyping — Prototype Parts in 5–10 Days</a></li>
+    <li><a href="conformal-cooling-roi.html">Conformal Cooling ROI: Payback Period, Annual Savings &amp; 5-Year NPV</a></li>
+    <li><a href="conformal-cooling-simulation-workflow.html">Conformal Cooling Simulation Workflow — Moldflow to Print</a></li>
+    <li><a href="../case-studies.html">Case Studies — Real Production Data from Conformal Cooling Programs</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>
