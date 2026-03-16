@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Print Metal Casting: Investment Casting, Sand Casting &amp; Die Casting with 3D Printing | MouldNova</title>
+  <meta name="description" content="How 3D printing enables better metal casting — investment casting with SLA/DLP resin patterns, sand casting with binder jetting, and die casting with conformal cooling inserts. Comparison table, cost analysis, and when to cast vs. direct print." />
+  <meta name="keywords" content="3d print metal casting, metal casting from 3d print, investment casting 3d printing, sand casting binder jetting, 3d printed patterns for casting, direct metal 3d printing vs casting" />
+  <link rel="canonical" href="https://mouldnova.com/blog/3d-print-metal-casting.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/3d-print-metal-casting.html" />
+  <meta property="og:title" content="3D Print Metal Casting: How to Use 3D Printing for Investment Casting &amp; Sand Casting" />
+  <meta property="og:description" content="Complete guide to 3D-print-assisted metal casting: investment casting with resin patterns, sand casting via binder jetting, die casting with conformal cooling inserts, and a full comparison vs. direct metal 3D printing." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/3d-print-metal-casting.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .formula-box { background:var(--black); color:#fff; border-radius:12px; padding:28px 32px; margin:28px 0; font-family:monospace; }
+    .formula-box__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-family:sans-serif; font-weight:700; }
+    .formula-box__line { font-size:1.05rem; line-height:2; color:#e5e5e5; }
+    .formula-box__line strong { color:#fff; }
+    .formula-box__line .var { color:#fbbf24; }
+    .worked-example { background:#f0f7ff; border:1px solid #bfdbfe; border-radius:12px; padding:24px; margin:20px 0; }
+    .worked-example__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#1d4ed8; font-weight:700; margin-bottom:10px; }
+    .worked-example__title { font-size:1.05rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .worked-example p { font-size:0.95rem; color:#333; line-height:1.75; margin-bottom:8px; }
+    .worked-example .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .case-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .case-card__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .case-card__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .case-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .case-card .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+      .formula-box__line { font-size:0.88rem; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "3D Print Metal Casting: How to Use 3D Printing for Investment Casting & Sand Casting",
+    "description": "Complete guide to 3D-print-assisted metal casting: investment casting with SLA/DLP resin patterns, sand casting via binder jetting, die casting with conformal cooling inserts, comparison vs. direct metal 3D printing, cost analysis, and materials achievable through casting.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-16",
+    "dateModified": "2026-03-16",
+    "mainEntityOfPage": "https://mouldnova.com/blog/3d-print-metal-casting.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can you use a 3D printed pattern for investment casting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. SLA and DLP resin patterns are the most widely used 3D-printed investment casting patterns. They replace traditional wax injection tooling and eliminate the pattern-tool cost, which typically ranges from $2,000 to $15,000 for complex geometries. The resin pattern is coated in ceramic slurry, burned out in an autoclave or flash-fire oven, and replaced with molten metal exactly as a wax pattern would be. Quickcast-style hollow SLA patterns minimize thermal expansion stress during burnout. Suitable resins include Accura Castable (3D Systems), Somos EvoLVe 128, and standard DLP castable resins from Formlabs and Asiga."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between direct metal 3D printing and 3D print + casting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Direct metal 3D printing (SLM, DMLS, EBM) builds metal parts layer by layer from metal powder. 3D print + casting uses a 3D-printed pattern or mold to produce parts by traditional casting. Direct printing offers tighter tolerances (±0.1–0.2 mm), better density (>99.5%), and access to high-performance alloys like maraging steel and Inconel. Casting achieves much lower cost per part at volume, access to a wider range of alloys (gray iron, bronze, aluminum alloys not available in powder form), and near-net-shape geometry for large parts that would exceed direct-print build volumes. The crossover point is typically around 20–50 parts: below this, direct printing or 3D-printed pattern casting wins on speed; above this, conventional casting with 3D-printed tooling wins on cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What 3D printing technology is best for sand casting molds?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Binder jetting is the dominant technology for 3D printing sand casting molds and cores. Systems from ExOne (now Desktop Metal) and Voxeljet print silica or ceramic sand bound with furan or phenolic resin. The resulting sand molds match the dimensional accuracy and permeability of traditional hand-rammed sand molds but can be produced from CAD data in 6–24 hours without pattern tooling. This makes binder-jetted sand molds ideal for prototype castings, short runs under 50 units, and geometrically complex cores (oil passages, water jackets) that cannot be produced with conventional core boxes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What metals can be cast using 3D-printed patterns that cannot be directly 3D printed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casting opens access to a much wider alloy range than direct metal 3D printing. Gray iron (GG25, GG30) and ductile iron are routinely cast but are not available in powder form for SLM/DMLS. Yellow brass, silicon bronze, and tin bronze are commonly investment cast for decorative and marine applications. Aluminum casting alloys A356, A380, and LM25 are widely cast but differ from the Al-Si-Mg alloys used in direct printing. Nickel-aluminum bronze and manganese bronze for heavy-duty pump and valve components are also cast. In general, any metal that can be melted can be cast, while direct printing is limited to alloys available as spherical powder — currently fewer than 30 commercially available options."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does MouldNova use 3D printing for die casting molds?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MouldNova uses metal 3D printing (SLM) to manufacture conformal cooling inserts for die casting dies. Traditional die casting tooling uses straight-drilled cooling channels that cannot follow the complex contours of die cavity surfaces, resulting in uneven heat extraction, thermal fatigue cracking, and cycle time penalties. MouldNova's 3D-printed H13 or maraging steel inserts contain conformal cooling channels that follow the cavity surface at a constant 2–3 mm standoff. This reduces die surface temperature variation from ±30°C to ±5°C, extends die life by 30–60%, reduces cycle time by 15–25%, and reduces porosity in cast parts. See our conformal cooling die casting guide for full case data."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Metal Casting &amp; 3D Printing Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">3D Print Metal Casting: How to Use 3D Printing for Investment Casting &amp; Sand Casting</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 18 min read &middot; Written for engineers, foundry teams, and product developers choosing between direct metal printing and cast metal</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">3D Print + Metal Casting — Key Facts at a Glance</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">60–80%</div>
+      <div class="data-cell__label">Pattern Tooling Cost Savings vs. Traditional Wax Tooling</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">5–7 days</div>
+      <div class="data-cell__label">Lead Time for First Cast Parts from CAD</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">30+ alloys</div>
+      <div class="data-cell__label">Castable Metals Unavailable in Direct Print Powder</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">Ra 3–6 µm</div>
+      <div class="data-cell__label">Investment Cast Surface Finish (as-cast)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#how-3d-printing-enables-casting">1. How 3D Printing Enables Better Metal Casting</a>
+    <a href="#investment-casting">2. Investment Casting with 3D Printed Patterns (SLA/DLP)</a>
+    <a href="#sand-casting">3. Sand Casting with Binder Jetting (ExOne, Voxeljet)</a>
+    <a href="#die-casting">4. Die Casting with 3D Printed Conformal Cooling Inserts</a>
+    <a href="#comparison-table">5. Comparison: Direct Metal 3D Printing vs. 3D Print + Cast</a>
+    <a href="#when-to-cast">6. When to Cast vs. When to Directly 3D Print Metal</a>
+    <a href="#materials">7. Materials Achievable Through Casting vs. Direct Printing</a>
+    <a href="#cost-comparison">8. Cost Comparison and Volume Thresholds</a>
+    <a href="#case-examples">9. Case Examples</a>
+    <a href="#faq">10. FAQ</a>
+  </div>
+
+  <p>3D printing and metal casting are not competing processes — they are increasingly complementary ones. Engineers who understand how to combine them unlock a route to metal parts that is faster than traditional casting, cheaper than direct metal 3D printing at volume, and capable of producing alloys that no metal powder bed system can match.</p>
+
+  <p>This guide covers the three principal ways 3D printing is used to improve metal casting: (1) 3D-printed wax or resin patterns for investment casting, which eliminate expensive pattern tooling; (2) 3D-printed sand molds and cores for sand casting, produced by binder jetting without any pattern tooling at all; and (3) 3D-printed conformal cooling inserts for die casting dies, which improve heat extraction, reduce cycle time, and extend die life. Each section explains the technology, the business case, and the practical constraints you need to know before committing to a path.</p>
+
+  <!-- SECTION 1: HOW 3D PRINTING ENABLES CASTING -->
+  <h2 id="how-3d-printing-enables-casting">1. How 3D Printing Enables Better Metal Casting</h2>
+
+  <p>Traditional metal casting — whether investment, sand, or die — relies on patterns, molds, and tooling that must be machined from metal or wood. These tools are expensive (investment casting wax tooling: $3,000–$20,000 per pattern; sand casting match plates: $5,000–$30,000; die casting dies: $30,000–$200,000) and slow to produce (4–12 weeks lead time is normal). For small batches, prototypes, or geometrically complex parts, these costs and lead times are prohibitive.</p>
+
+  <p>3D printing disrupts all three phases of the traditional tooling chain:</p>
+
+  <ul>
+    <li><strong>Pattern phase:</strong> SLA, DLP, and FDM printers can produce wax-like burnout patterns directly from CAD data in 12–48 hours for a fraction of injected-wax tooling cost. No pattern tooling is needed.</li>
+    <li><strong>Mold phase:</strong> Binder jetting can print sand molds and cores directly from CAD data, eliminating match plates and core boxes entirely. Complex internal geometries — oil galleries, water jackets, undercuts — that would require multiple piece cores can be printed as single integrated units.</li>
+    <li><strong>Die tooling phase:</strong> Metal 3D printing (SLM/DMLS) produces die inserts with internal conformal cooling channels that cannot be machined by any conventional method, enabling heat extraction performance impossible with drilled tooling.</li>
+  </ul>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Key Principle</div>
+    <div class="benefit-block__headline">3D Printing Removes the Pattern Tooling Barrier</div>
+    <p class="benefit-block__body">The traditional casting workflow requires a pattern tool before a single cast part can be produced. 3D printing eliminates this gating step, compressing the path from CAD to first metal part from 6–14 weeks to 5–10 days. This makes casting economically viable at quantities of 1–50 units where it was previously impractical.</p>
+  </div>
+
+  <!-- SECTION 2: INVESTMENT CASTING -->
+  <h2 id="investment-casting">2. Investment Casting with 3D Printed Patterns (SLA/DLP)</h2>
+
+  <p>Investment casting — also called lost-wax casting — is the highest-precision casting process available for complex metal parts. It achieves tolerances of ±0.1–0.3 mm and surface finishes of Ra 3–6 µm as-cast, approaching the quality of machined surfaces. Traditional investment casting uses injected-wax patterns, which require precision steel tooling. 3D-printed resin patterns eliminate this requirement entirely.</p>
+
+  <h3>How the Process Works</h3>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 1</div>
+    <div class="step-block__title">Print the Burnout Pattern</div>
+    <p>An SLA, DLP, or MJF printer produces a pattern in castable resin. Hollow or lattice-filled "Quickcast" structures reduce resin volume by 60–80%, minimizing thermal expansion stress during burnout. Common resins: 3D Systems Accura Castable, Somos EvoLVe 128, Formlabs Castable Wax, Asiga PlasCast.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 2</div>
+    <div class="step-block__title">Build the Ceramic Shell</div>
+    <p>The pattern is dipped repeatedly in ceramic slurry (typically alumino-silicate) and coated with stucco sand. After 8–12 dip cycles over 2–3 days, a ceramic shell 6–10 mm thick surrounds the pattern. The shell is dried thoroughly before burnout.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 3</div>
+    <div class="step-block__title">Burn Out the Pattern</div>
+    <p>The shelled assembly is loaded into an autoclave or flash-fire oven at 850–1050°C. The resin pattern burns out completely, leaving a cavity in the exact geometry of the original CAD model. A final high-temperature firing strengthens the shell. This step requires resin with <0.1% ash content to avoid inclusions in the casting.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 4</div>
+    <div class="step-block__title">Pour and Finish</div>
+    <p>Molten metal is poured into the pre-heated ceramic shell under gravity or vacuum assist. After solidification, the ceramic shell is broken away and the casting is cut from the gating system, heat-treated if required, and finish-machined on critical surfaces only.</p>
+  </div>
+
+  <h3>When 3D-Printed Investment Casting Patterns Make Sense</h3>
+
+  <p>The investment casting + 3D-printed pattern route is the right choice when:</p>
+
+  <ul>
+    <li>Part quantity is 1–200 units (above ~500 units, injected wax tooling amortizes favorably)</li>
+    <li>Geometry is too complex for direct metal 3D printing (thin walls below 0.8 mm, internal channels, undercuts)</li>
+    <li>Target alloy is not available in direct-print powder form (brass, bronze, gray iron, A380 aluminum)</li>
+    <li>Surface finish requirements are Ra 3–10 µm — better than FDM but similar to SLM</li>
+    <li>Part size exceeds the build volume of available metal printers (most SLM systems max out at 250–400 mm)</li>
+  </ul>
+
+  <blockquote>
+    <p>A tier-2 aerospace supplier replaced $18,000 in wax injection tooling with $340 in SLA castable resin patterns for a titanium bracket prototype run of 12 units. Total lead time compressed from 11 weeks to 9 days. Surface finish (Ra 4.2 µm as-cast) exceeded specification without secondary polishing.</p>
+  </blockquote>
+
+  <!-- SECTION 3: SAND CASTING -->
+  <h2 id="sand-casting">3. Sand Casting with Binder Jetting (ExOne, Voxeljet)</h2>
+
+  <p>Sand casting is the world's most widely used casting process by volume, producing everything from engine blocks to pump housings to sculpture. Its traditional weakness is lead time: producing the patterns, match plates, and core boxes needed before the first sand mold can be rammed takes 4–10 weeks. Binder jetting eliminates all of this tooling.</p>
+
+  <h3>Binder Jetting for Sand Molds and Cores</h3>
+
+  <p>Binder jetting systems from ExOne (now Desktop Metal), Voxeljet, and Viridis3D print sand molds directly from STL files. The printer deposits a liquid binder into a bed of silica, zircon, or chromite sand, bonding it layer by layer into a rigid mold. No heat is applied during printing. The resulting mold is removed from the powder bed, excess sand is vacuumed away, and the mold is ready for pouring — typically within 6–24 hours of print start.</p>
+
+  <p>Key specifications for production binder-jetted sand molds:</p>
+
+  <ul>
+    <li><strong>Layer thickness:</strong> 200–400 µm (finer than hand-rammed green sand)</li>
+    <li><strong>Minimum wall in mold:</strong> 3–5 mm (thinner walls are fragile during handling)</li>
+    <li><strong>Dimensional accuracy:</strong> ±0.3–0.5 mm (comparable to conventional sand casting)</li>
+    <li><strong>Maximum build volume:</strong> Voxeljet VX4000 reaches 4,000 × 2,000 × 1,000 mm — suitable for large engine castings</li>
+    <li><strong>Binder systems:</strong> Furan, phenolic, and inorganic binders; inorganic binders produce lower gas porosity and are preferred for aluminum</li>
+  </ul>
+
+  <h3>Advantages Over Conventional Sand Casting Tooling</h3>
+
+  <p>Binder-jetted sand molds deliver three structural improvements over conventionally tooled sand casting:</p>
+
+  <ul>
+    <li><strong>Complex cores without core boxes:</strong> Oil passages, water jackets, and internal cavities that previously required multiple separate cores assembled by hand can be printed as single integrated units. This eliminates core assembly error and reduces the number of parting-line flash locations.</li>
+    <li><strong>No draft angle requirement:</strong> Because the mold is not drawn from a pattern, vertical surfaces and slight undercuts are possible without the 1–3° draft angles that conventional sand casting requires. This often eliminates post-cast machining on functional surfaces.</li>
+    <li><strong>Direct iteration from CAD:</strong> Design changes cost nothing in tooling terms. A revised STL file produces a revised mold in the next print cycle. This makes binder-jetted sand casting the preferred route for casting development and design validation programs.</li>
+  </ul>
+
+  <!-- SECTION 4: DIE CASTING -->
+  <h2 id="die-casting">4. Die Casting with 3D Printed Conformal Cooling Inserts</h2>
+
+  <p>Die casting uses permanent steel tooling (dies) under high pressure to produce aluminum, zinc, and magnesium parts at very high volumes. Unlike investment and sand casting, die casting tooling is not consumed per part — the same die may produce 100,000 to 500,000 shots before refurbishment. The opportunity for 3D printing in die casting is not to replace the die, but to radically improve its thermal performance through conformal cooling.</p>
+
+  <h3>The Problem with Conventional Die Cooling</h3>
+
+  <p>Die casting dies are cooled through straight-drilled waterline channels. Conventional drilling can only produce straight passages, which means that curved die cavity surfaces — the norm in virtually every die casting part — are cooled unevenly. The closest a conventional waterline can approach a curved cavity surface is dictated by the drill path, not the cavity shape. The result is a die surface with temperature variations of ±20–40°C during steady-state production.</p>
+
+  <p>These temperature non-uniformities have cascading consequences:</p>
+
+  <ul>
+    <li>Hot spots cause thermal fatigue cracking (heat checking) that limits die life to 80,000–120,000 shots instead of the 300,000+ shots achievable with well-controlled thermal cycling</li>
+    <li>Uneven cooling creates differential solidification that causes porosity — particularly problematic for structural automotive castings requiring pressure-tightness</li>
+    <li>Extended cycle time: to avoid cold-shut defects caused by premature solidification in hot-spot areas, operators increase cycle time by 15–30% as a quality buffer</li>
+  </ul>
+
+  <h3>Conformal Cooling Inserts for Die Casting Dies</h3>
+
+  <p>MouldNova's approach uses SLM-printed H13 hot-work tool steel or maraging steel inserts that contain internal conformal cooling channels printed directly into the insert geometry. These channels follow the die cavity surface at a constant 2–3 mm standoff distance — impossible to achieve with any drill. The thermal performance improvement is substantial:</p>
+
+  <ul>
+    <li>Die surface temperature variation reduced from ±30°C to ±4–6°C</li>
+    <li>Cycle time reduction: 15–25% on aluminum die casting (A380, ADC12)</li>
+    <li>Die life extension: 30–60% more shots before heat-check refurbishment</li>
+    <li>Porosity reduction: 40–70% fewer pressure-leak failures on structural parts</li>
+  </ul>
+
+  <p>For more detail on this application, see our dedicated guide: <a href="conformal-cooling-die-casting.html">Conformal Cooling for Die Casting</a>. Our full metal 3D printing capabilities are described at <a href="../metal-3d-printing-service.html">Metal 3D Printing Service</a>.</p>
+
+  <!-- SECTION 5: COMPARISON TABLE -->
+  <h2 id="comparison-table">5. Comparison: Direct Metal 3D Printing vs. 3D Print + Cast</h2>
+
+  <p>Choosing between printing metal directly and using a 3D-printed pattern or mold for casting depends on quantity, alloy, geometry, and budget. The table below summarizes the key decision criteria across both routes.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Criterion</th>
+        <th>Direct Metal 3D Printing (SLM/DMLS)</th>
+        <th>3D Print + Investment Cast</th>
+        <th>3D Print + Sand Cast</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Minimum order quantity</strong></td>
+        <td class="val-good">1 part</td>
+        <td class="val-good">1 part</td>
+        <td class="val-good">1 part</td>
+      </tr>
+      <tr>
+        <td><strong>Cost at 1–5 parts</strong></td>
+        <td class="val-neutral">$$$ (high machine time)</td>
+        <td class="val-good">$$ (pattern + foundry)</td>
+        <td class="val-good">$$ (mold print + pour)</td>
+      </tr>
+      <tr>
+        <td><strong>Cost at 50–500 parts</strong></td>
+        <td class="val-bad">$$$$ (scales poorly)</td>
+        <td class="val-good">$$ (best range)</td>
+        <td class="val-neutral">$$$ (mold per unit)</td>
+      </tr>
+      <tr>
+        <td><strong>Dimensional tolerance</strong></td>
+        <td class="val-good">±0.05–0.15 mm</td>
+        <td class="val-good">±0.1–0.3 mm</td>
+        <td class="val-neutral">±0.3–0.8 mm</td>
+      </tr>
+      <tr>
+        <td><strong>Surface finish (as-built/as-cast)</strong></td>
+        <td class="val-neutral">Ra 6–15 µm</td>
+        <td class="val-good">Ra 3–6 µm</td>
+        <td class="val-bad">Ra 6–25 µm</td>
+      </tr>
+      <tr>
+        <td><strong>Alloy range</strong></td>
+        <td class="val-bad">~25 commercial powder alloys</td>
+        <td class="val-good">Any castable alloy (100+)</td>
+        <td class="val-good">Any castable alloy (100+)</td>
+      </tr>
+      <tr>
+        <td><strong>Maximum part size</strong></td>
+        <td class="val-bad">~400 mm (build volume limit)</td>
+        <td class="val-neutral">Up to ~600 mm practical</td>
+        <td class="val-good">Meters (no size limit)</td>
+      </tr>
+      <tr>
+        <td><strong>Internal features / channels</strong></td>
+        <td class="val-good">Excellent (conformal channels)</td>
+        <td class="val-good">Good (investment cast)</td>
+        <td class="val-good">Good (printed cores)</td>
+      </tr>
+      <tr>
+        <td><strong>Density / porosity</strong></td>
+        <td class="val-good">&gt;99.5% density</td>
+        <td class="val-neutral">98–99.5% (vacuum assist)</td>
+        <td class="val-neutral">96–99% typical</td>
+      </tr>
+      <tr>
+        <td><strong>Lead time (first part)</strong></td>
+        <td class="val-good">3–7 days</td>
+        <td class="val-neutral">5–10 days</td>
+        <td class="val-neutral">3–7 days</td>
+      </tr>
+      <tr>
+        <td><strong>Lead time (vs. traditional)</strong></td>
+        <td class="val-good">Same — no tooling needed</td>
+        <td class="val-good">6–11 weeks faster</td>
+        <td class="val-good">4–10 weeks faster</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 6: WHEN TO CAST VS. PRINT -->
+  <h2 id="when-to-cast">6. When to Cast vs. When to Directly 3D Print Metal</h2>
+
+  <p>The right process is determined by five factors working in combination. No single factor is decisive on its own.</p>
+
+  <h3>Choose Direct Metal 3D Printing (SLM/DMLS) When:</h3>
+
+  <ul>
+    <li><strong>Quantity is fewer than 20 units</strong> and the part fits the build volume — at very low quantities, the absence of any tooling amortization makes direct printing the cheapest route even though per-part machine time is high</li>
+    <li><strong>Tolerance requirements are below ±0.2 mm</strong> — direct printing is the only route to ±0.05–0.15 mm without post-machining</li>
+    <li><strong>Internal conformal features are required</strong> — cooling channels, lattice structures, and topology-optimized internal geometries print more cleanly in direct metal printing than in cast parts</li>
+    <li><strong>The required alloy is available as powder</strong> — if the part must be 316L stainless, 17-4 PH, Ti-6Al-4V, or maraging steel, direct printing is the appropriate route</li>
+    <li><strong>Post-processing must be minimal</strong> — direct-printed parts require less ceramic shell removal and cleanup than cast parts</li>
+  </ul>
+
+  <h3>Choose 3D Print + Casting When:</h3>
+
+  <ul>
+    <li><strong>Quantity is 20–500 units</strong> — in this range, investment casting with 3D-printed patterns consistently delivers lower cost per part than direct SLM printing</li>
+    <li><strong>The target alloy is not available in SLM powder</strong> — gray iron, ductile iron, yellow brass, silicon bronze, A380 aluminum, and dozens of other commercial alloys require casting</li>
+    <li><strong>Part size exceeds 400 mm</strong> — large structural components (pump housings, gearbox cases, impellers) exceed the build volume of available metal printers and must be cast</li>
+    <li><strong>Surface finish requirements are Ra 3–6 µm as-produced</strong> — investment casting delivers better surface finish than SLM without post-polishing</li>
+    <li><strong>Tooling lead time is the bottleneck</strong> — replacing 8-week pattern tooling with 2-day 3D-printed patterns while retaining casting as the production process is often the fastest path</li>
+  </ul>
+
+  <!-- SECTION 7: MATERIALS -->
+  <h2 id="materials">7. Materials Achievable Through Casting vs. Direct Printing</h2>
+
+  <p>The alloy range is one of the most decisive advantages of casting over direct metal 3D printing. Direct metal printing is limited to alloys that can be atomized into spherical powder with consistent chemistry, narrow particle size distribution, and flowability suitable for powder bed processes. Casting has no such constraint — any metal that can be melted can be cast.</p>
+
+  <h3>Alloys Achievable Through Casting That Cannot Be Directly 3D Printed</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Alloy Family</th>
+        <th>Common Grades</th>
+        <th>Key Properties</th>
+        <th>Typical Casting Process</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gray Iron</td>
+        <td>GG25, GG30, FC250</td>
+        <td>Excellent vibration damping, low cost, good machinability</td>
+        <td>Sand casting</td>
+      </tr>
+      <tr>
+        <td>Ductile Iron</td>
+        <td>GGG40, GGG70, EN-GJS</td>
+        <td>Higher strength than gray iron, impact resistance</td>
+        <td>Sand casting</td>
+      </tr>
+      <tr>
+        <td>Yellow Brass</td>
+        <td>CuZn37, C28000</td>
+        <td>Corrosion resistance, machinability, decorative</td>
+        <td>Investment or sand casting</td>
+      </tr>
+      <tr>
+        <td>Silicon Bronze</td>
+        <td>C87500, CuSi3Mn1</td>
+        <td>Marine corrosion resistance, weldability</td>
+        <td>Investment or sand casting</td>
+      </tr>
+      <tr>
+        <td>Tin Bronze</td>
+        <td>C90300, PB1, CuSn10</td>
+        <td>Bearing applications, low friction, wear resistance</td>
+        <td>Sand or centrifugal casting</td>
+      </tr>
+      <tr>
+        <td>Al Casting Alloys</td>
+        <td>A380, A356, LM25, ADC12</td>
+        <td>High fluidity for thin walls, pressure die casting grades</td>
+        <td>Die casting, investment casting</td>
+      </tr>
+      <tr>
+        <td>Nickel-Al Bronze</td>
+        <td>C95400, CuAl10Ni5Fe4</td>
+        <td>Marine, pump impellers, high-load bearings</td>
+        <td>Sand or investment casting</td>
+      </tr>
+      <tr>
+        <td>White Metal / Babbitt</td>
+        <td>SnSb11Cu6, ASTM B23</td>
+        <td>Plain bearing overlay, low friction</td>
+        <td>Centrifugal or static casting</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>In contrast, commercially available direct-print metal alloys number fewer than 30 and are concentrated in four families: stainless steels (316L, 17-4 PH, 15-5 PH), tool steels (H13, M2, maraging 300/350), titanium alloys (Ti-6Al-4V, Ti-6Al-4V ELI), and nickel superalloys (IN625, IN718, Hastelloy X). Copper and aluminum alloys are available but limited in grade selection.</p>
+
+  <!-- SECTION 8: COST COMPARISON -->
+  <h2 id="cost-comparison">8. Cost Comparison and Volume Thresholds</h2>
+
+  <p>The crossover point where casting becomes cheaper than direct metal 3D printing depends on part complexity, weight, and the specific casting process. The following worked examples use realistic 2026 pricing for a mid-complexity aluminum component weighing approximately 800 g.</p>
+
+  <div class="worked-example">
+    <div class="worked-example__label">Worked Example A</div>
+    <div class="worked-example__title">Aluminum Pump Housing — 800 g — 5 Units</div>
+    <p><strong>Direct SLM printing (AlSi10Mg):</strong> Machine time at $3.50/cm³ deposited × 320 cm³ = $1,120 per part. Total 5 units: $5,600. Lead time: 5 days.</p>
+    <p><strong>Investment cast with SLA pattern (A356):</strong> SLA pattern $180, ceramic shell and pour $280, finishing $80. Total per unit: $540. Total 5 units: $2,700. Lead time: 8 days.</p>
+    <p class="result">Casting saves $2,900 (52%) at 5 units — already significantly cheaper despite longer lead time.</p>
+  </div>
+
+  <div class="worked-example">
+    <div class="worked-example__label">Worked Example B</div>
+    <div class="worked-example__title">Aluminum Pump Housing — 800 g — 50 Units</div>
+    <p><strong>Direct SLM printing:</strong> $1,120/unit × 50 = $56,000. Lead time: 25 days (5 build cycles).</p>
+    <p><strong>Investment cast with SLA patterns:</strong> Pattern $180 × 50 = $9,000; casting $220/unit × 50 = $11,000; finishing $60/unit × 50 = $3,000. Total: $23,000. Lead time: 14 days.</p>
+    <p><strong>Investment cast with wax injection tooling (amortized):</strong> Tooling $8,000 ÷ 50 = $160; wax + cast $180/unit × 50 = $9,000. Total: $17,000. Lead time: 10 weeks for first parts.</p>
+    <p class="result">At 50 units: SLA-pattern casting ($23,000) beats direct printing ($56,000) by 59%. Traditional wax tooling beats both on unit cost but requires 10-week tooling lead time.</p>
+  </div>
+
+  <div class="worked-example">
+    <div class="worked-example__label">Volume Threshold Summary</div>
+    <div class="worked-example__title">When Does Each Process Win on Total Cost?</div>
+    <p><strong>1–10 units:</strong> Direct metal printing often competitive due to zero tooling overhead, especially for small, complex parts. 3D-print + investment cast competitive for larger or iron/bronze alloy parts.</p>
+    <p><strong>10–200 units:</strong> 3D-print + investment casting with printed patterns is almost always the lowest total cost route for non-ferrous alloys.</p>
+    <p><strong>200–1,000 units:</strong> Conventional investment casting with injected-wax tooling becomes competitive. Binder-jetted sand casting competitive for larger, simpler parts.</p>
+    <p><strong>1,000+ units:</strong> Conventional casting dominates. 3D printing re-enters the equation only for die casting conformal cooling inserts that improve production efficiency.</p>
+  </div>
+
+  <!-- SECTION 9: CASE EXAMPLES -->
+  <h2 id="case-examples">9. Case Examples</h2>
+
+  <div class="case-card">
+    <div class="case-card__tag">Case Example 1 — Investment Casting</div>
+    <div class="case-card__title">Aerospace Bracket — Ti-6Al-4V — 12 Units</div>
+    <p><strong>Challenge:</strong> A defense contractor needed 12 units of a titanium structural bracket for flight test. Traditional wax injection tooling would cost $22,000 and take 9 weeks. Direct SLM printing quotes came in at $2,800/unit — $33,600 total — with Ra 12 µm surface finish that required extensive post-polishing on aerodynamic surfaces.</p>
+    <p><strong>Solution:</strong> SLA Quickcast patterns (3D Systems Accura Castable) printed in 18 hours at $290/pattern. Ceramic shell built and poured by a specialist titanium investment foundry under vacuum. Total pattern + casting cost: $1,650/unit × 12 = $19,800.</p>
+    <p class="result">Result: $13,800 saved vs. direct SLM printing. Surface finish Ra 4.8 µm as-cast, within specification without polishing. Lead time: 9 days from CAD to first part.</p>
+  </div>
+
+  <div class="case-card">
+    <div class="case-card__tag">Case Example 2 — Sand Casting with Binder Jetting</div>
+    <div class="case-card__title">Engine Block — Gray Iron GG25 — Prototype Run of 3</div>
+    <p><strong>Challenge:</strong> A powertrain engineering team needed 3 prototype engine blocks in gray iron GG25 for dynamometer testing. The blocks contain complex water jacket cores and oil passages that would require 6 separate conventionally rammed cores. Pattern tooling estimate: $45,000, 12-week lead time. No conventional foundry would quote fewer than 50 units.</p>
+    <p><strong>Solution:</strong> Voxeljet VX1000 binder jetting produced complete mold assemblies — cope, drag, and all internal cores as a single integrated unit — from CAD in 22 hours. Poured at a local iron foundry with no tooling required.</p>
+    <p class="result">Result: 3 prototype blocks delivered in 11 days at $8,400 total vs. $45,000+ tooling plus castings. Core assembly eliminated entirely; no flash at internal core joints. Dimensional accuracy ±0.5 mm met engineering requirements.</p>
+  </div>
+
+  <div class="case-card">
+    <div class="case-card__tag">Case Example 3 — Die Casting Conformal Cooling</div>
+    <div class="case-card__title">Automotive Structural Bracket — A380 Aluminum — 200,000 Shots/Year</div>
+    <p><strong>Challenge:</strong> A Tier-1 automotive supplier was experiencing heat-check cracking on a structural bracket die after 95,000 shots, requiring expensive refurbishment. Cycle time of 52 seconds was limiting capacity. Wall thickness variation ±0.4 mm exceeded drawing tolerance of ±0.25 mm at high-volume production rates.</p>
+    <p><strong>Solution:</strong> MouldNova designed and SLM-printed H13 conformal cooling inserts to replace four conventional waterline-cooled inserts. Conformal channels followed the cavity surface at 2.5 mm standoff. See <a href="conformal-cooling-die-casting.html">conformal cooling die casting</a> and <a href="making-molds-with-3d-printing.html">making molds with 3D printing</a> for methodology detail.</p>
+    <p class="result">Result: Die surface temperature variation reduced from ±28°C to ±5°C. Cycle time reduced to 41 seconds (21% improvement). Die life extended to 160,000+ shots before refurbishment. Wall thickness variation ±0.18 mm — within tolerance. Annual saving: $186,000 in cycle time plus $42,000 in die maintenance avoidance.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Need Metal Parts from Casting or Direct 3D Printing?</div>
+    <div class="blog-cta__text">MouldNova provides metal 3D printing for direct parts and conformal cooling tooling. Send your CAD file and quantity target for a process recommendation and quote within 24 hours.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp — Send Your CAD File
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Request a Quote by Email &rarr;</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2 id="faq">10. FAQ — 3D Print Metal Casting</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Can you use a 3D printed pattern for investment casting?</div>
+    <p class="faq-block__a">Yes. SLA and DLP resin patterns are the most widely used 3D-printed investment casting patterns, replacing traditional injected-wax tooling that can cost $2,000–$20,000 per pattern. The resin pattern is coated in ceramic slurry, burned out in an autoclave or flash-fire oven, and replaced with molten metal exactly as a wax pattern would be. Quickcast-style hollow SLA patterns minimize thermal expansion stress during burnout and are the industry standard for aerospace and industrial investment casting prototyping.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the difference between direct metal 3D printing and 3D print + casting?</div>
+    <p class="faq-block__a">Direct metal 3D printing (SLM, DMLS, EBM) builds metal parts layer by layer from metal powder. 3D print + casting uses a 3D-printed pattern or mold to produce parts by traditional casting. Direct printing offers tighter tolerances (±0.05–0.15 mm), higher density (&gt;99.5%), and access to specialist alloys in powder form. Casting achieves much lower cost per part at volume above 20–50 units, access to a far wider range of alloys (gray iron, bronze, brass, and aluminum casting grades unavailable in powder form), and near-net-shape geometry for large parts that exceed direct-print build volumes.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What 3D printing technology is best for sand casting molds?</div>
+    <p class="faq-block__a">Binder jetting is the dominant technology for 3D printing sand casting molds and cores. Systems from ExOne (now Desktop Metal) and Voxeljet print silica or ceramic sand bound with furan or inorganic binder. The resulting molds match the dimensional accuracy and permeability of hand-rammed sand molds but can be produced from CAD data in 6–24 hours without any pattern tooling. Binder-jetted sand molds are ideal for prototype castings, short runs of 1–50 units, and complex cores (oil passages, water jackets) that cannot be produced with conventional core boxes.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What metals can be cast using 3D printed patterns that cannot be directly 3D printed?</div>
+    <p class="faq-block__a">Casting opens access to a far wider alloy range than direct metal 3D printing. Gray iron (GG25, GG30) and ductile iron are routinely cast but unavailable as SLM powder. Yellow brass, silicon bronze, and tin bronze are widely investment cast for corrosion-resistant and marine applications. Aluminum casting alloys A380 and ADC12 are the primary alloys for pressure die casting but are distinct from the Al-Si-Mg alloys used in direct printing. Nickel-aluminum bronze for pumps and valves, and various white metal / Babbitt bearing alloys, are also exclusively cast. In general, any metal that can be melted can be cast, while direct printing is limited to fewer than 30 commercially available powder alloys.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How does 3D printing improve die casting mold performance?</div>
+    <p class="faq-block__a">Metal 3D printing (SLM) enables conformal cooling channels inside die casting inserts — channels that follow the cavity surface at a constant 2–3 mm standoff, impossible to achieve with conventional drilling. MouldNova's conformal cooling inserts reduce die surface temperature variation from ±30°C to ±5°C, cut cycle time by 15–25%, extend die life by 30–60% by reducing thermal fatigue, and reduce porosity in structural castings by 40–70%. For a 200,000-shot/year program, these improvements typically save $150,000–$250,000 annually per die.</p>
+  </div>
+
+  <!-- INTERNAL LINKS -->
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href="../metal-3d-printing-service.html">Metal 3D Printing Service — SLM Capabilities, Materials &amp; Lead Times</a></li>
+    <li><a href="conformal-cooling-die-casting.html">Conformal Cooling for Die Casting — Full Technical Guide</a></li>
+    <li><a href="making-molds-with-3d-printing.html">Making Molds with 3D Printing — From Concept to Production</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts — Service Details &amp; Specifications</a></li>
+    <li><a href="../case-studies.html">Case Studies — Full Production Data from Real Programs</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>
