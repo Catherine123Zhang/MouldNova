@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conformal Cooling RFQ Checklist: What Your Supplier Needs to Quote Accurately | MouldNova</title>
+  <meta name="description" content="A practical buyer's guide: the 15 pieces of information a supplier needs to quote conformal cooling inserts accurately. Includes a downloadable checklist, common RFQ mistakes, red flags in quotes, and what a good DFM report should contain." />
+  <meta name="keywords" content="conformal cooling RFQ, conformal cooling quote, conformal cooling insert quote, conformal cooling checklist, conformal cooling DFM, injection mold conformal cooling request for quote, conformal cooling supplier" />
+  <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-rfq-checklist.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/conformal-cooling-rfq-checklist.html" />
+  <meta property="og:title" content="Conformal Cooling RFQ Checklist: What Your Supplier Needs to Quote Accurately" />
+  <meta property="og:description" content="The 15 pieces of information a conformal cooling supplier needs to quote accurately — plus common mistakes, red flags in quotes, and what a good DFM report should include." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/conformal-cooling-rfq-checklist.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); vertical-align:top; }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .formula-box { background:var(--black); color:#fff; border-radius:12px; padding:28px 32px; margin:28px 0; font-family:monospace; }
+    .formula-box__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-family:sans-serif; font-weight:700; }
+    .formula-box__line { font-size:1.05rem; line-height:2; color:#e5e5e5; }
+    .formula-box__line strong { color:#fff; }
+    .formula-box__line .var { color:#fbbf24; }
+    .worked-example { background:#f0f7ff; border:1px solid #bfdbfe; border-radius:12px; padding:24px; margin:20px 0; }
+    .worked-example__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#1d4ed8; font-weight:700; margin-bottom:10px; }
+    .worked-example__title { font-size:1.05rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .worked-example p { font-size:0.95rem; color:#333; line-height:1.75; margin-bottom:8px; }
+    .worked-example .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .case-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .case-card__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .case-card__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .case-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .case-card .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    .checklist-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.93rem; }
+    .checklist-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .checklist-table td { padding:11px 16px; border-bottom:1px solid #e5e5e5; vertical-align:top; }
+    .checklist-table tr:nth-child(even) td { background:#fafafa; }
+    .checklist-table .item-num { font-weight:900; color:var(--red); white-space:nowrap; }
+    .checklist-table .priority-high { background:#fee2e2; color:#b91c1c; font-weight:700; font-size:0.78rem; padding:2px 8px; border-radius:4px; display:inline-block; }
+    .checklist-table .priority-med { background:#fef3c7; color:#92400e; font-weight:700; font-size:0.78rem; padding:2px 8px; border-radius:4px; display:inline-block; }
+    .redflag-box { background:#fff5f5; border:1px solid #fecaca; border-radius:12px; padding:24px; margin:20px 0; }
+    .redflag-box__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:#dc2626; font-weight:700; margin-bottom:12px; }
+    .redflag-box ul { margin:0 0 0 20px; color:#444; }
+    .redflag-box li { margin-bottom:8px; font-size:0.97rem; line-height:1.7; }
+    .green-box { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:12px; padding:24px; margin:20px 0; }
+    .green-box__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:#16a34a; font-weight:700; margin-bottom:12px; }
+    .green-box ul { margin:0 0 0 20px; color:#444; }
+    .green-box li { margin-bottom:8px; font-size:0.97rem; line-height:1.7; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+      .formula-box__line { font-size:0.88rem; }
+      .checklist-table { font-size:0.85rem; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Conformal Cooling RFQ Checklist: What Your Supplier Needs to Quote Accurately",
+    "description": "A practical buyer's guide covering the 15 pieces of information a supplier needs to quote conformal cooling inserts accurately, common RFQ mistakes, how to evaluate supplier responses, red flags in quotes, and what a good DFM report should include.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-16",
+    "dateModified": "2026-03-16",
+    "mainEntityOfPage": "https://mouldnova.com/blog/conformal-cooling-rfq-checklist.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the single most important document to include in a conformal cooling RFQ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 3D CAD model of the mold insert cavity in STEP format is by far the most critical document. Without a STEP file, a supplier can only provide a rough budgetary estimate based on insert envelope dimensions. With it, the supplier can analyze wall thickness uniformity, identify hot spots, design conformal channel geometry, run thermal simulations, calculate print time and material usage, and produce a real price. Many of the other 14 RFQ items can be estimated if missing, but the STEP file cannot be substituted. If your design is not finalized, share a close-to-final version and note which features may change."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to get a conformal cooling quote from submission to delivery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A complete RFQ package with all 15 items typically yields a formal quote within 24 to 48 hours, a DFM review within 3 to 5 business days, and a finalized design for approval within 5 to 7 business days. Manufacturing lead time for SLM-printed conformal cooling inserts is typically 10 to 15 business days from design approval, followed by 2 to 5 days for post-processing (heat treatment, CNC finishing, polishing). Total timeline from RFQ submission to delivery is typically 20 to 30 business days for a new insert design. Retrofit inserts for existing mold pockets can be faster if precise pocket dimensions are provided upfront."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do conformal cooling quotes vary so much between suppliers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Price variation in conformal cooling quotes is usually driven by five factors: insert material (maraging steel MS1 costs 3 to 4 times more than 316L stainless), build orientation (which affects support structure and post-processing labour), channel design complexity (spiral baffle channels require more engineering than simple conformal copies of the part surface), post-processing scope (hardness requirements above 50 HRC require additional heat treatment cycles), and whether thermal simulation is included in the quote. Incomplete RFQs amplify variation because each supplier fills gaps differently. Providing all 15 RFQ items reduces quote spread from 40 to 60 percent down to 10 to 15 percent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a conformal cooling DFM report and what should it contain?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Design for Manufacturability (DFM) report for conformal cooling inserts is the document a supplier provides before manufacturing begins, showing how they intend to design the cooling channels and confirming that the insert can be built to specification. A thorough DFM report should include: a 3D rendering of the proposed channel layout with dimensions, minimum wall thickness between channels and mold surface (typically 2 to 3 mm minimum), predicted mold surface temperature uniformity (a good target is plus or minus 5 degrees C), hydraulic flow data (pressure drop at design flow rate, Reynolds number confirming turbulent flow above 4,000), material and hardness confirmation, build orientation diagram showing support structure location, connection port locations and thread specifications, and a note on any design compromises relative to the ideal circuit geometry. Suppliers who cannot produce a DFM report are not engineering the cooling — they are copying the part surface and calling it conformal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get a conformal cooling quote without a 3D model if I only have a 2D drawing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 2D drawing alone is not sufficient for a production conformal cooling quote. 2D drawings do not convey the true 3D geometry of the mold cavity surface, the depth of ribs and cores, or the internal topology of the insert — all of which are essential for channel design. However, 2D drawings are useful as a supplement to confirm nominal dimensions, tolerances, and surface finish callouts. If you only have a 2D drawing, ask a tooling partner to create a parametric STEP model first, or request a budgetary range quote from the supplier based on insert size class. For retrofit projects, the existing mold base manufacturer may have CAD data available."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Buyer's Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">Conformal Cooling RFQ Checklist: What Your Supplier Needs to Quote Accurately</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 18 min read &middot; Written for tooling engineers, mold buyers, and procurement teams requesting conformal cooling inserts</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">Why a Complete RFQ Package Matters</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">15</div>
+      <div class="data-cell__label">Key Items Suppliers Need</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">40–60%</div>
+      <div class="data-cell__label">Quote Spread from Incomplete RFQs</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">24–48 hrs</div>
+      <div class="data-cell__label">Quote Turnaround (Complete Package)</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">20–30 days</div>
+      <div class="data-cell__label">Typical RFQ-to-Delivery Timeline</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#why-rfq-quality-matters">1. Why RFQ Quality Determines Quote Accuracy</a>
+    <a href="#checklist">2. The 15-Item Conformal Cooling RFQ Checklist</a>
+    <a href="#common-mistakes">3. Common Mistakes That Lead to Inaccurate Quotes</a>
+    <a href="#evaluate-suppliers">4. How to Evaluate Supplier Responses</a>
+    <a href="#red-flags">5. Red Flags in Conformal Cooling Quotes</a>
+    <a href="#dfm-report">6. What a Good DFM Report Should Include</a>
+    <a href="#timeline">7. Timeline from RFQ to Delivery</a>
+    <a href="#faq">8. FAQ — Conformal Cooling RFQ Process</a>
+  </div>
+
+  <p>Requesting a quote for conformal cooling inserts is not like quoting standard machined components. A conformal cooling insert is a custom-engineered part that requires thermal analysis, channel geometry design, material selection, and SLM printing process planning — all before a price can be calculated with any accuracy. When buyers submit incomplete RFQ packages, suppliers either decline to quote, issue rough budgetary estimates with 40–60% variance, or — most dangerously — quote a number that sounds reasonable but is based on assumptions that may not match your actual requirements.</p>
+
+  <p>The result in that last case is cost overruns, design revision cycles, delayed project timelines, and inserts that do not perform as expected in production. This guide gives you a definitive checklist of the 15 pieces of information that allow a conformal cooling supplier to issue an accurate, technically grounded quote. It also covers the most common buyer mistakes, how to evaluate the quality of a supplier's response, and what the complete RFQ-to-delivery timeline looks like when the process is run correctly.</p>
+
+  <!-- SECTION 1: WHY RFQ QUALITY MATTERS -->
+  <h2 id="why-rfq-quality-matters">1. Why RFQ Quality Determines Quote Accuracy</h2>
+
+  <p>Conformal cooling inserts are priced based on four cost drivers that cannot be estimated without specific project data: SLM machine time (determined by insert volume, height, and build orientation), material consumption (determined by geometry and support structures), post-processing labor (determined by hardness requirements, surface finish, and channel access for polishing), and engineering design time (determined by cooling circuit complexity and number of revision cycles).</p>
+
+  <p>Each of these drivers can vary by a factor of two to five depending on project specifications. A maraging steel MS1 insert with 52 HRC hardness and 0.4 Ra surface finish costs three to four times more than a 316L stainless insert with standard hardness and standard finish — but if your RFQ doesn't specify these requirements, the supplier will assume the cheaper option and the quote will be wrong in the direction that causes problems later.</p>
+
+  <blockquote>
+    <p>The most expensive conformal cooling project is not the one with the highest insert cost — it is the one where an inaccurate quote leads to a redesign after manufacturing has started. Providing complete RFQ information upfront costs nothing and saves weeks.</p>
+  </blockquote>
+
+  <p>Experienced conformal cooling suppliers — those who run SLM equipment and perform in-house thermal simulation — can often work with partial information and ask clarifying questions. But even in this case, a back-and-forth clarification cycle adds 3–7 business days to the quote timeline and introduces the risk that critical requirements get discussed verbally but not documented in the final scope of work. A complete written RFQ prevents this.</p>
+
+  <!-- SECTION 2: THE CHECKLIST -->
+  <h2 id="checklist">2. The 15-Item Conformal Cooling RFQ Checklist</h2>
+
+  <p>The following table covers every piece of information a conformal cooling supplier needs to produce an accurate quote. Items marked <span class="priority-high">Critical</span> are mandatory — quotes issued without these will have significant variance. Items marked <span class="priority-med">Important</span> are highly recommended; leaving them blank forces the supplier to assume defaults that may not match your needs.</p>
+
+  <table class="checklist-table">
+    <thead>
+      <tr>
+        <th style="width:4%">#</th>
+        <th style="width:28%">Information Item</th>
+        <th style="width:12%">Priority</th>
+        <th style="width:56%">What to Provide &amp; Why It Matters</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="item-num">1</td>
+        <td><strong>3D CAD Model (STEP file)</strong></td>
+        <td><span class="priority-high">Critical</span></td>
+        <td>The insert cavity geometry in STEP format. This is the foundation for channel design, thermal simulation, build orientation selection, and accurate print volume calculation. Parasolid (.x_t) or IGES are acceptable alternatives but STEP is preferred. Include the full insert body, not just the cavity surface.</td>
+      </tr>
+      <tr>
+        <td class="item-num">2</td>
+        <td><strong>Part Material / Resin</strong></td>
+        <td><span class="priority-high">Critical</span></td>
+        <td>The injection molding resin being processed (e.g., ABS, PP, PA66-GF30, PC, POM). Resin determines required mold surface temperature, heat of fusion, and solidification characteristics — all of which directly govern channel diameter, pitch, and target coolant temperature. Different resins can shift channel layout by 20–30%.</td>
+      </tr>
+      <tr>
+        <td class="item-num">3</td>
+        <td><strong>Annual Production Volume</strong></td>
+        <td><span class="priority-high">Critical</span></td>
+        <td>Shots per year (or parts per year, with cavities specified). Volume determines the financial case for conformal cooling and also influences insert material selection — high-volume programs above 500,000 shots/year typically justify maraging steel for superior wear resistance; lower volumes may use 1.2709 or 316L for cost efficiency.</td>
+      </tr>
+      <tr>
+        <td class="item-num">4</td>
+        <td><strong>Current Cycle Time</strong></td>
+        <td><span class="priority-high">Critical</span></td>
+        <td>Your current total cycle time in seconds, broken down where possible into fill time, pack time, cooling time, and open/eject time. Cooling time as a percentage of total cycle is the key number for ROI calculation. Without this, the supplier cannot quantify the value of the project or right-size the cooling circuit.</td>
+      </tr>
+      <tr>
+        <td class="item-num">5</td>
+        <td><strong>Target Cycle Time</strong></td>
+        <td><span class="priority-high">Critical</span></td>
+        <td>Your cycle time reduction goal (absolute seconds or percentage). This defines the thermal performance target the cooling channel design must achieve. If you have a business case that requires, say, 30% cycle reduction to justify the investment, the supplier must know this to design channels capable of meeting that target — and to be honest if the geometry cannot deliver it.</td>
+      </tr>
+      <tr>
+        <td class="item-num">6</td>
+        <td><strong>Number of Cavities</strong></td>
+        <td><span class="priority-high">Critical</span></td>
+        <td>Total cavity count in the mold (e.g., 1+1, 4-cavity, 8-cavity, 16-cavity). This affects per-part economics and also whether each insert is independently cooled or shares a manifold. Family molds with multiple part geometries should specify which cavities are included in the RFQ.</td>
+      </tr>
+      <tr>
+        <td class="item-num">7</td>
+        <td><strong>Insert Material Preference</strong></td>
+        <td><span class="priority-high">Critical</span></td>
+        <td>Specify preferred SLM material: maraging steel MS1 / 1.2709 (highest hardness, best wear resistance, most expensive), 316L stainless steel (moderate hardness, good corrosion resistance, lower cost), or H13 tool steel where available. If you have no preference, state that and ask the supplier to recommend based on your volume and resin. Material accounts for 30–50% of insert cost.</td>
+      </tr>
+      <tr>
+        <td class="item-num">8</td>
+        <td><strong>Mold Base Standard</strong></td>
+        <td><span class="priority-med">Important</span></td>
+        <td>The mold base standard and supplier (e.g., DME, HASCO, Futaba, LKM). This determines the pocket dimensions, leader pin locations, and connection port conventions the insert must conform to. Mismatched standards can require costly secondary machining on either the insert or the mold base.</td>
+      </tr>
+      <tr>
+        <td class="item-num">9</td>
+        <td><strong>Existing Pocket Dimensions (Retrofit)</strong></td>
+        <td><span class="priority-med">Important</span></td>
+        <td>For retrofit projects replacing existing conventional inserts: the precise dimensions of the existing pocket (length, width, depth, corner radii, taper angles, and any undercuts). Ideally provide a STEP file of the mold base pocket. Dimensional errors here are the most common cause of retrofit insert misfit and the most preventable.</td>
+      </tr>
+      <tr>
+        <td class="item-num">10</td>
+        <td><strong>Cooling Circuit Connections</strong></td>
+        <td><span class="priority-med">Important</span></td>
+        <td>The location, quantity, thread standard, and size of cooling water connection ports on the mold base (e.g., 1/4 BSP, 1/8 NPT, G1/4, on the operator side vs. non-operator side). This determines where the conformal channels must terminate and constrains the allowable channel routing geometry. Wrong connection specs require re-drilling in the field.</td>
+      </tr>
+      <tr>
+        <td class="item-num">11</td>
+        <td><strong>Surface Finish Requirements</strong></td>
+        <td><span class="priority-med">Important</span></td>
+        <td>Required cavity surface roughness (Ra in microns, or SPI finish grade A1–D3). SLM-printed inserts have an as-built surface of Ra 6–12 microns. Achieving Ra 0.8 (SPI B1) requires hand polishing; Ra 0.4 (SPI A2) requires EDM or diamond polishing. Surface finish drives post-processing cost and lead time — clarify requirements upfront to avoid surprises.</td>
+      </tr>
+      <tr>
+        <td class="item-num">12</td>
+        <td><strong>Hardness Requirements</strong></td>
+        <td><span class="priority-med">Important</span></td>
+        <td>Required cavity surface hardness (HRC). For maraging steel MS1, as-built hardness is approximately 33–37 HRC; age hardening at 490°C brings this to 50–54 HRC. For 316L stainless, maximum achievable hardness is approximately 28–32 HRC. Hardness above 50 HRC requires heat treatment, adding 3–5 business days and cost. Lower hardness (for prototyping) can reduce cost and lead time.</td>
+      </tr>
+      <tr>
+        <td class="item-num">13</td>
+        <td><strong>Delivery Timeline</strong></td>
+        <td><span class="priority-med">Important</span></td>
+        <td>Your required in-hand date or maximum acceptable lead time. Standard lead time for conformal cooling inserts is 15–25 business days from design approval. Rush orders (under 10 business days) are sometimes possible but carry a 20–40% premium. Knowing your timeline lets the supplier flag conflicts before you are committed.</td>
+      </tr>
+      <tr>
+        <td class="item-num">14</td>
+        <td><strong>Budget Range</strong></td>
+        <td><span class="priority-med">Important</span></td>
+        <td>Your target or maximum budget for the insert(s). This is often omitted in RFQs but is one of the most useful pieces of information for a supplier. Knowing the budget allows the supplier to recommend material and finish options that deliver the best cooling performance within your constraints — rather than quoting the most expensive possible solution by default.</td>
+      </tr>
+      <tr>
+        <td class="item-num">15</td>
+        <td><strong>Simulation Data (if available)</strong></td>
+        <td><span class="priority-med">Important</span></td>
+        <td>Any existing Moldflow, Sigmasoft, or Moldex3D simulation results for the mold — particularly cooling analysis showing hot spots, temperature distribution, and warp prediction. If you have already identified the problematic zones, sharing this data accelerates channel design and reduces the engineering hours billed. If you have no simulation data, say so — a good supplier will run their own.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Print this table and use it as a submission checklist before sending any conformal cooling RFQ. A complete submission — all 15 items addressed — typically results in a formal quotation within 24 to 48 hours and eliminates the most common causes of scope creep and cost overrun.</p>
+
+  <!-- SECTION 3: COMMON MISTAKES -->
+  <h2 id="common-mistakes">3. Common Mistakes That Lead to Inaccurate Quotes</h2>
+
+  <p>Having reviewed conformal cooling RFQs across hundreds of projects, the same categories of missing or incorrect information appear repeatedly. Each creates a specific problem downstream.</p>
+
+  <div class="step-block">
+    <div class="step-block__number">Mistake 1</div>
+    <div class="step-block__title">Sending Only a Part Drawing Instead of a Mold Insert Model</div>
+    <p>The most common RFQ error. The injection-molded part geometry and the mold insert geometry are not the same. The insert is larger, contains the runner system, ejector pin holes, leader pin clearances, and must interface with the mold base. Conformal channels are routed through the insert body, not through the part. Suppliers who receive only a part drawing cannot design channels with any precision and will issue rough ballpark estimates.</p>
+    <p><strong>Fix:</strong> Always provide the STEP file of the mold insert body. If the insert design is not complete, a preliminary version that captures the cavity surface and overall envelope dimensions is sufficient to start the quote process.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Mistake 2</div>
+    <div class="step-block__title">Specifying Annual Volume Without Specifying Cavities</div>
+    <p>"We run 2 million parts per year" is not the same as "we run 2 million shots per year on a 4-cavity tool" or "we run 2 million shots per year on a 1-cavity tool." The difference matters significantly: 2 million parts per year on a 4-cavity tool means 500,000 shots per year — a very different ROI picture and a different choice of insert material and channel design compared to a 1-cavity tool at 2 million shots.</p>
+    <p><strong>Fix:</strong> Always state volume as shots per year and separately list the number of cavities. If multiple tools run the same part, clarify whether you are quoting inserts for one tool or all tools.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Mistake 3</div>
+    <div class="step-block__title">Omitting Surface Finish Until After Quoting</div>
+    <p>Surface finish is often treated as a detail to be sorted out "later," but it has an outsize effect on post-processing cost and lead time. The difference between an SPI B2 (Ra 1.6) and an SPI A1 (Ra 0.1) finish on a conformal cooling insert can be 30–50 additional hours of hand polishing and EDM work, adding $800–$2,500 to the insert cost and 5–8 business days to the lead time. When buyers discover this after receiving a quote, they often feel misled — even though the supplier assumed the lower-cost option in the absence of specification.</p>
+    <p><strong>Fix:</strong> Reference your part's cosmetic requirements. Class-A visible surfaces require SPI A2 or better. Structural parts with no appearance requirement can often accept SPI B2 or B3, significantly reducing cost.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Mistake 4</div>
+    <div class="step-block__title">Not Clarifying Whether It Is a New Insert or a Retrofit</div>
+    <p>New tooling projects and retrofit projects have completely different cost and lead-time structures. A new insert is designed to print-ready dimensions and requires no dimensional matching to an existing pocket. A retrofit insert must exactly match the existing mold base pocket, fit existing cooling connections, and sometimes accommodate worn or non-standard pocket dimensions. The dimensional verification process for retrofit inserts adds engineering work that must be scoped into the quote.</p>
+    <p><strong>Fix:</strong> State explicitly in the RFQ whether this is for a new mold or a retrofit of an existing mold. For retrofits, include the existing pocket dimensions as early as possible.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Mistake 5</div>
+    <div class="step-block__title">Requesting a "Budgetary" Quote and Treating It as a Fixed Price</div>
+    <p>Many buyers request a budgetary estimate early in the project planning phase — before the mold design is finalized and before all 15 RFQ items are available. This is a legitimate part of the procurement process. The mistake is when project teams use the budgetary figure to set a locked budget, then discover that the final quote — based on the actual finalized design — is 25–40% higher. This gap is almost always traceable to changes in insert geometry, surface finish upgrades, or material specification changes that occurred during mold design finalization.</p>
+    <p><strong>Fix:</strong> Label budgetary estimates explicitly as subject to revision upon receipt of full RFQ package. Build a contingency of 20–30% into project budgets based on budgetary quotes. Request a formal binding quote only after the insert STEP file is finalized.</p>
+  </div>
+
+  <!-- SECTION 4: EVALUATING SUPPLIER RESPONSES -->
+  <h2 id="evaluate-suppliers">4. How to Evaluate Supplier Responses</h2>
+
+  <p>When you receive quotes back from multiple conformal cooling suppliers, the price is not the only criterion and often not the most important one. A thorough supplier evaluation examines five dimensions:</p>
+
+  <h3>Technical Depth of the Response</h3>
+  <p>A technically capable supplier will not simply return a price — they will ask clarifying questions about items you may have omitted, confirm their understanding of the application, and often propose a preliminary channel layout concept or note specific engineering challenges they identified in your STEP file. Suppliers who return only a price within hours of receiving a STEP file are either very experienced with similar inserts or are not engineering the solution at all. Ask them to explain their channel design approach.</p>
+
+  <h3>Included Services vs. Line Items</h3>
+  <p>Compare what is included in each supplier's base price. The most common items to check: thermal simulation (is it included, or billed separately at $500–$1,500?), DFM review (included or extra?), design revision rounds (how many iterations are included before additional charges apply?), test pressure certification of cooling channels (standard or optional?), and material certificate (standard or available on request?).</p>
+
+  <h3>Lead Time Realism</h3>
+  <p>Lead times quoted below 10 business days for a first-time insert design should be scrutinized. High-quality SLM printing of a maraging steel insert with proper heat treatment and post-processing requires at minimum 10–12 business days under normal operating conditions. Suppliers quoting 5–7 days for complex inserts may be omitting heat treatment or skipping quality steps. Ask for a detailed production schedule broken down by phase.</p>
+
+  <h3>Warranty and Rework Policy</h3>
+  <p>Ask each supplier what happens if the insert does not fit the mold pocket, if the cooling channels do not achieve the promised thermal performance, or if the insert develops a crack during heat treatment. Reputable suppliers will have a documented policy covering dimensional non-conformances, performance shortfalls, and manufacturing defects. Suppliers who do not address this question are a risk.</p>
+
+  <h3>Communication Quality</h3>
+  <p>The quality of a supplier's communication during the quote phase is your best indicator of how they will communicate during production. Slow response times, vague technical answers, or failure to address specific questions in your RFQ all predict problems during manufacturing. A supplier who can't answer "What channel diameter do you recommend for this resin and wall thickness?" during quoting will struggle to make good engineering decisions during production.</p>
+
+  <!-- SECTION 5: RED FLAGS -->
+  <h2 id="red-flags">5. Red Flags in Conformal Cooling Quotes</h2>
+
+  <p>These specific warning signs in supplier quotes or communications indicate elevated project risk:</p>
+
+  <div class="redflag-box">
+    <div class="redflag-box__title">Red Flags — Take Caution</div>
+    <ul>
+      <li><strong>No thermal simulation offered or referenced.</strong> Conformal cooling channel design without simulation is guesswork. A supplier who does not mention simulation — either in-house capability or a third-party partner — is designing channels by intuition rather than engineering analysis. The results will be unpredictable.</li>
+      <li><strong>Guaranteed cycle time reduction without seeing your STEP file.</strong> No honest supplier can promise a specific cycle time reduction number before analyzing your cavity geometry, wall thickness distribution, and resin characteristics. Pre-quote guarantees are marketing language, not engineering commitments.</li>
+      <li><strong>No DFM review step in the process.</strong> If a supplier's proposed workflow goes directly from "quote acceptance" to "manufacturing start" with no design-for-manufacturability review and approval step, you have no opportunity to catch channel design errors, connection port conflicts, or tolerance issues before steel is printed. Always require a formal DFM approval gate.</li>
+      <li><strong>No mention of pressure testing or leak certification.</strong> Internal cooling channels in SLM-printed inserts must be pressure tested before delivery to confirm channel integrity and absence of internal defects. Suppliers who do not include pressure testing in their standard process are accepting risk that belongs to you once the insert is in service.</li>
+      <li><strong>Price significantly below all other quotes.</strong> Conformal cooling inserts have well-understood material and processing costs. A quote that is 40–50% below competitors is not a market opportunity — it is a signal that something has been omitted from scope (heat treatment, simulation, DFM review), that the material grade has been downgraded without disclosure, or that the supplier has misunderstood the insert geometry. Request a cost breakdown before proceeding.</li>
+      <li><strong>Inability to provide references or case studies for similar applications.</strong> Conformal cooling is a specialized field. A supplier who cannot show documented examples of inserts for similar part complexity, resin type, or volume level is effectively asking you to be their test case.</li>
+      <li><strong>Channel design described only as "following the part surface."</strong> This is the minimum-effort approach and often not the optimal one. True conformal cooling engineering includes turbulence analysis to ensure Re &gt; 4,000, minimum wall thickness verification to prevent cracking under thermal cycling, channel diameter optimization for heat transfer coefficient, and consideration of pressure drop within acceptable limits. Ask the supplier to describe their channel design methodology in specific terms.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 6: DFM REPORT -->
+  <h2 id="dfm-report">6. What a Good DFM Report Should Include</h2>
+
+  <p>Before manufacturing begins, a reputable conformal cooling supplier should issue a Design for Manufacturability (DFM) report for your review and written approval. This document is your last opportunity to catch errors before printing starts. Here is what a thorough DFM report contains — and what its absence signals:</p>
+
+  <div class="green-box">
+    <div class="green-box__title">Elements of a Thorough DFM Report</div>
+    <ul>
+      <li><strong>3D rendering of proposed channel layout</strong> with channel centerline dimensions, diameter, and pitch annotated. You should be able to visualize exactly where water flows through the insert.</li>
+      <li><strong>Minimum wall thickness analysis</strong> — the distance from channel wall to mold surface and from channel wall to insert exterior at every cross-section. Industry minimum is 2.5 mm for maraging steel; thinner walls risk cracking under thermal cycling and injection pressure.</li>
+      <li><strong>Predicted mold surface temperature uniformity</strong> — typically presented as a color thermal map from simulation. Target: less than ±5°C variation across the cavity surface during steady-state operation.</li>
+      <li><strong>Hydraulic flow data</strong> — pressure drop across the circuit at the design flow rate (typically 4–8 L/min), and confirmation that the Reynolds number at that flow rate exceeds 4,000 (turbulent flow threshold), which is required for effective heat transfer.</li>
+      <li><strong>Build orientation diagram</strong> — showing how the insert will be positioned on the SLM build plate, where support structures will be attached, and how support removal will be accomplished without damaging the cavity surface or channel interior.</li>
+      <li><strong>Connection port locations and thread specifications</strong> — a dimensioned drawing showing exactly where inlet and outlet ports emerge from the insert body, with thread standard and size called out.</li>
+      <li><strong>Predicted cycle time reduction estimate</strong> — the supplier's engineering projection of cooling time reduction based on simulation data. This should be a specific range (e.g., 22–28% reduction in cooling time) with the assumptions clearly stated, not a marketing claim.</li>
+      <li><strong>Material and hardness confirmation</strong> — written confirmation of the SLM material grade (e.g., "1.2709 maraging steel, EN ISO 10270 compliant"), the heat treatment procedure, and the target hardness range (e.g., 50–54 HRC after age hardening).</li>
+      <li><strong>Known design compromises or constraints</strong> — an honest note on any areas where the ideal channel geometry could not be achieved due to insert geometry, minimum wall thickness constraints, or connection port location limitations. Good suppliers flag these proactively; poor suppliers hide them.</li>
+    </ul>
+  </div>
+
+  <p>If a supplier's DFM consists of a single 2D drawing with channel centerlines sketched in, or if no DFM review is offered at all, treat this as a serious quality concern. The DFM report is where the supplier demonstrates their engineering capability — or reveals its absence.</p>
+
+  <blockquote>
+    <p>A DFM report is not a formality. It is the technical contract between you and your supplier that defines what the insert will do and how it will be built. Request written approval authority over the DFM before any purchase order is placed.</p>
+  </blockquote>
+
+  <!-- SECTION 7: TIMELINE -->
+  <h2 id="timeline">7. Timeline from RFQ to Delivery</h2>
+
+  <p>Understanding the realistic timeline for a conformal cooling insert project helps you plan program launches, avoid last-minute expedite costs, and set appropriate expectations with your internal stakeholders. Here is a phase-by-phase breakdown for a standard first-time insert project:</p>
+
+  <div class="step-block">
+    <div class="step-block__number">Phase 1 — RFQ Submission &amp; Initial Quote</div>
+    <div class="step-block__title">Duration: 1–3 Business Days</div>
+    <p>You submit a complete RFQ package including the 15 items in the checklist above. The supplier reviews your STEP file, confirms they understand the application, and may ask 2–5 clarifying questions. A formal quote is issued within 24–48 hours for complete packages. Incomplete packages extend this phase by 3–7 business days due to back-and-forth clarification.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Phase 2 — Purchase Order &amp; Project Kickoff</div>
+    <div class="step-block__title">Duration: 1–2 Business Days</div>
+    <p>You issue a purchase order. The supplier assigns an engineer to the project, confirms the project schedule, and begins thermal simulation and channel layout design. Many buyers omit formal PO documentation for tooling — resist this temptation. A PO that references the specific quote number, STEP file revision, material specification, surface finish, and hardness requirement is your contractual protection if the delivered insert does not match your requirements.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Phase 3 — DFM Engineering &amp; Review</div>
+    <div class="step-block__title">Duration: 3–5 Business Days</div>
+    <p>The supplier designs the conformal channel geometry, runs thermal simulation, performs wall thickness analysis, and prepares the DFM report. You receive the DFM package and review it — typically within 1–2 business days. If revisions are needed, each revision cycle adds 1–2 business days. Most projects require one revision round; complex inserts may need two. Design approval must be given in writing before manufacturing begins.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Phase 4 — SLM Printing</div>
+    <div class="step-block__title">Duration: 3–6 Business Days</div>
+    <p>The approved insert geometry is prepared for SLM printing — support structure generation, build plate nesting, process parameter setup. Print time depends on insert volume and height. A typical mold insert for a 150×150×80 mm cavity prints in 18–36 hours. Suppliers typically batch multiple inserts per build to optimize machine utilization; if your insert is the only item in a build, you may pay a build plate premium.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Phase 5 — Post-Processing</div>
+    <div class="step-block__title">Duration: 4–8 Business Days</div>
+    <p>Post-processing for a maraging steel insert with hardness and surface finish requirements includes: stress relief heat treatment (4–6 hours at 300°C), support structure removal by EDM wire cutting and grinding, age hardening heat treatment (6 hours at 490°C) to reach 50–54 HRC, CNC finish machining of critical mating surfaces (pocket fit dimensions, connection ports), channel pressure testing at 1.5× working pressure, and cavity surface polishing to specified finish. Each step is logged and traceable.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Phase 6 — Quality Inspection &amp; Documentation</div>
+    <div class="step-block__title">Duration: 1–2 Business Days</div>
+    <p>Final CMM dimensional inspection against the DFM-approved drawing. Hardness verification via Rockwell test at minimum three locations. Pressure test certification. Surface roughness measurement. Documentation package assembly (material certificate, inspection report, pressure test certificate, hardness certificate). For PPAP or IATF 16949 programs, additional documentation is prepared at this stage.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Phase 7 — Shipping &amp; Delivery</div>
+    <div class="step-block__title">Duration: 3–7 Business Days</div>
+    <p>Standard international shipping (China to US/Europe) via DHL/FedEx Express takes 3–5 business days. Economy air freight takes 5–10 business days. Sea freight is not recommended for tooling components due to the humidity and handling risks. Inserts are shipped with thread protectors, cavity surface protection, and detailed installation instructions. The complete timeline from PO to delivery is typically 20–28 business days for a first-time standard insert.</p>
+  </div>
+
+  <div class="data-highlight">
+    <div class="data-highlight__title">Summary: RFQ-to-Delivery Timeline by Project Type</div>
+    <div class="data-grid">
+      <div class="data-cell">
+        <div class="data-cell__num">20–28</div>
+        <div class="data-cell__label">Business Days — New Insert, Standard</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">15–22</div>
+        <div class="data-cell__label">Business Days — Retrofit, Dimensions Known</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">25–35</div>
+        <div class="data-cell__label">Business Days — Complex Insert, High Polish</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">10–14</div>
+        <div class="data-cell__label">Business Days — Rush Order (Premium)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 8: FAQ -->
+  <h2 id="faq">8. FAQ — Conformal Cooling RFQ Process</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the single most important document to include in a conformal cooling RFQ?</div>
+    <p class="faq-block__a">The 3D CAD model of the mold insert cavity in STEP format is by far the most critical document. Without it, a supplier can only provide a rough budgetary estimate. With the STEP file, the supplier can analyze wall thickness, design conformal channel geometry, run thermal simulation, calculate print time and material usage, and produce a real price. If your design is not finalized, share the closest available version and note which features may change — this is still far more useful than no model at all.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How long does it take to get a conformal cooling quote from submission to delivery?</div>
+    <p class="faq-block__a">A complete RFQ package with all 15 items typically yields a formal quote within 24 to 48 hours. DFM review takes 3 to 5 business days after PO. Manufacturing and post-processing takes 10 to 15 business days from design approval. International shipping adds 3 to 7 business days. Total timeline from RFQ submission to delivery is typically 20 to 28 business days for a standard new insert design. Retrofit inserts with known pocket dimensions can be faster. Rush orders under 14 business days carry a 20 to 40 percent premium.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Why do conformal cooling quotes vary so much between suppliers?</div>
+    <p class="faq-block__a">Price variation is usually driven by five factors: insert material grade, build orientation complexity, channel design sophistication, post-processing scope, and whether thermal simulation is included. Incomplete RFQs amplify variation because each supplier fills gaps differently — one assumes maraging steel, another assumes 316L; one includes simulation, another does not. Providing all 15 RFQ items reduces quote spread from 40 to 60 percent down to 10 to 15 percent, making supplier comparison meaningful.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is a conformal cooling DFM report and what should it contain?</div>
+    <p class="faq-block__a">A DFM report is the document a supplier provides before manufacturing begins, showing the proposed channel layout, minimum wall thickness analysis, predicted mold surface temperature uniformity, hydraulic flow data confirming turbulent flow, build orientation, connection port locations, and any design compromises. It is your last opportunity to catch errors before steel is printed. Suppliers who cannot produce a thorough DFM report are not engineering the cooling circuit — they are copying the part surface and calling it conformal cooling.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Can I get a conformal cooling quote without a 3D model if I only have a 2D drawing?</div>
+    <p class="faq-block__a">A 2D drawing alone is not sufficient for a production conformal cooling quote, because it does not convey the true 3D geometry of the mold cavity surface or the internal topology needed for channel design. However, 2D drawings are useful as a supplement to confirm nominal dimensions, tolerances, and surface finish callouts. If you only have a 2D drawing, you can request a budgetary range estimate based on insert size class, or ask a tooling partner to create a parametric STEP model first. For retrofit projects, the mold base manufacturer may have CAD data available.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Submit Your RFQ to MouldNova</div>
+    <div class="blog-cta__text">Send your STEP file along with the 15 checklist items above and we will return a formal quote within 24 hours, a full DFM report within 5 business days, and a thermal simulation showing predicted cycle time reduction — at no charge before you commit. Our engineers respond to every technical question in writing so there are no surprises when manufacturing begins.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp — Send STEP File Now
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Submit RFQ via Contact Form &rarr;</a>
+    </div>
+  </div>
+
+  <!-- INTERNAL LINKS -->
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href="conformal-cooling-cost.html">Conformal Cooling Cost Guide — What Drives Insert Pricing and How to Reduce It</a></li>
+    <li><a href="conformal-cooling-tooling.html">Conformal Cooling Tooling — Design, Materials, and Manufacturing Overview</a></li>
+    <li><a href="conformal-cooling-retrofit.html">Conformal Cooling Retrofit — Upgrading Existing Molds with Conformal Inserts</a></li>
+    <li><a href="conformal-cooling-design.html">Conformal Cooling Design Guide — Channel Geometry, Wall Thickness, and Simulation</a></li>
+    <li><a href="conformal-cooling-roi.html">Conformal Cooling ROI: Payback Period, Annual Savings &amp; 5-Year NPV Calculator</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts — Service Details &amp; Specifications</a></li>
+    <li><a href="../contact.html">Contact MouldNova — Submit Your RFQ</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>
