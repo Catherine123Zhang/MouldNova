@@ -600,4 +600,18 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://mouldnova.com/blog/injection-molding-cooling-time.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mouldnova.com/blog/injection-mold-cooling-system.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

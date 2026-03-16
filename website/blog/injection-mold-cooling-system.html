@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Injection Mold Cooling System Design: Channels, Manifolds &amp; Temperature Control | MouldNova</title>
+  <meta name="description" content="Complete guide to injection mold cooling system design: cooling channel sizing, baffle and bubbler design, manifold layout, series vs parallel circuits, Reynolds number for turbulent flow, Moldflow analysis, and conformal cooling upgrades." />
+  <meta name="keywords" content="injection mold cooling, injection mold cooling system, injection mold cooling design, injection molding cooling, mold cooling system, mold cooling analysis, mold cooling manifold, cooling channel injection molding, injection mold cooling system design, injection molding machine cooling system, mold cooling channel design, mold cooling design" />
+  <link rel="canonical" href="https://mouldnova.com/blog/injection-mold-cooling-system.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/injection-mold-cooling-system.html" />
+  <meta property="og:title" content="Injection Mold Cooling System Design: Channels, Manifolds &amp; Temperature Control" />
+  <meta property="og:description" content="Complete technical guide to injection mold cooling system design: channel sizing rules, manifold layout, series vs parallel circuits, water vs oil cooling, Reynolds number, Moldflow analysis, and conformal cooling upgrades." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/injection-mold-cooling-system.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .formula-box { background:var(--black); color:#fff; border-radius:12px; padding:28px 32px; margin:28px 0; font-family:monospace; }
+    .formula-box__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-family:sans-serif; font-weight:700; }
+    .formula-box__line { font-size:1.05rem; line-height:2; color:#e5e5e5; }
+    .formula-box__line strong { color:#fff; }
+    .formula-box__line .var { color:#fbbf24; }
+    .worked-example { background:#f0f7ff; border:1px solid #bfdbfe; border-radius:12px; padding:24px; margin:20px 0; }
+    .worked-example__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#1d4ed8; font-weight:700; margin-bottom:10px; }
+    .worked-example__title { font-size:1.05rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .worked-example p { font-size:0.95rem; color:#333; line-height:1.75; margin-bottom:8px; }
+    .worked-example .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .case-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .case-card__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .case-card__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .case-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .case-card .result { font-size:1.1rem; font-weight:900; color:var(--red); margin-top:12px; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+      .formula-box__line { font-size:0.88rem; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Injection Mold Cooling System Design: Channels, Manifolds & Temperature Control",
+    "description": "Complete technical guide to injection mold cooling system design: cooling channel sizing rules (8–12 mm diameter, 2–3D spacing, 1.5–2D depth), manifold layout, series vs parallel circuits, Reynolds number for turbulent flow, water vs oil cooling, Moldflow analysis, and conformal cooling upgrades.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-16",
+    "dateModified": "2026-03-16",
+    "mainEntityOfPage": "https://mouldnova.com/blog/injection-mold-cooling-system.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the ideal cooling channel diameter for an injection mold?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For conventional straight-drilled injection mold cooling channels, the recommended diameter is 8–12 mm (5/16 to 1/2 inch). Smaller channels (6 mm) are used in thin-walled molds or in restricted areas near cores. Larger channels (14–16 mm) appear in large structural molds requiring high flow rates. The channel diameter determines achievable flow velocity: to reach turbulent flow (Re > 10,000) in a 10 mm channel using water at 25°C, you need a flow rate of approximately 8–10 L/min per circuit. Channel diameter should be selected first, then flow rate sized to match."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between series and parallel cooling circuits in injection molds?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In a series cooling circuit, coolant flows through all channels sequentially in one continuous path. This creates high flow velocity (improving heat transfer) but results in a temperature rise of 3–8°C from inlet to outlet as the coolant absorbs heat. In a parallel circuit, coolant splits into multiple simultaneous paths fed from a common manifold. Parallel circuits produce more uniform inlet temperature to each channel but lower velocity per branch, often resulting in laminar rather than turbulent flow. Best practice is to use series circuits with 3–6 channels per loop to balance temperature rise against flow velocity, and to use manifolds to feed multiple series circuits in parallel for uniform coverage of large mold areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate whether cooling flow is turbulent in my injection mold?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the Reynolds number formula: Re = (ρ × v × D) / μ, where ρ is fluid density (kg/m³), v is flow velocity (m/s), D is channel diameter (m), and μ is dynamic viscosity (Pa·s). For water at 25°C: ρ = 997 kg/m³, μ = 0.00089 Pa·s. Turbulent flow requires Re > 4,000; Re > 10,000 is recommended for efficient injection mold cooling. For a 10 mm channel, turbulent flow at Re = 10,000 requires a velocity of approximately 0.89 m/s, corresponding to a flow rate of about 4.2 L/min. Most mold cooling circuits run 6–12 L/min per circuit to ensure fully turbulent conditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use oil instead of water in an injection mold cooling system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oil cooling (thermal oil or pressurized hot oil) is used when mold temperature must exceed 90°C — beyond the safe operating limit for pressurized water systems without specialized high-pressure equipment. Common applications include engineering resins such as POM, PPS, PEEK, and PA66-GF50 that require mold temperatures of 100–160°C for proper crystallization and dimensional stability. Oil has roughly 50% of water's heat capacity and 60% of water's thermal conductivity, so oil-cooled molds require larger channel diameters or higher flow rates to achieve equivalent heat removal. Cooling analysis and temperature control unit selection must account for oil's different thermophysical properties."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does conformal cooling improve on a conventional injection mold cooling system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Conformal cooling channels follow the contour of the mold surface at a constant depth (typically 1.5–2.0 times channel diameter below the cavity surface), maintaining uniform distance to the plastic part throughout the geometry — including deep ribs, curved surfaces, and core pins that conventional straight-drilled channels cannot reach. This eliminates hot spots that cause warpage and extended cooling time. Compared to conventional mold cooling systems, conformal cooling typically reduces cycle time by 20–40%, reduces mold surface temperature variation from 15–30°C down to less than 5°C, and reduces warpage-related scrap by 60–80%. The technology is produced by metal 3D printing (SLM/DMLS) using tool steel or maraging steel."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Mold Engineering Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">Injection Mold Cooling System Design: Channels, Manifolds &amp; Temperature Control</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 18 min read &middot; Written for mold designers, process engineers, and tooling managers</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">Injection Mold Cooling System — Design at a Glance</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">50–60%</div>
+      <div class="data-cell__label">Of Cycle Time Is Cooling</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">8–12 mm</div>
+      <div class="data-cell__label">Conventional Channel Diameter</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">Re &gt; 10,000</div>
+      <div class="data-cell__label">Target Turbulent Flow</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">20–40%</div>
+      <div class="data-cell__label">Conformal Cooling Cycle Reduction</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#why-cooling-matters">1. Why the Mold Cooling System Is the Most Critical Variable in Injection Molding</a>
+    <a href="#system-components">2. Injection Mold Cooling System Components</a>
+    <a href="#channel-design">3. Cooling Channel Design Rules: Diameter, Spacing, and Depth</a>
+    <a href="#circuit-design">4. Series vs Parallel Circuit Design</a>
+    <a href="#manifold-design">5. Mold Cooling Manifold Design and Sizing</a>
+    <a href="#temperature-control">6. Temperature Control Unit Selection and Injection Molding Machine Cooling System</a>
+    <a href="#water-vs-oil">7. Water vs Oil Cooling: Reynolds Number and Turbulent Flow</a>
+    <a href="#cooling-analysis">8. Mold Cooling Analysis: Hand Calculation vs Moldflow Simulation</a>
+    <a href="#common-problems">9. Common Injection Mold Cooling Problems and Solutions</a>
+    <a href="#conformal-upgrade">10. Upgrading to Conformal Cooling</a>
+    <a href="#maintenance">11. Mold Cooling System Maintenance</a>
+    <a href="#faq">12. FAQ</a>
+  </div>
+
+  <p>Cooling is the dominant phase in the injection molding cycle. For most thermoplastic parts, the cooling stage accounts for 50 to 60 percent of total cycle time — often more on thick-walled or high-temperature-resin parts. Every second saved during cooling translates directly into additional parts per hour, lower machine cost per piece, and improved competitiveness. Yet despite its importance, the injection mold cooling system is frequently designed as an afterthought: channels drilled wherever space allows, circuit layout inherited from previous tools, and temperature control unit settings dialed in by trial and error at press commissioning.</p>
+
+  <p>This guide presents a systematic approach to injection mold cooling system design, from first principles to advanced mold cooling analysis. It covers every major component of the cooling system, the engineering rules that govern channel sizing and circuit layout, how to select and size temperature control units, when to use water versus oil cooling, and how to recognize and solve the most common cooling problems. The final section explains how conformal cooling technology extends and upgrades the conventional mold cooling system for complex geometries.</p>
+
+  <!-- SECTION 1 -->
+  <h2 id="why-cooling-matters">1. Why the Mold Cooling System Is the Most Critical Variable in Injection Molding</h2>
+
+  <p>The injection molding cycle consists of four stages: fill, pack/hold, cooling, and ejection. Of these, only cooling time is directly determined by the mold cooling system design. Fill time is constrained by part geometry and material viscosity. Pack time is set by gate freeze-off. Ejection time depends on mold mechanism design. Cooling time is the one variable that a well-designed or poorly-designed mold cooling system can move by a factor of two or more.</p>
+
+  <p>The physics are straightforward. Molten plastic enters the cavity at 200–320°C (depending on resin). It must be cooled to a temperature at which it is rigid enough to eject without distortion — typically 60–80% of the heat deflection temperature of the material. The rate at which that heat is removed depends entirely on:</p>
+
+  <ul>
+    <li><strong>The temperature differential</strong> between the mold steel surface and the coolant (driving force for heat transfer)</li>
+    <li><strong>The heat transfer coefficient</strong> at the coolant-channel wall interface (determined primarily by flow regime — turbulent vs laminar)</li>
+    <li><strong>The geometric proximity</strong> of cooling channels to the part surface (the shorter the conduction path through steel, the faster the heat removal)</li>
+    <li><strong>The channel surface area</strong> in contact with the coolant (more channel length = more cooling capacity)</li>
+  </ul>
+
+  <p>Poor injection mold cooling design degrades each of these factors simultaneously. Channels drilled too far from the surface increase the conduction path. Circuits with too few channels create hot spots between them. Insufficient flow rate produces laminar rather than turbulent flow, cutting the heat transfer coefficient by 50–80%. The cumulative result is a mold that requires 40–80% more cooling time than a well-designed equivalent — with worse part quality.</p>
+
+  <blockquote>
+    <p>Industry data consistently shows that cooling system improvements — including upgraded manifolds, optimized circuit design, and conformal cooling inserts — deliver the fastest ROI of any mold investment. A $3,000 conformal cooling insert upgrade on a high-volume program routinely pays back in under two weeks.</p>
+  </blockquote>
+
+  <!-- SECTION 2 -->
+  <h2 id="system-components">2. Injection Mold Cooling System Components</h2>
+
+  <p>A complete injection mold cooling system consists of several interconnected components. Understanding what each component does and how it interacts with the others is the foundation of effective mold cooling system design.</p>
+
+  <h3>2.1 Cooling Channels</h3>
+
+  <p>Cooling channels are the primary heat transfer elements drilled or formed into the mold plates, inserts, and cores. In conventional mold construction, channels are straight holes drilled with twist drills or gun drills. Standard diameters range from 6 mm to 16 mm. Channels are connected at the mold parting line using cross-drillings or external hoses. The network of channels forms cooling circuits that carry coolant from the temperature control unit through the mold and back.</p>
+
+  <h3>2.2 Baffles</h3>
+
+  <p>Baffles are thin metal dividers inserted into a drilled channel to force coolant to flow down one side and return up the other. They convert a single straight drilled hole into a U-shaped flow path, doubling the effective cooling length compared to a straight-through channel. Baffles are widely used in tall core pins and narrow ribs where a second parallel channel cannot be drilled at the required depth. The divider (baffle plate or baffle sheet) is typically a 1–2 mm thick steel strip. A key limitation is that baffles create asymmetric flow: the downstream half of the baffle channel runs warmer than the upstream half, creating a temperature gradient along the core or rib. In deep cores (over 80 mm), multiple baffles in series are used.</p>
+
+  <h3>2.3 Bubblers</h3>
+
+  <p>A bubbler (also called a fountain cooler) consists of a small tube inserted concentrically into a drilled hole. Coolant flows in through the inner tube, hits the bottom of the hole, reverses direction, and returns up the annulus between the tube and the outer channel wall. Like baffles, bubblers cool narrow cylindrical features — most commonly round core pins. Bubblers are preferred over baffles for circular cross-sections because the annular flow path creates more symmetric cooling. Bubbler tube diameters range from 3 mm to 10 mm depending on the core pin size. A common limitation: the annular gap must be large enough to achieve turbulent flow — gaps under 1.5 mm typically produce laminar flow regardless of supply pressure.</p>
+
+  <h3>2.4 Mold Cooling Manifolds</h3>
+
+  <p>A mold cooling manifold is a distribution block or plate that splits coolant supply from a single feed line into multiple individual circuits and collects the returns into a single outlet. Manifolds serve two functions: they simplify external hose connections (one supply and one return per half, regardless of how many internal circuits exist) and they allow independent flow control of each circuit when equipped with individual valves or flow meters. In multi-cavity molds, manifolds also enable balancing — adjusting flow to each cavity circuit to achieve equal heat removal rates. Manifold design is discussed in detail in Section 5.</p>
+
+  <h3>2.5 Temperature Control Units (TCUs)</h3>
+
+  <p>The temperature control unit (sometimes called a mold temperature controller or MTC) is the external equipment that heats and circulates coolant to maintain a set mold temperature. TCUs pump coolant through the mold, measure the return temperature, and use a heater (and sometimes an inline heat exchanger connected to the injection molding machine cooling system or a chiller) to maintain the supply temperature at the set point. TCUs are available in two basic types: water TCUs (operating range 20–95°C) and oil TCUs (operating range 50–300°C). Selection criteria are covered in Section 6.</p>
+
+  <h3>2.6 Chillers</h3>
+
+  <p>In applications requiring mold temperatures below ambient (typically below 15°C for fast-cycling commodity resins), or where the heat load exceeds the TCU heat exchanger capacity, a refrigeration chiller supplies cold water to the mold cooling system. Chillers are rated in tons of refrigeration (TR) or kilowatts. Chiller sizing requires calculating the total heat load from the injection molding process: heat load (kW) = (shot weight in kg/s) × (specific heat of resin in kJ/kg·K) × (melt temperature minus ejection temperature in K). A properly sized chiller maintains stable coolant supply temperature regardless of shot rate variability.</p>
+
+  <!-- SECTION 3 -->
+  <h2 id="channel-design">3. Cooling Channel Design Rules: Diameter, Spacing, and Depth</h2>
+
+  <p>The three geometric parameters that define the performance of any injection mold cooling channel design are: channel diameter (D), pitch (center-to-center spacing between adjacent channels, P), and depth (distance from channel centerline to the cavity surface, H). These three parameters govern both the uniformity of cooling and the achievable heat removal rate.</p>
+
+  <h3>3.1 Channel Diameter</h3>
+
+  <p>The standard range for cooling channel diameter in conventional injection mold cooling system design is 8–12 mm. This range balances three competing constraints:</p>
+
+  <ul>
+    <li><strong>Minimum diameter (flow requirement):</strong> To achieve turbulent flow (Re &gt; 10,000) at reasonable pump pressures, channels should be no smaller than 6 mm. At 6 mm, turbulent flow requires high velocities that generate significant pressure drop across long circuit lengths.</li>
+    <li><strong>Maximum diameter (mold strength):</strong> Channels above 16 mm begin to compromise the structural integrity of mold inserts and plates, particularly in areas with thin walls between channels and the cavity surface.</li>
+    <li><strong>Standard drill sizes:</strong> Gun drills and twist drills are readily available in 6, 8, 10, 12, and 16 mm. Non-standard sizes increase tooling cost and lead time.</li>
+  </ul>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Channel Diameter</th>
+        <th>Typical Application</th>
+        <th>Flow Rate for Re = 10,000 (Water, 25°C)</th>
+        <th>Max Recommended Circuit Length</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6 mm</td>
+        <td>Thin-wall molds, narrow core pins, precision inserts</td>
+        <td>2.5 L/min</td>
+        <td>1.0 m</td>
+      </tr>
+      <tr>
+        <td>8 mm</td>
+        <td>Small to medium molds, side cores, slides</td>
+        <td>4.2 L/min</td>
+        <td>1.5 m</td>
+      </tr>
+      <tr>
+        <td>10 mm</td>
+        <td>Standard molds — most common diameter</td>
+        <td>5.3 L/min</td>
+        <td>2.0 m</td>
+      </tr>
+      <tr>
+        <td>12 mm</td>
+        <td>Large molds, thick-wall parts, high-shrinkage resins</td>
+        <td>7.9 L/min</td>
+        <td>3.0 m</td>
+      </tr>
+      <tr>
+        <td>16 mm</td>
+        <td>Very large structural molds, high heat load applications</td>
+        <td>10.6 L/min</td>
+        <td>4.0 m</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>3.2 Channel Spacing (Pitch)</h3>
+
+  <p>The center-to-center spacing between adjacent parallel channels should be 2 to 3 times the channel diameter (2D to 3D). The 2D spacing provides more uniform surface temperature but requires more drilling operations and leaves thinner steel sections between channels. The 3D spacing is less thermally uniform but structurally safer and easier to machine. For parts with tight dimensional tolerances or high surface quality requirements (class-A surfaces, optical components), use 2D pitch. For structural parts with looser requirements, 2.5D to 3D pitch is acceptable.</p>
+
+  <p>To understand why: the temperature at the mold surface midway between two cooling channels is higher than the temperature directly above a channel. This midpoint temperature excess is called the "temperature wave." At 2D pitch with 10 mm channels, the midpoint surface temperature typically runs 2–4°C higher than the channel-adjacent surface. At 3D pitch, the same midpoint excess is 8–15°C — enough to create visible sink marks on class-A surfaces and measurable warpage on precision parts.</p>
+
+  <h3>3.3 Channel Depth from the Cavity Surface</h3>
+
+  <p>The recommended depth of cooling channel centerlines below the cavity surface is 1.5D to 2D (1.5 to 2 times the channel diameter). This range balances two opposing requirements:</p>
+
+  <ul>
+    <li><strong>Too shallow (less than 1.5D):</strong> The channel creates a "cold shadow" directly below it on the mold surface, producing non-uniform temperature and potential weld-line-like marks on the part surface. Also risks structural failure of the thin steel section between channel and cavity.</li>
+    <li><strong>Too deep (greater than 2.5D):</strong> The longer conduction path through steel significantly reduces heat removal rate. The cooling time penalty for adding each diameter of additional depth is approximately 8–12% per diameter.</li>
+  </ul>
+
+  <p>For a 10 mm diameter channel, the optimal depth range is 15–20 mm from the cavity surface. In areas with thin mold steel (deep core pins, blade features), 1.5D is used as the minimum safe depth. In areas with thick steel sections (gate area, heavy ribs), going to 2.5D is sometimes necessary to maintain mold strength.</p>
+
+  <div class="data-highlight">
+    <div class="data-highlight__title">Mold Cooling Channel Design — Quick Reference Parameters</div>
+    <table class="compare-table" style="margin:0;">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Standard Range</th>
+          <th>Tight-Tolerance / Class-A</th>
+          <th>Structural / Low-Precision</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Channel diameter (D)</td>
+          <td>8–12 mm</td>
+          <td>8–10 mm</td>
+          <td>10–16 mm</td>
+        </tr>
+        <tr>
+          <td>Channel spacing (P)</td>
+          <td>2D–3D</td>
+          <td>2D–2.5D</td>
+          <td>2.5D–3D</td>
+        </tr>
+        <tr>
+          <td>Depth from surface (H)</td>
+          <td>1.5D–2D</td>
+          <td>1.5D–1.75D</td>
+          <td>2D–2.5D</td>
+        </tr>
+        <tr>
+          <td>Max temperature rise per circuit</td>
+          <td>3–5°C</td>
+          <td>2–3°C</td>
+          <td>5–8°C</td>
+        </tr>
+        <tr>
+          <td>Target Reynolds number</td>
+          <td>&gt; 10,000</td>
+          <td>&gt; 15,000</td>
+          <td>&gt; 4,000 (turbulent)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2 id="circuit-design">4. Series vs Parallel Circuit Design</h2>
+
+  <p>Once individual channel dimensions are defined, the next injection mold cooling design decision is how to connect the channels into cooling circuits. There are two fundamental circuit topologies: series and parallel.</p>
+
+  <h3>4.1 Series Circuits</h3>
+
+  <p>In a series cooling circuit, all channels in a zone are connected end-to-end into a single continuous flow path. Coolant enters at one point, passes through each channel in sequence, and exits at the other end. Series circuits have two key advantages:</p>
+
+  <ul>
+    <li><strong>High flow velocity:</strong> All the pump flow passes through each channel in sequence, maintaining the same velocity throughout. This makes it easier to achieve and maintain turbulent flow.</li>
+    <li><strong>Simplicity:</strong> Fewer connections, fewer potential leak points, and easier to commission and balance.</li>
+  </ul>
+
+  <p>The primary limitation of series circuits is temperature rise: as the coolant absorbs heat from each successive channel, its temperature increases from inlet to outlet. In a well-designed series circuit, this rise should be limited to 3–5°C. If the temperature rise exceeds 5–8°C, the last channels in the series are effectively cooling with warmer fluid, reducing their heat removal rate and creating a thermal gradient across the mold surface — exactly what good mold cooling design seeks to avoid. The practical limit for series circuit length is typically 1.5–3 meters of total channel length, corresponding to 3–6 channels of 250–500 mm length each.</p>
+
+  <h3>4.2 Parallel Circuits</h3>
+
+  <p>In a parallel cooling circuit, coolant from a common manifold supply splits into multiple simultaneous flow paths, each servicing a section of the mold, and reunites in a common return manifold. Every branch receives coolant at approximately the same supply temperature, so temperature uniformity across the mold is better than in a long series circuit. However, the flow in each branch is only a fraction of the total pump flow — with 4 parallel branches, each branch carries 25% of total flow. This reduced flow per channel makes it more difficult to achieve turbulent flow, and if one branch has higher resistance than others, flow distributes unequally, creating the same thermal non-uniformity that parallel design is meant to avoid.</p>
+
+  <h3>4.3 Best Practice: Series-Parallel Hybrid</h3>
+
+  <p>The standard best practice for injection mold cooling system design is a series-parallel hybrid: each cooling zone is divided into series circuits of 3–6 channels (long enough to cool the zone efficiently, short enough to limit temperature rise), and multiple series circuits are fed in parallel from a manifold. This approach captures the high flow velocity of series circuits while using the manifold to ensure each series circuit receives the same inlet temperature. For a 4-cavity mold, a typical layout uses 2 series circuits per cavity (core and cavity side), 8 circuits total, fed from a single manifold with 8 outlet ports and 8 return ports.</p>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Design Rule</div>
+    <div class="benefit-block__headline">Limit Series Circuit Length to Control Temperature Rise</div>
+    <p class="benefit-block__body">At a flow rate of 8 L/min through a 10 mm channel and a mold heat load of 15 kW per cavity, the temperature rise per meter of channel length is approximately 1.2°C. To keep total temperature rise below 5°C, limit each series circuit to 4 meters of channel length. For higher heat loads or smaller channels, recalculate using: ΔT = Q / (ṁ × Cp), where Q is the heat load per circuit (kW), ṁ is mass flow rate (kg/s), and Cp is 4.18 kJ/kg·K for water.</p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <h2 id="manifold-design">5. Mold Cooling Manifold Design and Sizing</h2>
+
+  <p>The mold cooling manifold is the interface between the external cooling supply (TCU or chiller) and the internal circuit network. Manifold design directly affects flow distribution, pressure drop, and the accessibility of the cooling system for maintenance and adjustments.</p>
+
+  <h3>5.1 Manifold Types</h3>
+
+  <p>There are three common manifold configurations for injection mold cooling systems:</p>
+
+  <ul>
+    <li><strong>Drilled plate manifold:</strong> A steel or aluminum plate with internal supply and return galleries machined as longitudinal bores, with branch ports connecting to each circuit. This is the most compact and leak-resistant option. Supply gallery diameter is typically 20–32 mm to minimize pressure drop across the manifold while distributing flow to multiple branch circuits.</li>
+    <li><strong>Modular block manifold:</strong> Standardized aluminum or stainless steel blocks with standardized port locations. Modular systems allow reconfiguration as circuit requirements change and are common in European mold standards (e.g., Staubli couplings). Each block handles 2–4 circuits.</li>
+    <li><strong>External hose manifold:</strong> A header pipe or bar with multiple hose connection ports. Less compact but flexible and inexpensive. Common on older North American mold designs. Prone to leaks at fittings and difficult to route cleanly in multi-cavity molds.</li>
+  </ul>
+
+  <h3>5.2 Manifold Gallery Sizing</h3>
+
+  <p>The supply gallery (the main bore that distributes flow to all branch circuits) must be sized so that the velocity in the gallery is significantly lower than in the individual branch circuits. If the gallery velocity is too high, the pressure differential between the near end and far end of the gallery causes unequal flow distribution — circuits near the supply port receive more flow than circuits at the far end.</p>
+
+  <p>The recommended design rule: size the manifold gallery so its cross-sectional area is at least 1.5 times the sum of all branch port cross-sectional areas. For 8 branch circuits of 10 mm diameter (each 78.5 mm²), total branch area = 628 mm². Minimum gallery area = 942 mm², corresponding to a 35 mm diameter gallery. A 40 mm gallery provides comfortable margin.</p>
+
+  <h3>5.3 Flow Balancing</h3>
+
+  <p>Even with correctly sized galleries, flow imbalances occur when circuits have different lengths, different numbers of channels, or different fitting configurations. Flow balancing methods include:</p>
+
+  <ul>
+    <li><strong>Fixed orifices:</strong> Calibrated restriction orifices installed in each branch port to equalize pressure drop across all circuits. Simple and low-cost but not adjustable.</li>
+    <li><strong>Needle valves:</strong> Manually adjustable valves on each branch return, allowing flow rate adjustment during commissioning. Requires flow meters on each branch to verify balance.</li>
+    <li><strong>Flow meters with indicators:</strong> Rotameter-type flow meters mounted on the return side of each circuit provide continuous visual monitoring of flow rate. This allows operators to detect partial blockage (scale buildup, debris) before it causes cooling problems.</li>
+  </ul>
+
+  <!-- SECTION 6 -->
+  <h2 id="temperature-control">6. Temperature Control Unit Selection and Injection Molding Machine Cooling System</h2>
+
+  <p>The temperature control unit (TCU) is the active component that maintains mold temperature at the set point. Selecting the right TCU requires matching its heating capacity, cooling capacity, pump flow rate, and operating temperature range to the mold's thermal requirements.</p>
+
+  <h3>6.1 TCU Heating and Cooling Capacity</h3>
+
+  <p>At process startup, the TCU must heat the mold from ambient temperature to operating temperature. For a 500 kg steel mold heating from 20°C to 80°C, the energy required is: Q = 500 kg × 0.49 kJ/kg·K × 60 K = 14,700 kJ. At a TCU heating power of 9 kW, heat-up time is approximately 27 minutes — acceptable for a production environment. In steady-state production, the TCU must remove heat equal to the process heat load (the heat carried in by the molten plastic) while maintaining the set temperature. Most water TCUs offer heating power of 3–18 kW and cooling capacities of 15–60 kW at 60°C coolant temperature.</p>
+
+  <h3>6.2 TCU Pump Sizing</h3>
+
+  <p>The TCU pump must provide sufficient flow rate and pressure to maintain turbulent flow in all cooling circuits simultaneously. The required pump flow rate equals the sum of all individual circuit flow rates. For 8 circuits each requiring 8 L/min for turbulent flow, the required pump flow is 64 L/min. The required pump pressure equals the highest pressure drop of any single circuit (circuits in parallel share the same pressure differential). For a typical 2-meter series circuit with 10 mm channels at 8 L/min, pressure drop is approximately 0.8–1.2 bar per circuit. TCU pump ratings of 25–80 L/min at 2–6 bar cover the vast majority of injection mold applications.</p>
+
+  <h3>6.3 Injection Molding Machine Cooling System Integration</h3>
+
+  <p>Most injection molding machines have a built-in cooling water circuit supplied from the plant chilled water system (typically 15–25°C). This injection molding machine cooling system is used to cool hydraulic oil, the barrel cooling zones near the feed throat, and — in simpler setups — the mold itself via direct connection. Direct connection to the machine cooling system has limitations: the mold temperature is approximately equal to the plant chilled water temperature (not adjustable), there is no flow monitoring per circuit, and the system provides no heating capability for processes requiring elevated mold temperatures. For any application requiring mold temperature control above or below the plant water temperature, or requiring circuit-by-circuit monitoring, a separate TCU is essential.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Cooling Method</th>
+        <th>Temperature Range</th>
+        <th>Heat Removal Capacity</th>
+        <th>Typical Application</th>
+        <th>Relative Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Machine cooling (direct)</td>
+        <td>15–25°C (fixed)</td>
+        <td>Moderate</td>
+        <td>PE, PP, PS commodity parts</td>
+        <td class="val-good">Low</td>
+      </tr>
+      <tr>
+        <td>Water TCU</td>
+        <td>20–95°C</td>
+        <td>High</td>
+        <td>ABS, PC/ABS, POM, general purpose</td>
+        <td class="val-neutral">Medium</td>
+      </tr>
+      <tr>
+        <td>Pressurized water TCU</td>
+        <td>20–160°C</td>
+        <td>Very High</td>
+        <td>PA66, PBT, PPS high-temp resins</td>
+        <td class="val-neutral">Medium-High</td>
+      </tr>
+      <tr>
+        <td>Oil TCU</td>
+        <td>50–300°C</td>
+        <td>Moderate (lower Cp)</td>
+        <td>PEEK, PPS, thermosets, wax injection</td>
+        <td class="val-bad">High</td>
+      </tr>
+      <tr>
+        <td>Chiller + TCU</td>
+        <td>5–60°C</td>
+        <td>Very High</td>
+        <td>High-speed PP/PE, optical lenses, LSR</td>
+        <td class="val-bad">High</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 7 -->
+  <h2 id="water-vs-oil">7. Water vs Oil Cooling: Reynolds Number and Turbulent Flow</h2>
+
+  <p>The single most important factor in cooling channel performance is whether flow is turbulent or laminar. This is quantified by the Reynolds number, a dimensionless ratio of inertial to viscous forces in the flow.</p>
+
+  <h3>7.1 Reynolds Number Calculation</h3>
+
+  <div class="formula-box">
+    <div class="formula-box__label">Reynolds Number Formula</div>
+    <div class="formula-box__line"><strong>Re</strong> = (<span class="var">ρ</span> × <span class="var">v</span> × <span class="var">D</span>) / <span class="var">μ</span></div>
+    <div class="formula-box__line"><span class="var">ρ</span> = fluid density (kg/m³) &nbsp;&nbsp; <span class="var">v</span> = velocity (m/s)</div>
+    <div class="formula-box__line"><span class="var">D</span> = channel diameter (m) &nbsp;&nbsp; <span class="var">μ</span> = dynamic viscosity (Pa·s)</div>
+    <div class="formula-box__line">Laminar: Re &lt; 2,300 &nbsp;&nbsp; Transitional: 2,300–4,000 &nbsp;&nbsp; Turbulent: Re &gt; 4,000</div>
+    <div class="formula-box__line">Recommended for injection mold cooling: Re &gt; 10,000</div>
+  </div>
+
+  <div class="worked-example">
+    <div class="worked-example__label">Worked Example</div>
+    <div class="worked-example__title">Reynolds Number Calculation: 10 mm Water Circuit at 8 L/min</div>
+    <p>Given: D = 10 mm = 0.010 m, Q = 8 L/min = 1.33 × 10⁻⁴ m³/s, water at 40°C (ρ = 992 kg/m³, μ = 0.00065 Pa·s)</p>
+    <p>Channel cross-section area: A = π/4 × (0.010)² = 7.85 × 10⁻⁵ m²</p>
+    <p>Flow velocity: v = Q / A = 1.33 × 10⁻⁴ / 7.85 × 10⁻⁵ = 1.70 m/s</p>
+    <p>Reynolds number: Re = (992 × 1.70 × 0.010) / 0.00065 = <strong>25,920</strong></p>
+    <p class="result">Result: Re = 25,920 — fully turbulent. This 10 mm channel at 8 L/min provides excellent convective heat transfer.</p>
+  </div>
+
+  <h3>7.2 Impact of Flow Regime on Heat Transfer</h3>
+
+  <p>The difference in heat transfer between turbulent and laminar flow is dramatic. The convective heat transfer coefficient (h) for turbulent flow in a circular channel is described by the Dittus-Boelter equation and scales approximately as Re⁰˙⁸. Going from laminar (Re = 1,500) to turbulent (Re = 15,000) increases the convective heat transfer coefficient by a factor of 8–12. In practical terms: a mold cooling circuit running in laminar flow requires 8–12 times the channel surface area to achieve the same heat removal rate as a turbulent flow circuit. This explains why flow rate optimization alone can reduce cooling time by 30–50% without any changes to the mold geometry.</p>
+
+  <h3>7.3 Water vs Oil Cooling Fluid Properties</h3>
+
+  <p>Water is the preferred cooling fluid for injection mold cooling systems for most applications because it has exceptional thermophysical properties. However, oil must be used when mold temperatures exceed 90–95°C (the practical limit of non-pressurized water at atmospheric pressure).</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Water (40°C)</th>
+        <th>Thermal Oil (120°C)</th>
+        <th>Pressurized Water (120°C)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Density (kg/m³)</td>
+        <td>992</td>
+        <td>820</td>
+        <td>943</td>
+      </tr>
+      <tr>
+        <td>Specific heat (kJ/kg·K)</td>
+        <td class="val-good">4.18</td>
+        <td class="val-bad">2.1</td>
+        <td class="val-good">4.25</td>
+      </tr>
+      <tr>
+        <td>Thermal conductivity (W/m·K)</td>
+        <td class="val-good">0.63</td>
+        <td class="val-bad">0.13</td>
+        <td class="val-good">0.68</td>
+      </tr>
+      <tr>
+        <td>Dynamic viscosity (mPa·s)</td>
+        <td>0.65</td>
+        <td>4.5</td>
+        <td>0.23</td>
+      </tr>
+      <tr>
+        <td>Max operating temp (1 atm)</td>
+        <td class="val-bad">90°C</td>
+        <td class="val-good">300°C</td>
+        <td class="val-neutral">160°C (pressurized)</td>
+      </tr>
+      <tr>
+        <td>Relative heat transfer coefficient</td>
+        <td class="val-good">1.0 (baseline)</td>
+        <td class="val-bad">0.2–0.35</td>
+        <td class="val-good">1.1–1.3</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>When oil cooling is required, the designer must compensate for oil's lower heat capacity and thermal conductivity by increasing channel diameter (typically 14–16 mm for oil vs 10–12 mm for water), increasing flow rate (2–3× higher than the equivalent water circuit), or accepting longer cooling times — usually a combination of all three. Mold cooling analysis software can calculate the required adjustments for a specific oil type and temperature.</p>
+
+  <!-- SECTION 8 -->
+  <h2 id="cooling-analysis">8. Mold Cooling Analysis: Hand Calculation vs Moldflow Simulation</h2>
+
+  <p>Mold cooling analysis is the process of predicting mold surface temperature distribution, cooling time, and coolant temperature rise for a given cooling circuit design. It can be performed at three levels of sophistication.</p>
+
+  <h3>8.1 Level 1: Hand Calculation (First-Pass Sizing)</h3>
+
+  <p>Hand calculations use simplified one-dimensional heat transfer equations to estimate the required cooling capacity and verify that the proposed circuit design can provide it. The basic steps are:</p>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 1</div>
+    <div class="step-block__title">Calculate Process Heat Load</div>
+    <p>Heat load Q (kW) = (shot weight in kg/s) × (Cp of resin in kJ/kg·K) × (melt temperature minus ejection temperature in K)</p>
+    <p>Example: PP part, 0.18 kg shot, 28 s cycle = 0.0064 kg/s; Cp = 2.0 kJ/kg·K; Tmelt = 230°C, Teject = 80°C. Q = 0.0064 × 2.0 × 150 = 1.92 kW.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 2</div>
+    <div class="step-block__title">Calculate Required Coolant Flow Rate</div>
+    <p>Using ΔT = Q / (ṁ × Cp_water): to limit temperature rise to 3°C across a circuit with 1.92 kW heat load: ṁ = 1.92 / (4.18 × 3) = 0.153 kg/s = 9.2 L/min.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 3</div>
+    <div class="step-block__title">Verify Reynolds Number</div>
+    <p>Calculate Re for the selected channel diameter and calculated flow rate. If Re &lt; 10,000, either increase flow rate, reduce circuit length (split into more parallel circuits), or increase channel diameter.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 4</div>
+    <div class="step-block__title">Estimate Cooling Time</div>
+    <p>Simplified cooling time: tc = (s² / (π² × α)) × ln[(8/π²) × (Tmelt - Tcoolant) / (Teject - Tcoolant)], where s is wall thickness (m) and α is thermal diffusivity of the plastic (m²/s). This gives the theoretical minimum cooling time for a perfectly uniform mold temperature at Tcoolant.</p>
+  </div>
+
+  <h3>8.2 Level 2: Moldflow Cooling Analysis</h3>
+
+  <p>Moldflow (and equivalent software such as Sigmasoft, Cadmould, and Moldex3D) performs three-dimensional finite element analysis of the mold cooling system, solving the coupled heat conduction equations in both the mold steel and the plastic part simultaneously. Moldflow cooling analysis provides:</p>
+
+  <ul>
+    <li><strong>Mold surface temperature maps:</strong> Color contour plots showing the temperature distribution across the cavity and core surface at end of cooling. Hot spots above the target are immediately visible.</li>
+    <li><strong>Part temperature at ejection:</strong> Distribution of plastic temperature throughout the part cross-section at the end of the specified cooling time. Used to verify that the part has reached safe ejection temperature everywhere.</li>
+    <li><strong>Coolant temperature rise:</strong> Predicted temperature increase from circuit inlet to outlet for each circuit separately. Highlights circuits with insufficient flow or excessive heat load.</li>
+    <li><strong>Time to reach ejection temperature:</strong> Maps showing where on the part cooling is limiting cycle time. The hottest spot (highest time to reach ejection temperature) sets the minimum cooling time.</li>
+    <li><strong>Warpage prediction:</strong> Using temperature distribution as an input, warpage simulation predicts dimensional deviation from nominal. Identifies whether warpage is cooling-driven (asymmetric temperature distribution) or shrinkage-driven (material behavior).</li>
+  </ul>
+
+  <p>Moldflow cooling analysis is the standard tool for injection mold cooling system design on complex parts and multi-cavity molds. A typical cooling analysis requires 4–8 hours of engineer time to set up, 2–6 hours of computation, and 2–4 hours to interpret and document results. The investment is easily justified: cooling analysis on a new mold design typically identifies 2–4 design changes that reduce cooling time by 15–30% before steel is cut.</p>
+
+  <h3>8.3 Level 3: Full Process Simulation with Cooling-Warpage-Fiber Coupling</h3>
+
+  <p>For the most demanding applications — thin-wall electronics, optical components, glass-filled structural parts — full coupled simulation links the cooling analysis with warpage prediction and, for fiber-filled resins, fiber orientation analysis. This level of mold cooling analysis is typically performed by specialized simulation consultants or by mold makers with in-house simulation capabilities. It produces the highest confidence in predicted mold performance but requires 3–5 days of engineering time and specialized software licenses.</p>
+
+  <!-- SECTION 9 -->
+  <h2 id="common-problems">9. Common Injection Mold Cooling Problems and Solutions</h2>
+
+  <p>Even well-designed injection mold cooling systems develop problems over time, or reveal design deficiencies that were not apparent in simulation. The following are the most frequently encountered injection molding cooling problems and their diagnostic signatures.</p>
+
+  <h3>9.1 Uneven Mold Surface Temperature</h3>
+
+  <p><strong>Symptoms:</strong> Non-uniform gloss on part surface, localized warpage or sink marks in consistent locations, hot spots visible in IR thermometer surveys of the open mold, excessive part-to-part dimensional variation within the same cavity.</p>
+
+  <p><strong>Root causes and solutions:</strong></p>
+  <ul>
+    <li>Channels spaced too far apart (pitch &gt; 3D): Add channels or switch to conformal cooling insert in affected zone.</li>
+    <li>Series circuit too long — coolant exits at 8–12°C above inlet: Split into two shorter series circuits fed from manifold.</li>
+    <li>One circuit has blocked or corroded channel: Flush circuits with descaling solution; verify flow rates with flow meters on each circuit.</li>
+    <li>Geometric hot spot that conventional channels cannot reach (deep rib, thin core pin): Add baffle or bubbler; or upgrade to conformal cooling insert.</li>
+  </ul>
+
+  <h3>9.2 Insufficient Coolant Flow (Laminar Flow Conditions)</h3>
+
+  <p><strong>Symptoms:</strong> Long cooling times despite apparently adequate circuit coverage; mold surface temperature runs well above coolant supply temperature (difference of 20°C or more); part requires more cooling time than Moldflow simulation predicted.</p>
+
+  <p><strong>Root causes and solutions:</strong></p>
+  <ul>
+    <li>TCU pump undersized for total circuit flow requirement: Verify pump curve against actual system resistance; upgrade pump or TCU.</li>
+    <li>Scale or biofilm buildup in channels reducing effective diameter and flow: Chemical descaling treatment; implement preventive maintenance schedule.</li>
+    <li>Too many circuits in parallel from one TCU — each branch receives insufficient flow: Add second TCU, or reduce number of circuits per TCU.</li>
+    <li>Fittings or hose ID too small, creating bottleneck: Upgrade to larger-bore fittings (minimum same ID as channel diameter).</li>
+  </ul>
+
+  <h3>9.3 Scale Buildup and Corrosion</h3>
+
+  <p><strong>Symptoms:</strong> Gradually increasing cooling times over months; flow rate readings decreasing on individual circuits; mold temperature running progressively higher over a production run; white mineral deposits visible in drained circuits.</p>
+
+  <p>Scale (calcium carbonate and magnesium sulfate precipitates from hard water) is the most pervasive long-term injection mold cooling problem. Scale deposits are effective thermal insulators with thermal conductivity of 1.0–2.3 W/m·K — compared to tool steel at 30–40 W/m·K. A 1 mm scale deposit on the channel wall reduces heat transfer by 15–25%. Over 2–3 years in untreated hard water, scale deposits of 3–5 mm are common in molds without a water treatment program.</p>
+
+  <p><strong>Solutions:</strong> Implement a water treatment program including softening, biocide dosing, and corrosion inhibitor. For existing scale, chemical descaling with 5–15% citric acid or proprietary descaling solutions circulated through each circuit at 60–70°C for 4–8 hours dissolves calcium carbonate without damaging steel. Severe cases may require mechanical cleaning with a spiral brush.</p>
+
+  <h3>9.4 Coolant Leaks</h3>
+
+  <p><strong>Symptoms:</strong> Water on the mold parting surface; moisture contamination of molded parts; corrosion staining around O-ring grooves and plug connections.</p>
+
+  <p>Leaks in injection mold cooling systems occur most frequently at: O-ring seals between mold plates, pipe plug connections at channel ends, baffle and bubbler sealing points, and quick-disconnect fittings on external hoses. Preventive measures include: using high-quality BSPT or NPT plugs with Teflon tape and thread sealant (not just tape), inspecting O-ring grooves for proper depth and finish (Ra &lt; 1.6 µm), and pressure-testing the complete circuit to 10 bar before mold installation.</p>
+
+  <!-- SECTION 10 -->
+  <h2 id="conformal-upgrade">10. Upgrading to Conformal Cooling</h2>
+
+  <p>The limitations of conventional injection mold cooling channel design — straight-drilled channels that cannot follow curved surfaces, baffles with asymmetric flow, bubblers limited to cylindrical geometries — are fundamental constraints of subtractive manufacturing. Metal 3D printing (selective laser melting / SLM) removes these constraints by building cooling channels of any geometry directly into a mold insert during its manufacture.</p>
+
+  <h3>10.1 What Conformal Cooling Is</h3>
+
+  <p>A conformal cooling insert is a mold insert manufactured by SLM from maraging steel or H13 tool steel, with internal cooling channels that follow (conform to) the contour of the mold cavity surface at a constant depth of 1.5–2D. Unlike the straight channels that conventional injection mold cooling design is limited to, conformal channels can be curved, helical, or branching — following the exact shape of the part geometry. This maintains the optimal 1.5–2D depth across the entire surface, including deep ribs, domed features, and complex contoured surfaces that conventional cooling cannot reach.</p>
+
+  <h3>10.2 Performance Improvement vs Conventional Mold Cooling System</h3>
+
+  <p>The performance improvement from upgrading a conventional mold cooling system to conformal cooling is well-documented across hundreds of production programs. Typical results:</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Conventional Mold Cooling</th>
+        <th>Conformal Cooling</th>
+        <th>Improvement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mold surface temperature variation</td>
+        <td>15–30°C</td>
+        <td>3–5°C</td>
+        <td class="val-good">70–85% reduction</td>
+      </tr>
+      <tr>
+        <td>Cycle time (cooling phase)</td>
+        <td>Baseline</td>
+        <td class="val-good">20–40% shorter</td>
+        <td class="val-good">20–40% reduction</td>
+      </tr>
+      <tr>
+        <td>Warpage / scrap rate</td>
+        <td>4–8%</td>
+        <td>0.5–1.5%</td>
+        <td class="val-good">60–80% reduction</td>
+      </tr>
+      <tr>
+        <td>Cooling channels near deep ribs</td>
+        <td>Not achievable</td>
+        <td class="val-good">1.5D depth maintained</td>
+        <td class="val-good">Fundamental capability gain</td>
+      </tr>
+      <tr>
+        <td>Core pin cooling (round cores)</td>
+        <td>Bubbler only (asymmetric)</td>
+        <td class="val-good">Helical or spiral channel</td>
+        <td class="val-good">Uniform 360° cooling</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>10.3 When to Upgrade the Mold Cooling System to Conformal</h3>
+
+  <p>Conformal cooling is the right upgrade when the conventional injection mold cooling system has reached its geometric limits. Specific indicators that a conventional system cannot be improved further without conformal cooling:</p>
+
+  <ul>
+    <li>Hot spot temperature exceeds the rest of the mold by more than 10°C, and the hot spot is in a deep rib, curved surface, or area inaccessible to drilling</li>
+    <li>Core pin cooling with baffles or bubblers still shows temperature variation of more than 5°C around the circumference</li>
+    <li>Mold cooling analysis in Moldflow shows that adding more conventional channels will not reduce peak temperature because the channels cannot get close enough to the problem area</li>
+    <li>Cooling time is limited by a single hot spot, and eliminating that hot spot would reduce cycle time by more than 15%</li>
+    <li>The program runs at sufficient volume (typically 200,000+ shots/year) to justify the insert cost within 90 days</li>
+  </ul>
+
+  <p>For a detailed analysis of conformal cooling ROI and payback calculation methodology, see our guide to <a href="conformal-cooling-roi.html">Conformal Cooling ROI: Payback Period, Annual Savings &amp; 5-Year NPV</a>.</p>
+
+  <!-- SECTION 11 -->
+  <h2 id="maintenance">11. Mold Cooling System Maintenance</h2>
+
+  <p>A properly designed injection mold cooling system will degrade in performance without a structured maintenance program. The three maintenance activities that have the greatest impact on sustained cooling performance are:</p>
+
+  <h3>11.1 Preventive Water Treatment</h3>
+
+  <p>Install a water treatment station on the cooling water supply that includes: a water softener to remove calcium and magnesium ions (reduces scale formation by 90%), a biocide dosing system to prevent biofilm growth in channels and TCU heat exchangers (biofilm is as thermally insulating as scale), and a corrosion inhibitor that protects both the steel mold and the copper/brass fittings in the TCU. Water treatment is the single highest-ROI preventive maintenance investment for any injection mold cooling system — preventing scale costs far less than removing it.</p>
+
+  <h3>11.2 Periodic Circuit Flushing and Descaling</h3>
+
+  <p>Even with water treatment, circuits should be flushed annually with clean water under high flow rate to remove debris accumulation. Every 2–3 years, or when flow meter readings show a 15% reduction in flow rate from baseline, perform chemical descaling. Measure flow rate (L/min per circuit) at the beginning of each production run and log it; a decreasing trend is the earliest warning of scale or biofilm buildup before it affects part quality.</p>
+
+  <h3>11.3 O-Ring and Seal Inspection</h3>
+
+  <p>Inspect all O-rings, pipe plugs, and fitting connections during every planned mold maintenance interval (typically every 200,000 shots or annually, whichever comes first). Replace O-rings showing any compression set, cracking, or swelling. Ensure plug threads are fully engaged (minimum 5 thread engagements for NPT/BSPT fittings). After re-assembly, pressure-test the complete circuit to 10 bar and hold for 10 minutes before returning the mold to production.</p>
+
+  <h3>11.4 Baseline Performance Documentation</h3>
+
+  <p>At mold commissioning, document the baseline performance of each cooling circuit: supply flow rate (L/min), inlet temperature (°C), outlet temperature (°C), and pressure drop (bar) at the standard TCU set point. Compare these baseline measurements at every maintenance interval. Deviations of more than 10% from baseline are a trigger for investigation. This approach converts cooling system maintenance from reactive (responding to quality problems) to predictive (identifying degradation before it affects parts).</p>
+
+  <!-- MID-ARTICLE CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Get a Free Mold Cooling Analysis for Your Tool</div>
+    <div class="blog-cta__text">Share your current mold drawing, material, cycle time, and problem symptoms. Our engineers will analyze your injection mold cooling system and identify the highest-impact improvement — whether that's circuit redesign, manifold upgrade, or conformal cooling insert. Free report within 24 hours.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp — Get Free Analysis
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Send Drawing via Email &rarr;</a>
+    </div>
+  </div>
+
+  <!-- SECTION 12: FAQ -->
+  <h2 id="faq">12. FAQ — Injection Mold Cooling System Design</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the ideal cooling channel diameter for an injection mold?</div>
+    <p class="faq-block__a">For conventional straight-drilled injection mold cooling channels, the recommended diameter is 8–12 mm (5/16 to 1/2 inch). Smaller channels (6 mm) are used in thin-walled molds or restricted areas near cores. Larger channels (14–16 mm) appear in large structural molds requiring high flow rates. The key requirement is that the selected diameter, combined with the available pump flow rate, must produce turbulent flow with a Reynolds number above 10,000 to achieve efficient heat transfer. Always calculate Reynolds number for the proposed channel diameter and flow rate before finalizing the injection mold cooling system design.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the difference between series and parallel cooling circuits in injection molds?</div>
+    <p class="faq-block__a">In a series cooling circuit, coolant flows through all channels sequentially in one continuous path. This produces high flow velocity (improving heat transfer) but results in a temperature rise of 3–8°C from inlet to outlet. In a parallel circuit, coolant splits into multiple simultaneous paths fed from a common mold cooling manifold. Parallel circuits deliver more uniform inlet temperature to each channel but lower velocity per branch, often resulting in laminar flow. Best practice for injection mold cooling system design is a series-parallel hybrid: 3–6 channels connected in series per circuit, with multiple circuits fed in parallel from a manifold. This balances temperature rise control with high-velocity turbulent flow.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How do I calculate whether cooling flow is turbulent in my injection mold?</div>
+    <p class="faq-block__a">Use the Reynolds number formula: Re = (ρ × v × D) / μ, where ρ is fluid density (kg/m³), v is flow velocity (m/s), D is channel diameter (m), and μ is dynamic viscosity (Pa·s). For water at 40°C: ρ = 992 kg/m³, μ = 0.00065 Pa·s. Turbulent flow requires Re &gt; 4,000; Re &gt; 10,000 is recommended for efficient injection molding cooling. For a 10 mm channel with 8 L/min flow, Re ≈ 25,900 — fully turbulent and well-suited for injection mold cooling. If your calculation gives Re &lt; 10,000, either increase flow rate, reduce circuit length, or increase channel diameter before finalizing the mold cooling channel design.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">When should I use oil instead of water in an injection mold cooling system?</div>
+    <p class="faq-block__a">Oil cooling is used when mold temperature must exceed 90°C — beyond the safe operating limit for non-pressurized water systems. Common applications include engineering resins such as POM, PPS, PEEK, and PA66-GF50 that require mold temperatures of 100–160°C for proper crystallization and dimensional stability. Oil has roughly 50% of water's heat capacity and about 20% of water's thermal conductivity, so oil-cooled molds require larger channel diameters (14–16 mm) or significantly higher flow rates to achieve equivalent heat removal. Mold cooling analysis must account for oil's different thermophysical properties when sizing circuits and selecting the temperature control unit for the injection molding machine cooling system.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How does conformal cooling improve on a conventional injection mold cooling system?</div>
+    <p class="faq-block__a">Conformal cooling channels follow the mold surface contour at a constant depth of 1.5–2 times the channel diameter, maintaining uniform distance to the plastic part throughout complex geometries — including deep ribs, curved surfaces, and core pins that conventional straight-drilled channels cannot reach. This eliminates hot spots that cause warpage and drive extended cooling time. Compared to a conventional injection mold cooling design, conformal cooling typically reduces cycle time by 20–40%, reduces mold surface temperature variation from 15–30°C down to 3–5°C, and reduces warpage-related scrap by 60–80%. The technology is manufactured by metal 3D printing (SLM/DMLS) using H13 tool steel or maraging steel, and the resulting inserts integrate directly into the existing injection mold cooling system.</p>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Design a Better Mold Cooling System — Starting Today</div>
+    <div class="blog-cta__text">Whether you need to optimize an existing injection mold cooling system, design a new mold from scratch, or evaluate a conformal cooling upgrade, MouldNova's engineering team can help. Send your STEP file, current cycle data, and problem description — we return a detailed mold cooling analysis and improvement recommendation within 24 hours, at no charge.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp — Send Files Now
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Upload Drawing via Email &rarr;</a>
+    </div>
+  </div>
+
+  <!-- INTERNAL LINKS -->
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href="conformal-cooling-benefits.html">Conformal Cooling Benefits — Five Benefit Categories with a 3-Year Factory Model</a></li>
+    <li><a href="conformal-cooling-roi.html">Conformal Cooling ROI: Payback Period, Annual Savings &amp; 5-Year NPV Calculator</a></li>
+    <li><a href="conformal-cooling-vs-conventional-cooling.html">Conformal Cooling vs Conventional Cooling — Side-by-Side with 13 Real Projects</a></li>
+    <li><a href="conformal-cooling-simulation-workflow.html">Conformal Cooling Simulation Workflow: From CAD to Validated Thermal Performance</a></li>
+    <li><a href="conformal-cooling-roi-calculation-guide.html">Conformal Cooling ROI Calculation Guide — Step-by-Step for Tooling Engineers</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts — Service Details &amp; Specifications</a></li>
+    <li><a href="../case-studies.html">Case Studies — Full Production Data from Real Programs</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>
