@@ -2,7 +2,9 @@
 // Sends inquiry emails to zhangyuanbo123@gmail.com via Resend API
 
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') ?? '';
-const TO_EMAIL = 'zhangyuanbo123@gmail.com';
+const TG_BOT_TOKEN = Deno.env.get('TG_BOT_TOKEN') ?? '';
+const TG_CHAT_ID = '8563750211';
+const TO_EMAIL = 'zhangyuanbohz@163.com';
 const FROM_EMAIL = 'onboarding@resend.dev';
 
 Deno.serve(async (req) => {
@@ -64,6 +66,14 @@ Deno.serve(async (req) => {
       const err = await res.text();
       throw new Error(`Resend error: ${err}`);
     }
+
+    // Telegram notification
+    const tgText = `🔔 *New MouldNova Inquiry*\n\n👤 *Name:* ${name}\n🏢 *Company:* ${company}\n📧 *Email:* ${email}\n🌍 *Country:* ${country}\n📱 *WhatsApp:* ${whatsapp}\n🔧 *Service:* ${service}\n💬 *Message:* ${message}`;
+    await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: TG_CHAT_ID, text: tgText, parse_mode: 'Markdown' }),
+    }).catch(() => {}); // don't fail if TG is down
 
     return new Response(JSON.stringify({ ok: true }), {
       status: 200,
