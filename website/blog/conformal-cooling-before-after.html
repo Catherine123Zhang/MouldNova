@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conformal Cooling Before &amp; After: 13 Cases | MouldNova</title>
+  <meta name="description" content="13 conformal cooling before/after projects: 15-72% cycle reduction, 22-57% temperature drop. Automotive, cosmetics, electronics, and medical data." />
+  <meta name="keywords" content="conformal cooling before after, conformal cooling results, conformal cooling cycle time reduction, conformal cooling case study data, 3D printed conformal cooling mold insert results, conformal cooling vs conventional cooling data" />
+  <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-before-after.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/conformal-cooling-before-after.html" />
+  <meta property="og:title" content="Conformal Cooling Before & After: 13 Real Projects with Factory Data" />
+  <meta property="og:description" content="13 real conformal cooling projects with factory data: cycle time reductions of 15–72%, mold temperature drops of 22–57%, and per-part cost savings across 6 industries." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/conformal-cooling-before-after.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LMZXHN7YGJ');
+  </script>
+
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:860px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:56px 0 16px; color:var(--black); border-top:2px solid var(--gray-light); padding-top:32px; }
+    .blog-body h3 { font-size:1.1rem; font-weight:700; margin:28px 0 10px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; font-size:0.95rem; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:3px 0; font-size:0.92rem; }
+    .toc a:hover { text-decoration:underline; }
+    /* Summary stats bar */
+    .summary-bar { background:var(--black); color:#fff; border-radius:16px; padding:32px; margin:32px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:20px; text-align:center; }
+    .summary-bar__num { font-size:2.2rem; font-weight:900; color:var(--red); }
+    .summary-bar__label { font-size:0.78rem; color:rgba(255,255,255,0.6); margin-top:4px; line-height:1.4; }
+    /* Case card */
+    .case { border:2px solid var(--gray-light); border-radius:16px; padding:32px; margin:32px 0; background:#fff; }
+    .case__header { display:flex; align-items:center; gap:12px; margin-bottom:20px; flex-wrap:wrap; }
+    .case__num { background:var(--red); color:#fff; font-size:0.72rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; white-space:nowrap; }
+    .case__industry { background:var(--gray-light); color:var(--gray-mid); font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:4px 10px; border-radius:4px; }
+    .case__title { font-size:1.2rem; font-weight:800; color:var(--black); margin:0; }
+    .case__problem { background:#fff5f5; border-left:4px solid var(--red); padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:20px; font-size:0.95rem; color:#444; line-height:1.75; }
+    .case__problem strong { color:var(--black); }
+    /* Before/After image grid */
+    .img-compare { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0; }
+    .img-box { border-radius:10px; overflow:hidden; }
+    .img-box img { width:100%; height:180px; object-fit:cover; display:block; }
+    .img-box__label { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:8px 12px; text-align:center; }
+    .img-box--before .img-box__label { background:#fee2e2; color:#dc2626; }
+    .img-box--after .img-box__label { background:#dcfce7; color:#16a34a; }
+    /* Placeholder for missing images */
+    .img-placeholder { width:100%; height:180px; background:var(--gray-light); border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--gray-mid); font-size:0.8rem; text-align:center; padding:12px; box-sizing:border-box; border:2px dashed #d1d5db; }
+    .img-placeholder__icon { font-size:2rem; margin-bottom:8px; opacity:0.4; }
+    .img-placeholder__text { font-size:0.72rem; line-height:1.5; opacity:0.7; }
+    /* Data table */
+    .data-table { width:100%; border-collapse:collapse; margin:20px 0; font-size:0.92rem; }
+    .data-table th { background:var(--black); color:#fff; padding:10px 14px; text-align:left; font-weight:700; font-size:0.85rem; }
+    .data-table td { padding:10px 14px; border-bottom:1px solid var(--gray-light); }
+    .data-table tr:nth-child(even) { background:#fafafa; }
+    .val-before { color:#dc2626; font-weight:600; }
+    .val-after { color:#16a34a; font-weight:600; }
+    .val-gain { background:#dcfce7; color:#15803d; font-weight:800; border-radius:4px; padding:2px 8px; }
+    /* Result banner */
+    .result-banner { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border:1px solid #bbf7d0; border-radius:10px; padding:16px 20px; margin:16px 0; }
+    .result-banner__items { display:flex; flex-wrap:wrap; gap:16px; }
+    .result-banner__item { display:flex; flex-direction:column; }
+    .result-banner__num { font-size:1.6rem; font-weight:900; color:#15803d; line-height:1; }
+    .result-banner__label { font-size:0.72rem; color:#166534; margin-top:3px; }
+    /* Blog CTA */
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.85); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    /* All results table */
+    .all-results { width:100%; border-collapse:collapse; font-size:0.88rem; margin:24px 0; }
+    .all-results th { background:var(--black); color:#fff; padding:10px 12px; text-align:left; font-size:0.8rem; }
+    .all-results td { padding:9px 12px; border-bottom:1px solid var(--gray-light); }
+    .all-results tr:nth-child(even) { background:#fafafa; }
+    .tag { display:inline-block; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; padding:2px 8px; border-radius:3px; }
+    .tag--auto { background:#fef3c7; color:#92400e; }
+    .tag--beauty { background:#fce7f3; color:#9d174d; }
+    .tag--fmcg { background:#ede9fe; color:#5b21b6; }
+    .tag--elec { background:#dbeafe; color:#1e40af; }
+    .tag--appl { background:#d1fae5; color:#065f46; }
+    .tag--med { background:#f0fdf4; color:#14532d; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .img-compare { grid-template-columns:1fr; }
+      .summary-bar { grid-template-columns:repeat(2,1fr); }
+      .result-banner__items { gap:12px; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Conformal Cooling Before & After: 13 Real Projects with Factory Data",
+    "description": "13 real conformal cooling projects with factory data across automotive, cosmetics, FMCG, electronics, appliance, and medical applications. Cycle time reductions of 15–72%, mold temperature drops of 22–57%.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-19",
+    "dateModified": "2026-03-19",
+    "mainEntityOfPage": "https://mouldnova.com/blog/conformal-cooling-before-after.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services ▾</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="directory/" class="nav__link">Directory</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../metal-3d-printing-service.html" class="nav__mobile-link">Metal 3D Printing Service</a>
+    <a href="../rapid-tooling-service.html" class="nav__mobile-link">Rapid Tooling Service</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="index.html" class="nav__mobile-link">Blog</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Factory Data · 13 Real Projects · Before &amp; After</div>
+    <h1 class="blog-hero__title">Conformal Cooling Before &amp; After: 13 Projects, Real Production Numbers</h1>
+    <p class="blog-hero__meta">By MouldNova / Saiguang 3D Technology &middot; Updated March 2026 &middot; Automotive · Cosmetics · FMCG · Electronics · Appliance · Medical</p>
+  </div>
+</section>
+
+
+<div class="blog-body">
+
+  <p>Cycle time reduction claims of "up to 70%" are common in conformal cooling marketing. Factory data is rarer. This page documents <strong>13 production mold projects</strong> where we replaced conventional straight-drilled cooling circuits with 3D-printed conformal cooling inserts. Every number below comes from Moldflow simulation validated by actual production runs — not from test coupons or laboratory conditions.</p>
+
+  <p>The applications span automotive components, cosmetics packaging, FMCG closures, consumer electronics, home appliances, and medical devices. Parts range from 6-second cycle times (cosmetics cap) to 100-second cycle times (spirits bottle cap). The pattern is consistent: conformal cooling delivers meaningful cycle time reduction in every application, with the largest gains where conventional drilling cannot reach — deep cores, thin-wall features, and geometries with no straight-line access.</p>
+
+  <!-- SUMMARY -->
+  <div class="summary-bar">
+    <div>
+      <div class="summary-bar__num">13</div>
+      <div class="summary-bar__label">Production Projects</div>
+    </div>
+    <div>
+      <div class="summary-bar__num">72%</div>
+      <div class="summary-bar__label">Max Cycle Time Reduction</div>
+    </div>
+    <div>
+      <div class="summary-bar__num">57%</div>
+      <div class="summary-bar__label">Max Mold Temp Reduction</div>
+    </div>
+    <div>
+      <div class="summary-bar__num">15–72%</div>
+      <div class="summary-bar__label">Cycle Time Range Across All Projects</div>
+    </div>
+    <div>
+      <div class="summary-bar__num">6</div>
+      <div class="summary-bar__label">Industries Covered</div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc__title">Jump to a Project</div>
+    <a href="#case1">Case 1 — Cosmetics Round Cap: −72% cycle time</a>
+    <a href="#case2">Case 2 — Automotive Trunk Oil Rod: −34% cycle time, −57% mold temp</a>
+    <a href="#case3">Case 3 — Automotive Rearview Mirror Pivot: −24% cycle time</a>
+    <a href="#case4">Case 4 — Automotive Brake Fluid Reservoir: −30% cycle time</a>
+    <a href="#case5">Case 5 — FMCG Yogurt Bottle Cap: −28.5% cycle time, +2,058 pcs/shift</a>
+    <a href="#case6">Case 6 — Maotai Spirit Bottle Cap: −33% cycle time</a>
+    <a href="#case7">Case 7 — Eye Cream Box: −17% cycle time</a>
+    <a href="#case8">Case 8 — Transparent Compact: −15% cycle time</a>
+    <a href="#case9">Case 9 — Lotion Bottle Cap: −24% cycle time</a>
+    <a href="#case10">Case 10 — Xiaomi Humidifier: −33% cycle time</a>
+    <a href="#case11">Case 11 — Solar Panel Shield: −24% cycle time</a>
+    <a href="#case12">Case 12 — E-Cigarette Tip: −30% cycle time</a>
+    <a href="#case13">Case 13 — Medical Deep-Well Plate: −43% cycle time</a>
+    <a href="#summary-table">All 13 Projects: Summary Table</a>
+  </div>
+
+  <p>Each project follows the same format: the problem with conventional cooling, the conformal solution, and the measured production results. Where available, Moldflow simulation screenshots and insert photos are included.</p>
+
+
+  <!-- ========== CASE 1 ========== -->
+  <h2 id="case1">Case 1: Cosmetics Round Cap — 72% Cycle Time Reduction</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 01</span>
+      <span class="case__industry">Cosmetics Packaging</span>
+      <h3 class="case__title" style="margin:0;">Round Cosmetics Cap (Transparent PETG)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> The cap's curved geometry concentrated heat near the gate. Conventional straight-drilled channels could not reach the critical zone. Result: gate burning on every shot, surface cloudiness on the PETG material, and a 21-second cooling phase that dominated cycle time.
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page12.jpg" alt="Cosmetics cap gate burn marks - conventional cooling" style="width:100%;height:180px;object-fit:cover;object-position:30% 32%;display:block;" loading="lazy" />
+        <div class="img-box__label">Before: Gate Burning</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page12.jpg" alt="Cosmetics cap accepted product clear surface - conformal cooling" style="width:100%;height:180px;object-fit:cover;object-position:72% 32%;display:block;" loading="lazy" />
+        <div class="img-box__label">After: Accepted Product</div>
+      </div>
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page09.jpg" alt="Moldflow simulation conventional cooling 21.71 seconds" style="width:100%;height:180px;object-fit:cover;object-position:50% 28%;display:block;" loading="lazy" />
+        <div class="img-box__label">Moldflow: Conventional — 21.71s</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page09.jpg" alt="Moldflow simulation conformal cooling 6.57 seconds" style="width:100%;height:180px;object-fit:cover;object-position:50% 75%;display:block;" loading="lazy" />
+        <div class="img-box__label">Moldflow: Conformal — 6.57s</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional Cooling</th><th>Conformal Cooling</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">21 s</td><td class="val-after">6 s</td><td><span class="val-gain">−72%</span></td></tr>
+      <tr><td>Part temperature at ejection</td><td class="val-before">93 °C</td><td class="val-after">60 °C</td><td><span class="val-gain">−35.6%</span></td></tr>
+      <tr><td>Mold insert temperature</td><td class="val-before">94 °C</td><td class="val-after">62 °C</td><td><span class="val-gain">−34.4%</span></td></tr>
+      <tr><td>Mold temperature stability</td><td class="val-before">Unstable (rising)</td><td class="val-after">Stable</td><td><span class="val-gain">Eliminated drift</span></td></tr>
+      <tr><td>Gate burning defect</td><td class="val-before">Present</td><td class="val-after">None</td><td><span class="val-gain">Eliminated</span></td></tr>
+    </table>
+
+    <div class="result-banner">
+      <div class="result-banner__items">
+        <div class="result-banner__item"><div class="result-banner__num">−72%</div><div class="result-banner__label">Cooling time</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">−35.6%</div><div class="result-banner__label">Part ejection temp</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">−34.4%</div><div class="result-banner__label">Mold insert temp</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">Zero</div><div class="result-banner__label">Gate burn defects</div></div>
+      </div>
+    </div>
+
+    <p><strong>Solution approach:</strong> Conformal channels were routed to follow the curved cap geometry, placing the cooling circuit 2–3 mm from the mold surface throughout. The conventional mold could not access this zone at all — the closest drilled channel was 12 mm from the hottest area. The 72% cooling time reduction is the largest in this dataset, driven by the geometry mismatch that made conventional cooling particularly ineffective.</p>
+  </div>
+
+
+  <!-- ========== CASE 2 ========== -->
+  <h2 id="case2">Case 2: Automotive Trunk Oil Rod — −34% Cycle Time, −57% Mold Temperature</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 02</span>
+      <span class="case__industry">Automotive</span>
+      <h3 class="case__title" style="margin:0;">Trunk Oil Rod (Cylindrical Deep Core)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> The rod's long cylindrical geometry required a deep slender core. Conventional cooling could not reach the tip; the mold ran at 80 °C, causing warpage and preventing ejection without distortion. Cycle time was 60 seconds — mostly cooling wait time. Output was 1,152 pieces per shift.
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page13.jpg" alt="Conventional straight cooling channels cannot reach core tip CAD" style="width:100%;height:180px;object-fit:cover;object-position:18% 20%;display:block;" loading="lazy" />
+        <div class="img-box__label">Before: Conventional Channels</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page13.jpg" alt="Double-helix conformal cooling channels on cylindrical core CAD" style="width:100%;height:180px;object-fit:cover;object-position:50% 20%;display:block;" loading="lazy" />
+        <div class="img-box__label">After: Double-Helix Conformal</div>
+      </div>
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page13.jpg" alt="Automotive trunk oil rod warped parts conventional cooling" style="width:100%;height:180px;object-fit:cover;object-position:78% 45%;display:block;" loading="lazy" />
+        <div class="img-box__label">Before: Warped Parts</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page13.jpg" alt="Automotive trunk oil rod straight parts no warpage conformal cooling" style="width:100%;height:180px;object-fit:cover;object-position:78% 68%;display:block;" loading="lazy" />
+        <div class="img-box__label">After: Straight, No Warpage</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">60 s</td><td class="val-after">40 s</td><td><span class="val-gain">−34%</span></td></tr>
+      <tr><td>Mold temperature</td><td class="val-before">80 °C</td><td class="val-after">34 °C</td><td><span class="val-gain">−57%</span></td></tr>
+      <tr><td>Part warpage</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">1,152 pcs</td><td class="val-after">1,570 pcs</td><td><span class="val-gain">+418 pcs (+36%)</span></td></tr>
+      <tr><td>Unit cost</td><td class="val-before">¥1.87 / pc</td><td class="val-after">¥1.42 / pc</td><td><span class="val-gain">−¥0.45 / pc</span></td></tr>
+    </table>
+
+    <div class="result-banner">
+      <div class="result-banner__items">
+        <div class="result-banner__item"><div class="result-banner__num">−34%</div><div class="result-banner__label">Cycle time</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">−57%</div><div class="result-banner__label">Mold temperature</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">+418</div><div class="result-banner__label">Parts per shift</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">−¥0.45</div><div class="result-banner__label">Per-part cost saving</div></div>
+      </div>
+    </div>
+
+    <p><strong>Solution:</strong> A double-helix conformal cooling circuit was printed around the cylindrical core. The helix geometry balances heat field symmetry around the core axis, eliminating the thermal gradient that caused bending warpage. The 57% mold temperature reduction is the highest in this dataset — enabled by the helical channel placing coolant within 2 mm of the mold surface around the full core circumference.</p>
+  </div>
+
+
+  <!-- ========== CASE 3 ========== -->
+  <h2 id="case3">Case 3: Automotive Rearview Mirror Pivot — +455 pcs/Shift</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 03</span>
+      <span class="case__industry">Automotive</span>
+      <h3 class="case__title" style="margin:0;">Rearview Mirror Pivot (MS1 Steel, Deep Ribs)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> Deep rib features on the pivot body caused thick section sink marks and excessive flash at the part surface. Conventional cooling (pin-and-bushing) could not reach deep rib locations. Mold temperature was 46 °C but uneven, causing localized hot zones in the ribs.
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page13.jpg" alt="Rearview mirror pivot conventional pin cooling CAD" style="width:100%;height:180px;object-fit:cover;object-position:18% 72%;display:block;" loading="lazy" />
+        <div class="img-box__label">Before: Pin-and-Bushing Cooling</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page13.jpg" alt="Rearview mirror pivot conformal cooling channels deep ribs MS1 insert" style="width:100%;height:180px;object-fit:cover;object-position:50% 72%;display:block;" loading="lazy" />
+        <div class="img-box__label">After: Deep-Rib Conformal Channels</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">50 s</td><td class="val-after">38 s</td><td><span class="val-gain">−24%</span></td></tr>
+      <tr><td>Mold temperature</td><td class="val-before">46 °C</td><td class="val-after">30 °C</td><td><span class="val-gain">−35%</span></td></tr>
+      <tr><td>Part warpage</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">1,440 pcs</td><td class="val-after">1,895 pcs</td><td><span class="val-gain">+455 pcs (+32%)</span></td></tr>
+      <tr><td>Unit cost</td><td class="val-before">¥1.49 / pc</td><td class="val-after">¥1.15 / pc</td><td><span class="val-gain">−¥0.34 / pc</span></td></tr>
+    </table>
+  </div>
+
+
+  <!-- ========== CASE 4 ========== -->
+  <h2 id="case4">Case 4: Automotive Brake Fluid Reservoir — −41% Mold Temperature</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 04</span>
+      <span class="case__industry">Automotive</span>
+      <h3 class="case__title" style="margin:0;">Brake Fluid Reservoir (MS1, Deep Boss Features)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> Uneven cooling caused deep boss features to shrink and sink. Cycle time was 41 seconds. The mold ran hot (65 °C) with no ability to place channels near the boss roots using conventional drilling.
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page14.jpg" alt="Brake fluid reservoir conventional cooling layout CAD" style="width:100%;height:180px;object-fit:cover;object-position:18% 20%;display:block;" loading="lazy" />
+        <div class="img-box__label">Before: Conventional</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page14.jpg" alt="Brake fluid reservoir conformal cooling channels reaching boss locations" style="width:100%;height:180px;object-fit:cover;object-position:65% 35%;display:block;" loading="lazy" />
+        <div class="img-box__label">After: Conformal into Boss Zones</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">41 s</td><td class="val-after">29 s</td><td><span class="val-gain">−30%</span></td></tr>
+      <tr><td>Mold temperature</td><td class="val-before">65 °C</td><td class="val-after">24 °C</td><td><span class="val-gain">−41°C (−63%)</span></td></tr>
+      <tr><td>Part warpage</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">1,756 pcs</td><td class="val-after">2,482 pcs</td><td><span class="val-gain">+726 pcs (+41%)</span></td></tr>
+      <tr><td>Unit cost</td><td class="val-before">¥1.24 / pc</td><td class="val-after">¥0.90 / pc</td><td><span class="val-gain">−¥0.34 / pc</span></td></tr>
+    </table>
+  </div>
+
+
+  <!-- ========== CASE 5 ========== -->
+  <h2 id="case5">Case 5: FMCG Yogurt Bottle Cap — +2,058 pcs/Shift</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 05</span>
+      <span class="case__industry">FMCG Packaging</span>
+      <h3 class="case__title" style="margin:0;">Yogurt Drink Bottle Cap (High-Cavity, PETG)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> Gate burn marks at the cap inner surface. At high cavity counts and short cycle times, any cooling inefficiency compounds across millions of annual shots. The 14-second baseline cycle was already fast — but still leaving productivity on the table.
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">14 s</td><td class="val-after">10 s</td><td><span class="val-gain">−28.5%</span></td></tr>
+      <tr><td>Part warpage</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">5,142 pcs</td><td class="val-after">7,200 pcs</td><td><span class="val-gain">+2,058 pcs (+40%)</span></td></tr>
+      <tr><td>Unit cost</td><td class="val-before">¥0.44 / pc</td><td class="val-after">¥0.33 / pc</td><td><span class="val-gain">−¥0.11 / pc</span></td></tr>
+    </table>
+
+    <div class="result-banner">
+      <div class="result-banner__items">
+        <div class="result-banner__item"><div class="result-banner__num">+2,058</div><div class="result-banner__label">Parts per shift gain</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">−28.5%</div><div class="result-banner__label">Cycle time</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">−¥0.11</div><div class="result-banner__label">Per-part cost saving</div></div>
+      </div>
+    </div>
+
+    <p>At high annual volumes (tens of millions of caps), the ¥0.11/pc cost saving represents a significant annual saving that repays the conformal insert cost within weeks of production.</p>
+  </div>
+
+
+  <!-- ========== CASE 6 ========== -->
+  <h2 id="case6">Case 6: Maotai Spirit Bottle Cap — +308 pcs/Shift, −¥0.83/pc</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 06</span>
+      <span class="case__industry">FMCG Packaging</span>
+      <h3 class="case__title" style="margin:0;">Maotai Spirit Bottle Cap (Tall, Dense Geometry)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> The tall cap geometry with dense ribs could only be cooled by a central baffle — unable to reach the outer rib walls. The mold ran hot and warped the cap body. 100-second cycle time. Only 720 pieces per shift.
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page15.jpg" alt="Maotai bottle cap single central baffle cooling CAD" style="width:100%;height:180px;object-fit:cover;object-position:18% 20%;display:block;" loading="lazy" />
+        <div class="img-box__label">Before: Central Baffle Only</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page15.jpg" alt="Maotai bottle cap conformal cooling channels outer walls insert photo" style="width:100%;height:180px;object-fit:cover;object-position:65% 22%;display:block;" loading="lazy" />
+        <div class="img-box__label">After: Full-Coverage Conformal</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">100 s</td><td class="val-after">70 s</td><td><span class="val-gain">−33%</span></td></tr>
+      <tr><td>Part warpage</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">720 pcs</td><td class="val-after">1,028 pcs</td><td><span class="val-gain">+308 pcs (+43%)</span></td></tr>
+      <tr><td>Unit cost</td><td class="val-before">¥2.83 / pc</td><td class="val-after">¥2.00 / pc</td><td><span class="val-gain">−¥0.83 / pc</span></td></tr>
+    </table>
+  </div>
+
+
+  <!-- ========== CASE 7 ========== -->
+  <h2 id="case7">Case 7: Eye Cream Box — Gate Burn Eliminated</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 07</span>
+      <span class="case__industry">Cosmetics Packaging</span>
+      <h3 class="case__title" style="margin:0;">Eye Cream Box (PETG, Optical Surface Required)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> Gate location at the base of the box caused consistent burn marks visible through the transparent PETG. The product surface was not clear enough for cosmetics standards. Cold conventional channels were not accessible near the gate zone.
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">60 s</td><td class="val-after">50 s</td><td><span class="val-gain">−17%</span></td></tr>
+      <tr><td>Gate burn defect</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">1,200 pcs</td><td class="val-after">1,440 pcs</td><td><span class="val-gain">+240 pcs (+20%)</span></td></tr>
+      <tr><td>Unit cost</td><td class="val-before">¥1.87 / pc</td><td class="val-after">¥1.59 / pc</td><td><span class="val-gain">−¥0.28 / pc</span></td></tr>
+    </table>
+  </div>
+
+
+  <!-- ========== CASE 8 ========== -->
+  <h2 id="case8">Case 8: Transparent Compact (Powder Box) — Surface Clarity Restored</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 08</span>
+      <span class="case__industry">Cosmetics Packaging</span>
+      <h3 class="case__title" style="margin:0;">Amber Transparent Compact (PETG, Dual Cavity)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> Dual-cavity compact mold with PETG resin. Gate locations on the flat face caused burn marks and surface haze. The flat geometry looks simple but the large projected area required even cooling across the full surface — impossible with straight drilled channels.
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page16.jpg" alt="Dual cavity transparent compact conformal cooling channel design inserts" style="width:100%;height:180px;object-fit:cover;object-position:45% 18%;display:block;" loading="lazy" />
+        <div class="img-box__label">Conformal Channel Design</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page16.jpg" alt="Amber transparent compact clear surface conformal cooling result" style="width:100%;height:180px;object-fit:cover;object-position:80% 32%;display:block;" loading="lazy" />
+        <div class="img-box__label">After: Clear Surface, No Burn</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">47 s</td><td class="val-after">40 s</td><td><span class="val-gain">−15%</span></td></tr>
+      <tr><td>Gate burn defect</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">1,531 pcs</td><td class="val-after">1,800 pcs</td><td><span class="val-gain">+269 pcs (+18%)</span></td></tr>
+    </table>
+  </div>
+
+
+  <!-- ========== CASE 9 ========== -->
+  <h2 id="case9">Case 9: Diamond Lotion Bottle Cap — Surface Transparency Achieved</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 09</span>
+      <span class="case__industry">Cosmetics Packaging</span>
+      <h3 class="case__title" style="margin:0;">Diamond-Faceted Lotion Bottle Cap (MS Material)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> Diamond facet geometry required exceptional surface quality. Mold overheating caused gate-pin adhesion (sticking), poor cooling, and a surface not transparent enough for the MS resin. Conventional channels could not reach the faceted side walls.
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">65 s</td><td class="val-after">50 s</td><td><span class="val-gain">−24%</span></td></tr>
+      <tr><td>Gate pin adhesion</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">1,100 pcs</td><td class="val-after">1,440 pcs</td><td><span class="val-gain">+340 pcs (+31%)</span></td></tr>
+    </table>
+  </div>
+
+
+  <!-- ========== CASE 10 ========== -->
+  <h2 id="case10">Case 10: Xiaomi Humidifier — −33% Cycle Time, −¥3.6/pc</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 10</span>
+      <span class="case__industry">Home Appliance</span>
+      <h3 class="case__title" style="margin:0;">Xiaomi Humidifier Body (Large Cylindrical Part)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> The humidifier body is a large cylindrical part. Conventional cooling caused hot zones near the top edge during demolding, tearing the part. Injection time was very long. Hybrid approach: conformal cooling placed at the thermally critical mid-body zone, combined with conventional channels elsewhere.
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page17.jpg" alt="Xiaomi humidifier conventional channel layout CAD" style="width:100%;height:180px;object-fit:cover;object-position:18% 18%;display:block;" loading="lazy" />
+        <div class="img-box__label">Before: Conventional</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page17.jpg" alt="Xiaomi humidifier hybrid conformal cooling hot zones CAD" style="width:100%;height:180px;object-fit:cover;object-position:50% 18%;display:block;" loading="lazy" />
+        <div class="img-box__label">After: Hybrid Conformal</div>
+      </div>
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page17.jpg" alt="Xiaomi humidifier body 3D printed conformal cooling insert" style="width:100%;height:180px;object-fit:cover;object-position:35% 68%;display:block;" loading="lazy" />
+        <div class="img-box__label">Xiaomi Humidifier + Insert</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page17.jpg" alt="Xiaomi humidifier finished product" style="width:100%;height:180px;object-fit:cover;object-position:82% 68%;display:block;" loading="lazy" />
+        <div class="img-box__label">Finished Product</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">90 s</td><td class="val-after">60 s</td><td><span class="val-gain">−33%</span></td></tr>
+      <tr><td>Mold temperature</td><td class="val-before">62 °C</td><td class="val-after">48 °C</td><td><span class="val-gain">−22.5%</span></td></tr>
+      <tr><td>Part warpage</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">880 pcs</td><td class="val-after">1,320 pcs</td><td><span class="val-gain">+440 pcs (+50%)</span></td></tr>
+      <tr><td>Unit cost</td><td class="val-before">¥13.6 / pc</td><td class="val-after">¥10.0 / pc</td><td><span class="val-gain">−¥3.6 / pc</span></td></tr>
+    </table>
+
+    <div class="result-banner">
+      <div class="result-banner__items">
+        <div class="result-banner__item"><div class="result-banner__num">−¥3.6</div><div class="result-banner__label">Per-part saving (highest in dataset)</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">+50%</div><div class="result-banner__label">Output per shift</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">−33%</div><div class="result-banner__label">Cycle time</div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========== CASE 11 ========== -->
+  <h2 id="case11">Case 11: Solar Panel Shield — −24% Cycle Time, Shrinkage Eliminated</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 11</span>
+      <span class="case__industry">Home Appliance</span>
+      <h3 class="case__title" style="margin:0;">Solar Panel Shield (MS1 Steel, Deep Pockets)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> Deep pocket features caused localized overheating, leading to material shrinkage voids in thick sections. Conventional deep-hole drilling at the pocket locations had poor cooling efficiency and short tool life.
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">50 s</td><td class="val-after">38 s</td><td><span class="val-gain">−24%</span></td></tr>
+      <tr><td>Mold temperature</td><td class="val-before">46 °C</td><td class="val-after">30 °C</td><td><span class="val-gain">−35%</span></td></tr>
+      <tr><td>Shrinkage voids</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">1,440 pcs</td><td class="val-after">1,895 pcs</td><td><span class="val-gain">+455 pcs (+32%)</span></td></tr>
+      <tr><td>Unit cost</td><td class="val-before">¥1.89 / pc</td><td class="val-after">¥1.56 / pc</td><td><span class="val-gain">−¥0.33 / pc</span></td></tr>
+    </table>
+  </div>
+
+
+  <!-- ========== CASE 12 ========== -->
+  <h2 id="case12">Case 12: E-Cigarette Tip — Conventional Machining Impossible</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 12</span>
+      <span class="case__industry">Consumer Electronics</span>
+      <h3 class="case__title" style="margin:0;">E-Cigarette Mouthpiece (1.5mm Micro Channels)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> The mouthpiece cavity was too small for conventional channel drilling. No coolant could reach the cavity zone at all — the mold ran at 65 °C with surface defects on every part. Conventional machining simply cannot place a coolant circuit inside this geometry.
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page18.jpg" alt="E-cigarette tip no coolant possible conventional drilling" style="width:100%;height:180px;object-fit:cover;object-position:18% 18%;display:block;" loading="lazy" />
+        <div class="img-box__label">Before: No Cooling Possible</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page18.jpg" alt="E-cigarette tip 1.5mm conformal cooling micro channels inside cavity" style="width:100%;height:180px;object-fit:cover;object-position:50% 18%;display:block;" loading="lazy" />
+        <div class="img-box__label">After: 1.5mm Micro Channels</div>
+      </div>
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page18.jpg" alt="3D printed conformal cooling inserts e-cigarette mouthpiece before after" style="width:100%;height:180px;object-fit:cover;object-position:72% 38%;display:block;" loading="lazy" />
+        <div class="img-box__label">Printed Inserts + Products</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page18.jpg" alt="Finished e-cigarette mouthpieces no surface defects conformal cooling" style="width:100%;height:180px;object-fit:cover;object-position:72% 55%;display:block;" loading="lazy" />
+        <div class="img-box__label">Defect-Free Products</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">28 s</td><td class="val-after">20 s</td><td><span class="val-gain">−30%</span></td></tr>
+      <tr><td>Mold temperature</td><td class="val-before">65 °C</td><td class="val-after">24 °C</td><td><span class="val-gain">−41°C (−63%)</span></td></tr>
+      <tr><td>Surface defects</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">2,570 pcs</td><td class="val-after">3,600 pcs</td><td><span class="val-gain">+1,030 pcs (+40%)</span></td></tr>
+      <tr><td>Unit cost</td><td class="val-before">¥0.98 / pc</td><td class="val-after">¥0.76 / pc</td><td><span class="val-gain">−¥0.22 / pc</span></td></tr>
+    </table>
+
+    <p>This case illustrates a category where conformal cooling isn't just better — it's the only option. No conventional drilling process can place a coolant circuit inside a cavity this size. The 3D-printed insert with 1.5mm diameter channels is the enabling technology that makes this geometry manufacturable at production volumes.</p>
+  </div>
+
+
+  <!-- ========== CASE 13 ========== -->
+  <h2 id="case13">Case 13: Medical Deep-Well Plate — −43% Cycle Time, +1,286 pcs/Shift</h2>
+
+  <div class="case">
+    <div class="case__header">
+      <span class="case__num">Case 13</span>
+      <span class="case__industry">Medical Devices</span>
+      <h3 class="case__title" style="margin:0;">Medical Deep-Well Plate (Thin Walls, Confined Geometry)</h3>
+    </div>
+
+    <div class="case__problem">
+      <strong>Problem:</strong> The deep-well plate has thin perimeter walls surrounding a dense array of deep wells. The floor and perimeter bottom space was too confined for conventional channel placement. Uneven cooling caused dimensional variation between wells — unacceptable for laboratory applications requiring consistent well geometry.
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--before">
+        <img src="/images/cases/saiguang-page18.jpg" alt="Medical deep-well plate no conventional cooling perimeter floor zones" style="width:100%;height:180px;object-fit:cover;object-position:18% 65%;display:block;" loading="lazy" />
+        <div class="img-box__label">Before: No Cooling at Critical Zones</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page18.jpg" alt="Medical deep-well plate conformal cooling perimeter floor channels CAD" style="width:100%;height:180px;object-fit:cover;object-position:48% 65%;display:block;" loading="lazy" />
+        <div class="img-box__label">After: Full-Perimeter Conformal</div>
+      </div>
+    </div>
+
+    <div class="img-compare">
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page18.jpg" alt="Medical deep-well plate 3D printed conformal cooling mold insert" style="width:100%;height:180px;object-fit:cover;object-position:65% 82%;display:block;" loading="lazy" />
+        <div class="img-box__label">Product + Insert Photos</div>
+      </div>
+      <div class="img-box img-box--after">
+        <img src="/images/cases/saiguang-page18.jpg" alt="Finished medical deep-well plate uniform well geometry" style="width:100%;height:180px;object-fit:cover;object-position:85% 82%;display:block;" loading="lazy" />
+        <div class="img-box__label">Finished Medical Plate</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <tr><th>Metric</th><th>Conventional</th><th>Conformal</th><th>Improvement</th></tr>
+      <tr><td>Cooling time</td><td class="val-before">45 s</td><td class="val-after">26 s</td><td><span class="val-gain">−43%</span></td></tr>
+      <tr><td>Mold temperature</td><td class="val-before">46 °C</td><td class="val-after">30 °C</td><td><span class="val-gain">−35%</span></td></tr>
+      <tr><td>Shrinkage defects</td><td class="val-before">Yes</td><td class="val-after">No</td><td><span class="val-gain">Eliminated</span></td></tr>
+      <tr><td>Output per shift</td><td class="val-before">1,760 pcs</td><td class="val-after">3,046 pcs</td><td><span class="val-gain">+1,286 pcs (+73%)</span></td></tr>
+      <tr><td>Unit cost</td><td class="val-before">¥3.5 / pc</td><td class="val-after">¥2.6 / pc</td><td><span class="val-gain">−¥0.9 / pc</span></td></tr>
+    </table>
+
+    <div class="result-banner">
+      <div class="result-banner__items">
+        <div class="result-banner__item"><div class="result-banner__num">+73%</div><div class="result-banner__label">Output per shift (highest gain)</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">−43%</div><div class="result-banner__label">Cycle time</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">+1,286</div><div class="result-banner__label">Parts per shift</div></div>
+        <div class="result-banner__item"><div class="result-banner__num">−¥0.9</div><div class="result-banner__label">Per-part saving</div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ALL RESULTS TABLE -->
+  <h2 id="summary-table">All 13 Projects: Summary Table</h2>
+
+  <p>Every project in this dataset delivered meaningful cycle time reduction. The range is 15–72%, with the median around 30%. Larger reductions correlate with geometries where conventional cooling had the most difficulty — deep cores, thin cavities, curved surfaces, and features too small for conventional drilling.</p>
+
+  <table class="all-results">
+    <tr>
+      <th>#</th>
+      <th>Application</th>
+      <th>Industry</th>
+      <th>Cycle −%</th>
+      <th>Mold Temp −%</th>
+      <th>Output Gain</th>
+      <th>Cost Saving/pc</th>
+    </tr>
+    <tr>
+      <td>01</td>
+      <td>Cosmetics Round Cap</td>
+      <td><span class="tag tag--beauty">Beauty</span></td>
+      <td><strong>−72%</strong></td>
+      <td>−34.4%</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>Trunk Oil Rod</td>
+      <td><span class="tag tag--auto">Auto</span></td>
+      <td>−34%</td>
+      <td><strong>−57%</strong></td>
+      <td>+418 pcs</td>
+      <td>−¥0.45</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td>Rearview Mirror Pivot</td>
+      <td><span class="tag tag--auto">Auto</span></td>
+      <td>−24%</td>
+      <td>−35%</td>
+      <td>+455 pcs</td>
+      <td>−¥0.34</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td>Brake Fluid Reservoir</td>
+      <td><span class="tag tag--auto">Auto</span></td>
+      <td>−30%</td>
+      <td>−63%</td>
+      <td>+726 pcs</td>
+      <td>−¥0.34</td>
+    </tr>
+    <tr>
+      <td>05</td>
+      <td>Yogurt Bottle Cap</td>
+      <td><span class="tag tag--fmcg">FMCG</span></td>
+      <td>−28.5%</td>
+      <td>—</td>
+      <td>+2,058 pcs</td>
+      <td>−¥0.11</td>
+    </tr>
+    <tr>
+      <td>06</td>
+      <td>Maotai Spirit Bottle Cap</td>
+      <td><span class="tag tag--fmcg">FMCG</span></td>
+      <td>−33%</td>
+      <td>—</td>
+      <td>+308 pcs</td>
+      <td>−¥0.83</td>
+    </tr>
+    <tr>
+      <td>07</td>
+      <td>Eye Cream Box</td>
+      <td><span class="tag tag--beauty">Beauty</span></td>
+      <td>−17%</td>
+      <td>—</td>
+      <td>+240 pcs</td>
+      <td>−¥0.28</td>
+    </tr>
+    <tr>
+      <td>08</td>
+      <td>Transparent Compact</td>
+      <td><span class="tag tag--beauty">Beauty</span></td>
+      <td>−15%</td>
+      <td>—</td>
+      <td>+269 pcs</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>09</td>
+      <td>Diamond Lotion Cap</td>
+      <td><span class="tag tag--beauty">Beauty</span></td>
+      <td>−24%</td>
+      <td>—</td>
+      <td>+340 pcs</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Xiaomi Humidifier</td>
+      <td><span class="tag tag--appl">Appliance</span></td>
+      <td>−33%</td>
+      <td>−22.5%</td>
+      <td>+440 pcs</td>
+      <td>−¥3.60</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Solar Panel Shield</td>
+      <td><span class="tag tag--appl">Appliance</span></td>
+      <td>−24%</td>
+      <td>−35%</td>
+      <td>+455 pcs</td>
+      <td>−¥0.33</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>E-Cigarette Tip</td>
+      <td><span class="tag tag--elec">Electronics</span></td>
+      <td>−30%</td>
+      <td>−63%</td>
+      <td>+1,030 pcs</td>
+      <td>−¥0.22</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Medical Deep-Well Plate</td>
+      <td><span class="tag tag--med">Medical</span></td>
+      <td><strong>−43%</strong></td>
+      <td>−35%</td>
+      <td>+1,286 pcs</td>
+      <td>−¥0.90</td>
+    </tr>
+  </table>
+
+  <h3>What These Results Have in Common</h3>
+  <ul>
+    <li><strong>Warpage was eliminated in every case where it was a problem</strong> — not reduced, eliminated. Conformal cooling removes the temperature gradient that causes differential shrinkage.</li>
+    <li><strong>Gate burning was eliminated in every cosmetics/packaging case</strong> — the gate zone is consistently the hottest area that conventional drilling cannot reach.</li>
+    <li><strong>The 15% minimum case (Compact) was geometry-limited</strong> — the flat part had the best conventional cooling of all cases. Even so, conformal delivered measurable improvement.</li>
+    <li><strong>The 72% maximum case (Round Cap) had the worst conventional cooling</strong> — the curved geometry made conventional channels completely ineffective at the critical zone.</li>
+  </ul>
+
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">What Results Can You Expect for Your Part?</div>
+    <p class="blog-cta__text">Send us your insert CAD or a description of your cooling problem. Our engineering team will run a Moldflow simulation and estimate your specific cycle time reduction — before you commit to tooling.</p>
+    <a href="../contact.html" class="btn">Get a Free Cooling Simulation →</a>
+  </div>
+
+  <h3>Related Articles</h3>
+  <ul>
+    <li><a href="conformal-cooling-vs-conventional-cooling.html">Conformal Cooling vs. Conventional Cooling — Side-by-Side Comparison</a></li>
+    <li><a href="conformal-cooling-roi.html">Conformal Cooling ROI: Payback Period Calculator</a></li>
+    <li><a href="conformal-cooling-cycle-time-reduction.html">Conformal Cooling Cycle Time Reduction — Physics and Data</a></li>
+    <li><a href="conformal-cooling-injection-molding.html">Conformal Cooling in Injection Molding — Process Integration Guide</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts — MouldNova Service</a></li>
+  </ul>
+
+</div>
+
+
+<!-- FOOTER -->
+
+  <!-- Related Articles — auto-generated internal links -->
+  <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+    <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li>
+        <a href="/blog/conformal-cooling-case-studies.html">More Conformal Cooling Case Studies</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-cycle-time-reduction.html">Cycle Time Reduction: 50+ Projects</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-roi.html">Calculate Your ROI</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-rfq-checklist.html">Ready to Get a Quote? Use This Checklist</a>
+      </li>
+    </ul>
+  </aside>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo"><span class="footer__logo-main">SAIGUANG</span><span class="footer__logo-sub">3D Technology</span></div>
+        <p class="footer__tagline">Conformal cooling inserts for injection molding — made in Ningbo, shipped worldwide.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <div class="footer__col-title">Services</div>
+          <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+          <a href="../rapid-tooling-service.html" class="footer__link">Rapid Tooling</a>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Company</div>
+          <a href="../case-studies.html" class="footer__link">Case Studies</a>
+          <a href="../about.html" class="footer__link">About Us</a>
+          <a href="../contact.html" class="footer__link">Contact</a>
+          <a href="index.html" class="footer__link">Blog</a>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Contact</div>
+          <div class="footer__link">+86 182 6866 1068</div>
+          <div class="footer__link">zhangyuanbo123@gmail.com</div>
+          <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Saiguang 3D Technology (MouldNova). All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+  }
+</script>
+
+</body>
+</html>

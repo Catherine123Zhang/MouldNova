@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autodesk Conformal Cooling Tools Guide | MouldNova</title>
+  <meta name="description" content="Autodesk conformal cooling: Fusion 360 and Netfabb for channel design, generative design, simulation, and when to work with a specialist supplier." />
+  <meta name="keywords" content="autodesk conformal cooling, fusion 360 conformal cooling, netfabb conformal cooling, conformal cooling design software, generative design conformal cooling" />
+  <link rel="canonical" href="https://mouldnova.com/blog/autodesk-conformal-cooling.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/autodesk-conformal-cooling.html" />
+  <link rel="icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LMZXHN7YGJ');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Autodesk Conformal Cooling: Fusion 360 & Netfabb Design Tools",
+        "description": "How Autodesk tools — Fusion 360 and Netfabb — support conformal cooling channel design: generative design, simulation capabilities, comparison with Moldex3D and Magics, limitations, and when to work with a specialist supplier.",
+        "author": {"@type": "Organization", "name": "MouldNova"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "MouldNova",
+          "logo": {"@type": "ImageObject", "url": "https://mouldnova.com/images/logo.png"}
+        },
+        "datePublished": "2026-03-19",
+        "dateModified": "2026-03-19",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mouldnova.com/blog/autodesk-conformal-cooling.html"},
+        "keywords": "autodesk conformal cooling, fusion 360 conformal cooling, netfabb conformal cooling, conformal cooling design software, generative design conformal cooling"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can Fusion 360 design conformal cooling channels?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Fusion 360 has built-in capabilities for conformal cooling channel design through its Manufacturing extension and the mold design workflow. Users can sketch channel centerlines in 3D, create swept channel bodies along those paths, and perform a thermal simulation using the Simulation workspace to evaluate cooling uniformity. However, Fusion 360 does not natively generate or optimise conformal channel layouts automatically — the designer must manually sketch the channel path. Autodesk Netfabb (a separate product) adds more sophisticated channel generation tools including conformal lattice structures and automated offset-from-surface channel creation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Autodesk's generative design compare to Moldex3D for conformal cooling?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "They serve fundamentally different functions and are best used together. Autodesk's generative design in Fusion 360 optimises structural topology (mass distribution, load paths) — it is not specifically a cooling channel design tool, though it can generate conformal geometries that incorporate internal voids. Moldex3D is a dedicated injection molding simulation platform that evaluates cooling system performance: flow rate, pressure drop, temperature distribution, cycle time, and warpage prediction. Moldex3D gives quantitative cooling performance metrics (ΔT, cooling time map) that Fusion 360 cannot match for injection molding-specific analysis. For best results: use Fusion 360 or Netfabb to design and model the channel geometry, then import into Moldex3D or Moldflow for thermal validation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Autodesk Netfabb used for in conformal cooling?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Netfabb is Autodesk's additive manufacturing preparation and simulation platform, and it has the most developed conformal cooling channel design toolset within the Autodesk ecosystem. Key capabilities include: automated conformal channel generation from a reference surface at a user-specified offset distance; support for multiple channel cross-section shapes (round, teardrop, and diamond); lattice structure generation for heat transfer applications; build orientation analysis and support structure generation for SLM printing; and basic flow simulation. Netfabb is well suited for users who design their own inserts and want to prepare them for SLM printing with a single toolchain. It does not provide the injection molding-specific process simulation that Moldex3D offers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When should I use Autodesk tools vs. working directly with a conformal cooling specialist supplier?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use Autodesk tools (Fusion 360 + Netfabb) in-house when: your team has the CAD and simulation skills to design and validate conformal channels independently; you are developing a proprietary product and need to own the IP; or you are iterating through many design variants where cycle time at the design stage (not just cooling stage) is critical. Work directly with a specialist supplier (like MouldNova) when: you need a validated Moldflow simulation with guaranteed cooling performance; you lack SLM-specific design rules (minimum wall thickness, support-free angle requirements); or you want print-ready files, post-processing, and QC included. Most industrial buyers find the specialist route faster and lower-risk for production tooling, while in-house tools are better suited for early-stage design exploration."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --blue: #0057D9;
+      --blue-dark: #003fa3;
+      --accent: #00C48C;
+      --bg: #f6f8fc;
+      --text: #1a1a2e;
+      --muted: #5a6070;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,.08);
+    }
+
+    .blog-hero { padding: 80px 0 48px; background: var(--black, #0a1628); color: #fff; }
+    .blog-hero__eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #00C48C; margin-bottom: 12px; font-weight: 700; }
+    .blog-hero__title { font-size: 2.4rem; font-weight: 900; line-height: 1.15; margin-bottom: 16px; max-width: 800px; }
+    .blog-hero__meta { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+
+    .blog-body { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text); }
+    .blog-body h2 { font-size: 1.4rem; font-weight: 800; margin: 52px 0 16px; padding-top: 8px; border-top: 3px solid var(--bg); color: var(--text); }
+    .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 28px 0 10px; color: var(--text); }
+    .blog-body p { margin-bottom: 16px; font-size: 1rem; line-height: 1.75; color: #333; }
+    .blog-body ul, .blog-body ol { margin: 0 0 16px 22px; line-height: 1.75; color: #333; }
+    .blog-body li { margin-bottom: 6px; font-size: 1rem; }
+    .blog-body strong { font-weight: 700; }
+    .blog-body a { color: var(--blue); }
+
+    .breadcrumb { font-size: 0.8rem; color: var(--muted); padding: 14px 0 0; max-width: 820px; margin: 0 auto; padding-left: 24px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--blue); }
+    .breadcrumb span { margin: 0 6px; }
+
+    .blog-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 32px; font-size: .83rem; color: var(--muted); }
+    .blog-tag { background: #eef4ff; color: var(--blue); border-radius: 20px; padding: 3px 12px; font-weight: 600; font-size: .78rem; }
+    .blog-tag.green { background: #e6faf3; color: #00875a; }
+    .blog-tag.orange { background: #fff3e6; color: #c05c00; }
+
+    .intro-box { background: var(--bg); border-left: 4px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 0 0 36px; font-size: .95rem; }
+    .intro-box ul { margin: 10px 0 0 18px; }
+    .intro-box li { margin-bottom: 4px; }
+
+    .toc-box { background: var(--bg); border-radius: var(--radius); padding: 20px 22px; margin-bottom: 36px; }
+    .toc-box h4 { font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 12px; }
+    .toc-box ol { margin: 0 0 0 18px; }
+    .toc-box li { font-size: .88rem; margin-bottom: 5px; }
+    .toc-box a { color: var(--blue); text-decoration: none; }
+
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: .87rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    th { background: var(--blue); color: #fff; padding: 11px 14px; text-align: left; font-weight: 600; }
+    td { padding: 10px 14px; border-bottom: 1px solid #e8ecf4; vertical-align: top; }
+    tr:nth-child(even) td { background: var(--bg); }
+    tr:last-child td { border-bottom: none; }
+    .highlight-row td { background: #eef9f4 !important; font-weight: 600; }
+    .check { color: var(--accent); font-weight: 700; }
+    .cross { color: #e53e3e; font-weight: 700; }
+
+    .callout { background: #fffbeb; border: 1px solid #f6d860; border-radius: var(--radius); padding: 18px 20px; margin: 24px 0; font-size: .92rem; }
+    .callout strong { color: #92610a; }
+    .callout.blue { background: #eef4ff; border-color: #c0d4f8; }
+    .callout.blue strong { color: var(--blue-dark); }
+    .callout.green { background: #e6faf3; border-color: #9be8cc; }
+    .callout.green strong { color: #00734a; }
+
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin: 28px 0; }
+    .tool-card { border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 22px 18px; background: #fff; }
+    .tool-card.featured { border-color: var(--blue); border-width: 2px; background: #eef4ff; }
+    .tool-card .tc-vendor { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 6px; }
+    .tool-card h4 { font-size: .97rem; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+    .tool-card p { font-size: .82rem; color: var(--muted); margin-bottom: 10px; }
+    .tool-card .tc-badge { font-size: .75rem; font-weight: 700; background: #eef4ff; color: var(--blue); border-radius: 6px; padding: 3px 10px; display: inline-block; }
+
+    .cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .cap-col { border-radius: var(--radius); padding: 20px 18px; }
+    .cap-col.can { background: #e6faf3; border: 1px solid #9be8cc; }
+    .cap-col.cannot { background: #fff0f0; border: 1px solid #fca5a5; }
+    .cap-col h5 { font-size: .82rem; font-weight: 700; margin-bottom: 10px; }
+    .cap-col.can h5 { color: #00734a; }
+    .cap-col.cannot h5 { color: #b91c1c; }
+    .cap-col ul { margin: 0 0 0 16px; font-size: .85rem; color: #444; }
+    .cap-col li { margin-bottom: 5px; }
+
+    .workflow-list { margin: 24px 0; }
+    .wf-item { display: flex; gap: 14px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e8ecf4; }
+    .wf-item:last-child { border-bottom: none; }
+    .wf-badge { background: var(--blue); color: #fff; padding: 3px 10px; border-radius: 6px; font-size: .75rem; font-weight: 800; flex-shrink: 0; height: fit-content; margin-top: 2px; }
+    .wf-body h4 { font-size: .93rem; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+    .wf-body p { font-size: .85rem; color: var(--muted); margin: 0; }
+
+    .mid-cta { background: linear-gradient(135deg, #0a1628, #0d2456); color: #fff; border-radius: var(--radius); padding: 32px 28px; margin: 48px 0; text-align: center; }
+    .mid-cta h3 { color: #fff; margin: 0 0 10px; font-size: 1.2rem; }
+    .mid-cta p { color: #99b0d0; font-size: .9rem; margin-bottom: 20px; }
+    .mid-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-accent { background: var(--accent); color: #fff; padding: 11px 26px; border-radius: 7px; font-weight: 700; font-size: .9rem; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); padding: 11px 26px; border-radius: 7px; font-weight: 600; font-size: .9rem; text-decoration: none; }
+
+    details { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 12px; background: #fff; overflow: hidden; }
+    summary { padding: 16px 20px; font-weight: 600; font-size: .95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
+    summary::after { content: '+'; font-size: 1.3rem; color: var(--blue); font-weight: 300; flex-shrink: 0; }
+    details[open] summary::after { transform: rotate(45deg); display: inline-block; }
+    details div { padding: 0 20px 16px; font-size: .9rem; color: var(--muted); line-height: 1.65; }
+
+    @media (max-width: 640px) {
+      .tool-grid { grid-template-columns: 1fr; }
+      .cap-grid { grid-template-columns: 1fr; }
+      .blog-hero__title { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../directory/" class="nav__link">Directory</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Software Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">Autodesk Conformal Cooling: Fusion 360 &amp; Netfabb Design Tools</h1>
+    <div class="blog-hero__meta">By MouldNova Engineering Team &middot; 13 min read &middot; Capabilities, limitations, and how Autodesk tools compare to Moldex3D and Magics</div>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>&rsaquo;</span>
+  <a href="index.html">Blog</a>
+  <span>&rsaquo;</span>
+  <span>Autodesk Conformal Cooling</span>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <div class="blog-meta">
+    <span class="blog-tag">Software Guide</span>
+    <span class="blog-tag green">Design Tools</span>
+    <span class="blog-tag orange">Fusion 360</span>
+    <span>March 19, 2026</span>
+    <span>&middot;</span>
+    <span>13 min read</span>
+    <span>&middot;</span>
+    <span>By MouldNova Engineering Team</span>
+  </div>
+
+  <div class="intro-box">
+    <strong>What this guide covers — the honest breakdown of Autodesk tools for conformal cooling:</strong>
+    <ul>
+      <li>What Fusion 360 can and cannot do for conformal cooling channel design</li>
+      <li>Netfabb's conformal cooling toolset: automated channel generation, lattice structures, print prep</li>
+      <li>Autodesk generative design and its (limited) relevance to cooling channels</li>
+      <li>How Autodesk compares to Moldex3D, Magics, and nTop for this application</li>
+      <li>Recommended software workflow combining Autodesk tools with dedicated simulation</li>
+      <li>When in-house Autodesk tools make sense vs. working with a specialist supplier</li>
+    </ul>
+  </div>
+
+  <div class="toc-box">
+    <h4>Table of Contents</h4>
+    <ol>
+      <li><a href="#landscape">The Conformal Cooling Software Landscape</a></li>
+      <li><a href="#fusion360">Fusion 360: Capabilities for Conformal Cooling</a></li>
+      <li><a href="#netfabb">Autodesk Netfabb: The More Capable Tool</a></li>
+      <li><a href="#generative">Generative Design: What It Can and Cannot Do</a></li>
+      <li><a href="#comparison">Software Comparison: Autodesk vs. Moldex3D vs. Magics vs. nTop</a></li>
+      <li><a href="#workflow">Recommended Workflow: Combining Tools Effectively</a></li>
+      <li><a href="#limitations">Autodesk Limitations for Production Tooling</a></li>
+      <li><a href="#when-supplier">When to Use Software vs. Work With a Specialist Supplier</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2 id="landscape">The Conformal Cooling Software Landscape</h2>
+
+  <p>Conformal cooling channel design sits at the intersection of three domains: injection mold design, additive manufacturing (SLM/DMLS), and thermal simulation. No single software package dominates all three. Understanding which tool excels at which task is the foundation for building an effective design workflow.</p>
+
+  <p>The main software categories in play:</p>
+
+  <ul>
+    <li><strong>CAD / Channel geometry creation:</strong> Fusion 360, NX Mold Wizard, CATIA Mold Design, SolidWorks with MoldWorks</li>
+    <li><strong>AM-specific channel design and print preparation:</strong> Autodesk Netfabb, nTop (formerly nTopology), Materialise Magics</li>
+    <li><strong>Injection molding simulation:</strong> Autodesk Moldflow, Moldex3D, Cadmould</li>
+    <li><strong>Thermal optimization / topology:</strong> Autodesk generative design, ANSYS Additive, Siemens NX AM</li>
+  </ul>
+
+  <p>Autodesk occupies several of these categories simultaneously — Fusion 360 (CAD), Netfabb (AM prep), and Moldflow (simulation) are all Autodesk products, which creates potential for a single-vendor workflow. This integration is one of Autodesk's main advantages, though each individual tool has specific limitations that are important to understand before committing to it.</p>
+
+  <!-- SECTION 2 -->
+  <h2 id="fusion360">Fusion 360: Capabilities for Conformal Cooling</h2>
+
+  <p>Fusion 360 is a general-purpose parametric CAD and CAM platform. For conformal cooling specifically, its capabilities fall into two areas:</p>
+
+  <h3>What Fusion 360 does well</h3>
+
+  <div class="cap-grid">
+    <div class="cap-col can">
+      <h5>Fusion 360 CAN do this</h5>
+      <ul>
+        <li>Create 3D sketch paths for conformal channel centerlines on any surface</li>
+        <li>Sweep circular, teardrop, or custom cross-sections along those paths</li>
+        <li>Boolean subtract channel bodies from an insert solid</li>
+        <li>Perform basic thermal simulation in the Simulation workspace (temperature distribution, heat flux)</li>
+        <li>Run a simple flow simulation to estimate pressure drop and flow rate through a channel network</li>
+        <li>Generate STEP or STL files for SLM printing preparation</li>
+        <li>Check wall thickness between channels and cavity surface using the Inspection tool</li>
+      </ul>
+    </div>
+    <div class="cap-col cannot">
+      <h5>Fusion 360 CANNOT do this</h5>
+      <ul>
+        <li>Automatically generate an optimised conformal channel layout from a cavity surface — the designer must manually sketch every channel path</li>
+        <li>Simulate injection molding process (fill, pack, cool, warp) — this requires Moldflow or Moldex3D</li>
+        <li>Predict cycle time reduction from a given conformal design with injection molding resin data</li>
+        <li>Generate support structures for SLM printing of internal channel geometries</li>
+        <li>Evaluate residual stress or distortion from SLM printing (build simulation)</li>
+        <li>Handle multi-circuit flow balancing with back-pressure calculations across parallel branches</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>Fusion 360's simulation module uses a finite element thermal solver that can evaluate steady-state heat transfer — useful for identifying hotspots in a proposed channel layout. However, it does not model the cyclic thermal loading of injection molding (the alternating injection heat input and cooling phase) that Moldflow and Moldex3D simulate. The Fusion 360 thermal results are directionally useful but should not be used as a substitute for dedicated injection molding simulation before committing to manufacturing.</p>
+
+  <h3>Fusion 360 Manufacturing Extension and Mold Design</h3>
+  <p>The Manufacturing Extension (subscription add-on) includes mold design tools with parting line detection, draft analysis, and core/cavity splitting. These are genuinely useful for the mold base design around a conformal insert, but they do not add conformal channel-specific capabilities beyond what the base Fusion 360 solid modeling environment already provides.</p>
+
+  <!-- SECTION 3 -->
+  <h2 id="netfabb">Autodesk Netfabb: The More Capable Tool for Conformal Cooling</h2>
+
+  <p>Netfabb is Autodesk's dedicated additive manufacturing platform and has the most developed conformal cooling toolset in the Autodesk product family. It is a separate product from Fusion 360, licensed independently (typically $6,000–18,000/year depending on tier), and is aimed at AM engineers and production teams rather than general mechanical designers.</p>
+
+  <h3>Netfabb's conformal cooling-specific capabilities</h3>
+
+  <div class="workflow-list">
+    <div class="wf-item">
+      <div class="wf-badge">Channel Design</div>
+      <div class="wf-body">
+        <h4>Automated conformal channel generation</h4>
+        <p>Netfabb can generate conformal channel centerlines automatically from a reference surface at a user-specified offset distance (e.g., 10mm from the cavity face). The tool respects the surface geometry and outputs a 3D network of channel paths that maintain constant offset from the surface. The designer specifies pitch (channel-to-channel spacing), diameter, and start/end points for the circuit. This eliminates most of the manual 3D sketching work required in Fusion 360.</p>
+      </div>
+    </div>
+    <div class="wf-item">
+      <div class="wf-badge">Cross-Section</div>
+      <div class="wf-body">
+        <h4>Multiple channel cross-section options</h4>
+        <p>Netfabb supports round, teardrop, and diamond channel cross-sections natively. Teardrop channels (round bottom, pointed top) are the preferred profile for SLM printing because the pointed crown is self-supporting without requiring support structures inside the channel — a critical advantage that avoids the powder removal nightmare of collapsed internal supports. See our article on <a href="/blog/clean-powder-conformal-cooling-lines.html">cleaning powder from conformal cooling channels</a>.</p>
+      </div>
+    </div>
+    <div class="wf-item">
+      <div class="wf-badge">Print Prep</div>
+      <div class="wf-body">
+        <h4>Build orientation and support generation</h4>
+        <p>Netfabb evaluates build orientation options for the conformal insert and generates support structures for overhanging external features. Internal channels (if designed as teardrop cross-sections at correct print angle) typically require no internal supports. The orientation optimizer minimizes total support volume while keeping internal channels in a self-supporting orientation.</p>
+      </div>
+    </div>
+    <div class="wf-item">
+      <div class="wf-badge">Simulation</div>
+      <div class="wf-body">
+        <h4>Build process simulation (Netfabb Local Simulation add-on)</h4>
+        <p>The Local Simulation add-on (separate license) predicts thermal gradients, residual stress, and part distortion during SLM printing. For large conformal inserts where print distortion could affect fit tolerances, this pre-print simulation can identify high-stress zones and guide support placement or part orientation adjustments before the actual print.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2 id="generative">Generative Design: What It Can and Cannot Do for Conformal Cooling</h2>
+
+  <p>Autodesk's generative design feature (available in Fusion 360 and as a cloud-based tool) is frequently cited in marketing material as a tool for conformal cooling. The reality is more nuanced — generative design can be useful but is not a primary conformal cooling design tool.</p>
+
+  <p>Generative design optimises the distribution of material in a component given structural load cases and manufacturing constraints. When applied to a conformal cooling insert, it can:</p>
+
+  <ul>
+    <li><strong>Reduce material volume</strong> while maintaining structural integrity under injection pressure</li>
+    <li><strong>Create organic internal geometries</strong> that incorporate void spaces (which could be specified as cooling channels)</li>
+    <li><strong>Evaluate multiple design outcomes</strong> across different manufacturing methods (machining, casting, SLM) simultaneously</li>
+  </ul>
+
+  <p>However, generative design does <em>not</em>:</p>
+
+  <ul>
+    <li>Understand injection molding thermal requirements — it has no concept of "cool this surface uniformly at 8mm offset"</li>
+    <li>Design cooling channels to specific hydraulic parameters (diameter, Reynolds number, pressure drop)</li>
+    <li>Replace a conformal channel designer who understands the thermal physics of injection molding</li>
+  </ul>
+
+  <div class="callout blue">
+    <strong>Honest assessment:</strong> Generative design is most useful for optimising the structural geometry of an insert body after the conformal channels have already been designed. It can remove unnecessary material mass from the insert — reducing print time and cost — while the cooling channels themselves are still designed by a thermal engineer following the principles described in our <a href="/blog/conformal-cooling-channel-design.html">channel design guide</a>.
+  </div>
+
+  <!-- SECTION 5 -->
+  <h2 id="comparison">Software Comparison: Autodesk vs. Moldex3D vs. Magics vs. nTop</h2>
+
+  <table>
+    <thead>
+      <tr><th>Capability</th><th>Fusion 360</th><th>Netfabb</th><th>Moldex3D</th><th>Materialise Magics</th><th>nTop</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Manual channel path creation</td><td class="check">&#10003; Good</td><td class="check">&#10003; Good</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003; Good</td></tr>
+      <tr><td>Automated conformal channel generation</td><td class="cross">&#10007;</td><td class="check">&#10003; Yes</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003; Best-in-class</td></tr>
+      <tr><td>Injection molding simulation (fill/pack/cool)</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003; Best-in-class</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+      <tr><td>Cooling uniformity / ΔT prediction</td><td>Basic FEA only</td><td class="cross">&#10007;</td><td class="check">&#10003; Full</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+      <tr><td>Cycle time prediction</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003; Full</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+      <tr><td>SLM print preparation &amp; supports</td><td class="cross">&#10007;</td><td class="check">&#10003; Full</td><td class="cross">&#10007;</td><td class="check">&#10003; Full</td><td>Partial</td></tr>
+      <tr><td>Build process simulation</td><td class="cross">&#10007;</td><td class="check">&#10003; Add-on</td><td class="cross">&#10007;</td><td class="check">&#10003; Add-on</td><td class="cross">&#10007;</td></tr>
+      <tr class="highlight-row"><td>Lattice / triply periodic channel structures</td><td class="cross">&#10007;</td><td>Limited</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003; Full</td></tr>
+      <tr><td>Approximate annual license cost</td><td>$545–$1,680</td><td>$6,000–18,000</td><td>$8,000–25,000</td><td>$5,000–12,000</td><td>$15,000–30,000</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>nTop (formerly nTopology)</strong> deserves special mention. It is the most capable tool specifically for conformal cooling channel geometry generation — it can create channels that follow any surface at constant offset, with full parametric control over diameter, pitch, circuit layout, and cross-section. For companies investing seriously in in-house conformal cooling design capability, nTop is the state-of-the-art design tool, though at a significant license cost. See also our article on <a href="/blog/conformal-cooling-design-software.html">conformal cooling design software</a> for a broader platform comparison.</p>
+
+  <!-- SECTION 6 -->
+  <h2 id="workflow">Recommended Workflow: Combining Autodesk Tools with Dedicated Simulation</h2>
+
+  <p>The most effective in-house workflow using Autodesk tools integrates their respective strengths across the design-to-manufacture process:</p>
+
+  <div class="workflow-list">
+    <div class="wf-item">
+      <div class="wf-badge">Step 1</div>
+      <div class="wf-body">
+        <h4>Part and insert geometry in Fusion 360</h4>
+        <p>Create the part model and design the insert envelope (the block from which the cavity and conformal channels will be subtracted). Define ejector pin positions, parting line, and water port exit locations in Fusion 360. Export insert envelope as STEP.</p>
+      </div>
+    </div>
+    <div class="wf-item">
+      <div class="wf-badge">Step 2</div>
+      <div class="wf-body">
+        <h4>Baseline simulation in Moldflow (Autodesk)</h4>
+        <p>Run a baseline cooling-only Moldflow analysis to identify hotspots and quantify where conformal cooling is needed. Moldflow is an Autodesk product (Autodesk Moldflow Insight or Synergy), so data exchange with Fusion 360 is relatively streamlined via Fusion 360 Manage or direct STEP import. This step defines the target zones for conformal channels.</p>
+      </div>
+    </div>
+    <div class="wf-item">
+      <div class="wf-badge">Step 3</div>
+      <div class="wf-body">
+        <h4>Conformal channel design in Netfabb</h4>
+        <p>Import the insert STEP into Netfabb. Use the conformal channel generation tool to create channel networks at the target offset (8&ndash;12mm from cavity surface) in the hotspot zones identified in Step 2. Select teardrop cross-section at the appropriate print angle to avoid internal supports. Export as body solid or STEP.</p>
+      </div>
+    </div>
+    <div class="wf-item">
+      <div class="wf-badge">Step 4</div>
+      <div class="wf-body">
+        <h4>Validation in Moldflow or Moldex3D</h4>
+        <p>Return to simulation with the conformal channel geometry to validate: temperature distribution (target ΔT &lt;5&deg;C), cooling time map, pressure drop per circuit (target &lt;0.5 bar), and warpage prediction. This step is non-negotiable before manufacturing. If Moldflow Insight is not available, this validation step is where working with a specialist supplier (who provides free simulation as part of the quote) becomes attractive.</p>
+      </div>
+    </div>
+    <div class="wf-item">
+      <div class="wf-badge">Step 5</div>
+      <div class="wf-body">
+        <h4>Print preparation in Netfabb</h4>
+        <p>Finalise build orientation, generate supports for external overhangs, nest with other builds if multiple inserts are printing simultaneously, and export the build file for your SLM machine. Netfabb supports most major SLM machine formats (EOS, SLM Solutions, Renishaw, 3D Systems).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7 -->
+  <h2 id="limitations">Autodesk Tool Limitations for Production Tooling</h2>
+
+  <p>Several limitations of Autodesk tools are important to understand before relying on them for production conformal cooling design:</p>
+
+  <ul>
+    <li><strong>No injection-molding-specific thermal database in Fusion 360:</strong> The Fusion 360 thermal simulation uses generic material properties. Molding resin thermal behaviour (specific heat, thermal conductivity, crystallisation enthalpy) requires a dedicated resin database, which Moldflow and Moldex3D maintain and update from resin supplier data sheets. Generic properties lead to systematic simulation errors of 15&ndash;25% in predicted cooling time.</li>
+    <li><strong>Netfabb channel generation does not calculate Reynolds number:</strong> The automated conformal channel tool generates a geometrically conformal channel network but does not tell the designer whether the resulting flow at a specified pressure will be turbulent (Re &gt; 4,000) or laminar. A laminar-flow conformal channel performs 5&ndash;10&times; worse than a turbulent one. The designer must manually calculate this.</li>
+    <li><strong>Moldflow Synergy (the lower-tier product) lacks the cool-only analysis module:</strong> For conformal cooling evaluation, Moldflow Insight (the higher tier) is required. Synergy users often discover they cannot run the specific analysis type needed for cooling validation.</li>
+    <li><strong>Build simulation in Netfabb requires additional license:</strong> The Local Simulation add-on is separately licensed and adds significant cost. Many users who buy Netfabb for conformal cooling design discover the build simulation is not included.</li>
+  </ul>
+
+  <!-- SECTION 8 -->
+  <h2 id="when-supplier">When to Use Autodesk Software vs. Work With a Specialist Supplier</h2>
+
+  <p>The decision is primarily about in-house capability, IP ownership, and project volume:</p>
+
+  <table>
+    <thead>
+      <tr><th>Consideration</th><th>Use Autodesk In-House</th><th>Work With Specialist Supplier</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Team AM/simulation experience</td><td>Experienced team with dedicated AM engineer</td><td>No in-house AM expertise</td></tr>
+      <tr><td>IP ownership requirement</td><td>Must own channel design IP</td><td>Design IP can reside with supplier</td></tr>
+      <tr><td>Project frequency</td><td>&gt;10 conformal projects per year justifies software investment</td><td>&lt;5 projects/year; fixed cost amortisation unfavourable</td></tr>
+      <tr><td>Simulation requirement</td><td>Have Moldflow Insight license and expertise to run cooling analysis</td><td>Need Moldflow results but don't have the license or skill</td></tr>
+      <tr class="highlight-row"><td>Time to first part</td><td>Slower (learning curve, software setup, internal validation)</td><td>Faster (supplier runs established process, provides validated design)</td></tr>
+      <tr><td>Print execution</td><td>In-house SLM machine or outsourced print service</td><td>Supplier handles print, post-process, QC, and delivery</td></tr>
+    </tbody>
+  </table>
+
+  <p>For most injection mold shops and OEM tooling departments, working with a specialist supplier for the conformal cooling design and manufacturing — while using Fusion 360 for the surrounding mold base design — is the most practical and cost-effective arrangement. The supplier brings Moldflow simulation, SLM printing, post-processing, and QC as an integrated service, removing the need to invest in Netfabb, print-capable SLM machines, and specialist operators internally.</p>
+
+  <div class="mid-cta">
+    <h3>Get a Free Moldflow Simulation With Every Quote</h3>
+    <p>MouldNova includes a validated Moldflow cooling analysis — temperature map, ΔT table, pressure drop, cycle time prediction — with every conformal cooling insert quote. No software investment required on your side.</p>
+    <div class="mid-cta-btns">
+      <a href="../contact.html" class="btn-accent">Request Quote + Simulation</a>
+      <a href="https://wa.me/8618268661068" class="btn-ghost">WhatsApp Us Directly</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <details>
+    <summary>Can Fusion 360 design conformal cooling channels?</summary>
+    <div>Yes. Fusion 360 allows users to create 3D sketch paths for conformal channel centerlines on any surface and sweep channel cross-sections along those paths. It also supports basic thermal simulation. However, it does not automatically generate optimised conformal channel layouts, cannot simulate injection molding process (fill, pack, cool, warp), and cannot predict cycle time reduction. For basic channel geometry creation, Fusion 360 works well. For performance validation, a dedicated injection molding simulation platform (Moldflow or Moldex3D) is required.</div>
+  </details>
+
+  <details>
+    <summary>How does Autodesk's generative design compare to Moldex3D for conformal cooling?</summary>
+    <div>They serve fundamentally different functions. Autodesk generative design optimises structural topology (material distribution under load) and is not specifically a cooling channel design tool. Moldex3D is a dedicated injection molding simulation platform that evaluates cooling performance: flow rate, pressure drop, temperature distribution, cycle time, and warpage prediction. Moldex3D provides the quantitative cooling metrics that generative design cannot. For best results: use Netfabb or Fusion 360 to design channel geometry, then validate in Moldflow or Moldex3D before manufacturing.</div>
+  </details>
+
+  <details>
+    <summary>What is Autodesk Netfabb used for in conformal cooling?</summary>
+    <div>Netfabb is Autodesk's additive manufacturing preparation platform with the most developed conformal cooling channel design capabilities in the Autodesk ecosystem. Key features include: automated conformal channel generation from a reference surface at a specified offset; support for teardrop and diamond cross-sections (self-supporting for SLM); lattice structure generation; build orientation analysis; and support structure generation for SLM printing. Netfabb is well suited for users designing their own inserts and preparing them for SLM print. It does not provide injection molding-specific process simulation — that still requires Moldflow or Moldex3D.</div>
+  </details>
+
+  <details>
+    <summary>When should I use Autodesk tools vs. working directly with a conformal cooling specialist supplier?</summary>
+    <div>Use Autodesk tools in-house when your team has AM and simulation skills, you need to own the channel design IP, and your project volume (&gt;10 per year) justifies the software investment. Work directly with a specialist supplier like MouldNova when you need validated Moldflow simulation with guaranteed performance, lack SLM-specific design rules, or want print-ready manufacturing with QC included. Most industrial buyers find the specialist route faster and lower-risk for production tooling, while in-house tools suit early-stage design exploration and IP-sensitive development programs.</div>
+  </details>
+
+  <!-- INTERNAL LINKS -->
+  <hr style="border: none; border-top: 1px solid #e8ecf4; margin: 48px 0 32px;" />
+  <h3 style="margin-bottom: 16px; font-size: 1rem;">Related Articles &amp; Pages</h3>
+  <ul>
+    <li><a href="/blog/conformal-cooling-design-software.html">Conformal Cooling Design Software: Platform Comparison Guide</a></li>
+    <li><a href="/blog/moldex3d-conformal-cooling.html">Moldex3D Conformal Cooling: Simulation Setup &amp; Results Interpretation</a></li>
+    <li><a href="/blog/conformal-cooling-simulation.html">Conformal Cooling Simulation: Setup, Results &amp; When to Trust Them</a></li>
+    <li><a href="/blog/conformal-cooling-channel-design.html">Conformal Cooling Channel Design: Parameters &amp; Engineering Workflow</a></li>
+    <li><a href="/blog/clean-powder-conformal-cooling-lines.html">Cleaning Powder From Conformal Cooling Channels After SLM Printing</a></li>
+    <li><a href="/blog/conformal-cooling-mold-design.html">Conformal Cooling Mold Design: Engineering Guide for 2026</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Our Conformal Cooling Insert Service &mdash; Get a Quote</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+
+  <!-- Related Articles — auto-generated internal links -->
+  <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+    <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li>
+        <a href="/blog/conformal-cooling-simulation.html">Conformal Cooling Simulation Guide</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-design-software.html">Software Comparison Guide</a>
+      </li>
+      <li>
+        <a href="/blog/moldex3d-conformal-cooling.html">Moldex3D for Conformal Cooling</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-design.html">Conformal Cooling Design Framework</a>
+      </li>
+    </ul>
+  </aside>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>

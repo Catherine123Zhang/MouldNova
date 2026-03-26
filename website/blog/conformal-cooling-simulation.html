@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conformal Cooling Simulation: Setup, Results Interpretation & When to Trust It | MouldNova</title>
-  <meta name="description" content="How to run a conformal cooling simulation in Moldflow: mesh setup, cooling channel geometry, 4 key outputs (cooling time, ΔT, pressure drop, warpage), 5 common mistakes, and how to interpret results." />
+  <title>Conformal Cooling Simulation Guide | MouldNova</title>
+  <meta name="description" content="Conformal cooling simulation in Moldflow: mesh setup, channel geometry, 4 key outputs, 5 common mistakes, and how to interpret results correctly." />
   <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-simulation.html" />
   <link rel="stylesheet" href="../css/style.css" />
   <script type="application/ld+json">
@@ -210,7 +210,7 @@
 
       <!-- SECTION 2 -->
       <h2 id="what-sim-calculates">2. What Conformal Cooling Simulation Actually Calculates</h2>
-      <p>Moldflow and Moldex3D run a coupled thermal analysis that models three simultaneous processes: heat transfer from the solidifying plastic into the mold steel, conduction through the mold body, and convective heat removal by the flowing coolant. The four outputs that matter for conformal cooling decisions are:</p>
+      <p><a href="moldex3d-conformal-cooling.html">Moldflow and Moldex3D</a> run a coupled thermal analysis that models three simultaneous processes: heat transfer from the solidifying plastic into the mold steel, conduction through the mold body, and convective heat removal by the flowing coolant. The four outputs that matter for conformal cooling decisions are:</p>
 
       <div class="grid-2" style="margin-top:24px; margin-bottom:32px;">
         <div class="card">
@@ -301,7 +301,7 @@
       <p>Define the conformal channel circuit within the simulation. In Moldflow, this is done via the <em>Cooling Circuit Wizard</em>. In Moldex3D, use the <em>Cooling Channel</em> definition tool. Specify:</p>
       <ul>
         <li>Channel centerline path (import from CAD sketch or define in simulation environment)</li>
-        <li>Channel cross-section: diameter for circular channels (most common), or width/height for rectangular channels</li>
+        <li><a href="conformal-cooling-channel-design.html">Channel cross-section</a>: diameter for circular channels (most common), or width/height for rectangular channels</li>
         <li>Circuit inlet and outlet locations</li>
         <li>Coolant flow direction (in series or parallel branches)</li>
         <li>Inlet coolant temperature (use your actual chiller setpoint — not ambient room temperature)</li>
@@ -534,6 +534,8 @@
       <!-- SECTION 8 -->
       <h2 id="common-mistakes">8. Five Common Simulation Mistakes (and How to Avoid Them)</h2>
 
+      <p>These errors appear repeatedly in projects we review. For a broader list of production-side issues, see our <a href="conformal-cooling-troubleshooting.html">conformal cooling troubleshooting</a> guide.</p>
+
       <h3>Mistake 1: Using Generic Resin Data Instead of Supplier Grade Data</h3>
       <p>Every resin database entry in Moldflow or Moldex3D is tied to a specific supplier grade measured at a specific time. Using a generic "PP Homopolymer" entry instead of the actual grade (e.g., SABIC PP 579S) can introduce ±15% error in Cp and k. For a 20-second cooling phase, that is a ±3-second error in predicted cycle time — meaningful when you are trying to justify conformal cooling ROI over a 500,000-part production run.</p>
       <p><strong>Fix:</strong> Contact your resin supplier's technical team and request the Moldflow/Moldex3D material data card for your specific grade. Most major suppliers provide this free on request.</p>
@@ -553,7 +555,7 @@
       <h3>Mistake 5: Ignoring Channel Surface Roughness Effects</h3>
       <p>LPBF-printed conformal channels have an as-built internal surface roughness of Ra 8–20 µm (depending on build orientation and material). The simulation's default heat transfer coefficient assumes a smooth channel (Ra &lt; 1 µm, typical of machined/reamed steel). The Moody friction chart shows that Ra 15 µm in a 10mm channel at Re 6,000 increases the friction factor by approximately 20–35% compared to smooth pipe — which means higher pressure drop than simulated, and slightly higher actual heat transfer coefficient (surface roughness enhances convective mixing).</p>
       <p>The net effect is usually conservative (simulation underpredicts pressure drop), but the discrepancy should be understood. If your circuit is already at the limit of available pump pressure drop in simulation, the actual printed circuit may exceed it.</p>
-      <p><strong>Fix:</strong> After getting a good simulation result, add a 15–20% safety margin to the predicted pressure drop when sizing the coolant pump and specifying the chiller. For detailed hydraulic analysis, use ANSYS Fluent with an explicit roughness model.</p>
+      <p><strong>Fix:</strong> After getting a good simulation result, add a 15–20% safety margin to the predicted pressure drop when sizing the coolant pump and specifying the chiller. For detailed hydraulic analysis, use ANSYS Fluent or <a href="autodesk-conformal-cooling.html">Autodesk Fusion CFD</a> with an explicit roughness model.</p>
 
       <!-- SECTION 9 -->
       <h2 id="trust">9. When to Trust Simulation vs. When to Test</h2>
@@ -690,7 +692,26 @@
   <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp btn--sm">WhatsApp</a>
 </div>
 
-<footer class="footer">
+
+  <!-- Related Articles — auto-generated internal links -->
+  <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+    <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li>
+        <a href="/blog/conformal-cooling-design-software.html">Moldflow, Moldex3D & ANSYS Compared</a>
+      </li>
+      <li>
+        <a href="/blog/moldex3d-conformal-cooling.html">Moldex3D for Conformal Cooling Simulation</a>
+      </li>
+      <li>
+        <a href="/blog/autodesk-conformal-cooling.html">Autodesk Fusion 360 & Netfabb Guide</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-channel-design.html">Channel Design Parameters</a>
+      </li>
+    </ul>
+  </aside>
+  <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div>

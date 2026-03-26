@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conformal Cooling 3D Printing: Which Process, Which Material, What It Costs | MouldNova</title>
-  <meta name="description" content="Why metal 3D printing is the only way to make conformal cooling channels, how to choose between SLM and DMLS, material selection guide, design-for-printing rules, and real manufacturing cost data." />
+  <title>Conformal Cooling 3D Printing Guide | MouldNova</title>
+  <meta name="description" content="Conformal cooling 3D printing: SLM vs DMLS, material selection, design-for-printing rules, and real manufacturing cost data. The only way to make it." />
   <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-3d-printing.html" />
   <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/conformal-cooling-3d-printing.html" />
   <link rel="icon" href="../favicon.ico" />
@@ -338,7 +338,7 @@
         <li>Slightly lower strength than SLM at same material</li>
         <li>Wider equipment availability globally</li>
         <li>Available in similar material range</li>
-        <li>In practice: SLM vs DMLS results nearly identical</li>
+        <li>In practice: <a href="slm-vs-dmls-conformal-cooling.html">SLM vs DMLS</a> results nearly identical</li>
         <li>Industry often uses terms interchangeably</li>
       </ul>
     </div>
@@ -351,7 +351,7 @@
   <!-- SECTION 3 -->
   <h2 id="slm-process">The SLM Manufacturing Process — Step by Step</h2>
 
-  <p>Understanding the full manufacturing chain helps you specify correctly, avoid surprises, and communicate accurately with your supplier. Here's exactly what happens between your CAD file and a finished mold insert:</p>
+  <p>Understanding the full manufacturing chain helps you specify correctly, avoid surprises, and communicate accurately with your supplier. Here's exactly what happens between your CAD file and a finished <a href="3d-printed-conformal-cooling-inserts.html">3D printed conformal insert</a>:</p>
 
   <div class="process-timeline">
     <div class="process-step">
@@ -440,7 +440,7 @@
   <!-- SECTION 4 -->
   <h2 id="material-selection">Material Selection: 420 SS vs. 18Ni300 vs. CuCrZr</h2>
 
-  <p>The choice of print material is the single biggest factor in both cost and performance of a conformal cooling insert. Here's the decision framework we use across 13 industries of production experience:</p>
+  <p>The choice of print <a href="conformal-cooling-materials.html">material</a> is the single biggest factor in both cost and performance of a conformal cooling insert. Here's the decision framework we use across 13 industries of production experience:</p>
 
   <table>
     <thead>
@@ -486,7 +486,7 @@
       <tr><th>Rule</th><th>Value</th><th>Why It Matters</th></tr>
     </thead>
     <tbody>
-      <tr><td>Minimum channel diameter</td><td>4mm (6mm recommended)</td><td>Channels &lt;4mm are difficult to clear of sintered powder and risk blockage</td></tr>
+      <tr><td>Minimum channel diameter</td><td>4mm (6mm recommended)</td><td>Channels &lt;4mm are difficult to clear of sintered powder and risk blockage. See <a href="conformal-cooling-channel-design.html">channel design rules</a></td></tr>
       <tr><td>Maximum channel diameter</td><td>12mm</td><td>Larger requires support structures inside channel — hard to remove</td></tr>
       <tr><td>Self-supporting overhang angle</td><td>≤45° from vertical</td><td>Overhangs &gt;45° inside channels require supports that cannot be removed</td></tr>
       <tr><td>Powder evacuation route</td><td>Required for every channel</td><td>Channels with no exit = trapped powder = blockage during pressure test</td></tr>
@@ -560,7 +560,7 @@
     <div class="cost-row"><span><strong>Total: Large insert</strong></span><span><strong>$4,000–9,000</strong></span></div>
   </div>
 
-  <p>For reference: a conventionally machined insert of equivalent size typically costs 40–60% less. The conformal cooling premium is recovered through cycle time savings. For a mold running 100,000+ shots/year, the payback period for this premium is typically 3–8 months.</p>
+  <p>For reference: a conventionally machined insert of equivalent size typically costs 40–60% less. The conformal cooling premium is recovered through cycle time savings. For a detailed breakdown, see our <a href="metal-3d-printing-cost.html">metal 3D printing cost</a> guide. For a mold running 100,000+ shots/year, the payback period for this premium is typically 3–8 months.</p>
 
   <div class="callout green">
     <strong>Cost reduction tip:</strong> Nesting multiple inserts in one SLM build significantly reduces per-part cost — machine setup is amortized across all parts in the build. If you're ordering multiple inserts, always ask your supplier to batch them in a single build. We typically see 15–25% cost reduction when 3+ inserts are built together.
@@ -618,7 +618,26 @@
 
 </div>
 
-<footer>
+
+  <!-- Related Articles — auto-generated internal links -->
+  <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+    <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li>
+        <a href="/blog/3d-printed-conformal-cooling.html">3D-Printed Conformal Cooling Design Guide</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-materials.html">Insert Materials Guide</a>
+      </li>
+      <li>
+        <a href="/blog/slm-vs-dmls-conformal-cooling.html">SLM vs DMLS Comparison</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-cost.html">Conformal Cooling Cost Guide</a>
+      </li>
+    </ul>
+  </aside>
+  <footer>
   <p>© 2026 MouldNova — Ningbo Saiguang 3D Technology Co., Ltd.</p>
   <p style="margin-top:8px;"><a href="../">Home</a> &nbsp;·&nbsp; <a href="../contact.html">Contact</a> &nbsp;·&nbsp; <a href="../conformal-cooling-inserts.html">Conformal Cooling</a> &nbsp;·&nbsp; <a href="./">Blog</a></p>
 </footer>

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conformal Cooling Lines: Channel Layout, Spacing &amp; Flow Design | MouldNova</title>
+  <meta name="description" content="Conformal cooling line design: series vs parallel circuits, diameter selection, pitch, Reynolds number, pressure drop, and dead zone avoidance." />
+  <meta name="keywords" content="conformal cooling lines, conformal cooling channel layout, conformal cooling spacing, conformal cooling flow design, conformal cooling Reynolds number, conformal cooling pressure drop" />
+  <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-lines.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/conformal-cooling-lines.html" />
+  <link rel="icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LMZXHN7YGJ');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Conformal Cooling Lines: Channel Layout, Spacing & Flow Design",
+        "description": "Technical deep-dive on conformal cooling line design — series vs parallel circuits, channel diameter selection, pitch and offset from cavity surface, Reynolds number, pressure drop calculations, dead zone avoidance, channel cross-section shapes, and maintenance.",
+        "author": {"@type": "Organization", "name": "MouldNova"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "MouldNova",
+          "logo": {"@type": "ImageObject", "url": "https://mouldnova.com/images/logo.png"}
+        },
+        "datePublished": "2026-03-19",
+        "dateModified": "2026-03-19",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mouldnova.com/blog/conformal-cooling-lines.html"},
+        "keywords": "conformal cooling lines, conformal cooling channel layout, conformal cooling spacing, conformal cooling flow design, conformal cooling Reynolds number, conformal cooling pressure drop"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the correct channel diameter for conformal cooling lines?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For most production conformal cooling applications, 6–10mm diameter channels are standard. The optimal diameter depends on the insert size and required flow rate: 6mm channels for small inserts (under 80×80mm cavity area) where a compact pitch is needed; 8mm channels for medium inserts — this is the most common specification and balances flow area, turbulence at practical pump pressures (4–8 bar), and printability; 10mm channels for large inserts (over 200mm in any dimension) where maintaining turbulent flow without excessive pressure drop requires a larger bore. Channel diameter should not exceed 12mm in SLM-printed steel inserts — larger bores increase the risk of channel wall collapse during printing without internal support structures."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What Reynolds number should conformal cooling channels target?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Conformal cooling channels should target a Reynolds number (Re) of 4,000–10,000, which places flow firmly in the turbulent regime. Turbulent flow is critical because the Nusselt number (which governs convective heat transfer between the coolant and channel wall) is 5–10 times higher in turbulent flow than in laminar flow. For an 8mm round channel carrying water at 25°C, achieving Re = 4,000 requires a minimum flow velocity of approximately 0.5 m/s, corresponding to roughly 1.5 L/min per circuit. In parallel circuits, ensure that each branch receives sufficient individual flow — total manifold flow divided between branches must still achieve turbulence in each branch independently."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the correct pitch and offset for conformal cooling lines?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The two critical dimensions in conformal cooling line layout are: (1) Offset from cavity surface (wall distance from channel centerline to cavity face): 8–15mm. The optimum is 1.0–1.5 times the channel diameter (e.g., 8–12mm offset for an 8mm diameter channel). Closer than 8mm risks insufficient wall strength; further than 15mm approaches conventional straight-drilled cooling performance. (2) Pitch (channel-to-channel center spacing): 1.5–2.5 times the channel diameter, typically 12–20mm for an 8mm channel. Tighter pitch gives more uniform temperature distribution but increases pressure drop and print cost. Wider pitch creates temperature variation between channels. The pitch-to-offset ratio should ideally be less than 2:1 for good uniformity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you clean and maintain conformal cooling lines after SLM printing and in production?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Two distinct maintenance phases apply: (1) Post-print powder removal: Sintered powder trapped in conformal channels during SLM printing is a known risk. Removal requires forced air purging (minimum 6 bar through each channel individually), ultrasonic cleaning in an IPA bath, and re-purging with air. A borescope inspection confirms clear bore before pressure testing. Detailed protocol is covered in our clean powder article. (2) In-production maintenance: Conformal channels accumulate scale (calcium carbonate deposits) from hard water at approximately 0.1–0.3mm/year in untreated water systems. Use deionised water or chemical inhibitors in the coolant circuit. Annual chemical descaling (citric acid or phosphoric acid solution at 5%, circulated for 2–4 hours) removes scale without damaging 420 SS or 18Ni300 insert materials. Do not use hydrochloric acid — it attacks the chromium layer in stainless steel."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --blue: #0057D9;
+      --blue-dark: #003fa3;
+      --accent: #00C48C;
+      --bg: #f6f8fc;
+      --text: #1a1a2e;
+      --muted: #5a6070;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,.08);
+    }
+
+    .blog-hero { padding: 80px 0 48px; background: var(--black, #0a1628); color: #fff; }
+    .blog-hero__eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #00C48C; margin-bottom: 12px; font-weight: 700; }
+    .blog-hero__title { font-size: 2.4rem; font-weight: 900; line-height: 1.15; margin-bottom: 16px; max-width: 800px; }
+    .blog-hero__meta { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+
+    .blog-body { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text); }
+    .blog-body h2 { font-size: 1.4rem; font-weight: 800; margin: 52px 0 16px; padding-top: 8px; border-top: 3px solid var(--bg); color: var(--text); }
+    .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 28px 0 10px; color: var(--text); }
+    .blog-body p { margin-bottom: 16px; font-size: 1rem; line-height: 1.75; color: #333; }
+    .blog-body ul, .blog-body ol { margin: 0 0 16px 22px; line-height: 1.75; color: #333; }
+    .blog-body li { margin-bottom: 6px; font-size: 1rem; }
+    .blog-body strong { font-weight: 700; }
+    .blog-body a { color: var(--blue); }
+
+    .breadcrumb { font-size: 0.8rem; color: var(--muted); padding: 14px 0 0; max-width: 820px; margin: 0 auto; padding-left: 24px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--blue); }
+    .breadcrumb span { margin: 0 6px; }
+
+    .blog-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 32px; font-size: .83rem; color: var(--muted); }
+    .blog-tag { background: #eef4ff; color: var(--blue); border-radius: 20px; padding: 3px 12px; font-weight: 600; font-size: .78rem; }
+    .blog-tag.green { background: #e6faf3; color: #00875a; }
+    .blog-tag.orange { background: #fff3e6; color: #c05c00; }
+
+    .intro-box { background: var(--bg); border-left: 4px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 0 0 36px; font-size: .95rem; }
+    .intro-box ul { margin: 10px 0 0 18px; }
+    .intro-box li { margin-bottom: 4px; }
+
+    .toc-box { background: var(--bg); border-radius: var(--radius); padding: 20px 22px; margin-bottom: 36px; }
+    .toc-box h4 { font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 12px; }
+    .toc-box ol { margin: 0 0 0 18px; }
+    .toc-box li { font-size: .88rem; margin-bottom: 5px; }
+    .toc-box a { color: var(--blue); text-decoration: none; }
+
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: .87rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    th { background: var(--blue); color: #fff; padding: 11px 14px; text-align: left; font-weight: 600; }
+    td { padding: 10px 14px; border-bottom: 1px solid #e8ecf4; vertical-align: top; }
+    tr:nth-child(even) td { background: var(--bg); }
+    tr:last-child td { border-bottom: none; }
+    .highlight-row td { background: #eef9f4 !important; font-weight: 600; }
+    .check { color: var(--accent); font-weight: 700; }
+    .cross { color: #e53e3e; font-weight: 700; }
+
+    .callout { background: #fffbeb; border: 1px solid #f6d860; border-radius: var(--radius); padding: 18px 20px; margin: 24px 0; font-size: .92rem; }
+    .callout strong { color: #92610a; }
+    .callout.blue { background: #eef4ff; border-color: #c0d4f8; }
+    .callout.blue strong { color: var(--blue-dark); }
+    .callout.green { background: #e6faf3; border-color: #9be8cc; }
+    .callout.green strong { color: #00734a; }
+    .callout.red { background: #fff0f0; border-color: #fca5a5; }
+    .callout.red strong { color: #b91c1c; }
+
+    .circuit-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0; }
+    .circuit-col { border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 20px 18px; }
+    .circuit-col.preferred { border-color: var(--accent); border-width: 2px; background: #f0fdf8; }
+    .circuit-col h5 { font-size: .88rem; font-weight: 800; margin-bottom: 4px; color: var(--text); }
+    .circuit-col .cc-badge { font-size: .7rem; font-weight: 700; display: inline-block; padding: 2px 8px; border-radius: 4px; margin-bottom: 10px; }
+    .circuit-col.preferred .cc-badge { background: #e6faf3; color: #00734a; }
+    .circuit-col:not(.preferred) .cc-badge { background: #eef4ff; color: var(--blue); }
+    .circuit-col ul { margin: 0 0 0 16px; font-size: .84rem; color: #444; }
+    .circuit-col li { margin-bottom: 5px; }
+
+    .param-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 24px 0; }
+    .param-card { background: var(--bg); border-radius: var(--radius); padding: 16px 16px; border: 1px solid #e2e8f0; text-align: center; }
+    .param-card .param-val { font-size: 1.6rem; font-weight: 900; color: var(--blue); display: block; margin-bottom: 4px; }
+    .param-card .param-label { font-size: .78rem; color: var(--muted); font-weight: 600; }
+    .param-card .param-note { font-size: .72rem; color: var(--muted); margin-top: 4px; }
+
+    .cross-section-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+    .cs-card { border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 18px 16px; background: #fff; }
+    .cs-card.recommended { border-color: var(--accent); border-width: 2px; background: #f0fdf8; }
+    .cs-card h4 { font-size: .9rem; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+    .cs-card p { font-size: .82rem; color: var(--muted); margin: 0 0 8px; }
+    .cs-card .cs-verdict { font-size: .76rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; display: inline-block; }
+    .cs-card.recommended .cs-verdict { background: #e6faf3; color: #00734a; }
+    .cs-card:not(.recommended) .cs-verdict { background: #eef4ff; color: var(--blue); }
+
+    .formula-box { background: #0a1628; color: #fff; border-radius: var(--radius); padding: 24px 28px; margin: 24px 0; font-family: 'Courier New', monospace; }
+    .formula-box .fb-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: 12px; font-family: 'Segoe UI', system-ui, sans-serif; font-weight: 700; }
+    .formula-box .fb-line { font-size: 1rem; line-height: 2.2; color: #e5e5e5; }
+    .formula-box .fb-var { color: #fbbf24; }
+    .formula-box .fb-comment { font-size: .78rem; color: #99b0d0; font-family: 'Segoe UI', system-ui, sans-serif; }
+
+    .mid-cta { background: linear-gradient(135deg, #0a1628, #0d2456); color: #fff; border-radius: var(--radius); padding: 32px 28px; margin: 48px 0; text-align: center; }
+    .mid-cta h3 { color: #fff; margin: 0 0 10px; font-size: 1.2rem; }
+    .mid-cta p { color: #99b0d0; font-size: .9rem; margin-bottom: 20px; }
+    .mid-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-accent { background: var(--accent); color: #fff; padding: 11px 26px; border-radius: 7px; font-weight: 700; font-size: .9rem; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); padding: 11px 26px; border-radius: 7px; font-weight: 600; font-size: .9rem; text-decoration: none; }
+
+    details { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 12px; background: #fff; overflow: hidden; }
+    summary { padding: 16px 20px; font-weight: 600; font-size: .95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
+    summary::after { content: '+'; font-size: 1.3rem; color: var(--blue); font-weight: 300; flex-shrink: 0; }
+    details[open] summary::after { transform: rotate(45deg); display: inline-block; }
+    details div { padding: 0 20px 16px; font-size: .9rem; color: var(--muted); line-height: 1.65; }
+
+    @media (max-width: 640px) {
+      .circuit-compare { grid-template-columns: 1fr; }
+      .cross-section-grid { grid-template-columns: 1fr; }
+      .param-grid { grid-template-columns: 1fr 1fr; }
+      .blog-hero__title { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../directory/" class="nav__link">Directory</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Technical Deep-Dive &middot; March 2026</div>
+    <h1 class="blog-hero__title">Conformal Cooling Lines: Channel Layout, Spacing &amp; Flow Design</h1>
+    <div class="blog-hero__meta">By MouldNova Engineering Team &middot; 15 min read &middot; Series vs. parallel, diameter selection, Reynolds number, pressure drop, dead zones, and cross-section shapes</div>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>&rsaquo;</span>
+  <a href="index.html">Blog</a>
+  <span>&rsaquo;</span>
+  <span>Conformal Cooling Lines</span>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <div class="blog-meta">
+    <span class="blog-tag">Technical Guide</span>
+    <span class="blog-tag green">Flow Design</span>
+    <span class="blog-tag orange">Channel Layout</span>
+    <span>March 19, 2026</span>
+    <span>&middot;</span>
+    <span>15 min read</span>
+    <span>&middot;</span>
+    <span>By MouldNova Engineering Team</span>
+  </div>
+
+  <div class="intro-box">
+    <strong>What this guide covers — the engineering parameters behind conformal cooling line design:</strong>
+    <ul>
+      <li>Series vs. parallel circuit layout: which to choose and when</li>
+      <li>Channel diameter selection: 6, 8, or 10mm — the correct logic</li>
+      <li>Pitch (channel-to-channel spacing) and offset (wall distance from cavity surface)</li>
+      <li>Flow rate, velocity, and Reynolds number — achieving and confirming turbulent flow</li>
+      <li>Pressure drop calculation across a conformal cooling circuit</li>
+      <li>How to identify and eliminate dead zones (areas of stagnant or low-flow coolant)</li>
+      <li>Channel cross-section shapes: round vs. teardrop vs. diamond</li>
+      <li>Cleaning and long-term maintenance of conformal cooling lines</li>
+    </ul>
+  </div>
+
+  <div class="toc-box">
+    <h4>Table of Contents</h4>
+    <ol>
+      <li><a href="#circuits">Series vs. Parallel Circuit Layout</a></li>
+      <li><a href="#diameter">Channel Diameter Selection</a></li>
+      <li><a href="#pitch-offset">Pitch and Offset from Cavity Surface</a></li>
+      <li><a href="#flow">Flow Rate, Velocity, and Reynolds Number</a></li>
+      <li><a href="#pressure-drop">Pressure Drop Calculation</a></li>
+      <li><a href="#dead-zones">Eliminating Dead Zones</a></li>
+      <li><a href="#cross-section">Channel Cross-Section Shapes</a></li>
+      <li><a href="#maintenance">Cleaning and Maintenance of Conformal Cooling Lines</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2 id="circuits">Series vs. Parallel Circuit Layout</h2>
+
+  <p>The single most consequential layout decision in conformal cooling line design is whether to connect channels in series (one long continuous path from IN to OUT) or in parallel (multiple shorter paths running simultaneously between a shared manifold).</p>
+
+  <div class="circuit-compare">
+    <div class="circuit-col">
+      <h5>Series Circuit</h5>
+      <div class="cc-badge">Use for small inserts</div>
+      <ul>
+        <li>One continuous serpentine channel from a single IN to a single OUT</li>
+        <li>Simple plumbing — two connections per insert only</li>
+        <li>Coolant heats progressively along the circuit — the outlet end receives warmer coolant than the inlet, creating a temperature gradient across the insert (&Delta;T of coolant itself)</li>
+        <li>Pressure drop is the sum of all channel segments in series — can become very high for long circuits (&gt;1.5 bar for circuits longer than 800mm in 8mm channel)</li>
+        <li>Best for: inserts with cavity area &lt; 100&times;100mm, or where simplicity of plumbing is the priority</li>
+        <li>Typical total channel length: 300&ndash;800mm before pressure drop becomes limiting</li>
+      </ul>
+    </div>
+    <div class="circuit-col preferred">
+      <h5>Parallel Circuit</h5>
+      <div class="cc-badge">Preferred for production tooling</div>
+      <ul>
+        <li>Multiple shorter channel paths run simultaneously between a common inlet manifold and common outlet manifold</li>
+        <li>Each branch sees the same inlet temperature — no cumulative heating effect along the circuit</li>
+        <li>Overall pressure drop is the pressure drop of a single branch (much lower than equivalent series circuit)</li>
+        <li>Allows independent flow control per zone if different circuits feed thermally distinct areas</li>
+        <li>Requires more plumbing connections — typically 2&times;N connections for N parallel branches</li>
+        <li>Best for: inserts with cavity area &gt;100&times;100mm, long narrow inserts (core pins), or any application where temperature uniformity is critical</li>
+        <li>Risk: flow imbalance between parallel branches if branches have different resistance — requires balanced design or individual flow meters</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>For parallel circuits, branch flow balance is critical. If two branches have different hydraulic resistance, flow will preferentially follow the lower-resistance path — leaving the high-resistance branch with insufficient flow and potentially laminar conditions. Design all parallel branches to the same total channel length and the same number of bends. Where geometry prevents this, use a orifice plate or needle valve on the lower-resistance branches to impose deliberate restriction.</p>
+
+  <div class="callout blue">
+    <strong>Hybrid approach:</strong> Many production conformal inserts use a hybrid circuit: 2&ndash;4 parallel circuits, each of which is internally a short series serpentine. This balances plumbing simplicity (fewer connections than fully parallel) with thermal uniformity (shorter series path = less coolant heating) and practical pressure drop (each circuit is short enough for manageable pressure loss).
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2 id="diameter">Channel Diameter Selection</h2>
+
+  <p>Channel diameter is the single most important design variable after channel position. It determines flow area, turbulence threshold flow rate, pressure drop per unit length, and SLM printability. The choice is not arbitrary — it must be calculated for your specific insert size and flow conditions.</p>
+
+  <div class="param-grid">
+    <div class="param-card">
+      <span class="param-val">6mm</span>
+      <div class="param-label">Small inserts</div>
+      <div class="param-note">&lt;80&times;80mm cavity area; tight pitch applications</div>
+    </div>
+    <div class="param-card">
+      <span class="param-val">8mm</span>
+      <div class="param-label">Standard (most common)</div>
+      <div class="param-note">80&ndash;200mm inserts; best balance of flow vs. pressure</div>
+    </div>
+    <div class="param-card">
+      <span class="param-val">10mm</span>
+      <div class="param-label">Large inserts</div>
+      <div class="param-note">&gt;200mm inserts; long circuits requiring low pressure drop</div>
+    </div>
+    <div class="param-card">
+      <span class="param-val">&le;12mm</span>
+      <div class="param-label">Maximum for SLM steel</div>
+      <div class="param-note">Larger bores risk channel wall collapse without internal support</div>
+    </div>
+  </div>
+
+  <h3>Why 8mm is the industry standard</h3>
+  <p>An 8mm diameter channel achieves turbulent flow (Re &gt; 4,000) at a flow velocity of approximately 0.5 m/s, which corresponds to a flow rate of just 1.5 L/min. This is well within the capability of any standard chiller or mold temperature controller. At the same time, pressure drop per metre of channel is manageable (approximately 0.06 bar/m at this flow rate for water at 25&deg;C), allowing circuits up to 500mm long before exceeding a practical 0.3 bar pressure drop budget per circuit.</p>
+
+  <p>A 6mm channel requires higher velocity to achieve turbulence — approximately 0.8 m/s (2.3 L/min) for Re = 4,000 — but the smaller bore means pressure drop per metre is significantly higher (approximately 0.18 bar/m). Use 6mm channels only in short circuits or when the tight pitch constraint forces it.</p>
+
+  <h3>Diameter and wall thickness interaction</h3>
+  <p>Channel diameter must be sized against available wall thickness. The minimum wall between any channel surface and the cavity face should be 1.0&times;D (8mm for an 8mm channel). The minimum wall between adjacent channels should be 0.5&times;D (4mm for 8mm channels). Violating these minimums creates structural integrity risks in the SLM-printed insert under injection pressure.</p>
+
+  <!-- SECTION 3 -->
+  <h2 id="pitch-offset">Pitch and Offset from Cavity Surface</h2>
+
+  <p>Pitch and offset together define the spatial density of cooling coverage at the cavity surface. Both must be specified precisely — vague terms like "close to the surface" or "uniformly spaced" are not engineering specifications.</p>
+
+  <table>
+    <thead>
+      <tr><th>Parameter</th><th>Definition</th><th>Recommended Range</th><th>Consequence if Wrong</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Offset (wall distance)</strong></td><td>Distance from channel centerline to cavity surface</td><td>8&ndash;15mm (target: 1.0&ndash;1.5&times;D)</td><td>Too close: structural risk, flash; Too far: approaches conventional cooling performance</td></tr>
+      <tr class="highlight-row"><td><strong>Pitch (channel spacing)</strong></td><td>Center-to-center distance between adjacent parallel channels</td><td>12&ndash;20mm for 8mm channel (target: 1.5&ndash;2.5&times;D)</td><td>Too close: pressure drop increase, print cost; Too far: temperature non-uniformity between channels</td></tr>
+      <tr><td><strong>Pitch-to-offset ratio</strong></td><td>Pitch divided by offset</td><td>&lt;2.0 for good uniformity</td><td>Ratio &gt;2.0 creates visible "scalloping" pattern in thermal map</td></tr>
+      <tr><td><strong>Bend radius</strong></td><td>Radius of channel path curvature at turns</td><td>&ge;1.5&times;D (12mm minimum for 8mm channel)</td><td>Tight bends increase pressure drop and create low-velocity zones at the inside of bends</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The pitch-to-offset rule in practice</h3>
+  <p>If pitch = 20mm and offset = 10mm, the ratio is 2.0 — at the acceptable limit. The temperature at the cavity surface directly between two channels will be approximately 2&ndash;4&deg;C higher than directly above a channel (the "scalloping" effect). This is acceptable for most commercial parts but may not meet the &lt;2&deg;C uniformity required for optical or medical parts.</p>
+
+  <p>To achieve &lt;2&deg;C uniformity, target a pitch-to-offset ratio of 1.5 or below — e.g., 12mm pitch with 8mm offset. This is a denser and more expensive channel network but delivers near-isothermal cavity surface conditions.</p>
+
+  <!-- SECTION 4 -->
+  <h2 id="flow">Flow Rate, Velocity, and Reynolds Number</h2>
+
+  <p>Turbulent flow is not optional for effective conformal cooling — it is a fundamental requirement. Laminar flow in a conformal cooling channel delivers cooling performance that is barely better than a conventional straight-drilled channel, because the heat transfer coefficient in laminar flow is 5&ndash;10&times; lower than in turbulent flow at the same velocity.</p>
+
+  <h3>Reynolds number calculation</h3>
+
+  <div class="formula-box">
+    <div class="fb-label">Reynolds Number Formula</div>
+    <div class="fb-line">Re = (<span class="fb-var">&rho;</span> &times; <span class="fb-var">v</span> &times; <span class="fb-var">D</span>) / <span class="fb-var">&mu;</span></div>
+    <div class="fb-line">Where:</div>
+    <div class="fb-line"><span class="fb-var">&rho;</span> = coolant density (water at 25&deg;C: 997 kg/m&sup3;)</div>
+    <div class="fb-line"><span class="fb-var">v</span> = flow velocity (m/s)</div>
+    <div class="fb-line"><span class="fb-var">D</span> = channel internal diameter (m)</div>
+    <div class="fb-line"><span class="fb-var">&mu;</span> = dynamic viscosity (water at 25&deg;C: 0.00089 Pa&middot;s)</div>
+    <div class="fb-comment" style="margin-top:12px;">Turbulent regime: Re &gt; 4,000 &nbsp;|&nbsp; Transitional: 2,300 &ndash; 4,000 &nbsp;|&nbsp; Laminar: Re &lt; 2,300</div>
+  </div>
+
+  <h3>Practical flow rates for turbulent flow</h3>
+
+  <table>
+    <thead>
+      <tr><th>Channel Diameter</th><th>Min. Flow for Re=4000</th><th>Recommended Flow (Re=6000)</th><th>Max. Practical Flow (Re=10000)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>6mm</td><td>1.4 L/min</td><td>2.1 L/min</td><td>3.5 L/min</td></tr>
+      <tr class="highlight-row"><td>8mm (standard)</td><td>1.9 L/min</td><td>2.8 L/min</td><td>4.7 L/min</td></tr>
+      <tr><td>10mm</td><td>2.4 L/min</td><td>3.5 L/min</td><td>5.9 L/min</td></tr>
+    </tbody>
+  </table>
+
+  <p><em>Values for water at 25&deg;C. Flow rates scale approximately linearly with channel cross-section area. For chilled water at 10&deg;C, minimum turbulence flow rates are approximately 20% lower due to reduced kinematic viscosity.</em></p>
+
+  <div class="callout green">
+    <strong>Practical check:</strong> Install a flow meter on each cooling circuit output. If measured flow is below the turbulence threshold (use the table above), the circuit is under-powered by the chiller — not a design problem but a process problem. Increase pump pressure or reduce circuit resistance by shortening the series path. This simple check, done at T1 trial, catches most cooling underperformance issues before they are attributed to the insert design.
+  </div>
+
+  <!-- SECTION 5 -->
+  <h2 id="pressure-drop">Pressure Drop Calculation</h2>
+
+  <p>Every conformal cooling circuit has a hydraulic resistance that determines the pressure required from the chiller to achieve the target flow rate. Designing circuits that exceed the chiller's pressure capability renders the conformal cooling design non-functional in production.</p>
+
+  <p>Pressure drop in a conformal cooling channel is calculated using the Darcy-Weisbach equation:</p>
+
+  <div class="formula-box">
+    <div class="fb-label">Darcy-Weisbach Pressure Drop</div>
+    <div class="fb-line">&Delta;P = <span class="fb-var">f</span> &times; (L/D) &times; (&rho;v&sup2;/2)</div>
+    <div class="fb-line">Where:</div>
+    <div class="fb-line"><span class="fb-var">f</span> = Darcy friction factor (for turbulent flow in rough pipe, use Moody chart or Colebrook equation)</div>
+    <div class="fb-line"><span class="fb-var">L</span> = channel length (m)</div>
+    <div class="fb-line"><span class="fb-var">D</span> = channel diameter (m)</div>
+    <div class="fb-line"><span class="fb-var">&rho;</span> = coolant density (kg/m&sup3;)</div>
+    <div class="fb-line"><span class="fb-var">v</span> = flow velocity (m/s)</div>
+    <div class="fb-comment" style="margin-top:12px;">Note: SLM-printed channels have Ra 8&ndash;20 &micro;m internal roughness — use relative roughness &epsilon;/D = 0.002&ndash;0.003 in Colebrook equation (significantly rougher than drawn tube).</div>
+  </div>
+
+  <h3>Practical pressure drop budget</h3>
+  <p>Design each cooling circuit to have a pressure drop below <strong>0.5 bar</strong> at the target flow rate. Most mold temperature controllers provide 4&ndash;8 bar pump pressure; a circuit pressure drop of 0.5 bar leaves ample margin for fitting losses (typically 0.1&ndash;0.2 bar total for standard fittings and hoses) and pressure variation between shots.</p>
+
+  <p>For a series circuit of 500mm total length in 8mm channel at 2.8 L/min (Re = 6,000), with SLM surface roughness (f &asymp; 0.028), the calculated pressure drop is approximately 0.13 bar — well within budget. A 1,500mm series circuit at the same flow rate would reach 0.39 bar — still acceptable but approaching the limit. Longer circuits should be split into parallel branches.</p>
+
+  <!-- SECTION 6 -->
+  <h2 id="dead-zones">Eliminating Dead Zones</h2>
+
+  <p>A dead zone in a conformal cooling circuit is any region where coolant velocity falls close to zero — either because the channel terminates in a blind end, because a T-junction creates a stagnant branch, or because a section of channel is geometrically downstream of a short-circuit path and therefore receives negligible flow.</p>
+
+  <h3>Common dead zone sources and fixes</h3>
+
+  <ul>
+    <li><strong>Blind-end channels:</strong> Never design a channel that terminates without an exit. Every channel segment must have a continuous flow path from IN to OUT. If a feature geometry forces a dead-end (e.g., cooling into a sharp corner), use a baffle plug machined post-SLM to redirect flow back out of the dead end zone.</li>
+    <li><strong>T-junctions without return paths:</strong> A T-junction where flow enters from the stem and splits into two branches with one branch flowing significantly less than the other creates a quasi-dead zone in the low-flow branch. Size branches to equal hydraulic resistance, or install a flow-restriction fitting on the higher-flow branch to balance the split.</li>
+    <li><strong>Outer bends in curved inserts:</strong> In a curved conformal channel (following a mold surface with significant curvature), the outer radius of the channel bend sees lower velocity than the inner radius. In sharp bends, the outer-radius flow can become transitional or laminar. Maintain bend radius &ge;1.5&times;D to limit velocity non-uniformity to &lt;15% across the channel cross-section.</li>
+    <li><strong>Parallel branch imbalance:</strong> In parallel circuits, if one branch has 2&times; the hydraulic resistance of another, the low-resistance branch carries &sim;60% of total flow and the high-resistance branch carries &sim;40% — below the target. At worst, the high-resistance branch drops below turbulence threshold. Balance branch lengths and bend counts.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Simulation verification:</strong> All conformal cooling channel designs should be validated by CFD simulation (or at minimum by the hydraulic analysis in Moldflow/Moldex3D) to confirm that every channel segment is operating in the turbulent regime and that no dead zones exist. A temperature non-uniformity in the Moldflow output that correlates spatially with a suspected dead zone location is a strong indicator to redesign that circuit branch.
+  </div>
+
+  <!-- SECTION 7 -->
+  <h2 id="cross-section">Channel Cross-Section Shapes</h2>
+
+  <p>Conformal cooling lines in SLM-printed inserts can be produced in multiple cross-section profiles, each with distinct thermal, hydraulic, and printability characteristics:</p>
+
+  <div class="cross-section-grid">
+    <div class="cs-card recommended">
+      <h4>Teardrop (Drop-Shaped)</h4>
+      <p>Round bottom half, pointed top (like a raindrop inverted). The pointed crown is self-supporting during SLM printing when printed with the point facing up — no internal supports needed. Hydraulically close to round. Best combination of printability and thermal performance.</p>
+      <div class="cs-verdict">Recommended for most SLM applications</div>
+    </div>
+    <div class="cs-card">
+      <h4>Round (Circular)</h4>
+      <p>Standard geometry. Optimal hydraulic performance (minimum pressure drop for a given flow area). However, the top of the circle (the roof of the internal bore) is an overhang during SLM printing — requires a print angle &lt;45&deg; from vertical to be self-supporting, or requires internal support structures (which must then be removed).</p>
+      <div class="cs-verdict">Use when teardrop can be oriented at &lt;45&deg;</div>
+    </div>
+    <div class="cs-card">
+      <h4>Diamond / Rhombus</h4>
+      <p>Four flat faces oriented at 45&deg; diagonals. Fully self-supporting in any orientation during SLM printing (all faces at &ge;45&deg; from horizontal). Slightly lower heat transfer than round at equivalent hydraulic diameter due to corner stagnation zones, but avoids all overhang concerns. Used in complex-curved inserts where channel orientation varies widely.</p>
+      <div class="cs-verdict">Use for complex-curved inserts or variable orientation</div>
+    </div>
+  </div>
+
+  <p>In practice, most conformal cooling suppliers use the teardrop profile as the default and the diamond profile for geometrically complex inserts where channel orientation cannot be controlled. Round channels are used when the designer can guarantee build orientation keeps the bore roof below 45&deg; from horizontal throughout — or when the supplier has accepted the risk of internal support removal.</p>
+
+  <!-- SECTION 8 -->
+  <h2 id="maintenance">Cleaning and Maintenance of Conformal Cooling Lines</h2>
+
+  <p>Conformal cooling lines require two distinct types of maintenance attention: post-manufacture cleaning (removing sintered powder from the SLM printing process) and in-service maintenance (preventing and removing scale deposits during production life).</p>
+
+  <h3>Post-SLM powder removal</h3>
+  <p>Sintered metal powder trapped in conformal cooling channels during SLM printing is one of the most significant quality risks in the process. Powder that is not removed before the insert enters service will: (1) partially block the channel, reducing flow and turbulence; (2) continue sintering under the heat of production, eventually cementing into solid blockages; and (3) potentially migrate into the coolant circuit, damaging the chiller pump. The detailed powder removal procedure is covered in our dedicated article on <a href="/blog/clean-powder-conformal-cooling-lines.html">cleaning powder from conformal cooling lines</a>. The mandatory steps are: forced air purging at &ge;6 bar, ultrasonic cleaning, re-purging, and borescope verification of clear bore before pressure testing.</p>
+
+  <h3>In-service scale management</h3>
+  <p>In production, the main maintenance concern is calcium carbonate and magnesium carbonate scale deposition from hard process water. Scale builds up on the channel internal walls at approximately 0.1&ndash;0.3mm per year in untreated water with hardness &gt;150 ppm CaCO&sub3;. At 0.5mm scale thickness, the flow area of an 8mm channel is reduced by approximately 12%, and heat transfer is reduced by 15&ndash;25% (scale has thermal conductivity of only 1&ndash;3 W/m&middot;K vs. 15&ndash;20 W/m&middot;K for steel).</p>
+
+  <p>Prevention is more effective than remediation:</p>
+  <ul>
+    <li><strong>Use deionised or softened water</strong> in the coolant circuit — this eliminates scale almost entirely</li>
+    <li><strong>Use chemical inhibitors</strong> (glycol-based or specific mold cooling inhibitors) to prevent both scale and corrosion</li>
+    <li><strong>Annual chemical descaling</strong> with 5% citric acid solution circulated for 2&ndash;4 hours removes scale without damaging 420 SS or 18Ni300 insert materials. Do not use hydrochloric acid — it attacks the chromium passive layer in stainless steel.</li>
+    <li><strong>Pressure test annually</strong>: after any descaling treatment, re-pressure-test the circuit at 1.5&times; operating pressure for 10 minutes before returning to production.</li>
+  </ul>
+
+  <div class="mid-cta">
+    <h3>Get Your Conformal Cooling Line Design Validated</h3>
+    <p>MouldNova's engineering team provides full channel layout design, Moldflow simulation validation, and a pressure-tested insert — with Reynolds number and pressure drop calculations included in every project report.</p>
+    <div class="mid-cta-btns">
+      <a href="../contact.html" class="btn-accent">Request Design Review</a>
+      <a href="https://wa.me/8618268661068" class="btn-ghost">WhatsApp Us Directly</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <details>
+    <summary>What is the correct channel diameter for conformal cooling lines?</summary>
+    <div>For most production conformal cooling applications, 6&ndash;10mm diameter channels are standard. 6mm is used for small inserts (cavity area &lt;80&times;80mm) where tight pitch is needed. 8mm is the industry standard — the most common specification, balancing flow area, turbulence at practical pump pressures (4&ndash;8 bar), and SLM printability. 10mm channels are used for large inserts (&gt;200mm dimension) where maintaining turbulent flow without excessive pressure drop requires a larger bore. Channel diameter should not exceed 12mm in SLM-printed steel inserts — larger bores risk channel wall collapse during printing.</div>
+  </details>
+
+  <details>
+    <summary>What Reynolds number should conformal cooling channels target?</summary>
+    <div>Conformal cooling channels should target a Reynolds number (Re) of 4,000&ndash;10,000, firmly in the turbulent regime. Turbulent flow is critical because the Nusselt number (governing convective heat transfer) is 5&ndash;10 times higher in turbulent flow than in laminar flow. For an 8mm round channel carrying water at 25&deg;C, achieving Re = 4,000 requires a minimum flow velocity of approximately 0.5 m/s, corresponding to roughly 1.9 L/min per circuit. In parallel circuits, ensure each branch independently achieves turbulence — total manifold flow divided by the number of branches must still exceed the per-branch turbulence threshold.</div>
+  </details>
+
+  <details>
+    <summary>What is the correct pitch and offset for conformal cooling lines?</summary>
+    <div>The two critical layout dimensions are: (1) Offset from cavity surface (channel centerline to cavity face): 8&ndash;15mm, target 1.0&ndash;1.5&times;channel diameter — e.g., 8&ndash;12mm for an 8mm channel. Closer than 8mm risks structural failure; further than 15mm approaches conventional cooling performance. (2) Pitch (channel-to-channel center spacing): 12&ndash;20mm for an 8mm channel (1.5&ndash;2.5&times;D). Tighter pitch improves temperature uniformity but increases pressure drop and print cost. The pitch-to-offset ratio should be kept below 2.0 for acceptable thermal uniformity; below 1.5 for high-precision applications.</div>
+  </details>
+
+  <details>
+    <summary>How do you clean and maintain conformal cooling lines after SLM printing and in production?</summary>
+    <div>Two phases: (1) Post-print: Force compressed air at &ge;6 bar through each channel individually to dislodge sintered powder; follow with ultrasonic cleaning in IPA; re-purge with air; perform borescope inspection to confirm clear bore; then pressure test at 1.5&times; operating pressure for 10 minutes before shipping. Full protocol in our dedicated clean powder article. (2) In-service: Prevent calcium carbonate scale by using deionised or softened water and chemical inhibitors in the cooling circuit. Perform annual chemical descaling with 5% citric acid solution (circulate for 2&ndash;4 hours) if scale is detected. Never use hydrochloric acid on stainless steel inserts. Re-pressure-test after each descaling treatment.</div>
+  </details>
+
+  <!-- INTERNAL LINKS -->
+  <hr style="border: none; border-top: 1px solid #e8ecf4; margin: 48px 0 32px;" />
+  <h3 style="margin-bottom: 16px; font-size: 1rem;">Related Articles &amp; Pages</h3>
+  <ul>
+    <li><a href="/blog/conformal-cooling-channel-design.html">Conformal Cooling Channel Design: Parameters &amp; Engineering Workflow</a></li>
+    <li><a href="/blog/conformal-cooling-simulation.html">Conformal Cooling Simulation: Setup, Results Interpretation &amp; When to Trust Them</a></li>
+    <li><a href="/blog/clean-powder-conformal-cooling-lines.html">Cleaning Powder From Conformal Cooling Channels After SLM Printing</a></li>
+    <li><a href="/blog/conformal-cooling-mold-design.html">Conformal Cooling Mold Design: Engineering Guide for 2026</a></li>
+    <li><a href="/blog/conformal-cooling-mold.html">Conformal Cooling Mold: Complete Buyer's Guide &mdash; Types, Pricing, Supplier Evaluation</a></li>
+    <li><a href="/blog/conformal-cooling-design.html">Conformal Cooling Design: Decision Framework &amp; Application Guide</a></li>
+    <li><a href="/blog/injection-mold-cooling-system.html">Injection Mold Cooling System: Design, Optimization &amp; Troubleshooting</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Our Conformal Cooling Insert Service &mdash; Get a Quote</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+
+  <!-- Related Articles — auto-generated internal links -->
+  <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+    <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li>
+        <a href="/blog/conformal-cooling-channel-design.html">Conformal Cooling Channel Design Guide</a>
+      </li>
+      <li>
+        <a href="/blog/clean-powder-conformal-cooling-lines.html">How to Clean Powder Out of Conformal Cooling Lines</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-maintenance.html">Conformal Cooling Maintenance Schedule</a>
+      </li>
+      <li>
+        <a href="/blog/injection-mold-cooling-system.html">Injection Mold Cooling System Design</a>
+      </li>
+    </ul>
+  </aside>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metal Additive Manufacturing: Complete Guide | MouldNova</title>
+  <meta name="description" content="Metal additive manufacturing guide: LPBF, EBM, binder jetting, DED compared. Materials, applications, costs, and how metal AM transforms injection mold tooling." />
+  <meta name="keywords" content="metal additive manufacturing, what is metal additive manufacturing, how does metal additive manufacturing work, additive manufacturing metal, what is slm additive manufacturing, what is laser additive manufacturing, metal AM, metal 3D printing, LPBF, SLM, EBM, binder jetting, DED" />
+  <link rel="canonical" href="https://mouldnova.com/blog/what-is-metal-additive-manufacturing.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/what-is-metal-additive-manufacturing.html" />
+  <meta property="og:title" content="Metal Additive Manufacturing: Methods, Materials &amp; Applications Guide" />
+  <meta property="og:description" content="A complete guide to metal additive manufacturing: how it works, 5 technology methods compared, printable materials, key applications, and when to use metal AM vs CNC." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/what-is-metal-additive-manufacturing.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .method-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:20px 0; background:#fff; }
+    .method-card__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .method-card__title { font-size:1.15rem; font-weight:800; color:var(--black); margin-bottom:10px; }
+    .method-card p { margin-bottom:6px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .answer-box { background:#f0f7ff; border:2px solid #bfdbfe; border-radius:16px; padding:28px 32px; margin:28px 0; }
+    .answer-box__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#1d4ed8; font-weight:700; margin-bottom:10px; }
+    .answer-box__text { font-size:1.08rem; color:var(--black); line-height:1.8; font-weight:500; margin:0; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Metal Additive Manufacturing: Complete Guide — Methods, Materials, and Applications",
+    "description": "A complete guide to metal additive manufacturing: definition, how it works step by step, 5 technology methods compared, printable materials, key applications including conformal cooling, and cost factors.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-22",
+    "dateModified": "2026-03-22",
+    "mainEntityOfPage": "https://mouldnova.com/blog/what-is-metal-additive-manufacturing.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is metal additive manufacturing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Metal additive manufacturing (metal AM) is a family of industrial processes that build solid metal parts by adding material layer by layer from a digital 3D model, rather than removing material from a block (subtractive manufacturing) or pouring it into a mold (casting). The most common metal AM process is Laser Powder Bed Fusion (LPBF), also called Selective Laser Melting (SLM), which uses a high-power laser to melt fine metal powder one thin layer at a time. The resulting parts achieve densities above 99.5% and mechanical properties comparable to conventionally manufactured metal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does metal additive manufacturing work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most widely used metal AM process, LPBF/SLM, works by: (1) spreading a thin layer of metal powder (20–60 micrometers) across a build platform inside an inert gas chamber; (2) scanning a high-power laser across the powder to melt and fuse it in the shape of one cross-sectional slice of the 3D model; (3) lowering the platform by one layer thickness; (4) repeating until the entire part is built. Post-processing steps including stress relief heat treatment, support removal, and CNC finishing of critical surfaces follow the build."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is SLM additive manufacturing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SLM (Selective Laser Melting) is a specific type of metal additive manufacturing that uses a high-power fiber laser to fully melt metal powder particles layer by layer. SLM is essentially the same process as LPBF (Laser Powder Bed Fusion) and DMLS (Direct Metal Laser Sintering) — the different names originated from different equipment manufacturers. SLM produces fully dense metal parts (above 99.5% density) suitable for structural, aerospace, medical, and tooling applications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is laser additive manufacturing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Laser additive manufacturing refers to any metal AM process that uses a laser as its energy source. The two main types are Laser Powder Bed Fusion (LPBF/SLM), which melts powder in a flat bed layer by layer for high-precision parts, and Laser Directed Energy Deposition (L-DED), which feeds powder or wire into a focused laser beam to build or repair parts. LPBF is the more common of the two, used for parts up to about 500 mm, while L-DED handles larger components and repair work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between metal additive manufacturing and CNC machining?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Metal additive manufacturing builds parts by adding material layer by layer, while CNC machining removes material from a solid block. Metal AM excels at complex internal geometries (conformal cooling channels, lattice structures), low-volume production (1–500 parts), and lightweight topology-optimized designs. CNC machining is better for simple shapes, tight tolerances, large parts, and high-volume production. Many metal AM parts require CNC finishing of critical surfaces after printing, so the two processes are often complementary rather than competing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does metal additive manufacturing cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Metal AM costs depend on part size, material, complexity, and post-processing requirements. As a rough guide: small stainless steel parts (under 50 cm³) cost $50–$300; medium parts (50–500 cm³) run $200–$1,500; large parts (500+ cm³) cost $1,000–$10,000 or more. Titanium and Inconel are 3–5 times more expensive than stainless steel. The key cost driver is machine time — LPBF machines cost $100–$300 per hour fully loaded. Metal AM delivers the best ROI on parts with complex internal channels or geometries that would require many CNC setups."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="directory/" class="nav__link">Directory</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Metal Additive Manufacturing Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">Metal Additive Manufacturing: How It Works, Methods, Materials &amp; Applications</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 12 min read &middot; Written for engineers, product designers, and manufacturing decision-makers</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">Metal Additive Manufacturing — Key Facts at a Glance</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">5</div>
+      <div class="data-cell__label">Main Technology Methods</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">50+</div>
+      <div class="data-cell__label">Printable Metal Alloys</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">&gt;99.5%</div>
+      <div class="data-cell__label">Achievable Part Density</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">$17B+</div>
+      <div class="data-cell__label">Global Metal AM Market (2026)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#definition">1. What Is Metal Additive Manufacturing? — Definition</a>
+    <a href="#how-it-works">2. How Metal Additive Manufacturing Works</a>
+    <a href="#technologies-compared">3. Metal AM Technologies Compared</a>
+    <a href="#materials">4. Materials for Metal Additive Manufacturing</a>
+    <a href="#applications">5. Key Applications</a>
+    <a href="#mold-tooling">6. Injection Mold Tooling: Where Metal AM Creates the Most Value</a>
+    <a href="#am-vs-cnc">7. Metal AM vs. CNC Machining</a>
+    <a href="#cost-factors">8. Cost Factors</a>
+    <a href="#faq">9. FAQ</a>
+  </div>
+
+  <!-- SECTION 1: DEFINITION -->
+  <h2 id="definition">1. What Is Metal Additive Manufacturing?</h2>
+
+  <div class="answer-box">
+    <div class="answer-box__label">Definition</div>
+    <p class="answer-box__text"><strong>Metal additive manufacturing (metal AM)</strong> is a family of industrial manufacturing processes that build fully solid metal parts by depositing and fusing material layer by layer, directly from a digital 3D CAD model. Unlike subtractive manufacturing (CNC machining), which cuts material away from a block, or formative manufacturing (casting, forging), which shapes material inside a mold, metal AM creates parts by <em>adding</em> material only where it is needed &mdash; enabling geometries that are impossible to produce any other way.</p>
+  </div>
+
+  <p>The term "additive manufacturing" comes from the ISO/ASTM 52900 standard and is the formal engineering name for what is commonly called <strong>3D printing</strong>. When applied specifically to metals &mdash; steel, titanium, aluminum, Inconel, copper &mdash; it becomes metal additive manufacturing, or metal AM for short.</p>
+
+  <p>Metal AM is not a single process. It encompasses at least five distinct technology families, each with different energy sources, feedstock types, and trade-offs. The most widely used for precision parts is <strong>Laser Powder Bed Fusion (LPBF)</strong>, also known as <strong>Selective Laser Melting (SLM)</strong> or <strong>Direct Metal Laser Sintering (DMLS)</strong>. These names refer to essentially the same process &mdash; a high-power laser selectively melts metal powder one layer at a time to build up a solid part.</p>
+
+  <p>Metal AM has been commercially available since the mid-1990s and is now used across aerospace, medical, automotive, energy, and industrial tooling sectors. The global metal AM market exceeded $17 billion in 2026, driven by applications where the technology delivers clear advantages over conventional manufacturing: complex internal geometries, lightweight topology-optimized structures, and rapid production of low-volume parts without tooling investment.</p>
+
+  <p>For a beginner-friendly overview of whether metals can actually be 3D printed (and what the output looks like), see our guide: <a href="can-you-3d-print-metal.html">Can You 3D Print Metal?</a></p>
+
+  <!-- SECTION 2: HOW IT WORKS -->
+  <h2 id="how-it-works">2. How Metal Additive Manufacturing Works</h2>
+
+  <p>While each metal AM technology has a different mechanism, the general workflow is the same: prepare a digital 3D model, slice it into thin cross-sectional layers, and then build the part layer by layer using an energy source to fuse metal feedstock. Here is the step-by-step process for <strong>LPBF/SLM</strong>, the most widely used method:</p>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 1</div>
+    <div class="step-block__title">Digital Preparation</div>
+    <p>The process starts with a 3D CAD model (typically in STEP format). Specialized software orients the part on the build platform, generates support structures for overhanging features, and slices the model into layers &mdash; typically 20 to 60 micrometers thick. Build parameters (laser power, scan speed, hatch spacing) are assigned based on the material.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 2</div>
+    <div class="step-block__title">Powder Spreading</div>
+    <p>A recoater blade spreads a thin, uniform layer of metal powder &mdash; particles 15 to 45 micrometers in diameter &mdash; across the build platform. The entire build chamber is sealed and purged with inert gas (argon or nitrogen) to prevent oxidation of the hot metal during melting.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 3</div>
+    <div class="step-block__title">Laser Melting</div>
+    <p>A high-power fiber laser (200 W to 1 kW) scans across the powder bed, melting and fusing the powder in the shape of that layer's cross-section. The laser is directed by a galvanometer mirror system at scan speeds of 500 to 2,000 mm/s. Modern machines use up to four lasers simultaneously to increase throughput. Unfused powder remains loose and acts as natural support.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 4</div>
+    <div class="step-block__title">Layer-by-Layer Repetition</div>
+    <p>The build platform lowers by one layer thickness. A new powder layer is spread. The laser scans again. This cycle repeats hundreds to thousands of times. A 50 mm tall part built at 40 &micro;m layers requires 1,250 individual cycles. Total build times range from a few hours for small parts to several days for large or complex builds.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Step 5</div>
+    <div class="step-block__title">Post-Processing</div>
+    <p>After the build completes, parts undergo stress relief heat treatment, support structure removal, and CNC machining of critical surfaces. Additional steps may include Hot Isostatic Pressing (HIP) to close residual porosity, surface finishing (bead blasting, polishing), and quality inspection (CMM, CT scanning). For tooling applications, age hardening brings the material to its final hardness.</p>
+  </div>
+
+  <p>For a more detailed walkthrough of LPBF specifically, including laser parameter settings and support strategy, see: <a href="conformal-cooling-3d-printing.html">Conformal Cooling &amp; 3D Printing</a>.</p>
+
+  <!-- SECTION 3: TECHNOLOGIES COMPARED -->
+  <h2 id="technologies-compared">3. Metal AM Technologies Compared</h2>
+
+  <p>There are five main metal additive manufacturing technologies in commercial use today. Each has different strengths, and the right choice depends on your part size, material, accuracy requirements, and production volume.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Technology</th>
+        <th>Energy Source</th>
+        <th>Feedstock</th>
+        <th>Accuracy</th>
+        <th>Best For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LPBF / SLM</strong></td>
+        <td>Fiber laser</td>
+        <td>Metal powder (15&ndash;45 &micro;m)</td>
+        <td class="val-good">&plusmn;0.05&ndash;0.1 mm</td>
+        <td>Precision parts, tooling inserts, complex geometries</td>
+      </tr>
+      <tr>
+        <td><strong>EBM</strong></td>
+        <td>Electron beam</td>
+        <td>Metal powder (45&ndash;105 &micro;m)</td>
+        <td class="val-neutral">&plusmn;0.2&ndash;0.3 mm</td>
+        <td>Titanium aerospace and medical parts, low residual stress</td>
+      </tr>
+      <tr>
+        <td><strong>Binder Jetting</strong></td>
+        <td>None (sintering furnace)</td>
+        <td>Metal powder + liquid binder</td>
+        <td class="val-neutral">&plusmn;0.2 mm (after sintering)</td>
+        <td>Medium-to-high volume small parts, cost-sensitive applications</td>
+      </tr>
+      <tr>
+        <td><strong>DED / WAAM</strong></td>
+        <td>Laser, arc, or e-beam</td>
+        <td>Metal wire or powder</td>
+        <td class="val-bad">&plusmn;0.5&ndash;1.0 mm (needs machining)</td>
+        <td>Very large parts, component repair, adding features to existing parts</td>
+      </tr>
+      <tr>
+        <td><strong>Metal FDM</strong></td>
+        <td>None (sintering furnace)</td>
+        <td>Metal-filled filament or rods</td>
+        <td class="val-neutral">&plusmn;0.2 mm (after sintering)</td>
+        <td>Office-friendly prototyping, low-stress functional parts</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>LPBF / SLM &mdash; The Industry Standard</h3>
+  <p>Laser Powder Bed Fusion is the most widely adopted metal AM process, accounting for roughly 80% of all metal AM parts produced worldwide. It delivers the best combination of accuracy, surface finish, and mechanical properties. LPBF is the technology of choice for injection mold inserts with <a href="what-is-conformal-cooling.html">conformal cooling channels</a>, aerospace brackets, and medical implants. Machine brands include EOS, SLM Solutions, Trumpf, Renishaw, and Nikon SLM. For more on the SLM vs. DMLS naming distinction, see our <a href="slm-vs-dmls-conformal-cooling.html">SLM vs. DMLS comparison</a>.</p>
+
+  <h3>EBM &mdash; Electron Beam Melting</h3>
+  <p>EBM uses an electron beam in a vacuum chamber and preheats the entire powder bed to 700&ndash;1,000&deg;C. This dramatically reduces residual stress, making EBM ideal for crack-prone materials like titanium and nickel superalloys. Surface finish is rougher than LPBF (Ra 25&ndash;35 &micro;m vs. Ra 5&ndash;15 &micro;m), so post-machining is almost always required. GE Additive (Arcam) is the dominant EBM equipment maker.</p>
+
+  <h3>Binder Jetting &mdash; Speed and Volume</h3>
+  <p>Binder jetting skips the laser entirely. An inkjet head deposits a liquid binding agent onto each powder layer. The "green" part is then sintered in a furnace, shrinking 15&ndash;20%. Build speeds are 5 to 10 times faster than LPBF, making binder jetting attractive for production volumes of hundreds to thousands of small parts. Desktop Metal, ExOne (now part of Desktop Metal), and HP Metal Jet are leading systems.</p>
+
+  <h3>DED / WAAM &mdash; Large-Scale and Repair</h3>
+  <p>Directed Energy Deposition feeds metal wire or powder into a focused energy source (laser, plasma arc, or electron beam) and deposits it onto a substrate. Build volumes can exceed 1 meter. DED excels at repairing worn turbine blades, adding features to existing forged parts, and producing large structural components for aerospace and marine. Resolution is low &mdash; all functional surfaces require CNC finishing.</p>
+
+  <h3>Metal FDM &mdash; Accessible Entry Point</h3>
+  <p>Metal FDM (bound metal deposition) works like a desktop plastic 3D printer but uses metal-loaded filament. After printing, parts are debound and sintered. Machines cost $100,000&ndash;$200,000 (vs. $500,000+ for LPBF), making this the most accessible metal AM technology. Part density reaches 96&ndash;99%, which is acceptable for prototypes and low-stress applications but not for demanding structural or tooling use. Markforged Metal X and Desktop Metal Studio are the main brands.</p>
+
+  <!-- SECTION 4: MATERIALS -->
+  <h2 id="materials">4. Materials for Metal Additive Manufacturing</h2>
+
+  <p>Over 50 metal alloys are commercially available as AM-ready powder or wire. The table below covers the most commonly used materials, their key properties, and typical applications. For a deeper dive into materials specifically for mold tooling, see our <a href="conformal-cooling-materials.html">conformal cooling materials guide</a>.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Material Family</th>
+        <th>Common Grades</th>
+        <th>Key Properties</th>
+        <th>Typical Applications</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Tool Steels</strong></td>
+        <td>H13, MS1 (1.2709 maraging), M2</td>
+        <td>50&ndash;54 HRC hardness, high wear resistance</td>
+        <td>Injection mold inserts, die casting dies, cutting tools</td>
+      </tr>
+      <tr>
+        <td><strong>Stainless Steels</strong></td>
+        <td>316L, 17-4 PH, 304L, 15-5 PH</td>
+        <td>Corrosion resistance, 600&ndash;1,100 MPa UTS</td>
+        <td>Medical devices, food-contact parts, marine, general engineering</td>
+      </tr>
+      <tr>
+        <td><strong>Titanium</strong></td>
+        <td>Ti-6Al-4V (Grade 5/23), CP Ti Grade 2</td>
+        <td>High strength-to-weight, biocompatible</td>
+        <td>Aerospace structures, orthopedic implants, motorsport</td>
+      </tr>
+      <tr>
+        <td><strong>Nickel Superalloys</strong></td>
+        <td>Inconel 625, Inconel 718, Hastelloy X</td>
+        <td>Strength above 700&deg;C, oxidation resistance</td>
+        <td>Turbine blades, rocket nozzles, heat exchangers</td>
+      </tr>
+      <tr>
+        <td><strong>Copper Alloys</strong></td>
+        <td>CuCrZr, CuNi2SiCr, Pure Cu</td>
+        <td>High thermal conductivity (300&ndash;390 W/mK)</td>
+        <td>Conformal cooling inserts, induction coils, electrical components</td>
+      </tr>
+      <tr>
+        <td><strong>Aluminum</strong></td>
+        <td>AlSi10Mg, AlSi7Mg, Scalmalloy</td>
+        <td>Lightweight (2.67 g/cm&sup3;), good thermal conductivity</td>
+        <td>Aerospace brackets, heat sinks, automotive housings</td>
+      </tr>
+      <tr>
+        <td><strong>Cobalt Chrome</strong></td>
+        <td>CoCrMo, CoCrW</td>
+        <td>Biocompatible, high wear resistance</td>
+        <td>Dental crowns, hip/knee implants, high-wear industrial parts</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    <p>A useful rule of thumb: if a metal alloy can be welded, it can generally be printed via LPBF. The laser melting process is fundamentally similar to micro-welding &mdash; rapid melting and resolidification &mdash; so weldability is a good proxy for printability.</p>
+  </blockquote>
+
+  <!-- SECTION 5: KEY APPLICATIONS -->
+  <h2 id="applications">5. Key Applications of Metal Additive Manufacturing</h2>
+
+  <p>Metal AM delivers the most value in applications where parts have complex internal geometry, where weight reduction is critical, or where production volumes are too low to justify casting or forging tooling. Here are the five most important application sectors:</p>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Aerospace</div>
+    <div class="benefit-block__headline">Lighter, stronger, consolidated parts</div>
+    <p class="benefit-block__body">Metal AM enables topology-optimized brackets that are 40&ndash;60% lighter than machined equivalents, fuel nozzles that consolidate 20+ brazed components into a single part (GE LEAP nozzle), and complex ducting with integrated internal channels. Titanium and Inconel are the dominant materials. Both Airbus and Boeing have certified AM parts for flight-critical structures.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Medical</div>
+    <div class="benefit-block__headline">Patient-specific implants and porous structures</div>
+    <p class="benefit-block__body">Orthopedic implants (hip cups, spinal cages, cranial plates) are designed from patient CT scan data and printed in titanium or cobalt chrome. The porous lattice structures achievable only through AM promote bone ingrowth and osseointegration better than smooth machined surfaces. Over 100,000 3D-printed hip cups have been implanted globally.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Injection Mold Tooling</div>
+    <div class="benefit-block__headline">Conformal cooling channels that cut cycle times 20&ndash;72%</div>
+    <p class="benefit-block__body">3D-printed mold inserts with conformal cooling channels are one of the highest-ROI applications of metal AM. Conventional straight-drilled cooling cannot follow complex cavity surfaces. AM-printed inserts with conformal channels deliver uniform cooling, reducing cycle times by 20&ndash;40% on average &mdash; and up to 72% in documented cases. This application is covered in detail in the next section.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Automotive</div>
+    <div class="benefit-block__headline">Rapid prototyping and performance components</div>
+    <p class="benefit-block__body">Motorsport teams print custom uprights, exhaust manifolds, and cooling components in titanium and aluminum. Production automotive applications include metal AM mold inserts for high-volume plastic part production, lightweight heat exchangers, and rapid tooling for pre-production validation. Turnaround from design to functional metal part in 3&ndash;5 days vs. 4&ndash;8 weeks for traditional tooling.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Energy</div>
+    <div class="benefit-block__headline">Turbine components, heat exchangers, and repair</div>
+    <p class="benefit-block__body">Gas turbine manufacturers use metal AM to produce complex combustor swirlers, fuel injectors, and heat exchanger cores in Inconel that would be impossible to cast. DED processes are used extensively for repairing worn turbine blades &mdash; adding new material to restore dimensions rather than scrapping and replacing the entire blade.</p>
+  </div>
+
+  <!-- SECTION 6: MOLD TOOLING -->
+  <h2 id="mold-tooling">6. Injection Mold Tooling: Where Metal AM Creates the Most Value</h2>
+
+  <p>Of all metal AM applications, injection mold tooling with <strong>conformal cooling</strong> consistently delivers the fastest and most measurable return on investment. Here is why this application is uniquely suited to additive manufacturing &mdash; and why conventional methods cannot replicate the results.</p>
+
+  <h3>The Problem with Conventional Cooling</h3>
+  <p>Conventional mold inserts use straight-drilled cooling channels. These channels are limited to straight lines because they are made with gun drills. On a complex 3D-contoured mold cavity, straight channels cannot maintain a uniform distance from the cavity surface. Some areas are close to a cooling channel and cool quickly; other areas are far from any channel and cool slowly. The result: hot spots, uneven cooling, longer cycle times, and warped parts.</p>
+
+  <h3>How Conformal Cooling Solves It</h3>
+  <p>Metal AM &mdash; specifically LPBF &mdash; can print cooling channels that <strong>conform</strong> to the exact contour of the mold cavity, maintaining a uniform distance of 3&ndash;5 mm from the cavity surface all the way around. This is geometrically impossible with any subtractive process. The channels can follow curves, spiral around cores, pass through thin walls, and reach areas that no drill could access. For a complete technical explainer, see: <a href="what-is-conformal-cooling.html">What Is Conformal Cooling?</a></p>
+
+  <h3>Real Performance Data</h3>
+
+  <div class="data-highlight">
+    <div class="data-highlight__title">Conformal Cooling — Documented Results</div>
+    <div class="data-grid">
+      <div class="data-cell">
+        <div class="data-cell__num">72%</div>
+        <div class="data-cell__label">Max Cycle Time Reduction</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">20&ndash;40%</div>
+        <div class="data-cell__label">Typical Cycle Time Savings</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">&lt;6 months</div>
+        <div class="data-cell__label">Typical Payback Period</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">50&ndash;54 HRC</div>
+        <div class="data-cell__label">Insert Hardness (MS1 Tool Steel)</div>
+      </div>
+    </div>
+  </div>
+
+  <p>In a documented automotive case study, a multi-cavity mold producing PET preforms was retrofitted with 3D-printed conformal cooling inserts. Cycle time dropped from 14.2 seconds to 4.0 seconds &mdash; a <strong>72% reduction</strong>. At 24/7 production, this translated to an additional 2.3 million parts per year from the same mold, paying back the insert cost in under 3 months.</p>
+
+  <p>Even in less dramatic cases, the typical 20&ndash;40% cycle time reduction on a high-volume mold running 500,000+ shots per year delivers ROI within 3&ndash;6 months. The inserts themselves, printed in MS1 maraging steel or H13 tool steel, achieve the same 50&ndash;54 HRC hardness as conventionally machined tooling and last for the full production life of the mold.</p>
+
+  <p>For detailed case studies, see: <a href="conformal-cooling-3d-printing.html">Conformal Cooling &amp; 3D Printing</a>.</p>
+
+  <!-- SECTION 7: AM VS CNC -->
+  <h2 id="am-vs-cnc">7. Metal AM vs. CNC Machining &mdash; When to Use Which</h2>
+
+  <p>Metal AM and CNC machining are complementary technologies, not competitors. The key is knowing when each delivers better value. Here is a practical decision framework:</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Factor</th>
+        <th>Choose Metal AM</th>
+        <th>Choose CNC Machining</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Internal channels or lattices</td>
+        <td class="val-good">Only practical option</td>
+        <td class="val-bad">Impossible or requires EDM/brazing</td>
+      </tr>
+      <tr>
+        <td>Part complexity</td>
+        <td class="val-good">More complex = more cost-effective</td>
+        <td class="val-good">Simple shapes are faster and cheaper</td>
+      </tr>
+      <tr>
+        <td>Production volume</td>
+        <td class="val-good">1&ndash;500 parts (no tooling needed)</td>
+        <td class="val-good">Any volume, especially 500+</td>
+      </tr>
+      <tr>
+        <td>Part size</td>
+        <td class="val-neutral">Up to ~500 mm (LPBF)</td>
+        <td class="val-good">Virtually unlimited</td>
+      </tr>
+      <tr>
+        <td>Surface finish</td>
+        <td class="val-bad">Ra 5&ndash;15 &micro;m as-printed</td>
+        <td class="val-good">Ra 0.4&ndash;3.2 &micro;m</td>
+      </tr>
+      <tr>
+        <td>Tolerances</td>
+        <td class="val-neutral">&plusmn;0.05&ndash;0.1 mm (post-machining tighter)</td>
+        <td class="val-good">&plusmn;0.01&ndash;0.025 mm achievable</td>
+      </tr>
+      <tr>
+        <td>Lead time (complex part)</td>
+        <td class="val-good">2&ndash;7 days</td>
+        <td class="val-bad">1&ndash;4 weeks (fixturing, multiple setups)</td>
+      </tr>
+      <tr>
+        <td>Material waste</td>
+        <td class="val-good">5&ndash;15% (unfused powder recycled)</td>
+        <td class="val-bad">50&ndash;90% for complex parts</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    <p>The practical rule: if a part can be CNC machined in 2 setups or fewer with no internal features, CNC is almost certainly faster and cheaper. If the part has internal channels, lattice structures, topology optimization, or would require 4+ CNC setups &mdash; evaluate metal AM. Many production workflows use both: AM to build the near-net shape, then CNC to finish critical surfaces.</p>
+  </blockquote>
+
+  <!-- SECTION 8: COST FACTORS -->
+  <h2 id="cost-factors">8. Cost Factors in Metal Additive Manufacturing</h2>
+
+  <p>Metal AM costs are driven by four main factors: material, machine time, post-processing, and quality assurance. Here is a brief overview:</p>
+
+  <ul>
+    <li><strong>Material cost:</strong> Metal powder ranges from $40&ndash;$80/kg (stainless steel 316L) to $200&ndash;$350/kg (titanium Ti-6Al-4V). Inconel and cobalt chrome fall in the $100&ndash;$250/kg range. Unfused powder is sieved and recycled, so actual material consumption closely matches the part weight plus supports.</li>
+    <li><strong>Machine time:</strong> LPBF machines run at $100&ndash;$300/hr fully loaded (depreciation, operator, gas, facility). Build time depends primarily on part height (number of layers) and cross-sectional area per layer. A tall, dense part costs more than a short, sparse one.</li>
+    <li><strong>Post-processing:</strong> Heat treatment, support removal, and CNC finishing of functional surfaces add $50&ndash;$500+ per part. HIP treatment (if required for aerospace or medical) adds $200&ndash;$1,000+ per batch.</li>
+    <li><strong>Quality assurance:</strong> CMM dimensional inspection, CT scanning for internal defect detection, tensile testing, and material certification all add cost &mdash; primarily for aerospace and medical parts with stringent documentation requirements.</li>
+  </ul>
+
+  <p>For detailed pricing by part size and material, worked cost examples, and strategies to reduce metal AM cost, see our dedicated guide: <a href="metal-3d-printing-cost.html">How Much Does Metal 3D Printing Cost? (2026 Price Guide)</a>.</p>
+
+  <blockquote>
+    <p>The key cost insight: compare total part cost, not per-kilogram or per-hour rates. A conformal cooling insert that costs $2,500 to print but saves $50,000 per year in cycle time reduction has a 20:1 ROI. For many applications, the question is not "is metal AM cheap?" but "does it pay for itself?" In tooling applications, the answer is almost always yes.</p>
+  </blockquote>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Get a Metal 3D Printing Quote</div>
+    <div class="blog-cta__text">Send your STEP file and requirements. We return a full quotation &mdash; including material, lead time, and post-processing options &mdash; within 24 hours.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp &mdash; Send Your File Now
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Upload STEP File via Email &rarr;</a>
+    </div>
+  </div>
+
+  <!-- SECTION 9: FAQ -->
+  <h2 id="faq">9. FAQ &mdash; Metal Additive Manufacturing Questions Answered</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is metal additive manufacturing?</div>
+    <p class="faq-block__a">Metal additive manufacturing (metal AM) is a family of industrial processes that build solid metal parts by adding material layer by layer from a digital 3D model. The most common method is Laser Powder Bed Fusion (LPBF/SLM), which uses a high-power laser to melt fine metal powder one layer at a time. The resulting parts achieve densities above 99.5% and mechanical properties comparable to conventionally manufactured metal.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How does metal additive manufacturing work?</div>
+    <p class="faq-block__a">The LPBF/SLM process works by spreading a thin layer of metal powder (20&ndash;60 &micro;m) across a build platform, then scanning a high-power laser to melt the powder in the cross-sectional shape of the part. The platform lowers, a new powder layer is spread, and the cycle repeats until the part is complete. Everything takes place inside an inert gas atmosphere. Post-processing (heat treatment, support removal, CNC finishing) follows. Total lead time is typically 2&ndash;7 days.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is SLM additive manufacturing?</div>
+    <p class="faq-block__a">SLM (Selective Laser Melting) is a specific type of metal AM that uses a fiber laser to fully melt metal powder particles layer by layer. SLM is essentially the same process as LPBF (Laser Powder Bed Fusion) and DMLS (Direct Metal Laser Sintering) &mdash; the different names come from different equipment manufacturers. SLM produces fully dense parts suitable for structural, aerospace, medical, and tooling applications. For more on this, see our <a href="slm-vs-dmls-conformal-cooling.html">SLM vs. DMLS comparison</a>.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is laser additive manufacturing?</div>
+    <p class="faq-block__a">Laser additive manufacturing refers to any metal AM process that uses a laser as its energy source. The two main types are Laser Powder Bed Fusion (LPBF/SLM), which melts powder in a flat bed for high-precision parts up to ~500 mm, and Laser Directed Energy Deposition (L-DED), which feeds powder or wire into a focused laser beam for larger parts and repair work. LPBF is the more common of the two for production parts.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the difference between metal AM and CNC machining?</div>
+    <p class="faq-block__a">Metal AM builds parts by adding material layer by layer; CNC machining removes material from a solid block. Metal AM excels at complex internal geometries (conformal cooling channels, lattice structures), low-volume production, and topology-optimized lightweight designs. CNC is better for simple shapes, tight tolerances, large parts, and high volumes. In practice, the two are often used together &mdash; AM for the near-net shape, CNC for finishing critical surfaces.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How much does metal additive manufacturing cost?</div>
+    <p class="faq-block__a">Costs depend on part size, material, and complexity. Small stainless steel parts (under 50 cm&sup3;) cost $50&ndash;$300; medium parts (50&ndash;500 cm&sup3;) run $200&ndash;$1,500; large parts cost $1,000&ndash;$10,000+. Titanium and Inconel are 3&ndash;5x more expensive. The best ROI comes from parts with complex internal channels that cannot be machined. See our full <a href="metal-3d-printing-cost.html">metal 3D printing cost guide</a> for detailed pricing.</p>
+  </div>
+
+  <!-- INTERNAL LINKS -->
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href="can-you-3d-print-metal.html">Can You 3D Print Metal? &mdash; Beginner's Guide</a></li>
+    <li><a href="slm-vs-dmls-conformal-cooling.html">SLM vs. DMLS &mdash; What Is the Difference?</a></li>
+    <li><a href="metal-3d-printing-cost.html">How Much Does Metal 3D Printing Cost? (2026 Price Guide)</a></li>
+    <li><a href="conformal-cooling-3d-printing.html">Conformal Cooling &amp; 3D Printing</a></li>
+    <li><a href="conformal-cooling-materials.html">Conformal Cooling Materials Guide</a></li>
+    <li><a href="what-is-conformal-cooling.html">What Is Conformal Cooling?</a></li>
+    <li><a href="../metal-3d-printing-service.html">Metal 3D Printing Service &mdash; Full Specifications &amp; Lead Times</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+
+  <!-- Related Articles -->
+  <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+    <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li>
+        <a href="/blog/can-you-3d-print-metal.html">Can You 3D Print Metal? Beginner's Guide</a>
+      </li>
+      <li>
+        <a href="/blog/metal-3d-printing-cost.html">Metal 3D Printing Cost Guide</a>
+      </li>
+      <li>
+        <a href="/blog/slm-vs-dmls-conformal-cooling.html">SLM vs DMLS Comparison</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-3d-printing.html">Conformal Cooling &amp; 3D Printing</a>
+      </li>
+    </ul>
+  </aside>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>

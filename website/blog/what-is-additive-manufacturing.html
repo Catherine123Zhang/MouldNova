@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is Additive Manufacturing? Guide (2026) | MouldNova</title>
+  <meta name="description" content="What is additive manufacturing? Learn how AM works, the 7 ASTM types, materials, applications, and how it compares to subtractive manufacturing. 2026 guide." />
+  <meta name="keywords" content="what is additive manufacturing, what does additive manufacturing mean, how does additive manufacturing work, is additive manufacturing the same as 3d printing, what is additive manufacturing process, what is additive manufacturing used for, why is 3d printing called additive manufacturing" />
+  <link rel="canonical" href="https://mouldnova.com/blog/what-is-additive-manufacturing.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/what-is-additive-manufacturing.html" />
+  <meta property="og:title" content="What Is Additive Manufacturing? The Complete Guide for Engineers" />
+  <meta property="og:description" content="A comprehensive guide to additive manufacturing: how it works, the 7 ASTM process types, materials, industries, costs, and real-world applications in 2026." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/what-is-additive-manufacturing.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .method-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:20px 0; background:#fff; }
+    .method-card__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .method-card__title { font-size:1.15rem; font-weight:800; color:var(--black); margin-bottom:10px; }
+    .method-card p { margin-bottom:6px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .answer-box { background:#f0f7ff; border:2px solid #bfdbfe; border-radius:16px; padding:28px 32px; margin:28px 0; }
+    .answer-box__label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#1d4ed8; font-weight:700; margin-bottom:10px; }
+    .answer-box__text { font-size:1.08rem; color:var(--black); line-height:1.8; font-weight:500; margin:0; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is Additive Manufacturing? The Complete Guide for Engineers",
+    "description": "A comprehensive guide to additive manufacturing: what it means, how it works, the 7 ASTM process categories, materials, industries, costs, and real-world applications.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-22",
+    "dateModified": "2026-03-22",
+    "mainEntityOfPage": "https://mouldnova.com/blog/what-is-additive-manufacturing.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is additive manufacturing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Additive manufacturing (AM) is the industrial term for 3D printing. It is a process that builds three-dimensional objects by adding material layer by layer from a digital CAD model, rather than removing material from a solid block (subtractive manufacturing) or pouring material into a mold (formative manufacturing). The term 'additive' refers to the fact that material is added — not subtracted — to create the final part."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does additive manufacturing mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Additive manufacturing literally means 'manufacturing by adding material.' The name distinguishes it from subtractive manufacturing (CNC machining, milling, turning), where material is removed from a larger block, and from formative manufacturing (casting, forging, stamping), where material is shaped by force or molds. In additive manufacturing, parts are built from nothing — layer by layer — using only the exact amount of material needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is additive manufacturing the same as 3D printing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, additive manufacturing and 3D printing refer to the same set of technologies. 'Additive manufacturing' is the formal engineering and industry term defined by ISO/ASTM 52900, while '3D printing' is the popular, consumer-friendly term. In professional and academic contexts, 'additive manufacturing' is preferred because it emphasizes the layer-by-layer material addition process. In everyday conversation, '3D printing' is more widely understood."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does additive manufacturing work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Additive manufacturing works in four general steps: (1) Design — create a 3D digital model using CAD software. (2) Slice — specialized software divides the model into hundreds or thousands of thin horizontal layers (typically 20 to 100 micrometers thick). (3) Build — a machine deposits, fuses, or cures material one layer at a time, with each new layer bonding to the one below it. (4) Post-process — the finished part is removed from the machine and undergoes support removal, heat treatment, surface finishing, or machining as needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is 3D printing called additive manufacturing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "3D printing is called additive manufacturing because the process works by adding material layer by layer to build up a part from scratch. This is the opposite of traditional subtractive manufacturing (like CNC machining), which starts with a solid block of material and removes everything that is not the final part. The word 'additive' was chosen specifically to contrast with 'subtractive' and accurately describe the fundamental physics of the process."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the additive manufacturing process?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The additive manufacturing process involves seven standardized categories defined by ASTM/ISO: Powder Bed Fusion (PBF), Material Extrusion (FDM/FFF), Vat Photopolymerization (SLA/DLP), Binder Jetting, Material Jetting, Directed Energy Deposition (DED), and Sheet Lamination. Each uses a different method to add material layer by layer, but all follow the same general workflow: CAD design, slicing, layer-by-layer building, and post-processing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is additive manufacturing used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Additive manufacturing is used across nearly every industry: aerospace (lightweight brackets, fuel nozzles, turbine blades), medical (custom implants, surgical guides, dental crowns), automotive (prototypes, conformal cooling mold inserts, lightweight components), consumer products (customized goods, short-run production), and industrial tooling (jigs, fixtures, injection mold inserts with conformal cooling channels). The technology is most valuable when parts have complex geometry, low production volumes, or require rapid turnaround."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What materials can be used in additive manufacturing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Additive manufacturing works with a wide range of materials including thermoplastics (PLA, ABS, PETG, nylon, PEEK), photopolymer resins, metals and alloys (stainless steel, tool steel, titanium, aluminum, Inconel, cobalt chrome, copper), ceramics (alumina, zirconia, silicon carbide), composites (carbon fiber reinforced polymers, glass fiber nylon), and specialty materials like wax for investment casting patterns. The specific materials available depend on the AM process being used."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between additive and subtractive manufacturing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Additive manufacturing builds parts by adding material layer by layer from nothing, while subtractive manufacturing starts with a solid block of material and removes everything that is not the final part using cutting tools. Additive excels at complex geometries, internal channels, and low volumes. Subtractive excels at tight tolerances, smooth surface finishes, and high-volume production of simpler shapes. Many modern factories use both methods together — printing a near-net-shape part additively and then machining critical surfaces."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does additive manufacturing cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Additive manufacturing costs vary enormously depending on the technology, material, and part size. Desktop FDM plastic parts can cost under $1 per piece. Industrial metal parts (SLM/DMLS) typically range from $50 to $10,000+ depending on size and material. For metal conformal cooling mold inserts — one of the highest-value applications — costs range from $800 to $2,500 per insert from specialized Chinese manufacturers versus $3,000 to $8,000 from European providers. The cost advantage of AM over traditional methods increases with part geometric complexity."
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMZXHN7YGJ');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="directory/" class="nav__link">Directory</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Additive Manufacturing Pillar Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">What Is Additive Manufacturing? The Complete Guide for Engineers</h1>
+    <div class="blog-hero__meta">By Saiguang 3D Technology &middot; 15 min read &middot; Written for engineers, product designers, and manufacturing decision-makers</div>
+  </div>
+</section>
+
+<!-- KEY DATA BANNER -->
+<div class="data-highlight" style="max-width:800px;margin:32px auto 0;border-radius:12px;">
+  <div class="data-highlight__title">Additive Manufacturing in 2026 — Key Facts</div>
+  <div class="data-grid">
+    <div class="data-cell">
+      <div class="data-cell__num">$44.5B</div>
+      <div class="data-cell__label">Global AM Market Size</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">7</div>
+      <div class="data-cell__label">ASTM Process Categories</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">100+</div>
+      <div class="data-cell__label">Printable Materials</div>
+    </div>
+    <div class="data-cell">
+      <div class="data-cell__num">20&ndash;72%</div>
+      <div class="data-cell__label">Cycle Time Savings (Mold Inserts)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc__title">Table of Contents</div>
+    <a href="#direct-answer">1. Direct Answer &mdash; What Is Additive Manufacturing?</a>
+    <a href="#am-vs-3dp">2. Additive Manufacturing vs. 3D Printing &mdash; Are They the Same?</a>
+    <a href="#how-it-works">3. How Does Additive Manufacturing Work?</a>
+    <a href="#7-types">4. The 7 Types of Additive Manufacturing (ASTM Classification)</a>
+    <a href="#additive-vs-subtractive">5. Additive vs. Subtractive Manufacturing</a>
+    <a href="#materials">6. Materials Used in Additive Manufacturing</a>
+    <a href="#industries">7. Industries and Applications</a>
+    <a href="#metal-am-molds">8. Metal Additive Manufacturing for Injection Molds</a>
+    <a href="#advantages-disadvantages">9. Advantages and Disadvantages</a>
+    <a href="#future">10. The Future of Additive Manufacturing</a>
+    <a href="#faq">11. FAQ &mdash; Common Questions Answered</a>
+  </div>
+
+  <!-- SECTION 1: DIRECT ANSWER -->
+  <h2 id="direct-answer">1. Direct Answer &mdash; What Is Additive Manufacturing?</h2>
+
+  <div class="answer-box">
+    <div class="answer-box__label">Definition</div>
+    <p class="answer-box__text"><strong>Additive manufacturing (AM)</strong> is the process of building three-dimensional objects by depositing material layer by layer from a digital CAD model. Unlike traditional machining, which cuts away material, additive manufacturing adds only the material needed to form the final part. The term is the formal engineering name for what is popularly known as <strong>3D printing</strong>.</p>
+  </div>
+
+  <p>The concept is straightforward: take a digital 3D model, slice it into hundreds or thousands of thin horizontal cross-sections, and then physically reconstruct those cross-sections one on top of another — each layer bonding to the one below it — until a complete, solid object emerges. The material can be plastic filament, liquid resin, metal powder, ceramic slurry, or even concrete. The principle is always the same: build up, not cut down.</p>
+
+  <p>Additive manufacturing is defined formally by <strong>ISO/ASTM 52900</strong> as the "process of joining materials to make parts from 3D model data, usually layer upon layer, as opposed to subtractive manufacturing and formative manufacturing methodologies." This international standard also classifies all additive manufacturing technologies into seven process categories, which we cover in detail in <a href="#7-types">Section 4</a>.</p>
+
+  <p>The technology has moved far beyond prototyping. In 2026, additive manufacturing produces flight-critical aerospace components, FDA-approved medical implants, production automotive parts, and high-performance injection mold tooling. It is a $44.5 billion global industry growing at roughly 20% per year.</p>
+
+  <!-- SECTION 2: AM VS 3D PRINTING -->
+  <h2 id="am-vs-3dp">2. Additive Manufacturing vs. 3D Printing &mdash; Are They the Same?</h2>
+
+  <p><strong>Yes, additive manufacturing and 3D printing are the same thing.</strong> They refer to the same set of technologies. The difference is purely one of terminology and context — not of process or physics.</p>
+
+  <h3>Why Is 3D Printing Called Additive Manufacturing?</h3>
+
+  <p>The term "additive manufacturing" was adopted by engineers and standards bodies because it precisely describes the fundamental mechanism: material is <em>added</em> layer by layer. This directly contrasts with <strong>subtractive manufacturing</strong> (CNC machining, milling, turning), where material is <em>removed</em> from a larger block. The word "additive" was chosen deliberately to sit alongside "subtractive" and "formative" as the three fundamental categories of manufacturing.</p>
+
+  <p>"3D printing" became the popular term because it is intuitive — a 3D printer "prints" three-dimensional objects the way an inkjet printer prints two-dimensional pages. The term originated in the 1990s and gained widespread public awareness around 2010 when desktop machines became affordable.</p>
+
+  <h3>When to Use Which Term</h3>
+  <ul>
+    <li><strong>"Additive manufacturing" (AM)</strong> — used in engineering specifications, academic papers, ISO/ASTM standards, industry conferences, and professional procurement documents.</li>
+    <li><strong>"3D printing"</strong> — used in general conversation, marketing materials, news media, and consumer contexts.</li>
+    <li><strong>Both are correct.</strong> You will never be wrong using either term. Even within the same company, the engineering team may say "AM" while the marketing team says "3D printing."</li>
+  </ul>
+
+  <p>For a deeper discussion of whether injection molding counts as additive manufacturing (it does not — it is formative manufacturing), see our article on <a href="is-injection-molding-additive-manufacturing.html">is injection molding additive manufacturing</a>.</p>
+
+  <!-- SECTION 3: HOW IT WORKS -->
+  <h2 id="how-it-works">3. How Does Additive Manufacturing Work?</h2>
+
+  <p>Regardless of which specific technology is used — metal powder bed fusion, plastic extrusion, resin curing, or any other — every additive manufacturing process follows the same four-stage workflow:</p>
+
+  <div class="step-block">
+    <div class="step-block__number">Stage 1</div>
+    <div class="step-block__title">Design &mdash; Create a 3D Digital Model</div>
+    <p>The process starts with a 3D CAD model created in software such as SolidWorks, Fusion 360, CATIA, NX, or any other 3D modeling tool. The model defines the exact geometry of the part to be manufactured. For additive manufacturing, design rules differ from traditional machining — features like internal channels, lattice structures, and organic shapes that would be impossible to machine are perfectly achievable.</p>
+    <p>The standard file formats are <strong>STEP</strong> (preferred for metal AM) and <strong>STL</strong> (standard for polymer AM). Newer formats like 3MF are gaining adoption because they carry color, material, and texture information.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Stage 2</div>
+    <div class="step-block__title">Slice &mdash; Convert the Model into Layers</div>
+    <p>Specialized slicing software (e.g., Materialise Magics, Netfabb, PrusaSlicer) divides the 3D model into hundreds or thousands of thin horizontal cross-sections. Each cross-section defines exactly where material should be deposited for that particular layer. Typical layer thicknesses range from 20 micrometers (metal AM, high-detail resin) to 200 micrometers (FDM plastic). A part 100 mm tall printed at 50-micrometer layers requires 2,000 individual slices.</p>
+    <p>The slicing software also generates support structures where needed — temporary scaffolding for overhanging features that would otherwise collapse under gravity during building.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Stage 3</div>
+    <div class="step-block__title">Build &mdash; The Machine Constructs the Part Layer by Layer</div>
+    <p>This is where the physical manufacturing happens. The specific method depends on the technology: a laser melts metal powder (Powder Bed Fusion), a heated nozzle extrudes plastic filament (Material Extrusion), a UV light cures liquid resin (Vat Photopolymerization), or a binding agent is jetted onto powder (Binder Jetting). In every case, one layer is completed before the next layer begins, and each new layer fuses to the layer below it.</p>
+    <p>Build times vary enormously. A small plastic part on a desktop FDM printer might take 2 hours. A large metal component on an industrial SLM machine might take 3 to 5 days of continuous operation.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Stage 4</div>
+    <div class="step-block__title">Post-Process &mdash; Finish the Part</div>
+    <p>Almost all additively manufactured parts require some post-processing. This may include: removal of support structures, heat treatment (especially critical for metal parts to relieve residual stress), CNC machining of tight-tolerance surfaces, surface finishing (sanding, bead blasting, polishing, painting), and quality inspection (dimensional measurement, density testing, mechanical testing). For metal AM parts, post-processing typically accounts for 30 to 60% of the total cost and lead time.</p>
+  </div>
+
+  <!-- SECTION 4: 7 TYPES -->
+  <h2 id="7-types">4. The 7 Types of Additive Manufacturing (ASTM/ISO 52900 Classification)</h2>
+
+  <p>The international standard ISO/ASTM 52900 classifies all additive manufacturing technologies into seven process categories. Understanding these categories is essential for choosing the right technology for a given application. Here is each one explained clearly:</p>
+
+  <div class="method-card">
+    <div class="method-card__tag">Type 1</div>
+    <div class="method-card__title">Powder Bed Fusion (PBF)</div>
+    <p><strong>How it works:</strong> A thermal energy source (laser or electron beam) selectively fuses regions of a powder bed layer by layer.</p>
+    <p><strong>Subtypes:</strong> Selective Laser Melting (SLM), Direct Metal Laser Sintering (DMLS), Selective Laser Sintering (SLS), Electron Beam Melting (EBM). For a detailed comparison of SLM and DMLS, see our <a href="slm-vs-dmls-conformal-cooling.html">SLM vs. DMLS guide</a>.</p>
+    <p><strong>Materials:</strong> Metals (stainless steel, tool steel, titanium, aluminum, Inconel, cobalt chrome) and polymers (nylon PA12, PA11, TPU).</p>
+    <p><strong>Resolution:</strong> 20&ndash;100 &micro;m layer thickness. Surface finish Ra 5&ndash;15 &micro;m (metals), Ra 8&ndash;20 &micro;m (polymers).</p>
+    <p><strong>Best for:</strong> High-strength functional metal parts, <a href="conformal-cooling-additive-manufacturing.html">conformal cooling inserts</a>, aerospace components, medical implants, production-grade polymer parts.</p>
+  </div>
+
+  <div class="method-card">
+    <div class="method-card__tag">Type 2</div>
+    <div class="method-card__title">Material Extrusion (FDM / FFF)</div>
+    <p><strong>How it works:</strong> A heated nozzle melts and extrudes thermoplastic filament, depositing it in a continuous bead along a toolpath. Each layer solidifies and bonds to the previous layer.</p>
+    <p><strong>Common names:</strong> Fused Deposition Modeling (FDM), Fused Filament Fabrication (FFF).</p>
+    <p><strong>Materials:</strong> PLA, ABS, PETG, ASA, nylon, polycarbonate, PEEK, PEI (Ultem), carbon-fiber composites.</p>
+    <p><strong>Resolution:</strong> 50&ndash;300 &micro;m layer thickness. Visible layer lines unless post-processed.</p>
+    <p><strong>Best for:</strong> Rapid prototyping, concept models, jigs and fixtures, low-cost functional parts. The most accessible and affordable AM technology — desktop machines start under $200.</p>
+  </div>
+
+  <div class="method-card">
+    <div class="method-card__tag">Type 3</div>
+    <div class="method-card__title">Vat Photopolymerization (SLA / DLP)</div>
+    <p><strong>How it works:</strong> A light source (UV laser or digital projector) selectively cures liquid photopolymer resin in a vat, solidifying it one layer at a time.</p>
+    <p><strong>Common names:</strong> Stereolithography (SLA), Digital Light Processing (DLP), Continuous Digital Light Processing (CDLP/CLIP).</p>
+    <p><strong>Materials:</strong> Photopolymer resins — standard, tough, flexible, high-temperature, castable, dental, biocompatible.</p>
+    <p><strong>Resolution:</strong> 25&ndash;100 &micro;m layer thickness. Extremely smooth surface finish — the best of any AM technology.</p>
+    <p><strong>Best for:</strong> High-detail prototypes, dental models and surgical guides, jewelry masters, microfluidics, parts requiring smooth surface finish.</p>
+  </div>
+
+  <div class="method-card">
+    <div class="method-card__tag">Type 4</div>
+    <div class="method-card__title">Binder Jetting</div>
+    <p><strong>How it works:</strong> A liquid binding agent is selectively deposited onto a powder bed (metal, sand, or ceramic) to join particles together. The "green" part is then sintered in a furnace (metals) or infiltrated (sand molds) to achieve final properties.</p>
+    <p><strong>Materials:</strong> Stainless steel, tool steel, Inconel (metals); silica sand (casting molds); gypsum (full-color models).</p>
+    <p><strong>Resolution:</strong> 50&ndash;200 &micro;m layer thickness. Metal parts shrink 15&ndash;20% during sintering.</p>
+    <p><strong>Best for:</strong> High-volume metal production (faster than PBF), sand casting molds, full-color prototypes. Excels when speed and throughput matter more than surface finish.</p>
+  </div>
+
+  <div class="method-card">
+    <div class="method-card__tag">Type 5</div>
+    <div class="method-card__title">Material Jetting</div>
+    <p><strong>How it works:</strong> Droplets of photopolymer or wax are deposited onto a build platform and immediately cured by UV light. Similar to a 2D inkjet printer but builds up layers in 3D.</p>
+    <p><strong>Materials:</strong> Photopolymers (rigid, flexible, transparent, multi-color), wax (investment casting patterns).</p>
+    <p><strong>Resolution:</strong> 14&ndash;32 &micro;m layer thickness. The highest dimensional accuracy of any AM process.</p>
+    <p><strong>Best for:</strong> Multi-material and multi-color prototypes, realistic visual models, investment casting patterns, parts requiring very tight tolerances on complex geometry.</p>
+  </div>
+
+  <div class="method-card">
+    <div class="method-card__tag">Type 6</div>
+    <div class="method-card__title">Directed Energy Deposition (DED)</div>
+    <p><strong>How it works:</strong> A focused energy source (laser, electron beam, or plasma arc) melts material (metal wire or powder) as it is deposited onto a substrate. Functions like a CNC-controlled welding system.</p>
+    <p><strong>Subtypes:</strong> Laser DED (powder or wire feed), Wire Arc Additive Manufacturing (WAAM), Electron Beam DED.</p>
+    <p><strong>Materials:</strong> Most weldable metals — steel, titanium, Inconel, aluminum, copper, and multi-material combinations.</p>
+    <p><strong>Resolution:</strong> 0.5&ndash;3 mm bead width. Roughest surface of any AM process; post-machining almost always required.</p>
+    <p><strong>Best for:</strong> Very large parts (meters in scale), repair of damaged components, adding features to existing parts, multi-material structures. Widely used in aerospace, energy, and shipbuilding.</p>
+  </div>
+
+  <div class="method-card">
+    <div class="method-card__tag">Type 7</div>
+    <div class="method-card__title">Sheet Lamination</div>
+    <p><strong>How it works:</strong> Sheets of material (paper, polymer film, or metal foil) are bonded together layer by layer and then cut to shape using a laser or blade.</p>
+    <p><strong>Subtypes:</strong> Laminated Object Manufacturing (LOM), Ultrasonic Additive Manufacturing (UAM).</p>
+    <p><strong>Materials:</strong> Paper, polymer sheets, aluminum foil, copper foil, stainless steel foil.</p>
+    <p><strong>Resolution:</strong> Determined by sheet thickness (typically 0.1&ndash;0.2 mm). Limited geometric complexity compared to other AM methods.</p>
+    <p><strong>Best for:</strong> Large-scale visual prototypes (paper LOM), multi-material metal structures (UAM), embedded electronics and sensors within solid metal parts.</p>
+  </div>
+
+  <h3>Comparison Table: The 7 AM Process Types</h3>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Technology</th>
+        <th>Materials</th>
+        <th>Resolution</th>
+        <th>Speed</th>
+        <th>Cost Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Powder Bed Fusion</strong></td>
+        <td>Metals, polymers</td>
+        <td class="val-good">High</td>
+        <td class="val-neutral">Moderate</td>
+        <td>$$$&ndash;$$$$</td>
+      </tr>
+      <tr>
+        <td><strong>Material Extrusion (FDM)</strong></td>
+        <td>Thermoplastics</td>
+        <td class="val-neutral">Medium</td>
+        <td class="val-neutral">Moderate</td>
+        <td>$</td>
+      </tr>
+      <tr>
+        <td><strong>Vat Photopolymerization</strong></td>
+        <td>Photopolymer resins</td>
+        <td class="val-good">Very High</td>
+        <td class="val-neutral">Moderate</td>
+        <td>$$</td>
+      </tr>
+      <tr>
+        <td><strong>Binder Jetting</strong></td>
+        <td>Metals, sand, ceramics</td>
+        <td class="val-neutral">Medium</td>
+        <td class="val-good">Fast</td>
+        <td>$$&ndash;$$$</td>
+      </tr>
+      <tr>
+        <td><strong>Material Jetting</strong></td>
+        <td>Photopolymers, wax</td>
+        <td class="val-good">Very High</td>
+        <td class="val-bad">Slow</td>
+        <td>$$$</td>
+      </tr>
+      <tr>
+        <td><strong>Directed Energy Deposition</strong></td>
+        <td>Metals (wire/powder)</td>
+        <td class="val-bad">Low</td>
+        <td class="val-good">Fast (large parts)</td>
+        <td>$$$&ndash;$$$$</td>
+      </tr>
+      <tr>
+        <td><strong>Sheet Lamination</strong></td>
+        <td>Paper, metal foil, polymer</td>
+        <td class="val-bad">Low</td>
+        <td class="val-good">Fast</td>
+        <td>$&ndash;$$</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 5: ADDITIVE VS SUBTRACTIVE -->
+  <h2 id="additive-vs-subtractive">5. Additive vs. Subtractive Manufacturing &mdash; Key Differences</h2>
+
+  <p>The fundamental difference is simple: <strong>additive manufacturing builds up</strong> while <strong>subtractive manufacturing cuts down</strong>. But the practical implications for part design, cost, lead time, and capability are significant.</p>
+
+  <p>In subtractive manufacturing — primarily CNC milling, turning, and EDM — you start with a solid block or billet of material and progressively remove everything that is not the final part. This produces excellent surface finish and tight tolerances, but you are limited to geometries that cutting tools can physically reach. Internal channels, enclosed voids, undercuts, and complex organic shapes are difficult or impossible.</p>
+
+  <p>In additive manufacturing, you start with nothing and build the part layer by layer. Because each layer is formed independently, the part's internal complexity costs nothing extra to produce. A solid cube and a cube containing a labyrinth of internal channels take roughly the same time and cost to print — something that is absolutely not true in machining.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Factor</th>
+        <th>Additive Manufacturing</th>
+        <th>Subtractive Manufacturing (CNC)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Process</td>
+        <td>Adds material layer by layer</td>
+        <td>Removes material from solid block</td>
+      </tr>
+      <tr>
+        <td>Geometric complexity</td>
+        <td class="val-good">Virtually unlimited &mdash; internal channels, lattices, organic shapes</td>
+        <td class="val-bad">Limited by tool access &mdash; no enclosed internal features</td>
+      </tr>
+      <tr>
+        <td>Material waste</td>
+        <td class="val-good">5&ndash;15% waste (support structures, unfused powder)</td>
+        <td class="val-bad">50&ndash;90% waste on complex parts (buy-to-fly ratio)</td>
+      </tr>
+      <tr>
+        <td>Surface finish</td>
+        <td class="val-bad">Ra 5&ndash;20 &micro;m (often needs post-machining)</td>
+        <td class="val-good">Ra 0.4&ndash;3.2 &micro;m (mirror finish achievable)</td>
+      </tr>
+      <tr>
+        <td>Dimensional accuracy</td>
+        <td class="val-neutral">&plusmn;0.05&ndash;0.1 mm typical</td>
+        <td class="val-good">&plusmn;0.005&ndash;0.025 mm typical</td>
+      </tr>
+      <tr>
+        <td>Lead time (1 part)</td>
+        <td class="val-good">Hours to days &mdash; no tooling required</td>
+        <td class="val-neutral">Hours to weeks &mdash; depends on fixturing complexity</td>
+      </tr>
+      <tr>
+        <td>Unit cost at volume</td>
+        <td class="val-bad">Cost per part stays roughly constant</td>
+        <td class="val-good">Cost per part drops significantly with volume</td>
+      </tr>
+      <tr>
+        <td>Ideal volume range</td>
+        <td class="val-good">1 to ~500 parts</td>
+        <td class="val-good">100 to unlimited</td>
+      </tr>
+      <tr>
+        <td>Best application</td>
+        <td>Complex geometry, low volume, rapid iteration</td>
+        <td>Simple geometry, tight tolerances, high volume</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    <p>In practice, the most advanced manufacturers combine both approaches: print a near-net-shape part additively to capture complex internal geometry, then CNC machine critical external surfaces to achieve tight tolerances and smooth finish. This hybrid workflow is standard practice for high-performance metal AM parts such as conformal cooling mold inserts.</p>
+  </blockquote>
+
+  <!-- SECTION 6: MATERIALS -->
+  <h2 id="materials">6. Materials Used in Additive Manufacturing</h2>
+
+  <p>One of the most common misconceptions about additive manufacturing is that it only works with weak plastics. In reality, AM spans a vast range of engineering materials — from commodity thermoplastics to aerospace-grade superalloys. Here is what is available today:</p>
+
+  <h3>Polymers (Plastics)</h3>
+  <ul>
+    <li><strong>Commodity thermoplastics:</strong> PLA, ABS, PETG, ASA — used for prototyping and non-structural parts via FDM.</li>
+    <li><strong>Engineering thermoplastics:</strong> Nylon (PA6, PA12), polycarbonate, POM — used for functional parts, jigs, fixtures.</li>
+    <li><strong>High-performance polymers:</strong> PEEK, PEI (Ultem), PPSU — used in aerospace, medical, and automotive applications requiring chemical resistance, high temperature, or flame retardancy.</li>
+    <li><strong>Photopolymer resins:</strong> Standard, tough, flexible, castable, dental, biocompatible — used via SLA/DLP for high-detail parts.</li>
+    <li><strong>Powder polymers:</strong> PA12, PA11, TPU — used via SLS for durable, production-grade plastic parts without support structures.</li>
+  </ul>
+
+  <h3>Metals</h3>
+  <p>Metal additive manufacturing is the fastest-growing segment and the most industrially significant. For a full guide to <a href="what-is-metal-additive-manufacturing.html">what is metal additive manufacturing</a>, see our dedicated article. The most commonly printed metals include:</p>
+  <ul>
+    <li><strong>Stainless steel</strong> (316L, 17-4 PH) — corrosion resistance, general engineering.</li>
+    <li><strong>Tool steel</strong> (H13, MS1/1.2709 maraging steel) — injection mold inserts, cutting tools, dies.</li>
+    <li><strong>Titanium</strong> (Ti-6Al-4V) — aerospace, medical implants, lightweight structures.</li>
+    <li><strong>Aluminum alloys</strong> (AlSi10Mg, Scalmalloy) — lightweight parts, heat exchangers.</li>
+    <li><strong>Nickel superalloys</strong> (Inconel 625, 718) — jet engines, turbines, high-temperature applications.</li>
+    <li><strong>Cobalt chrome</strong> — dental, medical, high-wear industrial.</li>
+    <li><strong>Copper and copper alloys</strong> — heat exchangers, electrical components, induction coils.</li>
+  </ul>
+  <p>For information on whether metals can really be 3D printed and how the process works, see <a href="can-you-3d-print-metal.html">can you 3D print metal?</a></p>
+
+  <h3>Ceramics</h3>
+  <ul>
+    <li><strong>Alumina (Al&#8322;O&#8323;)</strong> and <strong>zirconia (ZrO&#8322;)</strong> — used for high-temperature, high-wear, and electrical insulation applications.</li>
+    <li><strong>Silicon carbide</strong> and <strong>silicon nitride</strong> — used in extreme-environment applications.</li>
+    <li><strong>Hydroxyapatite</strong> — biocompatible ceramic used for bone scaffolds in medical applications.</li>
+  </ul>
+
+  <h3>Composites</h3>
+  <ul>
+    <li><strong>Carbon fiber reinforced polymers</strong> — nylon or PETG filled with chopped or continuous carbon fiber for parts with stiffness approaching aluminum at a fraction of the weight.</li>
+    <li><strong>Glass fiber reinforced nylon</strong> — lower cost than carbon fiber with good mechanical improvement over neat polymer.</li>
+  </ul>
+
+  <!-- SECTION 7: INDUSTRIES -->
+  <h2 id="industries">7. Industries and Applications</h2>
+
+  <p>Additive manufacturing has moved well beyond prototyping into end-use production across virtually every major industry:</p>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Aerospace &amp; Defense</div>
+    <div class="benefit-block__headline">Lightweight structures, fuel nozzles, and turbine components</div>
+    <p class="benefit-block__body">Aerospace was the first industry to adopt metal AM at scale. GE Aviation's LEAP fuel nozzle — consolidated from 20 parts into one, 25% lighter, 5x more durable — is the canonical example. Boeing, Airbus, SpaceX, and Relativity Space all use AM for flight-qualified hardware. The primary driver is weight reduction: every kilogram saved on an aircraft saves roughly $3,000 in fuel over its lifetime.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Medical &amp; Dental</div>
+    <div class="benefit-block__headline">Custom implants, surgical guides, and dental prosthetics</div>
+    <p class="benefit-block__body">Over 100,000 3D-printed titanium hip cups have been implanted worldwide. Custom cranial plates, spinal cages, and knee implants are designed from patient CT scans and printed to exact anatomical fit. In dentistry, AM produces cobalt chrome frameworks, dental crowns, clear aligners, and surgical drill guides — often within the same day.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Automotive</div>
+    <div class="benefit-block__headline">Prototyping, tooling, and lightweight production parts</div>
+    <p class="benefit-block__body">Every major automaker uses AM for rapid prototyping — reducing design iteration from weeks to days. In production, AM is used for conformal cooling inserts in injection molds (reducing cycle times 20&ndash;40% for high-volume plastic parts), custom fixtures for assembly lines, and low-volume production components for luxury and motorsport vehicles.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Consumer Products</div>
+    <div class="benefit-block__headline">Mass customization, short-run production, on-demand manufacturing</div>
+    <p class="benefit-block__body">Eyewear, footwear midsoles (Adidas 4DFWD), custom earbuds, and personalized sporting goods are produced via AM. The technology enables mass customization — each unit can be different without retooling — and eliminates the need for minimum order quantities, enabling brands to test new products with zero inventory risk.</p>
+  </div>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Tooling &amp; Molds</div>
+    <div class="benefit-block__headline">Conformal cooling inserts — the #1 industrial ROI application</div>
+    <p class="benefit-block__body">For injection molding operations, 3D-printed conformal cooling inserts represent arguably the highest-ROI application of metal additive manufacturing. By replacing straight-drilled cooling channels with channels that conform to the mold cavity surface, cycle times drop 20&ndash;72%, warpage is reduced, and part quality improves. Learn more about <a href="what-is-conformal-cooling.html">what is conformal cooling</a> and how it works.</p>
+  </div>
+
+  <!-- SECTION 8: METAL AM FOR MOLDS -->
+  <h2 id="metal-am-molds">8. Metal Additive Manufacturing for Injection Molds</h2>
+
+  <p>Of all the industrial applications of additive manufacturing, <strong>conformal cooling inserts for injection molds</strong> may deliver the most clear-cut, measurable return on investment. This is where our company, Saiguang 3D Technology, specializes — and where the technology makes the biggest difference for most manufacturers.</p>
+
+  <h3>The Problem with Conventional Cooling</h3>
+  <p>Traditional injection mold inserts use straight-drilled cooling channels. Because drilling can only create straight lines, these channels cannot follow the complex curves of the mold cavity. The result is uneven cooling: some areas of the molded part cool quickly while others remain hot. This causes longer cycle times (waiting for the slowest-cooling area), warpage, sink marks, and inconsistent part quality.</p>
+
+  <h3>The Additive Manufacturing Solution</h3>
+  <p>Metal 3D printing (specifically Powder Bed Fusion using SLM/DMLS) can produce mold inserts with <a href="../conformal-cooling-inserts.html">conformal cooling channels</a> — cooling passages that follow the exact contour of the mold cavity at a uniform distance. Because additive manufacturing builds the insert layer by layer, any internal channel geometry is possible. The channels can curve, spiral, branch, and follow surfaces in ways that are physically impossible to drill.</p>
+
+  <div class="data-highlight">
+    <div class="data-highlight__title">Conformal Cooling — Real Performance Data</div>
+    <div class="data-grid">
+      <div class="data-cell">
+        <div class="data-cell__num">20&ndash;72%</div>
+        <div class="data-cell__label">Cycle Time Reduction</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">50&ndash;52 HRC</div>
+        <div class="data-cell__label">Insert Hardness (MS1 Steel)</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">$800&ndash;$2,500</div>
+        <div class="data-cell__label">Per Insert (China)</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">$3,000&ndash;$8,000</div>
+        <div class="data-cell__label">Per Insert (Europe)</div>
+      </div>
+    </div>
+  </div>
+
+  <p>The economics are compelling. A conformal cooling insert priced at $1,200 that reduces cycle time by 30% on a mold running 500,000 shots per year can save $15,000 to $50,000 annually in production costs — a payback period measured in weeks, not years. For a detailed cost breakdown, see our <a href="metal-3d-printing-cost.html">metal 3D printing cost guide</a>.</p>
+
+  <p>The inserts are printed in MS1 maraging steel or H13 tool steel, heat treated to 50&ndash;54 HRC, and CNC machined on critical sealing and mating surfaces. The result is a mold insert that performs identically to a conventionally manufactured insert in every way except cooling performance — where it is dramatically superior.</p>
+
+  <p>This is the core of what we do at MouldNova. We provide end-to-end conformal cooling insert services: thermal analysis, channel design optimization, SLM printing, heat treatment, CNC finishing, and delivery worldwide. For more detail, visit our <a href="../metal-3d-printing-service.html">metal 3D printing service</a> page or read our guide on <a href="conformal-cooling-additive-manufacturing.html">conformal cooling and additive manufacturing</a>.</p>
+
+  <!-- SECTION 9: ADVANTAGES AND DISADVANTAGES -->
+  <h2 id="advantages-disadvantages">9. Advantages and Disadvantages of Additive Manufacturing</h2>
+
+  <h3>Key Advantages</h3>
+  <ul>
+    <li><strong>Design freedom:</strong> Internal channels, lattice structures, organic geometries, and part consolidation (combining multiple parts into one) are all achievable.</li>
+    <li><strong>No tooling required:</strong> Parts are produced directly from CAD data — no molds, dies, or fixtures needed for the first part. This eliminates tooling lead time and cost for low-volume production.</li>
+    <li><strong>Rapid iteration:</strong> Design changes can be implemented in hours. Print a part Monday, test it Tuesday, revise the design Wednesday, print the updated version Thursday.</li>
+    <li><strong>Material efficiency:</strong> Near-net-shape production means minimal material waste compared to subtractive methods. Critical for expensive materials like titanium (buy-to-fly ratios of 1.5:1 vs. 10:1 or worse for machining).</li>
+    <li><strong>Mass customization:</strong> Every part in a build can be different without any cost penalty.</li>
+    <li><strong>Supply chain simplification:</strong> Digital inventory — store files, not parts. Print on demand, anywhere in the world.</li>
+  </ul>
+
+  <h3>Key Disadvantages</h3>
+  <ul>
+    <li><strong>Unit cost at high volume:</strong> For simple shapes at quantities above 500&ndash;1,000, injection molding, casting, or CNC machining are almost always cheaper per part.</li>
+    <li><strong>Surface finish and tolerances:</strong> As-printed parts have rougher surfaces and wider tolerances than machined parts. Post-processing adds cost and time.</li>
+    <li><strong>Build size limitations:</strong> Most AM machines have limited build volumes. Very large parts require sectioning or specialized (expensive) equipment.</li>
+    <li><strong>Material property variability:</strong> Process parameters, build orientation, and machine calibration all affect final part properties. Qualification and quality control are more complex than for wrought or cast materials.</li>
+    <li><strong>Speed:</strong> Layer-by-layer building is inherently slower than stamping, casting, or injection molding for high-volume production.</li>
+    <li><strong>Specialized knowledge required:</strong> Design for additive manufacturing (DfAM) requires different skills than design for machining. Support structures, build orientation, and thermal management must be considered.</li>
+  </ul>
+
+  <p>For a comprehensive analysis with real-world examples, see our dedicated article on <a href="additive-manufacturing-pros-and-cons.html">additive manufacturing pros and cons</a>.</p>
+
+  <!-- SECTION 10: THE FUTURE -->
+  <h2 id="future">10. The Future of Additive Manufacturing</h2>
+
+  <p>Additive manufacturing is advancing rapidly across multiple fronts. Here are the trends that will shape the industry over the next 5 to 10 years:</p>
+
+  <h3>Faster Machines, Higher Throughput</h3>
+  <p>Multi-laser metal PBF systems (4, 8, or even 12 lasers operating simultaneously) are dramatically increasing build speeds. Area-based processing methods like binder jetting and diode-area melting are pushing metal AM throughput toward levels that compete with casting for medium-volume production. Build rates that were 5&ndash;10 cm&sup3;/hr a decade ago are now exceeding 100 cm&sup3;/hr on high-end systems.</p>
+
+  <h3>Larger Build Volumes</h3>
+  <p>The maximum build envelope for PBF machines continues to grow. Systems with 600 &times; 600 &times; 600 mm and even 800 &times; 400 &times; 500 mm build volumes are now commercially available. WAAM and large-format DED systems can produce parts several meters long. This opens entirely new applications in construction, shipbuilding, and infrastructure.</p>
+
+  <h3>New Materials</h3>
+  <p>High-entropy alloys, refractory metals (tungsten, molybdenum), amorphous metals, and functionally graded materials (parts that transition from one alloy to another within the same build) are moving from research labs to commercial production. The material palette for AM is expanding faster than at any point in the technology's history.</p>
+
+  <h3>AI-Driven Design and Process Control</h3>
+  <p>Machine learning is being applied to topology optimization (generating optimal part geometries automatically), in-situ process monitoring (detecting defects layer by layer during the build), and predictive parameter optimization (finding the best print settings for new materials with minimal trial and error).</p>
+
+  <h3>Hybrid Manufacturing</h3>
+  <p>Machines that combine additive and subtractive capabilities in a single setup — printing a part and then immediately machining it to final tolerance without removing it from the build platform — are becoming commercially mature. This eliminates the alignment and registration challenges of moving parts between machines.</p>
+
+  <h3>Distributed and On-Demand Manufacturing</h3>
+  <p>The digital nature of AM enables a fundamentally different supply chain model: store digital files rather than physical inventory, transmit designs electronically, and produce parts locally wherever they are needed. This model is already being adopted by military logistics, remote mining operations, and spare-parts suppliers.</p>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">See Additive Manufacturing in Action: Conformal Cooling Inserts</div>
+    <div class="blog-cta__text">Our metal 3D-printed conformal cooling inserts reduce injection molding cycle times by 20&ndash;72%. Send us your mold design and we will show you exactly what AM can do for your production line.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp" style="background:#25D366;color:#fff;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp &mdash; Get a Free Quote
+      </a>
+      <a href="../contact.html" class="btn" style="background:#fff;color:var(--red);border:2px solid var(--red);">Request a Conformal Cooling Analysis &rarr;</a>
+    </div>
+  </div>
+
+  <!-- SECTION 11: FAQ -->
+  <h2 id="faq">11. FAQ &mdash; Common Questions About Additive Manufacturing</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is additive manufacturing?</div>
+    <p class="faq-block__a">Additive manufacturing (AM) is the process of building three-dimensional objects by adding material layer by layer from a digital CAD model. It is the formal engineering term for 3D printing. Unlike subtractive manufacturing (CNC machining), which removes material from a solid block, additive manufacturing creates parts from nothing — depositing only the material needed for the final part. It is defined by the international standard ISO/ASTM 52900.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What does additive manufacturing mean?</div>
+    <p class="faq-block__a">The term "additive manufacturing" literally means manufacturing by adding material. The name was chosen to contrast with "subtractive manufacturing" (machining, where material is removed) and "formative manufacturing" (casting and forging, where material is shaped by force or molds). In additive manufacturing, parts are built up layer by layer using only the material needed, resulting in minimal waste compared to traditional methods.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Is additive manufacturing the same as 3D printing?</div>
+    <p class="faq-block__a">Yes. Additive manufacturing and 3D printing are two names for the same set of technologies. "Additive manufacturing" is the formal engineering and standards term (used in ISO/ASTM 52900), while "3D printing" is the popular, consumer-friendly term. Both refer to building objects layer by layer from digital models. In industry and academia, "additive manufacturing" or "AM" is preferred; in everyday conversation, "3D printing" is more common.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How does additive manufacturing work?</div>
+    <p class="faq-block__a">All additive manufacturing processes follow four stages: (1) Design — create a 3D model in CAD software. (2) Slice — software divides the model into thin horizontal layers (typically 20 to 200 micrometers thick). (3) Build — the machine constructs the part one layer at a time, with each new layer bonding to the one below. The specific method varies by technology: lasers melt metal powder (PBF), nozzles extrude plastic (FDM), UV light cures resin (SLA), etc. (4) Post-process — support removal, heat treatment, surface finishing, and inspection.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Why is 3D printing called additive manufacturing?</div>
+    <p class="faq-block__a">3D printing is called additive manufacturing because the process physically adds material — layer by layer — to build a part from scratch. This is the opposite of subtractive manufacturing (CNC machining), which starts with a solid block and removes everything that is not the final part. The word "additive" was chosen specifically by standards bodies (ISO and ASTM) to clearly describe the fundamental mechanism and distinguish it from subtractive and formative processes.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is additive manufacturing used for?</div>
+    <p class="faq-block__a">Additive manufacturing is used across aerospace (lightweight brackets, fuel nozzles, turbine blades), medical (custom implants, surgical guides, dental prosthetics), automotive (prototypes, production parts, mold tooling), consumer products (custom eyewear, footwear, electronics housings), and industrial tooling (conformal cooling mold inserts, jigs, fixtures). The technology is most valuable when parts have complex geometry, low production volumes, or require rapid turnaround. <a href="conformal-cooling-additive-manufacturing.html">Conformal cooling inserts</a> are among the highest-ROI applications.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What materials can be used in additive manufacturing?</div>
+    <p class="faq-block__a">Additive manufacturing works with thermoplastics (PLA, ABS, nylon, PEEK), photopolymer resins, metals (stainless steel, tool steel, titanium, aluminum, Inconel, cobalt chrome, copper), ceramics (alumina, zirconia), and composites (carbon fiber reinforced polymers). Over 100 materials are commercially available across the seven AM process categories. The specific material options depend on which technology is being used — for example, <a href="can-you-3d-print-metal.html">metal 3D printing</a> via PBF offers 50+ alloys.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is the difference between additive and subtractive manufacturing?</div>
+    <p class="faq-block__a">Additive manufacturing builds parts by adding material layer by layer from nothing. Subtractive manufacturing starts with a solid block and removes material using cutting tools (CNC milling, turning, drilling). Additive excels at complex internal geometries, low-volume production, and rapid prototyping. Subtractive excels at tight tolerances, smooth surface finishes, and cost-effective high-volume production. Many modern manufacturers use both together — printing a complex near-net-shape part and then machining critical surfaces to final specification.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What are the 7 types of additive manufacturing?</div>
+    <p class="faq-block__a">The seven ASTM/ISO 52900 categories are: (1) Powder Bed Fusion — laser or electron beam melts powder (SLM, DMLS, SLS, EBM); (2) Material Extrusion — heated nozzle extrudes filament (FDM/FFF); (3) Vat Photopolymerization — light cures liquid resin (SLA, DLP); (4) Binder Jetting — binder glues powder, then sintered; (5) Material Jetting — droplets deposited and UV cured; (6) Directed Energy Deposition — focused energy melts wire or powder feed (DED, WAAM); (7) Sheet Lamination — sheets bonded and cut to shape (LOM, UAM).</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How much does additive manufacturing cost?</div>
+    <p class="faq-block__a">Costs vary enormously by technology and material. Desktop FDM plastic parts can cost under $1. Industrial SLS nylon parts typically run $5&ndash;$50 per part. Metal PBF parts range from $50 for small stainless steel components to $10,000+ for large titanium builds. For conformal cooling mold inserts — one of the highest-value metal AM applications — costs range from $800&ndash;$2,500 per insert from Chinese specialists versus $3,000&ndash;$8,000 from European providers. See our <a href="metal-3d-printing-cost.html">metal 3D printing cost guide</a> for detailed pricing.</p>
+  </div>
+
+  <!-- INTERNAL LINKS -->
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href="is-injection-molding-additive-manufacturing.html">Is Injection Molding Additive Manufacturing?</a></li>
+    <li><a href="additive-manufacturing-pros-and-cons.html">Additive Manufacturing Pros and Cons &mdash; Complete Analysis</a></li>
+    <li><a href="what-is-metal-additive-manufacturing.html">What Is Metal Additive Manufacturing? Technology &amp; Applications</a></li>
+    <li><a href="can-you-3d-print-metal.html">Can You 3D Print Metal? How It Works</a></li>
+    <li><a href="conformal-cooling-additive-manufacturing.html">Conformal Cooling and Additive Manufacturing</a></li>
+    <li><a href="what-is-conformal-cooling.html">What Is Conformal Cooling? The Complete Guide</a></li>
+    <li><a href="metal-3d-printing-cost.html">Metal 3D Printing Cost Guide (2026)</a></li>
+    <li><a href="slm-vs-dmls-conformal-cooling.html">SLM vs. DMLS &mdash; Technical Comparison</a></li>
+    <li><a href="../metal-3d-printing-service.html">Metal 3D Printing Service &mdash; Specifications &amp; Lead Times</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Conformal Cooling Inserts &mdash; How They Cut Cycle Times 20&ndash;72%</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+
+  <!-- Related Articles — auto-generated internal links -->
+  <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+    <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li>
+        <a href="/blog/can-you-3d-print-metal.html">Can You 3D Print Metal? How It Works</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-additive-manufacturing.html">Conformal Cooling and Additive Manufacturing</a>
+      </li>
+      <li>
+        <a href="/blog/metal-3d-printing-cost.html">Metal 3D Printing Cost Guide</a>
+      </li>
+      <li>
+        <a href="/blog/slm-vs-dmls-conformal-cooling.html">SLM vs DMLS Comparison</a>
+      </li>
+    </ul>
+  </aside>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>

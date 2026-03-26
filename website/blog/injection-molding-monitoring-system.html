@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Injection Molding Monitoring System | MouldNova</title>
+  <meta name="description" content="Injection molding monitoring systems: 4 types (mold monitor, vision, cavity pressure, thermal imaging), how to choose, costs, and ROI calculator." />
+  <meta name="keywords" content="injection molding machine monitoring system, mold monitoring system, injection molding process monitoring, mold monitor, CCD vision inspection injection molding, injection molding quality control system" />
+  <link rel="canonical" href="https://mouldnova.com/blog/injection-molding-monitoring-system.html" />
+  <meta property="og:title" content="Injection Molding Machine Monitoring System: Complete Buyer's Guide 2026" />
+  <meta property="og:description" content="The 4 types of injection molding monitoring systems, how each works, what they cost, and which industries need them most." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/injection-molding-monitoring-system.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); vertical-align:top; }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .type-card { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:24px 0; background:#fff; }
+    .type-card__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .type-card__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .type-card__tag { font-size:0.78rem; color:var(--gray-mid); margin-bottom:12px; }
+    .type-card p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .warning-box { background:#fef2f2; border:1px solid #fecaca; border-radius:12px; padding:20px 24px; margin:20px 0; }
+    .warning-box__title { font-weight:700; color:#dc2626; margin-bottom:8px; }
+    .tip-box { background:#f0fdf4; border:1px solid #bbf7d0; border-radius:12px; padding:20px 24px; margin:20px 0; }
+    .tip-box__title { font-weight:700; color:#16a34a; margin-bottom:8px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Injection Molding Machine Monitoring System: Complete Buyer's Guide 2026",
+    "description": "What injection molding monitoring systems do, the 4 types available, how to choose, and what they cost.",
+    "author": { "@type": "Organization", "name": "MouldNova" },
+    "publisher": { "@type": "Organization", "name": "MouldNova", "url": "https://mouldnova.com" },
+    "datePublished": "2026-03-20",
+    "dateModified": "2026-03-20",
+    "url": "https://mouldnova.com/blog/injection-molding-monitoring-system.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does an injection molding monitoring system do?",
+        "acceptedAnswer": { "@type": "Answer", "text": "An injection molding monitoring system watches every shot in real time, comparing what happens in the mold to a reference profile. When a shot deviates — short shot, stuck part, flash, or missing runner — the system signals the machine to stop or eject the bad part before it causes mold damage or reaches the customer." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a mold monitor and a vision inspection system?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A mold monitor watches inside the mold during the injection cycle — it detects problems like stuck parts, incomplete ejection, or broken pins before the mold closes again. A vision inspection system checks parts after they eject, comparing their appearance, dimensions, and completeness to a reference image. Both can run simultaneously for complete quality coverage." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does an injection molding monitoring system cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Entry-level mold monitors (camera-based) cost $800–$3,000 per machine. Mid-range systems with cavity pressure sensors and analytics cost $5,000–$15,000. Downstream vision inspection systems cost $3,000–$20,000 depending on inspection complexity and throughput requirements. Chinese-made systems (compatible with all machine brands) are typically 40–60% cheaper than European equivalents." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which industries require injection molding monitoring systems?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Automotive (IATF 16949 requires statistical process monitoring), medical devices (FDA 21 CFR Part 820 requires batch traceability), consumer electronics (zero-defect OEM requirements from Apple, Samsung), and FMCG packaging (100% fill-check for pharmaceutical closures). Any production run above 50,000 shots/month benefits economically from automated monitoring." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">MouldNova</a>
+      <nav class="site-nav">
+        <a href="/conformal-cooling.html">Conformal Cooling</a>
+        <a href="/vision-inspection-mold-monitor.html">Mold Monitoring</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact.html" class="btn btn--sm">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="blog-hero">
+    <div class="container">
+      <div class="blog-hero__eyebrow">Quality Control · Injection Molding</div>
+      <h1 class="blog-hero__title">Injection Molding Machine Monitoring System: Complete Buyer's Guide 2026</h1>
+      <div class="blog-hero__meta">Updated March 2026 &nbsp;·&nbsp; 12 min read &nbsp;·&nbsp; By MouldNova Engineering Team</div>
+    </div>
+  </section>
+
+  <div class="blog-body">
+
+    <p>Every injection molding machine runs blind. Without a monitoring system, your press has no way to know whether the last shot produced a good part, a short shot, or left a stuck runner that's about to crush a €50,000 mold. Operators catch some of these — but not all, and not fast enough.</p>
+
+    <p>This guide explains the four types of injection molding monitoring systems, what each detects, which industries require them, and what you should expect to pay in 2026.</p>
+
+    <div class="toc">
+      <div class="toc__title">Contents</div>
+      <a href="#what-is">What a monitoring system actually does</a>
+      <a href="#four-types">The 4 types: mold monitor, vision inspection, cavity pressure, thermal</a>
+      <a href="#who-needs">Who needs one (and when it's not worth it)</a>
+      <a href="#cost">Cost breakdown: entry-level to enterprise</a>
+      <a href="#industries">Industry requirements: automotive, medical, FMCG</a>
+      <a href="#choose">How to choose: 7 key questions</a>
+      <a href="#china">Sourcing from China: what to look for</a>
+      <a href="#faq">FAQ</a>
+    </div>
+
+    <h2 id="what-is">What an Injection Molding Monitoring System Actually Does</h2>
+
+    <p>The core function is simple: <strong>compare every shot to a reference, flag deviations, and trigger a response</strong> — either stopping the machine, actuating a reject gate, or logging the anomaly for traceability.</p>
+
+    <p>What gets compared depends on the system type. A camera-based mold monitor compares images. A cavity pressure system compares pressure curves. A vision inspection system compares part appearance. A thermal imaging system compares heat maps. Each type catches different failure modes.</p>
+
+    <div class="data-highlight">
+      <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray-mid);margin-bottom:16px;font-weight:700;">What monitoring systems prevent</div>
+      <div class="data-grid">
+        <div class="data-cell">
+          <div class="data-cell__num">$50K+</div>
+          <div class="data-cell__label">Typical mold crush repair cost</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-cell__num">3–8%</div>
+          <div class="data-cell__label">Typical unmonitored reject rate</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-cell__num">100%</div>
+          <div class="data-cell__label">Shots inspected vs ~5% manual sampling</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-cell__num">&lt;0.1s</div>
+          <div class="data-cell__label">Reaction time vs 1–3s for operator</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="four-types">The 4 Types of Injection Molding Monitoring Systems</h2>
+
+    <div class="type-card">
+      <div class="type-card__number">Type 1</div>
+      <div class="type-card__title">Mold Monitor (Camera-Based)</div>
+      <div class="type-card__tag">Best for: preventing mold crush · detecting stuck parts · ejection failures</div>
+      <p>A camera mounted inside or above the mold takes an image at the end of every ejection stroke and compares it to a "good" reference image. If a stuck part, broken runner, or flash is detected, it signals the machine not to close — preventing the mold from crushing the stuck part.</p>
+      <p><strong>What it catches:</strong> Stuck parts, incomplete ejection, broken ejector pins, runner still in mold, flash on parting line, missing insert (for insert molding).</p>
+      <p><strong>What it misses:</strong> Dimensional errors on the part surface, internal defects, short shots that eject cleanly.</p>
+      <p><strong>Typical cost:</strong> $800–$3,000 per machine. Compatible with all injection molding machine brands.</p>
+      <p><strong>Setup time:</strong> 30–60 minutes per machine. Teach the system one "good" image, set sensitivity threshold, done.</p>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card__number">Type 2</div>
+      <div class="type-card__title">Downstream Vision Inspection System</div>
+      <div class="type-card__tag">Best for: 100% part inspection · pass/fail sorting · IATF 16949 / FDA traceability</div>
+      <p>Parts fall from the mold onto a conveyor or vibratory bowl, pass under one or more cameras, and are sorted into good/reject bins by an actuated gate. The system compares every part image to a reference for dimensions, surface defects, presence/absence of features, and color.</p>
+      <p><strong>What it catches:</strong> Short shots, flash, sink marks, gate blush, dimensional out-of-spec, missing holes or features, wrong color, label/barcode errors, contamination on surface.</p>
+      <p><strong>What it misses:</strong> Internal voids or weld lines (requires X-ray or CT), problems during the next cycle (it only sees parts that already ejected).</p>
+      <p><strong>Typical cost:</strong> $3,000–$20,000 depending on number of cameras, conveyor type, and integration complexity.</p>
+      <p><strong>Setup time:</strong> 2–8 hours. Train the system on 50–200 good parts plus representative defects.</p>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card__number">Type 3</div>
+      <div class="type-card__title">Cavity Pressure Monitoring System</div>
+      <div class="type-card__tag">Best for: process stability · SPC data · medical validation · multi-cavity balance</div>
+      <p>Piezoelectric sensors mounted in the mold measure cavity pressure throughout the injection cycle — fill, pack, hold, and cooling phases. The system records pressure curves for every shot and flags shots where the curve deviates from the reference window.</p>
+      <p><strong>What it catches:</strong> Short shots (fill pressure too low), flash (pack pressure too high), multi-cavity imbalance, degraded material viscosity, gate freeze-off time drift, process drift over time.</p>
+      <p><strong>What it misses:</strong> Surface appearance defects, ejection problems (no camera), downstream assembly issues.</p>
+      <p><strong>Typical cost:</strong> $5,000–$15,000 per mold (sensors + controller). Sensors are embedded in the mold and stay with it.</p>
+      <p><strong>Setup time:</strong> Sensors must be designed into the mold during tooling — retrofitting is possible but costly.</p>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card__number">Type 4</div>
+      <div class="type-card__title">Thermal / Infrared Imaging</div>
+      <div class="type-card__tag">Best for: cooling uniformity verification · hot spot detection · conformal cooling validation</div>
+      <p>An infrared camera captures the thermal map of every ejected part immediately after it leaves the mold. Hot spots indicate inadequate cooling in that region — predicting warpage, sink marks, or residual stress before they become visible defects.</p>
+      <p><strong>What it catches:</strong> Uneven cooling, regions that need conformal cooling intervention, process drift in chiller temperature, blocked cooling channels.</p>
+      <p><strong>Typical cost:</strong> $8,000–$30,000 for an IR camera system with process integration.</p>
+      <p><strong>Best combined with:</strong> Conformal cooling inserts — use IR imaging to validate that conformal cooling has eliminated the hot spots shown in the Moldflow simulation.</p>
+    </div>
+
+    <h2 id="who-needs">Who Needs a Monitoring System — and When It's Not Worth It</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>Production Profile</th><th>Recommended System</th><th>Payback Period</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>High-volume FMCG (&gt;100K shots/month)<br>Caps, closures, thin-wall</td>
+          <td class="val-good">Type 1 + Type 2</td>
+          <td class="val-good">&lt; 3 months</td>
+        </tr>
+        <tr>
+          <td>Automotive Tier-1<br>IATF 16949 certified</td>
+          <td class="val-good">Type 2 + Type 3</td>
+          <td class="val-good">3–8 months</td>
+        </tr>
+        <tr>
+          <td>Medical devices<br>FDA / CE validation required</td>
+          <td class="val-good">Type 2 + Type 3 (mandatory)</td>
+          <td>Regulatory requirement — not optional</td>
+        </tr>
+        <tr>
+          <td>Consumer electronics<br>Cosmetics OEM parts</td>
+          <td class="val-good">Type 1 + Type 2</td>
+          <td class="val-good">2–6 months</td>
+        </tr>
+        <tr>
+          <td>Low-volume prototypes<br>&lt;5,000 shots/month</td>
+          <td>Not recommended</td>
+          <td class="val-bad">Payback &gt; 3 years</td>
+        </tr>
+        <tr>
+          <td>High-mix, low-volume<br>Frequent mold changes</td>
+          <td>Type 1 only (fast setup)</td>
+          <td>Primarily mold protection value</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote>
+      <p>If your reject rate is above 1% and you run more than 20,000 shots/month on the same mold, a monitoring system almost always pays back within one year — usually within three months.</p>
+    </blockquote>
+
+    <h2 id="cost">Cost Breakdown: Entry-Level to Enterprise</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>System Level</th><th>What's Included</th><th>Price Range (USD)</th><th>Best For</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Entry</strong></td>
+          <td>Camera mold monitor, 1 machine, basic pass/fail</td>
+          <td>$800–$3,000</td>
+          <td>SME mold shops, mold protection priority</td>
+        </tr>
+        <tr>
+          <td><strong>Mid-range</strong></td>
+          <td>Vision inspection + conveyor + reject gate, 1 line</td>
+          <td>$5,000–$12,000</td>
+          <td>FMCG, consumer electronics, cosmetics</td>
+        </tr>
+        <tr>
+          <td><strong>Advanced</strong></td>
+          <td>Vision + mold monitor + cavity pressure, data logging, SPC output</td>
+          <td>$15,000–$30,000</td>
+          <td>Automotive Tier-1, medical devices</td>
+        </tr>
+        <tr>
+          <td><strong>Enterprise</strong></td>
+          <td>Multi-line, MES integration, full SPC, real-time OEE dashboard</td>
+          <td>$50,000+</td>
+          <td>Large-scale automotive / pharma plants</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>China vs European pricing:</strong> For entry and mid-range systems, Chinese-made monitoring systems (compatible with all injection molding machine brands including Husky, Engel, FANUC, Haitian, Yizumi) are typically 40–60% cheaper than European equivalents. The camera sensors, lighting, and image processing algorithms are equivalent — the cost difference is manufacturing labor and distribution margin.</p>
+
+    <h2 id="industries">Industry-Specific Requirements</h2>
+
+    <h3>Automotive — IATF 16949</h3>
+    <p>IATF 16949:2016 (clause 8.5.1) requires monitoring and measurement of production processes. Practically, Tier-1 customers (BMW, Toyota, GM, etc.) increasingly specify that injection molded parts must be 100% inspected, not sampled. A vision inspection system with shot-by-shot data logging satisfies both the standard and customer-specific requirements (CSRs).</p>
+    <p>Required outputs: reject rate by shift, SPC control charts for key dimensions, traceability linking each part to the exact machine parameters when it was made.</p>
+
+    <h3>Medical Devices — FDA 21 CFR Part 820 / ISO 13485</h3>
+    <p>Medical device manufacturers must document that every unit was produced under controlled conditions (Design History File / Device History Record). Cavity pressure monitoring is particularly valued here because it creates a process signature for every shot — allowing you to retrospectively prove that out-of-spec shots were identified and rejected.</p>
+
+    <div class="warning-box">
+      <div class="warning-box__title">⚠ Medical / pharmaceutical: don't retrofit sensors</div>
+      <p>If you're building a mold for medical use, plan cavity pressure sensors from the design stage. Retrofitting sensors into an existing mold requires re-validation — which costs more than building the sensors in during initial tooling.</p>
+    </div>
+
+    <h3>FMCG / Packaging — High Volume, Cost Sensitivity</h3>
+    <p>For caps, closures, and thin-wall containers running 16–96 cavity molds at 3–8 second cycles, even a 0.5% reject rate means tens of thousands of bad parts per shift. A vision sorting system with vibratory bowl feeder handles these high-output, small-part applications and typically costs less than the labor it replaces within 6–12 months.</p>
+    <p>Key requirement for FMCG: the system must handle parts falling randomly from a multi-cavity mold (no fixed orientation) — so look for systems with either bowl feeders or multi-angle camera arrays.</p>
+
+    <h2 id="choose">How to Choose: 7 Key Questions</h2>
+
+    <ol>
+      <li><strong>What failure mode are you trying to catch?</strong> Stuck parts and mold crush → mold monitor. Surface defects and dimensions → vision inspection. Process drift → cavity pressure.</li>
+      <li><strong>What is your production volume?</strong> Under 10,000 shots/month — mold monitor only. Over 50,000 shots/month — add vision inspection.</li>
+      <li><strong>Does your customer or standard mandate it?</strong> IATF 16949, FDA, or aerospace customers often mandate specific system types. Confirm before purchasing.</li>
+      <li><strong>How many different parts do you run on this machine?</strong> High-mix operations need fast changeover — look for systems that store hundreds of part programs and switch in under 2 minutes.</li>
+      <li><strong>What is your part size and ejection method?</strong> Parts falling freely vs. parts on a conveyor vs. robot pick-and-place all require different downstream configurations.</li>
+      <li><strong>Do you need data integration with your MES or ERP?</strong> Most mid-range systems export CSV or OPC-UA. Enterprise integration requires custom middleware — budget accordingly.</li>
+      <li><strong>Who installs and services it?</strong> For China-sourced systems shipped to Europe or the US: verify the supplier has remote support capability (TeamViewer / AnyDesk access to the controller) and provides spare parts internationally.</li>
+    </ol>
+
+    <div class="tip-box">
+      <div class="tip-box__title">✓ Best practice: start with a free sample evaluation</div>
+      <p>Reputable vision inspection suppliers will test your actual parts on their machines before you buy. Send 20 good parts and 5 representative defective parts. The supplier should be able to demonstrate detection of all defect types before you commit to a purchase order.</p>
+    </div>
+
+    <h2 id="china">Sourcing from China: What to Look For</h2>
+
+    <p>The majority of entry and mid-range injection molding monitoring systems used in Asia are manufactured in China — primarily in Ningbo, Shenzhen, and Dongguan. Quality varies enormously. Use this checklist:</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>Criteria</th><th>What to Ask</th><th>Red Flag</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Camera hardware</strong></td>
+          <td>Which camera brand? (Cognex, Keyence, Basler, Hikvision)</td>
+          <td>Unnamed "OEM" cameras with no brand</td>
+        </tr>
+        <tr>
+          <td><strong>Machine compatibility</strong></td>
+          <td>Does it connect to your machine brand without modification?</td>
+          <td>Requires machine controller modification</td>
+        </tr>
+        <tr>
+          <td><strong>False reject rate</strong></td>
+          <td>What is the false positive rate on your sample parts?</td>
+          <td>Refuses to test samples before purchase</td>
+        </tr>
+        <tr>
+          <td><strong>Remote support</strong></td>
+          <td>Can they access the controller remotely for troubleshooting?</td>
+          <td>Support is email-only, no remote access</td>
+        </tr>
+        <tr>
+          <td><strong>References</strong></td>
+          <td>Automotive or medical customers they currently supply</td>
+          <td>Only shows photos, no verifiable customers</td>
+        </tr>
+        <tr>
+          <td><strong>Software updates</strong></td>
+          <td>How long do they support software? Is it free?</td>
+          <td>No answer or "pay per update"</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="blog-cta">
+      <div class="blog-cta__title">Free Sample Evaluation — Send Us Your Parts</div>
+      <div class="blog-cta__text">We'll test your injection-molded parts on our vision inspection and mold monitoring systems and provide a custom solution recommendation — at no cost. Compatible with all injection molding machine brands. Stock available for immediate shipment.</div>
+      <a href="/contact.html" class="btn">Request Free Evaluation →</a>
+    </div>
+
+    <h2 id="faq">FAQ</h2>
+
+    <div class="faq-block">
+      <div class="faq-block__q">What does an injection molding monitoring system do?</div>
+      <p class="faq-block__a">It watches every shot in real time, comparing what happens in the mold and/or on the ejected part to a reference profile. When a shot deviates — short shot, stuck part, flash, dimensional error — the system signals the machine to stop or routes the defective part to a reject bin automatically. This replaces intermittent manual sampling with 100% automated inspection.</p>
+    </div>
+
+    <div class="faq-block">
+      <div class="faq-block__q">What is the difference between a mold monitor and a vision inspection system?</div>
+      <p class="faq-block__a">A mold monitor watches inside the mold during the injection cycle — its camera fires at end-of-ejection to confirm the cavity is clear before the mold closes again. A vision inspection system checks parts after they eject from the mold, comparing their appearance, dimensions, and completeness to a reference image. Both can run simultaneously: the mold monitor protects the tooling; the vision system ensures outgoing part quality.</p>
+    </div>
+
+    <div class="faq-block">
+      <div class="faq-block__q">Can one monitoring system work with multiple injection molding machines?</div>
+      <p class="faq-block__a">A mold monitor is typically installed per machine (one controller per press). A downstream vision inspection system can be shared between machines if parts are funneled to a common conveyor — common in high-mix operations. Budget $800–$1,500 per machine for camera-based mold monitors; the vision system is a shared downstream cost.</p>
+    </div>
+
+    <div class="faq-block">
+      <div class="faq-block__q">Does a monitoring system slow down the injection molding cycle?</div>
+      <p class="faq-block__a">No — the mold monitor takes its image during the ejection phase (which is already in the cycle), adding less than 0.2 seconds total. Vision inspection downstream happens on the conveyor after ejection and runs in parallel with the next shot. Neither type adds meaningful time to the molding cycle.</p>
+    </div>
+
+    <div class="faq-block">
+      <div class="faq-block__q">Is a monitoring system mandatory for automotive injection molding?</div>
+      <p class="faq-block__a">Not explicitly by IATF 16949 text, but increasingly mandated by automotive OEM customer-specific requirements (CSRs). BMW, Toyota, Stellantis, and most other OEMs require documented 100% inspection for safety and functional parts. In practice, a vision inspection system is the only cost-effective way to satisfy this requirement at high production volumes.</p>
+    </div>
+
+    <div class="faq-block">
+      <div class="faq-block__q">How does a mold monitoring system connect to an injection molding machine?</div>
+      <p class="faq-block__a">Most camera-based mold monitors connect via a digital I/O interface to the machine's mold protection circuit — the same signal that controls mold close permission. When the system detects a problem, it outputs a "mold close inhibit" signal, preventing the press from closing. No modification to the machine controller is needed; the connection uses the existing mold protection I/O terminals on the machine's electrical panel.</p>
+    </div>
+
+    <!-- Related Articles -->
+    <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+      <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <li><a href="/blog/conformal-cooling-before-after.html">Conformal Cooling Before &amp; After: 13 Real Projects — the Upstream Fix</a></li>
+        <li><a href="/blog/conformal-cooling-troubleshooting.html">Injection Mold Troubleshooting: 12 Common Problems &amp; Fixes</a></li>
+        <li><a href="/blog/conformal-cooling-cycle-time-reduction.html">Cycle Time Reduction: Data from 50+ Real Projects</a></li>
+        <li><a href="/blog/conformal-cooling-rfq-checklist.html">RFQ Checklist: What Your Supplier Needs to Quote Accurately</a></li>
+      </ul>
+    </aside>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo">MouldNova</div>
+        <p class="footer-tagline">Injection Mold Quality Solutions · Ningbo, China</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="/conformal-cooling.html">Conformal Cooling</a>
+        <a href="/vision-inspection-mold-monitor.html">Mold Monitoring</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

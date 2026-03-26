@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metal 3D Printing Service Guide | MouldNova</title>
+  <meta name="description" content="Metal 3D printing service guide: process capabilities, materials, quality standards, lead times, China vs US/EU cost, and 10 questions to ask." />
+  <meta name="keywords" content="metal 3d printing service, metal additive manufacturing service, metal 3d printing company, LPBF service bureau, industrial metal 3d printing, metal 3d printing for molds" />
+  <link rel="canonical" href="https://mouldnova.com/blog/metal-3d-printing-service-guide.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/metal-3d-printing-service-guide.html" />
+  <meta property="og:title" content="Metal 3D Printing Service: Buyer's Guide for Engineers & Mold Makers" />
+  <meta property="og:description" content="How to choose a metal 3D printing service: process capabilities, materials, quality standards, lead times, cost comparison, and 10 questions every buyer should ask." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mouldnova.com/blog/metal-3d-printing-service-guide.html" />
+  <meta property="og:image" content="https://mouldnova.com/images/product-conformal-cad.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LMZXHN7YGJ');
+  </script>
+
+  <style>
+    .blog-hero { padding:80px 0 48px; background:var(--black); color:#fff; }
+    .blog-hero__eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:12px; font-weight:700; }
+    .blog-hero__title { font-size:2.5rem; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:800px; }
+    .blog-hero__meta { font-size:0.85rem; color:rgba(255,255,255,0.5); }
+    .blog-body { max-width:800px; margin:0 auto; padding:48px 20px 80px; }
+    .blog-body h2 { font-size:1.6rem; font-weight:800; margin:48px 0 16px; color:var(--black); }
+    .blog-body h3 { font-size:1.15rem; font-weight:700; margin:32px 0 12px; color:var(--black); }
+    .blog-body p { line-height:1.8; color:#333; margin-bottom:16px; font-size:1.02rem; }
+    .blog-body ul, .blog-body ol { margin:0 0 20px 24px; line-height:1.8; color:#333; }
+    .blog-body li { margin-bottom:8px; }
+    .blog-body blockquote { border-left:4px solid var(--red); padding:16px 24px; background:#fff5f5; border-radius:0 8px 8px 0; margin:24px 0; }
+    .blog-body blockquote p { color:var(--black); font-style:italic; margin:0; }
+    .data-highlight { background:var(--gray-light); border-radius:12px; padding:28px; margin:28px 0; }
+    .data-highlight__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-mid); margin-bottom:16px; font-weight:700; }
+    .data-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+    .data-cell { text-align:center; }
+    .data-cell__num { font-size:2rem; font-weight:900; color:var(--red); }
+    .data-cell__label { font-size:0.8rem; color:var(--gray-mid); margin-top:4px; }
+    .compare-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.95rem; }
+    .compare-table th { background:var(--black); color:#fff; padding:12px 16px; text-align:left; font-weight:700; }
+    .compare-table td { padding:12px 16px; border-bottom:1px solid var(--gray-light); }
+    .compare-table tr:nth-child(even) { background:var(--gray-light); }
+    .val-good { color:#16a34a; font-weight:700; }
+    .val-bad { color:#dc2626; font-weight:700; }
+    .val-neutral { color:var(--gray-mid); }
+    .benefit-block { border-left:4px solid var(--red); padding:20px 24px; background:#fff; border-radius:0 12px 12px 0; margin:24px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+    .benefit-block__tag { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); font-weight:700; margin-bottom:6px; }
+    .benefit-block__headline { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .benefit-block__body { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .blog-cta { background:var(--red); color:#fff; border-radius:16px; padding:40px; text-align:center; margin:48px 0; }
+    .blog-cta__title { font-size:1.5rem; font-weight:900; margin-bottom:8px; }
+    .blog-cta__text { color:rgba(255,255,255,0.8); margin-bottom:24px; }
+    .blog-cta .btn { background:#fff; color:var(--red); font-weight:700; }
+    .blog-cta .btn:hover { background:rgba(255,255,255,0.9); }
+    .toc { background:var(--gray-light); border-radius:12px; padding:24px; margin:24px 0; }
+    .toc__title { font-weight:700; margin-bottom:12px; }
+    .toc a { color:var(--red); text-decoration:none; display:block; padding:4px 0; font-size:0.95rem; }
+    .toc a:hover { text-decoration:underline; }
+    .step-block { border:2px solid var(--gray-light); border-radius:16px; padding:28px; margin:28px 0; background:#fff; }
+    .step-block__number { display:inline-block; background:var(--red); color:#fff; font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:4px; margin-bottom:12px; }
+    .step-block__title { font-size:1.2rem; font-weight:800; color:var(--black); margin-bottom:12px; }
+    .step-block p { margin-bottom:8px; font-size:0.97rem; color:#444; line-height:1.75; }
+    .faq-block { border:1px solid var(--gray-light); border-radius:12px; padding:24px; margin:16px 0; background:#fff; }
+    .faq-block__q { font-weight:700; font-size:1.02rem; color:var(--black); margin-bottom:10px; }
+    .faq-block__q::before { content:"Q: "; color:var(--red); }
+    .faq-block__a { color:#444; line-height:1.75; font-size:0.97rem; margin:0; }
+    .faq-block__a::before { content:"A: "; font-weight:700; color:#16a34a; }
+    .checklist-block { background:#f0f7ff; border:1px solid #bfdbfe; border-radius:12px; padding:24px; margin:20px 0; }
+    .checklist-block__title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:#1d4ed8; font-weight:700; margin-bottom:14px; }
+    .checklist-block ul { margin:0; padding-left:20px; }
+    .checklist-block li { color:#1e3a5f; font-size:0.97rem; line-height:1.75; margin-bottom:6px; }
+    @media(max-width:600px) {
+      .blog-hero__title { font-size:1.75rem; }
+      .data-grid { grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Metal 3D Printing Service: Buyer's Guide for Engineers & Mold Makers",
+    "description": "How to choose a metal 3D printing service: process capabilities, materials, quality standards, lead times, cost comparison, and 10 questions every buyer should ask.",
+    "author": {
+      "@type": "Organization",
+      "name": "MouldNova / Saiguang 3D Technology",
+      "url": "https://mouldnova.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MouldNova",
+      "url": "https://mouldnova.com"
+    },
+    "datePublished": "2026-03-19",
+    "dateModified": "2026-03-19",
+    "mainEntityOfPage": "https://mouldnova.com/blog/metal-3d-printing-service-guide.html",
+    "image": "https://mouldnova.com/images/product-conformal-cad.jpg"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a metal 3D printing service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A metal 3D printing service (also called a metal AM service bureau) is a contract manufacturer that builds metal parts layer by layer using additive manufacturing technologies such as Laser Powder Bed Fusion (LPBF), Electron Beam Melting (EBM), Direct Energy Deposition (DED), or Binder Jetting. You supply a CAD file; the service bureau handles material, machine time, post-processing, inspection, and delivery."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does metal 3D printing service cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Metal 3D printing service cost depends on part volume, material, process, and post-processing. Typical pricing ranges from $20–80/cm³ of printed material in the US/EU, or $8–35/cm³ from China-based service bureaus. A small mold insert (50×50×40mm in maraging steel) typically costs $300–800 from a Chinese service and $800–2,500 from a US/EU service, before heat treatment and finish machining."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does metal 3D printing service take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard lead time for metal 3D printing service is 5–15 business days for LPBF parts including post-processing. Build time alone ranges from 12–72 hours depending on part height and nesting density. Heat treatment adds 1–3 days, HIP (if required) adds 3–5 days, and CNC finish machining adds 3–7 days. Express services can deliver in 3–5 days at a 30–50% premium."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What materials can a metal 3D printing service produce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most metal 3D printing service bureaus offer: Maraging Steel (MS1/18Ni300) for mold inserts and tooling, H13 Tool Steel for high-temperature applications, Stainless Steel 316L and 17-4PH for corrosion resistance, Titanium Ti-6Al-4V for aerospace and medical, AlSi10Mg aluminum for lightweight structures, and Inconel 718/625 for high-temperature applications. Copper alloys (CuCrZr, GRCop-42) are less common but available from specialized mold-focused service bureaus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is metal 3D printing from China reliable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, when you select the right supplier. China-based metal 3D printing service bureaus using the same LPBF machines (EOS, SLM Solutions, Renishaw) as Western counterparts can produce equivalent mechanical properties and dimensional accuracy. Key qualification steps: verify machine brand and model, request material certifications and test bar data, ask for CT scan capability for internal features, and request CMM inspection reports with first articles. Established Chinese service bureaus serving automotive and medical OEMs routinely meet ISO 9001 and IATF 16949 standards."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services ▾</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="directory/" class="nav__link">Directory</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../metal-3d-printing-service.html" class="nav__mobile-link">Metal 3D Printing Service</a>
+    <a href="../rapid-tooling-service.html" class="nav__mobile-link">Rapid Tooling Service</a>
+    <a href="../metal-rapid-prototyping.html" class="nav__mobile-link">Metal Rapid Prototyping</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="index.html" class="nav__mobile-link">Blog</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Buyer's Guide &middot; 16 min read</div>
+    <h1 class="blog-hero__title">Metal 3D Printing Service: How to Choose the Right Provider</h1>
+    <p class="blog-hero__meta">By MouldNova Engineering Team &middot; Updated March 2026 &middot; Process selection, cost benchmarks, quality checklist, and 10 questions every buyer must ask</p>
+  </div>
+</section>
+
+
+<div class="blog-body">
+
+  <p>You need a metal part that CNC machining can't produce — or can't produce economically. Maybe it's a mold insert with internal conformal cooling channels, a titanium bracket with topology-optimized lattice, or a complex aerospace component that would require five EDM setups and six weeks on a machinist's schedule. You've decided metal 3D printing is the right process. Now the question is: which metal 3D printing service do you call?</p>
+
+  <p>The global metal AM service market has over 1,000 providers. Quality, capability, and pricing vary by an order of magnitude. A poor supplier choice means delayed parts, failed inspections, and expensive reruns. This guide gives engineers and procurement managers the framework to evaluate and qualify a metal 3D printing service — before sending an RFQ.</p>
+
+  <div class="toc">
+    <div class="toc__title">Contents</div>
+    <a href="#what-is">1. What is a Metal 3D Printing Service?</a>
+    <a href="#processes">2. Process Technologies: Which One Do You Need?</a>
+    <a href="#materials">3. Materials: What a Good Service Bureau Offers</a>
+    <a href="#quality">4. Quality Standards and Certifications</a>
+    <a href="#lead-times">5. Lead Times: What to Expect</a>
+    <a href="#cost">6. Cost: China vs US/EU Benchmarks</a>
+    <a href="#mold-makers">7. Metal 3D Printing Service for Mold Makers</a>
+    <a href="#questions">8. 10 Questions to Ask Before You Order</a>
+    <a href="#red-flags">9. Red Flags to Watch For</a>
+    <a href="#faq">10. FAQ</a>
+  </div>
+
+
+  <!-- 1. WHAT IS -->
+  <h2 id="what-is">1. What is a Metal 3D Printing Service?</h2>
+
+  <p>A metal 3D printing service — also called a metal AM service bureau or contract additive manufacturer — is a facility that builds metal parts from your CAD file using additive manufacturing technology. You supply the design; they supply the machine time, material, post-processing, inspection, and delivery.</p>
+
+  <p>The value proposition is straightforward: AM machines cost $500,000–2,000,000+ and require skilled operators, powder handling systems, and inert atmosphere control. For most engineering teams, buying this capability in-house makes no economic sense. A service bureau amortizes this cost across hundreds of customers and thousands of builds per year, giving you access to industrial-grade metal AM at per-part pricing.</p>
+
+  <div class="data-highlight">
+    <div class="data-highlight__title">Global Metal AM Service Market</div>
+    <div class="data-grid">
+      <div class="data-cell">
+        <div class="data-cell__num">1,000+</div>
+        <div class="data-cell__label">Metal AM Service Providers Worldwide</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">$6.8B</div>
+        <div class="data-cell__label">Global Metal AM Market (2025)</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">18%</div>
+        <div class="data-cell__label">Annual Growth Rate (CAGR)</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">40–60%</div>
+        <div class="data-cell__label">Cost Saving: China vs US/EU Services</div>
+      </div>
+    </div>
+  </div>
+
+  <p>The full service chain typically includes: DFM review, build file preparation (slicing, support generation), printing, powder removal, stress relief heat treatment, optional HIP (Hot Isostatic Pressing), optional CNC finish machining, surface finishing, dimensional inspection (CMM), and material certification documentation. Not all service bureaus offer the full chain — knowing what's included is critical before you compare quotes.</p>
+
+
+  <!-- 2. PROCESSES -->
+  <h2 id="processes">2. Process Technologies: Which One Do You Need?</h2>
+
+  <p>Metal 3D printing is not one process — it's a family of technologies with different strengths, limitations, and cost structures. The dominant process for industrial tooling and precision engineering is Laser Powder Bed Fusion (LPBF), but knowing the alternatives helps you select the right service.</p>
+
+  <table class="compare-table">
+    <tr>
+      <th>Process</th>
+      <th>Aliases</th>
+      <th>Best For</th>
+      <th>Tolerance</th>
+      <th>Relative Cost</th>
+    </tr>
+    <tr>
+      <td><strong>LPBF</strong></td>
+      <td>SLM, DMLS, LaserCUSING</td>
+      <td>Mold inserts, complex internal channels, precision parts</td>
+      <td>±0.05–0.1 mm as-built</td>
+      <td class="val-neutral">Medium–High</td>
+    </tr>
+    <tr>
+      <td><strong>EBM</strong></td>
+      <td>Electron Beam Melting</td>
+      <td>Titanium medical implants, aerospace, high-temp alloys</td>
+      <td>±0.1–0.2 mm as-built</td>
+      <td class="val-bad">High</td>
+    </tr>
+    <tr>
+      <td><strong>Binder Jetting</strong></td>
+      <td>BJT, Exone, Desktop Metal</td>
+      <td>High-volume small parts, sand cores, complex castings</td>
+      <td>±0.3–0.5 mm sintered</td>
+      <td class="val-good">Low–Medium</td>
+    </tr>
+    <tr>
+      <td><strong>DED / WAAM</strong></td>
+      <td>Directed Energy Deposition</td>
+      <td>Large parts, repair, cladding, near-net-shape</td>
+      <td>±0.5–2.0 mm as-built</td>
+      <td class="val-neutral">Medium</td>
+    </tr>
+    <tr>
+      <td><strong>Cold Spray</strong></td>
+      <td>Kinetic Spray</td>
+      <td>Repair, corrosion-resistant coatings, copper deposition</td>
+      <td>Not applicable</td>
+      <td class="val-neutral">Medium</td>
+    </tr>
+  </table>
+
+  <p>For injection mold inserts with conformal cooling channels, the answer is almost always <strong>LPBF</strong>. It delivers the precision (±0.05 mm as-built, ±0.01–0.02 mm after CNC finishing), material options (maraging steel, H13, copper alloys), and internal channel capability that mold applications require. The machine brands you'll encounter include EOS (M series), SLM Solutions (SLM 280/500), Trumpf (TruPrint), Renishaw (AM400/AM500), and Chinese manufacturers like BLT (Bright Laser Technologies) and Farsoon.</p>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Key Distinction</div>
+    <div class="benefit-block__headline">DMLS vs SLM vs LPBF: All the Same Process</div>
+    <p class="benefit-block__body">DMLS (Direct Metal Laser Sintering), SLM (Selective Laser Melting), and LPBF (Laser Powder Bed Fusion) describe the same fundamental process: a laser melts metal powder layer by layer in an inert atmosphere. The terms reflect different manufacturer branding (EOS uses DMLS, SLM Solutions uses SLM) rather than different processes. When evaluating a service bureau, ask for the machine manufacturer and model — not the process acronym.</p>
+  </div>
+
+
+  <!-- 3. MATERIALS -->
+  <h2 id="materials">3. Materials: What a Good Service Bureau Offers</h2>
+
+  <p>Material availability is a primary differentiator between service bureaus. Running a new material on an LPBF machine requires extensive process parameter development — typically 200–400 hours of test builds. Most service bureaus focus on 5–10 qualified materials rather than offering everything in the catalog.</p>
+
+  <table class="compare-table">
+    <tr>
+      <th>Material</th>
+      <th>Common Names</th>
+      <th>Hardness</th>
+      <th>Key Application</th>
+      <th>Availability</th>
+    </tr>
+    <tr>
+      <td><strong>Maraging Steel</strong></td>
+      <td>MS1, 18Ni300, 1.2709</td>
+      <td>50–54 HRC (aged)</td>
+      <td>Mold inserts, tooling, conformal cooling</td>
+      <td class="val-good">Universal</td>
+    </tr>
+    <tr>
+      <td><strong>H13 Tool Steel</strong></td>
+      <td>1.2344, SKD61</td>
+      <td>48–54 HRC (treated)</td>
+      <td>High-temp molds, die casting inserts</td>
+      <td class="val-neutral">Common</td>
+    </tr>
+    <tr>
+      <td><strong>Stainless 316L</strong></td>
+      <td>1.4404</td>
+      <td>200–220 HV</td>
+      <td>Corrosion-resistant molds, medical</td>
+      <td class="val-good">Universal</td>
+    </tr>
+    <tr>
+      <td><strong>Stainless 17-4PH</strong></td>
+      <td>1.4542, 630</td>
+      <td>38–44 HRC (H900)</td>
+      <td>Aerospace, structural parts</td>
+      <td class="val-good">Universal</td>
+    </tr>
+    <tr>
+      <td><strong>Ti-6Al-4V</strong></td>
+      <td>Grade 5 Titanium</td>
+      <td>36–40 HRC</td>
+      <td>Medical implants, aerospace</td>
+      <td class="val-neutral">Common</td>
+    </tr>
+    <tr>
+      <td><strong>AlSi10Mg</strong></td>
+      <td>A360 equivalent</td>
+      <td>120–145 HV</td>
+      <td>Lightweight structures, heat sinks</td>
+      <td class="val-good">Universal</td>
+    </tr>
+    <tr>
+      <td><strong>Inconel 718</strong></td>
+      <td>IN718, 2.4668</td>
+      <td>40–45 HRC</td>
+      <td>High-temperature turbine, oil &amp; gas</td>
+      <td class="val-neutral">Common</td>
+    </tr>
+    <tr>
+      <td><strong>CuCrZr / GRCop-42</strong></td>
+      <td>Copper alloys</td>
+      <td>120–160 HV</td>
+      <td>High-conductivity mold inserts, heat exchangers</td>
+      <td class="val-bad">Specialist only</td>
+    </tr>
+  </table>
+
+  <p>For mold applications, <strong>maraging steel (MS1/18Ni300)</strong> is the default choice: it prints well, achieves 50–54 HRC after age hardening at 490°C for 6 hours, and provides the wear resistance and polishability required for production mold surfaces. H13 is preferred for molds running above 200°C or for die casting dies. If your application requires thermal conductivity higher than the 14–18 W/m·K of tool steels — for example, deep cores in high-volume packaging tools — copper alloys are the answer, but fewer service bureaus offer them.</p>
+
+
+  <!-- 4. QUALITY -->
+  <h2 id="quality">4. Quality Standards and Certifications</h2>
+
+  <p>Quality in metal AM is harder to verify than in CNC machining because the critical properties are internal: density, porosity, microstructure, and residual stress. A machined part's quality is visible on the surface; a printed part's quality depends on process control during the build that you cannot see after the fact.</p>
+
+  <h3>Certifications to Look For</h3>
+  <ul>
+    <li><strong>ISO 9001:2015</strong> — Quality management system baseline. The minimum acceptable for industrial parts.</li>
+    <li><strong>IATF 16949:2016</strong> — Automotive quality standard. If your end customer is automotive, your service bureau should hold this.</li>
+    <li><strong>AS9100D</strong> — Aerospace quality standard. Required for aerospace structural components.</li>
+    <li><strong>ISO 13485:2016</strong> — Medical device quality. Required for implantable and Class III medical devices.</li>
+    <li><strong>NADCAP (Heat Treatment)</strong> — Specialty process accreditation for aerospace heat treatment.</li>
+  </ul>
+
+  <h3>Quality Deliverables to Request</h3>
+
+  <div class="checklist-block">
+    <div class="checklist-block__title">Standard Quality Documentation Package</div>
+    <ul>
+      <li>Material certificate (powder lot, chemical composition, compliance to standard)</li>
+      <li>Build record (machine ID, build date, build parameters, operator sign-off)</li>
+      <li>Heat treatment record (temperature profile, time, furnace calibration date)</li>
+      <li>Dimensional inspection report (CMM or 3D scan with tolerance callouts)</li>
+      <li>Hardness test results (per ASTM E18 or ISO 6508)</li>
+      <li>Density measurement (Archimedes method or CT scan, target &ge;99.5%)</li>
+      <li>Surface roughness report (Ra at functional surfaces)</li>
+      <li>Pressure test report (for cooling circuits — typically 10 bar, 30-minute hold)</li>
+    </ul>
+  </div>
+
+  <p>Not every application requires all of these. A prototype mold insert for 500-shot validation needs dimensional inspection and a hardness check. A production mold insert for a medical device part needs the full documentation package plus traceability to raw material heat number. Define your quality requirements before you issue the RFQ — it affects both price and lead time.</p>
+
+  <h3>In-Process Monitoring</h3>
+  <p>Leading service bureaus have invested in in-process monitoring systems: melt pool cameras (e.g., EOS EOSTATE MeltPool, Sigma Labs PrintRite3D) that detect anomalies during the build rather than after. Ask whether the service bureau uses in-process monitoring and whether build data is available as a quality record. This capability is particularly important for safety-critical parts and high-value mold inserts where a scrapped build costs thousands of dollars and weeks of lead time.</p>
+
+
+  <!-- 5. LEAD TIMES -->
+  <h2 id="lead-times">5. Lead Times: What to Expect</h2>
+
+  <p>Metal 3D printing lead times depend on four sequential stages. Understanding each stage helps you set realistic expectations and negotiate intelligently.</p>
+
+  <div class="step-block">
+    <div class="step-block__number">Stage 1</div>
+    <div class="step-block__title">DFM Review &amp; File Preparation (1–3 days)</div>
+    <p>The service bureau reviews your CAD for printability: wall thickness, overhangs, support strategy, and powder removal paths for internal channels. For complex mold inserts, DFM review can prevent costly build failures. This stage is often where inexperienced service bureaus skip steps — ask whether you receive a DFM report before the build starts.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Stage 2</div>
+    <div class="step-block__title">Build Queue &amp; Print Time (2–5 days)</div>
+    <p>Build time depends on part height (primary driver), laser power, and nesting density. A 100mm-tall insert in maraging steel takes approximately 18–36 hours of print time. Machine availability varies: busy service bureaus may have 3–7 day queue times; dedicated short-run services can start builds within 24 hours at a premium.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Stage 3</div>
+    <div class="step-block__title">Post-Processing (3–7 days)</div>
+    <p>Stress relief and age hardening heat treatment: 1–2 days. Support removal and powder cleaning: 0.5–1 day. HIP (if specified): 3–5 days at a specialist facility. CNC finish machining of critical surfaces: 2–5 days depending on complexity and machine availability. Surface polishing: 1–3 days. These steps can overlap in scheduling but represent real elapsed time.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Stage 4</div>
+    <div class="step-block__title">Inspection &amp; Shipping (1–3 days)</div>
+    <p>CMM inspection against your drawing, documentation compilation, and packing for international shipment. Air freight from China to the US or Europe takes 3–5 business days; sea freight takes 25–35 days. Factor international shipping into your total lead time calculation.</p>
+  </div>
+
+  <div class="data-highlight">
+    <div class="data-highlight__title">Typical Total Lead Times: LPBF Mold Insert (50×50×80mm, Maraging Steel)</div>
+    <div class="data-grid">
+      <div class="data-cell">
+        <div class="data-cell__num">8–12 days</div>
+        <div class="data-cell__label">Standard (print + HT + basic inspect)</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">12–18 days</div>
+        <div class="data-cell__label">With CNC finish machining</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">18–28 days</div>
+        <div class="data-cell__label">With HIP + full CMM + polishing</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-cell__num">5–7 days</div>
+        <div class="data-cell__label">Express service (30–50% premium)</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 6. COST -->
+  <h2 id="cost">6. Cost: China vs US/EU Benchmarks</h2>
+
+  <p>Metal 3D printing service cost is driven by five factors: machine time (determined by build volume and height), material cost (powder price × consumed volume × waste factor), post-processing labor, inspection, and overhead. Understanding these drivers lets you optimize your design for cost — not just performance.</p>
+
+  <h3>Price Benchmarks by Region</h3>
+
+  <table class="compare-table">
+    <tr>
+      <th>Part Size</th>
+      <th>Material</th>
+      <th>China Price (USD)</th>
+      <th>US/EU Price (USD)</th>
+      <th>Savings</th>
+    </tr>
+    <tr>
+      <td>Small insert (&lt;100cm³)</td>
+      <td>Maraging Steel</td>
+      <td>$300–800</td>
+      <td>$800–2,500</td>
+      <td class="val-good">50–65%</td>
+    </tr>
+    <tr>
+      <td>Medium insert (100–500cm³)</td>
+      <td>Maraging Steel</td>
+      <td>$800–3,000</td>
+      <td>$2,500–8,000</td>
+      <td class="val-good">55–62%</td>
+    </tr>
+    <tr>
+      <td>Large insert (&gt;500cm³)</td>
+      <td>Maraging Steel</td>
+      <td>$3,000–12,000</td>
+      <td>$8,000–30,000</td>
+      <td class="val-good">55–60%</td>
+    </tr>
+    <tr>
+      <td>Titanium part (50cm³)</td>
+      <td>Ti-6Al-4V</td>
+      <td>$400–900</td>
+      <td>$1,200–3,000</td>
+      <td class="val-good">50–65%</td>
+    </tr>
+    <tr>
+      <td>Copper alloy insert</td>
+      <td>CuCrZr</td>
+      <td>$500–1,500</td>
+      <td>$1,500–4,000</td>
+      <td class="val-good">55–62%</td>
+    </tr>
+  </table>
+
+  <p>Prices above are for printing plus standard post-processing (stress relief, support removal, basic inspection). CNC finish machining adds $200–1,500 per part depending on complexity. HIP adds $300–800 per batch. Full CMM inspection with report adds $200–500. International air freight adds $50–200 for small parts.</p>
+
+  <h3>5 Ways to Reduce Your Metal 3D Printing Service Cost</h3>
+  <ol>
+    <li><strong>Minimize part height</strong> — Build time scales with Z-height. A part that is 100mm tall takes roughly 2× as long to print as a 50mm part with the same footprint. Orient your part to minimize Z-height.</li>
+    <li><strong>Hollow non-structural sections</strong> — Replace solid cores with lattice or shell geometries where stress analysis permits. Every cm³ of material removed saves both powder cost and build time.</li>
+    <li><strong>Batch your orders</strong> — LPBF builds can nest multiple parts. Combining 3–5 inserts in a single build spreads setup, depowdering, and heat treatment costs across all parts.</li>
+    <li><strong>Design for minimal supports</strong> — Supports consume powder, machine time, and post-processing labor. Orient overhanging features above 45° from vertical or add self-supporting chamfers to eliminate supports.</li>
+    <li><strong>Only CNC-finish what matters</strong> — Print near-net-shape and finish only the mating surfaces, sealing faces, and molding surfaces. Leave non-critical faces in as-printed condition (Ra 6–12 µm).</li>
+  </ol>
+
+  <div class="benefit-block">
+    <div class="benefit-block__tag">Total Cost of Ownership vs Unit Price</div>
+    <div class="benefit-block__headline">Don't Compare Unit Price — Compare Total Delivered Cost</div>
+    <p class="benefit-block__body">A Chinese service bureau quoting $800 for a mold insert plus $150 air freight equals $950 landed. A US service quoting $2,200 with no shipping costs equals $2,200. The 57% cost difference is real — but only if quality, dimensional accuracy, and lead time are equivalent. This guide's qualification framework helps you confirm equivalence before committing.</p>
+  </div>
+
+
+  <!-- 7. MOLD MAKERS -->
+  <h2 id="mold-makers">7. Metal 3D Printing Service for Mold Makers</h2>
+
+  <p>Mold makers have specific requirements that differentiate them from general metal AM customers. A service bureau optimized for aerospace structural components may not be the right choice for injection mold inserts. Here's what matters specifically for tooling applications.</p>
+
+  <h3>Conformal Cooling Channel Capability</h3>
+  <p>Internal cooling channels are the primary reason mold makers use metal 3D printing. Channels must be fully clear of unsintered powder (a critical risk with blind channels), dimensionally accurate to ±0.1–0.2mm on diameter, and leak-tested at operating pressure before shipping. Ask any potential service bureau: How do you verify internal channel geometry? How do you guarantee powder clearance in closed channels? What is your pressure test procedure?</p>
+
+  <p>The best answer involves CT scanning of the as-built insert to verify internal geometry, followed by flushing with pressurized air and a measured flow rate test, then pressure decay testing at 10–15 bar. Service bureaus that rely on post-print flushing alone without CT verification are higher risk for conformal cooling applications.</p>
+
+  <h3>Surface Finish for Mold Surfaces</h3>
+  <p>LPBF as-built surface roughness is Ra 6–12 µm — far too rough for a molding surface. Production mold inserts require Ra 0.4–0.8 µm after CNC finishing, and Ra 0.05–0.2 µm (SPI A-2/A-3) after polishing for optical or cosmetic applications. A service bureau offering metal 3D printing without in-house or closely coordinated CNC finish machining forces you to manage two vendors for every insert. Look for services that offer the full chain: print, heat treat, CNC finish, polish.</p>
+
+  <h3>Maraging Steel Process Maturity</h3>
+  <p>Maraging steel (MS1/18Ni300) is the dominant mold insert material. Ask how many maraging steel builds the service bureau has completed, request test bar mechanical property data (yield strength, UTS, elongation, hardness), and ask for customer references from mold or tooling applications specifically. A service bureau with 100+ maraging steel builds has worked out the support strategies, heat treatment parameters, and post-processing workflow for this material. One with 5 builds is still learning on your part.</p>
+
+  <h3>Lead Time for Production Schedules</h3>
+  <p>Mold programs run on tight schedules. A conformal cooling insert that arrives 3 weeks late can delay an entire production launch. Get a written commitment on lead time before you order, understand exactly what's included in the quoted lead time (print only? or print + HT + CNC + inspection?), and ask about their on-time delivery rate. Service bureaus operating at high utilization can slip schedules when machine issues or failed builds occur — knowing their backup plan matters.</p>
+
+  <div class="data-highlight">
+    <div class="data-highlight__title">Mold Insert Service Requirements vs General AM Service</div>
+    <table class="compare-table" style="margin:0;">
+      <tr>
+        <th>Requirement</th>
+        <th>General AM Service</th>
+        <th>Mold-Focused Service</th>
+      </tr>
+      <tr>
+        <td>Primary material</td>
+        <td>SS316L, Ti, AlSi10Mg</td>
+        <td>Maraging steel, H13, CuCrZr</td>
+      </tr>
+      <tr>
+        <td>Internal channel verification</td>
+        <td>Not offered</td>
+        <td>CT scan + flow test</td>
+      </tr>
+      <tr>
+        <td>Surface finishing</td>
+        <td>As-printed</td>
+        <td>CNC + polishing to SPI-A</td>
+      </tr>
+      <tr>
+        <td>Pressure testing</td>
+        <td>Not standard</td>
+        <td>10–15 bar, 30-min hold</td>
+      </tr>
+      <tr>
+        <td>Heat treatment</td>
+        <td>Stress relief only</td>
+        <td>Age hardening + HRC verification</td>
+      </tr>
+      <tr>
+        <td>DFM review focus</td>
+        <td>Printability</td>
+        <td>Printability + coolant flow + powder removal</td>
+      </tr>
+    </table>
+  </div>
+
+
+  <!-- 8. QUESTIONS -->
+  <h2 id="questions">8. 10 Questions to Ask Before You Order</h2>
+
+  <div class="step-block">
+    <div class="step-block__number">Question 1</div>
+    <div class="step-block__title">What machines do you run, and what are their build volumes?</div>
+    <p>Machine brand and model tells you more than process name. EOS M290, SLM 280, and Renishaw AM400 are established platforms with well-characterized process parameters. Unknown brands from obscure manufacturers carry higher process risk. Build volume determines whether your part can be printed without splitting — most mold inserts fit within 250×250×300mm, but large inserts may require larger platforms.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Question 2</div>
+    <div class="step-block__title">Can you share test bar mechanical properties for maraging steel?</div>
+    <p>A qualified maraging steel process should consistently achieve: UTS &ge;1,900 MPa, yield strength &ge;1,800 MPa, elongation &ge;4%, and 50–54 HRC after aging. Ask for the most recent test bar data from a production build, not from the machine manufacturer's specification sheet. If they can't provide this, their process qualification is incomplete.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Question 3</div>
+    <div class="step-block__title">How do you verify internal cooling channel geometry and cleanliness?</div>
+    <p>For conformal cooling inserts, this is the most important question. Acceptable answers: CT scanning, flushing with measured air flow rate, pressure testing. Unacceptable answers: "We trust our process" or "customers can test on arrival." Undetected powder blockage in a cooling channel can destroy a mold program when it causes hot spots during production.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Question 4</div>
+    <div class="step-block__title">What is included in your quoted price and lead time?</div>
+    <p>Get this in writing. Quotes often exclude heat treatment, CNC machining, surface finishing, inspection, and shipping. A $600 quote that becomes $1,800 after post-processing surprises you at invoice. A fully-specified quote upfront prevents this — and reveals which service bureaus are transparent about total cost.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Question 5</div>
+    <div class="step-block__title">What certifications do you hold, and can I see them?</div>
+    <p>Request the actual certificate, not just a claim. ISO 9001 certificates include scope of certification, certifying body, and expiry date. Verify the certificate is current (certificates expire every 3 years and must be renewed by audit). For automotive applications, ask specifically about IATF 16949 or whether your part falls within their IATF-certified scope.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Question 6</div>
+    <div class="step-block__title">What documentation will ship with my parts?</div>
+    <p>Standard documentation for mold inserts should include: material certificate, build record, heat treatment record, CMM dimensional report, hardness test results, and pressure test results (for cooling circuits). Ask for a sample documentation package from a previous order — the quality of documentation reflects the quality of the underlying process.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Question 7</div>
+    <div class="step-block__title">What is your process for handling failed builds?</div>
+    <p>Every service bureau has build failures — the question is how they handle them. Do they detect failures mid-build or only after the build completes? Do they notify customers immediately or absorb the delay silently? Do they reprint at no charge or charge for the failed build? Their answer reveals their process maturity and customer orientation.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Question 8</div>
+    <div class="step-block__title">Can you provide references from mold or tooling customers?</div>
+    <p>General metal AM experience doesn't automatically transfer to mold applications. A service bureau with strong aerospace credentials may lack the tool steel expertise, surface finishing capability, and cooling circuit verification process needed for injection mold inserts. References from actual mold programs confirm relevant experience.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Question 9</div>
+    <div class="step-block__title">What DFM feedback will you provide before building?</div>
+    <p>Good service bureaus review your file for printability issues before committing the build — not after the build fails. A written DFM report should flag: walls thinner than 0.4mm, overhangs requiring excessive support, channels that risk powder entrapment, and features that could be redesigned for lower cost. Bureaus that build without DFM review pass these risks to you.</p>
+  </div>
+
+  <div class="step-block">
+    <div class="step-block__number">Question 10</div>
+    <div class="step-block__title">What are your payment terms and IP protection practices?</div>
+    <p>For international orders, standard terms are 30–50% upfront, balance on shipment. Confirm that your CAD files are stored securely and not shared beyond the production team — a critical concern when your mold insert geometry represents significant design investment. Reputable service bureaus have NDA templates and data security policies for customer files.</p>
+  </div>
+
+
+  <!-- 9. RED FLAGS -->
+  <h2 id="red-flags">9. Red Flags to Watch For</h2>
+
+  <ul>
+    <li><strong>No DFM review before quoting</strong> — Instant online quoting without human review of your file suggests a commodity mindset; complex mold geometries need engineering judgment.</li>
+    <li><strong>Unable to provide test bar mechanical data</strong> — A service bureau that can't share basic mechanical property data for their most common material has incomplete process qualification.</li>
+    <li><strong>Quote doesn't specify what's included</strong> — Ambiguous quotes that don't specify heat treatment, machining, inspection, or shipping scope are designed to look cheap at RFQ and expensive at invoice.</li>
+    <li><strong>No pressure testing for cooling circuit parts</strong> — Any service bureau building conformal cooling inserts without pressure testing the final part is shipping you a quality risk.</li>
+    <li><strong>Certificates they can't produce on request</strong> — If a service bureau claims ISO certification but can't email you the current certificate within 24 hours, the certification may be expired or the scope may not cover your application.</li>
+    <li><strong>No references from similar applications</strong> — Experience in aerospace doesn't mean competence in tooling. Insist on references from analogous programs.</li>
+    <li><strong>Unrealistically short lead times</strong> — A promise of 3-day delivery on a complex insert requiring heat treatment and CNC machining is physically impossible. Unrealistic promises indicate either dishonesty or a misunderstanding of the process chain.</li>
+  </ul>
+
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta__title">Get a Metal 3D Printing Service Quote from MouldNova</div>
+    <p class="blog-cta__text">We specialize in metal 3D printing for injection mold inserts: maraging steel, H13, and copper alloy — with conformal cooling channel verification, CNC finishing, and full documentation. Send your insert CAD for a detailed quote with DFM review included.</p>
+    <a href="../contact.html" class="btn">Request a Quote with DFM Review &rarr;</a>
+  </div>
+
+
+  <!-- 10. FAQ -->
+  <h2 id="faq">10. Frequently Asked Questions</h2>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What is a metal 3D printing service?</div>
+    <p class="faq-block__a">A metal 3D printing service is a contract manufacturer that builds metal parts layer by layer from your CAD file using additive manufacturing — typically Laser Powder Bed Fusion (LPBF). They supply the machine, material, post-processing, and inspection. You supply the design and specifications.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How much does metal 3D printing service cost?</div>
+    <p class="faq-block__a">A small mold insert (50×50×40mm) in maraging steel costs approximately $300–800 from a China-based service and $800–2,500 from a US/EU service, before heat treatment and CNC finishing. Cost scales primarily with build volume (height × footprint) and the extent of post-processing required.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">How long does metal 3D printing service take?</div>
+    <p class="faq-block__a">Standard lead time for an LPBF mold insert with heat treatment and basic inspection is 8–12 business days. Add 4–7 days for CNC finish machining and 5–10 days for HIP. Express services deliver in 5–7 days at a 30–50% premium. Add international shipping time (3–5 days air, 25–35 days sea) for orders from China.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">Is metal 3D printing from China reliable?</div>
+    <p class="faq-block__a">Yes, when you select the right supplier. Chinese service bureaus using EOS, SLM Solutions, or BLT machines with qualified maraging steel parameters can match Western quality at 40–60% lower cost. Qualify by requesting machine specs, test bar mechanical data, material certificates, and customer references from mold applications.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What metal materials can be 3D printed?</div>
+    <p class="faq-block__a">Most service bureaus offer: maraging steel (MS1/18Ni300) for tooling, stainless steel (316L, 17-4PH), tool steel (H13), titanium (Ti-6Al-4V), aluminum (AlSi10Mg), and Inconel (718/625). Copper alloys (CuCrZr, GRCop-42) are available from specialist providers. Material selection should match your hardness, thermal, and corrosion requirements.</p>
+  </div>
+
+  <div class="faq-block">
+    <div class="faq-block__q">What tolerances can metal 3D printing services achieve?</div>
+    <p class="faq-block__a">LPBF as-built tolerance is typically ±0.05–0.1mm on external features. After CNC finish machining, tolerances of ±0.01–0.02mm are achievable on critical surfaces. For mold inserts, the standard approach is to print near-net-shape (+0.3–0.5mm stock on machined surfaces) and then CNC-finish to drawing tolerance.</p>
+  </div>
+
+
+  <h3>Related Pages</h3>
+  <ul>
+    <li><a href="../metal-3d-printing-service.html">Metal 3D Printing Service — MouldNova's Capabilities, Materials &amp; Process</a></li>
+    <li><a href="metal-3d-printing-injection-molds.html">Metal 3D Printing for Injection Molds: Beyond Conformal Cooling</a></li>
+    <li><a href="metal-3d-printing-cost.html">Metal 3D Printing Cost: Price per Part, Cost Drivers &amp; How to Reduce It</a></li>
+    <li><a href="can-you-3d-print-metal.html">Can You 3D Print Metal? Technologies, Materials &amp; Industrial Applications</a></li>
+    <li><a href="conformal-cooling-inserts.html">Conformal Cooling Inserts — Design, Materials &amp; Manufacturing</a></li>
+    <li><a href="conformal-cooling-rfq-checklist.html">Conformal Cooling RFQ Checklist — What Your Supplier Needs to Quote Accurately</a></li>
+    <li><a href="../rapid-tooling-service.html">Rapid Tooling Service — Prototype Molds in Days, Not Months</a></li>
+  </ul>
+
+</div>
+
+
+<!-- FOOTER -->
+
+  <!-- Related Articles — auto-generated internal links -->
+  <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+    <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li>
+        <a href="/blog/metal-3d-printing-cost.html">Metal 3D Printing Cost Guide</a>
+      </li>
+      <li>
+        <a href="/blog/metal-3d-printing-injection-molds.html">Metal 3D Printing for Injection Molds</a>
+      </li>
+      <li>
+        <a href="/blog/slm-vs-dmls-conformal-cooling.html">SLM vs DMLS Comparison</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-materials.html">Material Selection Guide</a>
+      </li>
+    </ul>
+  </aside>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo"><span class="footer__logo-main">SAIGUANG</span><span class="footer__logo-sub">3D Technology</span></div>
+        <p class="footer__tagline">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <div class="footer__col-title">Services</div>
+          <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+          <a href="../rapid-tooling-service.html" class="footer__link">Rapid Tooling</a>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Company</div>
+          <a href="../case-studies.html" class="footer__link">Case Studies</a>
+          <a href="../about.html" class="footer__link">About Us</a>
+          <a href="../contact.html" class="footer__link">Contact</a>
+          <a href="index.html" class="footer__link">Blog</a>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Contact</div>
+          <div class="footer__link">+86 182 6866 1068</div>
+          <div class="footer__link">zhangyuanbo123@gmail.com</div>
+          <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Saiguang 3D Technology (MouldNova). All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+  }
+</script>
+
+</body>
+</html>

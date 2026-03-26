@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conformal Cooling Channels in Plastic Injection Molding: Design, Performance &amp; ROI | MouldNova</title>
-  <meta name="description" content="How conformal cooling channels fit into the injection molding cycle, why straight-drilled channels create hot spots and warpage, design parameters for 6 resin types, and ROI payback for molding shops." />
+  <title>Conformal Cooling Channels in Injection Molding | MouldNova</title>
+  <meta name="description" content="Conformal cooling channels eliminate hot spots and warpage in injection molding. Design parameters for 6 resin types with ROI payback data." />
   <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-channels-in-injection-molding.html" />
   <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/conformal-cooling-channels-in-injection-molding.html" />
   <link rel="icon" href="../favicon.ico" />
@@ -374,7 +374,7 @@
 
   <h3>What Moldflow Data Shows About Cooling Time vs. Part Complexity</h3>
 
-  <p>Moldflow cooling analysis consistently shows that cooling time scales nonlinearly with part complexity. For a simple flat plaque, a straight-drilled channel 25 mm from the surface achieves acceptable temperature uniformity. Add a 15 mm rib and the analysis shows a hot zone at the rib tip that requires 40–60% more cooling time than the flat wall — even though the rib represents a tiny fraction of total part volume.</p>
+  <p><a href="conformal-cooling-simulation.html">Moldflow cooling analysis</a> consistently shows that cooling time scales nonlinearly with part complexity. For a simple flat plaque, a straight-drilled channel 25 mm from the surface achieves acceptable temperature uniformity. Add a 15 mm rib and the analysis shows a hot zone at the rib tip that requires 40–60% more cooling time than the flat wall — even though the rib represents a tiny fraction of total part volume.</p>
 
   <p>The reason: heat in the rib tip has nowhere to go except through the mold steel sidewall, laterally to the nearest cooling channel. The thermal path length is 3–5× longer than from the flat wall, and heat flux density at the rib tip is higher (concentrated geometry). This forces designers to set the overall cooling time based on the worst-case zone, not the average.</p>
 
@@ -424,7 +424,7 @@
   <div class="prob-grid">
     <div class="sol-card">
       <h4>Solution 1: Channels Follow Every Core and Rib Contour</h4>
-      <p>LPBF printing is unconstrained by drill geometry. Channels can spiral around a core pin, run through a rib at 1.5&times; channel diameter from the surface, and follow complex 3D curves that no cutting tool can reach. Hot spot temperature at a rib tip drops from 185°C to 145–155°C. The worst-case cooling zone is no longer the constraint on cycle time.</p>
+      <p>LPBF printing is unconstrained by drill geometry. Channels can spiral around a <a href="conformal-cooling-cores.html">core pin</a>, run through a rib at 1.5&times; channel diameter from the surface, and follow complex 3D curves that no cutting tool can reach. Hot spot temperature at a rib tip drops from 185°C to 145–155°C. The worst-case cooling zone is no longer the constraint on cycle time.</p>
     </div>
     <div class="sol-card">
       <h4>Solution 2: Uniform Wall Distance Reduces ΔT to 2–5°C</h4>
@@ -498,7 +498,7 @@
   </table>
 
   <div class="callout">
-    <strong>Material note for geometry selection:</strong> The geometry type interacts with material choice. 420 stainless steel is adequate for serpentine and straight geometries in general-purpose resins. Spiral core inserts for PC or PA66-GF benefit from CuCrZr (thermal conductivity 320 W/m·K vs. 24 W/m·K for 420SS) because the limited channel surface area in a thin core must transfer heat faster. TPMS inserts are almost always CuCrZr for the same reason.
+    <strong>Material note for geometry selection:</strong> The geometry type interacts with material choice. 420 stainless steel is adequate for serpentine and straight geometries in general-purpose resins. Spiral core inserts for PC or PA66-GF benefit from <a href="conformal-cooling-materials.html">CuCrZr</a> (thermal conductivity 320 W/m·K vs. 24 W/m·K for 420SS) because the limited channel surface area in a thin core must transfer heat faster. TPMS inserts are almost always CuCrZr for the same reason.
   </div>
 
 
@@ -507,7 +507,7 @@
        ══════════════════════════════════════════ -->
   <h2 id="design-parameters">Design Parameters for Injection Molding Cooling Channels</h2>
 
-  <p>Injection molding imposes specific constraints on cooling channel design that differ from die casting or other applications. Shot weights from 0.5 g (miniature medical connectors) to 5 kg (automotive structural parts) span four orders of magnitude, but the governing channel geometry parameters converge to a relatively narrow range in molding practice.</p>
+  <p>Injection molding imposes specific constraints on cooling channel design that differ from die casting or other applications. Shot weights from 0.5 g (miniature medical connectors) to 5 kg (automotive structural parts) span four orders of magnitude, but the governing <a href="conformal-cooling-channel-design.html">channel geometry parameters</a> converge to a relatively narrow range in molding practice.</p>
 
   <div class="param-grid">
     <div class="param-card">
@@ -802,7 +802,7 @@
        ══════════════════════════════════════════ -->
   <h2 id="cost-benefit">Cost-Benefit Calculation for Injection Molding Shops</h2>
 
-  <p>The economic case for conformal cooling channels depends on three variables: annual shot volume, baseline cycle time, and machine hourly rate. The calculation below uses a standard injection molding machine rate of <strong>$75/hour</strong> — representative of a 150–400-ton machine including operator, overhead, and depreciation in North American or Western European operations. Asian operations with lower machine rates should scale linearly.</p>
+  <p>The economic case for conformal cooling channels depends on three variables: annual shot volume, baseline cycle time, and machine hourly rate. For a detailed pricing breakdown, see our <a href="conformal-cooling-cost.html">conformal cooling cost guide</a>. The calculation below uses a standard injection molding machine rate of <strong>$75/hour</strong> — representative of a 150–400-ton machine including operator, overhead, and depreciation in North American or Western European operations. Asian operations with lower machine rates should scale linearly.</p>
 
   <h3>The Base Calculation</h3>
 
@@ -972,7 +972,26 @@
 </div><!-- end .page-wrap -->
 
 <!-- ── FOOTER ── -->
-<footer>
+
+  <!-- Related Articles — auto-generated internal links -->
+  <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+    <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li>
+        <a href="/blog/conformal-cooling-channel-design.html">Channel Design Parameters Guide</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-injection-molding.html">Conformal Cooling in Injection Molding</a>
+      </li>
+      <li>
+        <a href="/blog/injection-mold-cooling-system.html">Cooling System Design Guide</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-simulation.html">Simulation Guide</a>
+      </li>
+    </ul>
+  </aside>
+  <footer>
   <p>&copy; 2026 MouldNova &mdash; Conformal Cooling Insert Manufacturing | <a href="../contact.html">Contact</a> | <a href="./">Blog</a></p>
   <p style="margin-top:8px;">Ningbo Saiguang 3D Technology &mdash; LPBF-printed cooling inserts for injection molding, die casting, and precision tooling worldwide.</p>
 </footer>

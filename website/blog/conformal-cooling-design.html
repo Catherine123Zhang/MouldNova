@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conformal Cooling Design: Decision Framework, Application Guide & Mold Integration | MouldNova</title>
-  <meta name="description" content="How to decide if and where conformal cooling belongs in your mold design — decision criteria, application-specific approaches (thin-wall, automotive, medical, optical), mold integration, and what to include in a manufacturer brief." />
+  <title>Conformal Cooling Design: When &amp; How to Use It | MouldNova</title>
+  <meta name="description" content="Conformal cooling design decisions: when and where to use it, application-specific approaches, mold integration, and how to brief your manufacturer." />
   <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-design.html" />
   <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/conformal-cooling-design.html" />
   <link rel="icon" href="../favicon.ico" />
@@ -378,13 +378,13 @@
   <!-- SECTION 3 -->
   <h2 id="applications">Application-Specific Design Approaches</h2>
 
-  <p>Conformal cooling design parameters and priorities differ significantly by application. A one-size-fits-all approach to channel diameter, wall distance, and routing produces mediocre results across all applications. Here's how to adjust the design for the five most common scenarios:</p>
+  <p>Conformal cooling <a href="conformal-cooling-channel-design.html">design parameters</a> and priorities differ significantly by application. A one-size-fits-all approach to channel diameter, wall distance, and routing produces mediocre results across all applications. Here's how to adjust the design for the five most common scenarios:</p>
 
   <div class="app-grid">
     <div class="app-card">
       <span class="app-icon">🚗</span>
       <h4>Automotive Structural Parts</h4>
-      <div class="app-challenge">Challenge: Glass-filled PA66, PBT — long cycle times, warpage in large structural parts</div>
+      <div class="app-challenge">Challenge: Glass-filled PA66, PBT — long cycle times, warpage in large structural parts. See our <a href="conformal-cooling-automotive.html">automotive application guide</a></div>
       <div class="app-solution">Priority: Cycle time reduction + dimensional stability. Multi-cavity balance is critical — all cavities must be at identical temperature to prevent weight and dimension variation. Use parallel circuit layout so each cavity is independently temperature-controlled. 18Ni300 steel for high-pressure, high-cavitation molds.</div>
       <div class="app-params">D=8–10mm · W=10–12mm · P=18–22mm · Parallel circuits per cavity</div>
     </div>
@@ -398,7 +398,7 @@
     <div class="app-card">
       <span class="app-icon">🔬</span>
       <h4>Medical / Optical Parts</h4>
-      <div class="app-challenge">Challenge: PC transparent panels, optical lenses — burn marks, birefringence, dimensional tolerance &lt;±0.05mm</div>
+      <div class="app-challenge">Challenge: PC transparent panels, optical lenses — burn marks, birefringence, dimensional tolerance &lt;±0.05mm. See our <a href="conformal-cooling-medical-devices.html">medical device cooling guide</a></div>
       <div class="app-solution">Priority: Temperature uniformity and dimensional stability. PC requires precise mold temperature control (80–120°C); conformal channels on both cavity and core sides. Flow isolation between cavity and core circuits so each can be independently temperature-set. 18Ni300 for minimal distortion during heat treatment — maintains dimensional accuracy of mating surfaces better than 420 SS.</div>
       <div class="app-params">D=8mm · W=8–10mm · P=16–20mm · Independent circuits cavity &amp; core</div>
     </div>
@@ -413,7 +413,7 @@
       <span class="app-icon">⚙️</span>
       <h4>Deep Core / Long Pin Geometry</h4>
       <div class="app-challenge">Challenge: Any material — core tip unreachable by drilling; conventional baffle inserts create single-point cooling only</div>
-      <div class="app-solution">Priority: Core tip cooling. Spiral channel geometry wrapping from tip to base at 8–10mm offset. If core diameter &lt;16mm, use CuCrZr for 13× better thermal conductivity to compensate for geometric constraint on channel size. Validate with Moldflow simulation specifically on core tip temperature — this is the rate-limiting zone for the whole mold.</div>
+      <div class="app-solution">Priority: Core tip cooling. Spiral channel geometry wrapping from tip to base at 8–10mm offset. If core diameter &lt;16mm, use CuCrZr for 13× better thermal conductivity to compensate for geometric constraint on channel size. Validate with <a href="conformal-cooling-simulation.html">Moldflow simulation</a> specifically on core tip temperature — this is the rate-limiting zone for the whole mold.</div>
       <div class="app-params">Spiral geometry · D=6–8mm · CuCrZr if core dia &lt;16mm</div>
     </div>
     <div class="app-card">
@@ -570,7 +570,7 @@
   <!-- SECTION 7 -->
   <h2 id="brief">Manufacturer Brief: What to Send for an Accurate Quote</h2>
 
-  <p>The quality of a conformal cooling insert quote depends entirely on the information provided. Incomplete briefs result in over-conservative designs (channels too far from surface), wrong material selection, or missed constraints that require expensive re-design after printing. Here's a complete brief checklist:</p>
+  <p>The quality of a conformal cooling insert quote depends entirely on the information provided. Use our <a href="conformal-cooling-rfq-checklist.html">RFQ checklist</a> as a starting point. Incomplete briefs result in over-conservative designs (channels too far from surface), wrong material selection, or missed constraints that require expensive re-design after printing. Here's a complete brief checklist:</p>
 
   <div class="brief-section">
     <h4>📁 Required Files <span class="brief-tag req">Required</span></h4>
@@ -668,7 +668,26 @@
 
 </div>
 
-<footer>
+
+  <!-- Related Articles — auto-generated internal links -->
+  <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+    <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li>
+        <a href="/blog/conformal-cooling-channel-design.html">Conformal Cooling Channel Design: Parameters & Geometry</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-mold-design.html">Conformal Cooling Mold Design Engineering Guide</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-simulation.html">Conformal Cooling Simulation: Setup & Interpretation</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-design-software.html">Moldflow, Moldex3D & ANSYS Compared</a>
+      </li>
+    </ul>
+  </aside>
+  <footer>
   <p>© 2026 MouldNova — Ningbo Saiguang 3D Technology Co., Ltd.</p>
   <p style="margin-top:8px;"><a href="../">Home</a> &nbsp;·&nbsp; <a href="../contact.html">Contact</a> &nbsp;·&nbsp; <a href="../conformal-cooling-inserts.html">Conformal Cooling</a> &nbsp;·&nbsp; <a href="./">Blog</a></p>
 </footer>

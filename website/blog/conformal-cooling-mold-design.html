@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conformal Cooling Mold Design (2026) | MouldNova</title>
+  <meta name="description" content="Conformal cooling mold design: mold base integration, parting line placement, water connections, sealing, material selection, and tolerance specs." />
+  <meta name="keywords" content="conformal cooling mold design, conformal cooling insert design, mold base conformal cooling, conformal cooling hot runner, conformal cooling tolerances" />
+  <link rel="canonical" href="https://mouldnova.com/blog/conformal-cooling-mold-design.html" />
+  <link rel="alternate" hreflang="en" href="https://mouldnova.com/blog/conformal-cooling-mold-design.html" />
+  <link rel="icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LMZXHN7YGJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LMZXHN7YGJ');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Conformal Cooling Mold Design: Engineering Guide for 2026",
+        "description": "Complete engineering guide to conformal cooling mold design — mold base integration, parting line placement, water connections, sealing, material selection, hot runner compatibility, and tolerance requirements.",
+        "author": {"@type": "Organization", "name": "MouldNova"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "MouldNova",
+          "logo": {"@type": "ImageObject", "url": "https://mouldnova.com/images/logo.png"}
+        },
+        "datePublished": "2026-03-19",
+        "dateModified": "2026-03-19",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://mouldnova.com/blog/conformal-cooling-mold-design.html"},
+        "keywords": "conformal cooling mold design, conformal cooling insert design, mold base conformal cooling, conformal cooling hot runner, conformal cooling tolerances"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What tolerances are required when machining a mold base pocket for a conformal cooling insert?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The insert pocket in the mold base should be machined to ±0.02mm on all mating flat faces and ±0.03mm on the pocket depth. The conformal insert itself is CNC-finished to ±0.05mm on all mating surfaces after SLM printing. This tolerance stack allows reliable metal-to-metal contact across the full interface perimeter, which is critical for sealing and for heat conduction between the insert and the mold base. A gap greater than 0.05mm on the parting-plane mating face can allow flash or cause micro-leakage at the coolant connection."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How should water connection fittings be positioned in a conformal cooling mold?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Coolant in/out fittings should exit through the mold base parting face or the operator-side face — never through the cavity face. The preferred routing is from the insert channel exits up through vertical bores in the mold base to NPT or BSP fittings on the top or side face. Use full-bore fittings (same ID as the channel diameter) to avoid flow restriction. Parallel circuits require individual in/out pairs per circuit; a common manifold rail milled into the mold base simplifies plumbing. Label circuits IN/OUT and number them sequentially to prevent field connection errors."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a conformal cooling insert be integrated with a hot runner system?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, but careful thermal isolation is required. The hot runner manifold operates at 200–350°C while the conformal cooling insert maintains the cavity at 20–80°C. The insert must be thermally isolated from the hot runner backing plate using an insulating plate (typically 10–15mm glass-fibre composite) between the hot runner manifold and the mold base. Gate inserts where the nozzle tip passes through the conformal core should use a CuCrZr conformal insert for maximum heat extraction at the gate area, which is the highest thermal load zone. Gate-area channel pitch should be reduced to 8mm (vs. 12mm elsewhere) to compensate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best mold base material when combining with SLM conformal cooling inserts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "P20 (1.2311) is the standard choice for the mold base when paired with conformal cooling inserts. It machines cleanly, accepts standard EDM and CNC operations for pocket machining, and is widely available in pre-hardened condition (28–34 HRC) that requires no post-machining heat treatment. The conformal insert itself is typically 420 stainless steel or 18Ni300 maraging steel at 48–54 HRC — significantly harder than the mold base, which is intentional: the harder insert provides wear resistance at the cavity surface while the softer mold base is easily repaired or modified if needed."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --blue: #0057D9;
+      --blue-dark: #003fa3;
+      --accent: #00C48C;
+      --bg: #f6f8fc;
+      --text: #1a1a2e;
+      --muted: #5a6070;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,.08);
+    }
+
+    .blog-hero { padding: 80px 0 48px; background: var(--black, #0a1628); color: #fff; }
+    .blog-hero__eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #00C48C; margin-bottom: 12px; font-weight: 700; }
+    .blog-hero__title { font-size: 2.4rem; font-weight: 900; line-height: 1.15; margin-bottom: 16px; max-width: 800px; }
+    .blog-hero__meta { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+
+    .blog-body { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text); }
+    .blog-body h2 { font-size: 1.4rem; font-weight: 800; margin: 52px 0 16px; padding-top: 8px; border-top: 3px solid var(--bg); color: var(--text); }
+    .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 28px 0 10px; color: var(--text); }
+    .blog-body p { margin-bottom: 16px; font-size: 1rem; line-height: 1.75; color: #333; }
+    .blog-body ul, .blog-body ol { margin: 0 0 16px 22px; line-height: 1.75; color: #333; }
+    .blog-body li { margin-bottom: 6px; font-size: 1rem; }
+    .blog-body strong { font-weight: 700; }
+    .blog-body a { color: var(--blue); }
+
+    .breadcrumb { font-size: 0.8rem; color: var(--muted); padding: 14px 0 0; max-width: 820px; margin: 0 auto; padding-left: 24px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--blue); }
+    .breadcrumb span { margin: 0 6px; }
+
+    .blog-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 32px; font-size: .83rem; color: var(--muted); }
+    .blog-tag { background: #eef4ff; color: var(--blue); border-radius: 20px; padding: 3px 12px; font-weight: 600; font-size: .78rem; }
+    .blog-tag.green { background: #e6faf3; color: #00875a; }
+    .blog-tag.orange { background: #fff3e6; color: #c05c00; }
+
+    .intro-box { background: var(--bg); border-left: 4px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 0 0 36px; font-size: .95rem; }
+    .intro-box ul { margin: 10px 0 0 18px; }
+    .intro-box li { margin-bottom: 4px; }
+
+    .toc-box { background: var(--bg); border-radius: var(--radius); padding: 20px 22px; margin-bottom: 36px; }
+    .toc-box h4 { font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 12px; }
+    .toc-box ol { margin: 0 0 0 18px; }
+    .toc-box li { font-size: .88rem; margin-bottom: 5px; }
+    .toc-box a { color: var(--blue); text-decoration: none; }
+
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: .87rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    th { background: var(--blue); color: #fff; padding: 11px 14px; text-align: left; font-weight: 600; }
+    td { padding: 10px 14px; border-bottom: 1px solid #e8ecf4; vertical-align: top; }
+    tr:nth-child(even) td { background: var(--bg); }
+    tr:last-child td { border-bottom: none; }
+    .highlight-row td { background: #eef9f4 !important; font-weight: 600; }
+    .check { color: var(--accent); font-weight: 700; }
+    .cross { color: #e53e3e; font-weight: 700; }
+
+    .callout { background: #fffbeb; border: 1px solid #f6d860; border-radius: var(--radius); padding: 18px 20px; margin: 24px 0; font-size: .92rem; }
+    .callout strong { color: #92610a; }
+    .callout.blue { background: #eef4ff; border-color: #c0d4f8; }
+    .callout.blue strong { color: var(--blue-dark); }
+    .callout.green { background: #e6faf3; border-color: #9be8cc; }
+    .callout.green strong { color: #00734a; }
+    .callout.red { background: #fff0f0; border-color: #fca5a5; }
+    .callout.red strong { color: #b91c1c; }
+
+    .design-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .design-card { background: var(--bg); border-radius: var(--radius); padding: 18px 16px; border: 1px solid #e2e8f0; }
+    .design-card .dc-tag { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--blue); display: block; margin-bottom: 6px; }
+    .design-card h4 { font-size: .92rem; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .design-card p { font-size: .82rem; color: var(--muted); margin: 0; }
+
+    .step-list { counter-reset: steps; margin: 24px 0; }
+    .step-item { display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e8ecf4; }
+    .step-item:last-child { border-bottom: none; }
+    .step-num { background: var(--blue); color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .82rem; flex-shrink: 0; margin-top: 2px; }
+    .step-body h4 { font-size: .93rem; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+    .step-body p { font-size: .85rem; color: var(--muted); margin: 0; }
+
+    .mat-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0; }
+    .mat-col { border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 20px 18px; }
+    .mat-col.recommended { border-color: var(--accent); border-width: 2px; background: #f0fdf8; }
+    .mat-col h5 { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 10px; }
+    .mat-col h5 span { color: var(--blue); }
+    .mat-col ul { margin: 0 0 0 16px; font-size: .85rem; color: #333; }
+    .mat-col li { margin-bottom: 5px; }
+
+    .mid-cta { background: linear-gradient(135deg, #0a1628, #0d2456); color: #fff; border-radius: var(--radius); padding: 32px 28px; margin: 48px 0; text-align: center; }
+    .mid-cta h3 { color: #fff; margin: 0 0 10px; font-size: 1.2rem; }
+    .mid-cta p { color: #99b0d0; font-size: .9rem; margin-bottom: 20px; }
+    .mid-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-accent { background: var(--accent); color: #fff; padding: 11px 26px; border-radius: 7px; font-weight: 700; font-size: .9rem; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); padding: 11px 26px; border-radius: 7px; font-weight: 600; font-size: .9rem; text-decoration: none; }
+
+    details { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 12px; background: #fff; overflow: hidden; }
+    summary { padding: 16px 20px; font-weight: 600; font-size: .95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
+    summary::after { content: '+'; font-size: 1.3rem; color: var(--blue); font-weight: 300; flex-shrink: 0; }
+    details[open] summary::after { transform: rotate(45deg); display: inline-block; }
+    details div { padding: 0 20px 16px; font-size: .9rem; color: var(--muted); line-height: 1.65; }
+
+    @media (max-width: 640px) {
+      .design-grid, .mat-compare { grid-template-columns: 1fr; }
+      .blog-hero__title { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-main">SAIGUANG</span>
+      <span class="nav__logo-sub">3D Technology</span>
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown">
+        <a href="javascript:void(0)" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="../conformal-cooling-inserts.html" class="nav__dropdown-item">Conformal Cooling Inserts</a>
+          <a href="../3d-printed-mold-inserts.html" class="nav__dropdown-item">3D Printed Mold Inserts</a>
+          <a href="../metal-3d-printing-service.html" class="nav__dropdown-item">Metal 3D Printing Service</a>
+          <a href="../rapid-tooling-service.html" class="nav__dropdown-item">Rapid Tooling Service</a>
+          <a href="../metal-rapid-prototyping.html" class="nav__dropdown-item">Metal Rapid Prototyping</a>
+          <a href="../low-volume-metal-production.html" class="nav__dropdown-item">Low-Volume Production</a>
+          <a href="../cnc-edm-machining.html" class="nav__dropdown-item">CNC / EDM / Injection Molding</a>
+          <a href="../vision-inspection-mold-monitor.html" class="nav__dropdown-item">CCD Inspection &amp; Mold Monitor</a>
+        </div>
+      </div>
+      <a href="../case-studies.html" class="nav__link">Case Studies</a>
+      <a href="index.html" class="nav__link active">Blog</a>
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../directory/" class="nav__link">Directory</a>
+      <a href="../contact.html" class="nav__link">Contact</a>
+    </div>
+    <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="btn btn-whatsapp nav__cta">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+    <div class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav__mobile" id="mobileNav">
+    <a href="../conformal-cooling-inserts.html" class="nav__mobile-link">Conformal Cooling Inserts</a>
+    <a href="../3d-printed-mold-inserts.html" class="nav__mobile-link">3D Printed Mold Inserts</a>
+    <a href="../cnc-edm-machining.html" class="nav__mobile-link">CNC / EDM / Injection Molding</a>
+    <a href="../case-studies.html" class="nav__mobile-link">Case Studies</a>
+    <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-hero__eyebrow">Engineering Guide &middot; March 2026</div>
+    <h1 class="blog-hero__title">Conformal Cooling Mold Design: Engineering Guide for 2026</h1>
+    <div class="blog-hero__meta">By MouldNova Engineering Team &middot; 14 min read &middot; Mold base integration, tolerances, sealing, materials, and hot runner compatibility</div>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>&rsaquo;</span>
+  <a href="index.html">Blog</a>
+  <span>&rsaquo;</span>
+  <span>Conformal Cooling Mold Design</span>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="blog-body">
+
+  <div class="blog-meta">
+    <span class="blog-tag">Engineering Guide</span>
+    <span class="blog-tag green">Mold Design</span>
+    <span class="blog-tag orange">Integration</span>
+    <span>March 19, 2026</span>
+    <span>&middot;</span>
+    <span>14 min read</span>
+    <span>&middot;</span>
+    <span>By MouldNova Engineering Team</span>
+  </div>
+
+  <div class="intro-box">
+    <strong>What this engineering guide covers — the mold design specifics most articles skip:</strong>
+    <ul>
+      <li>How to design the mold base to properly accommodate conformal inserts</li>
+      <li>Parting line placement and its effect on insert sealing</li>
+      <li>Water connection positioning, routing, and fitting selection</li>
+      <li>Sealing methods: O-ring grooves, face sealing, and sealant best practices</li>
+      <li>Material selection — mold base vs. insert: why they differ and why that matters</li>
+      <li>Integration with hot runner systems: thermal isolation requirements</li>
+      <li>Tolerance stack and pocket machining specifications</li>
+      <li>Ejector pin coordination: design sequencing to avoid conflicts</li>
+    </ul>
+  </div>
+
+  <div class="toc-box">
+    <h4>Table of Contents</h4>
+    <ol>
+      <li><a href="#overview">Design Philosophy: Mold Base + Conformal Insert as a System</a></li>
+      <li><a href="#mold-base">Mold Base Design for Conformal Insert Accommodation</a></li>
+      <li><a href="#parting-line">Parting Line Placement</a></li>
+      <li><a href="#water-connections">Water Connection Positioning and Routing</a></li>
+      <li><a href="#sealing">Sealing Methods</a></li>
+      <li><a href="#materials">Material Selection: Mold Base vs. Conformal Insert</a></li>
+      <li><a href="#hot-runner">Hot Runner Integration</a></li>
+      <li><a href="#tolerances">Tolerance Considerations</a></li>
+      <li><a href="#ejectors">Ejector Pin Coordination</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2 id="overview">Design Philosophy: Mold Base + Conformal Insert as a System</h2>
+
+  <p>Conformal cooling mold design is not simply "design a mold, then add conformal channels." The conformal cooling insert and the mold base must be co-designed from the earliest stage of the mold concept. Decisions made in the mold base — pocket depth, water port positions, ejector locations, parting geometry — directly constrain what the conformal channel designer can and cannot achieve.</p>
+
+  <p>The most common mistake in conformal cooling mold design is treating the insert as an afterthought. Engineers finalize the mold base, lock in ejector positions, define the parting line, and then ask: "Can conformal cooling fit in here?" The answer is often "partly" — and the result is a compromised channel layout that underperforms.</p>
+
+  <p>The correct design sequence is:</p>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Part analysis and hotspot identification</h4>
+        <p>Run a baseline <a href="/blog/conformal-cooling-simulation.html">Moldflow cooling simulation</a> on the part geometry before committing to any mold design. Identify which zones have the longest cooling time and highest surface temperature. These define where conformal inserts are required.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Define insert envelope and channel space</h4>
+        <p>For each conformal zone, determine the required insert envelope — the block of metal that will be SLM-printed. This defines the pocket geometry in the mold base. Channel routing space (minimum 8mm wall to cavity surface) must be reserved before ejector pins are placed.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>Place ejectors around the insert envelope</h4>
+        <p>With the insert envelope confirmed, ejector pins are positioned in the remaining space. Never place ejectors through the conformal insert — they must travel through the mold base only, entering the molded part through holes in the insert face if required (these must be designed in at step 2).</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>Design water routing in the mold base</h4>
+        <p>With insert and ejector positions fixed, route the coolant connections from the insert water ports to the mold face fittings. Conventional drilled channels in the mold base connect the conformal insert to the manifold/chiller circuit.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h4>Design the conformal channel layout</h4>
+        <p>Only now, with all constraints defined, does the <a href="/blog/conformal-cooling-channel-design.html">conformal channel design</a> proceed. The channel designer works within a fully constrained envelope with known ejector exclusion zones, water port exit positions, and pocket geometry — using <a href="conformal-cooling-design-software.html">design software such as Moldflow or Moldex3D</a> to validate the layout before manufacturing.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2 id="mold-base">Mold Base Design for Conformal Insert Accommodation</h2>
+
+  <p>The mold base pocket that receives the conformal insert is a precision-machined opening. Poor pocket design is the leading cause of conformal insert fit and sealing problems in the field. Key design requirements:</p>
+
+  <h3>Pocket geometry</h3>
+  <p>The pocket should be designed with <strong>flat mating faces on all four sides</strong> and a flat bottom. Avoid angled pockets or complex 3D pocket geometries in the mold base — these increase machining cost and tolerance stack. The complexity belongs in the insert, not the pocket.</p>
+
+  <p>For inserts with non-rectangular cross-sections (e.g., a core insert that follows a curved part surface), design the pocket as a rectangular envelope that circumscribes the insert, then machine the insert's outer surfaces to fit this standard pocket. This keeps mold base machining simple and the tolerance achievement straightforward.</p>
+
+  <h3>Pocket depth and locating strategy</h3>
+  <p>The insert should be located in depth by contact on the bottom face, with the top face of the insert sitting flush with the mold parting plane. A <strong>positive stop on the bottom</strong> is critical: if the insert can float upward under injection pressure, it will flash at the parting line. Depth tolerance must be maintained to ±0.02mm.</p>
+
+  <p>For inserts heavier than approximately 5 kg, include a lifting thread (M10 minimum) in the top face of the insert for installation and removal without risk of dropping.</p>
+
+  <h3>Lateral location</h3>
+  <p>Two precision dowel pins (minimum 8mm diameter, h6/H7 fit) locate the insert laterally and prevent rotation. Position dowels on a diagonal to give unambiguous orientation — a misinstalled insert that is 180° rotated will have its IN and OUT coolant connections swapped, which is a catastrophic error discovered only after the mold is clamped.</p>
+
+  <div class="callout blue">
+    <strong>Design tip:</strong> Make the two dowel pins different diameters (e.g., 8mm and 10mm), or offset them asymmetrically. This creates a poka-yoke — the insert can only fit in the correct orientation. This adds zero cost to the mold and eliminates an entire class of assembly errors.
+  </div>
+
+  <!-- SECTION 3 -->
+  <h2 id="parting-line">Parting Line Placement</h2>
+
+  <p>The conformal insert's parting-plane face (the face that aligns with the mold parting line and contacts the opposite mold half) is the highest-risk sealing surface in the system. Injection pressure during fill — typically 800–1,600 bar at the gate — acts to push the insert upward and create a flash path at this interface.</p>
+
+  <h3>Parting line on the insert vs. mold base</h3>
+  <p>The ideal arrangement is for the <strong>parting line to fall entirely within the mold base</strong>, with the conformal insert recessed below the parting plane. The insert top face contacts only the inner face of the cavity pocket, not the parting-line surface directly exposed to the injection pressure front. This is achievable when the insert is a core insert — the cavity half contains the parting-surface geometry, and the conformal insert is buried in the core pocket.</p>
+
+  <p>When the conformal insert must lie at the parting line (e.g., a cavity insert with complex surface geometry), ensure the insert-to-mold-base interface at the parting plane is a machined metal-to-metal contact with surface finish Ra &le;0.8&mu;m on both faces. No sealant at the parting line — it will squeeze out under clamp force and contaminate the cavity.</p>
+
+  <h3>Flash gap control</h3>
+  <p>With the insert proud of its pocket bottom by the correct amount (flush with mold parting plane), the flash gap at the parting line is determined by the insert-to-pocket dimensional accuracy. Specify the insert top face height to +0.00/&minus;0.01mm relative to pocket depth — this ensures the insert is never proud of the mold parting face, which would create a step visible on the part surface.</p>
+
+  <!-- SECTION 4 -->
+  <h2 id="water-connections">Water Connection Positioning and Routing</h2>
+
+  <p>Water connections are the interface between the conformal insert's internal channels and the mold's external plumbing. Poor connection design is the most common cause of leaks and flow restriction.</p>
+
+  <div class="design-grid">
+    <div class="design-card">
+      <span class="dc-tag">Connection Type</span>
+      <h4>Insert-to-Mold Base Connections</h4>
+      <p>The conformal insert's channel exits (typically 4–8 per insert: multiple in/out pairs if multi-circuit) pass through the side or bottom face of the insert as machined bores. These align with corresponding bores in the mold base via O-ring sealed interfaces. The O-ring groove is machined in the mold base face, not the insert face — this protects the groove from damage during insert installation.</p>
+    </div>
+    <div class="design-card">
+      <span class="dc-tag">Connection Type</span>
+      <h4>Mold Base to External Manifold</h4>
+      <p>From the insert connection bores, conventional drilled channels in the mold base route coolant to the mold face fittings (NPT 1/4&quot; or BSP 1/4&quot; standard, or G1/2 for high-flow circuits). These connecting bores in the mold base are standard CNC drilling — no additive manufacturing required. Cross-drill plugs seal unused ports.</p>
+    </div>
+    <div class="design-card">
+      <span class="dc-tag">Sizing Requirement</span>
+      <h4>Connection Bore Diameter</h4>
+      <p>All connection bores must have a minimum ID equal to the channel diameter — never smaller. Reducing the bore diameter at the insert exit (e.g., 8mm channel entering a 6mm connection bore) creates a flow restriction that increases pressure drop and reduces flow rate to below the turbulence threshold. Match bore IDs throughout: channel &rarr; insert exit bore &rarr; mold base channel &rarr; fitting bore, all the same diameter.</p>
+    </div>
+    <div class="design-card">
+      <span class="dc-tag">Labeling</span>
+      <h4>IN/OUT Identification</h4>
+      <p>Machine IN and OUT labels next to each water fitting on the mold face. Number multiple circuits (Circuit 1 IN / Circuit 1 OUT, etc.). Use a different fitting style for IN vs. OUT if possible (e.g., straight for IN, 90&deg; elbow for OUT) to further distinguish them. These details prevent mis-connection in the field, which causes reversed flow direction and significantly degraded cooling performance.</p>
+    </div>
+  </div>
+
+  <p>Water connections should exit on the <strong>operator side or top face</strong> of the mold, not through the parting-line face. Connections through the parting-line face create hose routing problems and risk pinching hoses when the mold closes.</p>
+
+  <!-- SECTION 5 -->
+  <h2 id="sealing">Sealing Methods</h2>
+
+  <p>Conformal cooling inserts operate at 6–12 bar coolant pressure. Every interface between the insert and the mold base that carries coolant requires a positive seal. Three sealing methods are used, with distinct applications:</p>
+
+  <table>
+    <thead>
+      <tr><th>Sealing Method</th><th>Application</th><th>Pressure Rating</th><th>Maintenance</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>O-ring face seal</strong></td><td>Insert-to-mold base water port connections</td><td>Up to 30 bar</td><td>Replace O-rings at insert removal</td></tr>
+      <tr class="highlight-row"><td><strong>Metal-to-metal flat face contact</strong></td><td>Insert body into pocket (non-coolant interfaces)</td><td>Structural, not fluid sealing</td><td>None required</td></tr>
+      <tr><td><strong>Thread sealant (Loctite 577)</strong></td><td>NPT/BSP pipe fittings at mold face</td><td>Up to 20 bar</td><td>Replace when fitting is removed</td></tr>
+      <tr><td><strong>Copper crush washers</strong></td><td>High-temperature applications, oil cooling circuits</td><td>Up to 40 bar</td><td>Replace at every removal</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>O-ring material selection:</strong> For water at &le;90&deg;C, use standard NBR (nitrile) O-rings, 70 Shore A. For water above 90&deg;C or for mold temperature control oil, use EPDM O-rings. Never use silicone O-rings in water circuits — silicone degrades rapidly in pressurized water.</p>
+
+  <div class="callout green">
+    <strong>Sealing best practice:</strong> Apply a thin film of Dow Corning 111 valve lubricant to O-rings before installation. This protects against O-ring roll and pinch during insert seating, and extends service life. Do not use petroleum-based grease — it attacks NBR O-rings over time.
+  </div>
+
+  <!-- SECTION 6 -->
+  <h2 id="materials">Material Selection: Mold Base vs. Conformal Insert</h2>
+
+  <p>The mold base and the conformal insert deliberately use different materials with different hardness values. Understanding why informs correct material selection:</p>
+
+  <div class="mat-compare">
+    <div class="mat-col">
+      <h5>Mold Base Material</h5>
+      <ul>
+        <li><strong>P20 (1.2311)</strong> — most common; pre-hardened 28–34 HRC, machines cleanly, good weldability for repairs</li>
+        <li><strong>H13 (1.2344)</strong> — used when mold base must be harder (e.g., glass-filled materials creating abrasion on the base pocket faces); 44–52 HRC after through-hardening</li>
+        <li><strong>718 (1.2738)</strong> — P20 variant with improved polishability; good for semi-transparent or appearance-critical molds</li>
+        <li>Mold base does <em>not</em> need to match insert hardness — the softer base absorbs minor fit errors without galling the harder insert surface</li>
+      </ul>
+    </div>
+    <div class="mat-col recommended">
+      <h5>Conformal Insert Material <span>(select by application)</span></h5>
+      <ul>
+        <li><strong>420 Stainless Steel</strong> — general-purpose; 48–52 HRC after heat treatment; good corrosion resistance for water cooling; most economical</li>
+        <li><strong>18Ni300 Maraging Steel (1.2709)</strong> — preferred for high-injection-pressure applications (&gt;1,200 bar) or thin wall inserts; 50–54 HRC; superior strength prevents insert deformation under load</li>
+        <li><strong>CuCrZr</strong> — 3&times; higher thermal conductivity than steel; used for gate-area inserts, high-temperature resins, or wherever maximum heat extraction is the constraint; lower hardness (38–42 HRC), not for use in abrasive resin applications</li>
+        <li>Insert is always harder than the mold base pocket — this ensures the pocket wears before the insert if there is any mismatch-induced fretting</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>One additional consideration: if the conformal insert contacts the part surface and is exposed to abrasive-filled resins (glass fibre, mineral filler), a PVD hard coating (TiN or TiAlN, 3–5 &mu;m) applied to the cavity face of the insert adds significant wear resistance without affecting dimensional accuracy meaningfully.</p>
+
+  <!-- SECTION 7 -->
+  <h2 id="hot-runner">Hot Runner Integration</h2>
+
+  <p>Conformal cooling molds frequently incorporate hot runner gating — the two technologies are highly complementary, as hot runners eliminate cold-runner waste while conformal cooling maximises thermal efficiency at the cavity. However, the thermal conflict between them demands careful design attention.</p>
+
+  <h3>Thermal isolation between hot runner and conformal insert</h3>
+  <p>The hot runner manifold runs at resin-specific temperatures (200&ndash;350&deg;C depending on material). The conformal cooling insert targets mold surface temperatures of 20&ndash;80&deg;C. These zones must be thermally isolated to prevent mutual interference:</p>
+
+  <ul>
+    <li><strong>Insulating plate:</strong> Install a 10&ndash;15mm glass-fibre epoxy (e.g., Starlam G10) insulating plate between the hot runner backing plate and the mold base. This plate reduces conductive heat transfer from the hot manifold to the mold base by approximately 80&times;.</li>
+    <li><strong>Air gap design:</strong> Where possible, maintain a 5&ndash;10mm air gap between the hot runner manifold body and the conformal insert. Air is an excellent insulator. Do not fill this gap with steel.</li>
+    <li><strong>Gate insert specification:</strong> The gate insert — the steel component through which the hot nozzle tip fires into the cavity — is the highest-temperature zone in the mold. Use a <strong>CuCrZr conformal gate insert</strong> with channels pitched at 6&ndash;8mm from the gate bore centerline. The high thermal conductivity of CuCrZr extracts heat from the gate area faster than steel can, compensating for the proximity to the hot runner.</li>
+  </ul>
+
+  <h3>Nozzle tip accessibility</h3>
+  <p>The hot nozzle tip must be accessible for removal without removing the conformal insert. Ensure that the nozzle-tip removal path (typically axial, from the hot runner side) does not pass through the conformal insert body. Design the nozzle seating pocket in the mold base or in a separate non-conformal gate bushing that can be withdrawn independently.</p>
+
+  <div class="callout">
+    <strong>Common error:</strong> Designing the conformal insert so that the hot runner nozzle tip passes through the insert body and seats in a bore machined post-SLM. This works initially but makes nozzle tip replacement nearly impossible in production without removing and potentially damaging the conformal insert. Keep the nozzle tip in its own replaceable bushing, separated from the conformal insert.
+  </div>
+
+  <!-- SECTION 8 -->
+  <h2 id="tolerances">Tolerance Considerations for Conformal Insert Fitting</h2>
+
+  <p>Tolerances in a conformal cooling mold are tighter than in a conventional mold because more surfaces must mate precisely. The following tolerance stack governs insert fit:</p>
+
+  <table>
+    <thead>
+      <tr><th>Surface</th><th>Required Tolerance</th><th>Achieved By</th><th>Risk if Exceeded</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Pocket depth (mold base)</td><td>&plusmn;0.02mm</td><td>CNC jig boring or precision milling</td><td>Insert proud of parting plane (flash) or recessed (step mark)</td></tr>
+      <tr><td>Pocket width/length (mold base)</td><td>&plusmn;0.03mm</td><td>CNC milling with finishing pass</td><td>Insert rocking, sealing face gap</td></tr>
+      <tr><td>Insert mating face height</td><td>+0.00/&minus;0.01mm vs. pocket depth</td><td>CNC grinding of insert base face after SLM</td><td>Same as pocket depth</td></tr>
+      <tr><td>Insert cavity face position</td><td>&plusmn;0.05mm</td><td>CNC machining of cavity face after SLM</td><td>Part wall thickness variation</td></tr>
+      <tr class="highlight-row"><td>Water port bore position (insert)</td><td>&plusmn;0.1mm</td><td>CNC drilling of port exits after SLM</td><td>O-ring misalignment, leakage</td></tr>
+      <tr><td>Dowel pin hole (insert)</td><td>H7 (&plusmn;0.012mm for 8mm pin)</td><td>Precision boring or reaming</td><td>Insert misalignment, rotational float</td></tr>
+    </tbody>
+  </table>
+
+  <p>Note that the SLM-printed insert is <em>not</em> delivered at these tolerances from the printer. As-printed dimensional accuracy is typically &plusmn;0.2&ndash;0.3mm. All critical dimensions are achieved by <strong>post-SLM CNC machining</strong>, carried out after stress relief and heat treatment. This is standard practice for any reputable conformal cooling supplier. See our article on <a href="/blog/conformal-cooling-mold.html">conformal cooling mold supplier evaluation</a> for what to confirm when reviewing a quote.</p>
+
+  <!-- SECTION 9 -->
+  <h2 id="ejectors">Ejector Pin Coordination</h2>
+
+  <p>Ejector pins and conformal cooling channels occupy the same physical space — the mold core zone. Managing their coexistence requires disciplined design sequencing. Key rules:</p>
+
+  <ul>
+    <li><strong>No ejectors through the conformal insert.</strong> Ejectors must travel through the mold base only. If a part feature requires ejection directly beneath a conformal insert, the insert must be designed with a through-hole at the ejector pin location. This hole is a no-go zone for conformal channels — an exclusion zone of at least 1.5&times; ejector diameter around each pin position.</li>
+    <li><strong>Ejector positions must be frozen before channel design begins.</strong> If ejectors are moved after the conformal channel design is complete, the channel layout must be re-run to route around the new no-go zones. This is a common and preventable cause of design rework.</li>
+    <li><strong>Minimum wall to ejector hole: 3mm.</strong> The conformal channel must maintain at least 3mm wall between the channel bore and any ejector pin hole in the insert to prevent breakthrough during SLM printing and adequate structural integrity.</li>
+    <li><strong>Ejector pin proximity to cavity surface:</strong> Ejector pins should be located no closer than 10mm from the cavity surface side of the conformal insert. This preserves the channel routing space and prevents stress concentration at the ejector hole rim under injection pressure.</li>
+  </ul>
+
+  <div class="mid-cta">
+    <h3>Need Conformal Cooling Mold Design Support?</h3>
+    <p>MouldNova provides full DFM review and conformal channel design as part of every project. Send your part file and current mold concept — we'll identify design conflicts before manufacturing begins.</p>
+    <div class="mid-cta-btns">
+      <a href="../contact.html" class="btn-accent">Submit for DFM Review</a>
+      <a href="https://wa.me/8618268661068" class="btn-ghost">WhatsApp Us Directly</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <details>
+    <summary>What tolerances are required when machining a mold base pocket for a conformal cooling insert?</summary>
+    <div>The insert pocket in the mold base should be machined to &plusmn;0.02mm on all mating flat faces and &plusmn;0.03mm on the pocket depth. The conformal insert itself is CNC-finished to &plusmn;0.05mm on all mating surfaces after SLM printing. This tolerance stack allows reliable metal-to-metal contact across the full interface perimeter, which is critical for sealing and heat conduction. A gap greater than 0.05mm on the parting-plane mating face can allow flash or cause micro-leakage at the coolant connection.</div>
+  </details>
+
+  <details>
+    <summary>How should water connection fittings be positioned in a conformal cooling mold?</summary>
+    <div>Coolant in/out fittings should exit through the mold base operator-side or top face — never through the cavity face. The preferred routing is from the insert channel exits up through vertical bores in the mold base to NPT or BSP fittings on the top or side face. Use full-bore fittings (same ID as the channel diameter) to avoid flow restriction. Parallel circuits require individual in/out pairs per circuit. Label circuits IN/OUT and number them sequentially to prevent field connection errors.</div>
+  </details>
+
+  <details>
+    <summary>Can a conformal cooling insert be integrated with a hot runner system?</summary>
+    <div>Yes, but careful thermal isolation is required. The hot runner manifold operates at 200&ndash;350&deg;C while the conformal cooling insert maintains the cavity at 20&ndash;80&deg;C. Install a 10&ndash;15mm glass-fibre composite insulating plate between the hot runner manifold and the mold base. Gate inserts where the nozzle tip enters the cavity through the conformal core should use a CuCrZr conformal insert for maximum heat extraction. Gate-area channel pitch should be reduced to 6&ndash;8mm versus 12mm elsewhere to compensate for the thermal load.</div>
+  </details>
+
+  <details>
+    <summary>What is the best mold base material when combining with SLM conformal cooling inserts?</summary>
+    <div>P20 (1.2311) is the standard choice for the mold base when paired with conformal cooling inserts. It machines cleanly, accepts standard EDM and CNC for pocket machining, and is available pre-hardened (28&ndash;34 HRC) with no post-machining heat treatment required. The conformal insert itself — typically 420 stainless steel or 18Ni300 maraging steel at 48&ndash;54 HRC — is deliberately harder than the mold base. If the pocket faces wear over many insert removal cycles, the mold base pocket can be welded and re-machined, whereas the harder insert remains undamaged.</div>
+  </details>
+
+  <!-- INTERNAL LINKS -->
+  <hr style="border: none; border-top: 1px solid #e8ecf4; margin: 48px 0 32px;" />
+  <h3 style="margin-bottom: 16px; font-size: 1rem;">Related Articles &amp; Pages</h3>
+  <ul>
+    <li><a href="/blog/conformal-cooling-channel-design.html">Conformal Cooling Channel Design: Parameters &amp; Engineering Workflow</a></li>
+    <li><a href="/blog/conformal-cooling-simulation.html">Conformal Cooling Simulation: Setup, Results Interpretation &amp; When to Trust It</a></li>
+    <li><a href="/blog/conformal-cooling-mold.html">Conformal Cooling Mold: Complete Buyer's Guide &mdash; Types, Pricing, Supplier Evaluation</a></li>
+    <li><a href="/blog/conformal-cooling-design.html">Conformal Cooling Design: Decision Framework &amp; Application Guide</a></li>
+    <li><a href="/blog/conformal-cooling-3d-printing.html">Conformal Cooling 3D Printing: SLM Process, Materials &amp; Cost Breakdown</a></li>
+    <li><a href="/blog/conformal-cooling-lines.html">Conformal Cooling Lines: Channel Layout, Spacing &amp; Flow Design</a></li>
+    <li><a href="../conformal-cooling-inserts.html">Our Conformal Cooling Insert Service &mdash; Get a Quote</a></li>
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+
+  <!-- Related Articles — auto-generated internal links -->
+  <aside class="related-articles" style="margin:48px 0 32px;padding:24px 28px;background:#f8fafc;border-radius:12px;border-left:4px solid #2563eb;">
+    <h3 style="margin:0 0 16px;font-size:1rem;font-weight:700;color:#1e3a5f;text-transform:uppercase;letter-spacing:.05em;">Related Articles</h3>
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li>
+        <a href="/blog/conformal-cooling-design.html">Conformal Cooling Design Guide</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-inserts.html">Conformal Cooling Inserts: Design Rules & Materials</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-mold.html">Conformal Cooling Mold: Complete Buyer's Guide</a>
+      </li>
+      <li>
+        <a href="/blog/conformal-cooling-channel-design.html">Channel Design Parameters & Geometry</a>
+      </li>
+    </ul>
+  </aside>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">SAIGUANG</div>
+        <div class="footer__brand-tag">3D Technology</div>
+        <p class="footer__brand-text">Metal 3D printing and conformal cooling specialists. Full-chain service from design to global delivery.</p>
+        <div class="footer__contact-item">+86 182 6866 1068</div>
+        <div class="footer__contact-item">zhangyuanbo123@gmail.com</div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <a href="../conformal-cooling-inserts.html" class="footer__link">Conformal Cooling Inserts</a>
+        <a href="../3d-printed-mold-inserts.html" class="footer__link">3D Printed Mold Inserts</a>
+        <a href="../metal-3d-printing-service.html" class="footer__link">Metal 3D Printing</a>
+        <a href="../cnc-edm-machining.html" class="footer__link">CNC / EDM / Injection Molding</a>
+      </div>
+      <div>
+        <div class="footer__heading">Company</div>
+        <a href="../case-studies.html" class="footer__link">Case Studies</a>
+        <a href="../about.html" class="footer__link">About Us</a>
+        <a href="../contact.html" class="footer__link">Contact</a>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="footer__link">WhatsApp &rarr;</a>
+        <a href="mailto:zhangyuanbo123@gmail.com" class="footer__link">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Ningbo Saiguang 3D Technology Co., Ltd.</span>
+      <span>SLM &middot; Conformal Cooling &middot; Rapid Tooling</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8618268661068" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="../js/main.js"></script>
+</body>
+</html>
