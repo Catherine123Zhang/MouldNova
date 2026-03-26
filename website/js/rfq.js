@@ -1,7 +1,7 @@
 // MouldNova RFQ shared form handler
-// All LP pages and contact.html use this to submit to the Supabase Edge Function.
+// Submits to Supabase Edge Function → email to zhangyuanbo123@gmail.com
 
-const RFQ_ENDPOINT = 'https://eqsxfvzwvfqyufwsvpua.supabase.co/functions/v1/submit-rfq';
+const RFQ_ENDPOINT = 'https://eqsxfvzwvfqyufwsvpua.supabase.co/functions/v1/saiguang-rfq';
 
 /**
  * submitRFQ(form, successEl)
