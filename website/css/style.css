@@ -141,16 +141,8 @@ p  { color: var(--gray-dark); }
   font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
   color: #f5a0aa; margin-bottom: 24px;
 }
-.hero__title { max-width: 800px; margin-bottom: 20px; }
-.hero__title span { color: var(--red-light); }
-.hero__subtitle { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 600px; margin-bottom: 12px; }
-.hero__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
-.hero__tag {
-  padding: 5px 12px; border-radius: 100px;
-  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-  font-size: 0.8rem; color: rgba(255,255,255,0.7);
-}
-.hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero__title { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; color: #ffffff; max-width: 800px; margin-bottom: 24px; line-height: 1.15; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+.hero__subtitle { font-size: clamp(1rem, 2vw, 1.3rem); color: rgba(255,255,255,0.9); max-width: 600px; margin-bottom: 40px; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
 
 /* --- STATS BAR --- */
 .stats { background: var(--red); padding: 40px 0; }
