@@ -187,7 +187,12 @@
           </div>
           <div class="form__group">
             <label class="form__label" for="message">Tell Us About Your Project *</label>
-            <textarea class="form__textarea" id="message" name="message" required placeholder="Describe your part, current cooling issues, annual volume, and any specific requirements. You can also attach a drawing — WhatsApp is easiest for file sharing."></textarea>
+            <textarea class="form__textarea" id="message" name="message" required placeholder="Describe your part, current cooling issues, annual volume, and any specific requirements."></textarea>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="file">Upload 3D File / Drawing (optional, max 20MB)</label>
+            <input class="form__input" type="file" id="file" name="file" accept=".stl,.step,.stp,.iges,.igs,.3mf,.obj,.pdf,.dxf,.dwg,.x_t,.x_b,.prt,.sat" style="padding:10px" />
+            <p style="font-size:0.75rem;color:var(--gray-mid);margin-top:4px">Accepted: STL, STEP, IGES, 3MF, OBJ, PDF, DXF, DWG, Parasolid, SAT</p>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:16px">
             Send Message →
