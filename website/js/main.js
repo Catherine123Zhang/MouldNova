@@ -23,7 +23,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Contact form → Supabase Edge Function (via rfq.js)
+// Contact form → Web3Forms (via rfq.js)
 const form = document.querySelector('.js-contact-form');
 if (form) {
   form.addEventListener('submit', async (e) => {
